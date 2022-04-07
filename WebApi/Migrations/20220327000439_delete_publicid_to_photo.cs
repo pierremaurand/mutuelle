@@ -1,0 +1,26 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace hspaApi2.Migrations
+{
+    public partial class delete_publicid_to_photo : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "PublicId",
+                table: "Photos");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<string>(
+                name: "PublicId",
+                table: "Photos",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+        }
+    }
+}
