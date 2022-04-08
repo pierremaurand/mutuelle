@@ -1,3 +1,5 @@
+using System;
+
 namespace hspaApi2.Models
 {
     public class BaseEntity

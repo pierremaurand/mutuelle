@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-2 border-right text-center">
+    <img src="assets/images/pic-3.png" alt="photo membre" *ngIf="!membre.photo">
+  </div>
+  <div class="col-md-6 border-right">
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fas fa-info-circle color-blue"></i>
+      </div>
+      <div class="col-md-11">
+        {{membre.nom | uppercase}} {{membre.prenom | uppercase}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-calendar-check color-blue"></i>
+      </div>
+      <div class="col-md-11">
+        Est membre depuis: {{membre.dateAdhesion | date}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-calendar-check color-blue"></i>
+      </div>
+      <div class="col-md-11">
+        Est membre depuis: {{membre.dateAdhesion | date}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-calendar-check color-blue"></i>
+      </div>
+      <div class="col-md-11">
+        Est membre depuis: {{membre.dateAdhesion | date}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div>

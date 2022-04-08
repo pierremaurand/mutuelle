@@ -27,6 +27,28 @@ import { HttpErrorInterceptorService } from './services/httperror-interceptor.se
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { DatePipe } from '@angular/common';
 import { DndDirective } from './directives/dnd.directive';
+import { AddMembreComponent } from './membre/add-membre/add-membre.component';
+import { MembreListComponent } from './membre/membre-list/membre-list.component';
+import { MembreDetailComponent } from './membre/membre-detail/membre-detail.component';
+import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
+import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
+import { CotisationDetailComponent } from './cotisation/cotisation-detail/cotisation-detail.component';
+import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
+import { AvanceListComponent } from './avance/avance-list/avance-list.component';
+import { AvanceDetailComponent } from './avance/avance-detail/avance-detail.component';
+import { AddCreditComponent } from './credit/add-credit/add-credit.component';
+import { CreditListComponent } from './credit/credit-list/credit-list.component';
+import { CreditDetailComponent } from './credit/credit-detail/credit-detail.component';
+import { AddUtilisateurComponent } from './utilisateur/add-utilisateur/add-utilisateur.component';
+import { UtilisateurListComponent } from './utilisateur/utilisateur-list/utilisateur-list.component';
+import { UtilisateurDetailComponent } from './utilisateur/utilisateur-detail/utilisateur-detail.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur/utilisateur.component';
+import { CreditComponent } from './credit/credit/credit.component';
+import { AvanceComponent } from './avance/avance/avance.component';
+import { CotisationComponent } from './cotisation/cotisation/cotisation.component';
+import { MembreComponent } from './membre/membre/membre.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { StatistiqueComponent } from './dashboard/statistique/statistique.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +63,28 @@ import { DndDirective } from './directives/dnd.directive';
     FilterPipe,
     SortPipe,
     DndDirective,
+    AddMembreComponent,
+    MembreListComponent,
+    MembreDetailComponent,
+    AddCotisationComponent,
+    CotisationListComponent,
+    CotisationDetailComponent,
+    AddAvanceComponent,
+    AvanceListComponent,
+    AvanceDetailComponent,
+    AddCreditComponent,
+    CreditListComponent,
+    CreditDetailComponent,
+    AddUtilisateurComponent,
+    UtilisateurListComponent,
+    UtilisateurDetailComponent,
+    UtilisateurComponent,
+    CreditComponent,
+    AvanceComponent,
+    CotisationComponent,
+    MembreComponent,
+    DashboardComponent,
+    StatistiqueComponent,
   ],
   imports: [
     BrowserModule,
