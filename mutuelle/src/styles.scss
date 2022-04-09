@@ -5,3 +5,12 @@
 @import "../node_modules/alertifyjs/build/css/themes/bootstrap.min.css";
 @import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
 
+.entete-page{
+  position: fixed;
+  top: 56px;
+  z-index: 10;
+  background-color: white;
+  padding-top: 5px;
+  border-bottom: 2px solid black;
+}
+

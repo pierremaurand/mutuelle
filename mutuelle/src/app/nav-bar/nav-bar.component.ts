@@ -46,7 +46,7 @@ export class NavBarComponent implements OnInit {
     {
       id: '4',
       titre: 'Avances',
-      icon: 'fa fa-money',
+      icon: 'fab fa-stack-overflow',
       url: 'avances'
     },
     {

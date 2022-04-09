@@ -14,14 +14,17 @@ export class MembreListComponent implements OnInit {
       nom: 'ovassa',
       prenom: 'pierre maurand',
       dateAdhesion: new Date('12/06/2018'),
+      sexe: 'Masculin',
       lieuAffectation: 'Direction',
-      estActif: true
+      estActif: true,
+      cotisations: 120000.55
     },
     {
       id: 1,
       nom: 'ovassa',
       prenom: 'pierre maurand',
       dateAdhesion: new Date('12/06/2018'),
+      sexe: 'Feminin',
       lieuAffectation: 'Direction',
       estActif: true
     },

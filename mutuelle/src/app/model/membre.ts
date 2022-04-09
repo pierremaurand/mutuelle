@@ -8,4 +8,7 @@ export interface Membre {
   photo?: string;
   lieuAffectation?: string;
   estActif?: boolean;
+  cotisations?: number;
+  credits?: number;
+  avances?: number;
 }
