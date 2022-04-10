@@ -49,6 +49,18 @@ import { CotisationComponent } from './cotisation/cotisation/cotisation.componen
 import { MembreComponent } from './membre/membre/membre.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { StatistiqueComponent } from './dashboard/statistique/statistique.component';
+import { SexeComponent } from './sexe/sexe/sexe.component';
+import { AddSexeComponent } from './sexe/add-sexe/add-sexe.component';
+import { SexeDetailComponent } from './sexe/sexe-detail/sexe-detail.component';
+import { SexeListComponent } from './sexe/sexe-list/sexe-list.component';
+import { AddAgenceComponent } from './agence/add-agence/add-agence.component';
+import { AgenceComponent } from './agence/agence/agence.component';
+import { AgenceDetailComponent } from './agence/agence-detail/agence-detail.component';
+import { AgenceListComponent } from './agence/agence-list/agence-list.component';
+import { AddServiceComponent } from './service/add-service/add-service.component';
+import { ServiceComponent } from './service/service/service.component';
+import { ServiceDetailComponent } from './service/service-detail/service-detail.component';
+import { ServiceListComponent } from './service/service-list/service-list.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +97,18 @@ import { StatistiqueComponent } from './dashboard/statistique/statistique.compon
     MembreComponent,
     DashboardComponent,
     StatistiqueComponent,
+    SexeComponent,
+    AddSexeComponent,
+    SexeDetailComponent,
+    SexeListComponent,
+    AddAgenceComponent,
+    AgenceComponent,
+    AgenceDetailComponent,
+    AgenceListComponent,
+    AddServiceComponent,
+    ServiceComponent,
+    ServiceDetailComponent,
+    ServiceListComponent,
   ],
   imports: [
     BrowserModule,

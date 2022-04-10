@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Membre } from 'src/app/model/membre';
+import { MembreInfos } from 'src/app/model/membreInfos';
 
 @Component({
   selector: 'app-membre-detail',
@@ -8,11 +10,13 @@ import { Membre } from 'src/app/model/membre';
 })
 export class MembreDetailComponent implements OnInit {
 
-  membre: Membre = {};
+  membreId?: number;
+  membre: MembreInfos = {};
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.membreId = +this.route.snapshot.params['id'];
   }
 
 }

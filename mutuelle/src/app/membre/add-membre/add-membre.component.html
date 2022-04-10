@@ -1,1 +1,106 @@
-<p>add-membre works!</p>
+<div class="container" style="margin-top: 70px; width: 1080px;">
+  <div class="row">
+    <div class="col-8 m-auto shadow-lg p-0 bg-white">
+      <form [formGroup]="membreForm" (ngSubmit)="onSubmit()">
+        <div class="card m-auto">
+          <div class="card-header">
+            <h3>Formulaire Membre</h3>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-6 p-2 text-center">
+                  <div class="image-container m-auto shadow">
+                    <img [src]="membre.photo" alt="">
+                  </div>
+                  <input type="file" name="" id="">
+                </div>
+                <div class="col-6">
+                  <div class="mb-1">
+                    <label for="nom" class="form-label">Nom</label>
+                  <input type="text" id="nom" class="form-control" formControlName="nom"
+                    [ngClass]="{ 'is-invalid': nom.invalid && (nom.touched || membreSubmitted)}"
+                    [value]="membre.nom">
+                  </div>
+                  <div class="mb-1">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input type="text" id="prenom" class="form-control" formControlName="prenom"
+                      [ngClass]="{ 'is-invalid': prenom.invalid && (prenom.touched || membreSubmitted)}"
+                      [value]="membre.prenom">
+                  </div>
+                  <div class="mb-1">
+                    <label for="sexe" class="form-label">Sexe</label>
+                    <select class="form-control" formControlName="sexe" id="sexe"
+                      [ngClass]="{ 'is-invalid': sexe.invalid && (sexe.touched || membreSubmitted)}"
+                      [value]="membre.sexeId">
+                      <option value="">--Selectionner un sexe--</option>
+                      <option *ngFor="let item of sexes" value="{{item.id}}">{{item.nom}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-1">
+              <div class="row">
+                <div class="col-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" class="form-control" formControlName="email"
+                    [ngClass]="{ 'is-invalid': email.invalid && (email.touched || membreSubmitted)}"
+                    [value]="membre.email">
+                </div>
+                <div class="col-6">
+                  <label for="telephone" class="form-label">Téléphone</label>
+                  <input type="tel" id="telephone" class="form-control" formControlName="telephone"
+                    [ngClass]="{ 'is-invalid': telephone.invalid && (telephone.touched || membreSubmitted)}"
+                    [value]="membre.telephone">
+                </div>
+              </div>
+            </div>
+            <div class="mb-1">
+              <div class="row">
+                <div class="col-6">
+                  <label for="agence" class="form-label">Agence</label>
+                    <select class="form-control" formControlName="agence" id="agence"
+                      [ngClass]="{ 'is-invalid': agence.invalid && (agence.touched || membreSubmitted)}"
+                      [value]="membre.agenceId">
+                      <option value="">--Selectionner une agence--</option>
+                      <option *ngFor="let item of agences" value="{{item.id}}">{{item.nom}}</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                  <label for="service" class="form-label">Service</label>
+                  <select class="form-control" formControlName="service" id="service"
+                    [ngClass]="{ 'is-invalid': service.invalid && (service.touched || membreSubmitted)}"
+                    [value]="membre.serviceId">
+                    <option value="">--Selectionner un service--</option>
+                    <option *ngFor="let item of services" value="{{item.id}}">{{item.nom}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-6">
+                  <label for="dateAdhesion" class="form-label">Date d'adhésion</label>
+                  <input type="date" id="dateAdhesion" class="form-control" formControlName="dateAdhesion"
+                    [ngClass]="{ 'is-invalid': dateAdhesion.invalid && (dateAdhesion.touched || membreSubmitted)}"
+                    [value]="membre.dateAdhesion">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="me-2 btn btn-primary">
+                <i class="fa fa-save"></i>&nbsp;
+                Enregistrer
+              </button>
+              <button type="reset" class="btn btn-danger">
+                <i class="fa fa-refresh"></i>&nbsp;
+                Recommencer
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

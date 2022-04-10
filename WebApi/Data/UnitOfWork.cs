@@ -1,5 +1,8 @@
 using hspaApi2.Data.Repo;
 using hspaApi2.Interfaces;
+using WebApi.Data.Repo;
+using WebApi.Data.Repo;
+using WebApi.Interfaces;
 
 namespace hspaApi2.Data 
 {
@@ -10,20 +13,11 @@ namespace hspaApi2.Data
         {
             this.dc = dc;
         }
-        public ICityRepository CityRepository => 
-            new CityRepository(dc);
+        public IAgenceRepository AgenceRepository => 
+            new AgenceRepository(dc);
 
         public IUserRepository UserRepository => 
             new UserRepository(dc);
-
-        public IPropertyRepository PropertyRepository =>
-            new PropertyRepository(dc);
-
-        public IPropertyTypeRepository PropertyTypeRepository => 
-            new PropertyTypeRepository(dc);
-
-        public IFurnishingTypeRepository FurnishingTypeRepository => 
-            new FurnishingTypeRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

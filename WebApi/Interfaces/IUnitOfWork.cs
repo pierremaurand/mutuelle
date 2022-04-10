@@ -1,12 +1,11 @@
+using WebApi.Interfaces;
+
 namespace hspaApi2.Interfaces
 {
     public interface IUnitOfWork
     {
-         ICityRepository CityRepository {get; }
+         IAgenceRepository AgenceRepository {get; }
          IUserRepository UserRepository {get; }
-         IPropertyRepository PropertyRepository {get; }
-         IPropertyTypeRepository PropertyTypeRepository {get; }
-         IFurnishingTypeRepository FurnishingTypeRepository {get; }
          Task<bool> SaveAsync();
     }
 }

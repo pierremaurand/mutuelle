@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X1VV4VTyKpoaWGhdtgDlfyq+bT8mjkWbhmfFoeCGG2dg1uhNMR4KxGHbH1moGXiUiCkYUrn3eGU9XO6LQ8tbuA==",
+  "dgSpecHash": "GtNORCPozS/cYUcELdZWBagoUZU1hS/86BHxF+YAolhavSKuTfugNcahTpbwgrpHO8/YBLdNIjKoSWlOnjEv9g==",
   "success": true,
-  "projectFilePath": "D:\\Mes Projets\\asp.net\\hspaApi2\\hspaApi2.csproj",
+  "projectFilePath": "D:\\Mes Projets\\mutuelle\\WebApi\\hspaApi2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MHT\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\MHT\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

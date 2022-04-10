@@ -66,6 +66,24 @@ export class NavBarComponent implements OnInit {
           titre: 'Utilisateurs',
           icon: 'fas fa-users-cog',
           url: 'utilisateurs'
+        },
+        {
+          id: '62',
+          titre: 'Sexes',
+          icon: 'fas fa-cogs',
+          url: 'sexes'
+        },
+        {
+          id: '63',
+          titre: 'Agences',
+          icon: 'fas fa-cogs',
+          url: 'agences'
+        },
+        {
+          id: '64',
+          titre: 'Services',
+          icon: 'fas fa-cogs',
+          url: 'services'
         }
       ]
     }
