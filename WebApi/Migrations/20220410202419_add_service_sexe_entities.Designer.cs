@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hspaApi2.Data;
 
@@ -11,9 +12,10 @@ using hspaApi2.Data;
 namespace hspaApi2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220410202419_add_service_sexe_entities")]
+    partial class add_service_sexe_entities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,61 +86,6 @@ namespace hspaApi2.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Membre", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
-
-                    b.Property<int>("AgenceId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateAdhesion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EstActif")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nom")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Prenom")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ServiceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SexeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Telephone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AgenceId");
-
-                    b.HasIndex("ServiceId");
-
-                    b.HasIndex("SexeId");
-
-                    b.ToTable("Membres");
-                });
-
             modelBuilder.Entity("WebApi.Models.Service", b =>
                 {
                     b.Property<int?>("Id")
@@ -183,33 +130,6 @@ namespace hspaApi2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sexes");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Membre", b =>
-                {
-                    b.HasOne("hspaApi2.Models.Agence", "Agence")
-                        .WithMany()
-                        .HasForeignKey("AgenceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.Service", "Service")
-                        .WithMany()
-                        .HasForeignKey("ServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.Sexe", "Sexe")
-                        .WithMany()
-                        .HasForeignKey("SexeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Agence");
-
-                    b.Navigation("Service");
-
-                    b.Navigation("Sexe");
                 });
 #pragma warning restore 612, 618
         }

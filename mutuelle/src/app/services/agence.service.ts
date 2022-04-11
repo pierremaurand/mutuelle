@@ -20,8 +20,9 @@ export class AgenceService {
     return this.http.get<Agence>(this.baseUrl + '/agence/get/' + id.toString());
   }
 
-  save(agence: Agence): Observable<any> {
-    return this.http.post(this.baseUrl + '/agence/add', agence);
+  add(agence: Agence): Observable<any> {
+    console.log(agence);
+    return this.http.post(this.baseUrl + '/agence/add', agence,);
   }
 
   update(agence: Agence, id?: number): Observable<any> {

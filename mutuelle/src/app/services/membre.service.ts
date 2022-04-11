@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Membre } from '../model/membre';
 import { MembreInfos } from '../model/membreInfos';
 
 @Injectable({
@@ -6,17 +10,23 @@ import { MembreInfos } from '../model/membreInfos';
 })
 export class MembreService {
 
-  constructor() { }
+  baseUrl = environment.baseUrl;
 
-  getAll(): MembreInfos[]{
-    return [];
+  constructor(private http: HttpClient) { }
+
+  getAll(): Observable<Membre[]>{
+    return this.http.get<Membre[]>(this.baseUrl + '/membre/membres');
   }
 
-  getById() {
-
+  getById(id: number): Observable<MembreInfos> {
+    return this.http.get<MembreInfos>(this.baseUrl + '/membre/get/' + id.toString());
   }
 
-  save(membre: MembreInfos) {
+  add(membre: MembreInfos): Observable<any> {
+    return this.http.post(this.baseUrl + '/membre/add', membre);
+  }
 
+  update(membre: MembreInfos, id?: number): Observable<any> {
+    return this.http.put(this.baseUrl + '/membre/update/' + id?.toString(),membre);
   }
 }

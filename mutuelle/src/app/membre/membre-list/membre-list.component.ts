@@ -14,7 +14,11 @@ export class MembreListComponent implements OnInit {
   constructor(private membreService: MembreService) { }
 
   ngOnInit(): void {
-    this.listeMembres = this.membreService.getAll();
+    this.membreService.getAll().subscribe({
+      next:(data) => {
+        this.listeMembres = data;
+      }
+    });
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sexe } from 'src/app/model/sexe';
+import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-sexe-list',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SexeListComponent implements OnInit {
 
-  constructor() { }
+  sexes: Sexe[] = [];
+
+  constructor(private sexeService: SexeService) { }
 
   ngOnInit(): void {
+    this.sexeService.getAll().subscribe({
+      next:(data) => {
+        this.sexes = data;
+        console.log(data);
+      },
+      error:(error) => {
+        console.log("Httperror:");
+        console.log(error);
+      }
+    });
   }
-
 }

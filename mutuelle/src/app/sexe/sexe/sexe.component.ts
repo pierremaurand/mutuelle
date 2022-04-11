@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Sexe } from 'src/app/model/sexe';
 
 @Component({
   selector: 'app-sexe',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SexeComponent implements OnInit {
 
-  constructor() { }
+  @Input() sexe: Sexe = {};
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  update() {
+    this.router.navigate(['add-service',this.sexe.id]);
+  }
 }

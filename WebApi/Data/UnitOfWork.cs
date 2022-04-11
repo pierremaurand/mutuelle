@@ -19,6 +19,15 @@ namespace hspaApi2.Data
         public IUserRepository UserRepository => 
             new UserRepository(dc);
 
+        public IServiceRepository ServiceRepository => 
+            new ServiceRepository(dc);
+
+        public ISexeRepository SexeRepository => 
+            new SexeRepository(dc);
+
+        public IMembreRepository MembreRepository => 
+            new MembreRepository(dc);
+
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;
