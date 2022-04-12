@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hspaApi2.Data;
 
@@ -11,9 +12,10 @@ using hspaApi2.Data;
 namespace hspaApi2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220411073130_remove_date_adhesion_on_membre")]
+    partial class remove_date_adhesion_on_membre
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +31,6 @@ namespace hspaApi2.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
-
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
 
                     b.Property<int?>("LastUpdatedBy")
                         .HasColumnType("int");
@@ -55,9 +54,6 @@ namespace hspaApi2.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
-
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -99,9 +95,6 @@ namespace hspaApi2.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
                     b.Property<int>("AgenceId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -153,9 +146,6 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
-
                     b.Property<int?>("LastUpdatedBy")
                         .HasColumnType("int");
 
@@ -178,9 +168,6 @@ namespace hspaApi2.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
-
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
 
                     b.Property<int?>("LastUpdatedBy")
                         .HasColumnType("int");

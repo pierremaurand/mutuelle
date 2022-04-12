@@ -1,13 +1,22 @@
-export interface Membre {
+import { IMembreBase } from "./imembrebase";
+
+
+export class Membre implements IMembreBase {
   id?: number;
   nom?: string;
   prenom?: string;
-  sexe?: string;
-  dateAdhesion?: Date;
+  sexeId?: number;
   photo?: string;
-  agence?: string;
+  agenceId?: number;
+  serviceId?: number;
   estActif?: boolean;
-  cotisations?: number;
-  credits?: number;
-  avances?: number;
+  telephone?: string;
+  email?: string;
+
+  sexe?: string;
+  agence?: string;
+  service?: string;
+  cotisations?: number = 0;
+  credits?: number = 0;
+  avances?: number = 0;
 }

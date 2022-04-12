@@ -9,7 +9,6 @@ namespace WebApi.Models
         public string? Prenom { get; set; }
         public int SexeId { get; set; }
         public Sexe? Sexe { get; set; }
-        public DateTime DateAdhesion { get; set; }
         public string? Photo { get; set; }
         public int AgenceId { get; set; }
         public Agence? Agence { get; set; }

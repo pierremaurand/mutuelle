@@ -45,6 +45,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add(SexeDto sexeDto)
         {
             var sexe = mapper.Map<Sexe>(sexeDto);
+            sexe.CreatedBy = 1;
             sexe.LastUpdatedBy = 1;
             sexe.LastUpdatedOn = DateTime.Now;
             uow.SexeRepository.Add(sexe);

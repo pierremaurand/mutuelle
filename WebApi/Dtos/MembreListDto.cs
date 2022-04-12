@@ -6,7 +6,6 @@ namespace WebApi.Dtos
         public string? Nom { get; set; }
         public string? Prenom { get; set; }
         public string? Sexe { get; set; }
-        public DateTime DateAdhesion { get; set; }
         public string? Photo { get; set; }
         public string? Agence { get; set; }
         public string? Service { get; set; }

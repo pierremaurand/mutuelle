@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Membre } from 'src/app/model/membre';
+import { Membre } from "src/app/model/Membre";
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class MembreListComponent implements OnInit {
     this.membreService.getAll().subscribe({
       next:(data) => {
         this.listeMembres = data;
+        console.log(data);
       }
     });
   }

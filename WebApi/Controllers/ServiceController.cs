@@ -45,6 +45,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add(ServiceDto serviceDto)
         {
             var service = mapper.Map<Service>(serviceDto);
+            service.CreatedBy = 1;
             service.LastUpdatedBy = 1;
             service.LastUpdatedOn = DateTime.Now;
             uow.ServiceRepository.Add(service);

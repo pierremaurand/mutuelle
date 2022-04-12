@@ -11,11 +11,13 @@ namespace WebApi.Controllers
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
+        private readonly ILocalPhotoService localPhotoService;
 
-        public MembreController(IMapper mapper, IUnitOfWork uow)
+        public MembreController(IMapper mapper, IUnitOfWork uow, ILocalPhotoService localPhotoService = null)
         {
             this.mapper = mapper;
             this.uow = uow;
+            this.localPhotoService = localPhotoService;
         }
 
         [HttpGet("membres")]
@@ -46,6 +48,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add(MembreDetailDto membreDto)
         {
             var membre = mapper.Map<Membre>(membreDto);
+            membre.CreatedBy = 1;
             membre.LastUpdatedBy = 1;
             membre.LastUpdatedOn = DateTime.Now;
             uow.MembreRepository.Add(membre);
@@ -77,6 +80,15 @@ namespace WebApi.Controllers
             uow.MembreRepository.Delete(id);
             await uow.SaveAsync();
             return Ok(id);
+        }
+
+        [HttpPost("add/photo")]
+        public async Task<IActionResult> addPhoto(IFormFile file) {
+            var result = await localPhotoService.UploadPhotoAsync(file);
+            if(result != null && result.Error != null) 
+                return BadRequest(result.Error.Message);
+
+            return Ok(result);
         }
     }
 }

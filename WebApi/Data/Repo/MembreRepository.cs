@@ -46,7 +46,11 @@ namespace WebApi.Data.Repo
         public async Task<IEnumerable<Membre>?> GetAllAsync()
         {
             if(dc.Membres is not null) {
-                var membres = await dc.Membres.ToListAsync();
+                var membres = await dc.Membres
+                .Include(m => m.Agence)
+                .Include(m => m.Service)
+                .Include(m => m.Sexe)
+                .ToListAsync();
                 if(membres is not null) {
                     return membres;
                 }

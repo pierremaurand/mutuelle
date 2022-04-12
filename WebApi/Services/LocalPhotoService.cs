@@ -38,7 +38,7 @@ namespace hspaApi2.Services
                     var absImagePath = Path.Combine(wwwrootpath, relativeImagePath);
 
                     using var image = await Image.LoadAsync(photo.OpenReadStream());
-                    image.Mutate(x => x.Resize(800, 500));
+                    image.Mutate(x => x.Resize(200, 200));
                     await image.SaveAsync(absImagePath);
                     uploadResult.ImageUrl = imageWebPath + imageName;
                     uploadResult.PublicId = publicId;

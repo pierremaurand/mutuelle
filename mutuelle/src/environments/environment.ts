@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: "http://localhost:5215/api",
-  imagesUrl: "http://localhost:5215/assets/images/"
+  imagesUrl: "http://localhost:5215/"
 };
 
 /*

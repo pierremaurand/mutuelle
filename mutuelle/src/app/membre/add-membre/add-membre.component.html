@@ -11,28 +11,31 @@
               <div class="row">
                 <div class="col-6 p-2 text-center">
                   <div class="image-container m-auto shadow">
-                    <img [src]="membre.photo" alt="">
+                    <label for="photo">
+                      <img src="{{photo}}" alt="Photo membre">
+                    </label>
                   </div>
-                  <input type="file" name="" id="">
+                  <input type="file" name="photo" id="photo" (change)="fileBrowseHandler($event)">
                 </div>
                 <div class="col-6">
                   <div class="mb-1">
                     <label for="nom" class="form-label">Nom</label>
                   <input type="text" id="nom" class="form-control" formControlName="nom"
                     [ngClass]="{ 'is-invalid': nom.invalid && (nom.touched || membreSubmitted)}"
-                    [value]="membre.nom">
+                    [(ngModel)]="membre.nom">
                   </div>
                   <div class="mb-1">
                     <label for="prenom" class="form-label">Prénom</label>
                     <input type="text" id="prenom" class="form-control" formControlName="prenom"
                       [ngClass]="{ 'is-invalid': prenom.invalid && (prenom.touched || membreSubmitted)}"
-                      [value]="membre.prenom">
+                      [(ngModel)]="membre.prenom">
                   </div>
                   <div class="mb-1">
                     <label for="sexe" class="form-label">Sexe</label>
                     <select class="form-control" formControlName="sexe" id="sexe"
+                      (change)="changerPhotoProfil()"
                       [ngClass]="{ 'is-invalid': sexe.invalid && (sexe.touched || membreSubmitted)}"
-                      [value]="membre.sexeId">
+                      [(ngModel)]="membre.sexeId">
                       <option value="">--Selectionner un sexe--</option>
                       <option *ngFor="let item of sexes" value="{{item.id}}">{{item.nom}}</option>
                     </select>
@@ -46,23 +49,23 @@
                   <label for="email" class="form-label">Email</label>
                   <input type="email" id="email" class="form-control" formControlName="email"
                     [ngClass]="{ 'is-invalid': email.invalid && (email.touched || membreSubmitted)}"
-                    [value]="membre.email">
+                    [(ngModel)]="membre.email">
                 </div>
                 <div class="col-6">
                   <label for="telephone" class="form-label">Téléphone</label>
                   <input type="tel" id="telephone" class="form-control" formControlName="telephone"
                     [ngClass]="{ 'is-invalid': telephone.invalid && (telephone.touched || membreSubmitted)}"
-                    [value]="membre.telephone">
+                    [(ngModel)]="membre.telephone">
                 </div>
               </div>
             </div>
-            <div class="mb-1">
+            <div class="mb-3">
               <div class="row">
                 <div class="col-6">
                   <label for="agence" class="form-label">Agence</label>
                     <select class="form-control" formControlName="agence" id="agence"
                       [ngClass]="{ 'is-invalid': agence.invalid && (agence.touched || membreSubmitted)}"
-                      [value]="membre.agenceId">
+                      [(ngModel)]="membre.agenceId">
                       <option value="">--Selectionner une agence--</option>
                       <option *ngFor="let item of agences" value="{{item.id}}">{{item.nom}}</option>
                     </select>
@@ -71,20 +74,10 @@
                   <label for="service" class="form-label">Service</label>
                   <select class="form-control" formControlName="service" id="service"
                     [ngClass]="{ 'is-invalid': service.invalid && (service.touched || membreSubmitted)}"
-                    [value]="membre.serviceId">
+                    [(ngModel)]="membre.serviceId">
                     <option value="">--Selectionner un service--</option>
                     <option *ngFor="let item of services" value="{{item.id}}">{{item.nom}}</option>
                   </select>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="row">
-                <div class="col-6">
-                  <label for="dateAdhesion" class="form-label">Date d'adhésion</label>
-                  <input type="date" id="dateAdhesion" class="form-control" formControlName="dateAdhesion"
-                    [ngClass]="{ 'is-invalid': dateAdhesion.invalid && (dateAdhesion.touched || membreSubmitted)}"
-                    [value]="membre.dateAdhesion">
                 </div>
               </div>
             </div>
@@ -93,9 +86,13 @@
                 <i class="fa fa-save"></i>&nbsp;
                 Enregistrer
               </button>
-              <button type="reset" class="btn btn-danger">
+              <button type="reset" class="btn btn-secondary me-2">
                 <i class="fa fa-refresh"></i>&nbsp;
                 Recommencer
+              </button>
+              <button type="button" class="btn btn-danger" routerLink="/membres">
+                <i class="fa fa-cancel"></i>&nbsp;
+                Annuler
               </button>
             </div>
           </div>

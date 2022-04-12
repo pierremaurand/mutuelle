@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qmmnHrbCo0G9qJIC7YlBxLBrqk7sx6KucdhyoSAZmwA=",
+  "Hash": "ePyDBmj4oqTt45r2corTNWsGjPzcHDp9djN5q6+UMPo=",
   "Source": "hspaApi2",
   "BasePath": "_content/hspaApi2",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\rpxqvhxl.tdr.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/rpxqvhxl.tdr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\rpxqvhxl.tdr.png"
+    }
+  ]
 }

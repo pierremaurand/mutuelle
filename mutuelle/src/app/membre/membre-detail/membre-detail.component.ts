@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Membre } from 'src/app/model/membre';
-import { MembreInfos } from 'src/app/model/membreInfos';
+import { Membre } from "src/app/model/Membre";
 
 @Component({
   selector: 'app-membre-detail',
@@ -11,7 +10,7 @@ import { MembreInfos } from 'src/app/model/membreInfos';
 export class MembreDetailComponent implements OnInit {
 
   membreId?: number;
-  membre: MembreInfos = {};
+  membre: Membre = {};
 
   constructor(private route: ActivatedRoute) { }
 

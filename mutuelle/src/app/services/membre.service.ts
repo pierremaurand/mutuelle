@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Membre } from '../model/membre';
-import { MembreInfos } from '../model/membreInfos';
+import { Membre } from "../model/Membre";
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +17,21 @@ export class MembreService {
     return this.http.get<Membre[]>(this.baseUrl + '/membre/membres');
   }
 
-  getById(id: number): Observable<MembreInfos> {
-    return this.http.get<MembreInfos>(this.baseUrl + '/membre/get/' + id.toString());
+  getById(id: number): Observable<Membre> {
+    return this.http.get<Membre>(this.baseUrl + '/membre/get/' + id.toString());
   }
 
-  add(membre: MembreInfos): Observable<any> {
+  add(membre: Membre): Observable<any> {
     return this.http.post(this.baseUrl + '/membre/add', membre);
   }
 
-  update(membre: MembreInfos, id?: number): Observable<any> {
+  update(membre: Membre, id?: number): Observable<any> {
     return this.http.put(this.baseUrl + '/membre/update/' + id?.toString(),membre);
+  }
+
+  addPhoto(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http.post(this.baseUrl + '/membre/add/photo', formData);
   }
 }

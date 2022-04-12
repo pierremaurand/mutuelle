@@ -46,6 +46,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add(AgenceDto agenceDto)
         {
             var agence = mapper.Map<Agence>(agenceDto);
+            agence.CreatedBy = 1;
             agence.LastUpdatedBy = 1;
             agence.LastUpdatedOn = DateTime.Now;
             uow.AgenceRepository.Add(agence);

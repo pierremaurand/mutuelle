@@ -1,9 +1,8 @@
-export interface MembreInfos {
+export interface IMembreBase {
   id?: number;
   nom?: string;
   prenom?: string;
   sexeId?: number;
-  dateAdhesion?: Date;
   photo?: string;
   agenceId?: number;
   serviceId?: number;
