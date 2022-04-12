@@ -1,8 +1,7 @@
-using hspaApi2.Models;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Models;
 
-namespace hspaApi2.Data
+namespace WebApi.Data
 {
     public class DataContext : DbContext
     {
@@ -12,6 +11,7 @@ namespace hspaApi2.Data
         public DbSet<Service>? Services { get; set; }
         public DbSet<Sexe>? Sexes { get; set; }
         public DbSet<Membre>? Membres { get; set; }
+        public DbSet<Parametre>? Parametres { get; set; }
         public DbSet<User>? Users { get; set; }
     }
 }

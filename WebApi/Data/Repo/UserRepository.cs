@@ -1,10 +1,10 @@
 using System.Security.Cryptography;
-using hspaApi2.Dtos;
-using hspaApi2.Interfaces;
-using hspaApi2.Models;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Dtos;
+using WebApi.Interfaces;
+using WebApi.Models;
 
-namespace hspaApi2.Data.Repo
+namespace WebApi.Data.Repo
 {
     public class UserRepository : IUserRepository
     {

@@ -1,8 +1,7 @@
 using AutoMapper;
-using hspaApi2.Controllers;
-using hspaApi2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dtos;
+using WebApi.Interfaces;
 using WebApi.Models;
 
 namespace WebApi.Controllers

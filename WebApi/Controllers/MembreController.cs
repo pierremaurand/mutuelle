@@ -1,8 +1,7 @@
 using AutoMapper;
-using hspaApi2.Controllers;
-using hspaApi2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dtos;
+using WebApi.Interfaces;
 using WebApi.Models;
 
 namespace WebApi.Controllers
@@ -36,7 +35,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var membre = await uow.MembreRepository.FindByIdAsync(id);
-            var membreDto = mapper.Map<MembreDetailDto>(membre);
+            var membreDto = mapper.Map<MembreListDto>(membre);
             if (membreDto is null)
             {
                 return NotFound();

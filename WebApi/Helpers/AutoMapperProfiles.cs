@@ -1,9 +1,8 @@
 using AutoMapper;
-using hspaApi2.Models;
 using WebApi.Dtos;
 using WebApi.Models;
 
-namespace hspaApi2.Helpers
+namespace WebApi.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
@@ -16,6 +15,8 @@ namespace hspaApi2.Helpers
             CreateMap<Sexe, SexeDto>().ReverseMap();
             
             CreateMap<Membre, MembreDetailDto>().ReverseMap();
+
+            CreateMap<Parametre, ParametreDto>().ReverseMap();
 
             CreateMap<Membre, MembreListDto>()
                 .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))

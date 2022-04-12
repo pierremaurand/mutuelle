@@ -1,13 +1,13 @@
 using System.Text;
-using hspaApi2.Data;
-using hspaApi2.Helpers;
-using hspaApi2.Interfaces;
-using hspaApi2.Middlewares;
-using hspaApi2.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using WebApi.Data;
+using WebApi.Helpers;
+using WebApi.Interfaces;
+using WebApi.Middlewares;
+using WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 using System.Net;
-using hspaApi2.Errors;
+using WebApi.Errors;
 
-namespace hspaApi2.Middlewares
+namespace WebApi.Middlewares
 {
     public class ExceptionMiddleware
     {

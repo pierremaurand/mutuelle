@@ -1,16 +1,16 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using hspaApi2.Dtos;
-using hspaApi2.Errors;
-using hspaApi2.Extensions;
-using hspaApi2.Interfaces;
-using hspaApi2.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using WebApi.Dtos;
+using WebApi.Errors;
+using WebApi.Extensions;
+using WebApi.Interfaces;
+using WebApi.Models;
 
-namespace hspaApi2.Controllers
+namespace WebApi.Controllers
 {
     public class AccountController : BaseController
     {

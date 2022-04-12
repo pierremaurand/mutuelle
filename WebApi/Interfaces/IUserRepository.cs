@@ -1,7 +1,8 @@
-using hspaApi2.Dtos;
-using hspaApi2.Models;
 
-namespace hspaApi2.Interfaces
+using WebApi.Dtos;
+using WebApi.Models;
+
+namespace WebApi.Interfaces
 {
     public interface IUserRepository
     {

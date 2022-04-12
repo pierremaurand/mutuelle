@@ -1,10 +1,7 @@
-using hspaApi2.Data.Repo;
-using hspaApi2.Interfaces;
-using WebApi.Data.Repo;
 using WebApi.Data.Repo;
 using WebApi.Interfaces;
 
-namespace hspaApi2.Data 
+namespace WebApi.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -27,6 +24,9 @@ namespace hspaApi2.Data
 
         public IMembreRepository MembreRepository => 
             new MembreRepository(dc);
+
+        public IParametreRepository ParametreRepository => 
+            new ParametreRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

@@ -1,11 +1,9 @@
-using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
-using hspaApi2.Interfaces;
-using hspaApi2.Models;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
+using WebApi.Interfaces;
+using WebApi.Models;
 
-namespace hspaApi2.Services
+namespace WebApi.Services
 {
     public class LocalPhotoService : ILocalPhotoService
     {

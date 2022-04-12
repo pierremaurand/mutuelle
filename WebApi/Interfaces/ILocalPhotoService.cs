@@ -1,6 +1,6 @@
-using hspaApi2.Models;
+using WebApi.Models;
 
-namespace hspaApi2.Interfaces
+namespace WebApi.Interfaces
 {
     public interface ILocalPhotoService
     {

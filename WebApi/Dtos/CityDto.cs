@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace hspaApi2.Dtos
+namespace WebApi.Dtos
 {
     public class CityDto
     {

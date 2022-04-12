@@ -1,6 +1,6 @@
 using System;
 
-namespace hspaApi2.Models
+namespace WebApi.Models
 {
     public class BaseEntity
     {

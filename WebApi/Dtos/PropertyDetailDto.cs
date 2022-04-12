@@ -1,7 +1,4 @@
-using System.Collections;
-using hspaApi2.Models;
-
-namespace hspaApi2.Dtos
+namespace WebApi.Dtos
 {
     public class PropertyDetailDto : PropertyListDto
     {

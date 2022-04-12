@@ -1,7 +1,6 @@
-using hspaApi2.Data;
-using hspaApi2.Models;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
+using WebApi.Models;
 
 namespace WebApi.Data.Repo
 {

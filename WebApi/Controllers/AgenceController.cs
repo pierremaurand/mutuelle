@@ -1,14 +1,11 @@
 using AutoMapper;
-using hspaApi2.Controllers;
-using hspaApi2.Interfaces;
-using hspaApi2.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dtos;
+using WebApi.Interfaces;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
-    [AllowAnonymous]
     public class AgenceController : BaseController
     {
         private readonly IUnitOfWork uow;

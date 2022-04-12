@@ -1,10 +1,9 @@
 using AutoMapper;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using hspaApi2.Interfaces;
-using hspaApi2.Models;
+using WebApi.Interfaces;
 
-namespace hspaApi2.Services
+namespace WebApi.Services
 {
     public class PhotoService : IPhotoService
     {

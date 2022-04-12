@@ -1,4 +1,4 @@
-namespace hspaApi2.Dtos
+namespace WebApi.Dtos
 {
     public class PropertyListDto
     {

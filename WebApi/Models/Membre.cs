@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using hspaApi2.Models;
-
 namespace WebApi.Models
 {
     public class Membre : BaseEntity

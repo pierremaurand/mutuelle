@@ -1,4 +1,3 @@
-using hspaApi2.Data;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
 using WebApi.Models;
@@ -34,7 +33,12 @@ namespace WebApi.Data.Repo
         public async Task<Membre?> FindByIdAsync(int id)
         {
             if(dc.Membres is not null) {
-                var membre = await dc.Membres.FindAsync(id);
+                var membre = await dc.Membres
+                .Include(m => m.Agence)
+                .Include(m => m.Service)
+                .Include(m => m.Sexe)
+                .Where(m => m.Id == id)
+                .FirstAsync();
                 if(membre is not null) {
                     return membre;
                 }

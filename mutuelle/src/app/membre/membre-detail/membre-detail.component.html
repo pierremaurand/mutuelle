@@ -1,30 +1,242 @@
 <div class="container" style="margin-top: 70px; width: 1080px;">
   <div class="row">
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      <div class="card m-auto">
+
+    <!--Infos membre-->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow">
         <div class="card-header">
-          <h3>Infos membre</h3>
+          <h3>
+            <i class="fa fa-user"></i>&nbsp;
+            Infos membre
+          </h3>
         </div>
         <div class="card-body">
-          Informations du membre
+          <div class="row">
+            <div class="col-md-5">
+              <img src="{{photo}}" alt="photo membre" class="img-responsive" style="width: 100%;">
+            </div>
+            <div class="col-md-7">
+              <table class="table table-borderless table-hover table-responsive">
+                <tbody>
+                  <tr class="align-middle">
+                    <th>Nom</th>
+                    <td>{{membre.nom | uppercase}}</td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Prénom</th>
+                    <td>{{membre.prenom | uppercase}}</td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Genre</th>
+                    <td>{{membre.sexe | uppercase}}</td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Agence</th>
+                    <td>{{membre.agence | uppercase}}</td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Service</th>
+                    <td>{{membre.service | uppercase}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-success">
+                <i class="fa fa-check"></i>&nbsp;
+                Activer
+              </button>
+              <button class="btn btn-primary">
+                <i class="fa fa-user-plus"></i>&nbsp;
+                Adhérer
+              </button>
+              <button class="btn btn-warning">
+                <i class="fa fa-edit"></i>&nbsp;
+                Modifier
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      <div class="card m-auto">
+    <!--End Infos membres-->
+
+    <!--Infos cotisations-->
+    <div class="col-md-6">
+      <div class="card shadow">
         <div class="card-header">
-          <h3>Infos cotisations du membre</h3>
+          <h3>
+            <i class="fa fa-sack-dollar"></i>&nbsp;
+            Infos cotisations
+          </h3>
         </div>
         <div class="card-body">
-          Informations des contisations du membre
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <h2 class="text-center">
+                <i class="fa fa-coins text-success"></i>&nbsp;
+                {{cotisations | number}}&nbsp;
+                FCFA
+              </h2>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <table class="table table-borderless table-hover">
+                <tbody>
+                  <tr>
+                    <th>Nombre de cotisations</th>
+                    <td>{{mois}}</td>
+                  </tr>
+                  <tr>
+                    <th>Date de la dernière cotisation</th>
+                    <td>{{lastCotisationDate | date}}</td>
+                  </tr>
+                  <tr>
+                    <th>Montant de la dernière cotisation</th>
+                    <td>{{lastCotisation | number}}&nbsp;FCFA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-primary">
+                <i class="fa fa-rectangle-list"></i>&nbsp;
+                Voir la liste
+              </button>
+              <button class="btn btn-success">
+                <i class="fa fa-plus"></i>&nbsp;
+                Ajouter une cotisation
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      details avances
+    <!--End Infos cotisations-->
+
+    <!--Infos avances-->
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header">
+          <h3>
+            <i class="fa fa-hand-holding-dollar"></i>&nbsp;
+            Infos avances
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <h2 class="text-center">
+                <i class="fa fa-coins text-success"></i>&nbsp;
+                {{cotisations | number}}&nbsp;
+                FCFA
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover table-borderless">
+                <tbody>
+                  <tr class="align-middle">
+                    <th>Echéances non remboursées</th>
+                    <td>{{mois}}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="fa fa-rectangle-list"></i>&nbsp;
+                        Voir la liste
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Echéances remboursées</th>
+                    <td>{{mois}}</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm">
+                        <i class="fa fa-rectangle-list"></i>&nbsp;
+                        Voir la liste
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-success">
+                <i class="fa fa-plus"></i>&nbsp;
+                Ajouter une avance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      details crédits
+    <!--End Infos avances-->
+
+    <!--Infos crédits-->
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header">
+          <h3>
+            <i class="fa fa-money-check"></i>&nbsp;
+            Infos credits
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <h2 class="text-center">
+                <i class="fa fa-coins text-success"></i>&nbsp;
+                {{cotisations | number}}&nbsp;
+                FCFA
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover table-borderless">
+                <tbody>
+                  <tr class="align-middle">
+                    <th>Echéances non remboursées</th>
+                    <td>{{mois}}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="fa fa-rectangle-list"></i>&nbsp;
+                        Voir la liste
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="align-middle">
+                    <th>Echéances remboursées</th>
+                    <td>{{mois}}</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm">
+                        <i class="fa fa-rectangle-list"></i>&nbsp;
+                        Voir la liste
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-success">
+                <i class="fa fa-plus"></i>&nbsp;
+                Ajouter un crédit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!--End Infos crédits-->
   </div>
 </div>

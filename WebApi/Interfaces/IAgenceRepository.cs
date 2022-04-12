@@ -1,4 +1,4 @@
-using hspaApi2.Models;
+using WebApi.Models;
 
 namespace WebApi.Interfaces
 {

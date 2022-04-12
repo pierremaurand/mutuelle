@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace hspaApi2.Models
+namespace WebApi.Models
 {
     public class User: BaseEntity
     {

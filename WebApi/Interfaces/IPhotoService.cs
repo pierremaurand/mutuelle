@@ -1,6 +1,6 @@
 using CloudinaryDotNet.Actions;
 
-namespace hspaApi2.Interfaces
+namespace WebApi.Interfaces
 {
     public interface IPhotoService
     {

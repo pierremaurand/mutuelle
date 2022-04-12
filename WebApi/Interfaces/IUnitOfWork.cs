@@ -1,6 +1,4 @@
-using WebApi.Interfaces;
-
-namespace hspaApi2.Interfaces
+namespace WebApi.Interfaces
 {
     public interface IUnitOfWork
     {
@@ -8,6 +6,7 @@ namespace hspaApi2.Interfaces
          IServiceRepository ServiceRepository {get; }
          ISexeRepository SexeRepository {get; }
          IMembreRepository MembreRepository {get; }
+         IParametreRepository ParametreRepository {get; }
          IUserRepository UserRepository {get; }
          Task<bool> SaveAsync();
     }

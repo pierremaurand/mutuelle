@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace hspaApi2.Errors
+namespace WebApi.Errors
 {
     public class ApiError
     {

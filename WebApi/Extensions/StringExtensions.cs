@@ -1,4 +1,4 @@
-namespace hspaApi2.Extensions
+namespace WebApi.Extensions
 {
     public static class StringExtensions
     {
