@@ -61,6 +61,10 @@ import { AddServiceComponent } from './service/add-service/add-service.component
 import { ServiceComponent } from './service/service/service.component';
 import { ServiceDetailComponent } from './service/service-detail/service-detail.component';
 import { ServiceListComponent } from './service/service-list/service-list.component';
+import { ParametreComponent } from './parametre/parametre/parametre.component';
+import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
+import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
+import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +113,10 @@ import { ServiceListComponent } from './service/service-list/service-list.compon
     ServiceComponent,
     ServiceDetailComponent,
     ServiceListComponent,
+    ParametreComponent,
+    ParametreDetailComponent,
+    ParametreListComponent,
+    AddParametreComponent,
   ],
   imports: [
     BrowserModule,

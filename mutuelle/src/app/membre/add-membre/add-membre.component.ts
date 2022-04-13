@@ -50,8 +50,12 @@ export class AddMembreComponent implements OnInit {
       this.membreService.getById(this.membreId).subscribe({
         next:(data) => {
           this.membre = data;
+          console.log(data);
+          this.photo = this.baseUrl + this.membre.photo;
         }
       });
+    } else {
+      this.photo = this.baseUrl + this.membre.photo;
     }
 
     this.agenceService.getAll().subscribe({
@@ -72,7 +76,6 @@ export class AddMembreComponent implements OnInit {
       }
     });
 
-    this.photo = this.baseUrl + this.membre.photo;
     this.createMembreForm();
   }
 

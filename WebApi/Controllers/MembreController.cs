@@ -12,7 +12,7 @@ namespace WebApi.Controllers
         private readonly IMapper mapper;
         private readonly ILocalPhotoService localPhotoService;
 
-        public MembreController(IMapper mapper, IUnitOfWork uow, ILocalPhotoService localPhotoService = null)
+        public MembreController(IMapper mapper, IUnitOfWork uow, ILocalPhotoService localPhotoService)
         {
             this.mapper = mapper;
             this.uow = uow;
@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var membres = await uow.MembreRepository.GetAllAsync();
-            var membresDto = mapper.Map<IEnumerable<MembreListDto>>(membres);
+            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
             if (membresDto is null)
             {
                 return NotFound();
@@ -35,7 +35,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var membre = await uow.MembreRepository.FindByIdAsync(id);
-            var membreDto = mapper.Map<MembreListDto>(membre);
+            var membreDto = mapper.Map<MembreDto>(membre);
             if (membreDto is null)
             {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(MembreDetailDto membreDto)
+        public async Task<IActionResult> Add(MembreDto membreDto)
         {
             var membre = mapper.Map<Membre>(membreDto);
             membre.CreatedBy = 1;
@@ -56,7 +56,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id, MembreDetailDto membreDto)
+        public async Task<IActionResult> Update(int id, MembreDto membreDto)
         {
             if (id != membreDto.Id)
                 return BadRequest("Update not allowed");

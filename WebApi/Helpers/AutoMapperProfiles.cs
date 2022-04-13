@@ -13,15 +13,15 @@ namespace WebApi.Helpers
             CreateMap<Service, ServiceDto>().ReverseMap();
 
             CreateMap<Sexe, SexeDto>().ReverseMap();
-            
-            CreateMap<Membre, MembreDetailDto>().ReverseMap();
 
             CreateMap<Parametre, ParametreDto>().ReverseMap();
 
-            CreateMap<Membre, MembreListDto>()
+            CreateMap<Membre, MembreDto>()
                 .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
                 .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom))
                 .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom));
+
+            CreateMap<MembreDto, Membre>();
         }
     }
 }

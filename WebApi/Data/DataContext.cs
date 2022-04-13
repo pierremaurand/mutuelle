@@ -12,6 +12,12 @@ namespace WebApi.Data
         public DbSet<Sexe>? Sexes { get; set; }
         public DbSet<Membre>? Membres { get; set; }
         public DbSet<Parametre>? Parametres { get; set; }
+        public DbSet<Compte>? Comptes { get; set; }
+        public DbSet<Gabarie>? Gabaries { get; set; }
+        public DbSet<Cotisation>? Cotisations { get; set; }
+        public DbSet<Credit>? Credits { get; set; }
+        public DbSet<Avance>? Avances { get; set; }
+        public DbSet<MvtCompte>? MvtComptes { get; set; }
         public DbSet<User>? Users { get; set; }
     }
 }

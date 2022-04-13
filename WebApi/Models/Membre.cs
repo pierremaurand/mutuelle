@@ -2,8 +2,8 @@ namespace WebApi.Models
 {
     public class Membre : BaseEntity
     {
-        public string? Nom { get; set; }
-        public string? Prenom { get; set; }
+        public string Nom { get; set; } = string.Empty;
+        public string Prenom { get; set; } = string.Empty;
         public int SexeId { get; set; }
         public Sexe? Sexe { get; set; }
         public string? Photo { get; set; }
@@ -11,8 +11,8 @@ namespace WebApi.Models
         public Agence? Agence { get; set; }
         public int ServiceId { get; set; }
         public Service? Service { get; set; }
-        public Boolean EstActif { get; set; }
-        public string? Telephone { get; set; }
-        public string? Email { get; set; }
+        public bool EstActif { get; set; }
+        public string Telephone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
     }
 }

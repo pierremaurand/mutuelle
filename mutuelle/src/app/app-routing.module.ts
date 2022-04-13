@@ -18,6 +18,9 @@ import { StatistiqueComponent } from './dashboard/statistique/statistique.compon
 import { AddMembreComponent } from './membre/add-membre/add-membre.component';
 import { MembreDetailComponent } from './membre/membre-detail/membre-detail.component';
 import { MembreListComponent } from './membre/membre-list/membre-list.component';
+import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
+import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
+import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
@@ -70,6 +73,10 @@ const routes: Routes = [
   {path:'services', component: ServiceListComponent},
   {path:'service-detail/:id', component: ServiceDetailComponent},
   {path:'add-service/:id', component: AddServiceComponent},
+
+  {path:'parametres', component: ParametreListComponent},
+  {path:'parametre-detail/:id', component: ParametreDetailComponent},
+  {path:'add-parametre/:id', component: AddParametreComponent},
 
   {path:'rent-property', component: PropertyListComponent},
   {path:'add-property', component: AddPropertyComponent},
