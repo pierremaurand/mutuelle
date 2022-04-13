@@ -28,6 +28,30 @@ namespace WebApi.Data
         public IParametreRepository ParametreRepository => 
             new ParametreRepository(dc);
 
+        public IAdhesionRepository AdhesionRepository => 
+            new AdhesionRepository(dc);
+
+        public IAvanceRepository AvanceRepository => 
+            new AvanceRepository(dc);
+
+        public ICompteRepository CompteRepository => 
+            new CompteRepository(dc);
+
+        public ICreditRepository CreditRepository => 
+            new CreditRepository(dc);
+
+        public IDemandeAvanceRepository DemandeAvanceRepository => 
+            new DemandeAvanceRepository(dc);
+
+        public IDemandeCreditRepository DemandeCreditRepository => 
+            new DemandeCreditRepository(dc);
+
+        public IGabarieRepository GabarieRepository => 
+            new GabarieRepository(dc);
+
+        public ICotisationRepository CotisationRepository => 
+            new CotisationRepository(dc);
+
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;

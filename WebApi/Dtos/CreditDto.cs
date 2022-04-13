@@ -1,13 +1,12 @@
-namespace WebApi.Models
+namespace WebApi.Dtos
 {
-    public class Credit : BaseEntity
+    public class CreditDto
     {
+        public int Id { get; set; }
         public DateTime DateDebut { get; set; }
         public DateTime DateFin { get; set; }
         public decimal Montant { get; set; }
         public decimal Interets { get; set; }
         public int DemandeCreditId { get; set; }
-        public DemandeCredit? DemandeCredit { get; set; }
-        public ICollection<EcheanceCredit>? EcheanceCredits { get; set; }
     }
 }

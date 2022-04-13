@@ -1,12 +1,11 @@
-namespace WebApi.Models
+namespace WebApi.Dtos
 {
-    public class Avance : BaseEntity
+    public class AvanceDto
     {
+        public int Id { get; set; }
         public DateTime DateDebut { get; set; }
         public DateTime DateFin { get; set; }
         public decimal Montant { get; set; }
         public int DemandeAvanceId { get; set; }
-        public DemandeAvance? DemandeAvance { get; set; }
-        public ICollection<EcheanceAvance>? EcheanceAvances { get; set; }
     }
 }
