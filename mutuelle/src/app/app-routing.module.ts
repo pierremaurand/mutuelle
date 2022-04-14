@@ -7,6 +7,8 @@ import { AgenceListComponent } from './agence/agence-list/agence-list.component'
 import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
 import { AvanceDetailComponent } from './avance/avance-detail/avance-detail.component';
 import { AvanceListComponent } from './avance/avance-list/avance-list.component';
+import { AddCompteComponent } from './compte/add-compte/add-compte.component';
+import { CompteListComponent } from './compte/compte-list/compte-list.component';
 import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
 import { CotisationDetailComponent } from './cotisation/cotisation-detail/cotisation-detail.component';
 import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
@@ -44,7 +46,16 @@ const routes: Routes = [
 
   {path:'membres', component: MembreListComponent},
   {path:'membre-detail/:id', component: MembreDetailComponent},
-  {path:'add-membre/:id', component: AddMembreComponent},
+  {path:'add-membre/:id', component: AddMembreComponent,
+    data: {
+      origin: 'membre'
+    }
+  },
+  {path:'update-membre-detail/:id', component: AddMembreComponent,
+    data: {
+      origin: 'detail'
+    }
+  },
 
   {path:'avances', component: AvanceListComponent},
   {path:'avance-detail/:id', component: AvanceDetailComponent},
@@ -77,6 +88,10 @@ const routes: Routes = [
   {path:'parametres', component: ParametreListComponent},
   {path:'parametre-detail/:id', component: ParametreDetailComponent},
   {path:'add-parametre/:id', component: AddParametreComponent},
+
+  {path:'comptes', component: CompteListComponent},
+  {path:'add-compte/:id', component: AddCompteComponent},
+
 
   {path:'rent-property', component: PropertyListComponent},
   {path:'add-property', component: AddPropertyComponent},

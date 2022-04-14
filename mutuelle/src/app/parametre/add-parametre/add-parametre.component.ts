@@ -81,7 +81,7 @@ export class AddParametreComponent implements OnInit {
     this.parametreService.add(this.parametre).subscribe({
       next: (data: any) => {
         this.alertity.success('Félécitation, parametre enregistré avec succès');
-        this.router.navigate(['parametres']);
+        this.annuler();
       },
     });
   }
@@ -90,7 +90,7 @@ export class AddParametreComponent implements OnInit {
     this.parametreService.update(this.parametre, this.parametreId).subscribe({
       next: (data: any) => {
         this.alertity.success('Félécitation, parametre modifié avec succès');
-        this.router.navigate(['parametres']);
+        this.annuler();
       },
     });
   }
@@ -98,6 +98,10 @@ export class AddParametreComponent implements OnInit {
   mapparametre(): void {
     this.parametre.nom = this.nom.value;
     this.parametre.valeur = this.valeur.value;
+  }
+
+  annuler() {
+    this.router.navigate(['parametres']);
   }
 
 }

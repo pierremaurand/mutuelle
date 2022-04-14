@@ -22,6 +22,8 @@ namespace WebApi.Helpers
                 .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom));
 
             CreateMap<MembreDto, Membre>();
+
+            CreateMap<Compte, CompteDto>().ReverseMap();
         }
     }
 }

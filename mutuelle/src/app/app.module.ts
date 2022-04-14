@@ -65,6 +65,12 @@ import { ParametreComponent } from './parametre/parametre/parametre.component';
 import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
 import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
 import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
+import { CompteComponent } from './compte/compte/compte.component';
+import { AddCompteComponent } from './compte/add-compte/add-compte.component';
+import { CompteListComponent } from './compte/compte-list/compte-list.component';
+import { AdhesionComponent } from './adhesion/adhesion/adhesion.component';
+import { AdhesionListComponent } from './adhesion/adhesion-list/adhesion-list.component';
+import { AddAdhesionComponent } from './adhesion/add-adhesion/add-adhesion.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +123,12 @@ import { AddParametreComponent } from './parametre/add-parametre/add-parametre.c
     ParametreDetailComponent,
     ParametreListComponent,
     AddParametreComponent,
+    CompteComponent,
+    AddCompteComponent,
+    CompteListComponent,
+    AdhesionComponent,
+    AdhesionListComponent,
+    AddAdhesionComponent,
   ],
   imports: [
     BrowserModule,

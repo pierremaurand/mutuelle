@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 70px; width: 1080px;">
   <div class="row">
     <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      <form [formGroup]="parametreForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
         <div class="card m-auto">
           <div class="card-header">
             <h3>{{titreFormulaire}}</h3>
@@ -10,16 +10,16 @@
             <div class="mb-3">
               <div class="row">
                 <div class="col-12">
-                  <label for="nom" class="form-label">Nom du parametre</label>
-                  <input type="text" id="nom" class="form-control" formControlName="nom"
-                    [ngClass]="{ 'is-invalid': nom.invalid && (nom.touched || parametreSubmitted)}"
-                    [(ngModel)]="parametre.nom">
+                  <label for="numero" class="form-label">Numero du compte</label>
+                  <input type="text" id="numero" class="form-control" formControlName="numero"
+                    [ngClass]="{ 'is-invalid': numero.invalid && (numero.touched || compteSubmitted)}"
+                    [(ngModel)]="compte.numero">
                 </div>
                 <div class="col-12">
-                  <label for="valeur" class="form-label">Valeur du parametre</label>
-                  <input type="text" id="valeur" class="form-control" formControlName="valeur"
-                    [ngClass]="{ 'is-invalid': valeur.invalid && (valeur.touched || parametreSubmitted)}"
-                    [(ngModel)]="parametre.valeur">
+                  <label for="libelle" class="form-label">Libelle du compte</label>
+                  <input type="text" id="libelle" class="form-control" formControlName="libelle"
+                    [ngClass]="{ 'is-invalid': libelle.invalid && (libelle.touched || compteSubmitted)}"
+                    [(ngModel)]="compte.libelle">
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agence } from 'src/app/model/agence';
@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
 export class AddMembreComponent implements OnInit {
 
   membreId?: number;
-  membre: Membre = {};
+  @Input() membre: Membre = {};
   submittedMembre: Membre = {};
   membreForm!: FormGroup;
   membreSubmitted: boolean = false;
@@ -31,6 +31,7 @@ export class AddMembreComponent implements OnInit {
   services: Service[] = [];
   baseUrl = environment.imagesUrl;
   photo?: string;
+  origin = '';
 
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -42,22 +43,6 @@ export class AddMembreComponent implements OnInit {
     private alertity: AlertifyService) { }
 
   ngOnInit(): void {
-    this.membreId = +this.route.snapshot.params['id'];
-    this.membre.photo = 'assets/images/default_man.jpg';
-    if(this.membreId) {
-      this.submittedMembre.id = + this.membreId;
-      this.titreFormulaire = "Modification d'un membre";
-      this.membreService.getById(this.membreId).subscribe({
-        next:(data) => {
-          this.membre = data;
-          console.log(data);
-          this.photo = this.baseUrl + this.membre.photo;
-        }
-      });
-    } else {
-      this.photo = this.baseUrl + this.membre.photo;
-    }
-
     this.agenceService.getAll().subscribe({
       next:(data) => {
         this.agences = data;
@@ -157,7 +142,7 @@ export class AddMembreComponent implements OnInit {
     this.membreService.add(this.membre).subscribe({
       next: (data: any) => {
         this.alertity.success('Félécitation, membre enregistré avec succès');
-        this.router.navigate(['membres']);
+        this.annuler();
       },
     });
   }
@@ -166,7 +151,7 @@ export class AddMembreComponent implements OnInit {
     this.membreService.update(this.membre, this.membreId).subscribe({
       next: (data: any) => {
         this.alertity.success('Félécitation, membre modifié avec succès');
-        this.router.navigate(['membres']);
+        this.annuler();
       },
     });
   }
@@ -205,6 +190,15 @@ export class AddMembreComponent implements OnInit {
       this.photo = reader.result as string;
     }
     reader.readAsDataURL(this.fichier);
+  }
+
+  annuler() {
+    if(this.origin === 'membre') {
+       this.router.navigate(['membres']);
+    }
+    if(this.origin === 'detail') {
+      this.router.navigate(['/membre-detail/'+this.membreId])
+    }
   }
 
 }

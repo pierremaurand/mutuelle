@@ -21,6 +21,9 @@ export class MembreDetailComponent implements OnInit {
   lastCotisation?: number;
   avances?: number;
   credits?: number;
+  cotisationsList: [] = [];
+  avancesList: [] = [];
+  creditsList: [] = [];
 
   constructor(private route: ActivatedRoute,
     private membreService: MembreService

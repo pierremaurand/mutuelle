@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g10xZL52vWjq1pusO0mmhqMdV3WFY5oDhFUhBrPpXqo=",
+  "Hash": "mQwGYp3nWBKDh1UI6KxDDiqYiAeumIuMvnFOY2e7aX4=",
   "Source": "hspaApi2",
   "BasePath": "_content/hspaApi2",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\2fpmkmta.jwj.jpg"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\5d0fkxog.b25.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/5d0fkxog.b25.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\5d0fkxog.b25.png"
     },
     {
       "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\5jow2p25.h5r.png",
@@ -119,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\default_woman.jpg"
     },
     {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\dhw0vpru.0ip.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/dhw0vpru.0ip.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\dhw0vpru.0ip.png"
+    },
+    {
       "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\e2plozxo.heg.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
@@ -134,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\e2plozxo.heg.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\hp4gv40t.24e.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/hp4gv40t.24e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\hp4gv40t.24e.png"
     },
     {
       "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\lo0ojwnz.w22.png",
@@ -238,6 +289,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\rpxqvhxl.tdr.png"
     },
     {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\t513c4at.2kr.jpg",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/t513c4at.2kr.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\t513c4at.2kr.jpg"
+    },
+    {
       "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\t5ldeaso.smw.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
@@ -270,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\tq0hcmmp.3pl.jpg"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\wghanu2a.hck.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/wghanu2a.hck.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\wghanu2a.hck.png"
     },
     {
       "Identity": "D:\\Mes Projets\\mutuelle\\WebApi\\wwwroot\\assets\\images\\ydq42ail.yn2.jpg",
