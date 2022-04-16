@@ -18,8 +18,7 @@ namespace WebApi.Data
         public DbSet<Credit>? Credits { get; set; }
         public DbSet<Avance>? Avances { get; set; }
         public DbSet<MvtCompte>? MvtComptes { get; set; }
-        public DbSet<DemandeAvance>? DemandeAvances { get; set; }
-        public DbSet<DemandeCredit>? DemandeCredits { get; set; }
+        public DbSet<Periode>? Periodes { get; set; }
         public DbSet<Adhesion>? Adhesions { get; set; }
         public DbSet<User>? Users { get; set; }
     }

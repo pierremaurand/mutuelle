@@ -96,6 +96,12 @@ export class NavBarComponent implements OnInit {
           titre: 'Comptes',
           icon: 'fas fa-cogs',
           url: 'comptes'
+        },
+        {
+          id: '67',
+          titre: 'Periodes',
+          icon: 'fas fa-cogs',
+          url: 'periodes'
         }
       ]
     }

@@ -6,8 +6,6 @@ namespace WebApi.Models
         public DateTime DateFin { get; set; }
         public decimal Montant { get; set; }
         public decimal Interets { get; set; }
-        public int DemandeCreditId { get; set; }
-        public DemandeCredit? DemandeCredit { get; set; }
         public ICollection<EcheanceCredit>? EcheanceCredits { get; set; }
     }
 }

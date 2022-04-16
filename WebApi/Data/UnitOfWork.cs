@@ -5,52 +5,49 @@ namespace WebApi.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DataContext dc; 
+        private readonly DataContext dc;
         public UnitOfWork(DataContext dc)
         {
             this.dc = dc;
         }
-        public IAgenceRepository AgenceRepository => 
+        public IAgenceRepository AgenceRepository =>
             new AgenceRepository(dc);
 
-        public IUserRepository UserRepository => 
+        public IUserRepository UserRepository =>
             new UserRepository(dc);
 
-        public IServiceRepository ServiceRepository => 
+        public IServiceRepository ServiceRepository =>
             new ServiceRepository(dc);
 
-        public ISexeRepository SexeRepository => 
+        public ISexeRepository SexeRepository =>
             new SexeRepository(dc);
 
-        public IMembreRepository MembreRepository => 
+        public IMembreRepository MembreRepository =>
             new MembreRepository(dc);
 
-        public IParametreRepository ParametreRepository => 
+        public IParametreRepository ParametreRepository =>
             new ParametreRepository(dc);
 
-        public IAdhesionRepository AdhesionRepository => 
+        public IAdhesionRepository AdhesionRepository =>
             new AdhesionRepository(dc);
 
-        public IAvanceRepository AvanceRepository => 
+        public IAvanceRepository AvanceRepository =>
             new AvanceRepository(dc);
 
-        public ICompteRepository CompteRepository => 
+        public ICompteRepository CompteRepository =>
             new CompteRepository(dc);
 
-        public ICreditRepository CreditRepository => 
+        public ICreditRepository CreditRepository =>
             new CreditRepository(dc);
 
-        public IDemandeAvanceRepository DemandeAvanceRepository => 
-            new DemandeAvanceRepository(dc);
-
-        public IDemandeCreditRepository DemandeCreditRepository => 
-            new DemandeCreditRepository(dc);
-
-        public IGabarieRepository GabarieRepository => 
+        public IGabarieRepository GabarieRepository =>
             new GabarieRepository(dc);
 
-        public ICotisationRepository CotisationRepository => 
+        public ICotisationRepository CotisationRepository =>
             new CotisationRepository(dc);
+
+        public IPeriodeRepository PeriodeRepository =>
+            new PeriodeRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

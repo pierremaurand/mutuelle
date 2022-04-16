@@ -14,5 +14,6 @@ namespace WebApi.Models
         public bool EstActif { get; set; }
         public string Telephone { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public ICollection<Cotisation>? Cotisations { get; set; }
     }
 }

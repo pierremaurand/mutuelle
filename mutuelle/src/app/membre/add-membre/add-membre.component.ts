@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agence } from 'src/app/model/agence';
-import { Membre } from "src/app/model/Membre";
+import { Membre } from "src/app/model/membre";
 import { Service } from 'src/app/model/service';
 import { Sexe } from 'src/app/model/sexe';
 import { AgenceService } from 'src/app/services/agence.service';

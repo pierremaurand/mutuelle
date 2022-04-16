@@ -98,9 +98,6 @@ namespace hspaApi2.Migrations
                     b.Property<DateTime>("DateFin")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DemandeAvanceId")
-                        .HasColumnType("int");
-
                     b.Property<int>("LastUpdatedBy")
                         .HasColumnType("int");
 
@@ -111,8 +108,6 @@ namespace hspaApi2.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DemandeAvanceId");
 
                     b.ToTable("Avances");
                 });
@@ -154,9 +149,6 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Annee")
-                        .HasColumnType("int");
-
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -166,10 +158,20 @@ namespace hspaApi2.Migrations
                     b.Property<DateTime>("LastUpdatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Mois")
+                    b.Property<int>("MembreId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Montant")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PeriodeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
+
+                    b.HasIndex("PeriodeId");
 
                     b.ToTable("Cotisations");
                 });
@@ -191,9 +193,6 @@ namespace hspaApi2.Migrations
                     b.Property<DateTime>("DateFin")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DemandeCreditId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Interets")
                         .HasColumnType("decimal(18,2)");
 
@@ -208,93 +207,7 @@ namespace hspaApi2.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DemandeCreditId");
-
                     b.ToTable("Credits");
-                });
-
-            modelBuilder.Entity("WebApi.Models.DemandeAvance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateDemande")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("EstApprouve")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal?>("MontantApprouve")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("MontantSolicite")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("NombreEcheance")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("DemandeAvances");
-                });
-
-            modelBuilder.Entity("WebApi.Models.DemandeCredit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateDemande")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("EstApprouve")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal?>("MontantApprouve")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("MontantSolicite")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("NombreEcheance")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("DemandeCredits");
                 });
 
             modelBuilder.Entity("WebApi.Models.EcheanceAvance", b =>
@@ -498,48 +411,6 @@ namespace hspaApi2.Migrations
                     b.ToTable("MvtComptes");
                 });
 
-            modelBuilder.Entity("WebApi.Models.MvtCotisation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CotisationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("EstDebit")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Libelle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CotisationId");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("MvtCotisations");
-                });
-
             modelBuilder.Entity("WebApi.Models.MvtGabarie", b =>
                 {
                     b.Property<int>("Id")
@@ -609,6 +480,32 @@ namespace hspaApi2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Parametres");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Periode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LastUpdatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Libelle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Periodes");
                 });
 
             modelBuilder.Entity("WebApi.Models.Service", b =>
@@ -715,48 +612,23 @@ namespace hspaApi2.Migrations
                     b.Navigation("Membre");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Avance", b =>
-                {
-                    b.HasOne("WebApi.Models.DemandeAvance", "DemandeAvance")
-                        .WithMany()
-                        .HasForeignKey("DemandeAvanceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DemandeAvance");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Credit", b =>
-                {
-                    b.HasOne("WebApi.Models.DemandeCredit", "DemandeCredit")
-                        .WithMany()
-                        .HasForeignKey("DemandeCreditId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DemandeCredit");
-                });
-
-            modelBuilder.Entity("WebApi.Models.DemandeAvance", b =>
+            modelBuilder.Entity("WebApi.Models.Cotisation", b =>
                 {
                     b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany()
+                        .WithMany("Cotisations")
                         .HasForeignKey("MembreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Membre");
-                });
-
-            modelBuilder.Entity("WebApi.Models.DemandeCredit", b =>
-                {
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany()
-                        .HasForeignKey("MembreId")
+                    b.HasOne("WebApi.Models.Periode", "Periode")
+                        .WithMany("Cotisations")
+                        .HasForeignKey("PeriodeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Membre");
+
+                    b.Navigation("Periode");
                 });
 
             modelBuilder.Entity("WebApi.Models.EcheanceAvance", b =>
@@ -819,25 +691,6 @@ namespace hspaApi2.Migrations
                     b.Navigation("Compte");
                 });
 
-            modelBuilder.Entity("WebApi.Models.MvtCotisation", b =>
-                {
-                    b.HasOne("WebApi.Models.Cotisation", "Cotisation")
-                        .WithMany("MvtCotisations")
-                        .HasForeignKey("CotisationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany()
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cotisation");
-
-                    b.Navigation("Membre");
-                });
-
             modelBuilder.Entity("WebApi.Models.MvtGabarie", b =>
                 {
                     b.HasOne("WebApi.Models.Compte", "Compte")
@@ -862,11 +715,6 @@ namespace hspaApi2.Migrations
                     b.Navigation("EcheanceAvances");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Cotisation", b =>
-                {
-                    b.Navigation("MvtCotisations");
-                });
-
             modelBuilder.Entity("WebApi.Models.Credit", b =>
                 {
                     b.Navigation("EcheanceCredits");
@@ -875,6 +723,16 @@ namespace hspaApi2.Migrations
             modelBuilder.Entity("WebApi.Models.Gabarie", b =>
                 {
                     b.Navigation("MvtGabaries");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Membre", b =>
+                {
+                    b.Navigation("Cotisations");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Periode", b =>
+                {
+                    b.Navigation("Cotisations");
                 });
 #pragma warning restore 612, 618
         }

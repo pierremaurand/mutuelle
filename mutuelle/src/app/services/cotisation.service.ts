@@ -1,21 +1,38 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { MembreDetailComponent } from '../membre/membre-detail/membre-detail.component';
+import { Cotisation } from '../model/cotisation';
+import { CotisationList } from '../model/cotisationList';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CotisationService {
 
-  constructor() { }
+  baseUrl = environment.baseUrl;
 
-  getAll(){
+  constructor(private http: HttpClient) { }
 
+  getAll(): Observable<CotisationList[]>{
+    return this.http.get<CotisationList[]>(this.baseUrl + '/cotisation/cotisations');
   }
 
-  getById() {
-
+  getAllMembreCotisation(membreId: number): Observable<CotisationList[]>{
+    return this.http.get<CotisationList[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
   }
 
-  save() {
+  getById(id: number): Observable<Cotisation> {
+    return this.http.get<Cotisation>(this.baseUrl + '/cotisation/get/' + id.toString());
+  }
 
+  add(cotisation: Cotisation): Observable<any> {
+    console.log(cotisation);
+    return this.http.post(this.baseUrl + '/cotisation/add', cotisation,);
+  }
+
+  update(cotisation: Cotisation, id?: number): Observable<any> {
+    return this.http.put(this.baseUrl + '/cotisation/update/' + id?.toString(),cotisation);
   }
 }

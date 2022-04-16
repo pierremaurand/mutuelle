@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Membre } from "src/app/model/Membre";
+import { Membre } from "src/app/model/membre";
 import { environment } from 'src/environments/environment';
 
 @Component({

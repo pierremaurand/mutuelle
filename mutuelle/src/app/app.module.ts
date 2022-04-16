@@ -71,6 +71,10 @@ import { CompteListComponent } from './compte/compte-list/compte-list.component'
 import { AdhesionComponent } from './adhesion/adhesion/adhesion.component';
 import { AdhesionListComponent } from './adhesion/adhesion-list/adhesion-list.component';
 import { AddAdhesionComponent } from './adhesion/add-adhesion/add-adhesion.component';
+import { AddPeriodeComponent } from './periode/add-periode/add-periode.component';
+import { PeriodeComponent } from './periode/periode/periode.component';
+import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
+import { PaginationComponent } from './composants/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -129,6 +133,10 @@ import { AddAdhesionComponent } from './adhesion/add-adhesion/add-adhesion.compo
     AdhesionComponent,
     AdhesionListComponent,
     AddAdhesionComponent,
+    AddPeriodeComponent,
+    PeriodeComponent,
+    PeriodeListComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

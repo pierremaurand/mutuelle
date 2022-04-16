@@ -23,6 +23,8 @@ import { MembreListComponent } from './membre/membre-list/membre-list.component'
 import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
 import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
 import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
+import { AddPeriodeComponent } from './periode/add-periode/add-periode.component';
+import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
@@ -91,6 +93,9 @@ const routes: Routes = [
 
   {path:'comptes', component: CompteListComponent},
   {path:'add-compte/:id', component: AddCompteComponent},
+
+  {path:'periodes', component: PeriodeListComponent},
+  {path:'add-periode/:id', component: AddPeriodeComponent},
 
 
   {path:'rent-property', component: PropertyListComponent},

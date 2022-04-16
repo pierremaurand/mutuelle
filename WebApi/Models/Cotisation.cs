@@ -2,8 +2,10 @@ namespace WebApi.Models
 {
     public class Cotisation : BaseEntity
     {
-        public int Mois { get; set; }
-        public int Annee { get; set; }
-        public ICollection<MvtCotisation>? MvtCotisations { get; set; }
+        public int PeriodeId { get; set; }
+        public Periode? Periode { get; set; }
+        public int MembreId { get; set; } 
+        public Membre? Membre { get; set; }
+        public decimal Montant { get; set; }
     }
 }

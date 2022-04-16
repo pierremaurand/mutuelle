@@ -24,6 +24,15 @@ namespace WebApi.Helpers
             CreateMap<MembreDto, Membre>();
 
             CreateMap<Compte, CompteDto>().ReverseMap();
+
+            CreateMap<Periode, PeriodeDto>().ReverseMap();
+
+            CreateMap<Cotisation, CotisationDto>().ReverseMap();
+
+            CreateMap<Cotisation, CotisationListDto>()
+                .ForMember(c => c.Periode, opt => opt.MapFrom(src => src.Periode.Libelle));
+
+            CreateMap<CotisationDto, Cotisation>();
         }
     }
 }
