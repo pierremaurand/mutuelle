@@ -15,7 +15,7 @@
       <tbody>
         <tr *ngFor="let item of cotisations; let i=index" class="align-middle">
           <td>{{i+1}}</td>
-          <td>{{item.periode}}</td>
+          <td>{{item.periode | date: 'MMMM y'}}</td>
           <td class="text-end">{{item.montant | number}}</td>
           <td class="text-end">{{calcul90Pourcent(item.montant) | number}}</td>
           <td class="text-end">{{calcul10Pourcent(item.montant) | number}}</td>

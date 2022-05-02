@@ -4,41 +4,39 @@
       <div class="modal-body">
         <div class="card shadow">
           <div class="card-header">
-            <h3>Formulaire Période</h3>
+            <h3>Formulaire cotisation</h3>
           </div>
           <div class="card-body">
 
             <div class="mb-3">
               <label for="periode" class="form-label">Période</label>
-              <select class="form-control"
-                id="periodeId" required
-                [(ngModel)]="infos.periodeId"
-                name="periodeId">
-                <option value="">--Selectionner une période--</option>
-                <option *ngFor="let item of periodes" value="{{item.id}}">{{item.libelle}}</option>
-              </select>
+              <input type="month" class="form-control"
+                id="periode" required
+                [(ngModel)]="cotisation.periode"
+                name="periodeId"
+                [disabled]="cotisation.id!=undefined">
             </div>
 
             <div class="mb-3">
               <label for="montant" class="form-label">Montant</label>
               <input type="number" class="form-control"
               id="montant" required
-              [(ngModel)]="infos.montant"
+              [(ngModel)]="cotisation.montant"
               name="montant" min="1000">
             </div>
 
             <div class="row">
               <div class="btn-group">
-                <button type="submit" class="btn btn-outline-primary"
+                <button type="submit" class="btn btn-success me-2"
                 [disabled]="!cotisationForm.form.valid">
                   <i class="fa fa-save"></i>&nbsp;
                   Enregistrer
                 </button>
-                <button type="reset" class="btn btn-outline-primary">
+                <button type="reset" class="btn btn-warning me-2">
                   <i class="fa fa-refresh"></i>&nbsp;
                   Recommencer
                 </button>
-                <button type="button" #cluseCotisationFormModal class="btn btn-outline-primary" data-bs-dismiss="modal">
+                <button type="button" #closeCotisationFormModal class="btn btn-danger" data-bs-dismiss="modal">
                   <i class="fa fa-close"></i>&nbsp;
                   Annuler
                 </button>

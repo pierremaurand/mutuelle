@@ -1,36 +1,50 @@
-<div class="card shadow">
-  <div class="card-img-wrapper">
-    <img src="{{baseUrl}}assets/images/default_man.jpg" class="card-img-top" alt="photo membre"
-      *ngIf="!membre.photo && (!membre.sexeId || membre.sexeId==1)">
-    <img src="{{baseUrl}}assets/images/default_woman.jpg" class="card-img-top" alt="photo membre"
-      *ngIf="!membre.photo && (membre.sexeId && membre.sexeId==2)">
-    <img src="{{baseUrl}}{{membre.photo}}" class="card-img-top" alt="photo membre" *ngIf="membre.photo">
-    <ul class="list-inline text-center member-icons animate">
-      <li class="list-inline-item">
-        <button [class]="btnClasse()"  routerLink="/add-membre/{{membre.id}}"><i class="far fa-edit"></i></button>
-      </li>
-      <li class="list-inline-item">
-        <button [class]="btnClasse()" routerLink="/membre-detail/{{membre.id}}"><i class="fa fa-rectangle-list"></i></button>
-      </li>
-    </ul>
+<div class="card mb-4 shadow p-3 border-1 border-dark">
+  <div class="row g-0">
+    <div class="col-md-4 p-2">
+      <div class="card-img-wrapper align-middle" data-bs-toggle="modal" data-bs-target="#addPicture" (click)="editMembre()">
+        <img src="{{baseUrl}}assets/images/default_man.jpg" class="img-fluid" alt="photo membre"
+          *ngIf="!membre.photo && (!membre.sexeId || membre.sexeId==1)">
+        <img src="{{baseUrl}}assets/images/default_woman.jpg" class="img-fluid" alt="photo membre"
+          *ngIf="!membre.photo && (membre.sexeId && membre.sexeId==2)">
+        <img src="{{baseUrl}}{{membre.photo}}" class="img-fluid" alt="photo membre" *ngIf="membre.photo">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="text-success">{{membre.nom | uppercase}}</h6>
+        <h6 class="text-success">{{membre.prenom | uppercase}}</h6>
+        <div class="text-primary">
+          <span class="me-2"><i class="fa fa-location-dot"></i> {{membre.agence}}-{{membre.service}}</span>
+        </div>
+        <div class="text-success">
+          <span class="me-1"><i class="fa fa-sack-dollar"></i></span>
+          <span class="me-1">{{calculCotisation() | number}}</span>
+          <span>FCFA</span>
+        </div>
+        <div class="text-danger">
+          <span class="me-1"><i class="fa fa-hand-holding-dollar"></i></span>
+          <span class="me-1">{{calculAvance() | number}}</span>
+          <span>FCFA</span>
+        </div>
+        <div class="text-danger">
+          <span class="me-1 text-"><i class="fa fa-money-check"></i></span>
+          <span class="me-1">{{calculCredit() | number}}</span>
+          <span>FCFA</span>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="card-body text-center">
-    <h5 class="card-title">{{membre.nom | uppercase}} {{membre.prenom | uppercase}}</h5>
-    <h6 class="card-text">
-      <i class="fa fa-location-dot"></i>&nbsp;
-      {{membre.agence | uppercase}}
-    </h6>
-    <h6 class="card-text">
-      <i class="fa fa-coins"></i>&nbsp;
-      {{membre.cotisations | currency :"FCFA "}}
-    </h6>
-    <h6 class="card-text">
-      <i class="fab fa-stack-overflow"></i>&nbsp;
-      {{membre.avances | currency :"FCFA "}}
-    </h6>
-    <h6 class="card-text">
-      <i class="fa fa-money-check"></i>&nbsp;
-      {{membre.credits | currency :"FCFA "}}
-    </h6>
+  <div class="row">
+    <div class="btn-group">
+      <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#addMembre"
+      (click)="editMembre()">
+        <i class="fa fa-edit"></i>&nbsp;
+        Editer
+      </button>
+      <button class="btn btn-info btn-sm" routerLink="/membre-detail/{{membre.id}}"><i
+          class="fa fa-search"></i>&nbsp;
+          Voir
+      </button>
+    </div>
   </div>
 </div>

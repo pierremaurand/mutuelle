@@ -46,9 +46,6 @@ namespace WebApi.Data
         public ICotisationRepository CotisationRepository =>
             new CotisationRepository(dc);
 
-        public IPeriodeRepository PeriodeRepository =>
-            new PeriodeRepository(dc);
-
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;

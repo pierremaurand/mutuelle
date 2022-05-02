@@ -1,0 +1,15 @@
+.image-container {
+  width: 200px;
+  height: 200px;
+  padding: 2px;
+  margin-bottom: 3px;
+}
+
+img {
+  width: 100%;
+}
+
+input[type='file'] {
+  position: absolute;
+  display: none;
+}

@@ -8,7 +8,7 @@ namespace WebApi.Controllers
 {
     public class CreditController : BaseController
     {
-         private readonly IUnitOfWork uow;
+        private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
 
         public CreditController(IMapper mapper, IUnitOfWork uow)
@@ -22,7 +22,8 @@ namespace WebApi.Controllers
         {
             var credits = await uow.CreditRepository.GetAllAsync();
             var creditsDto = mapper.Map<IEnumerable<CreditDto>>(credits);
-            if(creditsDto is null) {
+            if (creditsDto is null)
+            {
                 return NotFound();
             }
             return Ok(creditsDto);
@@ -33,7 +34,8 @@ namespace WebApi.Controllers
         {
             var credit = await uow.CreditRepository.FindByIdAsync(id);
             var creditDto = mapper.Map<CreditDto>(credit);
-            if(creditDto is null) {
+            if (creditDto is null)
+            {
                 return NotFound();
             }
             return Ok(creditDto);
@@ -52,14 +54,14 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id,CreditDto creditDto)
+        public async Task<IActionResult> Update(int id, CreditDto creditDto)
         {
-            if(id != creditDto.Id) 
+            if (id != creditDto.Id)
                 return BadRequest("Update not allowed");
 
             var creditFromDb = await uow.CreditRepository.FindByIdAsync(id);
-            
-            if(creditFromDb == null) 
+
+            if (creditFromDb == null)
                 return BadRequest("Update not allowed");
 
             creditFromDb.LastUpdatedBy = 1;

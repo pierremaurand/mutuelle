@@ -1,1 +1,74 @@
-<p>add-credit works!</p>
+<div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+    <form #creditForm="ngForm" (ngSubmit)="onSubmit(creditForm)">
+     <div class="modal-body">
+     <div class="card shadow">
+      <div class="card-header">
+        <h3>Formulaire credit</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="dateDebut" class="form-label">Date début</label>
+              <input [disabled]="credit.id!=undefined" type="month" id="dateDebut" class="form-control" name="dateDebut"
+                [(ngModel)]="credit.dateDebut">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="dateFin" class="form-label">Date fin</label>
+            <input [disabled]="credit.id!=undefined" type="month" id="dateFin" class="form-control" name="dateFin"
+              [(ngModel)]="credit.dateFin">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="montant" class="form-label">Montant</label>
+            <input [disabled]="credit.id!=undefined" type="number" id="montant" class="form-control" name="montant"
+              [(ngModel)]="credit.montant">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="interets" class="form-label">interets</label>
+            <input [disabled]="true" type="number" id="interets" class="form-control" name="interets"
+              [(ngModel)]="credit.interets">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Date</th>
+                  <th>Principal</th>
+                  <th>Interet</th>
+                  <th>Etat</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-success">
+              <i class="fa fa-save"></i>&nbsp;
+              Enregistrer
+            </button>
+            <button type="reset" [disabled]="credit.id" class="btn btn-warning">
+              <i class="fa fa-refresh"></i>&nbsp;
+              Recommencer
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+            (click)="annuler()" #closeCreditFormModal>
+              <i class="fa fa-close"></i>&nbsp;
+              Annuler
+            </button>
+          </div>
+        </div>
+      </div>
+
+     </div>
+     </div>
+    </form>
+  </div>
+</div>
+
+

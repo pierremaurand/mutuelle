@@ -1,1 +1,91 @@
-<p>add-avance works!</p>
+<div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+    <form #avanceForm="ngForm" (ngSubmit)="onSubmit(avanceForm)">
+     <div class="modal-body">
+     <div class="card shadow">
+      <div class="card-header">
+        <h3>Formulaire avance</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="dateDebut" class="form-label">Date début</label>
+              <input type="month" id="dateDebut" class="form-control" name="dateDebut"
+                [disabled]="avance.id!=undefined"
+                [(ngModel)]="avance.dateDebut" required >
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="dateFin" class="form-label">Date fin</label>
+            <input type="month" id="dateFin" class="form-control" name="dateFin"
+              [disabled]="avance.id!=undefined"
+              [(ngModel)]="avance.dateFin" required >
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="montant" class="form-label">Montant</label>
+            <input type="number" id="montant" class="form-control" name="montant"
+            [disabled]="avance.id!=undefined"
+            [(ngModel)]="avance.montant" required >
+          </div>
+        </div>
+        <div class="row" *ngIf="(!avance.id) && (avanceForm.valid)">
+          <div class="col-md-12">
+            <button type="button" class="btn btn-primary" (click)="chargeEcheancier()">
+              <i class="fa fa-refresh"></i>&nbsp;
+              Charger l'échéancier
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="row contenu-table mb-3">
+          <div class="col-md-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Date</th>
+                  <th>Montant</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of echeanceAvance; let i=index">
+                  <td>{{i+1}}</td>
+                  <td>{{item.dateEcheance | date: 'MMMM y'}}</td>
+                  <td>{{item.montant | number}}</td>
+                  <td>
+                    <button [disabled]="item.estPaye==true" class="btn btn-success btn-sm" (click)="payCheck(i)">
+                      <i class="fa fa-check"></i>&nbsp;
+                      Payer
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-success">
+              <i class="fa fa-save"></i>&nbsp;
+              Enregistrer
+            </button>
+            <button type="reset" [disabled]="avance.id" class="btn btn-warning">
+              <i class="fa fa-refresh"></i>&nbsp;
+              Recommencer
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+            (click)="annuler()" #closeAvanceFormModal>
+              <i class="fa fa-close"></i>&nbsp;
+              Annuler
+            </button>
+          </div>
+        </div>
+      </div>
+
+     </div>
+     </div>
+    </form>
+  </div>
+</div>
+
+

@@ -1,7 +1,7 @@
 import { IMembreBase } from "./imembrebase";
 
 
-export class Membre implements IMembreBase {
+export class Membre {
   id?: number;
   nom?: string;
   prenom?: string;
@@ -12,11 +12,4 @@ export class Membre implements IMembreBase {
   estActif?: boolean;
   telephone?: string;
   email?: string;
-
-  sexe?: string;
-  agence?: string;
-  service?: string;
-  cotisations?: number = 0;
-  credits?: number = 0;
-  avances?: number = 0;
 }

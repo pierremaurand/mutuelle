@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Agence } from 'src/app/model/agence';
 import { Membre } from "src/app/model/membre";
 import { Service } from 'src/app/model/service';
@@ -20,23 +19,17 @@ import { environment } from 'src/environments/environment';
 export class AddMembreComponent implements OnInit {
 
   membreId?: number;
+  @ViewChild("closeMembreFormModal") modalClose:any;
   @Input() membre: Membre = {};
-  submittedMembre: Membre = {};
-  membreForm!: FormGroup;
-  membreSubmitted: boolean = false;
-  titreFormulaire: string = "Ajoute d'un membre";
+  @Output() membreChange = new EventEmitter<Membre>();
   sexes: Sexe[] = [];
   fichier?: any;
   agences: Agence[] = [];
   services: Service[] = [];
   baseUrl = environment.imagesUrl;
   photo?: string;
-  origin = '';
 
-  constructor(private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private membreService: MembreService,
+  constructor(
     private agenceService: AgenceService,
     private sexeService: SexeService,
     private serviceService: ServiceService,
@@ -60,111 +53,18 @@ export class AddMembreComponent implements OnInit {
         this.sexes = data;
       }
     });
-
-    this.createMembreForm();
   }
 
-  createMembreForm(){
-    this.membreForm = this.fb.group({
-      nom: [null,Validators.required],
-      prenom: [null, Validators.required],
-      sexe: [null, Validators.required],
-      agence: [null, Validators.required],
-      service: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      telephone: [null, Validators.required]
-    })
-  }
-
-  //-------------------------------------
-  // Getter methos for all form controls
-  //-------------------------------------
-  get nom() {
-    return this.membreForm.get('nom') as FormControl;
-  }
-
-  get prenom() {
-    return this.membreForm.get('prenom') as FormControl;
-  }
-
-  get sexe() {
-    return this.membreForm.get('sexe') as FormControl;
-  }
-
-  get agence() {
-    return this.membreForm.get('agence') as FormControl;
-  }
-
-  get service() {
-    return this.membreForm.get('service') as FormControl;
-  }
-
-  get email() {
-    return this.membreForm.get('email') as FormControl;
-  }
-
-  get telephone() {
-    return this.membreForm.get('telephone') as FormControl;
-  }
-
-  //---------------------------------------------------
-
-
-  onSubmit() {
-    this.membreSubmitted = true;
-    if (this.membreForm.valid) {
-      this.mapMembre();
-      if(this.fichier) {
-        this.membreService.addPhoto(this.fichier).subscribe({
-          next:(data:any) => {
-            this.membre.photo = data.imageUrl;
-            if (this.membreId) {
-              this.update();
-            } else {
-              this.save();
-            }
-          }
-        });
-      } else {
-        if (this.membreId) {
-          this.update();
-        } else {
-          this.save();
-        }
-      }
+  onSubmit(membreForm: NgForm) {
+    if (membreForm.valid) {
+      this.membreChange.emit(this.membre);
+      this.modalClose.nativeElement.click();
     } else {
       this.alertity.error('Veuillez remplir tous les champs obligatoires');
     }
   }
 
-  save(): void {
-    this.membre.estActif = true;
-    this.membreService.add(this.membre).subscribe({
-      next: (data: any) => {
-        this.alertity.success('Félécitation, membre enregistré avec succès');
-        this.annuler();
-      },
-    });
-  }
 
-  update(): void {
-    this.membreService.update(this.membre, this.membreId).subscribe({
-      next: (data: any) => {
-        this.alertity.success('Félécitation, membre modifié avec succès');
-        this.annuler();
-      },
-    });
-  }
-
-  mapMembre(): void {
-    this.membre.nom = this.nom.value;
-    this.membre.prenom = this.prenom.value;
-    this.membre.sexeId = this.sexe.value;
-    this.membre.agenceId = this.agence.value;
-    this.membre.serviceId = this.service.value;
-    this.membre.email = this.email.value;
-    this.membre.telephone = this.telephone.value;
-  }
 
   changerPhotoProfil():void {
     if(!this.fichier) {
@@ -173,32 +73,16 @@ export class AddMembreComponent implements OnInit {
       } else {
         this.membre.photo = 'assets/images/default_woman.jpg';
       }
-      this.photo = this.baseUrl + this.membre.photo;
     }
   }
 
   /**
    * handle file from browsing
    */
-   fileBrowseHandler(event: Event) {
-    const element = event.currentTarget as HTMLInputElement;
-    let fileList = element.files;
-    const files = Array.prototype.slice.call(fileList);
-    this.fichier = files[0];
-    var reader = new FileReader();
-    reader.onload = () => {
-      this.photo = reader.result as string;
-    }
-    reader.readAsDataURL(this.fichier);
-  }
 
-  annuler() {
-    if(this.origin === 'membre') {
-       this.router.navigate(['membres']);
-    }
-    if(this.origin === 'detail') {
-      this.router.navigate(['/membre-detail/'+this.membreId])
-    }
+
+  annuler(): void {
+    this.photo = undefined;
   }
 
 }

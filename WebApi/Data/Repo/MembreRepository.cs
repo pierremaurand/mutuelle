@@ -37,6 +37,9 @@ namespace WebApi.Data.Repo
                 .Include(m => m.Agence)
                 .Include(m => m.Service)
                 .Include(m => m.Sexe)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .Where(m => m.Id == id)
                 .FirstAsync();
                 if(membre is not null) {
@@ -54,6 +57,9 @@ namespace WebApi.Data.Repo
                 .Include(m => m.Agence)
                 .Include(m => m.Service)
                 .Include(m => m.Sexe)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .ToListAsync();
                 if(membres is not null) {
                     return membres;

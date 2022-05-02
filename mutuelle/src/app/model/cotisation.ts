@@ -1,6 +1,5 @@
 export interface Cotisation {
   id?: number;
-  periodeId?: number;
-  membreId?: number;
+  periode?: string;
   montant?: number;
 }

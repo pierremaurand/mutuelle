@@ -16,23 +16,24 @@ namespace WebApi.Helpers
 
             CreateMap<Parametre, ParametreDto>().ReverseMap();
 
-            CreateMap<Membre, MembreDto>()
-                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
-                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom))
-                .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom));
+            CreateMap<Membre, MembreDto>().ReverseMap();
 
-            CreateMap<MembreDto, Membre>();
+            CreateMap<Membre, MembreListDto>()
+                .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom))
+                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
+                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom));
 
             CreateMap<Compte, CompteDto>().ReverseMap();
 
-            CreateMap<Periode, PeriodeDto>().ReverseMap();
-
             CreateMap<Cotisation, CotisationDto>().ReverseMap();
 
-            CreateMap<Cotisation, CotisationListDto>()
-                .ForMember(c => c.Periode, opt => opt.MapFrom(src => src.Periode.Libelle));
+            CreateMap<Avance, AvanceDto>().ReverseMap();
 
-            CreateMap<CotisationDto, Cotisation>();
+            CreateMap<Credit, CreditDto>().ReverseMap();
+
+            CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
+
+            CreateMap<EcheanceCredit, EcheanceCreditDto>().ReverseMap();
         }
     }
 }

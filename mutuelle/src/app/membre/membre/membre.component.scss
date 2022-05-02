@@ -7,7 +7,7 @@
   transform: scale(1.2,1.2);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
-  opacity: .7;
+  opacity: 1;
 }
 
 .card img {
@@ -35,7 +35,4 @@
   transition: all 0.3s ease-in-out;
 }
 
-.card-title {
-  width: 100%;
-  text-overflow: ellipsis;
-}
+

@@ -92,11 +92,13 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateDebut")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateDebut")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateFin")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateFin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LastUpdatedBy")
                         .HasColumnType("int");
@@ -104,10 +106,15 @@ namespace hspaApi2.Migrations
                     b.Property<DateTime>("LastUpdatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("MembreId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Montant")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
 
                     b.ToTable("Avances");
                 });
@@ -164,14 +171,16 @@ namespace hspaApi2.Migrations
                     b.Property<decimal>("Montant")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Periode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PeriodeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MembreId");
-
-                    b.HasIndex("PeriodeId");
 
                     b.ToTable("Cotisations");
                 });
@@ -187,11 +196,13 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateDebut")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateDebut")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateFin")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateFin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Interets")
                         .HasColumnType("decimal(18,2)");
@@ -202,10 +213,15 @@ namespace hspaApi2.Migrations
                     b.Property<DateTime>("LastUpdatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("MembreId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Montant")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
 
                     b.ToTable("Credits");
                 });
@@ -224,8 +240,9 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateEcheance")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateEcheance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstPaye")
                         .HasColumnType("bit");
@@ -260,8 +277,9 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreditId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateEcheance")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateEcheance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstPaye")
                         .HasColumnType("bit");
@@ -482,32 +500,6 @@ namespace hspaApi2.Migrations
                     b.ToTable("Parametres");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Periode", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Libelle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Periodes");
-                });
-
             modelBuilder.Entity("WebApi.Models.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -612,6 +604,17 @@ namespace hspaApi2.Migrations
                     b.Navigation("Membre");
                 });
 
+            modelBuilder.Entity("WebApi.Models.Avance", b =>
+                {
+                    b.HasOne("WebApi.Models.Membre", "Membre")
+                        .WithMany("Avances")
+                        .HasForeignKey("MembreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Membre");
+                });
+
             modelBuilder.Entity("WebApi.Models.Cotisation", b =>
                 {
                     b.HasOne("WebApi.Models.Membre", "Membre")
@@ -620,15 +623,18 @@ namespace hspaApi2.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApi.Models.Periode", "Periode")
-                        .WithMany("Cotisations")
-                        .HasForeignKey("PeriodeId")
+                    b.Navigation("Membre");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Credit", b =>
+                {
+                    b.HasOne("WebApi.Models.Membre", "Membre")
+                        .WithMany("Credits")
+                        .HasForeignKey("MembreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Membre");
-
-                    b.Navigation("Periode");
                 });
 
             modelBuilder.Entity("WebApi.Models.EcheanceAvance", b =>
@@ -727,12 +733,11 @@ namespace hspaApi2.Migrations
 
             modelBuilder.Entity("WebApi.Models.Membre", b =>
                 {
-                    b.Navigation("Cotisations");
-                });
+                    b.Navigation("Avances");
 
-            modelBuilder.Entity("WebApi.Models.Periode", b =>
-                {
                     b.Navigation("Cotisations");
+
+                    b.Navigation("Credits");
                 });
 #pragma warning restore 612, 618
         }

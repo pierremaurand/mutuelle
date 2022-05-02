@@ -75,6 +75,7 @@ import { AddPeriodeComponent } from './periode/add-periode/add-periode.component
 import { PeriodeComponent } from './periode/periode/periode.component';
 import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
 import { PaginationComponent } from './composants/pagination/pagination.component';
+import { AddPictureComponent } from './membre/add-picture/add-picture.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +138,7 @@ import { PaginationComponent } from './composants/pagination/pagination.componen
     PeriodeComponent,
     PeriodeListComponent,
     PaginationComponent,
+    AddPictureComponent,
   ],
   imports: [
     BrowserModule,

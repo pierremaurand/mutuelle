@@ -11,7 +11,6 @@ namespace WebApi.Interfaces
         IAvanceRepository AvanceRepository { get; }
         ICompteRepository CompteRepository { get; }
         ICreditRepository CreditRepository { get; }
-        IPeriodeRepository PeriodeRepository { get; }
         IGabarieRepository GabarieRepository { get; }
         ICotisationRepository CotisationRepository { get; }
         IUserRepository UserRepository { get; }

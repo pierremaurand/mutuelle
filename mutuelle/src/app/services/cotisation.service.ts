@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MembreDetailComponent } from '../membre/membre-detail/membre-detail.component';
 import { Cotisation } from '../model/cotisation';
-import { CotisationList } from '../model/cotisationList';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +13,12 @@ export class CotisationService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<CotisationList[]>{
-    return this.http.get<CotisationList[]>(this.baseUrl + '/cotisation/cotisations');
+  getAll(): Observable<Cotisation[]>{
+    return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations');
   }
 
-  getAllMembreCotisation(membreId: number): Observable<CotisationList[]>{
-    return this.http.get<CotisationList[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
+  getAllMembreCotisation(membreId: number): Observable<Cotisation[]>{
+    return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
   }
 
   getById(id: number): Observable<Cotisation> {

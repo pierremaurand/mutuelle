@@ -29,6 +29,18 @@ namespace WebApi.Controllers
             return Ok(avancesDto);
         }
 
+        [HttpGet("avances/membre/{id}")]
+        public async Task<IActionResult> GetAllAvanceMembre(int id)
+        {
+            var avances = await uow.AvanceRepository.GetAllByMembreAsync(id);
+            var avancesDto = mapper.Map<IEnumerable<AvanceDto>>(avances);
+            if (avancesDto is null)
+            {
+                return NotFound();
+            }
+            return Ok(avancesDto);
+        }
+
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -41,16 +53,40 @@ namespace WebApi.Controllers
             return Ok(avanceDto);
         }
 
-        [HttpPost("add")]
-        public async Task<IActionResult> Add(AvanceDto avanceDto)
+        [HttpGet("get/echeances/{id}")]
+        public async Task<IActionResult> GetEcheances(int id)
         {
-            var avance = mapper.Map<Avance>(avanceDto);
-            avance.CreatedBy = 1;
-            avance.LastUpdatedBy = 1;
-            avance.LastUpdatedOn = DateTime.Now;
-            uow.AvanceRepository.Add(avance);
-            await uow.SaveAsync();
-            return StatusCode(201);
+            var avance = await uow.AvanceRepository.FindByIdAsync(id);
+            if(avance is not null) {
+                var echeancesAvanceDto = mapper.Map<IEnumerable<EcheanceAvanceDto>>(avance.EcheanceAvances);
+                return Ok(echeancesAvanceDto);
+            }
+            return NotFound();
+        }
+
+        [HttpPost("add/{id}")]
+        public async Task<IActionResult> Add(int id,AvanceDto avanceDto)
+        {
+            var membre = await uow.MembreRepository.FindByIdAsync(id);
+            if(membre is not null) {
+                var avance = mapper.Map<Avance>(avanceDto);
+                avance.Membre = membre;
+                avance.CreatedBy = 1;
+                avance.LastUpdatedBy = 1;
+                avance.LastUpdatedOn = DateTime.Now;
+                /*foreach (EcheanceAvance echeance in avance.EcheanceAvances)
+                {
+                    var echeance = mapper.Map<EcheanceAvance>(echeanceDto);
+                    echeance.CreatedBy = 1;
+                    echeance.LastUpdatedBy = 1;
+                    echeance.LastUpdatedOn = DateTime.Now;
+                    avance.EcheanceAvances.Add(echeance);
+                }*/
+                uow.AvanceRepository.Add(avance);
+                await uow.SaveAsync();
+                return StatusCode(201);
+            }
+            return BadRequest("Ce membre n'existe pas dans la bdd");
         }
 
         [HttpPut("update/{id}")]

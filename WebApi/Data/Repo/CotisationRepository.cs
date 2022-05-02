@@ -45,9 +45,7 @@ namespace WebApi.Data.Repo
         public async Task<IEnumerable<Cotisation>?> GetAllAsync()
         {
              if(dc.Cotisations is not null) {
-                var cotisations = await dc.Cotisations
-                .Include(c => c.Periode)
-                .ToListAsync();
+                var cotisations = await dc.Cotisations.ToListAsync();
                 if(cotisations is not null) {
                     return cotisations;
                 }
@@ -59,7 +57,6 @@ namespace WebApi.Data.Repo
         {
             if(dc.Cotisations is not null) {
                 var cotisations = await dc.Cotisations
-                .Include(c => c.Periode)
                 .Where(c => c.MembreId == membreId)
                 .ToListAsync();
                 if(cotisations is not null) {
