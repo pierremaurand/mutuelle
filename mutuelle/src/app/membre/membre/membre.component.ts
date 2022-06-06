@@ -1,10 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Avance } from 'src/app/model/avance';
-import { Cotisation } from 'src/app/model/cotisation';
+import { Component, Input, OnInit } from '@angular/core';
 import { Membre } from "src/app/model/membre";
-import { MembreList } from 'src/app/model/membreList';
-import { AvanceService } from 'src/app/services/avance.service';
-import { CotisationService } from 'src/app/services/cotisation.service';
+import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,44 +10,20 @@ import { environment } from 'src/environments/environment';
 })
 export class MembreComponent implements OnInit {
 
-  @Input() membre: MembreList = {};
-  @Output() membreChange = new EventEmitter<Membre>();
-  cotisations: Cotisation[] = [];
-  avances: Avance[] = [];
+  @Input() membre: Membre = {};
   baseUrl = environment.imagesUrl;
 
-  constructor(
-    private cotisationService: CotisationService,
-    private avanceService: AvanceService
-  ) { }
+  constructor(private membreService:MembreService) { }
 
   ngOnInit(): void {
-    this.loadCotisations();
-    this.loadAvances();
-    this.loadCredits();
   }
 
 
-  editMembre(): void {
-    this.membreChange.emit(this.membre);
-  }
-
-  loadCotisations(): void {
-    if (this.membre.id) {
-      this.cotisationService
-        .getAllMembreCotisation(this.membre.id)
-        .subscribe({
-          next:(data:Cotisation[])  => {
-            this.cotisations = data;
-          }
-        });
-    }
-  }
 
   calculCotisation(): number {
     let total = 0;
-    if(this.cotisations.length > 0) {
-      for(let cotisation of this.cotisations) {
+    if(this.membre && this.membre.cotisations && this.membre.cotisations.length > 0) {
+      for(let cotisation of this.membre.cotisations) {
         if(cotisation.montant)
           total += cotisation.montant;
       }
@@ -59,22 +31,20 @@ export class MembreComponent implements OnInit {
     return total;
   }
 
-  loadAvances(): void {
-    if (this.membre.id) {
-      this.avanceService
-        .getAllMembreAvance(this.membre.id)
-        .subscribe({
-          next:(data:Avance[])  => {
-            this.avances = data;
-          }
-        });
+  cotisationsNbr(): number {
+    let nombre = 0;
+    if(this.membre && this.membre.cotisations) {
+      nombre = this.membre.cotisations.length;
     }
+    return nombre;
   }
+
+
 
   calculAvance(): number {
     let total = 0;
-    if(this.avances.length > 0) {
-      for(let avance of this.avances) {
+    if(this.membre && this.membre.avances && this.membre.avances.length > 0) {
+      for(let avance of this.membre.avances) {
         if(avance.montant) {
           total += avance.montant;
         }
@@ -93,14 +63,35 @@ export class MembreComponent implements OnInit {
     return total;
   }
 
-  loadCredits(): void {
-
+  avancesNbr(): number {
+    let nombre = 0;
+    if(this.membre && this.membre.avances) {
+      nombre = this.membre.avances.length;
+    }
+    return nombre;
   }
+
 
   calculCredit(): number {
     let total = 0;
 
     return total;
+  }
+
+  creditsNbr(): number {
+    let nombre = 0;
+    if(this.membre && this.membre.credits) {
+      nombre = this.membre.credits.length;
+    }
+    return nombre;
+  }
+
+  afficheAgence(): string|undefined {
+    return this.membreService.afficheAgence(this.membre.agence);
+  }
+
+  afficheService(): string|undefined {
+    return this.membreService.afficheService(this.membre.service);
   }
 
 }

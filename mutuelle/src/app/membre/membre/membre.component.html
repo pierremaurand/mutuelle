@@ -1,50 +1,63 @@
-<div class="card mb-4 shadow p-3 border-1 border-dark">
-  <div class="row g-0">
-    <div class="col-md-4 p-2">
-      <div class="card-img-wrapper align-middle" data-bs-toggle="modal" data-bs-target="#addPicture" (click)="editMembre()">
-        <img src="{{baseUrl}}assets/images/default_man.jpg" class="img-fluid" alt="photo membre"
-          *ngIf="!membre.photo && (!membre.sexeId || membre.sexeId==1)">
-        <img src="{{baseUrl}}assets/images/default_woman.jpg" class="img-fluid" alt="photo membre"
-          *ngIf="!membre.photo && (membre.sexeId && membre.sexeId==2)">
-        <img src="{{baseUrl}}{{membre.photo}}" class="img-fluid" alt="photo membre" *ngIf="membre.photo">
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h6 class="text-success">{{membre.nom | uppercase}}</h6>
-        <h6 class="text-success">{{membre.prenom | uppercase}}</h6>
-        <div class="text-primary">
-          <span class="me-2"><i class="fa fa-location-dot"></i> {{membre.agence}}-{{membre.service}}</span>
-        </div>
-        <div class="text-success">
-          <span class="me-1"><i class="fa fa-sack-dollar"></i></span>
-          <span class="me-1">{{calculCotisation() | number}}</span>
-          <span>FCFA</span>
-        </div>
-        <div class="text-danger">
-          <span class="me-1"><i class="fa fa-hand-holding-dollar"></i></span>
-          <span class="me-1">{{calculAvance() | number}}</span>
-          <span>FCFA</span>
-        </div>
-        <div class="text-danger">
-          <span class="me-1 text-"><i class="fa fa-money-check"></i></span>
-          <span class="me-1">{{calculCredit() | number}}</span>
-          <span>FCFA</span>
+<div class="m-0" [ngClass]="{'image-flip': membre.id, '':!membre.id}">
+  <div class="mainflip flip-0 m-0">
+    <div class="frontside m-0">
+      <div class="card shadow m-0 mt-3">
+        <div *ngIf="membre.photo" class="card-body text-center">
+          <p><img class="img-fluid" src="{{baseUrl}}{{membre.photo}}"
+              alt="card image"></p>
+          <h4 class="text-success">{{membre.nom | uppercase}}</h4>
+          <h5 class="text-success">{{membre.prenom | uppercase}}</h5>
+          <h5 class="card-text text-primary">
+            <i class="fa fa-location-dot"></i>&nbsp;
+            {{afficheAgence()}}-{{afficheService()}}
+          </h5>
+          <h5 class="card-text text-success">
+            <span class="me-1"><i class="fa fa-sack-dollar"></i></span>
+            <span class="me-1">{{calculCotisation() | number}}</span>
+            <span>FCFA</span>
+          </h5>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="btn-group">
-      <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#addMembre"
-      (click)="editMembre()">
-        <i class="fa fa-edit"></i>&nbsp;
-        Editer
-      </button>
-      <button class="btn btn-info btn-sm" routerLink="/membre-detail/{{membre.id}}"><i
-          class="fa fa-search"></i>&nbsp;
-          Voir
-      </button>
+    <div class="backside">
+      <div class="card">
+        <div *ngIf="membre" class="card-body text-center mt-4">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Libellé</th>
+                <th>Nombre</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-start">Cotisations</td>
+                <td>{{cotisationsNbr()}}</td>
+                <td class="text-end">{{calculCotisation() | number}}</td>
+              </tr>
+              <tr>
+                <td class="text-start">Avances</td>
+                <td>{{avancesNbr()}}</td>
+                <td class="text-end">{{calculAvance() | number}}</td>
+              </tr>
+              <tr>
+                <td class="text-start">Crédits</td>
+                <td>{{creditsNbr()}}</td>
+                <td class="text-end">{{calculCredit() | number}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="list-inline text-center member-icons animate">
+            <li class="list-inline-item">
+              <button class="btn btn-outline-primary p-2" routerLink="/membre-detail/{{membre.id}}">
+                <i class="fa fa-search"></i>&nbsp;
+                Voir détails
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

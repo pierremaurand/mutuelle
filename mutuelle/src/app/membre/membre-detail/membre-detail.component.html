@@ -1,213 +1,128 @@
-<div class="container" style="margin-top: 70px; width: 1080px;">
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <div class="card border-primary shadow">
-        <div class="card-header">
-          <h3>
-            <i class="fa fa-user"></i>&nbsp;
-            Infos membre
-          </h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card border-primary shadow">
-                <div class="card-body">
-                  <img src="{{baseUrl}}{{membre.photo}}" class="card-img-top mb-1" alt="photo membre">
-                </div>
-              </div>
-            </div>
-            <!--Infos membre-->
-            <div class="col-md-8">
-              <div class="card border-primary shadow">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <table class="table table-borderless table-hover table-responsive">
-                        <tbody>
-                          <tr class="align-middle">
-                            <th>Nom</th>
-                            <td>{{membre.nom | uppercase}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Prénom</th>
-                            <td>{{membre.prenom | uppercase}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Genre</th>
-                            <td>{{membre.sexe}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Email</th>
-                            <td>{{membre.email}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Téléphone</th>
-                            <td>{{membre.telephone}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Agence</th>
-                            <td>{{membre.agence}}</td>
-                          </tr>
-                          <tr class="align-middle">
-                            <th>Service</th>
-                            <td>{{membre.service}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="card shadow m-0 mt-3">
+      <div class="card-body" data-bs-toggle="modal" data-bs-target="#updatePhoto">
+        <img src="{{imageUrl}}" class="card-img-top mb-1" alt="photo membre">
+      </div>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item active" href="#profile" data-bs-toggle="tab">
+          <i class="fa fa-user"></i>&nbsp;
+          Profile
+        </a>
+        <a class="list-group-item" href="#cotisations" data-bs-toggle="tab">
+          <div class="position-relative">
+            <i class="fa fa-sack-dollar"></i>&nbsp;
+            Cotisations
+          </div>
+        </a>
+        <a class="list-group-item" href="#avances" data-bs-toggle="tab">
+          <div class="position-relative">
+            <i class="fa fa-hand-holding-dollar"></i>&nbsp;
+            Avances
+          </div>
+        </a>
+        <a class="list-group-item" href="#credits" data-bs-toggle="tab">
+          <div class="position-relative">
+            <i class="fa fa-money-check"></i>&nbsp;
+            Crédits
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-9">
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <div class="tab-content">
+          <div class="tab-pane active" id="profile">
+            <app-profile [membre]="membre"></app-profile>
+          </div>
+          <div class="tab-pane" id="cotisations">
+            <div class="row">
+              <div class="col-md-12 text-end mb-3">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <button class="btn btn-primary me-2" data-bs-toggle="modal"
+                      data-bs-target="#updateCotisation" (click)="newCotisation()">
+                      <i class="fa fa-plus"></i>&nbsp;
+                      Ajouter une cotisation
+                    </button>
+                    <button class="btn btn-warning">
+                      <i class="fa fa-print"></i>&nbsp;
+                      Imprimer
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+            <app-cotisation-list [cotisations]="cotisations"></app-cotisation-list>
           </div>
-            <!--End Infos membres-->
-        </div>
-        <div class="body-footer p-3">
-          <div class="row">
-            <div class="btn-group">
-              <button class="btn btn-success" [disabled]="membre.estActif"><i class="fa fa-user-check"></i></button>
-              <button class="btn btn-danger"><i class="fa fa-coins"></i></button>
-              <button class="btn btn-primary" [disabled]="!membre.estActif"><i class="fa fa-user-plus"></i></button>
+
+          <div class="tab-pane" id="avances">
+            <div class="row">
+              <div class="col-md-12 text-end mb-3">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#updateAvance"
+                      (click)="newAvance()">
+                      <i class="fa fa-plus"></i>&nbsp;
+                      Ajouter une avance
+                    </button>
+                    <button class="btn btn-warning">
+                      <i class="fa fa-print"></i>&nbsp;
+                      Imprimer
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+            <app-avance-list></app-avance-list>
+          </div>
+
+          <div class="tab-pane" id="credits">
+            <div class="row">
+              <div class="col-md-12 text-end mb-3">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#updateCredit"
+                      (click)="newCotisation()">
+                      <i class="fa fa-plus"></i>&nbsp;
+                      Ajouter un crédit
+                    </button>
+                    <button class="btn btn-warning">
+                      <i class="fa fa-print"></i>&nbsp;
+                      Imprimer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <app-credit-list></app-credit-list>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="accordion" id="infosMembre">
+<div id="updateCotisation" class="modal fade" tabindex="-1" aria-labelledby="updateCotisation" aria-hidden="true">
+  <app-add-cotisation [cotisation]="cotisation" (cotisationChange)="saveCotisationChange($event)">
+  </app-add-cotisation>
+</div>
 
-         <!--Cotisations-->
-        <div class="card border-primary shadow mb-3 accordion-item">
-          <div class="card-header" data-bs-toggle="collapse" data-bs-target="#cotisations"
-            aria-expanded="true" aria-controls="cotisations">
-            <div class="row text-white">
-              <div class="col-md-6 h3">
-                <i class="fa fa-sack-dollar"></i>&nbsp;
-                Cotisations
-              </div>
-              <div class="col-md-6 text-end h3">
-                <i class="fa fa-coins"></i>&nbsp;
-                {{montantCotisation() | number}}&nbsp;
-                FCFA
-              </div>
-            </div>
-          </div>
-           <!--Contenu cotisations-->
-          <div id="cotisations" class="accordion-collapse collapse" aria-labelledby="cotisations"
-            data-bs-parent="#infosMembre">
-             <!--Entete liste cotisation-->
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-end mb-3">
-                  <button class="btn btn-primary me-2"  data-bs-toggle="modal" data-bs-target="#updateCotisation"
-                  (click)="newCotisation()">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    Ajouter une cotisation
-                  </button>
-                  <button class="btn btn-warning">
-                    <i class="fa fa-print"></i>&nbsp;
-                    Imprimer
-                  </button>
-                </div>
-              </div>
+<div id="updateAvance" class="modal fade" tabindex="-1" aria-labelledby="updateAvance" aria-hidden="true">
+  <app-add-avance>
+  </app-add-avance>
+</div>
 
-               <!--Liste Contisation-->
-              <app-cotisation-list [cotisations]="cotisations" [cotisation]="cotisation" (cotisationChange)="selectCotisation($event)"></app-cotisation-list>
-            </div>
-          </div>
-        </div>
+<div id="updateCredit" class="modal fade" tabindex="-1" aria-labelledby="updateCredit" aria-hidden="true">
+  <app-add-credit [credit]="credit" (creditChange)="saveCreditChange($event)"></app-add-credit>
+</div>
 
-        <div class="card border-primary shadow mb-3 accordion-item">
-          <div class="card-header accordion-header" data-bs-toggle="collapse" data-bs-target="#avances"
-            aria-expanded="true" aria-controls="collapseOne">
-            <div class="row text-white">
-              <div class="col-md-6 h3">
-                <i class="fa fa-hand-holding-dollar"></i>&nbsp;
-                Avances
-              </div>
-              <div class="col-md-6 text-end h3">
-                <i class="fa fa-coins"></i>&nbsp;
-                {{montantAvance() | number}}&nbsp;
-                FCFA
-              </div>
-            </div>
-          </div>
-          <div id="avances" class="accordion-collapse collapse" aria-labelledby="avances"
-            data-bs-parent="#infosMembre">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-end mb-3">
-                  <button class="btn btn-primary me-2"  data-bs-toggle="modal" data-bs-target="#updateAvance"
-                  (click)="newAvance()">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    Ajouter une avance
-                  </button>
-                  <button class="btn btn-warning">
-                    <i class="fa fa-print"></i>&nbsp;
-                    Imprimer
-                  </button>
-                </div>
-              </div>
+<div id="updatePhoto" class="modal fade" tabindex="-1" aria-labelledby="updatePhoto" aria-hidden="true">
+  <app-add-picture [membre]="membre" (membreChange)="update()"></app-add-picture>
+</div>
 
-               <!--Liste Contisation-->
-              <app-avance-list [avances]="avances" [avance]="avance" (avanceChange)="selectAvance($event)"></app-avance-list>
-            </div>
-          </div>
-        </div>
-
-        <div class="card border-primary shadow mb-3 accordion-item">
-          <div class="card-header accordion-header" data-bs-toggle="collapse" data-bs-target="#credits"
-            aria-expanded="true" aria-controls="credits">
-            <div class="row text-white">
-              <div class="col-md-6 h3">
-                <i class="fa fa-money-check"></i>&nbsp;
-                Crédits
-              </div>
-              <div class="col-md-6 text-end h3">
-                <i class="fa fa-coins"></i>&nbsp;
-                {{montantCredit() | number}}&nbsp;
-                FCFA
-              </div>
-            </div>
-          </div>
-          <div id="credits" class="accordion-collapse collapse" aria-labelledby="credits"
-            data-bs-parent="#infosMembre">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-end mb-3">
-                  <button class="btn btn-primary me-2"  data-bs-toggle="modal" data-bs-target="#updateCredit"
-                  (click)="newCotisation()">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    Ajouter un crédit
-                  </button>
-                  <button class="btn btn-warning">
-                    <i class="fa fa-print"></i>&nbsp;
-                    Imprimer
-                  </button>
-                </div>
-              </div>
-
-               <!--Liste Contisation-->
-              <app-credit-list></app-credit-list>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="updateCotisation" class="modal fade" tabindex="-1" aria-labelledby="updateCotisation" aria-hidden="true">
-    <app-add-cotisation [cotisation]="cotisation" (cotisationChange)="saveCotisationChange($event)"></app-add-cotisation>
-  </div>
-
-  <div id="updateAvance" class="modal fade" tabindex="-1" aria-labelledby="updateAvance" aria-hidden="true">
-    <app-add-avance [avance]="avance" [echeanceAvance]="echeanceAvance" (avanceChange)="saveAvanceChange($event)"></app-add-avance>
-  </div>
-
-  <div id="updateCredit" class="modal fade" tabindex="-1" aria-labelledby="updateCredit" aria-hidden="true">
-    <app-add-credit [credit]="credit" (creditChange)="saveCreditChange($event)"></app-add-credit>
-  </div>
+<div id="addMembre" class="modal fade" tabindex="-1" aria-labelledby="addMembre" aria-hidden="true">
+  <app-add-membre [membre]="membre" [titre]="titre" (membreChange)="update()"></app-add-membre>
+</div>

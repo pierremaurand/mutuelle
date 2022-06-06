@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, retry } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Agence } from '../model/agence';
 import { Avance } from '../model/avance';
 import { Cotisation } from '../model/cotisation';
+import { ImageResponse } from '../model/imageResponse';
 import { Membre } from "../model/membre";
 import { MembreList } from '../model/membreList';
+import { Service } from '../model/service';
+import { Sexe } from '../model/sexe';
 
 @Injectable({
   providedIn: 'root'
@@ -24,41 +28,38 @@ export class MembreService {
     return this.http.get<Membre>(this.baseUrl + '/membre/get/' + id.toString());
   }
 
-  getCotisations(id: number): Observable<Cotisation[]> {
-    return this.http.get<Cotisation[]>(this.baseUrl + '/membre/get/cotisations/' + id.toString());
-  }
-
-  getAvances(id: number): Observable<Avance[]> {
-    return this.http.get<Avance[]>(this.baseUrl + '/membre/get/avances/' + id.toString());
-  }
-
-  addAvance(id: number, avance: Avance): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/membre/add/avance/' + id.toString(), avance);
-  }
-
-  updateAvance(id: number, avance: Avance): Observable<any> {
-    return this.http.put<any>(this.baseUrl + '/membre/update/avance/' + id.toString(), avance);
-  }
-
-  addCotisation(id: number, cotisation: Cotisation): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/membre/add/cotisation/' + id.toString(), cotisation);
-  }
-
-  updateCotisation(id: number, cotisation: Cotisation): Observable<any> {
-    return this.http.put<any>(this.baseUrl + '/membre/update/cotisation/' + id.toString(), cotisation);
-  }
-
   add(membre: Membre): Observable<any> {
-    return this.http.post(this.baseUrl + '/membre/add', membre);
+    return this.http.post(this.baseUrl + '/membre/add',membre);
   }
 
   update(membre: Membre, id?: number): Observable<any> {
     return this.http.put(this.baseUrl + '/membre/update/' + id?.toString(),membre);
   }
 
-  addPhoto(file: File): Observable<any> {
+  addPhoto(file: any): Observable<any> {
     const formData = new FormData();
-    formData.append('file', file, file.name);
-    return this.http.post(this.baseUrl + '/membre/add/photo', formData);
+    formData.append('file', file,'photoProfile.png');
+    return this.http.post(this.baseUrl + '/membre/add/photo',formData);
+  }
+
+  afficheSexe(sexe:Sexe|undefined): string|undefined {
+    if(sexe) {
+      return sexe.nom;
+    }
+    return undefined;
+  }
+
+  afficheAgence(agence:Agence|undefined): string|undefined {
+    if(agence) {
+      return agence.nom;
+    }
+    return undefined;
+  }
+
+  afficheService(service:Service|undefined): string|undefined {
+    if(service) {
+      return service.nom;
+    }
+    return undefined;
   }
 }

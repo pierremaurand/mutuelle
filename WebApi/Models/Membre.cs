@@ -5,6 +5,8 @@ namespace WebApi.Models
         public string Nom { get; set; } = string.Empty;
         public string Prenom { get; set; } = string.Empty;
         public int SexeId { get; set; }
+         public decimal FraisAdhesion { get; set; }
+        public DateTime DateAdhesion { get; set; }
         public Sexe Sexe { get; set; } = new Sexe{};
         public string? Photo { get; set; }
         public int AgenceId { get; set; }

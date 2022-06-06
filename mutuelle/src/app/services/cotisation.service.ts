@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cotisation } from '../model/cotisation';
+import { CotisationList } from '../model/cotisationList';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class CotisationService {
     return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations');
   }
 
-  getAllMembreCotisation(membreId: number): Observable<Cotisation[]>{
-    return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
+  getAllMembreCotisation(membreId: number): Observable<CotisationList[]>{
+    return this.http.get<CotisationList[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
   }
 
   getById(id: number): Observable<Cotisation> {
@@ -27,7 +28,7 @@ export class CotisationService {
 
   add(cotisation: Cotisation): Observable<any> {
     console.log(cotisation);
-    return this.http.post(this.baseUrl + '/cotisation/add', cotisation,);
+    return this.http.post(this.baseUrl + '/cotisation/add', cotisation);
   }
 
   update(cotisation: Cotisation, id?: number): Observable<any> {

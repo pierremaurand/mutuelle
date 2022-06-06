@@ -22,39 +22,6 @@ namespace hspaApi2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("WebApi.Models.Adhesion", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateAdhesion")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("FraisAdhesion")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("Adhesions");
-                });
-
             modelBuilder.Entity("WebApi.Models.Agence", b =>
                 {
                     b.Property<int>("Id")
@@ -344,12 +311,18 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateAdhesion")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstActif")
                         .HasColumnType("bit");
+
+                    b.Property<decimal>("FraisAdhesion")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("LastUpdatedBy")
                         .HasColumnType("int");
@@ -591,17 +564,6 @@ namespace hspaApi2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Adhesion", b =>
-                {
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany()
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("WebApi.Models.Avance", b =>

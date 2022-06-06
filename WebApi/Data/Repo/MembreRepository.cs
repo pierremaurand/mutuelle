@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApi.Dtos;
 using WebApi.Interfaces;
 using WebApi.Models;
 
@@ -55,11 +56,6 @@ namespace WebApi.Data.Repo
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
                 .Include(m => m.Agence)
-                .Include(m => m.Service)
-                .Include(m => m.Sexe)
-                .Include(m => m.Cotisations)
-                .Include(m => m.Avances)
-                .Include(m => m.Credits)
                 .ToListAsync();
                 if(membres is not null) {
                     return membres;

@@ -1,50 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">MEF</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown" *ngFor="let menu of menuProperties" [ngClass]="{'color-white bg-primary': menu.active, '':!menu.active}">
-          <a *ngIf="!menu.sousMenu" class="nav-link" href="javascript:void(0);" id="{{menu.id}}" data-bs-toggle="dropdown" aria-expanded="false" (click)="navigate(menu)">
-            <i class="{{menu.icon}}"></i>&nbsp;
-            {{menu.titre}}
-          </a>
-          <a *ngIf="menu.sousMenu" class="nav-link" href="javascript:void(0);" id="{{menu.id}}" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="{{menu.icon}}"></i>&nbsp;
-            {{menu.titre}}
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="menu.id" *ngIf="menu.sousMenu">
-            <li *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'color-white bg-primary': sousMenu.active, '':!sousMenu.active}">
-              <a class="dropdown-item" href="javascript:void(0);" (click)="navigate(sousMenu)">
-                <i class="{{sousMenu.icon}}"></i>&nbsp;
-                {{sousMenu.titre}}
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <div>
-        <ul class="navbar-nav">
-          <div *ngIf="loggedin()" class="dropdown me-5" dropdown>
-            <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
-              Welcome {{loggedinUser}}
+<div class="flex-shrink-0 p-3 bg-white accordion" id="accordionExample">
+  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <svg class="bi me-2" width="30" height="24">
+      <use xlink:href="#bootstrap" /></svg>
+    <span class="fs-5 fw-semibold">MEF</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1" *ngFor="let menu of menuProperties">
+      <a *ngIf="!menu.sousMenu" routerLinkActive="active" [routerLink]="'/'+menu.url" class="nav-link">
+        <i class="{{menu.icon}}"></i>&nbsp;
+        {{menu.titre}}
+      </a>
+      <a *ngIf="menu.sousMenu" class="nav-link"
+        data-bs-toggle="collapse"[attr.data-bs-target]="'#collapse' + menu.id" aria-expanded="true">
+        <i class="{{menu.icon}}"></i>&nbsp;
+        {{menu.titre}}
+      </a>
+      <div *ngIf="menu.sousMenu" class="collapse" id="collapse{{menu.id}}" data-bs-parent="#accordionExample">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li *ngFor="let sousMenu of menu.sousMenu">
+            <a routerLinkActive="active" [routerLink]="'/'+sousMenu.url" class="nav-link">
+              <i class="{{sousMenu.icon}}"></i>&nbsp;
+              {{sousMenu.titre}}
             </a>
-            <div class="dropdown-menu" *dropdownMenu>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-tachometer-alt"></i> View Dashboard</a>
-              <a href="#" class="dropdown-item">
-                <i class="far fa-user-circle"></i> My Profile</a>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-key"></i> Change Password</a>
-              <a (click)="onLogout()" class="dropdown-item">
-                <i class="fas fa-sign-out-alt"></i> Logout</a>
-            </div>
-          </div>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>
-</nav>
+    </li>
+  </ul>
+</div>

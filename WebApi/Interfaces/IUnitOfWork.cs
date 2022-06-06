@@ -7,7 +7,6 @@ namespace WebApi.Interfaces
         ISexeRepository SexeRepository { get; }
         IMembreRepository MembreRepository { get; }
         IParametreRepository ParametreRepository { get; }
-        IAdhesionRepository AdhesionRepository { get; }
         IAvanceRepository AvanceRepository { get; }
         ICompteRepository CompteRepository { get; }
         ICreditRepository CreditRepository { get; }

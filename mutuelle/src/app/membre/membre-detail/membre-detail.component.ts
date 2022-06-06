@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Avance } from 'src/app/model/avance';
-import { Cotisation } from 'src/app/model/cotisation';
+import { CotisationList } from 'src/app/model/cotisationList';
 import { Credit } from 'src/app/model/credit';
-import { EcheanceAvance } from 'src/app/model/echeanceAvance';
+import { Membre } from 'src/app/model/membre';
 import { MembreList } from 'src/app/model/membreList';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AvanceService } from 'src/app/services/avance.service';
+import { CotisationService } from 'src/app/services/cotisation.service';
 import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
 
@@ -18,56 +19,46 @@ import { environment } from 'src/environments/environment';
 export class MembreDetailComponent implements OnInit {
   membreId?: number;
   baseUrl = environment.imagesUrl;
-  membre: MembreList = {};
-  photo?: string;
-  cotisations!: Cotisation[];
-  cotisation: Cotisation = {};
-  avances!: Avance[];
+  membre: Membre = {};
+  titre: string = "Modification des informations d'un membre"
+  imageUrl!: string;
+  cotisations?: CotisationList[];
+  cotisation!: CotisationList;
   avance: Avance = {};
-  echeanceAvance: EcheanceAvance[] = [];
-  credits!: Credit[];
   credit: Credit = {};
 
   constructor(
     private route: ActivatedRoute,
     private membreService: MembreService,
     private avanceService: AvanceService,
+    private cotisationService: CotisationService,
     private alertity: AlertifyService
   ) {}
 
   ngOnInit(): void {
     this.membreId = +this.route.snapshot.params['id'];
+    this.loadInfosMembre();
+  }
+
+  loadInfosMembre(): void {
     if (this.membreId) {
       this.membreService.getById(this.membreId).subscribe({
         next: (data) => {
           this.membre = data;
-          this.photo = this.baseUrl + this.membre.photo;
-          this.loadCotisations();
-          this.loadAvances();
+          this.imageUrl = this.baseUrl + this.membre.photo;
+          this.cotisations = this.membre.cotisations;
         },
       });
     }
   }
 
   loadCotisations(): void {
-    if (this.membre.id) {
-      this.membreService
-        .getCotisations(this.membre.id)
+    if (this.membre && this.membre.id) {
+      this.cotisationService
+        .getAllMembreCotisation(this.membre.id)
         .subscribe({
-          next:(data:Cotisation[])  => {
+          next:(data:CotisationList[])  => {
             this.cotisations = data;
-          }
-        });
-    }
-  }
-
-  loadAvances(): void {
-    if (this.membre.id) {
-      this.avanceService
-        .getAllMembreAvance(this.membre.id)
-        .subscribe({
-          next:(data:Avance[])  => {
-            this.avances = data;
           }
         });
     }
@@ -88,23 +79,7 @@ export class MembreDetailComponent implements OnInit {
 
   montantAvance(): number {
     let total = 0;
-    if(this.avances && this.avances.length > 0) {
-      for(let avance of this.avances) {
-        if(avance.montant) {
-          total += avance.montant;
-        }
 
-        if(avance.echeanceAvances && avance.echeanceAvances.length > 0){
-          for(let echeance of avance.echeanceAvances) {
-            if(echeance.estPaye==true) {
-              if(echeance.montant) {
-                total -= echeance.montant;
-              }
-            }
-          }
-        }
-      }
-    }
     return total;
   }
 
@@ -115,50 +90,27 @@ export class MembreDetailComponent implements OnInit {
   }
 
   newCotisation(): void {
-    this.cotisation = {};
+
   }
 
   newAvance(): void {
-    this.avance = {};
-    this.echeanceAvance = [];
+
   }
 
-  selectCotisation(cotisation: Cotisation): void {
+  selectCotisation(cotisation: CotisationList): void {
     this.cotisation = cotisation;
   }
 
   selectAvance(avance: Avance): void {
-    this.avance = avance;
-    if(this.avance.echeanceAvances) {
-      this.echeanceAvance = this.avance.echeanceAvances;
-    } else {
-      this.echeanceAvance = [];
-    }
+
   }
 
   selectCredit(credit: Credit): void {
     this.credit = credit;
   }
 
-  saveCotisationChange(cotisation: Cotisation): void {
-    this.cotisation = {};
-    if(cotisation.id) {
-      if(this.membre.id) {
-        this.membreService.updateCotisation(this.membre.id,cotisation).subscribe({
-          next: (data: any) => {
-            this.cotisationMessage('Félécitation, cotisation modifié avec succès');
-          }
-        });
-      }
-    } else {
-      if(this.membre.id) {
-        this.membreService.addCotisation(this.membre.id,cotisation).subscribe({
-          next: (data: any) => {
-            this.cotisationMessage('Félécitation, cotisation enregistré avec succès');
-          }
-        });
-      }
-    }
+  saveCotisationChange(cotisation: CotisationList): void {
+
   }
 
   saveAvanceChange(avance: Avance): void {
@@ -180,5 +132,18 @@ export class MembreDetailComponent implements OnInit {
   cotisationMessage(message: string): void {
     this.alertity.success(message);
     this.loadCotisations();
+  }
+
+  update(): void {
+    if(this.membre) {
+      this.membreService.update(this.membre, this.membre.id).subscribe({
+        next: (data: any) => {
+          this.loadInfosMembre();
+          this.alertity.success(
+            'Félécitation, les modification du membre sont enregistrées avec succès'
+          );
+        },
+      });
+    }
   }
 }

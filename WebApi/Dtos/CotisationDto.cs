@@ -2,8 +2,9 @@ namespace WebApi.Dtos
 {
     public class CotisationDto
     {
-        public int Id { get; set; }
-        public string Periode { get; set; } = string.Empty;
-        public decimal Montant { get; set; }
+        public int? Id { get; set; }
+        public DateTime? Periode { get; set; }
+        public int? MembreId { get; set; }
+        public decimal? Montant { get; set; }
     }
 }

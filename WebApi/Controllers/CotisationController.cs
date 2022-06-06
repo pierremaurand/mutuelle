@@ -33,7 +33,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> GetAllCotisationMembre(int id)
         {
             var cotisations = await uow.CotisationRepository.GetAllByMembreAsync(id);
-            var cotisationsDto = mapper.Map<IEnumerable<CotisationDto>>(cotisations);
+            var cotisationsDto = mapper.Map<IEnumerable<CotisationListDto>>(cotisations);
             if (cotisationsDto is null)
             {
                 return NotFound();

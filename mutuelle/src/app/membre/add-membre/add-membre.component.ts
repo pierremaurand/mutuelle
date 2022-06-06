@@ -21,6 +21,7 @@ export class AddMembreComponent implements OnInit {
   membreId?: number;
   @ViewChild("closeMembreFormModal") modalClose:any;
   @Input() membre: Membre = {};
+  @Input() titre: string = "";
   @Output() membreChange = new EventEmitter<Membre>();
   sexes: Sexe[] = [];
   fichier?: any;
@@ -30,6 +31,7 @@ export class AddMembreComponent implements OnInit {
   photo?: string;
 
   constructor(
+    private membreService: MembreService,
     private agenceService: AgenceService,
     private sexeService: SexeService,
     private serviceService: ServiceService,
@@ -67,7 +69,7 @@ export class AddMembreComponent implements OnInit {
 
 
   changerPhotoProfil():void {
-    if(!this.fichier) {
+    if(this.membre) {
       if(this.membre.sexeId == 1) {
         this.membre.photo = 'assets/images/default_man.jpg';
       } else {
@@ -82,7 +84,7 @@ export class AddMembreComponent implements OnInit {
 
 
   annuler(): void {
-    this.photo = undefined;
+    this.membre = {};
   }
 
 }

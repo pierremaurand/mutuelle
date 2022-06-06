@@ -28,9 +28,6 @@ namespace WebApi.Data
         public IParametreRepository ParametreRepository =>
             new ParametreRepository(dc);
 
-        public IAdhesionRepository AdhesionRepository =>
-            new AdhesionRepository(dc);
-
         public IAvanceRepository AvanceRepository =>
             new AvanceRepository(dc);
 

@@ -9,21 +9,27 @@ namespace WebApi.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<Agence, AgenceDto>().ReverseMap();
-            
+
             CreateMap<Service, ServiceDto>().ReverseMap();
 
             CreateMap<Sexe, SexeDto>().ReverseMap();
 
             CreateMap<Parametre, ParametreDto>().ReverseMap();
 
-            CreateMap<Membre, MembreDto>().ReverseMap();
+            CreateMap<Membre, MembreDto>()
+                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence))
+                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service))
+                .ForMember(d => d.Cotisations, opt => opt.MapFrom(src => src.Cotisations))
+                .ForMember(d => d.Avances, opt => opt.MapFrom(src => src.Avances))
+                .ForMember(d => d.Credits, opt => opt.MapFrom(src => src.Credits))
+                .ReverseMap();
 
             CreateMap<Membre, MembreListDto>()
-                .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom))
-                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
-                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom));
+                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom));
 
             CreateMap<Compte, CompteDto>().ReverseMap();
+
+            CreateMap<Cotisation, CotisationListDto>();
 
             CreateMap<Cotisation, CotisationDto>().ReverseMap();
 

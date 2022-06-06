@@ -1,42 +1,66 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 import { Membre } from 'src/app/model/membre';
-import { environment } from 'src/environments/environment';
+import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
   selector: 'app-add-picture',
   templateUrl: './add-picture.component.html',
-  styleUrls: ['./add-picture.component.scss']
+  styleUrls: ['./add-picture.component.scss'],
 })
 export class AddPictureComponent implements OnInit {
-  @Input() membre: Membre = {};
+  @Input() membre: Membre | undefined = {};
   @Output() membreChange = new EventEmitter<Membre>();
-  @Input() imageUrl: string ='';
-  fichier: any;
-  constructor() { }
+  imgChangeEvt: any = '';
+  cropImgPreview: any = '';
 
-  ngOnInit(): void {
+  public constructor(private membreService: MembreService) {}
 
+  public ngOnInit(): void {}
+
+  onFileChange(event: any): void {
+    this.imgChangeEvt = event;
+  }
+  cropImg(e: ImageCroppedEvent) {
+    this.cropImgPreview = e.base64;
   }
 
-  onSubmit(pictureForm: NgForm): void {
-    /*this.membreService.addPhoto(this.fichier).subscribe({
-      next:(data:any) => {
-        this.membre.photo = data.imageUrl;
+  imgLoad() {
+    // display cropper tool
+  }
+
+  initCropper() {
+    // init cropper
+  }
+
+  imgFailed() {
+    // error msg
+  }
+
+  uploadPhoto(): void {
+    const file = this.DataURIToBlob(this.cropImgPreview);
+    this.membreService.addPhoto(file).subscribe({
+      next: (data: any) => {
+        if(this.membre) {
+          this.membre.photo = data.imageUrl;
+          this.membreChange.emit(this.membre);
+        }
       }
-    });*/
+    });
   }
 
-  fileBrowseHandler(event: Event) {
-    const element = event.currentTarget as HTMLInputElement;
-    let fileList = element.files;
-    const files = Array.prototype.slice.call(fileList);
-    this.fichier = files[0];
-    var reader = new FileReader();
-    reader.onload = () => {
-      this.imageUrl = reader.result as string;
-    }
-    reader.readAsDataURL(this.fichier);
-  }
+  DataURIToBlob(dataURI: string) {
+    const splitDataURI = dataURI.split(',');
+    const byteString =
+      splitDataURI[0].indexOf('base64') >= 0
+        ? atob(splitDataURI[1])
+        : decodeURI(splitDataURI[1]);
+    const mimeString = splitDataURI[0].split(':')[1].split(';')[0];
 
+    const ia = new Uint8Array(byteString.length);
+    for (let i = 0; i < byteString.length; i++)
+      ia[i] = byteString.charCodeAt(i);
+
+    return new Blob([ia], { type: mimeString });
+  }
 }

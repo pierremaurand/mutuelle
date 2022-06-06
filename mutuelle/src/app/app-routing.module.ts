@@ -20,6 +20,7 @@ import { StatistiqueComponent } from './dashboard/statistique/statistique.compon
 import { AddMembreComponent } from './membre/add-membre/add-membre.component';
 import { MembreDetailComponent } from './membre/membre-detail/membre-detail.component';
 import { MembreListComponent } from './membre/membre-list/membre-list.component';
+import { ProfileComponent } from './membre/profile/profile.component';
 import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
 import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
 import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
@@ -56,7 +57,13 @@ const routes: Routes = [
   {path:'update-membre-detail/:id', component: AddMembreComponent,
     data: {
       origin: 'detail'
-    }
+    },
+    children: [
+      {
+        path: 'profile-membre',
+        component: ProfileComponent
+      }
+    ]
   },
 
   {path:'avances', component: AvanceListComponent},

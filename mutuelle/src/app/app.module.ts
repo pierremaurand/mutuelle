@@ -25,7 +25,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { HttpErrorInterceptorService } from './services/httperror-interceptor.service';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { DndDirective } from './directives/dnd.directive';
 import { AddMembreComponent } from './membre/add-membre/add-membre.component';
 import { MembreListComponent } from './membre/membre-list/membre-list.component';
@@ -76,6 +76,8 @@ import { PeriodeComponent } from './periode/periode/periode.component';
 import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
 import { PaginationComponent } from './composants/pagination/pagination.component';
 import { AddPictureComponent } from './membre/add-picture/add-picture.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { ProfileComponent } from './membre/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -139,6 +141,7 @@ import { AddPictureComponent } from './membre/add-picture/add-picture.component'
     PeriodeListComponent,
     PaginationComponent,
     AddPictureComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -151,7 +154,8 @@ import { AddPictureComponent } from './membre/add-picture/add-picture.component'
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    NgxGalleryModule
+    NgxGalleryModule,
+    ImageCropperModule
   ],
   providers: [
     {
@@ -163,7 +167,8 @@ import { AddPictureComponent } from './membre/add-picture/add-picture.component'
     AlertifyService,
     AuthService,
     PropertyDetailResolverService,
-    DatePipe
+    DatePipe,
+    DecimalPipe,
   ],
   bootstrap: [AppComponent]
 })

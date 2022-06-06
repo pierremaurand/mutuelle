@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-dialog-centered modal-md">
+<div class="modal-dialog modal-dialog-centered modal-fullscreen">
   <div class="modal-content">
     <form #cotisationForm="ngForm" (ngSubmit)="onSubmit(cotisationForm)">
       <div class="modal-body">
@@ -12,17 +12,14 @@
               <label for="periode" class="form-label">Période</label>
               <input type="month" class="form-control"
                 id="periode" required
-                [(ngModel)]="cotisation.periode"
-                name="periodeId"
-                [disabled]="cotisation.id!=undefined">
+                name="periodeId">
             </div>
 
             <div class="mb-3">
               <label for="montant" class="form-label">Montant</label>
-              <input type="number" class="form-control"
+              <input type="text" class="form-control text-end"
               id="montant" required
-              [(ngModel)]="cotisation.montant"
-              name="montant" min="1000">
+              name="montant">
             </div>
 
             <div class="row">

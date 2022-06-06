@@ -35,7 +35,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var membre = await uow.MembreRepository.FindByIdAsync(id);
-            var membreDto = mapper.Map<MembreListDto>(membre);
+            var membreDto = mapper.Map<MembreDto>(membre);
             if (membreDto is null)
             {
                 return NotFound();
@@ -49,7 +49,7 @@ namespace WebApi.Controllers
             var membre = await uow.MembreRepository.FindByIdAsync(id);
             if (membre != null && membre.Cotisations != null)
             {
-                var cotisationsDto = mapper.Map<IEnumerable<CotisationDto>>(membre.Cotisations);
+                var cotisationsDto = mapper.Map<IEnumerable<CotisationListDto>>(membre.Cotisations);
                 return Ok(cotisationsDto);
             }
             return NotFound();
@@ -83,49 +83,6 @@ namespace WebApi.Controllers
             mapper.Map(membreDto, membreFromDb);
             await uow.SaveAsync();
             return StatusCode(200);
-        }
-
-        [HttpPost("add/cotisation/{id}")]
-        public async Task<IActionResult> AddCotisation(int id, CotisationDto cotisationDto)
-        {
-
-            var membreFromDb = await uow.MembreRepository.FindByIdAsync(id);
-            if (membreFromDb != null && membreFromDb.Cotisations != null)
-            {
-                var cotisation = membreFromDb.Cotisations.FirstOrDefault(c => c.Periode == cotisationDto.Periode);
-                if (cotisation is null)
-                {
-                    cotisation = mapper.Map<Cotisation>(cotisationDto);
-                    cotisation.CreatedBy = 1;
-                    cotisation.LastUpdatedBy = 1;
-                    cotisation.LastUpdatedOn = DateTime.Now;
-                    membreFromDb.Cotisations.Add(cotisation);
-                    await uow.SaveAsync();
-                    return StatusCode(201);
-                }
-            }
-            return BadRequest("La cotisation de se mois a déjà été enregistrer");
-        }
-
-        [HttpPut("update/cotisation/{id}")]
-        public async Task<IActionResult> UpdateCotisation(int id, CotisationDto cotisationDto)
-        {
-
-            var membreFromDb = await uow.MembreRepository.FindByIdAsync(id);
-            if (membreFromDb != null && membreFromDb.Cotisations != null)
-            {
-                var cotisation = membreFromDb.Cotisations.FirstOrDefault(c => c.Id == cotisationDto.Id);
-                if (cotisation is not null)
-                {
-                    cotisation.Montant = cotisationDto.Montant;
-                    cotisation.CreatedBy = 1;
-                    cotisation.LastUpdatedBy = 1;
-                    cotisation.LastUpdatedOn = DateTime.Now;
-                    if (await uow.SaveAsync())
-                        return StatusCode(200);
-                }
-            }
-            return BadRequest("La cotisation de se mois a déjà été enregistrer");
         }
 
 

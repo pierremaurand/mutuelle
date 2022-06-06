@@ -11,7 +11,9 @@ export class FilterPipe implements PipeTransform {
     }
 
     for (const item of value) {
-      if (item[propName] === filterString) {
+      let propo: string = item[propName].toLowerCase();
+      let filtre = filterString.toLowerCase();
+      if (propo == filtre) {
         resultArray.push(item);
       }
     }
