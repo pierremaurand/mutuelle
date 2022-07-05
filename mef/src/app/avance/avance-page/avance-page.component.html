@@ -1,0 +1,39 @@
+<app-bouton-action [(action)]="action" (actionChange)="clickAction()"></app-bouton-action>
+
+<app-avance-list
+  [avances]="avances"
+  [(avance)]="avance"
+  [(action)]="action"
+  (actionChange)="clickAction()"
+></app-avance-list>
+
+<app-pagination></app-pagination>
+
+<div
+  id="newAdd"
+  class="modal fade"
+  tabindex="-1"
+  aria-labelledby="newAdd"
+  aria-hidden="true"
+>
+  <app-add-avance
+    [(avance)]="avance"
+    [(action)]="action"
+    (actionChange)="clickAction()"
+  ></app-add-avance>
+</div>
+
+<div
+  id="rbtAvance"
+  class="modal fade"
+  tabindex="-1"
+  aria-labelledby="rbtAvance"
+  aria-hidden="true"
+>
+  <app-rbt-avance
+    [avance]="avance"
+    [(echeances)]="echeances"
+    [(action)]="action"
+    (actionChange)="clickAction()"
+  ></app-rbt-avance>
+</div>

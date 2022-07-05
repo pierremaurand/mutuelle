@@ -1,0 +1,52 @@
+<div class="modal-dialog modal-dialog-centered modal-fullscreen">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Enregistrement d'une cotisation</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <form #cotisationForm="ngForm" (ngSubmit)="onSubmit(cotisationForm)">
+      <div class="modal-body p-3">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="month" class="form-control"
+                placeholder="La période la cotisation"
+                [(ngModel)]="cotisation.periode"
+                id="periode" required
+                name="periodeId"/>
+              <label for="periode" class="form-label">Période</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating input-group">
+              <input
+                type="number"
+                id="montant"
+                class="form-control col-6"
+                name="montant"
+                [(ngModel)]="cotisation.montant" required
+                placeholder="Montant de l'avance"
+              />
+              <label for="montant" class="form-label">Montant</label>
+              <button type="button" class="btn btn-warning info text-end col-6">
+                {{cotisation.montant | number}}&nbsp;
+                FCFA
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary me-2"
+            [disabled]="!cotisationForm.form.valid">
+              <i class="fa fa-save"></i>&nbsp;
+              Enregistrer
+            </button>
+            <button type="button" #closeCotisationFormModal class="btn btn-danger" data-bs-dismiss="modal">
+              <i class="fa fa-close"></i>&nbsp;
+              Fermer
+            </button>
+      </div>
+    </form>
+  </div>
+</div>

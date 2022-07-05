@@ -1,0 +1,62 @@
+<div class="m-0" [ngClass]="{'image-flip': membre.id, '':!membre.id}">
+  <div class="mainflip flip-0 m-0">
+    <div class="frontside m-0">
+      <div class="card shadow m-0 mt-3">
+        <div *ngIf="membre.photo" class="card-body text-center">
+          <p><img class="img-fluid" src="{{baseUrl}}{{membre.photo}}"
+              alt="card image"></p>
+          <h4 class="text-success">{{membre.nom | uppercase}}</h4>
+          <h5 class="text-success">{{membre.prenom | uppercase}}</h5>
+          <h5 class="card-text text-primary">
+            <i class="fa fa-location-dot"></i>&nbsp;
+            {{membre.agence}}
+          </h5>
+          <h5 class="card-text text-primary">
+            <i class="fa fa-location-dot"></i>&nbsp;
+            {{membre.service}}
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="backside">
+      <div class="card">
+        <div *ngIf="membre" class="card-body text-center mt-4">
+          <table class="table table-responsive table-sm">
+            <thead>
+              <tr>
+                <th>Libellé</th>
+                <th>Nombre</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-start">Cotisations</td>
+                <td>{{cotisationsNbr()}}</td>
+                <td class="text-end">{{calculCotisation() | number}}</td>
+              </tr>
+              <tr>
+                <td class="text-start">Avances</td>
+                <td>{{avancesNbr()}}</td>
+                <td class="text-end">{{calculAvance() | number}}</td>
+              </tr>
+              <tr>
+                <td class="text-start">Crédits</td>
+                <td>{{creditsNbr()}}</td>
+                <td class="text-end">{{calculCredit() | number}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul class="list-inline text-center member-icons animate">
+            <li class="list-inline-item">
+              <button class="btn btn-outline-primary p-2" routerLink="/membre-page">
+                <i class="fa fa-search"></i>&nbsp;
+                Voir détails
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
