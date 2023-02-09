@@ -1,107 +1,158 @@
-<div class="modal-dialog modal-dialog-centered modal-fullscreen">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title">{{titre}}</h3>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <form #membreForm="ngForm" (ngSubmit)="onSubmit(membreForm)">
-      <div class="modal-body p-3">
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="text" id="nom" class="form-control" name="nom" [(ngModel)]="membre.nom"
-                placeholder="Nom du membre">
-              <label for="nom">Nom</label>
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3">Ajout d'un membre</div>
+    <p>Formulaire d'enregistrement d'un membre</p>
+    <hr />
+    <form
+      #membreForm="ngForm"
+      (ngSubmit)="onSubmit(membreForm)"
+      class="was-validated"
+    >
+      <div class="row">
+        <div class="col-8">
+          <div class="row">
+            <div class="mb-3 col-8">
+              <label for="nom" class="form-label">Nom du membre</label>
+              <input
+                type="text"
+                id="nom"
+                class="form-control"
+                name="nom"
+                [(ngModel)]="membre.nom"
+                required
+                placeholder="Le nom du membre"
+              />
+              <div class="invalid-feedback">
+                Le nom du membre est obligatoire.
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="text" id="prenom" class="form-control" name="prenom" [(ngModel)]="membre.prenom"
-                placeholder="Prénom du membre">
-              <label for="prenom">Prénom</label>
+            <div class="mb-3 col-4">
+              <label for="personnelId" class="form-label"
+                >Identifiant Paie</label
+              >
+              <input
+                type="number"
+                id="personnelId"
+                class="form-control"
+                name="personnelId"
+                [(ngModel)]="membre.personnelId"
+                required
+                placeholder="L'identifiant paie du membre"
+                min="1"
+              />
+              <div class="invalid-feedback">
+                L'identifiant paie du membre est obligatoire.
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="form-floating">
-              <select class="form-control" name="sexe" id="sexe" (change)="changerPhotoProfil()"
-                [(ngModel)]="membre.sexeId">
-                <option value="undefined">Sexe du membre</option>
-                <option *ngFor="let item of sexes" value="{{item.id}}">{{item.nom}}</option>
+            <div class="mb-3 col-4">
+              <label for="sexeId" class="form-label">Le sexe du membre</label>
+              <select
+                id="sexeId"
+                name="sexeId"
+                [(ngModel)]="membre.sexeId"
+                class="form-select"
+                required
+              >
+                <option *ngFor="let sexe of sexes" value="{{ sexe.id }}">
+                  {{ sexe.nom }}
+                </option>
               </select>
-              <label for="sexe">Sexe</label>
+              <div class="invalid-feedback">
+                Vous devez choisir le sexe du membre.
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="email" id="email" class="form-control" name="email" [(ngModel)]="membre.email"
-                placeholder="L'email du membre">
-              <label for="email">Email</label>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="tel" id="telephone" class="form-control" name="telephone" [(ngModel)]="membre.telephone"
-                placeholder="Le contact du membre">
-              <label for="telephone" class="form-label">Téléphone</label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-floating">
-              <select class="form-control" name="agence" id="agence" [(ngModel)]="membre.agenceId">
-                <option value="undefined">Agence du membre</option>
-                <option *ngFor="let item of agences" value="{{item.id}}">{{item.nom}}</option>
+            <div class="mb-3 col-4">
+              <label for="posteId" class="form-label">Le poste du membre</label>
+              <select
+                id="posteId"
+                name="posteId"
+                [(ngModel)]="membre.posteId"
+                class="form-select"
+                required
+              >
+                <option *ngFor="let poste of postes" value="{{ poste.id }}">
+                  {{ poste.libelle }}
+                </option>
               </select>
-              <label for="agence" class="form-label">Agence</label>
+              <div class="invalid-feedback">
+                Vous devez choisir le poste du membre.
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="dateNaissance" class="form-label"
+                >Date de naissance</label
+              >
+              <input
+                type="date"
+                id="dateNaissance"
+                class="form-control"
+                name="dateNaissance"
+                [(ngModel)]="membre.dateNaissance"
+                required
+                placeholder="La date de naissance du membre"
+              />
+              <div class="invalid-feedback">
+                La date de naissance du membre est obligatoire.
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="lieuNaissance" class="form-label"
+                >Lieu de naissance</label
+              >
+              <input
+                type="text"
+                id="lieuNaissance"
+                class="form-control"
+                name="lieuNaissance"
+                [(ngModel)]="membre.lieuNaissance"
+                required
+                placeholder="Le lieu de naissance du membre"
+              />
+              <div class="invalid-feedback">
+                Le lieu de naissance du membre est obligatoire.
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="contact" class="form-label">Téléphone</label>
+              <input
+                type="text"
+                id="contact"
+                class="form-control"
+                name="contact"
+                [(ngModel)]="membre.contact"
+                required
+                placeholder="Le numéro de téléphone du membre"
+              />
+              <div class="invalid-feedback">Le contact est obligatoire.</div>
+            </div>
+            <div class="col-4">
+              <label for="email" class="form-label">L'email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                name="email"
+                [(ngModel)]="membre.email"
+                placeholder="L'email du membre"
+                required
+              />
             </div>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="form-floating">
-              <select class="form-control" name="service" id="service" [(ngModel)]="membre.serviceId">
-                <option value="undefined">Service du membre</option>
-                <option *ngFor="let item of services" value="{{item.id}}">{{item.nom}}</option>
-              </select>
-              <label for="service" class="form-label">Service</label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="number" id="fraisAdhesion" class="form-control" name="fraisAdhesion"
-                [(ngModel)]="membre.fraisAdhesion" placeholder="Le contact du membre">
-              <label for="fraisAdhesion" class="form-label">Frais d'adhésion</label>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="form-floating">
-              <input type="date" id="dateAdhesion" class="form-control" name="dateAdhesion"
-                [(ngModel)]="membre.dateAdhesion" placeholder="Date d'adhésion du membre">
-              <label for="dateAdhesion" class="form-label">Date d'adhésion</label>
-            </div>
-          </div>
-          <div *ngIf="membre.fraisAdhesion" class="col-md-6">
-            <div class="h3 text-end pt-3">
-              {{membre.fraisAdhesion | number}}&nbsp;
-              FCFA
-            </div>
-          </div>
+        <div class="col-4">
+          <app-profil-membre [membre]="membre"></app-profil-membre>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">
-          <i class="fa fa-save"></i>&nbsp;
-          Enregistrer
-        </button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="annuler()" #closeMembreFormModal>
-          <i class="fa fa-close"></i>&nbsp;
-          Annuler
-        </button>
+      <hr />
+      <div class="row">
+        <div class="col d-flex justify-content-between">
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-save"></i>&nbsp; Enregistrer
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            <i class="fa fa-close"></i>&nbsp; Annuler
+          </button>
+        </div>
       </div>
     </form>
   </div>

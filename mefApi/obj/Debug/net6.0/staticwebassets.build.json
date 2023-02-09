@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lezmE1izgTCXMOEeKyYNxNJPNqYNVX86JhuKqs8Ium0=",
+  "Hash": "wdZCzH+6QeDJ+K6HgrsgHFV4eYKdYkWcAX+K/a1BG5c=",
   "Source": "hspaApi2",
   "BasePath": "_content/hspaApi2",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "hspaApi2\\wwwroot",
       "Source": "hspaApi2",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\3rdpartylicenses.txt",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\3rdpartylicenses.txt",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "3rdpartylicenses.txt",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\3rdpartylicenses.txt"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\data\\properties.json",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\data\\properties.json",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/data/properties.json",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\data\\properties.json"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\forms.css",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\forms.css",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/forms.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\forms.css"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\0q3zv2mw.pjk.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\0q3zv2mw.pjk.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/0q3zv2mw.pjk.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\0q3zv2mw.pjk.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\2fpmkmta.jwj.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\2fpmkmta.jwj.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/2fpmkmta.jwj.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\2fpmkmta.jwj.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\2khjjq0o.24m.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\2khjjq0o.24m.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/2khjjq0o.24m.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\2khjjq0o.24m.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\4cwpecan.ru2.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\4cwpecan.ru2.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/4cwpecan.ru2.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\4cwpecan.ru2.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\4jrmwqan.h35.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\4jrmwqan.h35.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/4jrmwqan.h35.png",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\4jrmwqan.h35.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\5d0fkxog.b25.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\5d0fkxog.b25.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/5d0fkxog.b25.png",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\5d0fkxog.b25.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\5jow2p25.h5r.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\5jow2p25.h5r.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/5jow2p25.h5r.png",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\5jow2p25.h5r.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\90.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\90.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/90.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\90.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\ax5y144q.wz1.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\ax5y144q.wz1.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/ax5y144q.wz1.png",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\ax5y144q.wz1.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\baglcujg.uba.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\baglcujg.uba.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/baglcujg.uba.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\baglcujg.uba.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\default_man.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/default_man.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\default_man.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\default_woman.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_woman.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/default_woman.jpg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\default_woman.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\dhw0vpru.0ip.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\dhw0vpru.0ip.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/dhw0vpru.0ip.png",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\dhw0vpru.0ip.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\dujmyugj.v5l.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\dujmyugj.v5l.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/dujmyugj.v5l.jpg",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\dujmyugj.v5l.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\e2plozxo.heg.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\e2plozxo.heg.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/e2plozxo.heg.png",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\e2plozxo.heg.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\e3kfpdla.1o1.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\e3kfpdla.1o1.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/e3kfpdla.1o1.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\e3kfpdla.1o1.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\enyiiupa.m5i.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\enyiiupa.m5i.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/enyiiupa.m5i.jpg",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\enyiiupa.m5i.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\firilvrg.eao.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\firilvrg.eao.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/firilvrg.eao.png",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\firilvrg.eao.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\gbh1o55p.wgz.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gbh1o55p.wgz.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/gbh1o55p.wgz.png",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\gbh1o55p.wgz.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\gc2devsk.0ko.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gc2devsk.0ko.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/gc2devsk.0ko.png",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\gc2devsk.0ko.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\gimkfswy.qce.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gimkfswy.qce.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/gimkfswy.qce.png",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\gimkfswy.qce.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\house_default_1.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\house_default_1.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/house_default_1.png",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\house_default_1.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\house_default.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\house_default.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/house_default.png",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\house_default.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\hp4gv40t.24e.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\hp4gv40t.24e.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/hp4gv40t.24e.png",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\hp4gv40t.24e.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\i3ongdfy.4de.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\i3ongdfy.4de.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/i3ongdfy.4de.png",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\i3ongdfy.4de.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\internal-1.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\internal-1.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/internal-1.jpg",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\internal-1.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\internal-2.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\internal-2.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/internal-2.jpg",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\internal-2.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\internal-3.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\internal-3.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/internal-3.jpg",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\internal-3.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\internal-4.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\internal-4.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/internal-4.jpg",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\internal-4.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\internal-5.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\internal-5.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/internal-5.jpg",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\internal-5.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\jrdddihu.vyx.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\jrdddihu.vyx.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/jrdddihu.vyx.png",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\jrdddihu.vyx.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\k4txigfk.lxp.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\k4txigfk.lxp.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/k4txigfk.lxp.png",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\k4txigfk.lxp.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\kuzmyfxj.byl.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\kuzmyfxj.byl.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/kuzmyfxj.byl.png",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\kuzmyfxj.byl.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\lo0ojwnz.w22.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\lo0ojwnz.w22.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/lo0ojwnz.w22.png",
       "AssetKind": "All",
@@ -646,10 +646,333 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\lo0ojwnz.w22.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\mzbj3fef.k0l.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_1002.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1002.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1006.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_1006.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1006.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1007.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_1007.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1007.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_19.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_19.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_19.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_20.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_20.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_20.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_2002.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2002.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2017.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_2017.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2017.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_21.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_21.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_21.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_22.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_22.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_22.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_23.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_23.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_23.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_28.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_28.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_28.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_3.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_3.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_4.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_4.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_5.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_5.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6.PNG",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_6.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_6.PNG"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_7.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_7.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_7.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_8.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_8.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_8.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\mzbj3fef.k0l.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/mzbj3fef.k0l.png",
       "AssetKind": "All",
@@ -663,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\mzbj3fef.k0l.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\ndsndf3g.jq1.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\ndsndf3g.jq1.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/ndsndf3g.jq1.jpg",
       "AssetKind": "All",
@@ -680,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\ndsndf3g.jq1.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\nilrzwws.2xe.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\nilrzwws.2xe.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/nilrzwws.2xe.png",
       "AssetKind": "All",
@@ -697,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\nilrzwws.2xe.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\np0z4oxl.pu1.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\np0z4oxl.pu1.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/np0z4oxl.pu1.jpg",
       "AssetKind": "All",
@@ -714,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\np0z4oxl.pu1.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\npiraou4.rf1.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\npiraou4.rf1.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/npiraou4.rf1.png",
       "AssetKind": "All",
@@ -731,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\npiraou4.rf1.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\nyihtnhe.hj3.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\nyihtnhe.hj3.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/nyihtnhe.hj3.png",
       "AssetKind": "All",
@@ -748,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\nyihtnhe.hj3.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\pe3nyxo1.uio.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\pe3nyxo1.uio.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/pe3nyxo1.uio.png",
       "AssetKind": "All",
@@ -765,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\pe3nyxo1.uio.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\pic-3.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\pic-3.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/pic-3.png",
       "AssetKind": "All",
@@ -782,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\pic-3.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\prop-1.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\prop-1.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/prop-1.png",
       "AssetKind": "All",
@@ -799,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\prop-1.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\prop-2.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\prop-2.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/prop-2.png",
       "AssetKind": "All",
@@ -816,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\prop-2.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\prop-3.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\prop-3.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/prop-3.png",
       "AssetKind": "All",
@@ -833,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\prop-3.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\prop-4.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\prop-4.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/prop-4.png",
       "AssetKind": "All",
@@ -850,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\prop-4.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\prop-5.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\prop-5.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/prop-5.png",
       "AssetKind": "All",
@@ -867,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\prop-5.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\q5r21x15.ple.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\q5r21x15.ple.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/q5r21x15.ple.png",
       "AssetKind": "All",
@@ -884,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\q5r21x15.ple.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\qwoacsdp.bwo.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\qwoacsdp.bwo.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/qwoacsdp.bwo.jpg",
       "AssetKind": "All",
@@ -901,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\qwoacsdp.bwo.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\rnqyzc5r.jmg.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\rnqyzc5r.jmg.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/rnqyzc5r.jmg.jpg",
       "AssetKind": "All",
@@ -918,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\rnqyzc5r.jmg.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\rpxqvhxl.tdr.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\rpxqvhxl.tdr.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/rpxqvhxl.tdr.png",
       "AssetKind": "All",
@@ -935,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\rpxqvhxl.tdr.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\sjbc04a1.xg3.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\sjbc04a1.xg3.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/sjbc04a1.xg3.jpg",
       "AssetKind": "All",
@@ -952,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\sjbc04a1.xg3.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\t513c4at.2kr.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\t513c4at.2kr.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/t513c4at.2kr.jpg",
       "AssetKind": "All",
@@ -969,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\t513c4at.2kr.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\t5ldeaso.smw.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\t5ldeaso.smw.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/t5ldeaso.smw.png",
       "AssetKind": "All",
@@ -986,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\t5ldeaso.smw.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\tq0hcmmp.3pl.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\tq0hcmmp.3pl.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/tq0hcmmp.3pl.jpg",
       "AssetKind": "All",
@@ -1003,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\tq0hcmmp.3pl.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\wghanu2a.hck.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\wghanu2a.hck.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/wghanu2a.hck.png",
       "AssetKind": "All",
@@ -1020,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\wghanu2a.hck.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\wuhqjvle.sgx.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\wuhqjvle.sgx.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/wuhqjvle.sgx.jpg",
       "AssetKind": "All",
@@ -1037,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\wuhqjvle.sgx.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\ydq42ail.yn2.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\ydq42ail.yn2.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/ydq42ail.yn2.jpg",
       "AssetKind": "All",
@@ -1054,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\ydq42ail.yn2.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\ytku33na.nup.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\ytku33na.nup.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/ytku33na.nup.png",
       "AssetKind": "All",
@@ -1071,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\ytku33na.nup.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\ywlcwch3.tzc.jpg",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\ywlcwch3.tzc.jpg",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/ywlcwch3.tzc.jpg",
       "AssetKind": "All",
@@ -1088,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\ywlcwch3.tzc.jpg"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\yxq4csxv.za0.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\yxq4csxv.za0.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/yxq4csxv.za0.png",
       "AssetKind": "All",
@@ -1105,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\yxq4csxv.za0.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\images\\zfjpdo0w.tzp.png",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\zfjpdo0w.tzp.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/images/zfjpdo0w.tzp.png",
       "AssetKind": "All",
@@ -1122,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\zfjpdo0w.tzp.png"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\js\\easy-number-separator.js",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\js\\easy-number-separator.js",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/js/easy-number-separator.js",
       "AssetKind": "All",
@@ -1139,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\easy-number-separator.js"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\assets\\tabs.css",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\tabs.css",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "assets/tabs.css",
       "AssetKind": "All",
@@ -1156,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\tabs.css"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-brands-400.7fa789ab57acb632.ttf",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.7fa789ab57acb632.ttf",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-brands-400.7fa789ab57acb632.ttf",
       "AssetKind": "All",
@@ -1173,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\fa-brands-400.7fa789ab57acb632.ttf"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-brands-400.859fc3887485de84.woff2",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.859fc3887485de84.woff2",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-brands-400.859fc3887485de84.woff2",
       "AssetKind": "All",
@@ -1190,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\fa-brands-400.859fc3887485de84.woff2"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-regular-400.2ffd018f0eda6f7b.woff2",
       "AssetKind": "All",
@@ -1207,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-regular-400.da02cb7e372f16a2.ttf",
       "AssetKind": "All",
@@ -1224,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-solid-900.3a463ec33b4fe9f7.ttf",
       "AssetKind": "All",
@@ -1241,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-solid-900.40ddefd79fe7af45.woff2",
       "AssetKind": "All",
@@ -1258,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-v4compatibility.924588dc97e66b08.ttf",
       "AssetKind": "All",
@@ -1275,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "fa-v4compatibility.ee06c6f803f379bb.woff2",
       "AssetKind": "All",
@@ -1292,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\favicon.ico",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1309,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\index.html",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\index.html",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -1326,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\main.0fcf52faf25cd376.js",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\main.0fcf52faf25cd376.js",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "main.0fcf52faf25cd376.js",
       "AssetKind": "All",
@@ -1343,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\main.0fcf52faf25cd376.js"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\polyfills.e60740ad809da6cf.js",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\polyfills.e60740ad809da6cf.js",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "polyfills.e60740ad809da6cf.js",
       "AssetKind": "All",
@@ -1360,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\polyfills.e60740ad809da6cf.js"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\runtime.e568dcdd41730442.js",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\runtime.e568dcdd41730442.js",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "runtime.e568dcdd41730442.js",
       "AssetKind": "All",
@@ -1377,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\runtime.e568dcdd41730442.js"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\scripts.19b90c90e083f446.js",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\scripts.19b90c90e083f446.js",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "scripts.19b90c90e083f446.js",
       "AssetKind": "All",
@@ -1394,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\scripts.19b90c90e083f446.js"
     },
     {
-      "Identity": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\styles.bca68cb60714a846.css",
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\styles.bca68cb60714a846.css",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefApi\\wwwroot\\",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
       "BasePath": "_content/hspaApi2",
       "RelativePath": "styles.bca68cb60714a846.css",
       "AssetKind": "All",

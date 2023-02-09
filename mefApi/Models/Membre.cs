@@ -1,23 +1,20 @@
-namespace WebApi.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace mefApi.Models
 {
     public class Membre : BaseEntity
     {
-        public string Nom { get; set; } = string.Empty;
-        public string Prenom { get; set; } = string.Empty;
-        public int SexeId { get; set; }
-         public decimal FraisAdhesion { get; set; }
-        public string DateAdhesion { get; set; } = string.Empty;
-        public Sexe Sexe { get; set; } = new Sexe{};
-        public string? Photo { get; set; }
-        public int AgenceId { get; set; }
-        public Agence Agence { get; set; } = new Agence{};
-        public int ServiceId { get; set; }
-        public Service Service { get; set; } = new Service{};
+        public string? Nom { get; set; } 
+        public int PersonnelId { get; set; }
         public bool EstActif { get; set; }
-        public string Telephone { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public ICollection<Cotisation> Cotisations { get; set; } = new List<Cotisation>();
-        public ICollection<Avance> Avances { get; set; } = new List<Avance>();
-        public ICollection<Credit> Credits { get; set; } = new List<Credit>();
+        public int SexeId { get; set; }
+        public Sexe? Sexe { get; set; }
+        public int PosteId { get; set; }
+        public Poste? Poste { get; set; }
+        public string? DateNaissance { get; set; } 
+        public string? LieuNaissance { get; set; }
+        public string? Photo { get; set; } 
+        public string? Contact { get; set; }
+        public string? Email { get; set; }
     }
 }

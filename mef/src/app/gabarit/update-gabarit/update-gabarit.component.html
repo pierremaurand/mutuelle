@@ -1,0 +1,160 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3">Modification d'un gabarit</div>
+    <p>Formulaire de modification d'un gabarit</p>
+    <hr />
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <form #gabaritForm="ngForm" class="was-validated">
+            <div class="row">
+              <div class="col-12">
+                <label for="compte" class="form-label"
+                  >Libellé du gabarit</label
+                >
+                <input
+                  type="text"
+                  id="compte"
+                  class="form-control"
+                  name="compte"
+                  [(ngModel)]="gabarit.libelle"
+                  required
+                  placeholder="Le libellé du gabarit"
+                />
+                <div class="invalid-feedback">
+                  Le libellé du gabarit est obligatoire.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr />
+        <div class="row">
+          <form #operationForm="ngForm" class="was-validated">
+            <div class="row">
+              <div class="col-12 mb-2">
+                <label for="compteComptableId" class="form-label"
+                  >Le compte comptable</label
+                >
+                <select
+                  id="compteComptableId"
+                  name="compteComptableId"
+                  [(ngModel)]="operation.compteComptableId"
+                  class="form-select"
+                  required
+                >
+                  <option
+                    *ngFor="let compte of compteComptables"
+                    value="{{ compte.id }}"
+                  >
+                    {{ compte.compte }} : {{ compte.libelle }}
+                  </option>
+                </select>
+                <div class="invalid-feedback">
+                  Vous devez choisir un compte comptable.
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="typeOperation" class="form-label"
+                  >Type d'Opération</label
+                >
+                <select
+                  id="typeOperation"
+                  name="typeOperation"
+                  class="form-select"
+                  [(ngModel)]="operation.typeOperation"
+                  required
+                >
+                  <option value="0">Débit</option>
+                  <option value="1">Crédit</option>
+                </select>
+                <div class="invalid-feedback">
+                  Vous devez choisir le type d'opération.
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="taux" class="form-label">Taux du montant</label>
+                <input
+                  type="number"
+                  step="any"
+                  min="1"
+                  max="100"
+                  id="taux"
+                  name="taux"
+                  class="form-control"
+                  [(ngModel)]="operation.taux"
+                  required
+                  placeholder="Le taux du montant"
+                />
+                <div class="invalid-feedback">
+                  Le taux du montant est obligatoire.
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <button
+                  class="btn btn-primary"
+                  (click)="onAddOperation(operationForm)"
+                >
+                  <i class="fa fa-plus"></i> Ajouter
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped">
+              <thead>
+                <tr class="align-center">
+                  <th class="text-center">#</th>
+                  <th></th>
+                  <th>N° Compte comptable</th>
+                  <th>Type Opération</th>
+                  <th>Taux</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let operation of gabarit.operations; let i = index">
+                  <td class="text-center">{{ i + 1 }}</td>
+                  <td
+                    class="text-danger text-center"
+                    (click)="onDelete(operation)"
+                  >
+                    <i class="fa fa-close"></i>
+                  </td>
+                  <td
+                    [ngClass]="{
+                      'text-start': operation.tOperation == 'Débit',
+                      'text-end': operation.tOperation == 'Crédit'
+                    }"
+                  >
+                    {{ operation.compte }}
+                  </td>
+                  <td>{{ operation.tOperation }}</td>
+                  <td class="text-end">{{ operation.taux | number }}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col d-flex justify-content-between">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="onSubmit(gabaritForm)"
+        >
+          <i class="fa fa-save"></i>&nbsp; Enregistrer
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <i class="fa fa-close"></i>&nbsp; Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

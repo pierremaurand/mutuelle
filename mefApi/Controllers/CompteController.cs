@@ -1,10 +1,10 @@
 using AutoMapper;
+using mefApi.Dtos;
+using mefApi.Interfaces;
+using mefApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Dtos;
-using WebApi.Interfaces;
-using WebApi.Models;
 
-namespace WebApi.Controllers
+namespace mefApi.Controllers
 {
     public class CompteController : BaseController
     {
@@ -21,11 +21,10 @@ namespace WebApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var comptes = await uow.CompteRepository.GetAllAsync();
-            var comptesDto = mapper.Map<IEnumerable<CompteDto>>(comptes);
-            if (comptesDto is null)
-            {
+            if(comptes is null) {
                 return NotFound();
             }
+            var comptesDto = mapper.Map<IEnumerable<CompteMembreDto>>(comptes);
             return Ok(comptesDto);
         }
 
@@ -33,46 +32,46 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var compte = await uow.CompteRepository.FindByIdAsync(id);
-            var compteDto = mapper.Map<CompteDto>(compte);
-            if (compteDto is null)
-            {
+            if(compte is null) {
                 return NotFound();
             }
+            var compteDto = mapper.Map<CompteMembreDto>(compte);
             return Ok(compteDto);
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(CompteDto compteDto)
+        public async Task<IActionResult> Add(CompteMembreDto compteDto)
         {
             var compte = mapper.Map<Compte>(compteDto);
-            compte.CreatedBy = 1;
-            compte.LastUpdatedBy = 1;
-            compte.LastUpdatedOn = DateTime.Now;
+            compte.CreePar = 1;
+            compte.ModifiePar = 1;
+            compte.ModifieLe = DateTime.Now;
+
             uow.CompteRepository.Add(compte);
             await uow.SaveAsync();
             return StatusCode(201);
         }
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id, CompteDto compteDto)
+        public async Task<IActionResult> Update(int id,CompteMembreDto compteDto)
         {
-            if (id != compteDto.Id)
+            if(id != compteDto.Id) 
                 return BadRequest("Update not allowed");
 
             var compteFromDb = await uow.CompteRepository.FindByIdAsync(id);
-
-            if (compteFromDb == null)
+            
+            if(compteFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            compteFromDb.LastUpdatedBy = 1;
-            compteFromDb.LastUpdatedOn = DateTime.Now;
+            compteFromDb.ModifiePar = 1;
+            compteFromDb.ModifieLe = DateTime.Now;
             mapper.Map(compteDto, compteFromDb);
             await uow.SaveAsync();
             return StatusCode(200);
         }
 
         [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteCity(int id)
+        public async Task<IActionResult> DeleteCompte(int id)
         {
             uow.CompteRepository.Delete(id);
             await uow.SaveAsync();

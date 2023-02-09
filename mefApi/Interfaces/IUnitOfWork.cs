@@ -1,18 +1,13 @@
-namespace WebApi.Interfaces
+namespace mefApi.Interfaces
 {
     public interface IUnitOfWork
     {
-        IAgenceRepository AgenceRepository { get; }
-        IServiceRepository ServiceRepository { get; }
         ISexeRepository SexeRepository { get; }
+        IPosteRepository PosteRepository { get; }
         IMembreRepository MembreRepository { get; }
-        IParametreRepository ParametreRepository { get; }
-        IAvanceRepository AvanceRepository { get; }
+        ICompteComptableRepository CompteComptableRepository { get; }
+        IGabaritRepository GabaritRepository { get; }
         ICompteRepository CompteRepository { get; }
-        ICreditRepository CreditRepository { get; }
-        IGabarieRepository GabarieRepository { get; }
-        ICotisationRepository CotisationRepository { get; }
-        IUserRepository UserRepository { get; }
         Task<bool> SaveAsync();
     }
 }

@@ -1,8 +1,8 @@
+using mefApi.Interfaces;
+using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
-using WebApi.Interfaces;
-using WebApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class CompteRepository : ICompteRepository
     {
@@ -12,7 +12,6 @@ namespace WebApi.Data.Repo
         {
             this.dc = dc;
         }
-
         public void Add(Compte compte)
         {
             if(dc.Comptes is not null && compte is not null) {
@@ -30,10 +29,14 @@ namespace WebApi.Data.Repo
             }
         }
 
-        public async Task<Compte?> FindByIdAsync(int id)
+        public async Task<Compte?> FindByIdAsync(int? id)
         {
             if(dc.Comptes is not null) {
-                var compte = await dc.Comptes.FindAsync(id);
+                var compte = await dc.Comptes
+                .Include(c => c.MvtComptes)
+                .Include(c => c.Membre)
+                .Where(c => c.Id == id)
+                .FirstAsync();
                 if(compte is not null) {
                     return compte;
                 }
@@ -44,8 +47,9 @@ namespace WebApi.Data.Repo
 
         public async Task<IEnumerable<Compte>?> GetAllAsync()
         {
-             if(dc.Comptes is not null) {
-                var comptes = await dc.Comptes.ToListAsync();
+            if(dc.Comptes is not null) {
+                var comptes = await dc.Comptes
+                .ToListAsync();
                 if(comptes is not null) {
                     return comptes;
                 }

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using WebApi.Interfaces;
-using WebApi.Models;
+using mefApi.Interfaces;
+using mefApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class SexeRepository : ISexeRepository
     {
@@ -33,7 +33,9 @@ namespace WebApi.Data.Repo
         public async Task<Sexe?> FindByIdAsync(int id)
         {
             if(dc.Sexes is not null) {
-                var sexe = await dc.Sexes.FindAsync(id);
+                var sexe = await dc.Sexes
+                .Where(s => s.Id == id)
+                .FirstAsync();
                 if(sexe is not null) {
                     return sexe;
                 }
@@ -45,7 +47,8 @@ namespace WebApi.Data.Repo
         public async Task<IEnumerable<Sexe>?> GetAllAsync()
         {
             if(dc.Sexes is not null) {
-                var sexes = await dc.Sexes.ToListAsync();
+                var sexes = await dc.Sexes
+                .ToListAsync();
                 if(sexes is not null) {
                     return sexes;
                 }

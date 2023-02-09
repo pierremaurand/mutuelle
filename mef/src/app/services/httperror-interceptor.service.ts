@@ -4,6 +4,7 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
+  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
@@ -16,18 +17,23 @@ import {
 } from 'rxjs';
 import { ErrorCode } from '../enums/enums';
 import { AlertifyService } from './alertify.service';
+import { LoaderService } from './loader.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpErrorInterceptorService implements HttpInterceptor {
-  constructor(private alertify: AlertifyService) {}
+  constructor(
+    private alertify: AlertifyService,
+    private loaderService: LoaderService
+  ) {}
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('HTTP Request start');
+    this.loaderService.show();
+
     var modifiedReq = req.clone();
 
     if(localStorage.getItem('token')) {
@@ -41,7 +47,6 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
       retryWhen((error) => this.retryRequest(error, 10)),
       catchError((error: HttpErrorResponse) => {
         const errorMessage = this.setError(error);
-        console.log(error);
         this.alertify.error(errorMessage);
         return throwError(() => errorMessage);
       })
@@ -59,12 +64,10 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
           switch (checkErr.status) {
             case ErrorCode.serverDown:
               return of(checkErr);
-
             case ErrorCode.unauthorised:
               return of(checkErr);
           }
         }
-
         return throwError(() => checkErr);
       })
     );

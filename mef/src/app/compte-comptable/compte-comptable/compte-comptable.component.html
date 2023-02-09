@@ -1,0 +1,56 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3 text-info">
+      <i class="fas fa-info-circle"></i> Infos Compte Comptable
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-8">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <th>N° Compte</th>
+              <th colspan="2">Libellé</th>
+            </tr>
+            <tr>
+              <td>
+                {{ compte.compte }}
+              </td>
+              <td colspan="2">
+                {{ compte.libelle }}
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th>Créé par</th>
+              <th>Modifié le</th>
+              <th>Par</th>
+            </tr>
+            <tr>
+              <td>
+                {{ compte.creePar }}
+              </td>
+              <td>
+                {{ compte.modifieLe | date }}
+              </td>
+              <td>
+                {{ compte.modifiePar }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-warning" (click)="onUpdate()">
+          <i class="fa fa-edit"></i>&nbsp; Modifier
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onDelete()">
+          <i class="fa fa-trash"></i>&nbsp; Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

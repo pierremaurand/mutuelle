@@ -1,23 +1,19 @@
-import { Agence } from "./agence";
-import { Service } from "./service";
-import { Sexe } from "./sexe";
-
-
 export class Membre {
-  id?: number;
-  nom?: string;
-  prenom?: string;
-  sexeId?: number;
-  sexe?: Sexe;
-  photo?: string;
-  agenceId?: number;
-  agence?: Agence;
-  serviceId?: number;
-  service?: Service;
-  estActif?: boolean;
-  dateAdhesion?: string;
-  adhesionOn?: Date;
-  fraisAdhesion?: number;
-  telephone?: string;
-  email?: string;
+  id: number = 0;
+  nom: string = '';
+  personnelId: number = 0;
+  sexeId: number = 0;
+  estActif: boolean = true;
+  sexeNom: string = '';
+  posteId: number = 0;
+  posteLibelle: string = '';
+  photo: string = '';
+  photoUrl: string = '';
+  dateNaissance: string = '';
+  lieuNaissance: string = '';
+  contact: string = '';
+  email: string = '';
+  creePar: number = 0;
+  modifieLe: string = '';
+  modifiePar: number = 0;
 }

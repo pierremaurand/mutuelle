@@ -1,24 +1,5 @@
-<app-bouton-action [(action)]="action" (actionChange)="clickAction()"></app-bouton-action>
-
-<app-cotisation-list
-  [cotisations]="cotisations"
-  [(cotisation)]="cotisation"
-  (cotisationChange)="deleteCotisation()"
-></app-cotisation-list>
-
-<app-pagination></app-pagination>
-
-<div
-  id="newAdd"
-  class="modal fade"
-  tabindex="-1"
-  aria-labelledby="newAdd"
-  aria-hidden="true"
->
-  <app-add-cotisation
-    [(cotisation)]="cotisation"
-    (cotisationChange)="addCotisation()"
-  ></app-add-cotisation>
-</div>
-
-
+<app-bouton-action
+  [infosPage]="infosPage"
+  [actions]="actions"
+></app-bouton-action>
+<router-outlet></router-outlet>

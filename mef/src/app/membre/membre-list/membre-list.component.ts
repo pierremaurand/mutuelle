@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Cotisation } from 'src/app/model/cotisation';
-import { Membre } from 'src/app/model/membre';
-import { AlertifyService } from 'src/app/services/alertify.service';
-import { CotisationService } from 'src/app/services/cotisation.service';
+import { Membre } from 'src/app/model/Membre';
+import { Search } from 'src/app/model/search';
+import { LoaderService } from 'src/app/services/loader.service';
 import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,89 +11,48 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./membre-list.component.scss'],
 })
 export class MembreListComponent implements OnInit {
+  imagesUrl = environment.imagesUrl;
+  membres: Membre[] = [];
   listeMembres: Membre[] = [];
-  membre: Membre = {};
-  cotisations: Cotisation[] = [];
-  imageUrl: string = '';
-  baseUrl = environment.imagesUrl;
-  nom: string = '';
-  searchNom: string = '';
-  titre: string = 'Ajout d\'un membre';
+  name: string = '';
+  searchName: string = '';
+  membre: Membre = new Membre();
+  count: number = 0;
+  searchCount: number = 0;
+  search: string = '';
+  singular: string = 'Membre';
 
   constructor(
     private membreService: MembreService,
-    private cotisationService: CotisationService,
-    private alertity: AlertifyService
+    private loaderService: LoaderService
   ) {}
 
   ngOnInit(): void {
-    this.loadMembres();
-  }
-
-  ajouterMembre(): void {
-    this.membre = {};
-  }
-
-  select(id: number): void {
-    this.loadMembre(id);
-    this.loadCotisations(id);
-    localStorage.setItem('MembreId',id.toString());
-  }
-
-  loadMembres(): void {
-    this.membreService.getAllMembres().subscribe({
+    this.membre.photoUrl = this.membreService.getPhotoUrl(this.membre);
+    this.loaderService.show();
+    this.membreService.getAll().subscribe({
       next: (data) => {
-        this.listeMembres = data;
-        console.log(data);
+        this.loaderService.hide();
+        (this.membres = data),
+          this.membres.map((m, i) => {
+            this.membres[i].photoUrl = this.membreService.getPhotoUrl(m);
+          }),
+          (this.count = this.membres.length),
+          (this.searchCount = this.membres.length),
+          this.onSearchChange('');
       },
     });
   }
 
-  loadMembre(id: number): void {
-    this.membreService.getMembreById(id).subscribe({
-      next: (data) => {
-        this.membre = data;
-      },
-    });
-  }
-
-  loadCotisations(id: number): void {
-    this.cotisationService.getAllMembreCotisation(id).subscribe({
-      next: (data) => {
-        this.cotisations = data;
-      },
-    });
-  }
-
-  editMembre(membre: Membre): void {
+  showProfile(membre: Membre): void {
     this.membre = membre;
-    this.imageUrl = this.baseUrl + this.membre.photo;
   }
 
-  save(): void {
-    if (this.membre) {
-      this.membre.estActif = true;
-      var membreToSave = this.membre;
-      this.membre = {};
-      this.membreService.addMembre(membreToSave).subscribe({
-        next: (data: any) => {
-          this.loadMembres();
-          this.alertity.success('Félécitation, membre enregistré avec succès');
-        },
-      });
-    }
-  }
-
-  afficheMois(): void {
-    console.log(this.nom);
-  }
-
-  onSearch(): void {
-    this.searchNom = this.nom;
-  }
-
-  onSearchClear(): void {
-    this.searchNom = '';
-    this.nom = '';
+  onSearchChange(search: string): void {
+    this.search = search;
+    this.listeMembres = this.membres.filter((m) =>
+      m.nom.toLowerCase().includes(this.search.toLowerCase())
+    );
+    this.searchCount = this.listeMembres.length;
   }
 }

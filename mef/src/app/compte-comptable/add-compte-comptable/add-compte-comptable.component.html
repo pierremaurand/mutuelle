@@ -1,0 +1,55 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3">Ajout d'un compte comptable</div>
+    <p>Formulaire d'enregistrement d'un compte comptable</p>
+    <hr />
+    <form
+      #compteForm="ngForm"
+      (ngSubmit)="onSubmit(compteForm)"
+      class="was-validated"
+    >
+      <div class="row">
+        <div class="col-6 mb-3">
+          <label for="compte" class="form-label">Numéro du compte</label>
+          <input
+            type="text"
+            id="compte"
+            class="form-control"
+            name="compte"
+            [(ngModel)]="compte.compte"
+            required
+            placeholder="Le numéro du compte"
+          />
+          <div class="invalid-feedback">
+            Le numéro du compte est obligatoire.
+          </div>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="libelle" class="form-label">Libellé du compte</label>
+          <input
+            type="text"
+            id="libelle"
+            class="form-control"
+            name="libelle"
+            [(ngModel)]="compte.libelle"
+            required
+            placeholder="Le libellé du compte"
+          />
+          <div class="invalid-feedback">
+            Le libellé du compte est obligatoire.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-between">
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-save"></i>&nbsp; Enregistrer
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            <i class="fa fa-close"></i>&nbsp; Annuler
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

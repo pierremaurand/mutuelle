@@ -1,7 +1,7 @@
-using WebApi.Data.Repo;
-using WebApi.Interfaces;
+using mefApi.Data.Repo;
+using mefApi.Interfaces;
 
-namespace WebApi.Data
+namespace mefApi.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -10,14 +10,7 @@ namespace WebApi.Data
         {
             this.dc = dc;
         }
-        public IAgenceRepository AgenceRepository =>
-            new AgenceRepository(dc);
 
-        public IUserRepository UserRepository =>
-            new UserRepository(dc);
-
-        public IServiceRepository ServiceRepository =>
-            new ServiceRepository(dc);
 
         public ISexeRepository SexeRepository =>
             new SexeRepository(dc);
@@ -25,23 +18,17 @@ namespace WebApi.Data
         public IMembreRepository MembreRepository =>
             new MembreRepository(dc);
 
-        public IParametreRepository ParametreRepository =>
-            new ParametreRepository(dc);
+        public IPosteRepository PosteRepository =>
+            new PosteRepository(dc);
 
-        public IAvanceRepository AvanceRepository =>
-            new AvanceRepository(dc);
+        public ICompteComptableRepository CompteComptableRepository =>
+            new CompteComptableRepository(dc);
 
+        public IGabaritRepository GabaritRepository =>
+            new GabaritRepository(dc);
+        
         public ICompteRepository CompteRepository =>
             new CompteRepository(dc);
-
-        public ICreditRepository CreditRepository =>
-            new CreditRepository(dc);
-
-        public IGabarieRepository GabarieRepository =>
-            new GabarieRepository(dc);
-
-        public ICotisationRepository CotisationRepository =>
-            new CotisationRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

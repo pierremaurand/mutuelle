@@ -1,0 +1,46 @@
+<div class="row mt-5">
+  <div class="col-md-4 mx-auto">
+    <div class="card shadow m-0">
+      <div class="card-body">
+        <h1 class="mb-3 text-center">Se connecter au système</h1>
+
+        <form method="post">
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label">Nom d'utilisateur</label>
+            <input
+              type="email"
+              value=""
+              name="email"
+              id="inputEmail"
+              class="form-control"
+              autocomplete="email"
+              required
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Mot de passe</label>
+            <input
+              type="password"
+              name="password"
+              id="inputPassword"
+              class="form-control"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <div class="row"></div>
+          <button
+            type="submit"
+            routerLinkActive="active"
+            [routerLink]="'/home'"
+            class="btn btn-primary btn-lg form-control"
+            formnovalidate
+          >
+            Se connecter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Models
+namespace mefApi.Models
 {
     public class Sexe: BaseEntity
     {
-        [Required]
-        public string Nom { get; set; } = string.Empty;
+        public string? Nom { get; set; }
     }
 }

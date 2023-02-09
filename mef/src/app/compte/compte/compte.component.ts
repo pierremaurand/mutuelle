@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Compte } from 'src/app/model/compte';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-compte',
@@ -9,15 +7,9 @@ import { Compte } from 'src/app/model/compte';
 })
 export class CompteComponent implements OnInit {
 
-  @Input() compte: Compte = {};
-
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  update() {
-    this.router.navigate(['add-compte',this.compte.id]);
   }
 
 }

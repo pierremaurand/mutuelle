@@ -1,91 +1,100 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Cotisation } from 'src/app/model/cotisation';
-import { Membre } from "src/app/model/membre";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Membre } from 'src/app/model/Membre';
+import { LoaderService } from 'src/app/services/loader.service';
 import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-membre',
   templateUrl: './membre.component.html',
-  styleUrls: ['./membre.component.scss']
+  styleUrls: ['./membre.component.scss'],
 })
 export class MembreComponent implements OnInit {
+  imagesUrl = environment.imagesUrl;
+  membre!: Membre;
+  membreId!: number;
+  actifBtnLabel: string = 'Désactiver';
 
-  @Input() membre: Membre = {};
-  @Input() cotisations: Cotisation[] = [];
-  baseUrl = environment.imagesUrl;
-
-  constructor(private membreService:MembreService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private membreService: MembreService,
+    private loaderService: LoaderService
+  ) {}
 
   ngOnInit(): void {
+    (this.membreId = this.route.snapshot.params['id']), this.loadInfosMembre();
   }
 
-
-
-  calculCotisation(): number {
-    let total = 0;
-    if(this.membre && this.cotisations && this.cotisations.length > 0) {
-      for(let cotisation of this.cotisations) {
-        if(cotisation.montant && cotisation.estValide)
-          total += cotisation.montant;
-      }
+  loadInfosMembre(): void {
+    if (this.membreId) {
+      this.loaderService.show();
+      this.membreService.getById(this.membreId).subscribe((data) => {
+        this.loaderService.hide();
+        (this.membre = data),
+          (this.membre.photoUrl = this.membreService.getPhotoUrl(this.membre)),
+          (this.actifBtnLabel = this.membre.estActif
+            ? 'Désactiver'
+            : 'Activer');
+      });
     }
-    return total;
   }
 
-  cotisationsNbr(): number {
-    let nombre = 0;
-    if(this.membre && this.cotisations) {
-      nombre = this.cotisations.length;
-    }
-    return nombre;
-  }
-
-
-
-  calculAvance(): number {
-    let total = 0;
-    /*if(this.membre && this.membre.avances && this.membre.avances.length > 0) {
-      for(let avance of this.membre.avances) {
-        if(avance.montant) {
-          total += avance.montant;
-        }
-
-        if(avance.echeanceAvances && avance.echeanceAvances.length > 0){
-          for(let echeance of avance.echeanceAvances) {
-            if(echeance.estPaye==true) {
-              if(echeance.montant) {
-                total -= echeance.montant;
-              }
-            }
-          }
-        }
+  onDelete(): void {
+    Swal.fire({
+      title: 'Êtes-vous sûr de vouloir supprimer ce membre?',
+      text: 'Vous ne pourrez pas revenir en arrière !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Annuler',
+      confirmButtonText: 'Oui, supprimez-le !',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.membreService.deleteMembre(this.membreId).subscribe({
+          next: () => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Membre supprimé avec succès !',
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            this.router.navigate(['home/membres']);
+          },
+          error: () => {
+            Swal.fire({
+              icon: 'error',
+              title: "Une erreur s'est produite!",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          },
+        });
       }
-    }*/
-    return total;
+    });
   }
 
-  avancesNbr(): number {
-    let nombre = 0;
-    /*if(this.membre && this.membre.avances) {
-      nombre = this.membre.avances.length;
-    }*/
-    return nombre;
+  onUpdate(): void {
+    this.router.navigate(['home/membres/update/', this.membreId]);
   }
 
-
-  calculCredit(): number {
-    let total = 0;
-
-    return total;
+  onImageChange(): void {
+    this.router.navigate(['home/membres/add-image/', this.membreId]);
   }
 
-  creditsNbr(): number {
-    let nombre = 0;
-    /*if(this.membre && this.membre.credits) {
-      nombre = this.membre.credits.length;
-    }*/
-    return nombre;
+  onActivateToggle(): void {
+    this.membre.estActif = !this.membre.estActif;
+    this.membreService.update(this.membre, this.membreId).subscribe(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Membre modifié avec succès !',
+        showConfirmButton: false,
+        timer: 1500,
+      }),
+        this.loadInfosMembre();
+    });
   }
-
 }

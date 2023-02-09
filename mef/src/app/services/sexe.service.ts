@@ -5,15 +5,14 @@ import { environment } from 'src/environments/environment';
 import { Sexe } from '../model/sexe';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SexeService {
-
   baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Sexe[]>{
+  getAll(): Observable<Sexe[]> {
     return this.http.get<Sexe[]>(this.baseUrl + '/sexe/sexes');
   }
 
@@ -25,7 +24,11 @@ export class SexeService {
     return this.http.post(this.baseUrl + '/sexe/add', sexe);
   }
 
-  update(sexe: Sexe, id?: number): Observable<any> {
-    return this.http.put(this.baseUrl + '/sexe/update/' + id?.toString(),sexe);
+  update(sexe: Sexe, id: number): Observable<any> {
+    return this.http.put(this.baseUrl + '/sexe/update/' + id.toString(), sexe);
+  }
+
+  deleteSexe(id: number): Observable<any> {
+    return this.http.delete(this.baseUrl + '/sexe/delete/' + id.toString());
   }
 }

@@ -1,44 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from 'src/app/model/menu';
+import { Action } from 'src/app/model/action';
+import { InfosPage } from 'src/app/model/infosPage';
 
 @Component({
   selector: 'app-membre-page',
   templateUrl: './membre-page.component.html',
-  styleUrls: ['./membre-page.component.scss']
+  styleUrls: ['./membre-page.component.scss'],
 })
 export class MembrePageComponent implements OnInit {
-  menuMembre: Array<Menu> = [
+  infosPage: InfosPage = {
+    title: 'Gestion des membres',
+    url: 'home/membres',
+  };
+
+  actions: Action[] = [
     {
-      id: 'M1',
-      titre: 'Infos Membre',
-      icon: 'fas fa-user',
-      url: 'membre-page/infos-membre'
+      title: 'Nouveau',
+      url: 'home/membres/add',
+      icon: 'fa fa-plus',
+      class: 'primary',
     },
     {
-      id: 'M2',
-      titre: 'Cotisations',
-      icon: 'fa fa-sack-dollar',
-      url: 'membre-page/cotisations-membre'
+      title: 'Importer',
+      url: 'home/membres/import',
+      icon: 'fa fa-download',
+      class: 'success',
     },
-    {
-      id: 'M3',
-      titre: 'Avances',
-      icon: 'fa fa-hand-holding-dollar',
-      url: 'membre-page/avances-membre'
-    },
-    {
-      id: 'M4',
-      titre: 'Credits',
-      icon: 'fa fa-money-check',
-      url: 'membre-page/credits-membre'
-    }
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
-
-
+  ngOnInit(): void {}
 }

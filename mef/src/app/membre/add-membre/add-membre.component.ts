@@ -1,90 +1,65 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Agence } from 'src/app/model/agence';
-import { Membre } from "src/app/model/membre";
-import { Service } from 'src/app/model/service';
+import { Router } from '@angular/router';
+import { Membre } from 'src/app/model/Membre';
+import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
-import { AgenceService } from 'src/app/services/agence.service';
-import { AlertifyService } from 'src/app/services/alertify.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { ServiceService } from 'src/app/services/service.service';
+import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
-import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-membre',
   templateUrl: './add-membre.component.html',
-  styleUrls: ['./add-membre.component.scss']
+  styleUrls: ['./add-membre.component.scss'],
 })
 export class AddMembreComponent implements OnInit {
-
-  membreId?: number;
-  @ViewChild("closeMembreFormModal") modalClose:any;
-  @Input() membre: Membre = {};
-  @Input() titre: string = "";
-  @Output() membreChange = new EventEmitter<Membre>();
+  membre: Membre = new Membre();
   sexes: Sexe[] = [];
-  fichier?: any;
-  agences: Agence[] = [];
-  services: Service[] = [];
-  baseUrl = environment.imagesUrl;
-  photo?: string;
+  postes: Poste[] = [];
 
   constructor(
+    private router: Router,
     private membreService: MembreService,
-    private agenceService: AgenceService,
     private sexeService: SexeService,
-    private serviceService: ServiceService,
-    private alertity: AlertifyService) { }
+    private posteService: PosteService
+  ) {}
 
   ngOnInit(): void {
-    this.agenceService.getAll().subscribe({
-      next:(data) => {
-        this.agences = data;
-      }
+    this.membre.photoUrl = this.membreService.getPhotoUrl(this.membre);
+
+    this.sexeService.getAll().subscribe((data) => {
+      this.sexes = data;
     });
 
-    this.serviceService.getAll().subscribe({
-      next:(data) => {
-        this.services = data;
-      }
-    });
-
-    this.sexeService.getAll().subscribe({
-      next:(data) => {
-        this.sexes = data;
-      }
+    this.posteService.getAll().subscribe((data) => {
+      this.postes = data;
     });
   }
 
-  onSubmit(membreForm: NgForm) {
+  onSubmit(membreForm: NgForm): void {
     if (membreForm.valid) {
-      this.membreChange.emit(this.membre);
-      this.modalClose.nativeElement.click();
+      this.membreService.add(this.membre).subscribe(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Membre ajouté avec succès !',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        this.onCancel();
+      });
     } else {
-      this.alertity.error('Veuillez remplir tous les champs obligatoires');
+      Swal.fire({
+        icon: 'error',
+        title: 'Veuillez remplir tous les champs obligatoires',
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   }
 
-
-
-  changerPhotoProfil():void {
-    if(this.membre) {
-      if(this.membre.sexeId == 1) {
-        this.membre.photo = 'assets/images/default_man.jpg';
-      } else {
-        this.membre.photo = 'assets/images/default_woman.jpg';
-      }
-    }
+  onCancel(): void {
+    this.router.navigate(['home/membres']);
   }
-
-  /**
-   * handle file from browsing
-   */
-
-
-  annuler(): void {
-    this.membre = {};
-  }
-
 }

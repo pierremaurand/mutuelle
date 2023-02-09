@@ -1,0 +1,50 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="h3">Ajout d'une image</div>
+        <p>Formulaire d'enregistrement de l'image du membre</p>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-12 text-center">
+        <input
+          type="file"
+          (change)="fileChangeEvent($event)"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-8 text-center">
+        <image-cropper
+          [imageChangedEvent]="imageChangedEvent"
+          [maintainAspectRatio]="true"
+          [aspectRatio]="4 / 4"
+          [resizeToWidth]="200"
+          format="png"
+          (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded()"
+          (cropperReady)="cropperReady()"
+          (loadImageFailed)="loadImageFailed()"
+        ></image-cropper>
+      </div>
+      <div class="col-4 text-center">
+        <img [src]="croppedImage" />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col d-flex justify-content-between">
+        <button type="button" class="btn btn-success" (click)="onSavePic()">
+          <i class="fa fa-save"></i>&nbsp; Enregistrer
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <i class="fa fa-close"></i>&nbsp; Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

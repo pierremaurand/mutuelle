@@ -1,9 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using WebApi.Dtos;
-using WebApi.Interfaces;
-using WebApi.Models;
+using mefApi.Interfaces;
+using mefApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class MembreRepository : IMembreRepository
     {
@@ -23,7 +22,7 @@ namespace WebApi.Data.Repo
 
         public void Delete(int id)
         {
-             if(dc.Membres is not null) {
+            if(dc.Membres is not null) {
                 var membre = dc.Membres.Find(id);
                 if(membre is not null) {
                     dc.Membres.Remove(membre);
@@ -31,16 +30,12 @@ namespace WebApi.Data.Repo
             }
         }
 
-        public async Task<Membre?> FindByIdAsync(int id)
+        public async Task<Membre?> FindByIdAsync(int? id)
         {
             if(dc.Membres is not null) {
                 var membre = await dc.Membres
-                .Include(m => m.Agence)
-                .Include(m => m.Service)
+                .Include(m => m.Poste)
                 .Include(m => m.Sexe)
-                .Include(m => m.Cotisations.Where(c => c.EstValide))
-                .Include(m => m.Avances)
-                .Include(m => m.Credits)
                 .Where(m => m.Id == id)
                 .FirstAsync();
                 if(membre is not null) {
@@ -55,7 +50,6 @@ namespace WebApi.Data.Repo
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
-                .Include(m => m.Agence)
                 .ToListAsync();
                 if(membres is not null) {
                     return membres;

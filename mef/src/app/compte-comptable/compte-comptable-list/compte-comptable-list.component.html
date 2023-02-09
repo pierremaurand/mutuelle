@@ -1,0 +1,24 @@
+<div class="card shadow content">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <table class="table table-striped table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Compte</th>
+              <th scope="col">Libellé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let compte of comptes" (click)="showDetails(compte.id)">
+              <th scope="row">{{ compte.id }}</th>
+              <td>{{ compte.compte }}</td>
+              <td>{{ compte.libelle }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

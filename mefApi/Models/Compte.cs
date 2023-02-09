@@ -1,8 +1,10 @@
-namespace WebApi.Models
+namespace mefApi.Models
 {
     public class Compte : BaseEntity
     {
-        public int Numero { get; set; }
-        public string Libelle { get; set; } = string.Empty;
+        public int MembreId { get; set; }
+        public Membre? Membre { get; set; }
+        public bool EstActif { get; set; }
+        public IEnumerable<MvtCompte>? MvtComptes { get; set; } 
     }
 }

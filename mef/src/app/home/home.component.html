@@ -1,0 +1,16 @@
+<div class="container">
+  <app-loader></app-loader>
+  <div class="row mt-3">
+    <div class="col-3">
+      <div class="row">
+        <app-profil-user></app-profil-user>
+      </div>
+      <div class="row">
+        <app-nav-bar [menuProperties]="menuProperties"></app-nav-bar>
+      </div>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

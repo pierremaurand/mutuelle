@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApi.Data;
+using mefApi.Data;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace hspaApi2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("WebApi.Models.Agence", b =>
+            modelBuilder.Entity("mefApi.Models.CompteComptable", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,99 +30,27 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nom")
-                        .IsRequired()
+                    b.Property<string>("Compte")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Agences");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Avance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("CreePar")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateDeblocage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateDebut")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateFin")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EstValide")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("Avances");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Compte", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Libelle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Numero")
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Comptes");
+                    b.ToTable("CompteComptables");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Cotisation", b =>
+            modelBuilder.Entity("mefApi.Models.Gabarit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -130,187 +58,24 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int>("CreePar")
                         .HasColumnType("int");
-
-                    b.Property<bool>("EstValide")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Periode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("Cotisations");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Credit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<decimal>("Commission")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateDebut")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateFin")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EstValide")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal>("Interet")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("MontantCapital")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.ToTable("Credits");
-                });
-
-            modelBuilder.Entity("WebApi.Models.EcheanceAvance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AvanceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateEcheance")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EstPaye")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AvanceId");
-
-                    b.ToTable("EcheanceAvances");
-                });
-
-            modelBuilder.Entity("WebApi.Models.EcheanceCredit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreditId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateEcheance")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EstPaye")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreditId");
-
-                    b.ToTable("EcheanceCredits");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Gabarie", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Libelle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gabaries");
+                    b.ToTable("Gabarits");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Membre", b =>
+            modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -318,65 +83,55 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AgenceId")
+                    b.Property<string>("Contact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreePar")
                         .HasColumnType("int");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DateAdhesion")
-                        .IsRequired()
+                    b.Property<string>("DateNaissance")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstActif")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("FraisAdhesion")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("LieuNaissance")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
+                    b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nom")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonnelId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Prenom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ServiceId")
+                    b.Property<int>("PosteId")
                         .HasColumnType("int");
 
                     b.Property<int>("SexeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Telephone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("AgenceId");
-
-                    b.HasIndex("ServiceId");
+                    b.HasIndex("PosteId");
 
                     b.HasIndex("SexeId");
 
                     b.ToTable("Membres");
                 });
 
-            modelBuilder.Entity("WebApi.Models.MvtCompte", b =>
+            modelBuilder.Entity("mefApi.Models.Operation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -384,39 +139,53 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CompteId")
+                    b.Property<int>("CompteComptableId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int>("GabaritId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateCreation")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("Taux")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool>("EstDebit")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LastUpdatedBy")
+                    b.Property<int>("TypeOperation")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompteComptableId");
+
+                    b.HasIndex("GabaritId");
+
+                    b.ToTable("Operation");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Poste", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreePar")
+                        .HasColumnType("int");
 
                     b.Property<string>("Libelle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Montant")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompteId");
-
-                    b.ToTable("MvtComptes");
+                    b.ToTable("Postes");
                 });
 
-            modelBuilder.Entity("WebApi.Models.MvtGabarie", b =>
+            modelBuilder.Entity("mefApi.Models.Sexe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -424,114 +193,16 @@ namespace hspaApi2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CompteId")
+                    b.Property<int>("CreePar")
                         .HasColumnType("int");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("EstDebit")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EstFixe")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("GabarieId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
+                    b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Valeur")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompteId");
-
-                    b.HasIndex("GabarieId");
-
-                    b.ToTable("MvtGabaries");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Parametre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("ModifiePar")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Valeur")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Parametres");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Service", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Services");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Sexe", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Nom")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -539,181 +210,47 @@ namespace hspaApi2.Migrations
                     b.ToTable("Sexes");
                 });
 
-            modelBuilder.Entity("WebApi.Models.User", b =>
+            modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LastUpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastUpdatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Mobile")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Password")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<byte[]>("PasswordKey")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Avance", b =>
-                {
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany("Avances")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Cotisation", b =>
-                {
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany("Cotisations")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Credit", b =>
-                {
-                    b.HasOne("WebApi.Models.Membre", "Membre")
-                        .WithMany("Credits")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
-                });
-
-            modelBuilder.Entity("WebApi.Models.EcheanceAvance", b =>
-                {
-                    b.HasOne("WebApi.Models.Avance", "Avance")
-                        .WithMany("EcheanceAvances")
-                        .HasForeignKey("AvanceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Avance");
-                });
-
-            modelBuilder.Entity("WebApi.Models.EcheanceCredit", b =>
-                {
-                    b.HasOne("WebApi.Models.Credit", "Credit")
-                        .WithMany("EcheanceCredits")
-                        .HasForeignKey("CreditId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Credit");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Membre", b =>
-                {
-                    b.HasOne("WebApi.Models.Agence", "Agence")
+                    b.HasOne("mefApi.Models.Poste", "Poste")
                         .WithMany()
-                        .HasForeignKey("AgenceId")
+                        .HasForeignKey("PosteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApi.Models.Service", "Service")
-                        .WithMany()
-                        .HasForeignKey("ServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.Sexe", "Sexe")
+                    b.HasOne("mefApi.Models.Sexe", "Sexe")
                         .WithMany()
                         .HasForeignKey("SexeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Agence");
-
-                    b.Navigation("Service");
+                    b.Navigation("Poste");
 
                     b.Navigation("Sexe");
                 });
 
-            modelBuilder.Entity("WebApi.Models.MvtCompte", b =>
+            modelBuilder.Entity("mefApi.Models.Operation", b =>
                 {
-                    b.HasOne("WebApi.Models.Compte", "Compte")
+                    b.HasOne("mefApi.Models.CompteComptable", "CompteComptable")
                         .WithMany()
-                        .HasForeignKey("CompteId")
+                        .HasForeignKey("CompteComptableId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Compte");
-                });
-
-            modelBuilder.Entity("WebApi.Models.MvtGabarie", b =>
-                {
-                    b.HasOne("WebApi.Models.Compte", "Compte")
-                        .WithMany()
-                        .HasForeignKey("CompteId")
+                    b.HasOne("mefApi.Models.Gabarit", "Gabarit")
+                        .WithMany("Operations")
+                        .HasForeignKey("GabaritId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApi.Models.Gabarie", "Gabarie")
-                        .WithMany("MvtGabaries")
-                        .HasForeignKey("GabarieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("CompteComptable");
 
-                    b.Navigation("Compte");
-
-                    b.Navigation("Gabarie");
+                    b.Navigation("Gabarit");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Avance", b =>
+            modelBuilder.Entity("mefApi.Models.Gabarit", b =>
                 {
-                    b.Navigation("EcheanceAvances");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Credit", b =>
-                {
-                    b.Navigation("EcheanceCredits");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Gabarie", b =>
-                {
-                    b.Navigation("MvtGabaries");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Membre", b =>
-                {
-                    b.Navigation("Avances");
-
-                    b.Navigation("Cotisations");
-
-                    b.Navigation("Credits");
+                    b.Navigation("Operations");
                 });
 #pragma warning restore 612, 618
         }

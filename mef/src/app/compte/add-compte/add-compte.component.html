@@ -1,47 +1,114 @@
-<div class="container" style="margin-top: 70px; width: 1080px;">
-  <div class="row">
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      <form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
-        <div class="card m-auto">
-          <div class="card-header">
-            <h3>{{titreFormulaire}}</h3>
-          </div>
-          <div class="card-body">
-            <div class="mb-3">
-              <div class="row">
-                <div class="col-12">
-                  <label for="numero" class="form-label">Numero du compte</label>
-                  <input type="text" id="numero" class="form-control" formControlName="numero"
-                    [ngClass]="{ 'is-invalid': numero.invalid && (numero.touched || compteSubmitted)}"
-                    [(ngModel)]="compte.numero">
-                </div>
-                <div class="col-12">
-                  <label for="libelle" class="form-label">Libelle du compte</label>
-                  <input type="text" id="libelle" class="form-control" formControlName="libelle"
-                    [ngClass]="{ 'is-invalid': libelle.invalid && (libelle.touched || compteSubmitted)}"
-                    [(ngModel)]="compte.libelle">
-                </div>
-              </div>
-            </div>
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3">Ajout d'un compte</div>
+    <p>Formulaire d'enregistrement d'un compte</p>
+    <hr />
+    <div class="row d-flex justify-content-between"></div>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <form #gabaritForm="ngForm" class="was-validated">
             <div class="row">
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-save"></i>&nbsp;
-                  Enregistrer
-                </button>
-                <button type="reset" class="btn btn-secondary">
-                  <i class="fa fa-refresh"></i>&nbsp;
-                  Recommencer
-                </button>
-                <button type="button" class="btn btn-danger" (click)="annuler()">
-                  <i class="fa fa-cancel"></i>&nbsp;
-                  Annuler
+              <div class="col-12">
+                <label for="compte" class="form-label"
+                  >Libellé du gabarit</label
+                >
+                <input
+                  type="text"
+                  id="compte"
+                  class="form-control"
+                  name="compte"
+                  required
+                  placeholder="Le libellé du gabarit"
+                />
+                <div class="invalid-feedback">
+                  Le libellé du gabarit est obligatoire.
+                </div>
+              </div>
+            </div>
+            <div class="row"></div>
+          </form>
+        </div>
+        <hr />
+        <div class="row">
+          <form #operationForm="ngForm" class="was-validated">
+            <div class="row">
+              <div class="col-6">
+                <label for="typeOperation" class="form-label"
+                  >Type d'Opération</label
+                >
+                <select
+                  id="typeOperation"
+                  name="typeOperation"
+                  class="form-select"
+                  required
+                >
+                  <option value="0">Débit</option>
+                  <option value="1">Crédit</option>
+                </select>
+                <div class="invalid-feedback">
+                  Vous devez choisir le type d'opération.
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="taux" class="form-label">Taux du montant</label>
+                <input
+                  type="number"
+                  step="any"
+                  min="1"
+                  max="100"
+                  id="taux"
+                  name="taux"
+                  class="form-control"
+                  required
+                  placeholder="Le taux du montant"
+                />
+                <div class="invalid-feedback">
+                  Le taux du montant est obligatoire.
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <button class="btn btn-primary">
+                  <i class="fa fa-plus"></i> Ajouter
                 </button>
               </div>
             </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped">
+              <thead>
+                <tr class="align-center">
+                  <th class="text-center">#</th>
+                  <th></th>
+                  <th>N° Compte comptable</th>
+                  <th>Type Opération</th>
+                  <th>Taux</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
-      </form>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col d-flex justify-content-between">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="onSubmit(gabaritForm)"
+        >
+          <i class="fa fa-save"></i>&nbsp; Enregistrer
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <i class="fa fa-close"></i>&nbsp; Annuler
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,58 +1,188 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { AddAgenceComponent } from './agence/add-agence/add-agence.component';
-import { AgenceDetailComponent } from './agence/agence-detail/agence-detail.component';
-import { AgenceListComponent } from './agence/agence-list/agence-list.component';
-import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
-import { AvanceDetailComponent } from './avance/avance-detail/avance-detail.component';
-import { AvanceListComponent } from './avance/avance-list/avance-list.component';
-import { AvancePageComponent } from './avance/avance-page/avance-page.component';
-import { AddCompteComponent } from './compte/add-compte/add-compte.component';
-import { CompteListComponent } from './compte/compte-list/compte-list.component';
-import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
-import { CotisationDetailComponent } from './cotisation/cotisation-detail/cotisation-detail.component';
-import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
-import { CotisationPageComponent } from './cotisation/cotisation-page/cotisation-page.component';
-import { CotisationComponent } from './cotisation/cotisation/cotisation.component';
-import { AddCreditComponent } from './credit/add-credit/add-credit.component';
-import { CreditDetailComponent } from './credit/credit-detail/credit-detail.component';
-import { CreditListComponent } from './credit/credit-list/credit-list.component';
-import { CreditPageComponent } from './credit/credit-page/credit-page.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { StatistiqueComponent } from './dashboard/statistique/statistique.component';
-import { AddMembreComponent } from './membre/add-membre/add-membre.component';
-import { MembreDetailComponent } from './membre/membre-detail/membre-detail.component';
+import { HomeComponent } from './home/home.component';
 import { MembreListComponent } from './membre/membre-list/membre-list.component';
-import { MembrePageComponent } from './membre/membre-page/membre-page.component';
-import { ProfileComponent } from './membre/profile/profile.component';
-import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
-import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
-import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
-import { AddPeriodeComponent } from './periode/add-periode/add-periode.component';
-import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
-import { AddPropertyComponent } from './property/add-property/add-property.component';
-import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
-import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
-import { PropertyListComponent } from './property/property-list/property-list.component';
-import { AddServiceComponent } from './service/add-service/add-service.component';
-import { ServiceDetailComponent } from './service/service-detail/service-detail.component';
-import { ServiceListComponent } from './service/service-list/service-list.component';
-import { AddSexeComponent } from './sexe/add-sexe/add-sexe.component';
-import { SexeDetailComponent } from './sexe/sexe-detail/sexe-detail.component';
+import { AddMembreComponent } from './membre/add-membre/add-membre.component';
+import { SexePageComponent } from './sexe/sexe-page/sexe-page.component';
 import { SexeListComponent } from './sexe/sexe-list/sexe-list.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { AddUtilisateurComponent } from './utilisateur/add-utilisateur/add-utilisateur.component';
-import { UtilisateurDetailComponent } from './utilisateur/utilisateur-detail/utilisateur-detail.component';
-import { UtilisateurListComponent } from './utilisateur/utilisateur-list/utilisateur-list.component';
+import { AddSexeComponent } from './sexe/add-sexe/add-sexe.component';
+import { UpdateSexeComponent } from './sexe/update-sexe/update-sexe.component';
+import { SexeComponent } from './sexe/sexe/sexe.component';
+import { PostePageComponent } from './poste/poste-page/poste-page.component';
+import { PosteListComponent } from './poste/poste-list/poste-list.component';
+import { AddPosteComponent } from './poste/add-poste/add-poste.component';
+import { UpdatePosteComponent } from './poste/update-poste/update-poste.component';
+import { PosteComponent } from './poste/poste/poste.component';
+import { UpdateMembreComponent } from './membre/update-membre/update-membre.component';
+import { MembreComponent } from './membre/membre/membre.component';
+import { MembrePageComponent } from './membre/membre-page/membre-page.component';
+import { AddImageComponent } from './membre/add-image/add-image.component';
+import { CompteComptablePageComponent } from './compte-comptable/compte-comptable-page/compte-comptable-page.component';
+import { CompteComptableListComponent } from './compte-comptable/compte-comptable-list/compte-comptable-list.component';
+import { AddCompteComptableComponent } from './compte-comptable/add-compte-comptable/add-compte-comptable.component';
+import { UpdateCompteComptableComponent } from './compte-comptable/update-compte-comptable/update-compte-comptable.component';
+import { CompteComptableComponent } from './compte-comptable/compte-comptable/compte-comptable.component';
+import { GabaritPageComponent } from './gabarit/gabarit-page/gabarit-page.component';
+import { AddGabaritComponent } from './gabarit/add-gabarit/add-gabarit.component';
+import { GabaritListComponent } from './gabarit/gabarit-list/gabarit-list.component';
+import { GabaritComponent } from './gabarit/gabarit/gabarit.component';
+import { UpdateGabaritComponent } from './gabarit/update-gabarit/update-gabarit.component';
+import { ImportMembreComponent } from './membre/import-membre/import-membre.component';
+import { SelectMembreComponent } from './membre/select-membre/select-membre.component';
+import { CotisationPageComponent } from './cotisation/cotisation-page/cotisation-page.component';
+import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
+import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
+import { CotisationComponent } from './cotisation/cotisation/cotisation.component';
+import { UpdateCotisationComponent } from './cotisation/update-cotisation/update-cotisation.component';
+import { ImportCotisationComponent } from './cotisation/import-cotisation/import-cotisation.component';
+import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
+import { AvanceListComponent } from './avance/avance-list/avance-list.component';
+import { AvancePageComponent } from './avance/avance-page/avance-page.component';
+import { ImportAvanceComponent } from './avance/import-avance/import-avance.component';
+import { UpdateAvanceComponent } from './avance/update-avance/update-avance.component';
+import { AvanceComponent } from './avance/avance/avance.component';
+import { AddCreditComponent } from './credit/add-credit/add-credit.component';
+import { CreditListComponent } from './credit/credit-list/credit-list.component';
+import { CreditPageComponent } from './credit/credit-page/credit-page.component';
+import { CreditComponent } from './credit/credit/credit.component';
+import { ImportCreditComponent } from './credit/import-credit/import-credit.component';
+import { UpdateCreditComponent } from './credit/update-credit/update-credit.component';
+import { AddCompteComponent } from './compte/add-compte/add-compte.component';
+import { CompteListComponent } from './compte/compte-list/compte-list.component';
+import { ComptePageComponent } from './compte/compte-page/compte-page.component';
+import { CompteComponent } from './compte/compte/compte.component';
+import { ImportCompteComponent } from './compte/import-compte/import-compte.component';
+import { UpdateCompteComponent } from './compte/update-compte/update-compte.component';
+import { AddComptabiliteComponent } from './comptabilite/add-comptabilite/add-comptabilite.component';
+import { ComptabiliteListComponent } from './comptabilite/comptabilite-list/comptabilite-list.component';
+import { ComptabilitePageComponent } from './comptabilite/comptabilite-page/comptabilite-page.component';
+import { ComptabiliteComponent } from './comptabilite/comptabilite/comptabilite.component';
+import { ImportComptabiliteComponent } from './comptabilite/import-comptabilite/import-comptabilite.component';
+import { UpdateComptabiliteComponent } from './comptabilite/update-comptabilite/update-comptabilite.component';
 
 const routes: Routes = [
-  {path:'', component: PropertyListComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'statistiques', component: StatistiqueComponent},
-
-  {path:'membres', component: MembreListComponent},
+  { path: '', component: ConnexionComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      { path: '', component: DashboardComponent },
+      { path: 'statistiques', component: StatistiqueComponent },
+      {
+        path: 'membres',
+        component: MembrePageComponent,
+        children: [
+          { path: '', component: MembreListComponent },
+          { path: 'add', component: AddMembreComponent },
+          { path: 'update/:id', component: UpdateMembreComponent },
+          { path: 'show/:id', component: MembreComponent },
+          { path: 'add-image/:id', component: AddImageComponent },
+          { path: 'import', component: ImportMembreComponent },
+        ],
+      },
+      {
+        path: 'sexes',
+        component: SexePageComponent,
+        children: [
+          { path: '', component: SexeListComponent },
+          { path: 'add', component: AddSexeComponent },
+          { path: 'update/:id', component: UpdateSexeComponent },
+          { path: 'show/:id', component: SexeComponent },
+        ],
+      },
+      {
+        path: 'postes',
+        component: PostePageComponent,
+        children: [
+          { path: '', component: PosteListComponent },
+          { path: 'add', component: AddPosteComponent },
+          { path: 'update/:id', component: UpdatePosteComponent },
+          { path: 'show/:id', component: PosteComponent },
+        ],
+      },
+      {
+        path: 'plan-comptable',
+        component: CompteComptablePageComponent,
+        children: [
+          { path: '', component: CompteComptableListComponent },
+          { path: 'add', component: AddCompteComptableComponent },
+          { path: 'update/:id', component: UpdateCompteComptableComponent },
+          { path: 'show/:id', component: CompteComptableComponent },
+        ],
+      },
+      {
+        path: 'gabarits',
+        component: GabaritPageComponent,
+        children: [
+          { path: '', component: GabaritListComponent },
+          { path: 'add', component: AddGabaritComponent },
+          { path: 'update/:id', component: UpdateGabaritComponent },
+          { path: 'show/:id', component: GabaritComponent },
+        ],
+      },
+      {
+        path: 'cotisations',
+        component: CotisationPageComponent,
+        children: [
+          { path: '', component: CotisationListComponent },
+          { path: 'add', component: AddCotisationComponent },
+          { path: 'update/:id', component: UpdateCotisationComponent },
+          { path: 'show/:id', component: CotisationComponent },
+          { path: 'import', component: ImportCotisationComponent },
+        ],
+      },
+      {
+        path: 'avances',
+        component: AvancePageComponent,
+        children: [
+          { path: '', component: AvanceListComponent },
+          { path: 'add', component: AddAvanceComponent },
+          { path: 'update/:id', component: UpdateAvanceComponent },
+          { path: 'show/:id', component: AvanceComponent },
+          { path: 'import', component: ImportAvanceComponent },
+        ],
+      },
+      {
+        path: 'credits',
+        component: CreditPageComponent,
+        children: [
+          { path: '', component: CreditListComponent },
+          { path: 'add', component: AddCreditComponent },
+          { path: 'update/:id', component: UpdateCreditComponent },
+          { path: 'show/:id', component: CreditComponent },
+          { path: 'import', component: ImportCreditComponent },
+        ],
+      },
+      {
+        path: 'comptes',
+        component: ComptePageComponent,
+        children: [
+          { path: '', component: CompteListComponent },
+          { path: 'add', component: AddCompteComponent },
+          { path: 'update/:id', component: UpdateCompteComponent },
+          { path: 'show/:id', component: CompteComponent },
+          { path: 'import', component: ImportCompteComponent },
+        ],
+      },
+      {
+        path: 'comptabilite',
+        component: ComptabilitePageComponent,
+        children: [
+          { path: '', component: ComptabiliteListComponent },
+          { path: 'add', component: AddComptabiliteComponent },
+          { path: 'update/:id', component: UpdateComptabiliteComponent },
+          { path: 'show/:id', component: ComptabiliteComponent },
+          { path: 'import', component: ImportComptabiliteComponent },
+        ],
+      },
+    ],
+  },
+  { path: '**', component: ConnexionComponent },
+  /*
   {path:'membre-page', component: MembrePageComponent,
   children: [
     {path:'', component: ProfileComponent},
@@ -61,7 +191,7 @@ const routes: Routes = [
     {path: 'avances-membre', component: AvancePageComponent},
     {path: 'credits-membre', component: CreditPageComponent}
   ]
-},
+  },
   {path:'add-membre/:id', component: AddMembreComponent,
     data: {
       origin: 'membre'
@@ -123,15 +253,11 @@ const routes: Routes = [
   {path:'property-detail/:id', component: PropertyDetailComponent, resolve: {prp: PropertyDetailResolverService}},
   {path:'user/login', component: UserLoginComponent},
   {path:'user/register', component: UserRegisterComponent},
-  {path:'**', component: PropertyListComponent}
+  {path:'**', component: PropertyListComponent}*/
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

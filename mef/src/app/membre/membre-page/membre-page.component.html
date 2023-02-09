@@ -1,12 +1,5 @@
-<div class="row">
-  <div class="col-3">
-    <app-nav-bar
-      [menuProperties]="menuMembre"
-    ></app-nav-bar>
-  </div>
-
-  <div class="col-9 mt-3">
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
+<app-bouton-action
+  [infosPage]="infosPage"
+  [actions]="actions"
+></app-bouton-action>
+<router-outlet></router-outlet>

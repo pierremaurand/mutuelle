@@ -1,3 +1,12 @@
-#team {
-  background: #eee !important;
+.liste {
+  height: 480px;
+  overflow-y: auto;
+}
+
+img {
+  width: 50px;
+}
+
+.inactif {
+  opacity: 0.5;
 }

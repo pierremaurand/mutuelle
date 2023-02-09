@@ -1,7 +1,7 @@
 using System.Net;
-using WebApi.Errors;
+using mefApi.Errors;
 
-namespace WebApi.Middlewares
+namespace mefApi.Middlewares
 {
     public class ExceptionMiddleware
     {

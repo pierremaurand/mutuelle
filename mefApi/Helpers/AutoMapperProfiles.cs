@@ -1,38 +1,39 @@
 using AutoMapper;
-using WebApi.Dtos;
-using WebApi.Models;
+using mefApi.Dtos;
+using mefApi.Models;
 
-namespace WebApi.Helpers
+namespace mefApi.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Agence, AgenceDto>().ReverseMap();
-
-            CreateMap<Service, ServiceDto>().ReverseMap();
 
             CreateMap<Sexe, SexeDto>().ReverseMap();
+            CreateMap<Sexe, SexeListDto>().ReverseMap();
+            CreateMap<NewSexeDto, Sexe>().ReverseMap();
 
-            CreateMap<Parametre, ParametreDto>().ReverseMap();
+            CreateMap<Membre, MembreDetailsDto>()
+            .ForMember(d => d.SexeNom, opt => opt.MapFrom(src => src.Sexe.Nom))
+            .ForMember(d => d.PosteLibelle, opt => opt.MapFrom(src => src.Poste.Libelle)).ReverseMap();
+            CreateMap<Membre, MembreDto>().ReverseMap();
+            CreateMap<NewMembreDto, Membre>().ReverseMap();
 
-            CreateMap<Membre, MembreDto>()
-                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
-                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom))
-                .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom))
-                .ReverseMap();
+            CreateMap<Poste, PosteDto>().ReverseMap();
+            CreateMap<Poste, PosteListDto>().ReverseMap();
+            CreateMap<NewPosteDto, Poste>().ReverseMap();
 
-            CreateMap<Compte, CompteDto>().ReverseMap();
+            CreateMap<CompteComptable, CompteComptableDto>().ReverseMap();
+            CreateMap<NewCompteComptableDto, CompteComptable>().ReverseMap();
 
-            CreateMap<Cotisation, CotisationDto>().ReverseMap();
+            CreateMap<Gabarit, GabaritDto>().ReverseMap();
+            CreateMap<Gabarit, GabaritListDto>().ReverseMap();
+            CreateMap<NewGabaritDto, Gabarit>().ReverseMap();
+            
+            CreateMap<Operation, OperationDto>().ReverseMap();
+            CreateMap<NewOperationDto, Operation>().ReverseMap();
 
-            CreateMap<Avance, AvanceDto>().ReverseMap();
-
-            CreateMap<Credit, CreditDto>().ReverseMap();
-
-            CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
-
-            CreateMap<EcheanceCredit, EcheanceCreditDto>().ReverseMap();
+            CreateMap<Compte, CompteMembreDto>().ReverseMap();
         }
     }
 }

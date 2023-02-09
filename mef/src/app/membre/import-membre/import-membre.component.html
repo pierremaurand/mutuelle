@@ -1,0 +1,67 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="h3">Importation des membres</div>
+        <p>Formulaire d'importation des membres</p>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-12 text-center">
+        <input
+          type="file"
+          class="form-control"
+          (change)="onFileChange($event)"
+          multiple="false"
+        />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col content">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>PersonnelId</th>
+              <th>Nom</th>
+              <th>Sexe</th>
+              <th>Date de naissance</th>
+              <th>Lieu de naissance</th>
+              <th>Poste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of membres; let i = index">
+              <td>
+                {{ i + 1 }}
+              </td>
+              <td>
+                {{ item.personnelId }}
+              </td>
+              <td>
+                {{ item.nom | uppercase }}
+              </td>
+              <td>{{ item.sexeNom }}</td>
+              <td>{{ item.dateNaissance }}</td>
+              <td>{{ item.lieuNaissance }}</td>
+              <td>{{ item.posteLibelle }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col d-flex justify-content-between">
+        <button type="button" class="btn btn-success" (click)="onImport()">
+          <i class="fa fa-save"></i>&nbsp; Enregistrer
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <i class="fa fa-close"></i>&nbsp; Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

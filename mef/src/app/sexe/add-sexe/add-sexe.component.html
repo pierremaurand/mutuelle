@@ -1,41 +1,40 @@
-<div class="container" style="margin-top: 70px; width: 1080px;">
-  <div class="row">
-    <div class="col-6 m-auto shadow-lg p-0 bg-white">
-      <form [formGroup]="sexeForm" (ngSubmit)="onSubmit()">
-        <div class="card m-auto">
-          <div class="card-header">
-            <h3>{{titreFormulaire}}</h3>
-          </div>
-          <div class="card-body">
-            <div class="mb-3">
-              <div class="row">
-                <div class="col-12">
-                  <label for="nom" class="form-label">Nom du sexe</label>
-                  <input type="text" id="nom" class="form-control" formControlName="nom"
-                    [ngClass]="{ 'is-invalid': nom.invalid && (nom.touched || sexeSubmitted)}"
-                    [value]="sexe.nom">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="btn-group">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fa fa-save"></i>&nbsp;
-                  Enregistrer
-                </button>
-                <button type="reset" class="btn btn-secondary">
-                  <i class="fa fa-refresh"></i>&nbsp;
-                  Recommencer
-                </button>
-                <button type="button" class="btn btn-danger" routerLink="/sexes">
-                  <i class="fa fa-cancel"></i>&nbsp;
-                  Annuler
-                </button>
-              </div>
-            </div>
+<div class="card shadow">
+  <div class="card-body">
+    <div class="h3">Ajout d'un sexe</div>
+    <p>Formulaire d'enregistrement d'un sexe</p>
+    <hr />
+    <form
+      #sexeForm="ngForm"
+      (ngSubmit)="onSubmit(sexeForm)"
+      class="was-validated"
+    >
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="mb-3">
+            <label for="nom" class="form-label">Nom du sexe</label>
+            <input
+              type="text"
+              id="nom"
+              class="form-control"
+              name="nom"
+              [(ngModel)]="sexe.nom"
+              required
+              placeholder="Le nom du sexe"
+            />
+            <div class="invalid-feedback">Le nom du sexe est obligatoire.</div>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-between">
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-save"></i>&nbsp; Enregistrer
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            <i class="fa fa-close"></i>&nbsp; Annuler
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

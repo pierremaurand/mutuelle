@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WebApi.Data;
-using WebApi.Helpers;
-using WebApi.Interfaces;
-using WebApi.Middlewares;
-using WebApi.Services;
+using mefApi.Data;
+using mefApi.Helpers;
+using mefApi.Interfaces;
+using mefApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,8 +31,6 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IPhotoService, PhotoService>();
-builder.Services.AddScoped<ILocalPhotoService, LocalPhotoService>();
 
 var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
 var key = new SymmetricSecurityKey(Encoding.UTF8

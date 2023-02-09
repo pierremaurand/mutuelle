@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-body text-center">
+        <img
+          src="{{ membre?.photoUrl }}"
+          alt=""
+          class="shadow img-thumbnail"
+          [ngClass]="{ inactif: !membre?.estActif }"
+        />
+        <div class="text-center text-wrap mt-2">
+          {{ membre?.nom | uppercase }}
+        </div>
+        <p class="text-muted text-center">{{ membre?.contact }}</p>
+        <div class="row" *ngIf="showDetailsBtn && membre?.id">
+          <div class="col-12">
+            <div class="btn-group d-flex">
+              <button class="btn btn-primary" (click)="showDetails()">
+                <i class="fa fa-eye"></i> Voir détails
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

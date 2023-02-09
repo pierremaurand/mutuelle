@@ -1,12 +1,31 @@
-<div class="row">
-  <div class="col-md-12 text-end mb-3">
-    <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#newAdd" (click)="clickAction(1)">
-      <i class="fa fa-plus"></i>&nbsp;
-      Ajouter
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="'/' + infosPage?.url"
+      ><i class="fa fa-list"></i> {{ infosPage?.title | uppercase }}</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <button class="btn btn-warning" (click)="clickAction(2)">
-      <i class="fa fa-print"></i>&nbsp;
-      Imprimer
-    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let action of actions">
+          <a
+            class="nav-link text-{{ action.class }}"
+            aria-current="page"
+            routerLinkActive="active"
+            [routerLink]="'/' + action.url"
+            ><i class="{{ action.icon }}"></i> {{ action.title }}</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
