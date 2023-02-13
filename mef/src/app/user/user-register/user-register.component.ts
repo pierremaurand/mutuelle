@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { UserForRegister } from 'src/app/model/user';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,11 +12,11 @@ import Validation from 'src/app/utils/validation';
 })
 export class UserRegisterComponent implements OnInit {
 
-  registrationForm!: FormGroup;
+  registrationForm!: UntypedFormGroup;
   user!: UserForRegister;
   userSubmitted: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private alertity:AlertifyService) { }
+  constructor(private fb: UntypedFormBuilder, private authService: AuthService, private alertity:AlertifyService) { }
 
   ngOnInit(): void {
     this.createRegistrationForm();
@@ -45,23 +45,23 @@ export class UserRegisterComponent implements OnInit {
   // Getter methos for all form controls
   //-------------------------------------
   get userName() {
-    return this.registrationForm.get('userName') as FormControl;
+    return this.registrationForm.get('userName') as UntypedFormControl;
   }
 
   get email() {
-    return this.registrationForm.get('email') as FormControl;
+    return this.registrationForm.get('email') as UntypedFormControl;
   }
 
   get password() {
-    return this.registrationForm.get('password') as FormControl;
+    return this.registrationForm.get('password') as UntypedFormControl;
   }
 
   get confirmPassword() {
-    return this.registrationForm.get('confirmPassword') as FormControl;
+    return this.registrationForm.get('confirmPassword') as UntypedFormControl;
   }
 
   get mobile() {
-    return this.registrationForm.get('mobile') as FormControl;
+    return this.registrationForm.get('mobile') as UntypedFormControl;
   }
 
   //---------------------------------------------------

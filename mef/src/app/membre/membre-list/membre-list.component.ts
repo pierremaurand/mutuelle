@@ -49,10 +49,10 @@ export class MembreListComponent implements OnInit {
   }
 
   onSearchChange(search: string): void {
-    this.search = search;
-    this.listeMembres = this.membres.filter((m) =>
-      m.nom.toLowerCase().includes(this.search.toLowerCase())
-    );
-    this.searchCount = this.listeMembres.length;
+    // this.search = search;
+    // this.listeMembres = this.membres.filter((m) =>
+    //   m.nom.toLowerCase().includes(this.search.toLowerCase())
+    // );
+    // this.searchCount = this.listeMembres.length;
   }
 }

@@ -63,125 +63,207 @@ import { ComptabilitePageComponent } from './comptabilite/comptabilite-page/comp
 import { ComptabiliteComponent } from './comptabilite/comptabilite/comptabilite.component';
 import { ImportComptabiliteComponent } from './comptabilite/import-comptabilite/import-comptabilite.component';
 import { UpdateComptabiliteComponent } from './comptabilite/update-comptabilite/update-comptabilite.component';
+import { PageLoginComponent } from './pages/page-login/page-login.component';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
+import { PageMembreComponent } from './pages/membres/page-membre/page-membre.component';
+import { NouveauMembreComponent } from './pages/membres/nouveau-membre/nouveau-membre.component';
+import { PageCompteComponent } from './pages/comptes/page-compte/page-compte.component';
+import { PageAvanceComponent } from './pages/avances/page-avance/page-avance.component';
+import { PageCreditComponent } from './pages/credits/page-credit/page-credit.component';
+import { PageCotisationComponent } from './pages/cotisations/page-cotisation/page-cotisation.component';
+import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
+import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
+import { PageUtilisateurComponent } from './pages/page-utilisateur/page-utilisateur.component';
+import { PageCompteComptableComponent } from './pages/page-compte-comptable/page-compte-comptable.component';
+import { PageGabaritComponent } from './pages/page-gabarit/page-gabarit.component';
+import { PageSexeComponent } from './pages/page-sexe/page-sexe.component';
+import { PagePosteComponent } from './pages/page-poste/page-poste.component';
 
 const routes: Routes = [
-  { path: '', component: ConnexionComponent },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'login',
+    component: PageLoginComponent,
+  },
+  {
+    path: '',
+    component: PageDashboardComponent,
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'statistiques', component: StatistiqueComponent },
+      {
+        path: 'statistiques',
+        component: PageStatistiquesComponent,
+      },
       {
         path: 'membres',
-        component: MembrePageComponent,
-        children: [
-          { path: '', component: MembreListComponent },
-          { path: 'add', component: AddMembreComponent },
-          { path: 'update/:id', component: UpdateMembreComponent },
-          { path: 'show/:id', component: MembreComponent },
-          { path: 'add-image/:id', component: AddImageComponent },
-          { path: 'import', component: ImportMembreComponent },
-        ],
+        component: PageMembreComponent,
       },
       {
-        path: 'sexes',
-        component: SexePageComponent,
-        children: [
-          { path: '', component: SexeListComponent },
-          { path: 'add', component: AddSexeComponent },
-          { path: 'update/:id', component: UpdateSexeComponent },
-          { path: 'show/:id', component: SexeComponent },
-        ],
-      },
-      {
-        path: 'postes',
-        component: PostePageComponent,
-        children: [
-          { path: '', component: PosteListComponent },
-          { path: 'add', component: AddPosteComponent },
-          { path: 'update/:id', component: UpdatePosteComponent },
-          { path: 'show/:id', component: PosteComponent },
-        ],
-      },
-      {
-        path: 'plan-comptable',
-        component: CompteComptablePageComponent,
-        children: [
-          { path: '', component: CompteComptableListComponent },
-          { path: 'add', component: AddCompteComptableComponent },
-          { path: 'update/:id', component: UpdateCompteComptableComponent },
-          { path: 'show/:id', component: CompteComptableComponent },
-        ],
-      },
-      {
-        path: 'gabarits',
-        component: GabaritPageComponent,
-        children: [
-          { path: '', component: GabaritListComponent },
-          { path: 'add', component: AddGabaritComponent },
-          { path: 'update/:id', component: UpdateGabaritComponent },
-          { path: 'show/:id', component: GabaritComponent },
-        ],
-      },
-      {
-        path: 'cotisations',
-        component: CotisationPageComponent,
-        children: [
-          { path: '', component: CotisationListComponent },
-          { path: 'add', component: AddCotisationComponent },
-          { path: 'update/:id', component: UpdateCotisationComponent },
-          { path: 'show/:id', component: CotisationComponent },
-          { path: 'import', component: ImportCotisationComponent },
-        ],
-      },
-      {
-        path: 'avances',
-        component: AvancePageComponent,
-        children: [
-          { path: '', component: AvanceListComponent },
-          { path: 'add', component: AddAvanceComponent },
-          { path: 'update/:id', component: UpdateAvanceComponent },
-          { path: 'show/:id', component: AvanceComponent },
-          { path: 'import', component: ImportAvanceComponent },
-        ],
-      },
-      {
-        path: 'credits',
-        component: CreditPageComponent,
-        children: [
-          { path: '', component: CreditListComponent },
-          { path: 'add', component: AddCreditComponent },
-          { path: 'update/:id', component: UpdateCreditComponent },
-          { path: 'show/:id', component: CreditComponent },
-          { path: 'import', component: ImportCreditComponent },
-        ],
+        path: 'nouveaumembre',
+        component: NouveauMembreComponent,
       },
       {
         path: 'comptes',
-        component: ComptePageComponent,
-        children: [
-          { path: '', component: CompteListComponent },
-          { path: 'add', component: AddCompteComponent },
-          { path: 'update/:id', component: UpdateCompteComponent },
-          { path: 'show/:id', component: CompteComponent },
-          { path: 'import', component: ImportCompteComponent },
-        ],
+        component: PageCompteComponent,
       },
       {
-        path: 'comptabilite',
-        component: ComptabilitePageComponent,
-        children: [
-          { path: '', component: ComptabiliteListComponent },
-          { path: 'add', component: AddComptabiliteComponent },
-          { path: 'update/:id', component: UpdateComptabiliteComponent },
-          { path: 'show/:id', component: ComptabiliteComponent },
-          { path: 'import', component: ImportComptabiliteComponent },
-        ],
+        path: 'cotisations',
+        component: PageCotisationComponent,
+      },
+      {
+        path: 'avances',
+        component: PageAvanceComponent,
+      },
+      {
+        path: 'credits',
+        component: PageCreditComponent,
+      },
+      {
+        path: 'profil',
+        component: PageProfilComponent,
+      },
+      {
+        path: 'changermotdepasse',
+        component: ChangerMotDePasseComponent,
+      },
+      {
+        path: 'utilisateurs',
+        component: PageUtilisateurComponent,
+      },
+      {
+        path: 'comptecomptables',
+        component: PageCompteComptableComponent,
+      },
+      {
+        path: 'gabarits',
+        component: PageGabaritComponent,
+      },
+      {
+        path: 'sexes',
+        component: PageSexeComponent,
+      },
+      {
+        path: 'postes',
+        component: PagePosteComponent,
       },
     ],
   },
-  { path: '**', component: ConnexionComponent },
+  // { path: '', component: PageLoginComponent },
+  // {
+  //   path: 'home',
+  //   component: HomeComponent,
+  //   children: [
+  //     { path: '', component: DashboardComponent },
+  //     { path: 'statistiques', component: StatistiqueComponent },
+  //     {
+  //       path: 'membres',
+  //       component: MembrePageComponent,
+  //       children: [
+  //         { path: '', component: MembreListComponent },
+  //         { path: 'add', component: AddMembreComponent },
+  //         { path: 'update/:id', component: UpdateMembreComponent },
+  //         { path: 'show/:id', component: MembreComponent },
+  //         { path: 'add-image/:id', component: AddImageComponent },
+  //         { path: 'import', component: ImportMembreComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'sexes',
+  //       component: SexePageComponent,
+  //       children: [
+  //         { path: '', component: SexeListComponent },
+  //         { path: 'add', component: AddSexeComponent },
+  //         { path: 'update/:id', component: UpdateSexeComponent },
+  //         { path: 'show/:id', component: SexeComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'postes',
+  //       component: PostePageComponent,
+  //       children: [
+  //         { path: '', component: PosteListComponent },
+  //         { path: 'add', component: AddPosteComponent },
+  //         { path: 'update/:id', component: UpdatePosteComponent },
+  //         { path: 'show/:id', component: PosteComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'plan-comptable',
+  //       component: CompteComptablePageComponent,
+  //       children: [
+  //         { path: '', component: CompteComptableListComponent },
+  //         { path: 'add', component: AddCompteComptableComponent },
+  //         { path: 'update/:id', component: UpdateCompteComptableComponent },
+  //         { path: 'show/:id', component: CompteComptableComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'gabarits',
+  //       component: GabaritPageComponent,
+  //       children: [
+  //         { path: '', component: GabaritListComponent },
+  //         { path: 'add', component: AddGabaritComponent },
+  //         { path: 'update/:id', component: UpdateGabaritComponent },
+  //         { path: 'show/:id', component: GabaritComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'cotisations',
+  //       component: CotisationPageComponent,
+  //       children: [
+  //         { path: '', component: CotisationListComponent },
+  //         { path: 'add', component: AddCotisationComponent },
+  //         { path: 'update/:id', component: UpdateCotisationComponent },
+  //         { path: 'show/:id', component: CotisationComponent },
+  //         { path: 'import', component: ImportCotisationComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'avances',
+  //       component: AvancePageComponent,
+  //       children: [
+  //         { path: '', component: AvanceListComponent },
+  //         { path: 'add', component: AddAvanceComponent },
+  //         { path: 'update/:id', component: UpdateAvanceComponent },
+  //         { path: 'show/:id', component: AvanceComponent },
+  //         { path: 'import', component: ImportAvanceComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'credits',
+  //       component: CreditPageComponent,
+  //       children: [
+  //         { path: '', component: CreditListComponent },
+  //         { path: 'add', component: AddCreditComponent },
+  //         { path: 'update/:id', component: UpdateCreditComponent },
+  //         { path: 'show/:id', component: CreditComponent },
+  //         { path: 'import', component: ImportCreditComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'comptes',
+  //       component: ComptePageComponent,
+  //       children: [
+  //         { path: '', component: CompteListComponent },
+  //         { path: 'add', component: AddCompteComponent },
+  //         { path: 'update/:id', component: UpdateCompteComponent },
+  //         { path: 'show/:id', component: CompteComponent },
+  //         { path: 'import', component: ImportCompteComponent },
+  //       ],
+  //     },
+  //     {
+  //       path: 'comptabilite',
+  //       component: ComptabilitePageComponent,
+  //       children: [
+  //         { path: '', component: ComptabiliteListComponent },
+  //         { path: 'add', component: AddComptabiliteComponent },
+  //         { path: 'update/:id', component: UpdateComptabiliteComponent },
+  //         { path: 'show/:id', component: ComptabiliteComponent },
+  //         { path: 'import', component: ImportComptabiliteComponent },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // { path: '**', component: PageLoginComponent },
   /*
   {path:'membre-page', component: MembrePageComponent,
   children: [

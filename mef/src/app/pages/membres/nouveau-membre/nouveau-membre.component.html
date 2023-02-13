@@ -1,0 +1,147 @@
+<div class="row">
+  <div class="col-md-11">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-12 mb-3">
+            <img
+              src="{{ membre.photoUrl }}"
+              alt="photo du membre"
+              class="rounded-circle img-thumbnail"
+              width="200px"
+              height="200px"
+            />
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-12 mb-3">
+              <h2>
+                <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
+                du membre
+              </h2>
+            </div>
+            <div class="alert alert-danger">Errors</div>
+            <div class="col-md-12">
+              <form #membreForm="ngForm">
+                <div class="row">
+                  <div class="mb-3 col">
+                    <input
+                      type="text"
+                      id="nom"
+                      class="form-control"
+                      name="nom"
+                      [(ngModel)]="membre.nom"
+                      placeholder="Le nom du membre"
+                    />
+                  </div>
+                  <div class="mb-3 col">
+                    <input
+                      type="number"
+                      id="personnelId"
+                      class="form-control"
+                      name="personnelId"
+                      [(ngModel)]="membre.personnelId"
+                      placeholder="L'identifiant paie du membre"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col">
+                    <select
+                      id="sexeId"
+                      name="sexeId"
+                      [(ngModel)]="sexe.id"
+                      class="form-select"
+                    >
+                      <option
+                        *ngFor="let sex of listeSexes"
+                        value="{{ sex.id }}"
+                      >
+                        {{ sex.nom }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="mb-3 col">
+                    <select
+                      id="posteId"
+                      name="posteId"
+                      [(ngModel)]="poste.id"
+                      class="form-select"
+                    >
+                      <option
+                        *ngFor="let post of listePostes"
+                        value="{{ post.id }}"
+                      >
+                        {{ post.libelle }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col">
+                    <input
+                      type="date"
+                      id="dateNaissance"
+                      class="form-control"
+                      name="dateNaissance"
+                      [(ngModel)]="membre.dateNaissance"
+                      placeholder="La date de naissance du membre"
+                    />
+                  </div>
+                  <div class="mb-3 col">
+                    <input
+                      type="text"
+                      id="lieuNaissance"
+                      class="form-control"
+                      name="lieuNaissance"
+                      [(ngModel)]="membre.lieuNaissance"
+                      placeholder="Le lieu de naissance du membre"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col">
+                    <input
+                      type="text"
+                      id="contact"
+                      class="form-control"
+                      name="contact"
+                      [(ngModel)]="membre.contact"
+                      placeholder="Le numéro de téléphone du membre"
+                    />
+                  </div>
+                  <div class="mb-3 col">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      name="email"
+                      [(ngModel)]="membre.email"
+                      placeholder="L'email du membre"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-12 text-end">
+              <button
+                type="button"
+                class="btn btn-danger me-2"
+                (click)="cancel()"
+              >
+                <i class="fa fa-ban"></i>&nbsp; Annuler
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="enregistrerMembre()"
+              >
+                <i class="fa fa-save"></i>&nbsp; Enregistrer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

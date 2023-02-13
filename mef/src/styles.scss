@@ -7,6 +7,57 @@
 
 html,
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #eff2f5 !important;
+}
+
+.background-grey {
+  background-color: #eff2f5 !important;
+}
+
+.main-container {
+  margin: 50px;
+}
+
+.min-height-600 {
+  min-height: 600px;
+}
+
+.min-height-80 {
+  min-height: 80px;
+}
+
+.no-flex-wrap {
+  flex-wrap: inherit !important;
+}
+
+.border-none {
+  border: none;
+}
+
+.border {
+  border: 2px solid !important;
+}
+
+.border-end {
+  border-right: 2px solid !important;
+}
+
+.liste {
+  height: 345px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.sousListe {
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+img.membre-liste {
+  width: 100px;
+}
+
+.cadre-photo-mebre-liste {
+  overflow: hidden;
 }

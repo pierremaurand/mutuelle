@@ -4,6 +4,7 @@ namespace mefApi.Models
 {
     public class Sexe: BaseEntity
     {
+        [Required]
         public string? Nom { get; set; }
     }
 }

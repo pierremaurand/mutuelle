@@ -42,7 +42,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(NewMembreDto membreDto)
+        public async Task<IActionResult> Add(MembreDto membreDto)
         {
             var membre = mapper.Map<Membre>(membreDto);
 

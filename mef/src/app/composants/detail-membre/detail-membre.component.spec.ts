@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DetailMembreComponent } from './detail-membre.component';
+
+describe('DetailMembreComponent', () => {
+  let component: DetailMembreComponent;
+  let fixture: ComponentFixture<DetailMembreComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ DetailMembreComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(DetailMembreComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

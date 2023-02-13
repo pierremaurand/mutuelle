@@ -8,10 +8,14 @@ import { InfosPage } from 'src/app/model/infosPage';
   styleUrls: ['./bouton-action.component.scss'],
 })
 export class BoutonActionComponent implements OnInit {
-  @Input() actions?: Action[];
-  @Input() infosPage?: InfosPage;
+  @Output()
+  clickEvent = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  nouveauEvent(): void {
+    this.clickEvent.emit();
+  }
 }

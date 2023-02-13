@@ -48,14 +48,14 @@ export class MembreService {
   getPhotoUrl(membre: Membre): string {
     if (membre.photo) {
       return this.imagesUrl + '/assets/images/' + membre.photo;
-    } else {
-      if (membre.sexeId) {
-        return (
-          this.imagesUrl +
-          '/assets/images/' +
-          (membre.sexeId === 1 ? 'default_man.jpg' : 'default_woman.jpg')
-        );
-      }
+      // } else {
+      //   if (membre.sexeId) {
+      //     return (
+      //       this.imagesUrl +
+      //       '/assets/images/' +
+      //       (membre.sexeId === 1 ? 'default_man.jpg' : 'default_woman.jpg')
+      //     );
+      //   }
     }
     return this.imagesUrl + '/assets/images/default_man.jpg';
   }

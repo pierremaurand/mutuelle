@@ -1,19 +1,17 @@
+import { Poste } from './poste';
+import { Sexe } from './sexe';
+
 export class Membre {
-  id: number = 0;
-  nom: string = '';
-  personnelId: number = 0;
-  sexeId: number = 0;
-  estActif: boolean = true;
-  sexeNom: string = '';
-  posteId: number = 0;
-  posteLibelle: string = '';
-  photo: string = '';
-  photoUrl: string = '';
-  dateNaissance: string = '';
-  lieuNaissance: string = '';
-  contact: string = '';
-  email: string = '';
-  creePar: number = 0;
-  modifieLe: string = '';
-  modifiePar: number = 0;
+  id?: number;
+  nom?: string;
+  personnelId?: number;
+  estActif?: boolean;
+  sexe?: Sexe;
+  poste?: Poste;
+  photo?: string;
+  photoUrl?: string;
+  dateNaissance?: string;
+  lieuNaissance?: string;
+  contact?: string;
+  email?: string;
 }

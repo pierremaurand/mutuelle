@@ -41,8 +41,11 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(NewSexeDto sexeDto)
+        public async Task<IActionResult> Add(SexeDto sexeDto)
         {
+            if(!ModelState.IsValid) 
+                return BadRequest(ModelState);
+            
             var sexe = mapper.Map<Sexe>(sexeDto);
             sexe.CreePar = 1;
             sexe.ModifiePar = 1;

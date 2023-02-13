@@ -1,31 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow mb-3">
-  <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="'/' + infosPage?.url"
-      ><i class="fa fa-list"></i> {{ infosPage?.title | uppercase }}</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+<div class="d-flex">
+  <div class="p-2 flex-fill">
+    <button type="button" class="btn btn-warning">
+      <i class="fas fa-cloud-upload-alt"></i>&nbsp; Importer
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngFor="let action of actions">
-          <a
-            class="nav-link text-{{ action.class }}"
-            aria-current="page"
-            routerLinkActive="active"
-            [routerLink]="'/' + action.url"
-            ><i class="{{ action.icon }}"></i> {{ action.title }}</a
-          >
-        </li>
-      </ul>
-    </div>
   </div>
-</nav>
+  <div class="p-2 flex-fill">
+    <button type="button" class="btn btn-success">
+      <i class="fas fa-cloud-download-alt"></i>&nbsp;Exporter
+    </button>
+  </div>
+  <div class="p-2 flex-fill">
+    <button type="button" class="btn btn-primary" (click)="nouveauEvent()">
+      <i class="fas fa-plus"></i>&nbsp;Nouveau
+    </button>
+  </div>
+</div>

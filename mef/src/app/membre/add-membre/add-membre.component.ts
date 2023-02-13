@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-membre.component.scss'],
 })
 export class AddMembreComponent implements OnInit {
-  membre: Membre = new Membre();
+  membre: Membre = {};
   sexes: Sexe[] = [];
   postes: Poste[] = [];
 

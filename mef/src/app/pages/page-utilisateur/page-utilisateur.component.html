@@ -1,0 +1,26 @@
+<div class="col">
+  <div class="row m-2">
+    <div class="col-md-8 p-1">
+      <h1>Liste des utilisateurs</h1>
+    </div>
+    <div class="col-md-4">
+      <app-bouton-action (clickEvent)="nouvelUtilisateur()"></app-bouton-action>
+    </div>
+  </div>
+  <div class="row m-3 no-flex-wrap border p-1 liste">
+    <div class="col-md-12">
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+      <app-detail-utilisateur></app-detail-utilisateur>
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-md-12 text-center">
+      <app-pagination></app-pagination>
+    </div>
+  </div>
+</div>

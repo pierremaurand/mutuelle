@@ -96,6 +96,35 @@ import { ComptabiliteListComponent } from './comptabilite/comptabilite-list/comp
 import { AddComptabiliteComponent } from './comptabilite/add-comptabilite/add-comptabilite.component';
 import { UpdateComptabiliteComponent } from './comptabilite/update-comptabilite/update-comptabilite.component';
 import { ImportComptabiliteComponent } from './comptabilite/import-comptabilite/import-comptabilite.component';
+import { PageLoginComponent } from './pages/page-login/page-login.component';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
+import { MenuComponent } from './composants/menu/menu.component';
+import { HeaderComponent } from './composants/header/header.component';
+import { PageMembreComponent } from './pages/membres/page-membre/page-membre.component';
+import { DetailMembreComponent } from './composants/detail-membre/detail-membre.component';
+import { NouveauMembreComponent } from './pages/membres/nouveau-membre/nouveau-membre.component';
+import { PageCompteComponent } from './pages/comptes/page-compte/page-compte.component';
+import { PageCotisationComponent } from './pages/cotisations/page-cotisation/page-cotisation.component';
+import { PageAvanceComponent } from './pages/avances/page-avance/page-avance.component';
+import { PageCreditComponent } from './pages/credits/page-credit/page-credit.component';
+import { DetailCompteMembreComponent } from './composants/detail-compte-membre/detail-compte-membre.component';
+import { DetailCotisationMembreComponent } from './composants/detail-cotisation-membre/detail-cotisation-membre.component';
+import { DetailAvanceMembreComponent } from './composants/detail-avance-membre/detail-avance-membre.component';
+import { DetailCreditMembreComponent } from './composants/detail-credit-membre/detail-credit-membre.component';
+import { DetailCompteComponent } from './composants/detail-compte/detail-compte.component';
+import { DetailCotisationComponent } from './composants/detail-cotisation/detail-cotisation.component';
+import { DetailAvanceComponent } from './composants/detail-avance/detail-avance.component';
+import { DetailCreditComponent } from './composants/detail-credit/detail-credit.component';
+import { DetailMvtCompteComponent } from './composants/detail-mvt-compte/detail-mvt-compte.component';
+import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
+import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
+import { PageUtilisateurComponent } from './pages/page-utilisateur/page-utilisateur.component';
+import { PageGabaritComponent } from './pages/page-gabarit/page-gabarit.component';
+import { PageCompteComptableComponent } from './pages/page-compte-comptable/page-compte-comptable.component';
+import { PageSexeComponent } from './pages/page-sexe/page-sexe.component';
+import { PagePosteComponent } from './pages/page-poste/page-poste.component';
+import { DetailUtilisateurComponent } from './composants/detail-utilisateur/detail-utilisateur.component';
 
 @NgModule({
   declarations: [
@@ -179,6 +208,35 @@ import { ImportComptabiliteComponent } from './comptabilite/import-comptabilite/
     AddComptabiliteComponent,
     UpdateComptabiliteComponent,
     ImportComptabiliteComponent,
+    PageLoginComponent,
+    PageDashboardComponent,
+    PageStatistiquesComponent,
+    MenuComponent,
+    HeaderComponent,
+    PageMembreComponent,
+    DetailMembreComponent,
+    NouveauMembreComponent,
+    PageCompteComponent,
+    PageCotisationComponent,
+    PageAvanceComponent,
+    PageCreditComponent,
+    DetailCompteMembreComponent,
+    DetailCotisationMembreComponent,
+    DetailAvanceMembreComponent,
+    DetailCreditMembreComponent,
+    DetailCompteComponent,
+    DetailCotisationComponent,
+    DetailAvanceComponent,
+    DetailCreditComponent,
+    DetailMvtCompteComponent,
+    PageProfilComponent,
+    ChangerMotDePasseComponent,
+    PageUtilisateurComponent,
+    PageGabaritComponent,
+    PageCompteComptableComponent,
+    PageSexeComponent,
+    PagePosteComponent,
+    DetailUtilisateurComponent,
   ],
   imports: [
     BrowserModule,

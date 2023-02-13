@@ -1,4 +1,4 @@
-<div class="card shadow">
+<!-- <div class="card shadow">
   <div class="card-body">
     <div class="h3">Ajout d'un membre</div>
     <p>Formulaire d'enregistrement d'un membre</p>
@@ -49,12 +49,12 @@
               <select
                 id="sexeId"
                 name="sexeId"
-                [(ngModel)]="membre.sexeId"
+                [(ngModel)]="membre.sexe?.id"
                 class="form-select"
                 required
               >
-                <option *ngFor="let sexe of sexes" value="{{ sexe.id }}">
-                  {{ sexe.nom }}
+                <option *ngFor="let sex of sexes" value="{{ sex.id }}">
+                  {{ sex.nom }}
                 </option>
               </select>
               <div class="invalid-feedback">
@@ -70,8 +70,8 @@
                 class="form-select"
                 required
               >
-                <option *ngFor="let poste of postes" value="{{ poste.id }}">
-                  {{ poste.libelle }}
+                <option *ngFor="let post of postes" value="{{ post.id }}">
+                  {{ post.libelle }}
                 </option>
               </select>
               <div class="invalid-feedback">
@@ -156,4 +156,4 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
