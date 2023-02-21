@@ -39,14 +39,29 @@ namespace mefApi.Controllers
             return Ok(compteDto);
         }
 
-        [HttpPost("add")]
-        public async Task<IActionResult> Add(NewCompteComptableDto compteDto)
+        [HttpPost("addcompte")]
+        public async Task<IActionResult> Add(CompteComptableDto compteDto)
         {
             var compte = mapper.Map<CompteComptable>(compteDto);
             compte.CreePar = 1;
             compte.ModifiePar = 1;
             compte.ModifieLe = DateTime.Now;
             uow.CompteComptableRepository.Add(compte);
+            await uow.SaveAsync();
+            return StatusCode(201);
+        }
+
+        [HttpPost("addcomptes")]
+        public async Task<IActionResult> Add(IEnumerable<CompteComptableDto> comptesDto)
+        {
+            var comptes = mapper.Map<IEnumerable<CompteComptable>>(comptesDto);
+            foreach(var compte in comptes) {
+                compte.CreePar = 1;
+                compte.ModifiePar = 1;
+                compte.ModifieLe = DateTime.Now;
+                uow.CompteComptableRepository.Add(compte);
+            }
+            
             await uow.SaveAsync();
             return StatusCode(201);
         }

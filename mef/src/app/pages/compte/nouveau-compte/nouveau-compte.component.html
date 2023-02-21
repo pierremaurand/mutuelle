@@ -1,0 +1,172 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-12">
+            <div class="col-md-12 mb-3">
+              <h2>
+                <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
+                du compte
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-3 border-end text-primary">
+            <div class="row mb-2" *ngIf="compte.id === 0">
+              <div class="col-md-12 text-black">
+                <label for="membreId" class="form-label">Le membre</label>
+                <select
+                  id="membreId"
+                  name="membreId"
+                  [(ngModel)]="compte.membreId"
+                  class="form-select"
+                  (change)="changeMembre()"
+                >
+                  <option
+                    *ngFor="let membre of membres"
+                    value="{{ membre.id }}"
+                  >
+                    {{ membre.nom | uppercase }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <app-infos-membre
+                [membre]="membre"
+                [photo]="photo"
+                [sexe]="sexe"
+                [poste]="poste"
+                [lieuAffectation]="lieuAffectation"
+              ></app-infos-membre>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-2">
+                    <label for="typeOperation" class="form-label"
+                      >Type mouvement</label
+                    >
+                    <select
+                      id="typeOperation"
+                      name="typeOperation"
+                      class="form-select"
+                      [(ngModel)]="mvtCompte.typeOperation"
+                    >
+                      <option value="0">Débit</option>
+                      <option value="1">Crédit</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="gabaritId" class="form-label">Le gabarit</label>
+                    <select
+                      id="gabaritId"
+                      name="gabaritId"
+                      [(ngModel)]="mvtCompte.gabaritId"
+                      class="form-select"
+                    >
+                      <option
+                        *ngFor="let gabarit of gabarits"
+                        value="{{ gabarit.id }}"
+                      >
+                        {{ gabarit.libelle | uppercase }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="libelle" class="form-label"
+                      >Libellé du mouvement</label
+                    >
+                    <input
+                      type="text"
+                      id="libelle"
+                      name="libelle"
+                      class="form-control"
+                      [(ngModel)]="mvtCompte.libelle"
+                      placeholder="Le libellé du mouvement"
+                    />
+                  </div>
+
+                  <div class="col-md-2">
+                    <label for="montant" class="form-label">Montant</label>
+                    <input
+                      type="number"
+                      id="montant"
+                      name="montant"
+                      class="form-control"
+                      [(ngModel)]="mvtCompte.montant"
+                      required
+                      placeholder="Montant du mouvement"
+                    />
+                  </div>
+                  <div class="col-md-2 d-flex">
+                    <button
+                      class="btn btn-primary form-control flex-fill"
+                      (click)="ajouterMvtCompte()"
+                    >
+                      <i class="fa fa-plus"></i> Ajouter
+                    </button>
+                  </div>
+                </div>
+                <hr />
+                <div class="row liste">
+                  <div class="col-12">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr *ngFor="let mvtCompte of mvtComptes; let i = index">
+                          <td class="text-center">{{ i + 1 }}</td>
+                          <td class="text-center">
+                            <span
+                              *ngIf="!mvtCompte.id"
+                              class="text-danger text-center"
+                              (click)="supprimerMvtCompte(mvtCompte)"
+                              ><i class="fa fa-close"></i
+                            ></span>
+                          </td>
+                          <td>
+                            {{ mvtCompte.dateMvt | date : "dd/MM/yyyy" }}
+                          </td>
+                          <td>
+                            {{ mvtCompte.typeOperation ? "Crédit" : "Débit" }}
+                          </td>
+                          <td>{{ mvtCompte.gabaritId }}</td>
+                          <td>{{ mvtCompte.libelle }}</td>
+                          <td class="text-end">
+                            {{ mvtCompte.montant | number }} FCFA
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-12 text-end">
+            <button
+              type="button"
+              class="btn btn-danger me-2"
+              (click)="cancel()"
+            >
+              <i class="fa fa-ban"></i>&nbsp; Annuler
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="enregistrerCompte()"
+            >
+              <i class="fa fa-save"></i>&nbsp; Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

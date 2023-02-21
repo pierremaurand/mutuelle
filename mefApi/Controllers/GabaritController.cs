@@ -24,8 +24,19 @@ namespace mefApi.Controllers
             if(gabarits is null) {
                 return NotFound();
             }
-            var gabaritsDto = mapper.Map<IEnumerable<GabaritListDto>>(gabarits);
+            var gabaritsDto = mapper.Map<IEnumerable<GabaritDto>>(gabarits);
             return Ok(gabaritsDto);
+        }
+
+        [HttpGet("operations")]
+        public async Task<IActionResult> GetAllOperations()
+        {
+            var operations = await uow.OperationRepository.GetAllAsync();
+            if(operations is null) {
+                return NotFound();
+            }
+            var operationsDto = mapper.Map<IEnumerable<OperationDto>>(operations);
+            return Ok(operationsDto);
         }
 
         [HttpGet("get/{id}")]
@@ -40,7 +51,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(NewGabaritDto gabaritDto)
+        public async Task<IActionResult> Add(GabaritDto gabaritDto)
         {
             var gabarit = mapper.Map<Gabarit>(gabaritDto);
             gabarit.CreePar = 1;
@@ -49,7 +60,7 @@ namespace mefApi.Controllers
 
             uow.GabaritRepository.Add(gabarit);
             await uow.SaveAsync();
-            return StatusCode(201);
+            return Ok(gabarit.Id);
         }
 
         [HttpPut("update/{id}")]

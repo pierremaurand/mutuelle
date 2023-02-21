@@ -24,7 +24,7 @@ namespace mefApi.Controllers
             if(postes is null) {
                 return NotFound();
             }
-            var postesDto = mapper.Map<IEnumerable<PosteListDto>>(postes);
+            var postesDto = mapper.Map<IEnumerable<PosteDto>>(postes);
             return Ok(postesDto);
         }
 
@@ -40,7 +40,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(NewPosteDto posteDto)
+        public async Task<IActionResult> Add(PosteDto posteDto)
         {
             var poste = mapper.Map<Poste>(posteDto);
             poste.CreePar = 1;

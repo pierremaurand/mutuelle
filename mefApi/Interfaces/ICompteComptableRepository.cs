@@ -7,6 +7,6 @@ namespace mefApi.Interfaces
         Task<IEnumerable<CompteComptable>?> GetAllAsync();
         void Add(CompteComptable comptecomptable);
         void Delete(int id);
-        Task<CompteComptable?> FindByIdAsync(int? id);
+        Task<CompteComptable?> FindByIdAsync(int id);
     }
 }

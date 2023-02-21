@@ -36,7 +36,7 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
 
     var modifiedReq = req.clone();
 
-    if(localStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       const userToken = localStorage.getItem('token');
       modifiedReq = req.clone({
         headers: req.headers.set('Authorization', 'Bearer ' + userToken),
@@ -74,14 +74,14 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
   }
 
   setError(error: HttpErrorResponse): string {
-    let errorMessage = 'Unknown error occured';
+    let errorMessage = 'Une erreur est survenue';
     if (error.error instanceof ErrorEvent) {
       // Client side error
       errorMessage = error.error.message;
+      console.log(error);
     } else {
       // Server side error
-      if (error.status === 401)
-      {
+      if (error.status === 401) {
         return error.statusText;
       }
 

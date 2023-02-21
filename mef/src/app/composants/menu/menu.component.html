@@ -24,11 +24,10 @@
           class="list-group-item"
           *ngFor="let sousMenu of menu.sousMenu"
           [ngClass]="{ 'menu-actif': sousMenu.active }"
+          (click)="navigate(sousMenu)"
         >
-          <a href="javascript:void(0);" (click)="navigate(sousMenu)">
-            <i class="{{ sousMenu.icon }}"></i>&nbsp;
-            {{ sousMenu.titre }}
-          </a>
+          <i class="{{ sousMenu.icon }}"></i>&nbsp;
+          {{ sousMenu.titre }}
         </li>
       </ul>
     </div>

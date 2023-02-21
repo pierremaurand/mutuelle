@@ -25,7 +25,7 @@ namespace mefApi.Controllers
             if(sexes is null) {
                 return NotFound();
             }
-            var sexesDto = mapper.Map<IEnumerable<SexeListDto>>(sexes);
+            var sexesDto = mapper.Map<IEnumerable<SexeDto>>(sexes);
             return Ok(sexesDto);
         }
 

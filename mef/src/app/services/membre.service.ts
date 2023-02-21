@@ -9,6 +9,7 @@ import { UploadImage } from '../model/uploadImage';
   providedIn: 'root',
 })
 export class MembreService {
+  [x: string]: any;
   baseUrl = environment.baseUrl;
   imagesUrl = environment.imagesUrl;
 
@@ -18,12 +19,22 @@ export class MembreService {
     return this.http.get<Membre[]>(this.baseUrl + '/membre/membres');
   }
 
+  getAllActifs(): Observable<Membre[]> {
+    return this.http.get<Membre[]>(this.baseUrl + '/membre/membres/actifs');
+  }
+
   getById(id: number): Observable<Membre> {
     return this.http.get<Membre>(this.baseUrl + '/membre/get/' + id.toString());
   }
 
-  add(membre: Membre): Observable<any> {
-    return this.http.post(this.baseUrl + '/membre/add', membre);
+  add(membre: Membre): Observable<number> {
+    return this.http.post<number>(this.baseUrl + '/membre/add', membre);
+  }
+
+  getDetails(id: number): Observable<Membre> {
+    return this.http.get<Membre>(
+      this.baseUrl + '/membre/getdetails/' + id.toString()
+    );
   }
 
   import(membres: Membre[]): Observable<any> {
@@ -34,9 +45,9 @@ export class MembreService {
     return this.http.post(this.baseUrl + '/membre/addImage', uploadImage);
   }
 
-  update(membre: Membre, id: number): Observable<any> {
+  update(membre: Membre, id?: number): Observable<any> {
     return this.http.put(
-      this.baseUrl + '/membre/update/' + id.toString(),
+      this.baseUrl + '/membre/update/' + id?.toString(),
       membre
     );
   }
@@ -45,17 +56,9 @@ export class MembreService {
     return this.http.delete(this.baseUrl + '/membre/delete/' + id.toString());
   }
 
-  getPhotoUrl(membre: Membre): string {
-    if (membre.photo) {
-      return this.imagesUrl + '/assets/images/' + membre.photo;
-      // } else {
-      //   if (membre.sexeId) {
-      //     return (
-      //       this.imagesUrl +
-      //       '/assets/images/' +
-      //       (membre.sexeId === 1 ? 'default_man.jpg' : 'default_woman.jpg')
-      //     );
-      //   }
+  getPhotoUrl(photo?: string): string {
+    if (photo && photo !== '') {
+      return this.imagesUrl + '/assets/images/' + photo;
     }
     return this.imagesUrl + '/assets/images/default_man.jpg';
   }

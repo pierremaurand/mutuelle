@@ -33,22 +33,23 @@ namespace mefApi.Data.Repo
         public async Task<Poste?> FindByIdAsync(int id)
         {
             if(dc.Postes is not null) {
-                var poste = await dc.Postes.FindAsync(id);
+                var poste = await dc.Postes
+                .Where(s => s.Id == id)
+                .FirstAsync();
                 if(poste is not null) {
                     return poste;
                 }
             }
-            
+
             return null;
         }
 
         public async Task<IEnumerable<Poste>?> GetAllAsync()
         {
-            if (dc.Postes is not null)
-            {
-                var postes = await dc.Postes.ToListAsync();
-                if (postes is not null)
-                {
+            if(dc.Postes is not null) {
+                var postes = await dc.Postes
+                .ToListAsync();
+                if(postes is not null) {
                     return postes;
                 }
             }

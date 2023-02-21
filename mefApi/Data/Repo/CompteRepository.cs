@@ -12,10 +12,11 @@ namespace mefApi.Data.Repo
         {
             this.dc = dc;
         }
+
         public void Add(Compte compte)
         {
             if(dc.Comptes is not null && compte is not null) {
-                dc.Comptes.Add(compte);
+                dc.Comptes.AddAsync(compte);
             }
         }
 
@@ -29,31 +30,30 @@ namespace mefApi.Data.Repo
             }
         }
 
-        public async Task<Compte?> FindByIdAsync(int? id)
+        public async Task<Compte?> FindByIdAsync(int id)
         {
             if(dc.Comptes is not null) {
                 var compte = await dc.Comptes
-                .Include(c => c.MvtComptes)
-                .Include(c => c.Membre)
-                .Where(c => c.Id == id)
+                .Where(s => s.Id == id)
                 .FirstAsync();
                 if(compte is not null) {
                     return compte;
                 }
             }
-            
+
             return null;
         }
 
         public async Task<IEnumerable<Compte>?> GetAllAsync()
         {
-            if(dc.Comptes is not null) {
+           if(dc.Comptes is not null) {
                 var comptes = await dc.Comptes
                 .ToListAsync();
                 if(comptes is not null) {
                     return comptes;
                 }
             }
+
             return null;
         }
     }

@@ -9,6 +9,7 @@ import { Poste } from '../model/poste';
 })
 export class PosteService {
   baseUrl = environment.baseUrl;
+  imagesUrl = environment.imagesUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -16,8 +17,8 @@ export class PosteService {
     return this.http.get<Poste[]>(this.baseUrl + '/poste/postes');
   }
 
-  getById(id: number): Observable<Poste> {
-    return this.http.get<Poste>(this.baseUrl + '/poste/get/' + id.toString());
+  getById(id?: number): Observable<Poste> {
+    return this.http.get<Poste>(this.baseUrl + '/poste/get/' + id?.toString());
   }
 
   add(poste: Poste): Observable<any> {
@@ -33,5 +34,9 @@ export class PosteService {
 
   deletePoste(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '/poste/delete/' + id.toString());
+  }
+
+  getImageUrl(): string {
+    return this.imagesUrl + '/assets/images/poste_image.png';
   }
 }

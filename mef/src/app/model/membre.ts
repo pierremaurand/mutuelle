@@ -6,11 +6,12 @@ export class Membre {
   nom?: string;
   personnelId?: number;
   estActif?: boolean;
-  sexe?: Sexe;
-  poste?: Poste;
+  sexeId?: number;
+  posteId?: number;
+  lieuAffectationId?: number;
   photo?: string;
-  photoUrl?: string;
-  dateNaissance?: string;
+  dateNaissance?: Date;
+  dateAdhesion?: Date;
   lieuNaissance?: string;
   contact?: string;
   email?: string;

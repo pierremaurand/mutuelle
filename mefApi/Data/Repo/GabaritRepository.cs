@@ -16,7 +16,7 @@ namespace mefApi.Data.Repo
         public void Add(Gabarit gabarit)
         {
             if(dc.Gabarits is not null && gabarit is not null) {
-                dc.Gabarits.Add(gabarit);
+                dc.Gabarits.AddAsync(gabarit);
             }
         }
 
@@ -30,18 +30,17 @@ namespace mefApi.Data.Repo
             }
         }
 
-        public async Task<Gabarit?> FindByIdAsync(int? id)
+        public async Task<Gabarit?> FindByIdAsync(int id)
         {
             if(dc.Gabarits is not null) {
                 var gabarit = await dc.Gabarits
-                .Include(m => m.Operations)
-                .Where(m => m.Id == id)
+                .Where(s => s.Id == id)
                 .FirstAsync();
                 if(gabarit is not null) {
                     return gabarit;
                 }
             }
-            
+
             return null;
         }
 
@@ -54,6 +53,7 @@ namespace mefApi.Data.Repo
                     return gabarits;
                 }
             }
+
             return null;
         }
     }

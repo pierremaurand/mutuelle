@@ -7,6 +7,6 @@ namespace mefApi.Interfaces
         Task<IEnumerable<Gabarit>?> GetAllAsync();
         void Add(Gabarit gabarit);
         void Delete(int id);
-        Task<Gabarit?> FindByIdAsync(int? id);
+        Task<Gabarit?> FindByIdAsync(int id);
     }
 }

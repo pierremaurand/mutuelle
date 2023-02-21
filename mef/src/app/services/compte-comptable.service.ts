@@ -9,6 +9,7 @@ import { CompteComptable } from '../model/comptecomptable';
 })
 export class CompteComptableService {
   baseUrl = environment.baseUrl;
+  imagesUrl = environment.imagesUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +26,7 @@ export class CompteComptableService {
   }
 
   add(compte: CompteComptable): Observable<any> {
-    return this.http.post(this.baseUrl + '/compteComptable/add', compte);
+    return this.http.post(this.baseUrl + '/compteComptable/addcompte', compte);
   }
 
   update(compte: CompteComptable, id: number): Observable<any> {
@@ -35,9 +36,13 @@ export class CompteComptableService {
     );
   }
 
-  deleteSexe(id: number): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.delete(
       this.baseUrl + '/compteComptable/delete/' + id.toString()
     );
+  }
+
+  getImageUrl(): string {
+    return this.imagesUrl + '/assets/images/compte_comptable_image.png';
   }
 }

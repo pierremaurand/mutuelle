@@ -14,21 +14,30 @@ namespace mefApi.Data
 
         public ISexeRepository SexeRepository =>
             new SexeRepository(dc);
+        
+        public IPosteRepository PosteRepository =>
+            new PosteRepository(dc);
+
+        public ILieuAffectationRepository LieuAffectationRepository =>
+            new LieuAffectationRepository(dc);
 
         public IMembreRepository MembreRepository =>
             new MembreRepository(dc);
-
-        public IPosteRepository PosteRepository =>
-            new PosteRepository(dc);
 
         public ICompteComptableRepository CompteComptableRepository =>
             new CompteComptableRepository(dc);
 
         public IGabaritRepository GabaritRepository =>
             new GabaritRepository(dc);
+
+        public IOperationRepository OperationRepository =>
+            new OperationRepository(dc);
         
         public ICompteRepository CompteRepository =>
             new CompteRepository(dc);
+
+        public IMvtCompteRepository MvtCompteRepository =>
+            new MvtCompteRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

@@ -1,12 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace mefApi.Dtos
 {
     public class CompteComptableDto
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
+        [Required(ErrorMessage = "Le compte est obligatoire")]
         public string? Compte { get; set; }
+        [Required(ErrorMessage = "Le libellé est obligatoire")]
         public string? Libelle { get; set; }
-        public int CreePar { get; set; }
-        public DateTime ModifieLe { get; set; }
-        public int ModifiePar { get; set; }
     }
 }

@@ -22,6 +22,36 @@ namespace hspaApi2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("mefApi.Models.Compte", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreePar")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstActif")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MembreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
+
+                    b.ToTable("Comptes");
+                });
+
             modelBuilder.Entity("mefApi.Models.CompteComptable", b =>
                 {
                     b.Property<int>("Id")
@@ -75,6 +105,31 @@ namespace hspaApi2.Migrations
                     b.ToTable("Gabarits");
                 });
 
+            modelBuilder.Entity("mefApi.Models.LieuAffectation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreePar")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Lieu")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LieuAffectations");
+                });
+
             modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
                     b.Property<int>("Id")
@@ -89,6 +144,9 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CreePar")
                         .HasColumnType("int");
 
+                    b.Property<string>("DateAdhesion")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DateNaissance")
                         .HasColumnType("nvarchar(max)");
 
@@ -97,6 +155,9 @@ namespace hspaApi2.Migrations
 
                     b.Property<bool>("EstActif")
                         .HasColumnType("bit");
+
+                    b.Property<int>("LieuAffectationId")
+                        .HasColumnType("int");
 
                     b.Property<string>("LieuNaissance")
                         .HasColumnType("nvarchar(max)");
@@ -124,11 +185,57 @@ namespace hspaApi2.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LieuAffectationId");
+
                     b.HasIndex("PosteId");
 
                     b.HasIndex("SexeId");
 
                     b.ToTable("Membres");
+                });
+
+            modelBuilder.Entity("mefApi.Models.MvtCompte", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CompteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreePar")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DateMvt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GabaritId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Libelle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Montant")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TypeOperation")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompteId");
+
+                    b.HasIndex("GabaritId");
+
+                    b.ToTable("MvtComptes");
                 });
 
             modelBuilder.Entity("mefApi.Models.Operation", b =>
@@ -142,7 +249,16 @@ namespace hspaApi2.Migrations
                     b.Property<int>("CompteComptableId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CreePar")
+                        .HasColumnType("int");
+
                     b.Property<int>("GabaritId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Taux")
@@ -157,7 +273,7 @@ namespace hspaApi2.Migrations
 
                     b.HasIndex("GabaritId");
 
-                    b.ToTable("Operation");
+                    b.ToTable("Operations");
                 });
 
             modelBuilder.Entity("mefApi.Models.Poste", b =>
@@ -210,8 +326,25 @@ namespace hspaApi2.Migrations
                     b.ToTable("Sexes");
                 });
 
+            modelBuilder.Entity("mefApi.Models.Compte", b =>
+                {
+                    b.HasOne("mefApi.Models.Membre", "Membre")
+                        .WithMany()
+                        .HasForeignKey("MembreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Membre");
+                });
+
             modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
+                    b.HasOne("mefApi.Models.LieuAffectation", "LieuAffectation")
+                        .WithMany()
+                        .HasForeignKey("LieuAffectationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("mefApi.Models.Poste", "Poste")
                         .WithMany()
                         .HasForeignKey("PosteId")
@@ -224,9 +357,30 @@ namespace hspaApi2.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("LieuAffectation");
+
                     b.Navigation("Poste");
 
                     b.Navigation("Sexe");
+                });
+
+            modelBuilder.Entity("mefApi.Models.MvtCompte", b =>
+                {
+                    b.HasOne("mefApi.Models.Compte", "Compte")
+                        .WithMany()
+                        .HasForeignKey("CompteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("mefApi.Models.Gabarit", "Gabarit")
+                        .WithMany()
+                        .HasForeignKey("GabaritId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Compte");
+
+                    b.Navigation("Gabarit");
                 });
 
             modelBuilder.Entity("mefApi.Models.Operation", b =>

@@ -9,6 +9,7 @@ import { Sexe } from '../model/sexe';
 })
 export class SexeService {
   baseUrl = environment.baseUrl;
+  imagesUrl = environment.imagesUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -16,8 +17,8 @@ export class SexeService {
     return this.http.get<Sexe[]>(this.baseUrl + '/sexe/sexes');
   }
 
-  getById(id: number): Observable<Sexe> {
-    return this.http.get<Sexe>(this.baseUrl + '/sexe/get/' + id.toString());
+  getById(id?: number): Observable<Sexe> {
+    return this.http.get<Sexe>(this.baseUrl + '/sexe/get/' + id?.toString());
   }
 
   add(sexe: Sexe): Observable<any> {
@@ -30,5 +31,9 @@ export class SexeService {
 
   deleteSexe(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '/sexe/delete/' + id.toString());
+  }
+
+  getImageUrl(): string {
+    return this.imagesUrl + '/assets/images/gender_image.png';
   }
 }

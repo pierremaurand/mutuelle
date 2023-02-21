@@ -13,43 +13,46 @@ namespace mefApi.Data.Repo
             this.dc = dc;
         }
 
-        public void Add(CompteComptable compteComptable)
+
+
+        public void Add(CompteComptable comptecomptable)
         {
-            if(dc.CompteComptables is not null && compteComptable is not null) {
-                dc.CompteComptables.Add(compteComptable);
+            if(dc.CompteComptables is not null && comptecomptable is not null) {
+                dc.CompteComptables.AddAsync(comptecomptable);
             }
         }
 
         public void Delete(int id)
         {
             if(dc.CompteComptables is not null) {
-                var compte = dc.CompteComptables.Find(id);
-                if(compte is not null) {
-                    dc.CompteComptables.Remove(compte);
+                var comptecomptable = dc.CompteComptables.Find(id);
+                if(comptecomptable is not null) {
+                    dc.CompteComptables.Remove(comptecomptable);
                 }
             }
         }
 
-        public async Task<CompteComptable?> FindByIdAsync(int? id)
+        public async Task<CompteComptable?> FindByIdAsync(int id)
         {
             if(dc.CompteComptables is not null) {
-                var compte = await dc.CompteComptables.FindAsync(id);
-                if(compte is not null) {
-                    return compte;
+                var comptecomptable = await dc.CompteComptables
+                .Where(s => s.Id == id)
+                .FirstAsync();
+                if(comptecomptable is not null) {
+                    return comptecomptable;
                 }
             }
-            
+
             return null;
         }
 
         public async Task<IEnumerable<CompteComptable>?> GetAllAsync()
         {
-            if (dc.CompteComptables is not null)
-            {
-                var comptes = await dc.CompteComptables.ToListAsync();
-                if (comptes is not null)
-                {
-                    return comptes;
+            if(dc.CompteComptables is not null) {
+                var comptecomptables = await dc.CompteComptables
+                .ToListAsync();
+                if(comptecomptables is not null) {
+                    return comptecomptables;
                 }
             }
             return null;

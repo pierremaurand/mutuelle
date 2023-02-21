@@ -4,7 +4,6 @@ namespace mefApi.Models
 {
     public class Poste: BaseEntity
     {
-        [Required]
-        public string? Libelle { get; set; }
+        public string? Libelle { get; set; } 
     }
 }

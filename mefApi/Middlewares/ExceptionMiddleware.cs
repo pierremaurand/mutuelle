@@ -37,8 +37,9 @@ namespace mefApi.Middlewares
                 } else 
                 {
                     statusCode = HttpStatusCode.InternalServerError;
-                    message = "Some unknown error occoured";
+                    message = "Une erreur est survenue";
                 }
+
 
                 if(env.IsDevelopment()) {
                     var errorDetail = ex.StackTrace;
@@ -51,6 +52,7 @@ namespace mefApi.Middlewares
                     ApiError apiError = new ApiError((int)statusCode, message);
                     response = apiError;
                 }
+
                 logger.LogError(ex, ex.Message);
                 context.Response.StatusCode = (int)statusCode;
                 context.Response.ContentType = "application/json";

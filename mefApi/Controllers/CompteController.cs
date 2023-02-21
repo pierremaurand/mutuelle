@@ -24,7 +24,7 @@ namespace mefApi.Controllers
             if(comptes is null) {
                 return NotFound();
             }
-            var comptesDto = mapper.Map<IEnumerable<CompteMembreDto>>(comptes);
+            var comptesDto = mapper.Map<IEnumerable<CompteDto>>(comptes);
             return Ok(comptesDto);
         }
 
@@ -35,12 +35,12 @@ namespace mefApi.Controllers
             if(compte is null) {
                 return NotFound();
             }
-            var compteDto = mapper.Map<CompteMembreDto>(compte);
+            var compteDto = mapper.Map<CompteDto>(compte);
             return Ok(compteDto);
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(CompteMembreDto compteDto)
+        public async Task<IActionResult> Add(CompteDto compteDto)
         {
             var compte = mapper.Map<Compte>(compteDto);
             compte.CreePar = 1;
@@ -53,7 +53,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id,CompteMembreDto compteDto)
+        public async Task<IActionResult> Update(int id,CompteDto compteDto)
         {
             if(id != compteDto.Id) 
                 return BadRequest("Update not allowed");

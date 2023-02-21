@@ -1,8 +1,7 @@
 namespace mefApi.Models
 {
-    public class Operation 
+    public class Operation : BaseEntity
     {
-        public int Id { get; set; }
         public int CompteComptableId { get; set; }
         public CompteComptable? CompteComptable { get; set; }
         public int GabaritId { get; set; }

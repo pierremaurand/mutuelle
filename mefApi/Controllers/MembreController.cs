@@ -30,6 +30,17 @@ namespace mefApi.Controllers
             return Ok(membresDto);
         }
 
+        [HttpGet("membres/actifs")]
+        public async Task<IActionResult> GetAllActifs()
+        {
+            var membres = await uow.MembreRepository.GetByEtatAsync(true);
+            if(membres is null) {
+                return NotFound();
+            }
+            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
+            return Ok(membresDto);
+        }
+
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -37,13 +48,16 @@ namespace mefApi.Controllers
             if(membre is null) {
                 return NotFound();
             }
-            var membreDto = mapper.Map<MembreDetailsDto>(membre);
+            var membreDto = mapper.Map<MembreDto>(membre);
             return Ok(membreDto);
         }
 
         [HttpPost("add")]
         public async Task<IActionResult> Add(MembreDto membreDto)
         {
+            if(!ModelState.IsValid) 
+                return BadRequest(ModelState);
+
             var membre = mapper.Map<Membre>(membreDto);
 
             membre.CreePar = 1;
@@ -52,7 +66,7 @@ namespace mefApi.Controllers
             uow.MembreRepository.Add(membre);
 
             await uow.SaveAsync();
-            return StatusCode(201);
+            return Ok(membre.Id);
         }
 
         [HttpPost("import")] 
@@ -108,7 +122,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id,MembreDetailsDto membreDto)
+        public async Task<IActionResult> Update(int id,MembreDto membreDto)
         {
             if(id != membreDto.Id) 
                 return BadRequest("Update not allowed");

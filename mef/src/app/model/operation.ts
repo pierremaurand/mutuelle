@@ -2,10 +2,8 @@ import { TypeOperation } from './typeoperation';
 
 export class Operation {
   id: number = 0;
-  compteComptableId: number = -1;
-  compte: string = '';
-  gabaritId?: number;
-  typeOperation: TypeOperation = -1;
-  tOperation: string = '';
-  taux?: number;
+  gabaritId: number = 0;
+  compteComptableId: number = 0;
+  typeOperation: TypeOperation = 0;
+  taux: number = 0;
 }

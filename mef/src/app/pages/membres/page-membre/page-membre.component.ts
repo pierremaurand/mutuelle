@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Membre } from 'src/app/model/Membre';
 import { MembreService } from 'src/app/services/membre.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-page-membre',
@@ -10,14 +9,17 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./page-membre.component.scss'],
 })
 export class PageMembreComponent implements OnInit {
-  imagesUrl = environment.imagesUrl;
   membres: Membre[] = [];
 
   constructor(private membreService: MembreService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.membreService.getAll().subscribe((data) => {
+      this.membres = data;
+    });
+  }
 
   nouveauMembre(): void {
-    this.router.navigate(['nouveaumembre']);
+    this.router.navigate(['/nouveaumembre']);
   }
 }
