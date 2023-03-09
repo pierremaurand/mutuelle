@@ -1,12 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Cotisation
+    public class Cotisation 
     {
-        
+        public int Id { get; set; }
+        [Required]
+        public int MembreId { get; set; }
+        public Membre? Membre { get; set; }
+        [Required]
+        public int MoisId { get; set; }
+        public Mois? Mois { get; set; }
+        [Required]
+        public int? Annee { get; set; }
+        [Required]
+        public decimal Montant { get; set; }
+        public ICollection<MvtCompte> MvtComptes { get; set; } = new List<MvtCompte>();
     }
 }

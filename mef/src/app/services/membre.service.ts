@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Membre } from '../model/Membre';
+import { MembreList } from '../model/membreList';
+import { MvtCompte } from '../model/mvtCompte';
+import { MvtMembre } from '../model/mvtMembre';
 import { UploadImage } from '../model/uploadImage';
 
 @Injectable({
@@ -19,12 +22,29 @@ export class MembreService {
     return this.http.get<Membre[]>(this.baseUrl + '/membre/membres');
   }
 
-  getAllActifs(): Observable<Membre[]> {
-    return this.http.get<Membre[]>(this.baseUrl + '/membre/membres/actifs');
+  addMvtCompte(id: number, mvtComptes: MvtCompte[]): Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + '/membre/addMvtComptes/' + id.toString(),
+      mvtComptes
+    );
   }
 
-  getById(id: number): Observable<Membre> {
-    return this.http.get<Membre>(this.baseUrl + '/membre/get/' + id.toString());
+  getById(id?: number): Observable<Membre> {
+    return this.http.get<Membre>(
+      this.baseUrl + '/membre/get/' + id?.toString()
+    );
+  }
+
+  getInfosMembre(id: number): Observable<MembreList> {
+    return this.http.get<MembreList>(
+      this.baseUrl + '/membre/get/infos/' + id.toString()
+    );
+  }
+
+  getMvtMembre(id?: number): Observable<MvtMembre> {
+    return this.http.get<MvtMembre>(
+      this.baseUrl + '/membre/get/mvtmembre/' + id?.toString()
+    );
   }
 
   add(membre: Membre): Observable<number> {

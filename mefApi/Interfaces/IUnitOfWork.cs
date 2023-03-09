@@ -8,9 +8,13 @@ namespace mefApi.Interfaces
         IMembreRepository MembreRepository { get; }
         ICompteComptableRepository CompteComptableRepository { get; }
         IGabaritRepository GabaritRepository { get; }
-        IOperationRepository OperationRepository { get; }
-        ICompteRepository CompteRepository { get; }
         IMvtCompteRepository MvtCompteRepository { get; }
+        ICotisationRepository CotisationRepository { get; }
+        IMoisRepository MoisRepository { get; }
+        IAvanceRepository AvanceRepository { get; }
+        ICreditRepository CreditRepository { get; }
+        IEcheanceAvanceRepository EcheanceAvanceRepository { get; }
+        IEcheanceCreditRepository EcheanceCreditRepository { get; }
         
         
         Task<bool> SaveAsync();

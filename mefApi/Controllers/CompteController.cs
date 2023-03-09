@@ -17,65 +17,66 @@ namespace mefApi.Controllers
             this.uow = uow;
         }
 
-        [HttpGet("comptes")]
-        public async Task<IActionResult> GetAll()
+        [HttpPost("addmvts")]
+        public async Task<IActionResult> AddMvts(MvtCompteDto[] mvtcomptesDto)
         {
-            var comptes = await uow.CompteRepository.GetAllAsync();
-            if(comptes is null) {
+            if(!ModelState.IsValid) 
+                return BadRequest(ModelState);
+
+            foreach(var mvtCompteDto in mvtcomptesDto) {
+                if(mvtCompteDto.Id == 0) {
+                    var mvtCompte = mapper.Map<MvtCompte>(mvtCompteDto);
+                    uow.MvtCompteRepository.Add(mvtCompte);
+                }
+            }
+            
+            await uow.SaveAsync();
+            return StatusCode(201);
+        }
+
+        [HttpGet("membres")]
+        public async Task<IActionResult> GetAllMembres()
+        {
+            var membres = await uow.MembreRepository.GetByEtatAsync(true);
+            if(membres is null) {
                 return NotFound();
             }
-            var comptesDto = mapper.Map<IEnumerable<CompteDto>>(comptes);
-            return Ok(comptesDto);
+            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
+            return Ok(membresDto);
+        }
+
+        [HttpGet("mvtcomptes")]
+        public async Task<IActionResult> GetAllMvtComptes()
+        {
+            var mvtcomptes = await uow.MvtCompteRepository.GetAllAsync();
+            if(mvtcomptes is null) {
+                return NotFound();
+            }
+            var mvtcomptesDto = mapper.Map<IEnumerable<MvtCompteDto>>(mvtcomptes);
+            return Ok(mvtcomptesDto);
+        }
+
+        [HttpGet("mvtcomptes/{id}")]
+        public async Task<IActionResult> GetAllMvtsById(int id)
+        {
+            var mvtcomptes = await uow.MvtCompteRepository.GetAllByMembreAsync(id);
+            if(mvtcomptes is null) {
+                return NotFound();
+            }
+            var mvtcomptesDto = mapper.Map<IEnumerable<MvtCompteDto>>(mvtcomptes);
+            return Ok(mvtcomptesDto);
         }
 
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var compte = await uow.CompteRepository.FindByIdAsync(id);
-            if(compte is null) {
+            var membre = await uow.MembreRepository.FindByIdAsync(id);
+            if(membre is null) {
                 return NotFound();
             }
-            var compteDto = mapper.Map<CompteDto>(compte);
-            return Ok(compteDto);
+            var membreDto = mapper.Map<MembreDto>(membre);
+            return Ok(membreDto);
         }
 
-        [HttpPost("add")]
-        public async Task<IActionResult> Add(CompteDto compteDto)
-        {
-            var compte = mapper.Map<Compte>(compteDto);
-            compte.CreePar = 1;
-            compte.ModifiePar = 1;
-            compte.ModifieLe = DateTime.Now;
-
-            uow.CompteRepository.Add(compte);
-            await uow.SaveAsync();
-            return StatusCode(201);
-        }
-
-        [HttpPut("update/{id}")]
-        public async Task<IActionResult> Update(int id,CompteDto compteDto)
-        {
-            if(id != compteDto.Id) 
-                return BadRequest("Update not allowed");
-
-            var compteFromDb = await uow.CompteRepository.FindByIdAsync(id);
-            
-            if(compteFromDb == null) 
-                return BadRequest("Update not allowed");
-
-            compteFromDb.ModifiePar = 1;
-            compteFromDb.ModifieLe = DateTime.Now;
-            mapper.Map(compteDto, compteFromDb);
-            await uow.SaveAsync();
-            return StatusCode(200);
-        }
-
-        [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteCompte(int id)
-        {
-            uow.CompteRepository.Delete(id);
-            await uow.SaveAsync();
-            return Ok(id);
-        }
     }
 }

@@ -43,7 +43,6 @@ namespace mefApi.Controllers
         public async Task<IActionResult> Add(CompteComptableDto compteDto)
         {
             var compte = mapper.Map<CompteComptable>(compteDto);
-            compte.CreePar = 1;
             compte.ModifiePar = 1;
             compte.ModifieLe = DateTime.Now;
             uow.CompteComptableRepository.Add(compte);
@@ -56,7 +55,7 @@ namespace mefApi.Controllers
         {
             var comptes = mapper.Map<IEnumerable<CompteComptable>>(comptesDto);
             foreach(var compte in comptes) {
-                compte.CreePar = 1;
+                
                 compte.ModifiePar = 1;
                 compte.ModifieLe = DateTime.Now;
                 uow.CompteComptableRepository.Add(compte);

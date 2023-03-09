@@ -8,8 +8,17 @@
     </div>
   </div>
   <div class="row m-3 liste">
-    <div class="col-md-2 mb-3" *ngFor="let compte of comptes">
-      <app-detail-compte [compte]="compte"></app-detail-compte>
+    <div
+      class="col-md-3 mb-3"
+      *ngFor="let membre of membres | sort : ['nom', 'asc']"
+    >
+      <app-detail-compte
+        [membre]="membre"
+        [sexe]="getSexe(membre.sexeId)"
+        [poste]="getPoste(membre.posteId)"
+        [lieuAffectation]="getLieuAffectation(membre.lieuAffectationId)"
+        [solde]="getSolde(membre.id)"
+      ></app-detail-compte>
     </div>
   </div>
   <div class="row m-3">

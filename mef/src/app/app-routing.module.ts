@@ -25,6 +25,9 @@ import { NouveauCompteComponent } from './pages/compte/nouveau-compte/nouveau-co
 import { NouveauLieuAffectationComponent } from './pages/affectation/nouveau-lieu-affectation/nouveau-lieu-affectation.component';
 import { PageLieuAffectationComponent } from './pages/affectation/page-lieu-affectation/page-lieu-affectation.component';
 import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-membre.component';
+import { NouvelleCotisationComponent } from './pages/cotisations/nouvelle-cotisation/nouvelle-cotisation.component';
+import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
+import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
 
 const routes: Routes = [
   {
@@ -72,12 +75,30 @@ const routes: Routes = [
         component: PageCotisationComponent,
       },
       {
+        path: 'nouvellecotisation',
+        component: NouvelleCotisationComponent,
+      },
+      {
+        path: 'nouvellecotisation/:id',
+        component: NouvelleCotisationComponent,
+      },
+      {
         path: 'avances',
         component: PageAvanceComponent,
       },
+      { path: 'nouvelleavance', component: NouvelleAvanceComponent },
+      { path: 'nouvelleavance/:id', component: NouvelleAvanceComponent },
       {
         path: 'credits',
         component: PageCreditComponent,
+      },
+      {
+        path: 'nouveaucredit',
+        component: NouveauCreditComponent,
+      },
+      {
+        path: 'nouveaucredit/:id',
+        component: NouveauCreditComponent,
       },
       {
         path: 'profil',

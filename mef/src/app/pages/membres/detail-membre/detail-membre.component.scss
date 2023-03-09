@@ -1,8 +1,20 @@
+img {
+  width: 100%;
+}
+
+.card {
+  border: 3px solid white;
+  background-color: cornsilk;
+  font-size: 1rem;
+  text-shadow: 0.5px 0.5px 0.5px grey;
+}
+
 .card-img-wrapper {
   height: auto;
   width: auto;
   overflow: hidden;
   position: relative;
+  border: 2px solid white;
 }
 
 .card:hover img {
@@ -10,7 +22,6 @@
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   width: 100%;
-  opacity: 0.7;
 }
 
 .card img {

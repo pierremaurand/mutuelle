@@ -12,8 +12,10 @@ namespace mefApi.Helpers
             CreateMap<Sexe, SexeDto>().ReverseMap();
 
             CreateMap<Membre, MembreDto>().ReverseMap();
-
+            
             CreateMap<Poste, PosteDto>().ReverseMap();
+
+            CreateMap<Mois, MoisDto>().ReverseMap();
 
             CreateMap<CompteComptable, CompteComptableDto>().ReverseMap();
 
@@ -21,11 +23,17 @@ namespace mefApi.Helpers
             
             CreateMap<Operation, OperationDto>().ReverseMap();
 
-            CreateMap<Compte, CompteDto>().ReverseMap();
-
             CreateMap<MvtCompte, MvtCompteDto>().ReverseMap();
+
+            CreateMap<Cotisation, CotisationDto>().ReverseMap();
             
             CreateMap<LieuAffectation, LieuAffectationDto>().ReverseMap();
+            
+            CreateMap<Avance, AvanceDto>().ReverseMap();
+            CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
+
+            CreateMap<Credit, CreditDto>().ReverseMap();
+            CreateMap<EcheanceCredit, EcheanceCreditDto>().ReverseMap();
         }
     }
 }

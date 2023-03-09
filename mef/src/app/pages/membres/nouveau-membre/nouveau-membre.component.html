@@ -13,6 +13,26 @@
               data-bs-toggle="modal"
               data-bs-target="#addPicture"
             />
+            <div class="m-3">
+              <button
+                type="button"
+                class="btn me-3"
+                [ngClass]="{
+                  'btn-danger': !membre.estActif,
+                  'btn-success': membre.estActif
+                }"
+                (click)="activer()"
+              >
+                <i
+                  class="fas"
+                  [ngClass]="{
+                    'fa-lock': !membre.estActif,
+                    'fa-lock-open': membre.estActif
+                  }"
+                ></i
+                >&nbsp;Membre {{ membre.estActif ? "Activé" : "Désactivé" }}
+              </button>
+            </div>
           </div>
           <div class="col-md-10">
             <div class="col-md-12 mb-3">
@@ -24,7 +44,7 @@
             <div class="col-md-12">
               <form #membreForm="ngForm">
                 <div class="row">
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-6">
                     <label for="nom" class="form-label">Le nom du membre</label>
                     <input
                       type="text"
@@ -34,23 +54,7 @@
                       [(ngModel)]="membre.nom"
                     />
                   </div>
-                  <div class="mb-3 col">
-                    <label for="personnelId" class="form-label"
-                      >L'identifiant paie du membre</label
-                    >
-                    <input
-                      type="number"
-                      id="personnelId"
-                      class="form-control"
-                      name="personnelId"
-                      [(ngModel)]="membre.personnelId"
-                      placeholder="L'identifiant paie du membre"
-                      min="1"
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-3">
                     <label for="sexeId" class="form-label"
                       >Le sexe du membre</label
                     >
@@ -65,7 +69,7 @@
                       </option>
                     </select>
                   </div>
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-3">
                     <label for="posteId" class="form-label"
                       >Le poste du membre</label
                     >
@@ -83,9 +87,7 @@
                       </option>
                     </select>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-6">
                     <label for="lieuAffectationId" class="form-label"
                       >Le lieu d'affectation du membre</label
                     >
@@ -103,7 +105,7 @@
                       </option>
                     </select>
                   </div>
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-3">
                     <label for="dateAdhesion" class="form-label"
                       >La date d'adhésion du membre</label
                     >
@@ -115,9 +117,7 @@
                       [(ngModel)]="membre.dateAdhesion"
                     />
                   </div>
-                </div>
-                <div class="row">
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-3">
                     <label for="dateNaissance" class="form-label"
                       >La date de naissance du membre</label
                     >
@@ -129,7 +129,7 @@
                       [(ngModel)]="membre.dateNaissance"
                     />
                   </div>
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-4">
                     <label for="lieuNaissance" class="form-label"
                       >Le lieu de naissance du membre</label
                     >
@@ -141,9 +141,7 @@
                       [(ngModel)]="membre.lieuNaissance"
                     />
                   </div>
-                </div>
-                <div class="row">
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-4">
                     <label for="contact" class="form-label"
                       >Le numéro de téléphone du membre</label
                     >
@@ -155,7 +153,7 @@
                       [(ngModel)]="membre.contact"
                     />
                   </div>
-                  <div class="mb-3 col">
+                  <div class="mb-3 col-md-4">
                     <label for="email" class="form-label"
                       >L'email du membre</label
                     >
@@ -192,6 +190,11 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    {{ uploadImage | json }}
   </div>
 </div>
 <div

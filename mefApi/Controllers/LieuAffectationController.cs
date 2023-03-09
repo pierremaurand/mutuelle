@@ -43,7 +43,7 @@ namespace mefApi.Controllers
         public async Task<IActionResult> Add(LieuAffectationDto lieuaffectationDto)
         {
             var lieuaffectation = mapper.Map<LieuAffectation>(lieuaffectationDto);
-            lieuaffectation.CreePar = 1;
+           
             lieuaffectation.ModifiePar = 1;
             lieuaffectation.ModifieLe = DateTime.Now;
 

@@ -43,7 +43,7 @@ namespace mefApi.Controllers
         public async Task<IActionResult> Add(PosteDto posteDto)
         {
             var poste = mapper.Map<Poste>(posteDto);
-            poste.CreePar = 1;
+            
             poste.ModifiePar = 1;
             poste.ModifieLe = DateTime.Now;
             uow.PosteRepository.Add(poste);

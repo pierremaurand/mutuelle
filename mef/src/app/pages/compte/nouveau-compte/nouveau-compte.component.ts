@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Compte } from 'src/app/model/compte';
 import { Gabarit } from 'src/app/model/gabarit';
+import { InfosCompte } from 'src/app/model/infosCompte';
+import { InfosMembre } from 'src/app/model/infosMembre';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
 import { MvtCompte } from 'src/app/model/mvtCompte';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
+import { TypeOperation } from 'src/app/model/typeoperation';
 import { CompteService } from 'src/app/services/compte.service';
 import { GabaritService } from 'src/app/services/gabarit.service';
 import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
-import { LoaderService } from 'src/app/services/loader.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { MvtCompteService } from 'src/app/services/mvt-compte.service';
 import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
@@ -22,116 +22,112 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouveau-compte.component.scss'],
 })
 export class NouveauCompteComponent implements OnInit {
-  compte: Compte = new Compte();
-  newMvtComptes: MvtCompte[] = [];
-  mvtComptes: MvtCompte[] = [];
+  membre: Membre = new Membre();
+  sexe: Sexe = new Sexe();
+  poste: Poste = new Poste();
+  lieuAffectation: LieuAffectation = new LieuAffectation();
   mvtCompte: MvtCompte = new MvtCompte();
+  mvtComptes: MvtCompte[] = [];
   gabarits: Gabarit[] = [];
-  membres: Membre[] = [];
-  membre: Membre = {};
-  postes: Poste[] = [];
-  poste: Poste = {};
-  sexes: Sexe[] = [];
-  sexe: Sexe = {};
-  lieuAffectations: LieuAffectation[] = [];
-  lieuAffectation: LieuAffectation = {};
+  membreId?: number;
   photo: string = '';
+  SortbyParam = 'dateMvt';
+  SortDirection = 'desc';
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private compteService: CompteService,
-    private mvtCompteService: MvtCompteService,
     private gabaritService: GabaritService,
-    private membreService: MembreService,
+    private compteService: CompteService,
     private sexeService: SexeService,
     private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService
+    private lieuAffectationService: LieuAffectationService,
+    private membreService: MembreService
   ) {}
 
   ngOnInit(): void {
     this.gabaritService.getAll().subscribe((gabarits: Gabarit[]) => {
       this.gabarits = gabarits;
-      this.membreService.getAllActifs().subscribe((membres: Membre[]) => {
-        this.membres = membres;
-        this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
-          this.sexes = sexes;
-          this.posteService.getAll().subscribe((postes: Poste[]) => {
-            this.postes = postes;
-            this.lieuAffectationService
-              .getAll()
-              .subscribe((lieuAffectations: LieuAffectation[]) => {
-                this.lieuAffectations = lieuAffectations;
-                this.photo = this.membreService.getPhotoUrl();
-                const idCompte = this.activatedRoute.snapshot.params['id'];
-                if (idCompte) {
-                  this.compteService
-                    .getById(idCompte)
-                    .subscribe((compte: Compte) => {
-                      this.compte = compte;
-                      this.changeMembre();
-                    });
-                }
-              });
-          });
+      this.membreId = this.activatedRoute.snapshot.params['id'];
+      this.compteService
+        .getAllMvtsById(this.membreId)
+        .subscribe((mvtComptes: MvtCompte[]) => {
+          this.mvtComptes = mvtComptes;
+          this.compteService
+            .getById(this.membreId)
+            .subscribe((membre: Membre) => {
+              this.membre = membre;
+              this.photo = this.membreService.getPhotoUrl(this.membre.photo);
+              this.sexeService
+                .getById(membre.sexeId)
+                .subscribe((sexe: Sexe) => {
+                  this.sexe = sexe;
+                });
+              this.posteService
+                .getById(membre.posteId)
+                .subscribe((poste: Poste) => {
+                  this.poste = poste;
+                });
+              this.lieuAffectationService
+                .getById(membre.lieuAffectationId)
+                .subscribe((lieuAffectation: LieuAffectation) => {
+                  this.lieuAffectation = lieuAffectation;
+                });
+            });
         });
-      });
     });
   }
 
   enregistrerCompte(): void {
-    if (this.compte.id) {
-      this.compteService
-        .update(this.compte, this.compte.id)
-        .subscribe((value: any) => {
-          this.cancel();
-        });
-    } else {
-      this.compteService.add(this.compte).subscribe((id: number) => {
+    if (this.membreId && this.mvtComptes.length > 0) {
+      this.compteService.addMvts(this.mvtComptes).subscribe((value: any) => {
         this.cancel();
       });
     }
   }
 
   ajouterMvtCompte(): void {
-    this.mvtComptes.push(this.mvtCompte);
-    this.newMvtComptes.push(this.mvtCompte);
-    this.mvtCompte = new MvtCompte();
+    if (this.checkInfosMvt()) {
+      this.mvtCompte.membreId = this.membreId;
+      this.mvtCompte.gabaritId = 1;
+      this.mvtComptes.push(this.mvtCompte);
+      this.mvtCompte = new MvtCompte();
+    }
   }
 
-  supprimerMvtCompte(mvtCompte: MvtCompte): void {
-    let position = this.mvtComptes.indexOf(mvtCompte);
-    this.mvtComptes.splice(position, 1);
-    position = this.newMvtComptes.indexOf(mvtCompte);
-    this.newMvtComptes.splice(position, 1);
+  soldeCompte(): number {
+    let solde = 0;
+    this.mvtComptes.map((mvtCompte) => {
+      if (mvtCompte.typeOperation == TypeOperation.Credit) {
+        solde += mvtCompte.montant ? mvtCompte.montant : 0;
+      } else {
+        solde -= mvtCompte.montant ? mvtCompte.montant : 0;
+      }
+    });
+    return solde;
+  }
+
+  getTypeOperation(typeOperation: number): string {
+    const operation: string =
+      'Note de ' + (typeOperation == TypeOperation.Credit ? 'Crédit' : 'Débit');
+    return operation;
+  }
+
+  checkInfosMvt(): boolean {
+    if (
+      !this.mvtCompte.dateMvt ||
+      !this.mvtCompte.gabaritId ||
+      !this.mvtCompte.typeOperation ||
+      !this.mvtCompte.libelle ||
+      !this.mvtCompte.montant
+    ) {
+      return false;
+    }
+
+    return true;
   }
 
   cancel(): void {
     this.router.navigate(['/comptes']);
-  }
-
-  changeMembre(): void {
-    this.membres.map((membre) => {
-      if (membre.id == this.compte.membreId) {
-        this.membre = membre;
-        this.sexes.map((sexe) => {
-          if (sexe.id == this.membre.sexeId) {
-            this.sexe = sexe;
-            this.postes.map((poste) => {
-              if (poste.id == this.membre.posteId) {
-                this.poste = poste;
-                this.lieuAffectations.map((lieuAffectation) => {
-                  if (lieuAffectation.id == this.membre.lieuAffectationId) {
-                    this.lieuAffectation = lieuAffectation;
-                  }
-                });
-              }
-            });
-          }
-        });
-
-        this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-      }
-    });
   }
 }

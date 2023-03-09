@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CompteComptable } from 'src/app/model/comptecomptable';
 import { Gabarit } from 'src/app/model/gabarit';
 import { Operation } from 'src/app/model/operation';
+import { TypeMouvement } from 'src/app/model/typeMouvement';
 import { CompteComptableService } from 'src/app/services/compte-comptable.service';
 import { GabaritService } from 'src/app/services/gabarit.service';
 import { LoaderService } from 'src/app/services/loader.service';
@@ -14,13 +15,39 @@ import { OperationService } from 'src/app/services/operation.service';
   styleUrls: ['./nouveau-gabarit.component.scss'],
 })
 export class NouveauGabaritComponent implements OnInit {
+  gabaritId?: number;
   gabarit: Gabarit = new Gabarit();
-  operations: Operation[] = [];
-  delOperations: Operation[] = [];
-  newOperations: Operation[] = [];
   operation: Operation = new Operation();
   comptes: CompteComptable[] = [];
   photo: string = '';
+  SortbyParam = 'typeOperation';
+  SortDirection = 'asc';
+  typeMouvements: any[] = [
+    {
+      label: 'Cotisation',
+      value: TypeMouvement.Cotisation,
+    },
+    {
+      label: 'Déboursement avance',
+      value: TypeMouvement.DeboursementAvance,
+    },
+    {
+      label: 'Déboursement crédit',
+      value: TypeMouvement.DeboursementCredit,
+    },
+    {
+      label: 'Paiement échéance crédit',
+      value: TypeMouvement.PaiementEcheanceCredit,
+    },
+    {
+      label: 'Paiement échéance avance',
+      value: TypeMouvement.PaiementEcheanceAvance,
+    },
+    {
+      label: 'Solde tout comptes',
+      value: TypeMouvement.SoldeToutComptes,
+    },
+  ];
 
   constructor(
     private router: Router,
@@ -32,64 +59,43 @@ export class NouveauGabaritComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.gabaritId = this.activatedRoute.snapshot.params['id'];
     this.photo = this.gabaritService.getImageUrl();
     this.compteComptableService
       .getAll()
       .subscribe((comptes: CompteComptable[]) => {
         this.comptes = comptes;
-        const idGabarit = this.activatedRoute.snapshot.params['id'];
-        if (idGabarit) {
-          this.gabaritService
-            .getById(idGabarit)
-            .subscribe((gabarit: Gabarit) => {
-              this.gabarit = gabarit;
-              this.operationService
-                .getByGabarit(this.gabarit.id)
-                .subscribe((operations: Operation[]) => {
-                  this.operations = operations;
-                });
-            });
-        }
+        this.chargementGabarit();
       });
   }
 
   enregistrerGabarit(): void {
     if (this.checkGabaritInfo()) {
-      this.delOperations.map((operation) => {
-        this.operationService
-          .delete(operation.id)
-          .subscribe((value: any) => {});
-      });
-      if (this.gabarit.id != 0) {
+      if (this.gabaritId) {
         this.gabaritService
-          .update(this.gabarit, this.gabarit.id)
+          .update(this.gabarit, this.gabaritId)
           .subscribe((value: any) => {
-            this.operationService
-              .addOperations(this.gabarit.id, this.newOperations)
-              .subscribe(() => {
-                this.cancel();
-              });
             this.cancel();
           });
       } else {
         this.gabaritService.add(this.gabarit).subscribe((id: number) => {
-          this.operationService
-            .addOperations(id, this.newOperations)
-            .subscribe(() => {
-              this.cancel();
-            });
+          this.cancel();
         });
       }
     }
   }
 
   checkGabaritInfo(): boolean {
-    if (this.operations.length === 0 || this.gabarit.libelle == '') {
+    if (
+      !this.gabarit.operations ||
+      this.gabarit.operations.length === 0 ||
+      this.gabarit.libelle == ''
+    ) {
       return false;
     }
 
     let equilibre = 0;
-    this.operations.map((operation) => {
+    this.gabarit.operations.map((operation) => {
       if (operation.typeOperation == 0) {
         equilibre += operation.taux;
       } else {
@@ -121,21 +127,17 @@ export class NouveauGabaritComponent implements OnInit {
 
   ajouterOperation(): void {
     if (this.checkOperationInfos()) {
-      if (this.operations) {
-        this.newOperations.push(this.operation);
-        this.operations.push(this.operation);
+      if (this.gabarit.operations) {
+        this.gabarit.operations.push(this.operation);
         this.operation = new Operation();
       }
     }
   }
 
   supprimerOperation(operation: Operation): void {
-    if (this.operations) {
-      const position = this.operations.indexOf(operation);
-      if (operation.id != 0) {
-        this.delOperations.push(operation);
-      }
-      this.operations.splice(position, 1);
+    if (this.gabarit.operations) {
+      const position = this.gabarit.operations.indexOf(operation);
+      this.gabarit.operations.splice(position, 1);
     }
   }
 
@@ -161,5 +163,15 @@ export class NouveauGabaritComponent implements OnInit {
       }
     });
     return libelle;
+  }
+
+  chargementGabarit(): void {
+    if (this.gabaritId) {
+      this.gabaritService
+        .getById(this.gabaritId)
+        .subscribe((gabarit: Gabarit) => {
+          this.gabarit = gabarit;
+        });
+    }
   }
 }

@@ -48,10 +48,11 @@ namespace mefApi.Data.Repo
             return null;
         }
 
-        public async Task<IEnumerable<MvtCompte>?> GetAllAsync()
+        public async Task<IEnumerable<MvtCompte>?> GetAllByMembreAsync(int membreId)
         {
             if(dc.MvtComptes is not null) {
                 var mvtcomptes = await dc.MvtComptes
+                .Where(c => c.MembreId == membreId)
                 .ToListAsync();
                 if(mvtcomptes is not null) {
                     return mvtcomptes;
@@ -61,11 +62,10 @@ namespace mefApi.Data.Repo
             return null;
         }
 
-        public async Task<IEnumerable<MvtCompte>?> GetByCompteAsync(int compteId)
+        public async Task<IEnumerable<MvtCompte>?> GetAllAsync()
         {
             if(dc.MvtComptes is not null) {
                 var mvtcomptes = await dc.MvtComptes
-                .Where(c => c.CompteId == compteId)
                 .ToListAsync();
                 if(mvtcomptes is not null) {
                     return mvtcomptes;

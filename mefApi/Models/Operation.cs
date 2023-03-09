@@ -1,12 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace mefApi.Models
 {
-    public class Operation : BaseEntity
+    public class Operation
     {
+        public int Id { get; set; }
+        [Required]
         public int CompteComptableId { get; set; }
-        public CompteComptable? CompteComptable { get; set; }
-        public int GabaritId { get; set; }
-        public Gabarit? Gabarit { get; set; }
+        [Required]
         public TypeOperation TypeOperation { get; set;}
+        [Required]
         public decimal Taux { get; set; }
     }
 }

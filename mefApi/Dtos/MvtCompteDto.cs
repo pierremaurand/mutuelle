@@ -6,6 +6,8 @@ namespace mefApi.Dtos
     public class MvtCompteDto
     {
         public int? Id { get; set; }
+        [Required(ErrorMessage = "Le membre est obligatoire")]
+        public int MembreId { get; set; }
         [Required(ErrorMessage = "Le type d'opération est obligatoire")] 
         public TypeOperation? TypeOperation { get; set;}
         [Required(ErrorMessage = "Le gabarit est obligatoire")] 
@@ -14,7 +16,13 @@ namespace mefApi.Dtos
         public string? Libelle { get; set; }
         [Required(ErrorMessage = "Le montant est obligatoire")] 
         public decimal? Montant { get; set; }
-        [Required(ErrorMessage = "La date du mouvement est obligatoire")] 
+        [Required(ErrorMessage = "La date est obligatoire")] 
         public string? DateMvt { get; set; }
+        public int? AvanceId { get; set; }
+        public int? CreditId { get; set; }
+        public int? CotisationId { get; set; }
+        public int? EcheanceAvanceId { get; set; }
+        public int? EcheanceCreditId { get; set; }
+        public int? EcritureComptableId { get; set; }
     }
 }

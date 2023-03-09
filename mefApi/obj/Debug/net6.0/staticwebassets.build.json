@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PcU1MnUfwwdqP1F5Kc6lZN3RP278NgFafoYh2b1a1eU=",
+  "Hash": "c52w7ZEF8djbRww7HZHdOSVwntAfR2v9VBq5cIRDULM=",
   "Source": "hspaApi2",
   "BasePath": "_content/hspaApi2",
   "Mode": "Default",
@@ -238,6 +238,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\gender_image.png"
     },
     {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1.png"
+    },
+    {
       "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1010.png",
       "SourceId": "hspaApi2",
       "SourceType": "Discovered",
@@ -270,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1011.png"
+    },
+    {
+      "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2.png",
+      "SourceId": "hspaApi2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\",
+      "BasePath": "_content/hspaApi2",
+      "RelativePath": "assets/images/membre_2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2.png"
     },
     {
       "Identity": "D:\\Mes Projets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image - Copie.png",

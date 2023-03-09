@@ -34,12 +34,6 @@ import { LoaderComponent } from './composants/loader/loader.component';
 import { WidgetComponent } from './composants/widget/widget.component';
 import { SearchBarComponent } from './composants/search-bar/search-bar.component';
 import { ProfilUserComponent } from './user/profil-user/profil-user.component';
-import { CotisationPageComponent } from './cotisation/cotisation-page/cotisation-page.component';
-import { CotisationComponent } from './cotisation/cotisation/cotisation.component';
-import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
-import { UpdateCotisationComponent } from './cotisation/update-cotisation/update-cotisation.component';
-import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
-import { ImportCotisationComponent } from './cotisation/import-cotisation/import-cotisation.component';
 import { AvancePageComponent } from './avance/avance-page/avance-page.component';
 import { AvanceListComponent } from './avance/avance-list/avance-list.component';
 import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
@@ -94,12 +88,18 @@ import { NouveauCompteComptableComponent } from './pages/compte-comptable/nouvea
 import { NouveauGabaritComponent } from './pages/gabarit/nouveau-gabarit/nouveau-gabarit.component';
 import { DetailGabaritComponent } from './pages/gabarit/detail-gabarit/detail-gabarit.component';
 import { NouveauCompteComponent } from './pages/compte/nouveau-compte/nouveau-compte.component';
-import { DetailCompteComponent } from './pages/compte/detail-compte/detail-compte.component';
 import { InfosMembreComponent } from './composants/infos-membre/infos-membre.component';
 import { PageLieuAffectationComponent } from './pages/affectation/page-lieu-affectation/page-lieu-affectation.component';
 import { NouveauLieuAffectationComponent } from './pages/affectation/nouveau-lieu-affectation/nouveau-lieu-affectation.component';
 import { DetailLieuAffectationComponent } from './pages/affectation/detail-lieu-affectation/detail-lieu-affectation.component';
 import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-membre.component';
+import { NouvelleCotisationComponent } from './pages/cotisations/nouvelle-cotisation/nouvelle-cotisation.component';
+import { DetailCompteComponent } from './pages/compte/detail-compte/detail-compte.component';
+import { DetailCotisationComponent } from './pages/cotisations/detail-cotisation/detail-cotisation.component';
+import { DetailAvanceComponent } from './pages/avances/detail-avance/detail-avance.component';
+import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
+import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
+import { DetailCreditComponent } from './pages/credits/detail-credit/detail-credit.component';
 
 @NgModule({
   declarations: [
@@ -121,12 +121,6 @@ import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-memb
     WidgetComponent,
     SearchBarComponent,
     ProfilUserComponent,
-    CotisationPageComponent,
-    CotisationComponent,
-    AddCotisationComponent,
-    UpdateCotisationComponent,
-    CotisationListComponent,
-    ImportCotisationComponent,
     AvancePageComponent,
     AvanceListComponent,
     AddAvanceComponent,
@@ -161,6 +155,7 @@ import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-memb
     NouveauMembreComponent,
     PageCompteComponent,
     PageCotisationComponent,
+    DetailCotisationComponent,
     PageAvanceComponent,
     PageCreditComponent,
     PageProfilComponent,
@@ -187,6 +182,11 @@ import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-memb
     NouveauLieuAffectationComponent,
     DetailLieuAffectationComponent,
     ProfilMembreComponent,
+    NouvelleCotisationComponent,
+    DetailAvanceComponent,
+    NouvelleAvanceComponent,
+    NouveauCreditComponent,
+    DetailCreditComponent,
   ],
   providers: [
     {

@@ -30,17 +30,6 @@ namespace mefApi.Controllers
             return Ok(membresDto);
         }
 
-        [HttpGet("membres/actifs")]
-        public async Task<IActionResult> GetAllActifs()
-        {
-            var membres = await uow.MembreRepository.GetByEtatAsync(true);
-            if(membres is null) {
-                return NotFound();
-            }
-            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
-            return Ok(membresDto);
-        }
-
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -60,7 +49,6 @@ namespace mefApi.Controllers
 
             var membre = mapper.Map<Membre>(membreDto);
 
-            membre.CreePar = 1;
             membre.ModifiePar = 1;
             membre.ModifieLe = DateTime.Now;
             uow.MembreRepository.Add(membre);
@@ -76,7 +64,6 @@ namespace mefApi.Controllers
             foreach (var membre in membres)
             {
                 
-                membre.CreePar = 1;
                 membre.ModifiePar = 1;
                 membre.ModifieLe = DateTime.Now;
                 uow.MembreRepository.Add(membre);

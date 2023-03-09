@@ -28,6 +28,24 @@
                     placeholder="Le libelle du gabarit"
                   />
                 </div>
+                <div class="col">
+                  <label for="typeMouvement" class="form-label"
+                    >Type de mouvement</label
+                  >
+                  <select
+                    name="typeMouvement"
+                    id="typeMouvement"
+                    [(ngModel)]="gabarit.typeMouvement"
+                    class="form-select"
+                  >
+                    <option
+                      *ngFor="let typeMouvement of typeMouvements"
+                      value="{{ typeMouvement.value }}"
+                    >
+                      {{ typeMouvement.label }}
+                    </option>
+                  </select>
+                </div>
               </div>
               <hr />
               <div class="row">
@@ -91,7 +109,13 @@
                 <div class="col-md-12 liste">
                   <table class="table table-striped">
                     <tbody>
-                      <tr *ngFor="let operation of operations; let i = index">
+                      <tr
+                        *ngFor="
+                          let operation of gabarit.operations
+                            | sort : [SortbyParam, SortDirection];
+                          let i = index
+                        "
+                      >
                         <td class="text-center">{{ i + 1 }}</td>
                         <td
                           class="text-danger text-center"

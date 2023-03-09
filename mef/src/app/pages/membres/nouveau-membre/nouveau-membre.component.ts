@@ -116,4 +116,8 @@ export class NouveauMembreComponent implements OnInit {
     this.photo = photo;
     this.image = photo;
   }
+
+  activer(): void {
+    this.membre.estActif = !this.membre.estActif;
+  }
 }

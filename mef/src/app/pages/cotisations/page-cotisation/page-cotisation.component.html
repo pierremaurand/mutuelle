@@ -1,17 +1,22 @@
 <div class="col">
   <div class="row m-3">
-    <div class="col-md-8 p-0">
-      <h1>Liste des membres</h1>
+    <div class="col-md-8">
+      <h1>Liste des cotisation par membre</h1>
     </div>
     <div class="col-md-4">
-      <app-bouton-action></app-bouton-action>
+      <app-bouton-action (clickEvent)="nouveau()"></app-bouton-action>
     </div>
   </div>
-  <div class="row m-3 no-flex-wrap">
-    <!-- <app-detail-membre
-      *ngFor="let membre of membres"
-      [membre]="membre"
-    ></app-detail-membre> -->
+  <div class="row m-3 liste">
+    <div class="col-md-3 mb-3" *ngFor="let membre of membres">
+      <app-detail-cotisation
+        [membre]="membre"
+        [sexe]="getSexe(membre.sexeId)"
+        [poste]="getPoste(membre.posteId)"
+        [lieuAffectation]="getLieuAffectation(membre.lieuAffectationId)"
+        [solde]="getSolde(membre.id)"
+      ></app-detail-cotisation>
+    </div>
   </div>
   <div class="row m-3">
     <div class="col-md-12 text-center">

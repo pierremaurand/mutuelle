@@ -2,7 +2,7 @@ import { MvtCompte } from './mvtCompte';
 
 export class Compte {
   id: number = 0;
-  libelle: string = '';
-  membreId: number = 0;
-  mvtComptes: MvtCompte[] = [];
+  nom: string = '';
+  photo: string = '';
+  solde: number = 0;
 }

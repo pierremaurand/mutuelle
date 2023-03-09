@@ -13,23 +13,31 @@
               <tbody>
                 <tr>
                   <th>Nom</th>
-                  <td>{{ membre.nom | uppercase }}</td>
+                  <td class="text-truncate infos">
+                    {{ membre.nom | uppercase }}
+                  </td>
                 </tr>
                 <tr>
                   <th>Sexe</th>
-                  <td>{{ sexe.nom | uppercase }}</td>
+                  <td class="text-truncate infos">
+                    {{ sexe?.nom | uppercase }}
+                  </td>
                 </tr>
                 <tr>
                   <th>Poste</th>
-                  <td>{{ poste.libelle | uppercase }}</td>
+                  <td class="text-truncate infos">
+                    {{ poste?.libelle | uppercase }}
+                  </td>
                 </tr>
                 <tr>
                   <th>Affectation</th>
-                  <td>{{ lieuAffectation.lieu | uppercase }}</td>
+                  <td class="text-truncate infos">
+                    {{ lieuAffectation?.lieu | uppercase }}
+                  </td>
                 </tr>
                 <tr>
                   <th>Contact</th>
-                  <td>{{ membre.contact }}</td>
+                  <td class="text-truncate infos">{{ membre.contact }}</td>
                 </tr>
               </tbody>
             </table>

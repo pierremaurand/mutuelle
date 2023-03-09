@@ -4,10 +4,9 @@ namespace mefApi.Dtos
 {
     public class MembreDto
     {
-        public int? Id;
+        public int Id;
         [Required(ErrorMessage = "Le Nom est obligatoire")]
         public string? Nom { get; set; }
-        [Required(ErrorMessage = "L'Id du Personnel est obligatoire")]
         public int? PersonnelId { get; set; }
         [Required(ErrorMessage = "Le Sexe est obligatoire")]
         public int? SexeId { get; set; }

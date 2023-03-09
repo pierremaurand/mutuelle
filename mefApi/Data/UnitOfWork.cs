@@ -30,14 +30,32 @@ namespace mefApi.Data
         public IGabaritRepository GabaritRepository =>
             new GabaritRepository(dc);
 
-        public IOperationRepository OperationRepository =>
-            new OperationRepository(dc);
-        
-        public ICompteRepository CompteRepository =>
-            new CompteRepository(dc);
-
         public IMvtCompteRepository MvtCompteRepository =>
             new MvtCompteRepository(dc);
+        
+        public IAvanceRepository AvanceRepository =>
+            new AvanceRepository(dc);
+        
+        public ICotisationRepository CotisationRepository =>
+            new CotisationRepository(dc);
+
+        public ICreditRepository CreditRepository =>
+            new CreditRepository(dc);
+
+        public IDetailEcritureComptableRepository DetailEcritureComptableRepository =>
+            new DetailEcritureComptableRepository(dc);
+
+        public IEcritureComptableRepository EcritureComptableRepository =>
+            new EcritureComptableRepository(dc);
+
+        public IEcheanceCreditRepository EcheanceCreditRepository =>
+            new EcheanceCreditRepository(dc);
+
+        public IEcheanceAvanceRepository EcheanceAvanceRepository =>
+            new EcheanceAvanceRepository(dc);
+
+        public IMoisRepository MoisRepository =>
+            new MoisRepository(dc);
 
         public async Task<bool> SaveAsync()
         {

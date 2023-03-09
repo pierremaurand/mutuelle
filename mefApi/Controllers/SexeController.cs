@@ -47,7 +47,7 @@ namespace mefApi.Controllers
                 return BadRequest(ModelState);
             
             var sexe = mapper.Map<Sexe>(sexeDto);
-            sexe.CreePar = 1;
+            
             sexe.ModifiePar = 1;
             sexe.ModifieLe = DateTime.Now;
             uow.SexeRepository.Add(sexe);

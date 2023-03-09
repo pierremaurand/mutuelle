@@ -1,37 +1,31 @@
 <div
-  class="card shadow text-white text-bold border"
+  class="card shadow border"
+  (click)="modifier()"
   [ngClass]="{
-    'bg-danger': !membre.estActif,
-    'bg-success': membre.estActif
+    'text-danger': !membre.estActif,
+    'text-success': membre.estActif
   }"
 >
   <div class="card-body">
-    <div class="card-img-wrapper mb-3 thumbnail rounded-top">
-      <img src="{{ photo }}" alt="photo membre" />
-      <ul
-        *ngIf="!hideIcons"
-        class="list-inline text-center member-icons animate"
-      >
-        <li class="list-inline-item">
-          <button class="btn btn-warning" (click)="modifier()">
-            <i class="fas fa-pencil-alt"></i>
-          </button>
-        </li>
-        <li class="list-inline-item">
-          <button class="btn btn-danger">
-            <i class="fas fa-trash-alt"></i>
-          </button>
-        </li>
-        <li class="list-inline-item">
-          <button class="btn btn-primary" (click)="detailler()">
-            <i class="far fa-list-alt"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-    <div class="text-center">
-      <div class="d-inline-block text-truncate h6 infos">
-        {{ membre.nom | uppercase }}
+    <div class="row">
+      <div class="col-md-5 border-end">
+        <div class="card-img-wrapper rounded-circle thumbnail">
+          <img src="{{ photo }}" alt="la photo du membre" />
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="d-block text-truncate infos">
+          {{ membre.nom | uppercase }}
+        </div>
+        <div class="d-block text-truncate infos">
+          {{ sexe?.nom | uppercase }}
+        </div>
+        <div class="d-block text-truncate infos">
+          {{ poste?.libelle | uppercase }}
+        </div>
+        <div class="d-block text-truncate infos">
+          {{ lieuAffectation?.lieu | uppercase }}
+        </div>
       </div>
     </div>
   </div>

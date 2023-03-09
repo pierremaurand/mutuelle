@@ -29,7 +29,7 @@ export class CompteComptableService {
     return this.http.post(this.baseUrl + '/compteComptable/addcompte', compte);
   }
 
-  update(compte: CompteComptable, id: number): Observable<any> {
+  update(compte: any, id: number): Observable<any> {
     return this.http.put(
       this.baseUrl + '/compteComptable/update/' + id.toString(),
       compte

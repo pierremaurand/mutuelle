@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InfosCompte } from 'src/app/model/infosCompte';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
-import { Membre } from 'src/app/model/Membre';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
 
@@ -11,15 +11,15 @@ import { Sexe } from 'src/app/model/sexe';
 })
 export class InfosMembreComponent implements OnInit {
   @Input()
-  membre: Membre = new Membre();
+  membre: any;
   @Input()
   photo: string = '';
   @Input()
-  poste: Poste = {};
+  sexe?: Sexe;
   @Input()
-  sexe: Sexe = {};
+  poste?: Poste;
   @Input()
-  lieuAffectation: LieuAffectation = {};
+  lieuAffectation?: LieuAffectation;
 
   constructor() {}
 

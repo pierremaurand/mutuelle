@@ -34,7 +34,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.Gabarits is not null) {
                 var gabarit = await dc.Gabarits
-                .Where(s => s.Id == id)
+                .Include(g => g.Operations)
+                .Where(g => g.Id == id)
                 .FirstAsync();
                 if(gabarit is not null) {
                     return gabarit;

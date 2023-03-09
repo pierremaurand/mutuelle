@@ -28,9 +28,9 @@ export class GabaritService {
     );
   }
 
-  getById(id: number): Observable<Gabarit> {
+  getById(id?: number): Observable<Gabarit> {
     return this.http.get<Gabarit>(
-      this.baseUrl + '/gabarit/get/' + id.toString()
+      this.baseUrl + '/gabarit/get/' + id?.toString()
     );
   }
 

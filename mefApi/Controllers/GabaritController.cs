@@ -28,17 +28,6 @@ namespace mefApi.Controllers
             return Ok(gabaritsDto);
         }
 
-        [HttpGet("operations")]
-        public async Task<IActionResult> GetAllOperations()
-        {
-            var operations = await uow.OperationRepository.GetAllAsync();
-            if(operations is null) {
-                return NotFound();
-            }
-            var operationsDto = mapper.Map<IEnumerable<OperationDto>>(operations);
-            return Ok(operationsDto);
-        }
-
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -54,7 +43,7 @@ namespace mefApi.Controllers
         public async Task<IActionResult> Add(GabaritDto gabaritDto)
         {
             var gabarit = mapper.Map<Gabarit>(gabaritDto);
-            gabarit.CreePar = 1;
+            
             gabarit.ModifiePar = 1;
             gabarit.ModifieLe = DateTime.Now;
 
@@ -74,7 +63,6 @@ namespace mefApi.Controllers
             if(gabaritFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            gabaritFromDb.ModifiePar = 1;
             gabaritFromDb.ModifieLe = DateTime.Now;
             mapper.Map(gabaritDto, gabaritFromDb);
             await uow.SaveAsync();
