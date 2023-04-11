@@ -44,7 +44,7 @@ namespace mefApi.Controllers
         {
             var poste = mapper.Map<Poste>(posteDto);
             
-            poste.ModifiePar = 1;
+            poste.ModifiePar = GetUserId();
             poste.ModifieLe = DateTime.Now;
             uow.PosteRepository.Add(poste);
             await uow.SaveAsync();
@@ -62,7 +62,7 @@ namespace mefApi.Controllers
             if(posteFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            posteFromDb.ModifiePar = 1;
+            posteFromDb.ModifiePar = GetUserId();
             posteFromDb.ModifieLe = DateTime.Now;
             mapper.Map(posteDto, posteFromDb);
             await uow.SaveAsync();

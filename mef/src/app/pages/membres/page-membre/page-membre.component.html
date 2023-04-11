@@ -1,28 +1,93 @@
-<div class="col">
-  <div class="row m-3">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
     <div class="col-md-8">
-      <h1>Liste des membres</h1>
+      <h1 class="mb-2 text-gray-800">Liste des membres</h1>
     </div>
     <div class="col-md-4">
       <app-bouton-action (clickEvent)="nouveauMembre()"></app-bouton-action>
     </div>
   </div>
-  <div class="row m-3 liste">
-    <div
-      class="col-md-3 mb-3"
-      *ngFor="let membre of membres | sort : ['nom', 'asc']"
-    >
-      <app-detail-membre
-        [membre]="membre"
-        [sexe]="getSexe(membre.sexeId)"
-        [poste]="getPoste(membre.posteId)"
-        [lieuAffectation]="getLieuAffectation(membre.lieuAffectationId)"
-      ></app-detail-membre>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Liste des membres</h6>
     </div>
-  </div>
-  <div class="row m-3">
-    <div class="col-md-12 text-center">
-      <app-pagination></app-pagination>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th>Photo</th>
+              <th>Nom</th>
+              <th>Sexe</th>
+              <th>Poste</th>
+              <th>Affectation</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th class="text-center">#</th>
+              <th>Photo</th>
+              <th>Nom</th>
+              <th>Sexe</th>
+              <th>Poste</th>
+              <th>Affectation</th>
+              <th>Actions</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr
+              *ngFor="
+                let membre of membres | sort : ['nom', 'asc'];
+                let i = index
+              "
+              [ngClass]="{
+                'text-danger': !membre.estActif,
+                'text-success': membre.estActif
+              }"
+            >
+              <td class="text-center align-middle">{{ i + 1 }}</td>
+              <td class="text-center">
+                <img
+                  src="{{ getPhoto(membre?.photo) }}"
+                  alt="la photo du membre"
+                  width="75px"
+                  class="card-img-wrapper rounded-circle thumbnail"
+                />
+              </td>
+              <td class="align-middle">{{ membre.nom }}</td>
+              <td class="align-middle">
+                {{ getSexe(membre.sexeId)?.nom | uppercase }}
+              </td>
+              <td class="align-middle">
+                {{ getPoste(membre.posteId)?.libelle | uppercase }}
+              </td>
+              <td class="align-middle">
+                {{
+                  getLieuAffectation(membre.lieuAffectationId)?.lieu | uppercase
+                }}
+              </td>
+              <td class="text-center align-middle">
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-edit"></i>
+                  Editer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
+<!-- /.container-fluid -->

@@ -43,7 +43,7 @@ namespace mefApi.Controllers
         public async Task<IActionResult> Add(CompteComptableDto compteDto)
         {
             var compte = mapper.Map<CompteComptable>(compteDto);
-            compte.ModifiePar = 1;
+            compte.ModifiePar = GetUserId();
             compte.ModifieLe = DateTime.Now;
             uow.CompteComptableRepository.Add(compte);
             await uow.SaveAsync();
@@ -56,7 +56,7 @@ namespace mefApi.Controllers
             var comptes = mapper.Map<IEnumerable<CompteComptable>>(comptesDto);
             foreach(var compte in comptes) {
                 
-                compte.ModifiePar = 1;
+                compte.ModifiePar = GetUserId();
                 compte.ModifieLe = DateTime.Now;
                 uow.CompteComptableRepository.Add(compte);
             }
@@ -76,7 +76,7 @@ namespace mefApi.Controllers
             if(compteFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            compteFromDb.ModifiePar = 1;
+            compteFromDb.ModifiePar = GetUserId();
             compteFromDb.ModifieLe = DateTime.Now;
             mapper.Map(compteDto, compteFromDb);
             await uow.SaveAsync();

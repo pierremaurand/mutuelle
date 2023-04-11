@@ -44,7 +44,7 @@ namespace mefApi.Controllers
         {
             var gabarit = mapper.Map<Gabarit>(gabaritDto);
             
-            gabarit.ModifiePar = 1;
+            gabarit.ModifiePar = GetUserId();
             gabarit.ModifieLe = DateTime.Now;
 
             uow.GabaritRepository.Add(gabarit);

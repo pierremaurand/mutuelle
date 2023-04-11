@@ -1,0 +1,172 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-2 border-end text-primary">
+            <img src="{{ photo }}" alt="photo gabarit" />
+          </div>
+          <div class="col-md-10">
+            <div class="col-md-12 mb-3">
+              <h2>
+                <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
+                du gabarit
+              </h2>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col">
+                  <label for="libelle" class="form-label"
+                    >Libellé du gabarit</label
+                  >
+                  <input
+                    type="text"
+                    id="libelle"
+                    class="form-control"
+                    name="libelle"
+                    [(ngModel)]="gabarit.libelle"
+                    placeholder="Le libelle du gabarit"
+                  />
+                </div>
+                <div class="col">
+                  <label for="typeMouvement" class="form-label"
+                    >Type de mouvement</label
+                  >
+                  <select
+                    name="typeMouvement"
+                    id="typeMouvement"
+                    [(ngModel)]="gabarit.typeMouvement"
+                    class="form-select"
+                  >
+                    <option
+                      *ngFor="let typeMouvement of typeMouvements"
+                      value="{{ typeMouvement.value }}"
+                    >
+                      {{ typeMouvement.label }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col">
+                  <label for="compteComptableId" class="form-label"
+                    >Compte comptable</label
+                  >
+                  <select
+                    id="compteComptableId"
+                    name="compteComptableId"
+                    [(ngModel)]="operation.compteComptableId"
+                    class="form-select"
+                  >
+                    <option
+                      *ngFor="let compte of comptes"
+                      value="{{ compte.id }}"
+                    >
+                      {{ compte.compte }} : {{ compte.libelle }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="typeOperation" class="form-label"
+                    >Type opération</label
+                  >
+                  <select
+                    id="typeOperation"
+                    name="typeOperation"
+                    class="form-select"
+                    [(ngModel)]="operation.typeOperation"
+                  >
+                    <option value="0">Débit</option>
+                    <option value="1">Crédit</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="taux" class="form-label">Taux du montant</label>
+                  <input
+                    type="number"
+                    step="any"
+                    min="1"
+                    max="100"
+                    id="taux"
+                    name="taux"
+                    class="form-control"
+                    [(ngModel)]="operation.taux"
+                    placeholder="Le taux du montant"
+                  />
+                </div>
+                <div class="col d-flex">
+                  <button
+                    class="btn btn-primary flex-fill"
+                    (click)="ajouterOperation()"
+                  >
+                    <i class="fa fa-plus"></i> Ajouter
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-md-12 liste">
+                  <table class="table table-striped">
+                    <tbody>
+                      <tr
+                        *ngFor="
+                          let operation of gabarit.operations
+                            | sort : [SortbyParam, SortDirection];
+                          let i = index
+                        "
+                      >
+                        <td class="text-center">{{ i + 1 }}</td>
+                        <td
+                          class="text-danger text-center"
+                          (click)="supprimerOperation(operation)"
+                        >
+                          <i class="fa fa-close"></i>
+                        </td>
+                        <td
+                          [ngClass]="{
+                            'text-start': operation.typeOperation == 0,
+                            'text-end': operation.typeOperation == 1
+                          }"
+                        >
+                          {{ getNumCompte(operation.compteComptableId) }}
+                        </td>
+                        <td>
+                          {{ getLibelleCompte(operation.compteComptableId) }}
+                        </td>
+                        <td>
+                          {{
+                            operation.typeOperation == 0 ? "Débit" : "Crédit"
+                          }}
+                        </td>
+                        <td class="text-end">{{ operation.taux | number }}%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-12 text-end">
+            <button
+              type="button"
+              class="btn btn-danger me-2"
+              (click)="cancel()"
+            >
+              <i class="fa fa-ban"></i>&nbsp; Annuler
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="enregistrerGabarit()"
+            >
+              <i class="fa fa-save"></i>&nbsp; Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

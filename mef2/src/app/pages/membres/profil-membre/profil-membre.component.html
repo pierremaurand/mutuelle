@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-12 text-end">
+            <button
+              type="button"
+              class="btn btn-primary me-2"
+              (click)="cancel()"
+            >
+              <i class="fas fa-angle-left"></i>&nbsp; Retour
+            </button>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-4 mb-3 text-center border-end text-primary">
+            <div class="m-3">
+              <img
+                src="{{ photo }}"
+                alt="Photo membre"
+                class="rounded-circle img-thumbnail"
+                width="200px"
+                height="200px"
+              />
+            </div>
+            <div class="m-3">
+              <button
+                type="button"
+                class="btn me-3"
+                [ngClass]="{
+                  'btn-danger': !membre.estActif,
+                  'btn-success': membre.estActif
+                }"
+                (click)="activer()"
+              >
+                <i
+                  class="fas"
+                  [ngClass]="{
+                    'fa-lock': !membre.estActif,
+                    'fa-lock-open': membre.estActif
+                  }"
+                ></i
+                >&nbsp;Membre {{ membre.estActif ? "Activé" : "Désactivé" }}
+              </button>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="col-md-12">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <th>Nom</th>
+                    <td>{{ membre.nom | uppercase }}</td>
+                  </tr>
+                  <tr>
+                    <th>Sexe</th>
+                    <td>{{ membre.sexe | uppercase }}</td>
+                  </tr>
+                  <!-- <tr>
+                    <th>Date de naissance</th>
+                    <td>
+                      {{ membre.dateNaissance | date : "dd/MM/yyyy" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Lieu de naissance</th>
+                    <td>
+                      {{ membre.lieuNaissance | uppercase }}
+                    </td>
+                  </tr> -->
+                  <!-- <tr>
+                    <th>Date d'adhésion</th>
+                    <td>
+                      {{ membre.dateAdhesion | date : "dd/MM/yyyy" }}
+                    </td>
+                  </tr> -->
+                  <tr>
+                    <th>Poste</th>
+                    <td>
+                      {{ membre.poste | uppercase }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Lieu d'affectation</th>
+                    <td>
+                      {{ membre.lieuAffectation | uppercase }}
+                    </td>
+                  </tr>
+                  <!-- <tr>
+                    <th>Contact</th>
+                    <td>
+                      {{ membre.contact }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Email</th>
+                    <td>
+                      {{ membre.email }}
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

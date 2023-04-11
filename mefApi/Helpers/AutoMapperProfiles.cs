@@ -9,6 +9,8 @@ namespace mefApi.Helpers
         public AutoMapperProfiles()
         {
 
+            CreateMap<Utilisateur, UtilisateurDto>().ReverseMap();
+
             CreateMap<Sexe, SexeDto>().ReverseMap();
 
             CreateMap<Membre, MembreDto>().ReverseMap();

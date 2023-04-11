@@ -2,7 +2,7 @@ namespace mefApi.Models
 {
     public enum TypeOperation
     {
-        Debit,
-        Credit
+        Debit = 0,
+        Credit = 1
     }
 }

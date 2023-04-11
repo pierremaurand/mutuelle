@@ -61,4 +61,8 @@ export class PageMembreComponent implements OnInit {
   getLieuAffectation(lieuId?: number): LieuAffectation | undefined {
     return this.lieuAffectations.find(({ id }) => id === lieuId);
   }
+
+  getPhoto(photo?: string): string {
+    return this.membreService.getPhotoUrl(photo);
+  }
 }

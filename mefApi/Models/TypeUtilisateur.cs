@@ -2,7 +2,8 @@ namespace mefApi.Models
 {
     public enum TypeUtilisateur 
     {
-        Admin, 
-        Membre
+        SuperAdmin = 0, 
+        Admin = 1,
+        Utilisateur = 2
     }
 }

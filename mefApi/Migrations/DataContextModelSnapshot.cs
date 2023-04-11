@@ -569,6 +569,44 @@ namespace hspaApi2.Migrations
                     b.ToTable("Sexes");
                 });
 
+            modelBuilder.Entity("mefApi.Models.Utilisateur", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("ClesMotDePasse")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<int?>("MembreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("MotDePasse")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("NomUtilisateur")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
+
+                    b.ToTable("Utilisateurs");
+                });
+
             modelBuilder.Entity("mefApi.Models.Avance", b =>
                 {
                     b.HasOne("mefApi.Models.Membre", "Membre")
@@ -757,6 +795,15 @@ namespace hspaApi2.Migrations
                     b.HasOne("mefApi.Models.Gabarit", null)
                         .WithMany("Operations")
                         .HasForeignKey("GabaritId");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Utilisateur", b =>
+                {
+                    b.HasOne("mefApi.Models.Membre", "Membre")
+                        .WithMany()
+                        .HasForeignKey("MembreId");
+
+                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("mefApi.Models.Avance", b =>

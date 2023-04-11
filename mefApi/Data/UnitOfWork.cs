@@ -57,6 +57,9 @@ namespace mefApi.Data
         public IMoisRepository MoisRepository =>
             new MoisRepository(dc);
 
+        public IUtilisateurRepository UtilisateurRepository =>
+            new UtilisateurRepository(dc);
+
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;

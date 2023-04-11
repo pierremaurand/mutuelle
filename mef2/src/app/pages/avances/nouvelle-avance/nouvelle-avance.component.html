@@ -1,0 +1,187 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-6">
+            <h2>
+              <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
+              de l'avance
+            </h2>
+          </div>
+          <div class="col-md-6 text-end h2">
+            {{ soldeAvance() | number }} FCFA
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-3 border-end text-primary">
+            <div class="row">
+              <app-infos-membre
+                [membre]="membre"
+                [photo]="photo"
+                [sexe]="sexe"
+                [poste]="poste"
+                [lieuAffectation]="lieuAffectation"
+              ></app-infos-membre>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col" *ngIf="!avance.id">
+                    <label for="membreId" class="form-label">Membre</label>
+                    <select
+                      id="membreId"
+                      name="membreId"
+                      class="form-select"
+                      [(ngModel)]="avance.membreId"
+                      (change)="changeMembre()"
+                    >
+                      <option
+                        *ngFor="let membre of membres | sort : ['nom', 'asc']"
+                        value="{{ membre.id }}"
+                      >
+                        {{ membre.nom | uppercase }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col" *ngIf="!avance.id">
+                    <label for="dateEnregistrement" class="form-label"
+                      >Date d'enregistrement</label
+                    >
+                    <input
+                      type="date"
+                      id="dateEnregistrement"
+                      name="dateEnregistrement"
+                      class="form-control"
+                      [(ngModel)]="avance.dateEnregistrement"
+                      placeholder="La date du mouvement"
+                    />
+                  </div>
+
+                  <div class="col">
+                    <label for="montant" class="form-label">Montant</label>
+                    <input
+                      type="number"
+                      id="montant"
+                      name="montant"
+                      class="form-control"
+                      [(ngModel)]="avance.montant"
+                      placeholder="Montant de l'avance"
+                      [disabled]="avance.id != undefined"
+                    />
+                  </div>
+
+                  <div class="col" *ngIf="avance.id">
+                    <label for="dateDeblocage" class="form-label"
+                      >Date décaissement</label
+                    >
+                    <input
+                      type="date"
+                      id="dateDeblocage"
+                      name="dateDeblocage"
+                      class="form-control"
+                      [(ngModel)]="avance.dateDeblocage"
+                      placeholder="La date du décaissement"
+                      [disabled]="echeancier.length > 0"
+                    />
+                  </div>
+
+                  <div class="col" *ngIf="avance.id">
+                    <label for="nombreEcheances" class="form-label"
+                      >Nombre d'échéances</label
+                    >
+                    <input
+                      type="number"
+                      id="nombreEcheances"
+                      name="nombreEcheances"
+                      class="form-control"
+                      [(ngModel)]="avance.nombreEcheances"
+                      placeholder="Nombre d'échéances"
+                      [disabled]="echeancier.length > 0"
+                    />
+                  </div>
+
+                  <div class="col" *ngIf="avance.id && checkEcheancier()">
+                    <label for="mvtDate" class="form-label"
+                      >Date du mouvement</label
+                    >
+                    <input
+                      type="date"
+                      id="mvtDate"
+                      name="mvtDate"
+                      class="form-control"
+                      [(ngModel)]="mvtDate"
+                      placeholder="La date du mouvement"
+                    />
+                  </div>
+
+                  <div
+                    class="col d-flex"
+                    *ngIf="avance.id && echeancier.length == 0"
+                  >
+                    <button
+                      class="btn btn-primary form-control flex-fill"
+                      (click)="genererEcheancier()"
+                    >
+                      Générer échéancier
+                    </button>
+                  </div>
+                </div>
+                <hr />
+                <div class="row liste">
+                  <div class="col-12">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr *ngFor="let echeance of echeancier; let i = index">
+                          <td class="text-center">{{ i + 1 }}</td>
+                          <td>
+                            <button
+                              *ngIf="echeance.id"
+                              [disabled]="echeance.estPaye == true"
+                              class="btn btn-success btn-sm"
+                              (click)="payCheck(i)"
+                            >
+                              <i class="fa fa-check"></i>&nbsp; Payer</button
+                            >&nbsp;
+                            {{ getMois(echeance.moisId) }}
+                          </td>
+                          <td>
+                            {{ echeance.annee }}
+                          </td>
+                          <td class="text-end">
+                            {{ echeance.montant | number }} FCFA
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-12 text-end">
+            <button
+              type="button"
+              class="btn btn-danger me-2"
+              (click)="cancel()"
+            >
+              <i class="fa fa-ban"></i>&nbsp; Annuler
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="enregistrer()"
+            >
+              <i class="fa fa-save"></i>&nbsp; Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

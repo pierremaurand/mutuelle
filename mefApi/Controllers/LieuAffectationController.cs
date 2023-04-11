@@ -44,7 +44,7 @@ namespace mefApi.Controllers
         {
             var lieuaffectation = mapper.Map<LieuAffectation>(lieuaffectationDto);
            
-            lieuaffectation.ModifiePar = 1;
+            lieuaffectation.ModifiePar = GetUserId();
             lieuaffectation.ModifieLe = DateTime.Now;
 
             uow.LieuAffectationRepository.Add(lieuaffectation);
@@ -63,7 +63,7 @@ namespace mefApi.Controllers
             if(lieuaffectationFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            lieuaffectationFromDb.ModifiePar = 1;
+            lieuaffectationFromDb.ModifiePar = GetUserId();
             lieuaffectationFromDb.ModifieLe = DateTime.Now;
             mapper.Map(lieuaffectationDto, lieuaffectationFromDb);
             await uow.SaveAsync();

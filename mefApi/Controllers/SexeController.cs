@@ -48,7 +48,7 @@ namespace mefApi.Controllers
             
             var sexe = mapper.Map<Sexe>(sexeDto);
             
-            sexe.ModifiePar = 1;
+            sexe.ModifiePar = GetUserId();
             sexe.ModifieLe = DateTime.Now;
             uow.SexeRepository.Add(sexe);
             await uow.SaveAsync();
@@ -66,7 +66,7 @@ namespace mefApi.Controllers
             if(sexeFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            sexeFromDb.ModifiePar = 1;
+            sexeFromDb.ModifiePar = GetUserId();
             sexeFromDb.ModifieLe = DateTime.Now;
             mapper.Map(sexeDto, sexeFromDb);
             await uow.SaveAsync();

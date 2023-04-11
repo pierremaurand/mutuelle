@@ -15,6 +15,7 @@ namespace mefApi.Interfaces
         ICreditRepository CreditRepository { get; }
         IEcheanceAvanceRepository EcheanceAvanceRepository { get; }
         IEcheanceCreditRepository EcheanceCreditRepository { get; }
+        IUtilisateurRepository UtilisateurRepository { get; }
         
         
         Task<bool> SaveAsync();

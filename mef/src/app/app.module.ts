@@ -9,6 +9,9 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,8 +62,6 @@ import { AddComptabiliteComponent } from './comptabilite/add-comptabilite/add-co
 import { UpdateComptabiliteComponent } from './comptabilite/update-comptabilite/update-comptabilite.component';
 import { ImportComptabiliteComponent } from './comptabilite/import-comptabilite/import-comptabilite.component';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
-import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
-import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
 import { MenuComponent } from './composants/menu/menu.component';
 import { HeaderComponent } from './composants/header/header.component';
 import { PageMembreComponent } from './pages/membres/page-membre/page-membre.component';
@@ -100,6 +101,12 @@ import { DetailAvanceComponent } from './pages/avances/detail-avance/detail-avan
 import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
 import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
 import { DetailCreditComponent } from './pages/credits/detail-credit/detail-credit.component';
+import { MenuLateralComponent } from './composants/menu-lateral/menu-lateral.component';
+import { EnteteComponent } from './composants/entete/entete.component';
+import { PiedPageComponent } from './composants/pied-page/pied-page.component';
+import { VueEnsembleComponent } from './pages/accueil/vue-ensemble/vue-ensemble.component';
+import { StatistiquesComponent } from './pages/accueil/statistiques/statistiques.component';
+import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -146,8 +153,6 @@ import { DetailCreditComponent } from './pages/credits/detail-credit/detail-cred
     UpdateComptabiliteComponent,
     ImportComptabiliteComponent,
     PageLoginComponent,
-    PageDashboardComponent,
-    PageStatistiquesComponent,
     MenuComponent,
     HeaderComponent,
     PageMembreComponent,
@@ -187,6 +192,12 @@ import { DetailCreditComponent } from './pages/credits/detail-credit/detail-cred
     NouvelleAvanceComponent,
     NouveauCreditComponent,
     DetailCreditComponent,
+    MenuLateralComponent,
+    EnteteComponent,
+    PiedPageComponent,
+    AccueilComponent,
+    VueEnsembleComponent,
+    StatistiquesComponent,
   ],
   providers: [
     {
@@ -214,6 +225,9 @@ import { DetailCreditComponent } from './pages/credits/detail-credit/detail-cred
     NgxGalleryModule,
     ImageCropperModule,
     NgxPaginationModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
   ],
 })
 export class AppModule {}

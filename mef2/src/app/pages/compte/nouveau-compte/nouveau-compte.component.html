@@ -1,0 +1,160 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card border-none">
+      <div class="card-body">
+        <div class="row m-3">
+          <div class="col-md-6">
+            <h2>
+              <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
+              du compte
+            </h2>
+          </div>
+          <div class="col-md-6 text-end h2">
+            {{ soldeCompte() | number }} FCFA
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-3 border-end text-primary">
+            <div class="row">
+              <app-infos-membre
+                [membre]="membre"
+                [sexe]="sexe"
+                [poste]="poste"
+                [lieuAffectation]="lieuAffectation"
+                [photo]="photo"
+              ></app-infos-membre>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col">
+                    <label for="dateMvt" class="form-label">Date</label>
+                    <input
+                      type="date"
+                      id="dateMvt"
+                      name="dateMvt"
+                      class="form-control"
+                      [(ngModel)]="mvtCompte.dateMvt"
+                      placeholder="La date du mouvement"
+                    />
+                  </div>
+                  <div class="col">
+                    <label for="typeOperation" class="form-label">Type</label>
+                    <select
+                      id="typeOperation"
+                      name="typeOperation"
+                      class="form-select"
+                      [(ngModel)]="mvtCompte.typeOperation"
+                    >
+                      <option value="0">Débit</option>
+                      <option value="1">Crédit</option>
+                    </select>
+                  </div>
+                  <!-- <div class="col">
+                    <label for="gabaritId" class="form-label">Le gabarit</label>
+                    <select
+                      id="gabaritId"
+                      name="gabaritId"
+                      [(ngModel)]="mvtCompte.gabaritId"
+                      class="form-select"
+                    >
+                      <option
+                        *ngFor="let gabarit of gabarits"
+                        value="{{ gabarit.id }}"
+                      >
+                        {{ gabarit.id }}-{{ gabarit.libelle | uppercase }}
+                      </option>
+                    </select>
+                  </div> -->
+
+                  <div class="col">
+                    <label for="libelle" class="form-label">Libellé</label>
+                    <input
+                      type="text"
+                      id="libelle"
+                      name="libelle"
+                      class="form-control"
+                      [(ngModel)]="mvtCompte.libelle"
+                      placeholder="Le libellé"
+                    />
+                  </div>
+
+                  <div class="col">
+                    <label for="montant" class="form-label">Montant</label>
+                    <input
+                      type="number"
+                      id="montant"
+                      name="montant"
+                      class="form-control"
+                      [(ngModel)]="mvtCompte.montant"
+                      required
+                      placeholder="Montant"
+                    />
+                  </div>
+                  <div class="col d-flex">
+                    <button
+                      class="btn btn-primary form-control flex-fill"
+                      (click)="ajouterMvtCompte()"
+                    >
+                      <i class="fa fa-plus"></i> Ajouter
+                    </button>
+                  </div>
+                </div>
+                <hr />
+                <div class="row liste">
+                  <div class="col-12">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr
+                          *ngFor="
+                            let mvtCompte of mvtComptes
+                              | sort : ['id', 'desc']
+                              | sort : ['dateMvt', 'desc'];
+                            let i = index
+                          "
+                        >
+                          <td class="text-center">{{ i + 1 }}</td>
+                          <td>
+                            {{ mvtCompte.dateMvt | date : "dd/MM/yyyy" }}
+                          </td>
+                          <td>
+                            {{ getTypeOperation(mvtCompte.typeOperation) }}
+                          </td>
+                          <!-- <td>{{ mvtCompte.gabaritId }}</td> -->
+                          <td>{{ mvtCompte.libelle }}</td>
+                          <td class="text-end">
+                            {{ mvtCompte.montant | number }} FCFA
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-3">
+          <div class="col-md-12 text-end">
+            <button
+              type="button"
+              class="btn btn-danger me-2"
+              (click)="cancel()"
+            >
+              <i class="fa fa-ban"></i>&nbsp; Annuler
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="enregistrerCompte()"
+            >
+              <i class="fa fa-save"></i>&nbsp; Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -49,7 +49,7 @@ namespace mefApi.Controllers
 
             var membre = mapper.Map<Membre>(membreDto);
 
-            membre.ModifiePar = 1;
+            membre.ModifiePar = GetUserId();
             membre.ModifieLe = DateTime.Now;
             uow.MembreRepository.Add(membre);
 
@@ -64,7 +64,7 @@ namespace mefApi.Controllers
             foreach (var membre in membres)
             {
                 
-                membre.ModifiePar = 1;
+                membre.ModifiePar = GetUserId();
                 membre.ModifieLe = DateTime.Now;
                 uow.MembreRepository.Add(membre);
             }
@@ -100,7 +100,7 @@ namespace mefApi.Controllers
 
             image.Save("wwwroot/assets/images/"+imageName, ImageFormat.Png);
 
-            membreFromDb.ModifiePar = 1;
+            membreFromDb.ModifiePar = GetUserId();
             membreFromDb.ModifieLe = DateTime.Now;
             membreFromDb.Photo = imageName;
             await uow.SaveAsync();
@@ -119,7 +119,7 @@ namespace mefApi.Controllers
             if(membreFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            membreFromDb.ModifiePar = 1;
+            membreFromDb.ModifiePar = GetUserId();
             membreFromDb.ModifieLe = DateTime.Now;
             mapper.Map(membreDto, membreFromDb);
             await uow.SaveAsync();
