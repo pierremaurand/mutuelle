@@ -141,6 +141,10 @@ namespace hspaApi2.Migrations
                         .IsRequired()
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal?>("MontantCommission")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal?>("MontantInteret")
                         .IsRequired()
                         .HasColumnType("decimal(18,2)");
@@ -580,7 +584,7 @@ namespace hspaApi2.Migrations
                     b.Property<byte[]>("ClesMotDePasse")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int?>("MembreId")
+                    b.Property<int>("MembreId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifieLe")
@@ -801,7 +805,9 @@ namespace hspaApi2.Migrations
                 {
                     b.HasOne("mefApi.Models.Membre", "Membre")
                         .WithMany()
-                        .HasForeignKey("MembreId");
+                        .HasForeignKey("MembreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Membre");
                 });

@@ -103,6 +103,8 @@ import { DetailAvanceComponent } from './pages/avances/detail-avance/detail-avan
 import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
 import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
 import { DetailCreditComponent } from './pages/credits/detail-credit/detail-credit.component';
+import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
+import { DashboardComponent } from './pages/accueil/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -190,6 +192,8 @@ import { DetailCreditComponent } from './pages/credits/detail-credit/detail-cred
     NouvelleAvanceComponent,
     NouveauCreditComponent,
     DetailCreditComponent,
+    AccueilComponent,
+    DashboardComponent,
   ],
   providers: [
     {

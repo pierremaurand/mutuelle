@@ -29,6 +29,8 @@ import { NouvelleCotisationComponent } from './pages/cotisations/nouvelle-cotisa
 import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
 import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
 import { AuthService } from './services/auth.service';
+import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
+import { DashboardComponent } from './pages/accueil/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -37,12 +39,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: PageDashboardComponent,
+    component: AccueilComponent,
     canActivate: [AuthService],
     children: [
       {
-        path: 'statistiques',
-        component: PageStatistiquesComponent,
+        path: '',
+        component: DashboardComponent,
         canActivate: [AuthService],
       },
       {

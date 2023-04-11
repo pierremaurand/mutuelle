@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Cotisation } from 'src/app/model/cotisation';
+import { HeaderState } from 'src/app/model/header';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
 import { CotisationService } from 'src/app/services/cotisation.service';
+import { HeaderService } from 'src/app/services/header.service';
 import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
+import { MembreService } from 'src/app/services/membre.service';
 import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
@@ -21,12 +25,16 @@ export class PageCotisationComponent implements OnInit {
   postes: Poste[] = [];
   lieuAffectations: LieuAffectation[] = [];
   cotisations: Cotisation[] = [];
+  search: string = '';
+  subscription!: Subscription;
 
   constructor(
     private cotisationService: CotisationService,
     private sexeService: SexeService,
     private posteService: PosteService,
     private lieuAffectationService: LieuAffectationService,
+    private membreService: MembreService,
+    private headerService: HeaderService,
     private router: Router
   ) {}
 
@@ -52,22 +60,38 @@ export class PageCotisationComponent implements OnInit {
           });
       });
     });
+
+    this.subscription = this.headerService.headerState.subscribe(
+      (state: HeaderState) => {
+        this.search = state.search;
+      }
+    );
+
+    this.search = localStorage.getItem('search') ?? '';
   }
 
-  nouveau(): void {
+  nouvelleCotisation(): void {
     this.router.navigate(['/nouvellecotisation']);
   }
 
-  getSexe(sexeId?: number): Sexe | undefined {
-    return this.sexes.find(({ id }) => id === sexeId);
+  modifier(id: number): void {
+    this.router.navigate(['nouvellecotisation', id]);
   }
 
-  getPoste(posteId?: number): Poste | undefined {
-    return this.postes.find(({ id }) => id === posteId);
+  getSexe(sexeId?: number): string {
+    return this.sexes.find(({ id }) => id === sexeId)?.nom ?? '';
   }
 
-  getLieuAffectation(lieuId?: number): LieuAffectation | undefined {
-    return this.lieuAffectations.find(({ id }) => id === lieuId);
+  getPoste(posteId?: number): string {
+    return this.postes.find(({ id }) => id === posteId)?.libelle ?? '';
+  }
+
+  getLieuAffectation(lieuId?: number): string {
+    return this.lieuAffectations.find(({ id }) => id === lieuId)?.lieu ?? '';
+  }
+
+  getPhoto(photo?: string): string {
+    return this.membreService.getPhotoUrl(photo);
   }
 
   getSolde(id?: number): number | undefined {

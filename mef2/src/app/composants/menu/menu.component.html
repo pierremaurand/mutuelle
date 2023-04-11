@@ -5,37 +5,56 @@
   <!-- Sidebar - Brand -->
   <a
     class="sidebar-brand d-flex align-items-center justify-content-center"
-    href="index.html"
+    href="javascript:void(0);"
   >
-    <div class="sidebar-brand-icon rotate-n-15">
-      <i class="fas fa-laugh-wink"></i>
-    </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3">Mutuelle</div>
   </a>
 
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
 
-  <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
-    <a class="nav-link" href="index.html">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span></a
-    >
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
   <div *ngFor="let menu of menuProperties">
-    <!-- Heading -->
-    <div class="sidebar-heading">{{ menu.titre }}</div>
-    <!-- Nav Item - Tables -->
-    <li class="nav-item" *ngFor="let sousMenu of menu.sousMenu">
-      <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a
+    <!-- Nav Item - Dashboard -->
+    <li
+      class="nav-item"
+      *ngIf="!menu.sousMenu"
+      [ngClass]="{ active: menu.active }"
+    >
+      <a class="nav-link" href="javascript:void(0);" (click)="navigate(menu)">
+        <i class="{{ menu.icon }}"></i>
+        <span>{{ menu.titre }}</span></a
       >
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" *ngIf="menu.sousMenu">
+      <a
+        class="nav-link collapsed"
+        href="javascript:void(0);"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + menu.id"
+        aria-expanded="true"
+        [attr.aria-controls]="'collapse' + menu.id"
+      >
+        <i class="{{ menu.icon }}"></i>
+        <span>{{ menu.titre }}</span>
+      </a>
+      <div
+        id="collapse{{ menu.id }}"
+        class="collapse"
+        [attr.aria-labelledby]="'heading' + menu.id"
+        data-bs-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ menu.titre }}:</h6>
+          <a
+            class="collapse-item"
+            href="javascript:void(0);"
+            (click)="navigate(sousMenu)"
+            *ngFor="let sousMenu of menu.sousMenu"
+            >{{ sousMenu.titre }}</a
+          >
+        </div>
+      </div>
     </li>
 
     <!-- Divider -->

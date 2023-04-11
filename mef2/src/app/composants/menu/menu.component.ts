@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/model/menu';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,73 +13,51 @@ export class MenuComponent implements OnInit {
     {
       id: '1',
       titre: 'Tableau de bord',
-      icon: 'fas fa-chart-line',
+      icon: 'fas fa-fw fa-tachometer-alt',
       url: '',
-      sousMenu: [
-        {
-          id: '11',
-          titre: "Vue d'ensemble",
-          icon: 'fas fa-chart-pie',
-          url: '',
-        },
-        {
-          id: '12',
-          titre: 'Statistiques',
-          icon: 'fas fa-chart-bar',
-          url: 'statistiques',
-        },
-      ],
     },
     {
       id: '2',
-      titre: 'Membres',
-      icon: 'fas fa-users',
+      titre: 'Gestion Membres',
+      icon: 'fas fa-fw fa-users',
       url: '',
       sousMenu: [
         {
           id: '21',
           titre: 'Membres',
-          icon: 'fas fa-users',
+          icon: 'fas fa-fw fa-users',
           url: 'membres',
         },
         {
           id: '22',
           titre: 'Comptes',
-          icon: 'fa fa-money-check',
+          icon: 'fa fa-fw fa-money-check',
           url: 'comptes',
         },
         {
           id: '23',
           titre: 'Cotisations',
-          icon: 'fa fa-coins',
+          icon: 'fa fa-fw fa-coins',
           url: 'cotisations',
         },
       ],
     },
     {
       id: '3',
-      titre: 'Avances',
-      icon: 'fab fa-stack-overflow',
+      titre: ' Gestion prèts',
+      icon: 'fab fa-fw fa-stack-overflow',
       url: '',
       sousMenu: [
         {
           id: '31',
           titre: 'Avances',
-          icon: 'fab fa-stack-overflow',
+          icon: 'fab fa-fw fa-stack-overflow',
           url: 'avances',
         },
-      ],
-    },
-    {
-      id: '4',
-      titre: 'Credits',
-      icon: 'fa fa-money-check',
-      url: '',
-      sousMenu: [
         {
-          id: '41',
+          id: '32',
           titre: 'Credits',
-          icon: 'fa fa-money-check',
+          icon: 'fa fa-fw fa-money-check',
           url: 'credits',
         },
       ],
@@ -86,50 +65,50 @@ export class MenuComponent implements OnInit {
     {
       id: '5',
       titre: 'Comptabilité',
-      icon: 'fa fa-money-check',
+      icon: 'fa fa-fw fa-money-check',
       url: '',
       sousMenu: [],
     },
     {
       id: '6',
       titre: 'Paramétrages',
-      icon: 'fas fa-cogs',
+      icon: 'fas fa-fw fa-cogs',
       url: '',
       sousMenu: [
         {
           id: '61',
           titre: 'Utilisateurs',
-          icon: 'fas fa-users-cog',
+          icon: 'fas fa-fw fa-users-cog',
           url: 'utilisateurs',
         },
         {
           id: '62',
           titre: 'Sexes',
-          icon: 'fas fa-venus-mars',
+          icon: 'fas fa-fw fa-venus-mars',
           url: 'sexes',
         },
         {
           id: '63',
           titre: 'Postes',
-          icon: 'fa fa-list',
+          icon: 'fa fa-fw fa-list',
           url: 'postes',
         },
         {
           id: '64',
           titre: 'Comptes comptables',
-          icon: 'fa fa-map',
+          icon: 'fa fa-fw fa-map',
           url: 'comptecomptables',
         },
         {
           id: '65',
           titre: 'Gabarits',
-          icon: 'fa fa-list',
+          icon: 'fa fa-fw fa-list',
           url: 'gabarits',
         },
         {
           id: '66',
           titre: 'Lieu Affectation',
-          icon: 'far fa-building',
+          icon: 'far fa-fw fa-building',
           url: 'lieuaffectations',
         },
       ],
@@ -138,7 +117,7 @@ export class MenuComponent implements OnInit {
 
   private lastSelectedMenu: Menu | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private headerService: HeaderService) {}
 
   ngOnInit(): void {}
 

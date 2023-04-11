@@ -10,6 +10,8 @@ namespace mefApi.Dtos
         [Required]
         public decimal? MontantCapital { get; set; }
         [Required]
+        public decimal? MontantCommission { get; set; }
+        [Required]
         public decimal? MontantInteret { get; set; }
         public int? NombreEcheances { get; set; }
         [Required]
