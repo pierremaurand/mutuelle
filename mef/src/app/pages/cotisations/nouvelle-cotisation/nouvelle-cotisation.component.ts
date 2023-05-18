@@ -5,6 +5,7 @@ import { InfosCotisation } from 'src/app/model/infosCotisation';
 import { InfosMembre } from 'src/app/model/infosMembre';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
+import { MembreList } from 'src/app/model/membreList';
 import { Mois } from 'src/app/model/mois';
 import { MvtCompte } from 'src/app/model/mvtCompte';
 import { Poste } from 'src/app/model/poste';
@@ -22,7 +23,7 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouvelle-cotisation.component.scss'],
 })
 export class NouvelleCotisationComponent implements OnInit {
-  membre: Membre = new Membre();
+  membre: MembreList = new MembreList();
   cotisation: Cotisation = new Cotisation();
   mvtCompte: MvtCompte = new MvtCompte();
   sexe: Sexe = new Sexe();
@@ -57,7 +58,7 @@ export class NouvelleCotisationComponent implements OnInit {
           this.membreService
             .getById(this.membreId)
             .subscribe((membre: Membre) => {
-              this.membre = membre;
+              // this.membre = membre;
               this.photo = this.membreService.getPhotoUrl(this.membre.photo);
               this.sexeService
                 .getById(membre.sexeId)

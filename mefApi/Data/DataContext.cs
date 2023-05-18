@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using mefApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace mefApi.Data
 {
@@ -8,16 +8,18 @@ namespace mefApi.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options){}
 
         public DbSet<Avance>? Avances { get; set; }
+        public DbSet<AvanceDebourse>? AvancesDebourses { get; set; }
         public DbSet<CompteComptable>? CompteComptables { get; set; } 
         public DbSet<Cotisation>? Cotisations { get; set; } 
         public DbSet<Credit>? Credits { get; set; } 
+        public DbSet<CreditDebourse>? CreditsDebourses { get; set; } 
         public DbSet<DetailEcritureComptable>? DetailEcritureComptables { get; set; } 
-        public DbSet<EcheanceAvance>? EcheanceAvances { get; set; } 
-        public DbSet<EcheanceCredit>? EcheanceCredits { get; set; } 
+        public DbSet<EcheanceAvance>? EcheancesAvances { get; set; } 
+        public DbSet<EcheanceCredit>? EcheancesCredits { get; set; } 
         public DbSet<EcritureComptable>? EcritureComptables { get; set; } 
         public DbSet<Gabarit>? Gabarits { get; set; } 
         public DbSet<LieuAffectation>? LieuAffectations { get; set; }  
-        public DbSet<Membre>? Membres { get; set; }
+        public DbSet<Membre> Membres { get; set; }
         public DbSet<MvtCompte>? MvtComptes { get; set; } 
         public DbSet<Operation>? Operations { get; set; }  
         public DbSet<Poste>? Postes { get; set; } 

@@ -1,25 +1,19 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Credit 
+    public class Credit : BaseEntity 
     {
-        public int Id { get; set; }
         [Required]
-        public int? MembreId { get; set; }
+        public int MembreId { get; set; } = 0;
         public Membre? Membre { get; set; }
         [Required]
-        public decimal? MontantCapital { get; set; }
+        public decimal MontantCapital { get; set; } = 0;
         [Required]
-        public decimal? MontantCommission { get; set; }
+        public decimal MontantCommission { get; set; } = 0;
         [Required]
-        public decimal? MontantInteret { get; set; }
-        public int? NombreEcheances { get; set; }
-        [Required]
-        public string? DateEnregistrement { get; set; }
-        public string? DateDeblocage { get; set; }
-        public string? DateSolde { get; set; }
-        public ICollection<EcheanceCredit> EcheanceCredits { get; set; } = new List<EcheanceCredit>();
-        public ICollection<MvtCompte> MvtComptes { get; set; } = new List<MvtCompte>();
+        public decimal MontantInteret { get; set; } = 0;
+        public int NombreEcheances { get; set; } = 0;
     }
 }

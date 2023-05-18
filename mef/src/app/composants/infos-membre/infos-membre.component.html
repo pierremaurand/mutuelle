@@ -1,48 +1,18 @@
-<div class="row card m-1 shadow">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row m-3">
-          <div class="col-md-12 text-center">
-            <img [src]="photo" alt="" class="rounded-circle img-thumbnail" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-striped">
-              <tbody>
-                <tr>
-                  <th>Nom</th>
-                  <td class="text-truncate infos">
-                    {{ membre.nom | uppercase }}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Sexe</th>
-                  <td class="text-truncate infos">
-                    {{ sexe?.nom | uppercase }}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Poste</th>
-                  <td class="text-truncate infos">
-                    {{ poste?.libelle | uppercase }}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Affectation</th>
-                  <td class="text-truncate infos">
-                    {{ lieuAffectation?.lieu | uppercase }}
-                  </td>
-                </tr>
-                <tr>
-                  <th>Contact</th>
-                  <td class="text-truncate infos">{{ membre.contact }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="row m-3">
+      <div class="col-md-12 text-center">
+        <img
+          src="{{ imagesUrl }}/assets/images/{{ membre.photo }}"
+          alt=""
+          class="rounded-circle img-thumbnail"
+        />
+        <h5>{{ membre.nom | uppercase }}</h5>
+        <small>
+          <i class="fa fa-venus-mars"></i> {{ membre.sexe | uppercase }} |
+          <i class="fa fa-sitemap"></i> {{ membre.poste | uppercase }} |
+          <i class="fa fa-building"></i> {{ membre.lieu | uppercase }}
+        </small>
       </div>
     </div>
   </div>

@@ -16,33 +16,13 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./page-membre.component.scss'],
 })
 export class PageMembreComponent implements OnInit {
-  membres: Membre[] = [];
-  sexes: Sexe[] = [];
-  postes: Poste[] = [];
-  lieuAffectations: LieuAffectation[] = [];
+  membres: MembreList[] = [];
 
-  constructor(
-    private membreService: MembreService,
-    private sexeService: SexeService,
-    private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
-    private router: Router
-  ) {}
+  constructor(private membreService: MembreService, private router: Router) {}
 
   ngOnInit(): void {
-    this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
-      this.sexes = sexes;
-      this.posteService.getAll().subscribe((postes: Poste[]) => {
-        this.postes = postes;
-        this.lieuAffectationService
-          .getAll()
-          .subscribe((lieuAffectations: LieuAffectation[]) => {
-            this.lieuAffectations = lieuAffectations;
-            this.membreService.getAll().subscribe((data: Membre[]) => {
-              this.membres = data;
-            });
-          });
-      });
+    this.membreService.getAll().subscribe((data: MembreList[]) => {
+      this.membres = data;
     });
   }
 
@@ -50,19 +30,11 @@ export class PageMembreComponent implements OnInit {
     this.router.navigate(['/nouveaumembre']);
   }
 
-  getSexe(sexeId?: number): Sexe | undefined {
-    return this.sexes.find(({ id }) => id === sexeId);
+  navigate(id: number): void {
+    this.router.navigate(['/nouveaumembre/' + id]);
   }
 
-  getPoste(posteId?: number): Poste | undefined {
-    return this.postes.find(({ id }) => id === posteId);
-  }
+  exportMembre(): void {}
 
-  getLieuAffectation(lieuId?: number): LieuAffectation | undefined {
-    return this.lieuAffectations.find(({ id }) => id === lieuId);
-  }
-
-  getPhoto(photo?: string): string {
-    return this.membreService.getPhotoUrl(photo);
-  }
+  importMembre(): void {}
 }

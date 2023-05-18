@@ -1,132 +1,149 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card border-none">
-      <div class="card-body">
-        <div class="row m-3">
-          <div class="col-md-6">
-            <h2>
-              <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
-              du compte
-            </h2>
-          </div>
-          <div class="col-md-6 text-end h2">
-            {{ soldeCompte() | number }} FCFA
-          </div>
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations du membre
+      </h1>
+      <h1 class="mb-2 text-gray-800">{{ soldeCompte() | number }} FCFA</h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Informations du compte</h6>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-3">
+          <app-infos-membre [membre]="membre"></app-infos-membre>
         </div>
-        <div class="row m-3">
-          <div class="col-md-3 border-end text-primary">
-            <div class="row">
-              <app-infos-membre
-                [membre]="membre"
-                [sexe]="sexe"
-                [poste]="poste"
-                [lieuAffectation]="lieuAffectation"
-                [photo]="photo"
-              ></app-infos-membre>
+        <div class="col">
+          <div class="row mb-2 d-flex justify-content-between">
+            <div class="col">
+              <a href="javascript:void(0);" (click)="cancel()"
+                ><i class="fa fa-arrow-left"></i> Retour à la page des
+                comptes</a
+              >
+            </div>
+            <div class="col text-right">
+              <button class="btn btn-warning mr-2">
+                <i class="fa fa-print"></i> Imprimer
+              </button>
+              <button
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#addPicture"
+              >
+                <i class="fa fa-plus"></i> Ajouter une cotisation
+              </button>
             </div>
           </div>
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col">
-                    <label for="mois" class="form-label">Mois</label>
-                    <select
-                      id="mois"
-                      name="mois"
-                      class="form-select"
-                      [(ngModel)]="cotisation.moisId"
-                      required
-                    >
-                      <option *ngFor="let m of mois" value="{{ m.valeur }}">
-                        {{ m.libelle }}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="col">
-                    <label for="annee" class="form-label">Année</label>
-                    <select
-                      id="annee"
-                      name="annee"
-                      class="form-select"
-                      [(ngModel)]="cotisation.annee"
-                      required
-                    >
-                      <option *ngFor="let annee of annees" value="{{ annee }}">
-                        {{ annee }}
-                      </option>
-                    </select>
-                  </div>
-
-                  <div class="col">
-                    <label for="montant" class="form-label">Montant</label>
-                    <input
-                      type="number"
-                      id="montant"
-                      name="montant"
-                      class="form-control"
-                      [(ngModel)]="cotisation.montant"
-                      required
-                      placeholder="Montant"
-                    />
-                  </div>
-                  <div class="col d-flex">
-                    <button
-                      class="btn btn-primary form-control flex-fill"
-                      (click)="ajouter()"
-                    >
-                      <i class="fa fa-plus"></i> Ajouter
-                    </button>
-                  </div>
+          <div class="row">
+            <div class="col liste">
+              <table class="table table-striped">
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let cotisation of cotisations
+                        | sort : ['moisId', 'desc']
+                        | sort : ['annee', 'desc'];
+                      let i = index
+                    "
+                  >
+                    <td class="text-center">{{ i + 1 }}</td>
+                    <td>
+                      {{ getMois(cotisation.moisId) }}
+                    </td>
+                    <td>
+                      {{ cotisation.annee }}
+                    </td>
+                    <td class="text-right">
+                      {{ cotisation.montant | number }} FCFA
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="addPicture"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="addPicture"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-md">
+          <div class="modal-content">
+            <div class="modal-header">Formulaire d'ajout d'une cotisation</div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="mois" class="form-label">Mois</label>
+                  <select
+                    id="mois"
+                    name="mois"
+                    class="form-control"
+                    [(ngModel)]="cotisation.moisId"
+                    required
+                  >
+                    <option *ngFor="let m of mois" value="{{ m.valeur }}">
+                      {{ m.libelle }}
+                    </option>
+                  </select>
                 </div>
-                <hr />
-                <div class="row liste">
-                  <div class="col-12">
-                    <table class="table table-striped">
-                      <tbody>
-                        <tr
-                          *ngFor="
-                            let cotisation of cotisations
-                              | sort : ['moisId', 'desc']
-                              | sort : ['annee', 'desc'];
-                            let i = index
-                          "
-                        >
-                          <td class="text-center">{{ i + 1 }}</td>
-                          <td>
-                            {{ getMois(cotisation.moisId) }}
-                          </td>
-                          <td>
-                            {{ cotisation.annee }}
-                          </td>
-                          <td class="text-end">
-                            {{ cotisation.montant | number }} FCFA
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="form-group col-md-6">
+                  <label for="annee" class="form-label">Année</label>
+                  <select
+                    id="annee"
+                    name="annee"
+                    class="form-control"
+                    [(ngModel)]="cotisation.annee"
+                    required
+                  >
+                    <option *ngFor="let annee of annees" value="{{ annee }}">
+                      {{ annee }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="montant" class="form-label">Montant</label>
+                  <input
+                    type="number"
+                    id="montant"
+                    name="montant"
+                    class="form-control"
+                    [(ngModel)]="cotisation.montant"
+                    required
+                    placeholder="Montant"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col text-center">
+                  <button
+                    type="button"
+                    class="btn btn-success mr-2"
+                    (click)="ajouter()"
+                  >
+                    <i class="fa fa-plus"></i> Ajouter
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-dismiss="modal"
+                    #closeModal
+                  >
+                    <i class="fa fa-ban"></i> Annuler
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row m-3">
-          <div class="col-md-12 text-end">
-            <button
-              type="button"
-              class="btn btn-danger me-2"
-              (click)="cancel()"
-            >
-              <i class="fa fa-ban"></i>&nbsp; Annuler
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              (click)="enregistrerCompte()"
-            >
-              <i class="fa fa-save"></i>&nbsp; Enregistrer
-            </button>
           </div>
         </div>
       </div>

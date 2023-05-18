@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace mefApi.Controllers
 {
@@ -41,8 +44,25 @@ namespace mefApi.Controllers
             if(membres is null) {
                 return NotFound();
             }
-            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
+            var membresDto = mapper.Map<IEnumerable<MembreListDto>>(membres);
             return Ok(membresDto);
+        }
+
+        [HttpGet("comptes")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAllComptes()
+        {
+            var membres = await uow.MembreRepository.GetAllAsync();
+            var comptesListDto = new List<ComptesListDto>();
+            if(membres is null) {
+                return NotFound();
+            }
+            foreach(var membre in membres) {
+                var compte = new ComptesListDto();
+                compte.Membre = mapper.Map<MembreListDto>(membre);
+                comptesListDto.Add(compte);
+            }
+            return Ok(comptesListDto);
         }
 
         [HttpGet("mvtcomptes")]

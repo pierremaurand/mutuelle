@@ -6,17 +6,17 @@ namespace mefApi.Dtos
     {
         public int Id { get; set; }
         [Required]
-        public int? MembreId { get; set; }
+        public int MembreId { get; set; } = 0;
         [Required]
-        public decimal? MontantCapital { get; set; }
+        public decimal MontantCapital { get; set; } = 0;
         [Required]
-        public decimal? MontantCommission { get; set; }
+        public decimal MontantCommission { get; set; } = 0;
         [Required]
-        public decimal? MontantInteret { get; set; }
-        public int? NombreEcheances { get; set; }
+        public decimal MontantInteret { get; set; } = 0;
+        public int NombreEcheances { get; set; } = 0;
         [Required]
-        public string? DateEnregistrement { get; set; }
-        public string? DateDeblocage { get; set; }
-        public string? DateSolde { get; set; }
+        public string DateEnregistrement { get; set; } = string.Empty;
+        public string DateDeblocage { get; set; } = string.Empty;
+        public string DateSolde { get; set; } = string.Empty;
     }
 }

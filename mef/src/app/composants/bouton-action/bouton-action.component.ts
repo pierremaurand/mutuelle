@@ -9,13 +9,17 @@ import { InfosPage } from 'src/app/model/infosPage';
 })
 export class BoutonActionComponent implements OnInit {
   @Output()
-  clickEvent = new EventEmitter();
+  newEvent = new EventEmitter();
+  @Output()
+  importEvent = new EventEmitter();
+  @Output()
+  exportEvent = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   nouveauEvent(): void {
-    this.clickEvent.emit();
+    this.newEvent.emit();
   }
 }

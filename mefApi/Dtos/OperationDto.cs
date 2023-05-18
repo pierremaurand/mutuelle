@@ -5,12 +5,12 @@ namespace mefApi.Dtos
 {
     public class OperationDto
     {
-        public int? Id { get; set; }
+        public int Id { get; set; } = 0;
         [Required(ErrorMessage = "Le gabarit est obligatoire")] 
-        public int? CompteComptableId { get; set; }
+        public int CompteComptableId { get; set; } = 0;
         [Required(ErrorMessage = "Le type d'opération est obligatoire")] 
-        public TypeOperation? TypeOperation { get; set;}
+        public TypeOperation TypeOperation { get; set;} = 0;
         [Required(ErrorMessage = "Le taux est obligatoire")] 
-        public decimal? Taux { get; set; }
+        public decimal Taux { get; set; } = 0;
     }
 }

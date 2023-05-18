@@ -10,8 +10,7 @@ namespace mefApi.Models
         public byte[]? MotDePasse { get; set; }
         public byte[]? ClesMotDePasse { get; set; }
         public int MembreId { get; set; }
-        public Membre? Membre { get; set; }
         [Required(ErrorMessage ="Le type d'utilisateur est obligatoire")]
-        public TypeUtilisateur Type { get; set; }
+        public TypeUtilisateur Type { get; set; } = 0;
     }
 }

@@ -3,10 +3,16 @@
   <!-- Page Heading -->
   <div class="row mb-3">
     <div class="col-md-8">
-      <h1 class="mb-2 text-gray-800">Liste des membres</h1>
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-list"></i> Liste des membres
+      </h1>
     </div>
     <div class="col-md-4">
-      <app-bouton-action (clickEvent)="nouveauMembre()"></app-bouton-action>
+      <app-bouton-action
+        (newEvent)="nouveauMembre()"
+        (exportEvent)="exportMembre()"
+        (importEvent)="importMembre()"
+      ></app-bouton-action>
     </div>
   </div>
 
@@ -16,76 +22,23 @@
       <h6 class="m-0 font-weight-bold text-primary">Liste des membres</h6>
     </div>
     <div class="card-body">
-      <div class="table-responsive">
-        <table
-          class="table table-bordered"
-          id="dataTable"
-          width="100%"
-          cellspacing="0"
+      <div class="list-group">
+        <a
+          href="javascript:void(0);"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+          *ngFor="let membre of membres | sort : ['nom', 'asc']"
+          [ngClass]="{
+            'border-left-success text-success': membre.estActif,
+            'border-left-danger text-danger': !membre.estActif
+          }"
         >
-          <thead>
-            <tr>
-              <th class="text-center">#</th>
-              <th>Photo</th>
-              <th>Nom</th>
-              <th>Sexe</th>
-              <th>Poste</th>
-              <th>Affectation</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th class="text-center">#</th>
-              <th>Photo</th>
-              <th>Nom</th>
-              <th>Sexe</th>
-              <th>Poste</th>
-              <th>Affectation</th>
-              <th>Actions</th>
-            </tr>
-          </tfoot>
-          <tbody>
-            <tr
-              *ngFor="
-                let membre of membres | sort : ['nom', 'asc'];
-                let i = index
-              "
-              [ngClass]="{
-                'text-danger': !membre.estActif,
-                'text-success': membre.estActif
-              }"
-            >
-              <td class="text-center align-middle">{{ i + 1 }}</td>
-              <td class="text-center">
-                <img
-                  src="{{ getPhoto(membre?.photo) }}"
-                  alt="la photo du membre"
-                  width="75px"
-                  class="card-img-wrapper rounded-circle thumbnail"
-                />
-              </td>
-              <td class="align-middle">{{ membre.nom }}</td>
-              <td class="align-middle">
-                {{ getSexe(membre.sexeId)?.nom | uppercase }}
-              </td>
-              <td class="align-middle">
-                {{ getPoste(membre.posteId)?.libelle | uppercase }}
-              </td>
-              <td class="align-middle">
-                {{
-                  getLieuAffectation(membre.lieuAffectationId)?.lieu | uppercase
-                }}
-              </td>
-              <td class="text-center align-middle">
-                <button class="btn btn-primary btn-sm">
-                  <i class="fa fa-edit"></i>
-                  Editer
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="row" (click)="navigate(membre.id)">
+            <div class="col-12">
+              <app-details-membre [membre]="membre"></app-details-membre>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>

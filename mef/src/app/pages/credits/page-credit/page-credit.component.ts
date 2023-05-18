@@ -25,41 +25,15 @@ export class PageCreditComponent implements OnInit {
   lieuAffectations: LieuAffectation[] = [];
   echeances: EcheanceCredit[] = [];
 
-  constructor(
-    private creditService: CreditService,
-    private membreService: MembreService,
-    private sexeService: SexeService,
-    private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
-    private router: Router
-  ) {}
+  constructor(private creditService: CreditService, private router: Router) {}
 
   ngOnInit(): void {
     this.creditService
       .getAllEcheances()
       .subscribe((echeances: EcheanceCredit[]) => {
         this.echeances = echeances;
-        this.membreService.getAll().subscribe((membres: Membre[]) => {
-          this.membres = membres;
-          this.creditService.getAll().subscribe((credits: Credit[]) => {
-            this.credits = credits;
-            this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
-              this.sexes = sexes;
-              this.posteService.getAll().subscribe((postes: Poste[]) => {
-                this.postes = postes;
-                this.lieuAffectationService
-                  .getAll()
-                  .subscribe((lieuAffectations: LieuAffectation[]) => {
-                    this.lieuAffectations = lieuAffectations;
-                    this.creditService
-                      .getAll()
-                      .subscribe((credits: Credit[]) => {
-                        this.credits = credits;
-                      });
-                  });
-              });
-            });
-          });
+        this.creditService.getAll().subscribe((credits: Credit[]) => {
+          this.credits = credits;
         });
       });
   }
@@ -68,28 +42,11 @@ export class PageCreditComponent implements OnInit {
     this.router.navigate(['/nouveaucredit']);
   }
 
-  getMembre(membreId?: number): Membre | undefined {
-    return this.membres.find(({ id }) => id === membreId);
+  navigate(id: number): void {
+    this.router.navigate(['/nouveaucredit/' + id]);
   }
 
-  getSexe(sexeId?: number): Sexe | undefined {
-    return this.sexes.find(({ id }) => id === sexeId);
-  }
-
-  getPoste(posteId?: number): Poste | undefined {
-    return this.postes.find(({ id }) => id === posteId);
-  }
-
-  getLieuAffectation(lieuId?: number): LieuAffectation | undefined {
-    return this.lieuAffectations.find(({ id }) => id === lieuId);
-  }
-
-  getCredit(creditId?: number): Credit | undefined {
-    return this.credits.find(({ id }) => id === creditId);
-  }
-
-  getSolde(id?: number): number | undefined {
-    const credit = this.getCredit(id);
+  getSolde(credit: Credit): number {
     let solde = 0;
     solde += credit?.montantCapital ?? 0;
     solde += credit?.montantInteret ?? 0;

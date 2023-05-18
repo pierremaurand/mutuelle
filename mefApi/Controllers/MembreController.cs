@@ -5,6 +5,13 @@ using mefApi.Interfaces;
 using mefApi.Models;
 using System.Drawing;
 using System.Drawing.Imaging;
+using Microsoft.AspNetCore.SignalR;
+using mefApi.HubConfig;
+using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace mefApi.Controllers
 {
@@ -12,11 +19,13 @@ namespace mefApi.Controllers
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
+        private readonly IHubContext<SignalrServer> signalrHub; 
 
-        public MembreController(IMapper mapper, IUnitOfWork uow)
+        public MembreController(IMapper mapper, IUnitOfWork uow, IHubContext<SignalrServer> signalrHub)
         {
             this.mapper = mapper;
             this.uow = uow;
+            this.signalrHub = signalrHub;
         }
 
         [HttpGet("membres")]
@@ -26,7 +35,7 @@ namespace mefApi.Controllers
             if(membres is null) {
                 return NotFound();
             }
-            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
+            var membresDto = mapper.Map<IEnumerable<MembreListDto>>(membres);
             return Ok(membresDto);
         }
 
@@ -54,6 +63,7 @@ namespace mefApi.Controllers
             uow.MembreRepository.Add(membre);
 
             await uow.SaveAsync();
+            await signalrHub.Clients.All.SendAsync("LoadInfos");
             return Ok(membre.Id);
         }
 
@@ -70,6 +80,7 @@ namespace mefApi.Controllers
             }
 
             await uow.SaveAsync();
+            await signalrHub.Clients.All.SendAsync("LoadInfos");
             return StatusCode(201);
         }
 
@@ -95,13 +106,15 @@ namespace mefApi.Controllers
             using(MemoryStream ms = new MemoryStream(bytes)){
                 image = Image.FromStream(ms);
             }
-
-            var imageName = "membre_"+imageDetails.MembreId+"."+imageDetails.Type;
+            int i = 0;
+            var imageName = "membre_"+imageDetails.MembreId+"_"+i+"."+imageDetails.Type;
+            while(membreFromDb.Photo.Equals(imageName)){
+                i += 1;
+                imageName = "membre_"+imageDetails.MembreId+"_"+i+"."+imageDetails.Type;
+            }
 
             image.Save("wwwroot/assets/images/"+imageName, ImageFormat.Png);
 
-            membreFromDb.ModifiePar = GetUserId();
-            membreFromDb.ModifieLe = DateTime.Now;
             membreFromDb.Photo = imageName;
             await uow.SaveAsync();
 
@@ -123,6 +136,7 @@ namespace mefApi.Controllers
             membreFromDb.ModifieLe = DateTime.Now;
             mapper.Map(membreDto, membreFromDb);
             await uow.SaveAsync();
+            await signalrHub.Clients.All.SendAsync("LoadInfos");
             return StatusCode(200);
         }
 
@@ -131,6 +145,7 @@ namespace mefApi.Controllers
         {
             uow.MembreRepository.Delete(id);
             await uow.SaveAsync();
+            await signalrHub.Clients.All.SendAsync("LoadInfos");
             return Ok(id);
         }
 

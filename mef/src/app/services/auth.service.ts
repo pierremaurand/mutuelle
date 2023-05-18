@@ -58,17 +58,17 @@ export class AuthService implements CanActivate {
     if (token && !this.tokenExpired(token)) {
       return true;
     }
-    this.removeItem();
-    this.router.navigate(['login']);
+    this.logout();
     return false;
-  }
-
-  removeItem(): void {
-    localStorage.clear();
   }
 
   private tokenExpired(token: string) {
     const expiry = JSON.parse(atob(token.split('.')[1])).exp;
     return Math.floor(new Date().getTime() / 1000) >= expiry;
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 }

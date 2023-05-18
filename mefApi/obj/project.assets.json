@@ -2689,9 +2689,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mes Projets\\mutuelle\\mefapi\\hspaApi2.csproj",
-      "projectName": "hspaApi2",
-      "projectPath": "D:\\Mes Projets\\mutuelle\\mefapi\\hspaApi2.csproj",
+      "projectUniqueName": "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj",
+      "projectName": "mefapi",
+      "projectPath": "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj",
       "packagesPath": "C:\\Users\\Maurand\\.nuget\\packages\\",
       "outputPath": "D:\\Mes Projets\\mutuelle\\mefapi\\obj\\",
       "projectStyle": "PackageReference",
@@ -2786,7 +2786,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

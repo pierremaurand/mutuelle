@@ -7,6 +7,7 @@ import { InfosCompte } from '../model/infosCompte';
 import { InfosMembre } from '../model/infosMembre';
 import { MvtCompte } from '../model/mvtCompte';
 import { Membre } from '../model/Membre';
+import { CompteList } from '../model/compteList';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +18,12 @@ export class CompteService {
 
   constructor(private http: HttpClient) {}
 
-  getAllMembres(): Observable<Membre[]> {
-    return this.http.get<Membre[]>(this.baseUrl + '/compte/membres');
+  getAllMembres(): Observable<MembreList[]> {
+    return this.http.get<MembreList[]>(this.baseUrl + '/compte/membres');
+  }
+
+  getAllComptes(): Observable<CompteList[]> {
+    return this.http.get<CompteList[]>(this.baseUrl + '/compte/comptes');
   }
 
   getAllMvts(): Observable<MvtCompte[]> {

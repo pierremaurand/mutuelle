@@ -1,13 +1,16 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace mefApi.Controllers
@@ -23,6 +26,57 @@ namespace mefApi.Controllers
             this.configuration = configuration;
             this.mapper = mapper;
             this.uow = uow;
+        }
+
+        [HttpGet("utilisateurs")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAll()
+        {
+            var utilisateurs = await uow.UtilisateurRepository.GetAllAsync();
+            var utilisateursListDto = new List<UtilisateurListDto>();
+            if(utilisateurs is null) {
+                return NotFound();
+            }
+            foreach(var utilisateur in utilisateurs) {
+                var membre = await uow.MembreRepository.FindByIdAsync(utilisateur.MembreId);
+                if(membre is not null) {
+                    var utilisateurListDto = new UtilisateurListDto();
+                    utilisateurListDto.Id = utilisateur.Id;
+                    utilisateurListDto.NomUtilisateur = utilisateur.NomUtilisateur;
+                    utilisateurListDto.Membre = mapper.Map<MembreListDto>(membre);
+                    utilisateursListDto.Add(utilisateurListDto);
+                }
+            }
+            return Ok(utilisateursListDto);
+        }
+
+        [HttpGet("get/{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
+            if(utilisateur is null) {
+                return NotFound();
+            }
+            var utilisateurDto = mapper.Map<UtilisateurDto>(utilisateur);
+            return Ok(utilisateurDto);
+        }
+
+        [HttpGet("getmembre")]
+        public async Task<IActionResult> GetMembre()
+        {
+            var id = GetUserId();
+            var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
+            if(utilisateur is null) {
+                return NotFound();
+            }
+
+            var membre = await uow.MembreRepository.FindByIdAsync(utilisateur.MembreId);
+            if(membre is null) {
+                return NotFound();
+            }
+
+            var membreListDto = mapper.Map<MembreListDto>(membre);
+            return Ok(membreListDto);
         }
 
         [HttpPost("login")]
@@ -57,7 +111,7 @@ namespace mefApi.Controllers
             if(!ModelState.IsValid || utilisateurDto.Password != utilisateurDto.ConfirmPassword) 
                 return BadRequest(ModelState);
             
-            if(await uow.UtilisateurRepository.UtilisateurExists(utilisateurDto.NomUtilisateur)) 
+            if(await uow.UtilisateurRepository.UtilisateurExists(utilisateurDto)) 
                 return BadRequest("Cet utilisateur existe déjà, veillez choisir un autre.");
 
             byte[] passwordHash, passwordKey;
@@ -75,6 +129,25 @@ namespace mefApi.Controllers
             uow.UtilisateurRepository.Add(utilisateur);
             await uow.SaveAsync();
             return StatusCode(201);
+
+        }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(int id,UtilisateurDto utilisateurDto)
+        {   
+            if(id != utilisateurDto.Id) 
+                return BadRequest("Update not allowed");
+
+            var utilisateurFromDb = await uow.UtilisateurRepository.FindByIdAsync(id);
+            
+            if(utilisateurFromDb == null) 
+                return BadRequest("Update not allowed");
+
+            utilisateurFromDb.ModifiePar = GetUserId();
+            utilisateurFromDb.ModifieLe = DateTime.Now;
+            mapper.Map(utilisateurDto, utilisateurFromDb);
+            await uow.SaveAsync();
+            return StatusCode(200);
 
         }
 

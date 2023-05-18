@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using mefApi.Interfaces;
 using mefApi.Models;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace mefApi.Data.Repo
 {
@@ -34,7 +37,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.Gabarits is not null) {
                 var gabarit = await dc.Gabarits
-                .Include(g => g.Operations)
                 .Where(g => g.Id == id)
                 .FirstAsync();
                 if(gabarit is not null) {

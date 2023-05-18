@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using mefApi.Interfaces;
 using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +19,8 @@ namespace mefApi.Data.Repo
 
         public void Add(EcheanceAvance echeanceavance)
         {
-            if(dc.EcheanceAvances is not null && echeanceavance is not null) {
-                dc.EcheanceAvances.AddAsync(echeanceavance);
+            if(dc.EcheancesAvances is not null && echeanceavance is not null) {
+                dc.EcheancesAvances.AddAsync(echeanceavance);
             }
         }
 
@@ -27,8 +31,8 @@ namespace mefApi.Data.Repo
 
         public async Task<EcheanceAvance?> FindByIdAsync(int id)
         {
-            if(dc.EcheanceAvances is not null) {
-                var echeance = await dc.EcheanceAvances
+            if(dc.EcheancesAvances is not null) {
+                var echeance = await dc.EcheancesAvances
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(echeance is not null) {
@@ -41,8 +45,8 @@ namespace mefApi.Data.Repo
 
         public async Task<IEnumerable<EcheanceAvance>?> GetAllAsync()
         {
-            if(dc.EcheanceAvances is not null) {
-                var echeances = await dc.EcheanceAvances
+            if(dc.EcheancesAvances is not null) {
+                var echeances = await dc.EcheancesAvances
                 .ToListAsync();
                 if(echeances is not null) {
                     return echeances;
@@ -54,8 +58,8 @@ namespace mefApi.Data.Repo
 
         public async Task<IEnumerable<EcheanceAvance>?> GetAllByAvanceAsync(int avanceId)
         {
-            if(dc.EcheanceAvances is not null) {
-                var echeances = await dc.EcheanceAvances
+            if(dc.EcheancesAvances is not null) {
+                var echeances = await dc.EcheancesAvances
                 .Where(c => c.AvanceId == avanceId)
                 .ToListAsync();
                 if(echeances is not null) {

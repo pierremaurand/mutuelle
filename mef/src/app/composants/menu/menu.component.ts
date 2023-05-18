@@ -67,6 +67,12 @@ export class MenuComponent implements OnInit {
           icon: 'fab fa-stack-overflow',
           url: 'avances',
         },
+        {
+          id: '32',
+          titre: 'Echéances Avances',
+          icon: 'fab fa-stack-overflow',
+          url: 'echeancesAvances',
+        },
       ],
     },
     {
@@ -80,6 +86,12 @@ export class MenuComponent implements OnInit {
           titre: 'Credits',
           icon: 'fa fa-money-check',
           url: 'credits',
+        },
+        {
+          id: '42',
+          titre: 'Echéances',
+          icon: 'fa fa-money-check',
+          url: 'echeancesCredits',
         },
       ],
     },

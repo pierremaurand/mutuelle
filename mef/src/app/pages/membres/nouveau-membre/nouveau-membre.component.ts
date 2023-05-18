@@ -11,6 +11,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { MembreService } from 'src/app/services/membre.service';
 import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nouveau-membre',
@@ -18,7 +19,7 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouveau-membre.component.scss'],
 })
 export class NouveauMembreComponent implements OnInit {
-  membre: Membre = {};
+  membre: Membre = new Membre();
   sexes: Sexe[] = [];
   postes: Poste[] = [];
   lieuAffectations: LieuAffectation[] = [];
@@ -27,6 +28,7 @@ export class NouveauMembreComponent implements OnInit {
   dateNaissance!: string | null;
   image: string = '';
   uploadImage!: UploadImage;
+  imagesUrl = environment.imagesUrl;
 
   constructor(
     private router: Router,
@@ -34,35 +36,29 @@ export class NouveauMembreComponent implements OnInit {
     private membreService: MembreService,
     private sexeService: SexeService,
     private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
-    private loaderService: LoaderService
+    private lieuAffectationService: LieuAffectationService
   ) {}
 
   ngOnInit(): void {
-    this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-
     this.sexeService.getAll().subscribe((data: any) => {
       this.sexes = data;
-      this.loaderService.hide();
-    });
-
-    this.posteService.getAll().subscribe((data) => {
-      this.postes = data;
-      this.loaderService.hide();
-    });
-
-    this.lieuAffectationService.getAll().subscribe((data) => {
-      this.lieuAffectations = data;
-      this.loaderService.hide();
-    });
-
-    const idMembre = this.activatedRoute.snapshot.params['id'];
-    if (idMembre) {
-      this.membreService.getById(idMembre).subscribe((membre: any) => {
-        this.membre = membre;
-        this.photo = this.membreService.getPhotoUrl(this.membre.photo);
+      this.posteService.getAll().subscribe((data) => {
+        this.postes = data;
+        this.lieuAffectationService.getAll().subscribe((data) => {
+          this.lieuAffectations = data;
+          const idMembre = this.activatedRoute.snapshot.params['id'];
+          if (idMembre) {
+            this.membreService.getById(idMembre).subscribe((membre: any) => {
+              this.membre = membre;
+              this.photo =
+                this.imagesUrl + '/assets/images/' + this.membre.photo;
+            });
+          } else {
+            this.photo = this.imagesUrl + '/assets/images/' + this.membre.photo;
+          }
+        });
       });
-    }
+    });
   }
 
   enregistrerMembre(): void {
@@ -71,7 +67,7 @@ export class NouveauMembreComponent implements OnInit {
       this.uploadImage.image = this.image.substring(22);
     }
 
-    if (this.membre.id) {
+    if (this.membre.id != 0) {
       if (this.uploadImage) {
         this.uploadImage.membreId = this.membre.id;
       }
@@ -80,11 +76,9 @@ export class NouveauMembreComponent implements OnInit {
         .subscribe((value: any) => {
           if (this.uploadImage) {
             this.membreService.addImage(this.uploadImage).subscribe(() => {
-              this.loaderService.hide();
               this.cancel();
             });
           } else {
-            this.loaderService.hide();
             this.cancel();
           }
         });
@@ -93,11 +87,9 @@ export class NouveauMembreComponent implements OnInit {
         if (this.uploadImage) {
           this.uploadImage.membreId = id;
           this.membreService.addImage(this.uploadImage).subscribe(() => {
-            this.loaderService.hide();
             this.cancel();
           });
         } else {
-          this.loaderService.hide();
           this.cancel();
         }
       });
@@ -108,8 +100,16 @@ export class NouveauMembreComponent implements OnInit {
     this.router.navigate(['/membres']);
   }
 
-  changeImage(): void {
-    alert("Chargement de l'image");
+  sexeChange(): void {
+    if (this.membre.photo.includes('default')) {
+      var sexe = this.sexes.find((s) => s.id == this.membre.sexeId);
+      if (sexe) {
+        this.membre.photo = sexe.nom.toLowerCase().includes('masculin')
+          ? 'default_man.jpg'
+          : 'default_woman.jpg';
+      }
+    }
+    this.photo = this.imagesUrl + '/assets/images/' + this.membre.photo;
   }
 
   photoChange(photo: string): void {

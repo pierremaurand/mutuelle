@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
@@ -5,9 +6,8 @@ namespace mefApi.Models
     public class Gabarit : BaseEntity
     {
         [Required]
-        public string? Libelle { get; set; }
+        public string Libelle { get; set; } = string.Empty;
         [Required]
-        public TypeMouvement? TypeMouvement { get; set; }
-        public ICollection<Operation> Operations { get; set; } = new List<Operation>();
+        public TypeMouvement TypeMouvement { get; set; } 
     }
 }

@@ -7,6 +7,11 @@ using mefApi.Data;
 using mefApi.Helpers;
 using mefApi.Interfaces;
 using mefApi.Middlewares;
+using mefApi.HubConfig;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +36,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddSignalR();
 
 var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
 var key = new SymmetricSecurityKey(Encoding.UTF8
@@ -66,5 +72,6 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.MapControllers();
+// app.MapHub<SignalrServer>("/signalrServer");
 
 app.Run();

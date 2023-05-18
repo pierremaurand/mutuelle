@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using mefApi.Interfaces;
 using mefApi.Models;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace mefApi.Data.Repo
 {
@@ -30,10 +33,13 @@ namespace mefApi.Data.Repo
             }
         }
 
-        public async Task<Membre?> FindByIdAsync(int id)
+        public async Task<Membre?> FindByIdAsync(int? id)
         {
-            if(dc.Membres is not null) {
+            if(dc.Membres is not null && id is not null) {
                 var membre = await dc.Membres
+                .Include(m => m.Sexe)
+                .Include(m => m.Poste)
+                .Include(m => m.LieuAffectation)
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(membre is not null) {
@@ -44,17 +50,15 @@ namespace mefApi.Data.Repo
             return null;
         }
 
-        public async Task<IEnumerable<Membre>?> GetAllAsync()
+        public async Task<IEnumerable<Membre>> GetAllAsync()
         {
-            if(dc.Membres is not null) {
-                var membres = await dc.Membres
-                .ToListAsync();
-                if(membres is not null) {
-                    return membres;
-                }
-            }
-
-            return null;
+            var membres = await dc.Membres
+            .Include(m => m.Sexe)
+            .Include(m => m.Poste)
+            .Include(m => m.LieuAffectation)
+            .ToListAsync();
+            
+            return membres;
         }
 
         public async Task<IEnumerable<Membre>?> GetByEtatAsync(bool estActif)

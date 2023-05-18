@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace mefApi.Dtos
 {
     public class InfosCotisationDto
     {
-        public int Id; 
+        public int Id { get; set; } = 0; 
         public ICollection<CotisationDto> Cotisations { get; set; } = new List<CotisationDto>();
     }
 }

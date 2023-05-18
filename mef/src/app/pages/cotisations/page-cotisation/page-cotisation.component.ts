@@ -7,6 +7,7 @@ import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
 import { CotisationService } from 'src/app/services/cotisation.service';
 import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
+import { MembreService } from 'src/app/services/membre.service';
 import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
@@ -24,6 +25,7 @@ export class PageCotisationComponent implements OnInit {
 
   constructor(
     private cotisationService: CotisationService,
+    private membreService: MembreService,
     private sexeService: SexeService,
     private posteService: PosteService,
     private lieuAffectationService: LieuAffectationService,
@@ -58,6 +60,10 @@ export class PageCotisationComponent implements OnInit {
     this.router.navigate(['/nouvellecotisation']);
   }
 
+  navigate(id: number): void {
+    this.router.navigate(['/nouvellecotisation/' + id]);
+  }
+
   getSexe(sexeId?: number): Sexe | undefined {
     return this.sexes.find(({ id }) => id === sexeId);
   }
@@ -70,7 +76,7 @@ export class PageCotisationComponent implements OnInit {
     return this.lieuAffectations.find(({ id }) => id === lieuId);
   }
 
-  getSolde(id?: number): number | undefined {
+  getSolde(id?: number): number {
     let solde = 0;
     this.cotisations
       .filter(({ membreId }) => membreId == id)

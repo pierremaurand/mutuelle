@@ -4,6 +4,7 @@ import { Credit } from 'src/app/model/credit';
 import { EcheanceCredit } from 'src/app/model/echeanceCredit';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
+import { MembreList } from 'src/app/model/membreList';
 import { Mois } from 'src/app/model/mois';
 import { MvtCompte } from 'src/app/model/mvtCompte';
 import { Poste } from 'src/app/model/poste';
@@ -21,8 +22,8 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouveau-credit.component.scss'],
 })
 export class NouveauCreditComponent implements OnInit {
-  membres: Membre[] = [];
-  membre?: Membre;
+  membres: MembreList[] = [];
+  membre: MembreList = new MembreList();
   credit: Credit = new Credit();
   creditId?: number;
   photo: string = '';
@@ -52,7 +53,7 @@ export class NouveauCreditComponent implements OnInit {
     this.cotisationService.getAllMois().subscribe((mois: Mois[]) => {
       this.mois = mois;
       this.creditService.getAllMembres().subscribe((membres: Membre[]) => {
-        this.membres = membres;
+        // this.membres = membres;
         this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
           this.sexes = sexes;
           this.posteService.getAll().subscribe((postes: Poste[]) => {
@@ -136,14 +137,14 @@ export class NouveauCreditComponent implements OnInit {
   }
 
   changeMembre(): void {
-    this.membre = this.membres.find(({ id }) => id == this.credit.membreId);
+    // this.membre = this.membres.find(({ id }) => id == this.credit.membreId);
     if (this.membre) {
       this.photo = this.creditService.getPhotoUrl(this.membre.photo);
-      this.sexe = this.sexes.find(({ id }) => id == this.membre?.sexeId);
-      this.poste = this.postes.find(({ id }) => id == this.membre?.posteId);
-      this.lieuAffectation = this.lieuAffectations.find(
-        ({ id }) => id == this.membre?.lieuAffectationId
-      );
+      // this.sexe = this.sexes.find(({ id }) => id == this.membre?.sexeId);
+      // this.poste = this.postes.find(({ id }) => id == this.membre?.posteId);
+      // this.lieuAffectation = this.lieuAffectations.find(
+      //   ({ id }) => id == this.membre?.lieuAffectationId
+      // );
     }
   }
 

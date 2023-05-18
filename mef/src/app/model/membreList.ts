@@ -1,15 +1,9 @@
 export class MembreList {
-  id?: number;
-  nom?: string;
-  estActif?: boolean;
-  sexe?: string;
-  poste?: string;
-  lieuAffectation?: string;
-  photo?: string;
-  mvtComptes?: number;
-  cotisations?: number;
-  avances?: number;
-  credits?: number;
-  contact?: string;
-  email?: string;
+  id: number = 0;
+  nom: string = '';
+  estActif: boolean = false;
+  sexe: string = '';
+  poste: string = '';
+  lieu: string = '';
+  photo: string = 'default_man.jpg';
 }

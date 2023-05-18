@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
@@ -5,9 +6,8 @@ namespace mefApi.Models
     public class CompteComptable : BaseEntity
     {
         [Required]
-        public string? Compte { get; set; }
+        public string Compte { get; set; } = string.Empty;
         [Required]
-        public string? Libelle { get; set; }
-        public ICollection<DetailEcritureComptable> DetailEcritureComptables { get; set; } = new List<DetailEcritureComptable>();
+        public string Libelle { get; set; } = string.Empty;
     }
 }

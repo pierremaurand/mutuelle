@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
@@ -6,15 +7,15 @@ namespace mefApi.Models
     {
         public int Id { get; set; }
         [Required]
-        public int MembreId { get; set; }
+        public int MembreId { get; set; } = 0;
         public Membre? Membre { get; set; }
         [Required]
         public int MoisId { get; set; }
         public Mois? Mois { get; set; }
         [Required]
-        public int? Annee { get; set; }
+        public int Annee { get; set; } = 0;
         [Required]
-        public decimal Montant { get; set; }
-        public ICollection<MvtCompte> MvtComptes { get; set; } = new List<MvtCompte>();
+        public decimal Montant { get; set; } = 0;
+        public bool EstValide { get; set; } = true;
     }
 }

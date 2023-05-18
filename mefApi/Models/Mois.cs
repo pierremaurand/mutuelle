@@ -2,12 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Mois
+    public class Mois : BaseEntity
     {
-        public int? Id { get; set; }
         [MaxLength(2)]
-        public string? Valeur { get; set; }
+        public string Valeur { get; set; } = string.Empty;
         [MaxLength(10)]
-        public string? Libelle { get; set; }
+        public string Libelle { get; set; } = string.Empty;
     }
 }

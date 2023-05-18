@@ -26,41 +26,15 @@ export class PageAvanceComponent implements OnInit {
   lieuAffectations: LieuAffectation[] = [];
   echeances: EcheanceAvance[] = [];
 
-  constructor(
-    private avanceService: AvanceService,
-    private membreService: MembreService,
-    private sexeService: SexeService,
-    private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
-    private router: Router
-  ) {}
+  constructor(private avanceService: AvanceService, private router: Router) {}
 
   ngOnInit(): void {
     this.avanceService
       .getAllEcheances()
       .subscribe((echeances: EcheanceAvance[]) => {
         this.echeances = echeances;
-        this.membreService.getAll().subscribe((membres: Membre[]) => {
-          this.membres = membres;
-          this.avanceService.getAll().subscribe((avances: Avance[]) => {
-            this.avances = avances;
-            this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
-              this.sexes = sexes;
-              this.posteService.getAll().subscribe((postes: Poste[]) => {
-                this.postes = postes;
-                this.lieuAffectationService
-                  .getAll()
-                  .subscribe((lieuAffectations: LieuAffectation[]) => {
-                    this.lieuAffectations = lieuAffectations;
-                    this.avanceService
-                      .getAll()
-                      .subscribe((avances: Avance[]) => {
-                        this.avances = avances;
-                      });
-                  });
-              });
-            });
-          });
+        this.avanceService.getAll().subscribe((avances: Avance[]) => {
+          this.avances = avances;
         });
       });
   }
@@ -69,29 +43,12 @@ export class PageAvanceComponent implements OnInit {
     this.router.navigate(['/nouvelleavance']);
   }
 
-  getMembre(membreId?: number): Membre | undefined {
-    return this.membres.find(({ id }) => id === membreId);
+  navigate(id: number): void {
+    this.router.navigate(['/nouvelleavance/' + id]);
   }
 
-  getSexe(sexeId?: number): Sexe | undefined {
-    return this.sexes.find(({ id }) => id === sexeId);
-  }
-
-  getPoste(posteId?: number): Poste | undefined {
-    return this.postes.find(({ id }) => id === posteId);
-  }
-
-  getLieuAffectation(lieuId?: number): LieuAffectation | undefined {
-    return this.lieuAffectations.find(({ id }) => id === lieuId);
-  }
-
-  getAvance(avanceId?: number): Avance | undefined {
-    return this.avances.find(({ id }) => id === avanceId);
-  }
-
-  getSolde(id?: number): number | undefined {
-    const avance = this.getAvance(id);
-    let solde = avance?.montant;
+  getSolde(avance: Avance): number {
+    let solde = avance?.montant ?? 0;
     this.echeances
       .filter(({ estPaye, avanceId }) => estPaye && avanceId == avance?.id)
       .forEach((e) => {

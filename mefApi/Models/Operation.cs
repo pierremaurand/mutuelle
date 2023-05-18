@@ -2,14 +2,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Operation
+    public class Operation : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public int CompteComptableId { get; set; }
+        public CompteComptable? CompteComptable { get; set; }
         [Required]
-        public TypeOperation TypeOperation { get; set;}
+        public TypeOperation TypeOperation { get; set;} = 0;
         [Required]
-        public decimal Taux { get; set; }
+        public decimal Taux { get; set; } = 0;
     }
 }

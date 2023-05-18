@@ -8,12 +8,12 @@ namespace mefApi.Dtos
 {
     public class EcritureComptableDto
     {
-        public int? Id { get; set; }
+        public int Id { get; set; } = 0;
         [Required(ErrorMessage ="Le libellé est obligatoire")]
-        public string? Libelle { get; set; }
+        public string Libelle { get; set; } = string.Empty;
         [Required(ErrorMessage ="Le montant est obligatoire")]
-        public decimal? Montant { get; set; }
-        public int? MvtCompteId { get; set; }
-        public bool? EstApplique { get; set; }
+        public decimal Montant { get; set; } = 0;
+        public int MvtCompteId { get; set; } = 0;
+        public bool EstApplique { get; set; } = false;
     }
 }

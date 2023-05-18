@@ -1,21 +1,17 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Avance 
+    public class Avance : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
-        public int? MembreId { get; set; }
+        public int MembreId { get; set; } = 0;
         public Membre? Membre { get; set; }
         [Required]
-        public decimal? Montant { get; set; }
-        public int? NombreEcheances { get; set; }
-        [Required]
-        public string? DateEnregistrement { get; set; }
-        public string? DateDeblocage { get; set; }
-        public string? DateSolde { get; set; }
-        public ICollection<EcheanceAvance> EcheanceAvances { get; set; } = new List<EcheanceAvance>();
-        public ICollection<MvtCompte> MvtComptes { get; set; } = new List<MvtCompte>();
+        public decimal Montant { get; set; } = 0;
+        public int NombreEcheances { get; set; } = 0;
+        public bool? Avis1 { get; set; } = false;
+        public bool? Avis2 { get; set; } = false;
     }
 }

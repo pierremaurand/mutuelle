@@ -1,26 +1,46 @@
-<div class="col">
-  <div class="row m-3">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
     <div class="col-md-8">
-      <h1>Liste des cotisation par membre</h1>
+      <h1 class="mb-2 text-gray-800">Les cotisations des membres</h1>
     </div>
     <div class="col-md-4">
       <app-bouton-action (clickEvent)="nouveau()"></app-bouton-action>
     </div>
   </div>
-  <div class="row m-3 liste">
-    <div class="col-md-3 mb-3" *ngFor="let membre of membres">
-      <app-detail-cotisation
-        [membre]="membre"
-        [sexe]="getSexe(membre.sexeId)"
-        [poste]="getPoste(membre.posteId)"
-        [lieuAffectation]="getLieuAffectation(membre.lieuAffectationId)"
-        [solde]="getSolde(membre.id)"
-      ></app-detail-cotisation>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+        Liste des cotisations par membre
+      </h6>
     </div>
-  </div>
-  <div class="row m-3">
-    <div class="col-md-12 text-center">
-      <app-pagination></app-pagination>
+    <div class="card-body">
+      <div class="list-group">
+        <a
+          href="javascript:void(0);"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+          *ngFor="let membre of membres | sort : ['nom', 'asc']"
+          [ngClass]="{
+            'border-left-success text-success': membre.estActif,
+            'border-left-danger text-danger': !membre.estActif
+          }"
+        >
+          <div class="row" (click)="navigate(membre.id)">
+            <div class="col-12">
+              <app-details-membre
+                [membre]="membre"
+                [solde]="getSolde(membre.id)"
+                [afficheSolde]="true"
+              ></app-details-membre>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
+<!-- /.container-fluid -->

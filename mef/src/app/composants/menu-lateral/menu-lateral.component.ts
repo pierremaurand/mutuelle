@@ -67,6 +67,12 @@ export class MenuLateralComponent implements OnInit {
           icon: 'fab fa-fw fa-stack-overflow',
           url: 'avances',
         },
+        {
+          id: '32',
+          titre: 'Echéances Avances',
+          icon: 'fa fa-fw fa-money-check',
+          url: 'echeancesAvances',
+        },
       ],
     },
     {
@@ -81,15 +87,21 @@ export class MenuLateralComponent implements OnInit {
           icon: 'fa fa-fw fa-money-check',
           url: 'credits',
         },
+        {
+          id: '42',
+          titre: 'Echéances Credits',
+          icon: 'fa fa-fw fa-money-check',
+          url: 'echeancesCredits',
+        },
       ],
     },
-    {
-      id: '5',
-      titre: 'Comptabilité',
-      icon: 'fa fa-fw fa-money-check',
-      url: '',
-      sousMenu: [],
-    },
+    // {
+    //   id: '5',
+    //   titre: 'Comptabilité',
+    //   icon: 'fa fa-fw fa-money-check',
+    //   url: '',
+    //   sousMenu: [],
+    // },
     {
       id: '6',
       titre: 'Paramétrages',

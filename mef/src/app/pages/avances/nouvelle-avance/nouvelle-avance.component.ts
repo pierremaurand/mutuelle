@@ -4,6 +4,7 @@ import { Avance } from 'src/app/model/avance';
 import { EcheanceAvance } from 'src/app/model/echeanceAvance';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
+import { MembreList } from 'src/app/model/membreList';
 import { Mois } from 'src/app/model/mois';
 import { MvtCompte } from 'src/app/model/mvtCompte';
 import { Poste } from 'src/app/model/poste';
@@ -21,17 +22,10 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouvelle-avance.component.scss'],
 })
 export class NouvelleAvanceComponent implements OnInit {
-  membres: Membre[] = [];
-  membre?: Membre;
+  membres: MembreList[] = [];
+  membre: MembreList = new MembreList();
   avance: Avance = new Avance();
-  avanceId?: number;
-  photo: string = '';
-  sexes: Sexe[] = [];
-  sexe?: Sexe;
-  postes: Poste[] = [];
-  poste?: Poste;
-  lieuAffectations: LieuAffectation[] = [];
-  lieuAffectation?: LieuAffectation;
+  avanceId: number = 0;
   echeancier: EcheanceAvance[] = [];
   mois: Mois[] = [];
   mvtComptes: MvtCompte[] = [];
@@ -41,44 +35,26 @@ export class NouvelleAvanceComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private avanceService: AvanceService,
-    private sexeService: SexeService,
-    private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
     private cotisationService: CotisationService
   ) {}
 
   ngOnInit(): void {
-    this.photo = this.avanceService.getPhotoUrl();
     this.cotisationService.getAllMois().subscribe((mois: Mois[]) => {
       this.mois = mois;
-      this.avanceService.getAllMembres().subscribe((membres: Membre[]) => {
-        this.membres = membres;
-        this.sexeService.getAll().subscribe((sexes: Sexe[]) => {
-          this.sexes = sexes;
-          this.posteService.getAll().subscribe((postes: Poste[]) => {
-            this.postes = postes;
-            this.lieuAffectationService
-              .getAll()
-              .subscribe((lieuAffectations: LieuAffectation[]) => {
-                this.lieuAffectations = lieuAffectations;
-                this.avanceId = this.activatedRoute.snapshot.params['id'];
-                if (this.avanceId) {
-                  this.avanceService
-                    .getById(this.avanceId)
-                    .subscribe((avance: Avance) => {
-                      this.avance = avance;
-                      this.changeMembre();
-                    });
-                  this.avanceService
-                    .getAllEcheancesAvance(this.avanceId)
-                    .subscribe((echeancier: EcheanceAvance[]) => {
-                      this.echeancier = echeancier;
-                    });
-                }
-              });
-          });
+      this.avanceId = this.activatedRoute.snapshot.params['id'];
+      this.avanceService
+        .getAllEcheancesAvance(this.avanceId)
+        .subscribe((echeancier: EcheanceAvance[]) => {
+          this.echeancier = echeancier;
         });
-      });
+      if (this.avanceId) {
+        this.avanceService
+          .getById(this.avanceId)
+          .subscribe((avance: Avance) => {
+            this.avance = avance;
+            this.changeMembre();
+          });
+      }
     });
   }
 
@@ -133,15 +109,15 @@ export class NouvelleAvanceComponent implements OnInit {
   }
 
   changeMembre(): void {
-    this.membre = this.membres.find(({ id }) => id == this.avance.membreId);
-    if (this.membre) {
-      this.photo = this.avanceService.getPhotoUrl(this.membre.photo);
-      this.sexe = this.sexes.find(({ id }) => id == this.membre?.sexeId);
-      this.poste = this.postes.find(({ id }) => id == this.membre?.posteId);
-      this.lieuAffectation = this.lieuAffectations.find(
-        ({ id }) => id == this.membre?.lieuAffectationId
-      );
-    }
+    // this.membre = this.membres.find(({ id }) => id == this.avance.membreId);
+    // if (this.membre) {
+    //   this.photo = this.avanceService.getPhotoUrl(this.membre.photo);
+    //   this.sexe = this.sexes.find(({ id }) => id == this.membre?.sexeId);
+    //   this.poste = this.postes.find(({ id }) => id == this.membre?.posteId);
+    //   this.lieuAffectation = this.lieuAffectations.find(
+    //     ({ id }) => id == this.membre?.lieuAffectationId
+    //   );
+    // }
   }
 
   genererEcheancier(): void {

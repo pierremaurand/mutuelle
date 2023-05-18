@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
@@ -31,11 +32,52 @@ namespace mefApi.Data.Repo
             }  
         }
 
-        public async Task<bool> UtilisateurExists(string nomUtilisateur)
+        public async Task<bool> UtilisateurExists(UtilisateurDto user)
         {
             if(dc.Utilisateurs is not null)
-                return await dc.Utilisateurs.AnyAsync(x => x.NomUtilisateur == nomUtilisateur);
+                return await dc.Utilisateurs.AnyAsync(x => x.NomUtilisateur == user.NomUtilisateur || x.MembreId == user.MembreId);
             return false;
+        }
+
+        public async Task<Utilisateur?> FindByIdAsync(int id)
+        {
+            if(dc.Utilisateurs is not null) {
+                var utilisateur = await dc.Utilisateurs
+                .Where(s => s.Id == id)
+                .FirstAsync();
+                if(utilisateur is not null) {
+                    return utilisateur;
+                }
+            }
+
+            return null;
+        }
+
+
+        public async Task<Utilisateur?> FindByIdAsync(string userName)
+        {
+            if(dc.Utilisateurs is not null) {
+                var utilisateur = await dc.Utilisateurs
+                .Where(s => s.NomUtilisateur == userName)
+                .FirstAsync();
+                if(utilisateur is not null) {
+                    return utilisateur;
+                }
+            }
+
+            return null;
+        }
+
+        public async Task<IEnumerable<Utilisateur>?> GetAllAsync()
+        {
+            if(dc.Utilisateurs is not null) {
+                var utilisateurs = await dc.Utilisateurs
+                .ToListAsync();
+                if(utilisateurs is not null) {
+                    return utilisateurs;
+                }
+            }
+            return null;
         }
     }
 }

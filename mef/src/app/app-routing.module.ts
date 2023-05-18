@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { PageLoginComponent } from './pages/page-login/page-login.component';
+import { PageLoginComponent } from './pages/utilisateur/page-login/page-login.component';
 import { PageMembreComponent } from './pages/membres/page-membre/page-membre.component';
 import { NouveauMembreComponent } from './pages/membres/nouveau-membre/nouveau-membre.component';
 import { PageCompteComponent } from './pages/compte/page-compte/page-compte.component';
@@ -10,7 +10,7 @@ import { PageCreditComponent } from './pages/credits/page-credit/page-credit.com
 import { PageCotisationComponent } from './pages/cotisations/page-cotisation/page-cotisation.component';
 import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
 import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
-import { PageUtilisateurComponent } from './pages/page-utilisateur/page-utilisateur.component';
+import { PageUtilisateurComponent } from './pages/utilisateur/page-utilisateur/page-utilisateur.component';
 import { PageCompteComptableComponent } from './pages/compte-comptable/page-compte-comptable/page-compte-comptable.component';
 import { PageGabaritComponent } from './pages/gabarit/page-gabarit/page-gabarit.component';
 import { PageSexeComponent } from './pages/sexe/page-sexe/page-sexe.component';
@@ -22,7 +22,6 @@ import { NouveauGabaritComponent } from './pages/gabarit/nouveau-gabarit/nouveau
 import { NouveauCompteComponent } from './pages/compte/nouveau-compte/nouveau-compte.component';
 import { NouveauLieuAffectationComponent } from './pages/affectation/nouveau-lieu-affectation/nouveau-lieu-affectation.component';
 import { PageLieuAffectationComponent } from './pages/affectation/page-lieu-affectation/page-lieu-affectation.component';
-import { ProfilMembreComponent } from './pages/membres/profil-membre/profil-membre.component';
 import { NouvelleCotisationComponent } from './pages/cotisations/nouvelle-cotisation/nouvelle-cotisation.component';
 import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
 import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
@@ -30,6 +29,8 @@ import { AuthService } from './services/auth.service';
 import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
 import { StatistiquesComponent } from './pages/accueil/statistiques/statistiques.component';
 import { VueEnsembleComponent } from './pages/accueil/vue-ensemble/vue-ensemble.component';
+import { NouvelUtilisateurComponent } from './pages/utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
+import { PageProfileComponent } from './pages/utilisateur/page-profile/page-profile.component';
 
 const routes: Routes = [
   {
@@ -64,11 +65,6 @@ const routes: Routes = [
       {
         path: 'nouveaumembre/:id',
         component: NouveauMembreComponent,
-        canActivate: [AuthService],
-      },
-      {
-        path: 'detailmembre/:id',
-        component: ProfilMembreComponent,
         canActivate: [AuthService],
       },
       {
@@ -117,6 +113,11 @@ const routes: Routes = [
         canActivate: [AuthService],
       },
       {
+        path: 'echeancesAvances',
+        component: NouvelleAvanceComponent,
+        canActivate: [AuthService],
+      },
+      {
         path: 'credits',
         component: PageCreditComponent,
         canActivate: [AuthService],
@@ -128,6 +129,11 @@ const routes: Routes = [
       },
       {
         path: 'nouveaucredit/:id',
+        component: NouveauCreditComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'echeancesCredits',
         component: NouveauCreditComponent,
         canActivate: [AuthService],
       },
@@ -144,6 +150,21 @@ const routes: Routes = [
       {
         path: 'utilisateurs',
         component: PageUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelutilisateur',
+        component: NouvelUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelutilisateur/:id',
+        component: NouvelUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'profile',
+        component: PageProfileComponent,
         canActivate: [AuthService],
       },
       {

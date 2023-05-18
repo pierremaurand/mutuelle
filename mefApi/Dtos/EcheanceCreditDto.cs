@@ -8,17 +8,17 @@ namespace mefApi.Dtos
 {
     public class EcheanceCreditDto
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
         [Required]
-        public int? CreditId { get; set; }
+        public int CreditId { get; set; } = 0;
         [Required]
-        public int? MoisId { get; set; }
+        public int MoisId { get; set; } = 0;
         [Required]
-        public int? Annee { get; set; }
+        public int Annee { get; set; } = 0;
         [Required]
-        public decimal? MontantCapital { get; set; }
+        public decimal MontantCapital { get; set; } = 0;
         [Required]
-        public decimal? MontantInteret { get; set; }
-        public bool? EstPaye { get; set; }
+        public decimal MontantInteret { get; set; } = 0;
+        public bool EstPaye { get; set; } = false;
     }
 }

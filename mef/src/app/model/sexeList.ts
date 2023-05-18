@@ -1,4 +1,5 @@
 export class SexeList {
-  id?: number;
-  nom?: string;
+  id: number = 0;
+  nom: string = '';
+  symbole: string = '';
 }
