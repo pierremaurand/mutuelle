@@ -3,12 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -208,13 +202,7 @@ import { PageProfileComponent } from './pages/utilisateur/page-profile/page-prof
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ButtonsModule.forRoot(),
-    BsDatepickerModule.forRoot(),
-    NgxGalleryModule,
     ImageCropperModule,
-    NgxPaginationModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
