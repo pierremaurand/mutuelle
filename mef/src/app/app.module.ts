@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -203,9 +200,6 @@ import { PageProfileComponent } from './pages/utilisateur/page-profile/page-prof
     HttpClientModule,
     BrowserAnimationsModule,
     ImageCropperModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
   ],
 })
 export class AppModule {}
