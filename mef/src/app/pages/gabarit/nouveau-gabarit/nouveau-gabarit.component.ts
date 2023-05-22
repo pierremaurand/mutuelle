@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CompteComptable } from 'src/app/model/comptecomptable';
 import { Gabarit } from 'src/app/model/gabarit';
@@ -19,35 +19,11 @@ export class NouveauGabaritComponent implements OnInit {
   gabarit: Gabarit = new Gabarit();
   operation: Operation = new Operation();
   comptes: CompteComptable[] = [];
+  operations: Operation[] = [];
   photo: string = '';
   SortbyParam = 'typeOperation';
   SortDirection = 'asc';
-  typeMouvements: any[] = [
-    {
-      label: 'Cotisation',
-      value: TypeMouvement.Cotisation,
-    },
-    {
-      label: 'Déboursement avance',
-      value: TypeMouvement.DeboursementAvance,
-    },
-    {
-      label: 'Déboursement crédit',
-      value: TypeMouvement.DeboursementCredit,
-    },
-    {
-      label: 'Paiement échéance crédit',
-      value: TypeMouvement.PaiementEcheanceCredit,
-    },
-    {
-      label: 'Paiement échéance avance',
-      value: TypeMouvement.PaiementEcheanceAvance,
-    },
-    {
-      label: 'Solde tout comptes',
-      value: TypeMouvement.SoldeToutComptes,
-    },
-  ];
+  @ViewChild('closeModal') modalClose: any;
 
   constructor(
     private router: Router,
@@ -71,7 +47,7 @@ export class NouveauGabaritComponent implements OnInit {
 
   enregistrerGabarit(): void {
     if (this.checkGabaritInfo()) {
-      if (this.gabaritId) {
+      if (this.gabarit.id != 0 && this.gabaritId) {
         this.gabaritService
           .update(this.gabarit, this.gabaritId)
           .subscribe((value: any) => {
@@ -79,30 +55,31 @@ export class NouveauGabaritComponent implements OnInit {
           });
       } else {
         this.gabaritService.add(this.gabarit).subscribe((id: number) => {
-          this.cancel();
+          this.operationService.add(id, this.operations).subscribe(() => {
+            this.cancel();
+          });
         });
       }
     }
   }
 
   checkGabaritInfo(): boolean {
-    if (
-      !this.gabarit.operations ||
-      this.gabarit.operations.length === 0 ||
-      this.gabarit.libelle == ''
-    ) {
+    if (this.operations.length === 0 || this.gabarit.libelle == '') {
+      alert('Les informations ne sont pas valides!');
       return false;
     }
 
-    let equilibre = 0;
-    this.gabarit.operations.map((operation) => {
+    let credit = 100;
+    let debit = 100;
+    this.operations.map((operation) => {
       if (operation.typeOperation == 0) {
-        equilibre += operation.taux;
+        debit -= operation.taux;
       } else {
-        equilibre -= operation.taux;
+        credit -= operation.taux;
       }
     });
-    if (equilibre != 0) {
+    if (debit != 0 || credit != 0) {
+      alert('Ecriture non équilibré!');
       return false;
     }
 
@@ -110,10 +87,6 @@ export class NouveauGabaritComponent implements OnInit {
   }
 
   checkOperationInfos(): boolean {
-    if (this.gabarit.libelle == '') {
-      return false;
-    }
-
     if (this.operation.compteComptableId == 0) {
       return false;
     }
@@ -127,18 +100,15 @@ export class NouveauGabaritComponent implements OnInit {
 
   ajouterOperation(): void {
     if (this.checkOperationInfos()) {
-      if (this.gabarit.operations) {
-        this.gabarit.operations.push(this.operation);
-        this.operation = new Operation();
+      if (this.operations) {
+        this.operations.push(this.operation);
+        this.resetForm();
       }
     }
   }
 
-  supprimerOperation(operation: Operation): void {
-    if (this.gabarit.operations) {
-      const position = this.gabarit.operations.indexOf(operation);
-      this.gabarit.operations.splice(position, 1);
-    }
+  resetForm(): void {
+    this.operation = new Operation();
   }
 
   cancel(): void {
@@ -171,7 +141,16 @@ export class NouveauGabaritComponent implements OnInit {
         .getById(this.gabaritId)
         .subscribe((gabarit: Gabarit) => {
           this.gabarit = gabarit;
+          this.operationService
+            .getAll(this.gabaritId)
+            .subscribe((operations: Operation[]) => {
+              this.operations = operations;
+            });
         });
     }
+  }
+
+  activer(): void {
+    this.gabarit.estActif = !this.gabarit.estActif;
   }
 }

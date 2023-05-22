@@ -11,6 +11,8 @@ import { LoaderService } from 'src/app/services/loader.service';
 })
 export class NouveauLieuAffectationComponent implements OnInit {
   lieuaffectation: LieuAffectation = new LieuAffectation();
+  photo: string = '';
+  idLieuAffectation: number = 0;
 
   constructor(
     private router: Router,
@@ -20,10 +22,11 @@ export class NouveauLieuAffectationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const idLieuAffectation = this.activatedRoute.snapshot.params['id'];
-    if (idLieuAffectation) {
+    this.idLieuAffectation = this.activatedRoute.snapshot.params['id'];
+    this.photo = this.lieuAffectationService.getImageUrl();
+    if (this.idLieuAffectation) {
       this.lieuAffectationService
-        .getById(idLieuAffectation)
+        .getById(this.idLieuAffectation)
         .subscribe((lieuaffectation: LieuAffectation) => {
           this.lieuaffectation = lieuaffectation;
         });

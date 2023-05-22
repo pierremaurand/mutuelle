@@ -7,11 +7,11 @@ namespace mefApi.Models
 {
     public class AvanceDebourse : BaseEntity
     {
-        public int AvanceId { get; set; }
+        public int AvanceId { get; set; } = 0;
         public Avance? Avance { get; set; }
-        public decimal MontantDebourse { get; set; }
-        public int NombreEcheances { get; set; } 
-        public string DateDebut { get; set; }
-        public string DateFin { get; set; }
+        public decimal MontantDebourse { get; set; } = 0;
+        public int NombreEcheances { get; set; } = 0;
+        public string DateDebut { get; set; } = string.Empty;
+        public string DateFin { get; set; } = string.Empty;
     }
 }

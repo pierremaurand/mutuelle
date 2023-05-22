@@ -15,12 +15,16 @@ export class MembreService {
   [x: string]: any;
   baseUrl = environment.baseUrl;
   imagesUrl = environment.imagesUrl;
-  public static membres: MembreList[] = [];
+  public membres: MembreList[] = [];
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<MembreList[]> {
     return this.http.get<MembreList[]>(this.baseUrl + '/membre/membres');
+  }
+
+  getMembreList(id: number): MembreList {
+    return this.membres.find((m) => m.id == id) ?? new MembreList();
   }
 
   addMvtCompte(id: number, mvtComptes: MvtCompte[]): Observable<any> {

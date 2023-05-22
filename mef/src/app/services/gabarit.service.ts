@@ -34,6 +34,10 @@ export class GabaritService {
     );
   }
 
+  getAllActive(): Observable<Gabarit[]> {
+    return this.http.get<Gabarit[]>(this.baseUrl + '/gabarit/active');
+  }
+
   add(gabarit: Gabarit): Observable<number> {
     return this.http.post<number>(this.baseUrl + '/gabarit/add', gabarit);
   }

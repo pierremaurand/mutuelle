@@ -22,7 +22,7 @@
           href="javascript:void(0);"
           class="list-group-item list-group-item-action"
           aria-current="true"
-          *ngFor="let compte of comptes | sort : ['membre.nom', 'asc']"
+          *ngFor="let compte of comptes | sort : ['nom', 'asc']"
           [ngClass]="{
             'border-left-success text-success': compte.membre.estActif,
             'border-left-danger text-danger': !compte.membre.estActif
@@ -33,6 +33,7 @@
               <app-details-membre
                 [membre]="compte.membre"
                 [afficheSolde]="true"
+                [solde]="compte.solde"
               ></app-details-membre>
             </div>
           </div>

@@ -10,9 +10,8 @@ import { LieuAffectationService } from 'src/app/services/lieu-affectation.servic
 })
 export class DetailLieuAffectationComponent implements OnInit {
   @Input()
-  lieuaffectation?: LieuAffectation;
+  lieuaffectation: LieuAffectation = new LieuAffectation();
   photo: string = '';
-  @Input() hideIcons: boolean = false;
 
   constructor(
     private router: Router,

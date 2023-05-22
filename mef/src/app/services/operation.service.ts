@@ -12,43 +12,16 @@ export class OperationService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Operation[]> {
-    return this.http.get<Operation[]>(this.baseUrl + '/operation/operations');
-  }
-
-  getByGabarit(id?: number): Observable<Operation[]> {
+  getAll(id?: number): Observable<Operation[]> {
     return this.http.get<Operation[]>(
       this.baseUrl + '/operation/operations/' + id?.toString()
     );
   }
 
-  getById(id?: number): Observable<Operation> {
-    return this.http.get<Operation>(
-      this.baseUrl + '/operation/get/' + id?.toString()
-    );
-  }
-
-  add(operation: Operation): Observable<any> {
-    return this.http.post(this.baseUrl + '/operation/add', operation);
-  }
-
-  addOperations(id: number, operations: Operation[]): Observable<any> {
+  add(id: number, operations: Operation[]): Observable<any> {
     return this.http.post(
-      this.baseUrl + '/operation/addoperations/' + id.toString(),
+      this.baseUrl + '/operation/add/' + id.toString(),
       operations
-    );
-  }
-
-  update(operation: Operation, id: number): Observable<any> {
-    return this.http.put(
-      this.baseUrl + '/operation/update/' + id.toString(),
-      operation
-    );
-  }
-
-  delete(id: number): Observable<any> {
-    return this.http.delete(
-      this.baseUrl + '/operation/delete/' + id.toString()
     );
   }
 }

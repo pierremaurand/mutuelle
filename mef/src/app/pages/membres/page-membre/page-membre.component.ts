@@ -21,8 +21,8 @@ export class PageMembreComponent implements OnInit {
   constructor(private membreService: MembreService, private router: Router) {}
 
   ngOnInit(): void {
-    this.membreService.getAll().subscribe((data: MembreList[]) => {
-      this.membres = data;
+    this.membreService.getAll().subscribe((membres: MembreList[]) => {
+      this.membres = membres;
     });
   }
 

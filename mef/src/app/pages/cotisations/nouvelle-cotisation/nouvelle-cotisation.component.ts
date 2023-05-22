@@ -107,7 +107,7 @@ export class NouvelleCotisationComponent implements OnInit {
         this.cotisation.annee;
       if (this.cotisation.montant)
         this.mvtCompte.montant = this.cotisation.montant;
-      this.mvtCompte.membreId = this.membreId;
+      // this.mvtCompte.membreId = this.membreId;
       this.cotisation.mvtComptes.push(this.mvtCompte);
 
       // MOUVEMENT DE RETENU DES 10%
@@ -126,7 +126,7 @@ export class NouvelleCotisationComponent implements OnInit {
         this.cotisation.annee;
       if (this.cotisation.montant)
         this.mvtCompte.montant = (this.cotisation.montant * 1) / 10;
-      this.mvtCompte.membreId = this.membreId;
+      // this.mvtCompte.membreId = this.membreId;
       this.cotisation.mvtComptes.push(this.mvtCompte);
 
       this.cotisation.membreId = this.membreId;

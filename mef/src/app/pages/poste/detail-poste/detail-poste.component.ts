@@ -10,9 +10,8 @@ import { PosteService } from 'src/app/services/poste.service';
 })
 export class DetailPosteComponent implements OnInit {
   @Input()
-  poste?: Poste;
+  poste: Poste = new Poste();
   photo: string = '';
-  @Input() hideIcons: boolean = false;
 
   constructor(private router: Router, private posteService: PosteService) {}
 

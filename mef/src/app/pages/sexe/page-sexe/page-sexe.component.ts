@@ -22,4 +22,12 @@ export class PageSexeComponent implements OnInit {
   nouveauSexe(): void {
     this.router.navigate(['/nouveausexe']);
   }
+
+  navigate(id: number): void {
+    this.router.navigate(['/nouveausexe/' + id.toString()]);
+  }
+
+  importSexes(): void {}
+
+  exportSexes(): void {}
 }

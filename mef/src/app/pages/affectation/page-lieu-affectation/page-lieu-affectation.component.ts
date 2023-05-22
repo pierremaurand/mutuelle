@@ -25,4 +25,12 @@ export class PageLieuAffectationComponent implements OnInit {
   nouveauLieuAffectation(): void {
     this.router.navigate(['/nouveaulieuaffectation']);
   }
+
+  navigate(id: number): void {
+    this.router.navigate(['/nouveaulieuaffectation/' + id.toString()]);
+  }
+
+  importLieuAffectation(): void {}
+
+  exportLieuAffectation(): void {}
 }

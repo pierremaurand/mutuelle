@@ -1,19 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Gabarit } from 'src/app/model/gabarit';
-import { LieuAffectation } from 'src/app/model/lieuAffectation';
-import { Membre } from 'src/app/model/Membre';
 import { MembreList } from 'src/app/model/membreList';
 import { MvtCompte } from 'src/app/model/mvtCompte';
-import { Poste } from 'src/app/model/poste';
-import { Sexe } from 'src/app/model/sexe';
 import { TypeOperation } from 'src/app/model/typeoperation';
 import { CompteService } from 'src/app/services/compte.service';
 import { GabaritService } from 'src/app/services/gabarit.service';
-import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { PosteService } from 'src/app/services/poste.service';
-import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-nouveau-compte',
@@ -22,11 +15,12 @@ import { SexeService } from 'src/app/services/sexe.service';
 })
 export class NouveauCompteComponent implements OnInit {
   membre: MembreList = new MembreList();
+  idMembre: number = 0;
   mvtCompte: MvtCompte = new MvtCompte();
   gabarits: Gabarit[] = [];
+  mouvements: MvtCompte[] = [];
   SortbyParam = 'dateMvt';
   SortDirection = 'desc';
-  @ViewChild('closeModal') modalClose: any;
 
   constructor(
     private router: Router,
@@ -37,25 +31,29 @@ export class NouveauCompteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.gabaritService.getAll().subscribe((gabarits: Gabarit[]) => {
-    //   this.gabarits = gabarits;
-    //   let idMembre = this.activatedRoute.snapshot.params['id'];
-    //   this.membreService
-    //     .getById(idMembre)
-    //     .subscribe((membre: MembreList) => {});
-    // });
+    this.idMembre = this.activatedRoute.snapshot.params['id'];
+    this.gabaritService.getAllActive().subscribe((gabarits: Gabarit[]) => {
+      this.gabarits = gabarits;
+    });
+    if (this.idMembre) {
+      this.membreService
+        .getInfosMembre(this.idMembre)
+        .subscribe((membre: MembreList) => {
+          this.membre = membre;
+        });
+    }
   }
 
-  // ajouterMvtCompte(): void {
-  //   if (this.checkInfosMvt()) {
-  //     this.mvtCompte.membreId = this.membreId;
-  //     this.mvtCompte.gabaritId = 1;
-  //     this.mvtComptes.push(this.mvtCompte);
-  //     this.mvtCompte = new MvtCompte();
-  //     this.modalClose.nativeElement.click();
-  //     this.enregistrerCompte();
-  //   }
-  // }
+  ajouterMvtCompte(): void {
+    // if (this.checkInfosMvt()) {
+    //   this.mvtCompte.membreId = this.membreId;
+    //   this.mvtCompte.gabaritId = 1;
+    //   this.mvtComptes.push(this.mvtCompte);
+    //   this.mvtCompte = new MvtCompte();
+    //   this.modalClose.nativeElement.click();
+    //   this.enregistrerCompte();
+    // }
+  }
 
   soldeCompte(): number {
     let solde = 0;

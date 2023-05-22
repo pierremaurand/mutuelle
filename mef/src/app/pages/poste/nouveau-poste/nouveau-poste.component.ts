@@ -11,6 +11,8 @@ import { PosteService } from 'src/app/services/poste.service';
 })
 export class NouveauPosteComponent implements OnInit {
   poste: Poste = new Poste();
+  idPoste: number = 0;
+  photo: string = '';
 
   constructor(
     private router: Router,
@@ -20,18 +22,19 @@ export class NouveauPosteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const idPoste = this.activatedRoute.snapshot.params['id'];
-    if (idPoste) {
-      this.posteService.getById(idPoste).subscribe((poste: any) => {
+    this.idPoste = this.activatedRoute.snapshot.params['id'];
+    this.photo = this.posteService.getImageUrl();
+    if (this.idPoste) {
+      this.posteService.getById(this.idPoste).subscribe((poste: any) => {
         this.poste = poste;
       });
     }
   }
 
   enregistrerPoste(): void {
-    if (this.poste.id) {
+    if (this.idPoste) {
       this.posteService
-        .update(this.poste, this.poste.id)
+        .update(this.poste, this.idPoste)
         .subscribe((value: any) => {
           this.loaderService.hide();
           this.cancel();

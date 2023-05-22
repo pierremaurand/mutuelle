@@ -59,5 +59,19 @@ namespace mefApi.Data.Repo
 
             return null;
         }
+
+        public async Task<IEnumerable<Gabarit>?> GetAllActiveAsync()
+        {
+            if(dc.Gabarits is not null) {
+                var gabarits = await dc.Gabarits
+                .Where(g => g.EstActif == true)
+                .ToListAsync();
+                if(gabarits is not null) {
+                    return gabarits;
+                }
+            }
+
+            return null;
+        }
     }
 }

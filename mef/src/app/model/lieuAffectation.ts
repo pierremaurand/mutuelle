@@ -1,4 +1,4 @@
 export class LieuAffectation {
-  id?: number;
-  lieu?: string;
+  id: number = 0;
+  lieu: string = '';
 }

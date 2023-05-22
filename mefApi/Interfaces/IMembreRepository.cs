@@ -6,7 +6,7 @@ namespace mefApi.Interfaces
 {
     public interface IMembreRepository
     {
-        Task<IEnumerable<Membre>> GetAllAsync();
+        Task<IEnumerable<Membre>?> GetAllAsync();
         Task<IEnumerable<Membre>?> GetByEtatAsync(bool estActif);
         void Add(Membre membre);
         void Delete(int id);

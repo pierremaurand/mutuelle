@@ -50,6 +50,17 @@ namespace mefApi.Controllers
             return Ok(membreDto);
         }
 
+        [HttpGet("get/infos/{id}")]
+        public async Task<IActionResult> GetInfos(int id)
+        {
+            var membre = await uow.MembreRepository.FindByIdAsync(id);
+            if(membre is null) {
+                return NotFound();
+            }
+            var membreDto = mapper.Map<MembreListDto>(membre);
+            return Ok(membreDto);
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> Add(MembreDto membreDto)
         {

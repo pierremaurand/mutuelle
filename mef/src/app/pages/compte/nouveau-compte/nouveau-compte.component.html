@@ -33,39 +33,43 @@
                 <i class="fa fa-print"></i> Imprimer
               </button>
               <button
-                class="btn btn-primary"
+                class="btn btn-primary mr-2"
                 data-toggle="modal"
                 data-target="#addPicture"
               >
                 <i class="fa fa-plus"></i> Ajouter un mouvement
               </button>
+              <button class="btn btn-success">
+                <i class="fa fa-save"></i> Enregistrer
+              </button>
             </div>
           </div>
+          <hr />
           <div class="row">
             <div class="col liste">
               <table class="table table-striped">
                 <tbody>
-                  <!-- <tr
+                  <tr
                     *ngFor="
-                      let mvtCompte of mvtComptes
+                      let mouvement of mouvements
                         | sort : ['id', 'desc']
                         | sort : ['dateMvt', 'desc'];
                       let i = index
                     "
-                  > -->
-                  <!-- <td class="text-center">{{ i + 1 }}</td>
+                  >
+                    <td class="text-center">{{ i + 1 }}</td>
                     <td>
                       {{ mvtCompte.dateMvt | date : "dd/MM/yyyy" }}
                     </td>
                     <td>
                       {{ getTypeOperation(mvtCompte.typeOperation) }}
-                    </td> -->
-                  <!-- <td>{{ mvtCompte.gabaritId }}</td> -->
-                  <!-- <td>{{ mvtCompte.libelle }}</td>
+                    </td>
+                    <td>{{ mvtCompte.gabaritId }}</td>
+                    <td>{{ mvtCompte.libelle }}</td>
                     <td class="text-right">
                       {{ mvtCompte.montant | number }} FCFA
                     </td>
-                  </tr> -->
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -80,8 +84,10 @@
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-md">
-          <div class="modal-content">
-            <div class="modal-header">Formulaire d'ajout de mouvement</div>
+          <div class="modal-content rounded-5 shadow">
+            <div class="modal-header">
+              <h5 class="modal-title">Formulaire d'ajout de mouvement</h5>
+            </div>
             <div class="modal-body">
               <div class="row">
                 <div class="form-group col-6">

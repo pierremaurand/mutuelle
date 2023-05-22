@@ -165,65 +165,65 @@ export class NouvelleAvanceComponent implements OnInit {
         this.echeancier.push(echeance);
       }
       // MOUVEMENT DE DECAISSEMENT AVANCE
-      let mvtCompte: MvtCompte = {
-        id: 0,
-        dateMvt: this.avance.dateDeblocage,
-        typeOperation: TypeOperation.Debit,
-        gabaritId: 1,
-        libelle: 'Décaissement avance ',
-        montant: this.avance.montant,
-        avanceId: this.avance.id,
-        membreId: this.avance.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
+      // let mvtCompte: MvtCompte = {
+      //   id: 0,
+      //   dateMvt: this.avance.dateDeblocage,
+      //   typeOperation: TypeOperation.Debit,
+      //   gabaritId: 1,
+      //   libelle: 'Décaissement avance ',
+      //   montant: this.avance.montant,
+      //   avanceId: this.avance.id,
+      //   // membreId: this.avance.membreId,
+      // };
+      // this.mvtComptes.push(mvtCompte);
     }
   }
 
   payCheck(i: number): void {
-    if (this.mvtDate) {
-      this.echeancier[i].estPaye = true;
-      // MOUVEMENT DE PAIEMENT ECHEANCE
-      let mvtCompte: MvtCompte = {
-        id: 0,
-        dateMvt: this.mvtDate,
-        typeOperation: TypeOperation.Credit,
-        gabaritId: 1,
-        libelle:
-          'Paiement échance avance du ' +
-          this.getMoisNum(this.echeancier[i].moisId) +
-          '/' +
-          this.echeancier[i].annee,
-        montant: this.echeancier[i].montant,
-        echeanceAvanceId: this.echeancier[i].id,
-        membreId: this.avance.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
-    }
+    // if (this.mvtDate) {
+    //   this.echeancier[i].estPaye = true;
+    //   // MOUVEMENT DE PAIEMENT ECHEANCE
+    //   let mvtCompte: MvtCompte = {
+    //     id: 0,
+    //     dateMvt: this.mvtDate,
+    //     typeOperation: TypeOperation.Credit,
+    //     gabaritId: 1,
+    //     libelle:
+    //       'Paiement échance avance du ' +
+    //       this.getMoisNum(this.echeancier[i].moisId) +
+    //       '/' +
+    //       this.echeancier[i].annee,
+    //     montant: this.echeancier[i].montant,
+    //     echeanceAvanceId: this.echeancier[i].id,
+    //     membreId: this.avance.membreId,
+    //   };
+    //   this.mvtComptes.push(mvtCompte);
+    // }
   }
 
-  getMoisNum(moisId?: number): string | undefined {
-    let index: number = 0;
-    if (moisId) {
-      index = moisId - 1;
-    }
-    return this.mois[index].valeur;
-  }
+  // getMoisNum(moisId?: number): string | undefined {
+  //   let index: number = 0;
+  //   // if (moisId) {
+  //   //   index = moisId - 1;
+  //   // }
+  //   return this.mois[index].valeur;
+  // }
 
-  getMois(moisId?: number): string | undefined {
-    let index: number = 0;
-    if (moisId) {
-      index = moisId - 1;
-    }
-    return this.mois[index].libelle;
-  }
+  // getMois(moisId?: number): string | undefined {
+  //   let index: number = 0;
+  //   if (moisId) {
+  //     index = moisId - 1;
+  //   }
+  //   return this.mois[index].libelle;
+  // }
 
-  checkEcheancier(): boolean {
-    const echeances = this.echeancier.filter(
-      ({ id, estPaye }) => id != 0 && estPaye == true
-    );
-    if (echeances.length != this.echeancier.length) {
-      return true;
-    }
-    return false;
-  }
+  // checkEcheancier(): boolean {
+  //   const echeances = this.echeancier.filter(
+  //     ({ id, estPaye }) => id != 0 && estPaye == true
+  //   );
+  //   if (echeances.length != this.echeancier.length) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 }

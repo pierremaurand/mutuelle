@@ -31,6 +31,17 @@ namespace mefApi.Controllers
             return Ok(gabaritsDto);
         }
 
+        [HttpGet("active")]
+        public async Task<IActionResult> GetAllActive()
+        {
+            var gabarits = await uow.GabaritRepository.GetAllActiveAsync();
+            if(gabarits is null) {
+                return NotFound();
+            }
+            var gabaritsDto = mapper.Map<IEnumerable<GabaritDto>>(gabarits);
+            return Ok(gabaritsDto);
+        }
+
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {

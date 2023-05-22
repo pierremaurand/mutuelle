@@ -53,16 +53,114 @@ namespace mefApi.Controllers
         public async Task<IActionResult> GetAllComptes()
         {
             var membres = await uow.MembreRepository.GetAllAsync();
-            var comptesListDto = new List<ComptesListDto>();
+
+            var mvtComptes = await uow.MvtCompteRepository.GetAllAsync();
+            var mvtDeblocageAvances = await uow.MvtAvanceDebourseRepository.GetAllAsync();
+            var mvtDeblocageCredits = await uow.MvtCreditDebourseRepository.GetAllAsync();
+            var mvtEcheanceAvances = await uow.MvtEcheanceAvanceRepository.GetAllAsync();
+            var mvtEcheanceCredits = await uow.MvtEcheanceCreditRepository.GetAllAsync();
+        
+
+            var comptesDto = new List<CompteDto>();
             if(membres is null) {
                 return NotFound();
             }
             foreach(var membre in membres) {
-                var compte = new ComptesListDto();
+                
+                var compte = new CompteDto();
                 compte.Membre = mapper.Map<MembreListDto>(membre);
-                comptesListDto.Add(compte);
+                compte.Solde = 0;
+
+                //Les mouvement de comptes
+                if(mvtComptes is not null) {
+                    foreach(var mvt in mvtComptes) {
+                        if( mvt.MembreId == membre.Id) {
+                            if(mvt.Mouvement is not null) {
+                                if(mvt.Mouvement.TypeOperation == TypeOperation.Credit) {
+                                    compte.Solde =+ mvt.Mouvement.Montant;
+                                } else {
+                                    compte.Solde =- mvt.Mouvement.Montant;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Les mouvements de décaissement des avances 
+                if(mvtDeblocageAvances is not null) {
+                    foreach(var mvt in mvtDeblocageAvances) {
+                        if(mvt.AvanceDebourse is not null) {
+                            var avance = await uow.AvanceRepository.FindByIdAsync(mvt.AvanceDebourse.AvanceId);
+                            if(avance is not null && avance.MembreId == membre.Id) {
+                                if(mvt.Mouvement is not null) {
+                                    if(mvt.Mouvement.TypeOperation == TypeOperation.Credit) {
+                                        compte.Solde =+ mvt.Mouvement.Montant;
+                                    } else {
+                                        compte.Solde =- mvt.Mouvement.Montant;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Les mouvements de décaissement des credits 
+                if(mvtDeblocageCredits is not null) {
+                    foreach(var mvt in mvtDeblocageCredits) {
+                        if(mvt.CreditDebourse is not null) {
+                            var credit = await uow.CreditRepository.FindByIdAsync(mvt.CreditDebourse.CreditId);
+                            if(credit is not null && credit.MembreId == membre.Id) {
+                                if(mvt.Mouvement is not null ) {
+                                    if(mvt.Mouvement.TypeOperation == TypeOperation.Credit) {
+                                        compte.Solde =+ mvt.Mouvement.Montant;
+                                    } else {
+                                        compte.Solde =- mvt.Mouvement.Montant;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Les mouvements de reboursement echeance avance 
+                if(mvtEcheanceAvances is not null) {
+                    foreach(var mvt in mvtEcheanceAvances) {
+                        if(mvt.EcheanceAvance is not null) {
+                            var avance = await uow.AvanceRepository.FindByIdAsync(mvt.EcheanceAvance.AvanceId);
+                            if(avance is not null && avance.MembreId == membre.Id) {
+                                if(mvt.Mouvement is not null) {
+                                    if(mvt.Mouvement.TypeOperation == TypeOperation.Credit) {
+                                        compte.Solde =+ mvt.Mouvement.Montant;
+                                    } else {
+                                        compte.Solde =- mvt.Mouvement.Montant;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Les mouvements de reboursement échéance credit 
+                if(mvtEcheanceCredits is not null) {
+                    foreach(var mvt in mvtEcheanceCredits) {
+                        if(mvt.EcheanceCredit is not null) {
+                            var credit = await uow.CreditRepository.FindByIdAsync(mvt.EcheanceCredit.CreditId);
+                            if(credit is not null && credit.MembreId == membre.Id) {
+                                if(mvt.Mouvement is not null) {
+                                    if(mvt.Mouvement.TypeOperation == TypeOperation.Credit) {
+                                        compte.Solde =+ mvt.Mouvement.Montant;
+                                    } else {
+                                        compte.Solde =- mvt.Mouvement.Montant;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+               
+                comptesDto.Add(compte);
             }
-            return Ok(comptesListDto);
+            return Ok(comptesDto);
         }
 
         [HttpGet("mvtcomptes")]
@@ -79,7 +177,7 @@ namespace mefApi.Controllers
         [HttpGet("mvtcomptes/{id}")]
         public async Task<IActionResult> GetAllMvtsById(int id)
         {
-            var mvtcomptes = await uow.MvtCompteRepository.GetAllByMembreAsync(id);
+            var mvtcomptes = await uow.MvtCompteRepository.FindByIdAsync(id);
             if(mvtcomptes is null) {
                 return NotFound();
             }

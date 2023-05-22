@@ -22,7 +22,11 @@ import { SexeService } from 'src/app/services/sexe.service';
 export class PageCompteComponent implements OnInit {
   comptes: CompteList[] = [];
 
-  constructor(private compteService: CompteService, private router: Router) {}
+  constructor(
+    private membreService: MembreService,
+    private compteService: CompteService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.compteService.getAllComptes().subscribe((comptes: CompteList[]) => {
@@ -36,20 +40,5 @@ export class PageCompteComponent implements OnInit {
 
   navigate(id: number): void {
     this.router.navigate(['/nouveaucompte/' + id]);
-  }
-
-  getSolde(id?: number): number {
-    let solde = 0;
-    // this.mvtComptes
-    //   .filter(({ membreId }) => membreId == id)
-    //   .forEach((m) => {
-    //     if (m.typeOperation == TypeOperation.Credit) {
-    //       solde += m.montant ?? 0;
-    //     } else {
-    //       solde -= m.montant ?? 0;
-    //     }
-    //   });
-
-    return solde;
   }
 }

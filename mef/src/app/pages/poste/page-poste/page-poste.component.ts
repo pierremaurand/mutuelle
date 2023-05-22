@@ -22,4 +22,12 @@ export class PagePosteComponent implements OnInit {
   nouveauPoste(): void {
     this.router.navigate(['/nouveauposte']);
   }
+
+  navigate(id: number): void {
+    this.router.navigate(['/nouveauposte/' + id.toString()]);
+  }
+
+  importPostes(): void {}
+
+  exportPostes(): void {}
 }

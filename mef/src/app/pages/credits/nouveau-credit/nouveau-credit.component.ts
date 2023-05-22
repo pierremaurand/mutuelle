@@ -210,29 +210,29 @@ export class NouveauCreditComponent implements OnInit {
         this.echeancier.push(echeance);
       }
       // MOUVEMENT DE DECAISSEMENT CREDIT
-      let mvtCompte: MvtCompte = {
-        id: 0,
-        dateMvt: this.credit.dateDeblocage,
-        typeOperation: TypeOperation.Debit,
-        gabaritId: 1,
-        libelle: 'Décaissement credit ',
-        montant: this.credit.montantCapital,
-        creditId: this.credit.id,
-        membreId: this.credit.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
-      // MOUVEMENT DE PRELEVEMENT DES INTERET DU CREDIT
-      mvtCompte = {
-        id: 0,
-        dateMvt: this.credit.dateDeblocage,
-        typeOperation: TypeOperation.Debit,
-        gabaritId: 1,
-        libelle: 'Interêts credit ',
-        montant: this.credit.montantInteret,
-        creditId: this.credit.id,
-        membreId: this.credit.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
+      // let mvtCompte: MvtCompte = {
+      //   id: 0,
+      //   dateMvt: this.credit.dateDeblocage,
+      //   typeOperation: TypeOperation.Debit,
+      //   gabaritId: 1,
+      //   libelle: 'Décaissement credit ',
+      //   montant: this.credit.montantCapital,
+      //   creditId: this.credit.id,
+      //   // membreId: this.credit.membreId,
+      // };
+      // this.mvtComptes.push(mvtCompte);
+      // // MOUVEMENT DE PRELEVEMENT DES INTERET DU CREDIT
+      // mvtCompte = {
+      //   id: 0,
+      //   dateMvt: this.credit.dateDeblocage,
+      //   typeOperation: TypeOperation.Debit,
+      //   gabaritId: 1,
+      //   libelle: 'Interêts credit ',
+      //   montant: this.credit.montantInteret,
+      //   creditId: this.credit.id,
+      //   membreId: this.credit.membreId,
+      // };
+      // this.mvtComptes.push(mvtCompte);
     }
   }
 
@@ -240,69 +240,69 @@ export class NouveauCreditComponent implements OnInit {
     if (this.mvtDate) {
       this.echeancier[i].estPaye = true;
       // MOUVEMENT DE PAIEMENT ECHEANCE
-      let mvtCompte: MvtCompte = {
-        id: 0,
-        dateMvt: this.mvtDate,
-        typeOperation: TypeOperation.Credit,
-        gabaritId: 1,
-        libelle:
-          'Paiement échance capital credit du ' +
-          this.getMoisNum(this.echeancier[i].moisId) +
-          '/' +
-          this.echeancier[i].annee,
-        montant: this.echeancier[i].montantCapital,
-        echeanceCreditId: this.echeancier[i].id,
-        membreId: this.credit.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
+      // let mvtCompte: MvtCompte = {
+      //   id: 0,
+      //   dateMvt: this.mvtDate,
+      //   typeOperation: TypeOperation.Credit,
+      //   gabaritId: 1,
+      //   libelle:
+      //     'Paiement échance capital credit du ' +
+      //     this.getMoisNum(this.echeancier[i].moisId) +
+      //     '/' +
+      //     this.echeancier[i].annee,
+      //   montant: this.echeancier[i].montantCapital,
+      //   echeanceCreditId: this.echeancier[i].id,
+      //   membreId: this.credit.membreId,
+      // };
+      // this.mvtComptes.push(mvtCompte);
       // MOUVEMENT DE PAIEMENT ECHEANCE
-      mvtCompte = {
-        id: 0,
-        dateMvt: this.mvtDate,
-        typeOperation: TypeOperation.Credit,
-        gabaritId: 1,
-        libelle:
-          'Paiement échance interêts credit du ' +
-          this.getMoisNum(this.echeancier[i].moisId) +
-          '/' +
-          this.echeancier[i].annee,
-        montant: this.echeancier[i].montantInteret,
-        echeanceCreditId: this.echeancier[i].id,
-        membreId: this.credit.membreId,
-      };
-      this.mvtComptes.push(mvtCompte);
+      //   mvtCompte = {
+      //     id: 0,
+      //     dateMvt: this.mvtDate,
+      //     typeOperation: TypeOperation.Credit,
+      //     gabaritId: 1,
+      //     libelle:
+      //       'Paiement échance interêts credit du ' +
+      //       this.getMoisNum(this.echeancier[i].moisId) +
+      //       '/' +
+      //       this.echeancier[i].annee,
+      //     montant: this.echeancier[i].montantInteret,
+      //     echeanceCreditId: this.echeancier[i].id,
+      //     membreId: this.credit.membreId,
+      //   };
+      //   this.mvtComptes.push(mvtCompte);
     }
   }
 
-  getMoisNum(moisId?: number): string | undefined {
-    let index: number = 0;
-    if (moisId) {
-      index = moisId - 1;
-    }
-    return this.mois[index].valeur;
-  }
+  // getMoisNum(moisId?: number): string | undefined {
+  //   let index: number = 0;
+  //   if (moisId) {
+  //     index = moisId - 1;
+  //   }
+  //   return this.mois[index].valeur;
+  // }
 
-  getMois(moisId?: number): string | undefined {
-    let index: number = 0;
-    if (moisId) {
-      index = moisId - 1;
-    }
-    return this.mois[index].libelle;
-  }
+  // getMois(moisId?: number): string | undefined {
+  //   let index: number = 0;
+  //   if (moisId) {
+  //     index = moisId - 1;
+  //   }
+  //   return this.mois[index].libelle;
+  // }
 
-  checkEcheancier(): boolean {
-    const echeances = this.echeancier.filter(
-      ({ id, estPaye }) => id != 0 && estPaye == true
-    );
-    if (echeances.length != this.echeancier.length) {
-      return true;
-    }
-    return false;
-  }
+  // checkEcheancier(): boolean {
+  //   const echeances = this.echeancier.filter(
+  //     ({ id, estPaye }) => id != 0 && estPaye == true
+  //   );
+  //   if (echeances.length != this.echeancier.length) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
-  calculInteret(): void {
-    if (this.credit.montantCapital) {
-      this.credit.montantInteret = Math.round(this.credit.montantCapital / 100);
-    }
-  }
+  // calculInteret(): void {
+  //   if (this.credit.montantCapital) {
+  //     this.credit.montantInteret = Math.round(this.credit.montantCapital / 100);
+  //   }
+  // }
 }

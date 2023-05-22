@@ -11,6 +11,8 @@ import { SexeService } from 'src/app/services/sexe.service';
 })
 export class NouveauSexeComponent implements OnInit {
   sexe: Sexe = new Sexe();
+  idSexe: number = 0;
+  photo: string = '';
 
   constructor(
     private router: Router,
@@ -20,18 +22,19 @@ export class NouveauSexeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const idSexe = this.activatedRoute.snapshot.params['id'];
-    if (idSexe) {
-      this.sexeService.getById(idSexe).subscribe((sexe: any) => {
+    this.idSexe = this.activatedRoute.snapshot.params['id'];
+    this.photo = this.sexeService.getImageUrl();
+    if (this.idSexe) {
+      this.sexeService.getById(this.idSexe).subscribe((sexe: any) => {
         this.sexe = sexe;
       });
     }
   }
 
   enregistrerSexe(): void {
-    if (this.sexe.id) {
+    if (this.idSexe) {
       this.sexeService
-        .update(this.sexe, this.sexe.id)
+        .update(this.sexe, this.idSexe)
         .subscribe((value: any) => {
           this.loaderService.hide();
           this.cancel();

@@ -10,9 +10,8 @@ import { SexeService } from 'src/app/services/sexe.service';
 })
 export class DetailSexeComponent implements OnInit {
   @Input()
-  sexe?: Sexe;
+  sexe: Sexe = new Sexe();
   photo: string = '';
-  @Input() hideIcons: boolean = false;
 
   constructor(private router: Router, private sexeService: SexeService) {}
 

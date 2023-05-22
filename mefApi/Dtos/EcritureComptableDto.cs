@@ -13,7 +13,8 @@ namespace mefApi.Dtos
         public string Libelle { get; set; } = string.Empty;
         [Required(ErrorMessage ="Le montant est obligatoire")]
         public decimal Montant { get; set; } = 0;
-        public int MvtCompteId { get; set; } = 0;
+        [Required(ErrorMessage ="Le mouvement à lier avec cette écriture est obligatoire")]
+        public int MouvementId { get; set; } = 0;
         public bool EstApplique { get; set; } = false;
     }
 }

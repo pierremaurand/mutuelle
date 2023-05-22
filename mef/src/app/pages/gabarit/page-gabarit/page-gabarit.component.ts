@@ -22,4 +22,12 @@ export class PageGabaritComponent implements OnInit {
   nouveauGabarit(): void {
     this.router.navigate(['/nouveaugabarit']);
   }
+
+  navigate(id: number): void {
+    this.router.navigate(['/nouveaugabarit/' + id.toString()]);
+  }
+
+  exportGabarits(): void {}
+
+  importGabarits(): void {}
 }

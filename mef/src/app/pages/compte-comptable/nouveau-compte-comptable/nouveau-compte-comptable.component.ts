@@ -11,6 +11,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 })
 export class NouveauCompteComptableComponent implements OnInit {
   compte: CompteComptable = new CompteComptable();
+  photo: string = '';
 
   constructor(
     private router: Router,
@@ -21,6 +22,7 @@ export class NouveauCompteComptableComponent implements OnInit {
 
   ngOnInit(): void {
     const idCompte = this.activatedRoute.snapshot.params['id'];
+    this.photo = this.compteService.getImageUrl();
     if (idCompte) {
       this.compteService
         .getById(idCompte)

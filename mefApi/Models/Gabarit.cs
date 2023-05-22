@@ -7,7 +7,6 @@ namespace mefApi.Models
     {
         [Required]
         public string Libelle { get; set; } = string.Empty;
-        [Required]
-        public TypeMouvement TypeMouvement { get; set; } 
+        public bool EstActif { get; set; } = true;
     }
 }

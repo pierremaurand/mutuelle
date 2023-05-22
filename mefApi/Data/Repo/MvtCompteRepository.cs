@@ -38,6 +38,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.MvtComptes is not null) {
                 var compte = await dc.MvtComptes
+                .Include(m => m.Membre)
+                .Include(m => m.Mouvement)
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(compte is not null) {
@@ -52,7 +54,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.MvtComptes is not null) {
                 var mvtcomptes = await dc.MvtComptes
-                .Where(c => c.MembreId == membreId)
+                .Include(m => m.Membre)
+                .Include(m => m.Mouvement)
                 .ToListAsync();
                 if(mvtcomptes is not null) {
                     return mvtcomptes;
@@ -66,6 +69,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.MvtComptes is not null) {
                 var mvtcomptes = await dc.MvtComptes
+                .Include(m => m.Membre)
+                .Include(m => m.Mouvement)
                 .ToListAsync();
                 if(mvtcomptes is not null) {
                     return mvtcomptes;
