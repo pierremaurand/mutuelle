@@ -8,6 +8,7 @@ import { InfosMembre } from '../model/infosMembre';
 import { MvtCompte } from '../model/mvtCompte';
 import { Membre } from '../model/Membre';
 import { CompteList } from '../model/compteList';
+import { Mouvement } from '../model/mouvement';
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +27,10 @@ export class CompteService {
     return this.http.get<CompteList[]>(this.baseUrl + '/compte/comptes');
   }
 
-  getAllMvts(): Observable<MvtCompte[]> {
-    return this.http.get<MvtCompte[]>(this.baseUrl + '/compte/mvtcomptes');
+  getAllMvts(id: number): Observable<Mouvement[]> {
+    return this.http.get<Mouvement[]>(
+      this.baseUrl + '/compte/mvtsmembre/' + id.toString()
+    );
   }
 
   getAllMvtsById(id?: number): Observable<MvtCompte[]> {
@@ -42,7 +45,10 @@ export class CompteService {
     );
   }
 
-  addMvts(mvts: MvtCompte[]): Observable<any> {
-    return this.http.post<MvtCompte[]>(this.baseUrl + '/compte/addMvts', mvts);
+  addMvts(id: number, mvts: Mouvement[]): Observable<any> {
+    return this.http.post<Mouvement[]>(
+      this.baseUrl + '/compte/addmvts/' + id.toString(),
+      mvts
+    );
   }
 }

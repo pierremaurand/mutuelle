@@ -1,7 +1,6 @@
-import { DatePipe } from '@angular/common';
 import { TypeOperation } from './typeoperation';
 
-export class MvtCompte {
+export class Mouvement {
   id: number = 0;
   typeOperation: TypeOperation = TypeOperation.Debit;
   gabaritId: number = 0;

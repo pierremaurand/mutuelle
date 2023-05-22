@@ -31,6 +31,16 @@ namespace mefApi.Helpers
 
             CreateMap<MvtCompte, MvtCompteDto>().ReverseMap();
 
+            CreateMap<Mouvement, MouvementDto>().ReverseMap();
+
+            CreateMap<MvtAvanceDebourse, MvtAvanceDebourseDto>().ReverseMap();
+
+            CreateMap<MvtCreditDebourse, MvtCreditDebourseDto>().ReverseMap();
+
+            CreateMap<MvtEcheanceAvance, MvtEcheanceAvanceDto>().ReverseMap();
+
+            CreateMap<MvtEcheanceCredit, MvtEcheanceCreditDto>().ReverseMap();
+
             CreateMap<Cotisation, CotisationDto>().ReverseMap();
             
             CreateMap<LieuAffectation, LieuAffectationDto>().ReverseMap();

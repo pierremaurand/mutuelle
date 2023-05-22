@@ -22,11 +22,7 @@ import { SexeService } from 'src/app/services/sexe.service';
 export class PageCompteComponent implements OnInit {
   comptes: CompteList[] = [];
 
-  constructor(
-    private membreService: MembreService,
-    private compteService: CompteService,
-    private router: Router
-  ) {}
+  constructor(private compteService: CompteService, private router: Router) {}
 
   ngOnInit(): void {
     this.compteService.getAllComptes().subscribe((comptes: CompteList[]) => {

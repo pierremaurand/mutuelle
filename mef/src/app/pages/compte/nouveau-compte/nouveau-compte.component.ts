@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Gabarit } from 'src/app/model/gabarit';
 import { MembreList } from 'src/app/model/membreList';
-import { MvtCompte } from 'src/app/model/mvtCompte';
+import { Mouvement } from 'src/app/model/mouvement';
 import { TypeOperation } from 'src/app/model/typeoperation';
 import { CompteService } from 'src/app/services/compte.service';
 import { GabaritService } from 'src/app/services/gabarit.service';
@@ -16,9 +16,9 @@ import { MembreService } from 'src/app/services/membre.service';
 export class NouveauCompteComponent implements OnInit {
   membre: MembreList = new MembreList();
   idMembre: number = 0;
-  mvtCompte: MvtCompte = new MvtCompte();
+  mouvement: Mouvement = new Mouvement();
   gabarits: Gabarit[] = [];
-  mouvements: MvtCompte[] = [];
+  mouvements: Mouvement[] = [];
   SortbyParam = 'dateMvt';
   SortDirection = 'desc';
 
@@ -40,31 +40,38 @@ export class NouveauCompteComponent implements OnInit {
         .getInfosMembre(this.idMembre)
         .subscribe((membre: MembreList) => {
           this.membre = membre;
+          this.compteService
+            .getAllMvts(this.membre.id)
+            .subscribe((mouvements: Mouvement[]) => {
+              this.mouvements = mouvements;
+            });
         });
     }
   }
 
-  ajouterMvtCompte(): void {
-    // if (this.checkInfosMvt()) {
-    //   this.mvtCompte.membreId = this.membreId;
-    //   this.mvtCompte.gabaritId = 1;
-    //   this.mvtComptes.push(this.mvtCompte);
-    //   this.mvtCompte = new MvtCompte();
-    //   this.modalClose.nativeElement.click();
-    //   this.enregistrerCompte();
-    // }
+  ajouterMouvement(): void {
+    if (this.checkInfosMvt()) {
+      this.mouvements.push(this.mouvement);
+      this.resetForm();
+    }
   }
 
   soldeCompte(): number {
     let solde = 0;
-    // this.mvtComptes.map((mvtCompte) => {
-    //   if (mvtCompte.typeOperation == TypeOperation.Credit) {
-    //     solde += mvtCompte.montant ? mvtCompte.montant : 0;
-    //   } else {
-    //     solde -= mvtCompte.montant ? mvtCompte.montant : 0;
-    //   }
-    // });
+    this.mouvements.map((mouvement) => {
+      if (mouvement.typeOperation == TypeOperation.Credit) {
+        solde += mouvement.montant ? mouvement.montant : 0;
+      } else {
+        solde -= mouvement.montant ? mouvement.montant : 0;
+      }
+    });
     return solde;
+  }
+
+  enregistrer(): void {
+    this.compteService.addMvts(this.idMembre, this.mouvements).subscribe(() => {
+      this.cancel();
+    });
   }
 
   getTypeOperation(typeOperation: number): string {
@@ -75,10 +82,10 @@ export class NouveauCompteComponent implements OnInit {
 
   checkInfosMvt(): boolean {
     if (
-      !this.mvtCompte.dateMvt ||
-      !this.mvtCompte.typeOperation ||
-      !this.mvtCompte.libelle ||
-      !this.mvtCompte.montant
+      this.mouvement.dateMvt == '' ||
+      this.mouvement.gabaritId == 0 ||
+      this.mouvement.libelle == '' ||
+      this.mouvement.montant == 0
     ) {
       return false;
     }
@@ -88,5 +95,9 @@ export class NouveauCompteComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/comptes']);
+  }
+
+  resetForm(): void {
+    this.mouvement = new Mouvement();
   }
 }

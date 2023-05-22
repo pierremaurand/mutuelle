@@ -24,8 +24,7 @@
           <div class="row mb-2 d-flex justify-content-between">
             <div class="col">
               <a href="javascript:void(0);" (click)="cancel()"
-                ><i class="fa fa-arrow-left"></i> Retour à la page des
-                comptes</a
+                ><i class="fa fa-arrow-left"></i> Retour à la liste</a
               >
             </div>
             <div class="col text-right">
@@ -39,7 +38,7 @@
               >
                 <i class="fa fa-plus"></i> Ajouter un mouvement
               </button>
-              <button class="btn btn-success">
+              <button class="btn btn-success" (click)="enregistrer()">
                 <i class="fa fa-save"></i> Enregistrer
               </button>
             </div>
@@ -51,23 +50,20 @@
                 <tbody>
                   <tr
                     *ngFor="
-                      let mouvement of mouvements
-                        | sort : ['id', 'desc']
-                        | sort : ['dateMvt', 'desc'];
+                      let mouvement of mouvements | sort : ['dateMvt', 'desc'];
                       let i = index
                     "
                   >
                     <td class="text-center">{{ i + 1 }}</td>
                     <td>
-                      {{ mvtCompte.dateMvt | date : "dd/MM/yyyy" }}
+                      {{ mouvement.dateMvt | date : "dd/MM/yyyy" }}
                     </td>
                     <td>
-                      {{ getTypeOperation(mvtCompte.typeOperation) }}
+                      {{ getTypeOperation(mouvement.typeOperation) }}
                     </td>
-                    <td>{{ mvtCompte.gabaritId }}</td>
-                    <td>{{ mvtCompte.libelle }}</td>
+                    <td>{{ mouvement.libelle }}</td>
                     <td class="text-right">
-                      {{ mvtCompte.montant | number }} FCFA
+                      {{ mouvement.montant | number }} FCFA
                     </td>
                   </tr>
                 </tbody>
@@ -83,10 +79,19 @@
         aria-labelledby="addPicture"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content rounded-5 shadow">
             <div class="modal-header">
-              <h5 class="modal-title">Formulaire d'ajout de mouvement</h5>
+              <h4 class="modal-title">Infos Mouvement</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                (click)="resetForm()"
+                #closeModal
+              >
+                <span>&times;</span>
+              </button>
             </div>
             <div class="modal-body">
               <div class="row">
@@ -97,7 +102,7 @@
                     id="dateMvt"
                     name="dateMvt"
                     class="form-control"
-                    [(ngModel)]="mvtCompte.dateMvt"
+                    [(ngModel)]="mouvement.dateMvt"
                     placeholder="La date du mouvement"
                   />
                 </div>
@@ -107,7 +112,7 @@
                     id="typeOperation"
                     name="typeOperation"
                     class="form-control"
-                    [(ngModel)]="mvtCompte.typeOperation"
+                    [(ngModel)]="mouvement.typeOperation"
                   >
                     <option value="0">Débit</option>
                     <option value="1">Crédit</option>
@@ -120,7 +125,7 @@
                     id="gabaritId"
                     name="gabaritId"
                     class="form-control"
-                    [(ngModel)]="mvtCompte.gabaritId"
+                    [(ngModel)]="mouvement.gabaritId"
                   >
                     <option
                       *ngFor="let gabarit of gabarits"
@@ -139,7 +144,7 @@
                     cols="10"
                     rows="5"
                     class="form-control"
-                    [(ngModel)]="mvtCompte.libelle"
+                    [(ngModel)]="mouvement.libelle"
                   ></textarea>
                 </div>
 
@@ -150,31 +155,24 @@
                     id="montant"
                     name="montant"
                     class="form-control"
-                    [(ngModel)]="mvtCompte.montant"
+                    [(ngModel)]="mouvement.montant"
                     required
                     placeholder="Montant"
                   />
                 </div>
               </div>
-              <div class="row">
-                <div class="col text-center">
-                  <!-- <button
-                    type="button"
-                    class="btn btn-success mr-2"
-                    (click)="ajouterMvtCompte()"
-                  >
-                    <i class="fa fa-plus"></i> Ajouter
-                  </button> -->
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    data-dismiss="modal"
-                    #closeModal
-                  >
-                    <i class="fa fa-ban"></i> Annuler
-                  </button>
-                </div>
-              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="ajouterMouvement()"
+                data-dismiss="modal"
+              >
+                <i class="fa fa-save"></i>
+                Enregistrer
+              </button>
             </div>
           </div>
         </div>
