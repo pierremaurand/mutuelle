@@ -63,6 +63,7 @@ namespace mefApi.Controllers
             var membres = await uow.MembreRepository.GetAllAsync();
 
             var mvtComptes = await uow.MvtCompteRepository.GetAllAsync();
+            var mvtCotisations = await uow.MvtCotisationRepository.GetAllAsync();
             var mvtDeblocageAvances = await uow.MvtAvanceDebourseRepository.GetAllAsync();
             var mvtDeblocageCredits = await uow.MvtCreditDebourseRepository.GetAllAsync();
             var mvtEcheanceAvances = await uow.MvtEcheanceAvanceRepository.GetAllAsync();
@@ -85,6 +86,17 @@ namespace mefApi.Controllers
                 if(mvtComptes is not null) {
                     foreach(var mvt in mvtComptes) {
                         if( mvt.MembreId == membre.Id) {
+                            if(mvt.Mouvement is not null) {
+                                mouvements.Add(mvt.Mouvement);
+                            }
+                        }
+                    }
+                }
+
+                //Les mouvement de comptes
+                if(mvtCotisations is not null) {
+                    foreach(var mvt in mvtCotisations) {
+                        if( mvt.Cotisation is not null && mvt.Cotisation.MembreId == membre.Id) {
                             if(mvt.Mouvement is not null) {
                                 mouvements.Add(mvt.Mouvement);
                             }
@@ -167,6 +179,7 @@ namespace mefApi.Controllers
         public async Task<IActionResult> GetMvtsMembre(int id)
         {
             var mvtComptes = await uow.MvtCompteRepository.GetAllAsync();
+            var mvtCotisations = await uow.MvtCotisationRepository.GetAllAsync();
             var mvtDeblocageAvances = await uow.MvtAvanceDebourseRepository.GetAllAsync();
             var mvtDeblocageCredits = await uow.MvtCreditDebourseRepository.GetAllAsync();
             var mvtEcheanceAvances = await uow.MvtEcheanceAvanceRepository.GetAllAsync();
@@ -179,6 +192,17 @@ namespace mefApi.Controllers
             if(mvtComptes is not null) {
                 foreach(var mvt in mvtComptes) {
                     if( mvt.MembreId == id) {
+                        if(mvt.Mouvement is not null) {
+                            mouvements.Add(mvt.Mouvement);
+                        }
+                    }
+                }
+            }
+
+            //Les mouvement de comptes
+            if(mvtCotisations is not null) {
+                foreach(var mvt in mvtCotisations) {
+                    if( mvt.Cotisation is not null && mvt.Cotisation.MembreId == id) {
                         if(mvt.Mouvement is not null) {
                             mouvements.Add(mvt.Mouvement);
                         }

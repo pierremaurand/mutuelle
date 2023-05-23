@@ -12,6 +12,7 @@ namespace mefApi.Data
         public DbSet<MvtAvanceDebourse>? MvtAvancesDebourses { get; set; }
         public DbSet<CompteComptable>? CompteComptables { get; set; } 
         public DbSet<Cotisation>? Cotisations { get; set; } 
+        public DbSet<MvtCotisation>? MvtCotisations { get; set; } 
         public DbSet<Credit>? Credits { get; set; } 
         public DbSet<CreditDebourse>? CreditsDebourses { get; set; } 
         public DbSet<MvtCreditDebourse>? MvtCreditsDebourses { get; set; } 

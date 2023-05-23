@@ -34,6 +34,9 @@ namespace mefApi.Data
         public IOperationRepository OperationRepository =>
             new OperationRepository(dc);
 
+        public ICompteRepository CompteRepository =>
+            new CompteRepository(dc);
+
         public IMvtCompteRepository MvtCompteRepository =>
             new MvtCompteRepository(dc);
         
@@ -48,6 +51,9 @@ namespace mefApi.Data
         
         public ICotisationRepository CotisationRepository =>
             new CotisationRepository(dc);
+
+        public IMvtCotisationRepository MvtCotisationRepository =>
+            new MvtCotisationRepository(dc);
 
         public ICreditRepository CreditRepository =>
             new CreditRepository(dc);

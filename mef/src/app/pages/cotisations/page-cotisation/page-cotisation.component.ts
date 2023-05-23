@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cotisation } from 'src/app/model/cotisation';
+import { CotisationList } from 'src/app/model/cotisationList';
 import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
 import { MembreList } from 'src/app/model/membreList';
@@ -18,19 +19,19 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./page-cotisation.component.scss'],
 })
 export class PageCotisationComponent implements OnInit {
-  membres: MembreList[] = [];
-  cotisations: Cotisation[] = [];
+  cotisations: CotisationList[] = [];
 
   constructor(
     private cotisationService: CotisationService,
-    private membreService: MembreService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.membreService.getAll().subscribe((membres: MembreList[]) => {
-      this.membres = membres;
-    });
+    this.cotisationService
+      .getAllCotisations()
+      .subscribe((cotisations: CotisationList[]) => {
+        this.cotisations = cotisations;
+      });
   }
 
   nouveau(): void {
@@ -39,16 +40,5 @@ export class PageCotisationComponent implements OnInit {
 
   navigate(id: number): void {
     this.router.navigate(['/nouvellecotisation/' + id]);
-  }
-
-  getSolde(id?: number): number {
-    let solde = 0;
-    this.cotisations
-      .filter(({ membreId }) => membreId == id)
-      .forEach((c) => {
-        solde += c.montant ?? 0;
-      });
-
-    return solde;
   }
 }

@@ -50,15 +50,21 @@ namespace mefApi.Data.Repo
             return null;
         }
 
-        public async Task<IEnumerable<Membre>> GetAllAsync()
+        public async Task<IEnumerable<Membre>?> GetAllAsync()
         {
-            var membres = await dc.Membres
-            .Include(m => m.Sexe)
-            .Include(m => m.Poste)
-            .Include(m => m.LieuAffectation)
-            .ToListAsync();
+            if(dc.Membres is not null) {
+                var membres = await dc.Membres
+                .Include(m => m.Sexe)
+                .Include(m => m.Poste)
+                .Include(m => m.LieuAffectation)
+                .ToListAsync();
+
+                if(membres is not null){
+                     return membres;
+                }
+            }
             
-            return membres;
+           return null;
         }
 
         public async Task<IEnumerable<Membre>?> GetByEtatAsync(bool estActif)

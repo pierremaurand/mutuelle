@@ -20,17 +20,17 @@
           href="javascript:void(0);"
           class="list-group-item list-group-item-action"
           aria-current="true"
-          *ngFor="let membre of membres | sort : ['nom', 'asc']"
+          *ngFor="let cotisation of cotisations | sort : ['nom', 'asc']"
           [ngClass]="{
-            'border-left-success text-success': membre.estActif,
-            'border-left-danger text-danger': !membre.estActif
+            'border-left-success text-success': cotisation.membre.estActif,
+            'border-left-danger text-danger': !cotisation.membre.estActif
           }"
         >
-          <div class="row" (click)="navigate(membre.id)">
+          <div class="row" (click)="navigate(cotisation.membre.id)">
             <div class="col-12">
               <app-details-membre
-                [membre]="membre"
-                [solde]="getSolde(membre.id)"
+                [membre]="cotisation.membre"
+                [solde]="cotisation.solde"
                 [afficheSolde]="true"
               ></app-details-membre>
             </div>

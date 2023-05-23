@@ -7,6 +7,7 @@ import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
 import { MembreList } from 'src/app/model/membreList';
 import { Mois } from 'src/app/model/mois';
+import { Mouvement } from 'src/app/model/mouvement';
 import { MvtCompte } from 'src/app/model/mvtCompte';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
@@ -25,14 +26,7 @@ import { SexeService } from 'src/app/services/sexe.service';
 export class NouvelleCotisationComponent implements OnInit {
   membre: MembreList = new MembreList();
   cotisation: Cotisation = new Cotisation();
-  mvtCompte: MvtCompte = new MvtCompte();
-  sexe: Sexe = new Sexe();
-  poste: Poste = new Poste();
-  lieuAffectation: LieuAffectation = new LieuAffectation();
-  membreId?: number;
-  photo: string = '';
-  SortbyParam = 'annee';
-  SortDirection = 'desc';
+  idMembre: number = 0;
   mois: Mois[] = [];
   annees: number[] = [2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
   cotisations: Cotisation[] = [];
@@ -41,99 +35,33 @@ export class NouvelleCotisationComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private cotisationService: CotisationService,
-    private sexeService: SexeService,
-    private posteService: PosteService,
-    private lieuAffectationService: LieuAffectationService,
     private membreService: MembreService
   ) {}
 
   ngOnInit(): void {
+    this.idMembre = this.activatedRoute.snapshot.params['id'];
     this.cotisationService.getAllMois().subscribe((mois: Mois[]) => {
       this.mois = mois;
-      this.membreId = this.activatedRoute.snapshot.params['id'];
-      this.cotisationService
-        .getAllCotisationsById(this.membreId)
-        .subscribe((cotisations: Cotisation[]) => {
-          this.cotisations = cotisations;
-          this.membreService
-            .getById(this.membreId)
-            .subscribe((membre: Membre) => {
-              // this.membre = membre;
-              this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-              this.sexeService
-                .getById(membre.sexeId)
-                .subscribe((sexe: Sexe) => {
-                  this.sexe = sexe;
-                });
-              this.posteService
-                .getById(membre.posteId)
-                .subscribe((poste: Poste) => {
-                  this.poste = poste;
-                });
-              this.lieuAffectationService
-                .getById(membre.lieuAffectationId)
-                .subscribe((lieuAffectation: LieuAffectation) => {
-                  this.lieuAffectation = lieuAffectation;
-                });
+    });
+
+    if (this.idMembre) {
+      this.membreService
+        .getInfosMembre(this.idMembre)
+        .subscribe((membre: MembreList) => {
+          this.membre = membre;
+          this.cotisationService
+            .getAllCotisationsById(this.membre.id)
+            .subscribe((cotisations: Cotisation[]) => {
+              this.cotisations = cotisations;
             });
         });
+    }
+  }
+
+  enregistrer(): void {
+    this.cotisationService.addCotisations(this.cotisations).subscribe(() => {
+      this.cancel();
     });
-  }
-
-  enregistrerCompte(): void {
-    if (this.membreId && this.cotisations.length > 0) {
-      this.cotisationService
-        .addCotisations(this.cotisations)
-        .subscribe((value: any) => {
-          this.cancel();
-        });
-    }
-  }
-
-  ajouter(): void {
-    if (this.checkInfosCotisation()) {
-      // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
-      this.mvtCompte.dateMvt =
-        this.cotisation.annee +
-        '-' +
-        this.getMoisNum(this.cotisation.moisId) +
-        '-25';
-      this.mvtCompte.typeOperation = TypeOperation.Credit;
-      this.mvtCompte.gabaritId = 1;
-      this.mvtCompte.libelle =
-        'Cotisation du ' +
-        this.getMoisNum(this.cotisation.moisId) +
-        '/' +
-        this.cotisation.annee;
-      if (this.cotisation.montant)
-        this.mvtCompte.montant = this.cotisation.montant;
-      // this.mvtCompte.membreId = this.membreId;
-      this.cotisation.mvtComptes.push(this.mvtCompte);
-
-      // MOUVEMENT DE RETENU DES 10%
-      this.mvtCompte = new MvtCompte();
-      this.mvtCompte.dateMvt =
-        this.cotisation.annee +
-        '-' +
-        this.getMoisNum(this.cotisation.moisId) +
-        '-25';
-      this.mvtCompte.typeOperation = TypeOperation.Debit;
-      this.mvtCompte.gabaritId = 1;
-      this.mvtCompte.libelle =
-        'Retenu des 10% sur cotisation du ' +
-        this.getMoisNum(this.cotisation.moisId) +
-        '/' +
-        this.cotisation.annee;
-      if (this.cotisation.montant)
-        this.mvtCompte.montant = (this.cotisation.montant * 1) / 10;
-      // this.mvtCompte.membreId = this.membreId;
-      this.cotisation.mvtComptes.push(this.mvtCompte);
-
-      this.cotisation.membreId = this.membreId;
-      this.cotisations.push(this.cotisation);
-      this.cotisation = new Cotisation();
-      this.mvtCompte = new MvtCompte();
-    }
   }
 
   soldeCompte(): number {
@@ -174,5 +102,17 @@ export class NouvelleCotisationComponent implements OnInit {
       index = moisId - 1;
     }
     return this.mois[index].libelle;
+  }
+
+  resetForm(): void {
+    this.cotisation = new Cotisation();
+  }
+
+  ajouterCotisation(): void {
+    if (this.checkInfosCotisation()) {
+      this.cotisation.membreId = this.idMembre;
+      this.cotisations.push(this.cotisation);
+      this.resetForm();
+    }
   }
 }

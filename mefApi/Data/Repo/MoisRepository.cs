@@ -26,5 +26,19 @@ namespace mefApi.Data.Repo
 
             return null;
         }
+
+        public async Task<Mois?> FindAsync(int id)
+        {
+            if(dc.Mois is not null) {
+                var mois = await dc.Mois
+                .Where(m => m.Id == id)
+                .FirstAsync();
+                if(mois is not null) {
+                    return mois;
+                }
+            }
+
+            return null;
+        }
     }
 }

@@ -50,7 +50,8 @@
                 <tbody>
                   <tr
                     *ngFor="
-                      let mouvement of mouvements | sort : ['dateMvt', 'desc'];
+                      let mouvement of mouvements
+                        | sort : [SortbyParam, SortDirection];
                       let i = index
                     "
                   >

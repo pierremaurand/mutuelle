@@ -11,8 +11,10 @@ namespace mefApi.Interfaces
         ICompteComptableRepository CompteComptableRepository { get; }
         IGabaritRepository GabaritRepository { get; }
         IOperationRepository OperationRepository { get; }
+        ICompteRepository CompteRepository { get; }
         IMvtCompteRepository MvtCompteRepository { get; }
         ICotisationRepository CotisationRepository { get; }
+        IMvtCotisationRepository MvtCotisationRepository { get; }
         IMoisRepository MoisRepository { get; }
         IAvanceRepository AvanceRepository { get; }
         IAvanceDebourseRepository AvanceDebourseRepository { get; }

@@ -57,4 +57,8 @@ export class PageAvanceComponent implements OnInit {
 
     return solde;
   }
+
+  exportAvance(): void {}
+
+  importAvance(): void {}
 }

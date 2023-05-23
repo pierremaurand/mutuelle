@@ -6,7 +6,11 @@
       <h1 class="mb-2 text-gray-800">Liste des avances</h1>
     </div>
     <div class="col-md-4">
-      <app-bouton-action (clickEvent)="nouveauAvance()"></app-bouton-action>
+      <app-bouton-action
+        (newEvent)="nouveauAvance()"
+        (exportEvent)="exportAvance()"
+        (importEvent)="importAvance()"
+      ></app-bouton-action>
     </div>
   </div>
 

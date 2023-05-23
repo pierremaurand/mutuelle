@@ -1,181 +1,227 @@
-<!-- <div class="row">
-  <div class="col-md-12">
-    <div class="card border-none">
-      <div class="card-body">
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations sur l'avance
+      </h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+        Formulaire d'enregistrement d'une avance
+      </h6>
+    </div>
+    <div class="card-body">
+      <div>
         <div class="row m-3">
-          <div class="col-md-6">
-            <h2>
-              <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
-              de l'avance
-            </h2>
-          </div>
-          <div class="col-md-6 text-end h2">
-            {{ soldeAvance() | number }} FCFA
-          </div>
-        </div>
-        <div class="row m-3">
-          <div class="col-md-3 border-end text-primary">
-            <div class="row">
+          <div class="col-md-3 mb-3 border-end text-primary">
+            <a
+              href="javascript:void(0);"
+              data-toggle="modal"
+              data-target="#addPicture"
+            >
               <app-infos-membre [membre]="membre"></app-infos-membre>
-            </div>
+            </a>
           </div>
           <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-12">
+            <div class="col-md-12">
+              <form #membreForm="ngForm">
                 <div class="row">
-                  <div class="col" *ngIf="!avance.id">
-                    <label for="membreId" class="form-label">Membre</label>
-                    <select
-                      id="membreId"
-                      name="membreId"
-                      class="form-select"
-                      [(ngModel)]="avance.membreId"
-                      (change)="changeMembre()"
+                  <div class="col-md-12 d-flex justify-content-between">
+                    <a href="javascript:void(0);" (click)="cancel()"
+                      ><i class="fa fa-arrow-left"></i> Retour à la page des
+                      membres</a
                     >
-                      <option
-                        *ngFor="let membre of membres | sort : ['nom', 'asc']"
-                        value="{{ membre.id }}"
-                      >
-                        {{ membre.nom | uppercase }}
-                      </option>
-                    </select>
-                  </div>
-
-                  <div class="col" *ngIf="!avance.id">
-                    <label for="dateEnregistrement" class="form-label"
-                      >Date d'enregistrement</label
-                    >
-                    <input
-                      type="date"
-                      id="dateEnregistrement"
-                      name="dateEnregistrement"
-                      class="form-control"
-                      [(ngModel)]="avance.dateEnregistrement"
-                      placeholder="La date du mouvement"
-                    />
-                  </div>
-
-                  <div class="col">
-                    <label for="montant" class="form-label">Montant</label>
-                    <input
-                      type="number"
-                      id="montant"
-                      name="montant"
-                      class="form-control"
-                      [(ngModel)]="avance.montant"
-                      placeholder="Montant de l'avance"
-                      [disabled]="avance.id != undefined"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="avance.id">
-                    <label for="dateDeblocage" class="form-label"
-                      >Date décaissement</label
-                    >
-                    <input
-                      type="date"
-                      id="dateDeblocage"
-                      name="dateDeblocage"
-                      class="form-control"
-                      [(ngModel)]="avance.dateDeblocage"
-                      placeholder="La date du décaissement"
-                      [disabled]="echeancier.length > 0"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="avance.id">
-                    <label for="nombreEcheances" class="form-label"
-                      >Nombre d'échéances</label
-                    >
-                    <input
-                      type="number"
-                      id="nombreEcheances"
-                      name="nombreEcheances"
-                      class="form-control"
-                      [(ngModel)]="avance.nombreEcheances"
-                      placeholder="Nombre d'échéances"
-                      [disabled]="echeancier.length > 0"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="avance.id && checkEcheancier()">
-                    <label for="mvtDate" class="form-label"
-                      >Date du mouvement</label
-                    >
-                    <input
-                      type="date"
-                      id="mvtDate"
-                      name="mvtDate"
-                      class="form-control"
-                      [(ngModel)]="mvtDate"
-                      placeholder="La date du mouvement"
-                    />
-                  </div>
-
-                  <div
-                    class="col d-flex"
-                    *ngIf="avance.id && echeancier.length == 0"
-                  >
-                    <button
-                      class="btn btn-primary form-control flex-fill"
-                      (click)="genererEcheancier()"
-                    >
-                      Générer échéancier
+                    <button type="button" class="btn btn-success">
+                      <i class="fa fa-save"></i>&nbsp; Enregistrer
                     </button>
                   </div>
                 </div>
-                <hr />
-                <div class="row liste">
-                  <div class="col-12">
-                    <table class="table table-striped">
-                      <tbody>
-                        <tr *ngFor="let echeance of echeancier; let i = index">
-                          <td class="text-center">{{ i + 1 }}</td>
-                          <td>
-                            <button
-                              *ngIf="echeance.id"
-                              [disabled]="echeance.estPaye == true"
-                              class="btn btn-success btn-sm"
-                              (click)="payCheck(i)"
+                <nav class="nav nav-tabs">
+                  <a
+                    class="nav-item nav-link active"
+                    href="#etatcivil"
+                    data-toggle="tab"
+                    >Infos personnelles</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#infosMembre"
+                    data-toggle="tab"
+                    >Infos membre</a
+                  >
+                </nav>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="etatcivil">
+                    <div class="p-3">
+                      <div class="row">
+                        <!-- <div class="form-group col-8">
+                          <label for="nom" class="form-label">Nom</label>
+                          <input
+                            type="text"
+                            id="nom"
+                            class="form-control"
+                            name="nom"
+                            [(ngModel)]="membre.nom"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="sexeId" class="form-label">Sexe</label>
+                          <select
+                            id="sexeId"
+                            name="sexeId"
+                            [(ngModel)]="membre.sexeId"
+                            class="form-control"
+                            (change)="sexeChange()"
+                          >
+                            <option
+                              *ngFor="let sexe of sexes"
+                              value="{{ sexe.id }}"
                             >
-                              <i class="fa fa-check"></i>&nbsp; Payer</button
-                            >&nbsp;
-                            {{ getMois(echeance.moisId) }}
-                          </td>
-                          <td>
-                            {{ echeance.annee }}
-                          </td>
-                          <td class="text-end">
-                            {{ echeance.montant | number }} FCFA
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                              {{ sexe.nom | uppercase }}
+                            </option>
+                          </select>
+                        </div> -->
+                      </div>
+                      <div class="row">
+                        <!-- <div class="form-group col">
+                          <label for="dateNaissance" class="form-label"
+                            >Date de naissance</label
+                          >
+                          <input
+                            type="date"
+                            id="dateNaissance"
+                            class="form-control"
+                            name="dateNaissance"
+                            [(ngModel)]="membre.dateNaissance"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="lieuNaissance" class="form-label"
+                            >Lieu de naissance</label
+                          >
+                          <input
+                            type="text"
+                            id="lieuNaissance"
+                            class="form-control"
+                            name="lieuNaissance"
+                            [(ngModel)]="membre.lieuNaissance"
+                          />
+                        </div> -->
+                      </div>
+                      <div class="row">
+                        <!-- <div class="form-group col">
+                          <label for="contact" class="form-label"
+                            >Téléphone</label
+                          >
+                          <input
+                            type="text"
+                            id="contact"
+                            class="form-control"
+                            name="contact"
+                            [(ngModel)]="membre.contact"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="email" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            name="email"
+                            [(ngModel)]="membre.email"
+                          />
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="infosMembre">
+                    <div class="p-3">
+                      <div class="row">
+                        <!-- <div class="form-group col">
+                          <label for="posteId" class="form-label">Poste</label>
+                          <select
+                            id="posteId"
+                            name="posteId"
+                            [(ngModel)]="membre.posteId"
+                            class="form-control"
+                          >
+                            <option
+                              *ngFor="let poste of postes"
+                              value="{{ poste.id }}"
+                            >
+                              {{ poste.libelle | uppercase }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="form-group col">
+                          <label for="lieuAffectationId" class="form-label"
+                            >Affectation</label
+                          >
+                          <select
+                            id="lieuAffectationId"
+                            name="lieuAffectationId"
+                            [(ngModel)]="membre.lieuAffectationId"
+                            class="form-control"
+                          >
+                            <option
+                              *ngFor="let lieu of lieuAffectations"
+                              value="{{ lieu.id }}"
+                            >
+                              {{ lieu.lieu | uppercase }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="form-group col">
+                          <label for="dateAdhesion" class="form-label"
+                            >Date d'adhésion</label
+                          >
+                          <input
+                            type="date"
+                            id="dateAdhesion"
+                            class="form-control"
+                            name="dateAdhesion"
+                            [(ngModel)]="membre.dateAdhesion"
+                          />
+                        </div> -->
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
-        <div class="row m-3">
-          <div class="col-md-12 text-end">
-            <button
-              type="button"
-              class="btn btn-danger me-2"
-              (click)="cancel()"
-            >
-              <i class="fa fa-ban"></i>&nbsp; Annuler
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              (click)="enregistrer()"
-            >
-              <i class="fa fa-save"></i>&nbsp; Enregistrer
-            </button>
+      </div>
+      <div
+        id="addPicture"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="addPicture"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content rounded-5 shadow">
+            <div class="modal-header">
+              <h4 class="modal-title">Liste des membres</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                #closeModal
+              >
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

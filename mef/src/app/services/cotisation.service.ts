@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Cotisation } from '../model/cotisation';
 import { Membre } from '../model/Membre';
 import { Mois } from '../model/mois';
+import { CotisationList } from '../model/cotisationList';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +16,10 @@ export class CotisationService {
 
   constructor(private http: HttpClient) {}
 
-  getAllMembres(): Observable<Membre[]> {
-    return this.http.get<Membre[]>(this.baseUrl + '/cotisation/membres');
+  getAllCotisations(): Observable<CotisationList[]> {
+    return this.http.get<CotisationList[]>(
+      this.baseUrl + '/cotisation/cotisations'
+    );
   }
 
   getAllMois(): Observable<Mois[]> {
@@ -26,12 +29,6 @@ export class CotisationService {
   getById(id?: number): Observable<Membre> {
     return this.http.get<Membre>(
       this.baseUrl + '/cotisation/get/' + id?.toString()
-    );
-  }
-
-  getAllCotisations(): Observable<Cotisation[]> {
-    return this.http.get<Cotisation[]>(
-      this.baseUrl + '/cotisation/cotisations'
     );
   }
 

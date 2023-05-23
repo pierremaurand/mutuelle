@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
-    public class Cotisation 
+    public class Cotisation : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public int MembreId { get; set; } = 0;
         public Membre? Membre { get; set; }
