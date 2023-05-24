@@ -93,6 +93,7 @@ import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
 import { DetailsMembreComponent } from './composants/details-membre/details-membre.component';
 import { NouvelUtilisateurComponent } from './pages/utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageProfileComponent } from './pages/utilisateur/page-profile/page-profile.component';
+import { ListeChoixMembreComponent } from './composants/liste-choix-membre/liste-choix-membre.component';
 
 @NgModule({
   declarations: [
@@ -179,6 +180,7 @@ import { PageProfileComponent } from './pages/utilisateur/page-profile/page-prof
     DetailsMembreComponent,
     NouvelUtilisateurComponent,
     PageProfileComponent,
+    ListeChoixMembreComponent,
   ],
   providers: [
     {

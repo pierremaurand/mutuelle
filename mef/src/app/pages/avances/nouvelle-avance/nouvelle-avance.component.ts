@@ -226,4 +226,8 @@ export class NouvelleAvanceComponent implements OnInit {
   //   }
   //   return false;
   // }
+
+  membreChoisie(membre: MembreList) {
+    this.membre = membre;
+  }
 }

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <input
+      type="search"
+      class="form-control"
+      placeholder="Recherche..."
+      [(ngModel)]="search"
+    />
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col liste">
+    <table class="table table-striped">
+      <tbody>
+        <tr *ngFor="let membre of membres | filter : search : 'nom'">
+          <td (dblclick)="sendMembre(membre)">
+            <div class="row">
+              <div class="col-12">
+                <app-details-membre [membre]="membre"></app-details-membre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
