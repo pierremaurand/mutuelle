@@ -136,11 +136,14 @@ namespace mefApi.Controllers
                 if(mvtEcheanceAvances is not null) {
                     foreach(var mvt in mvtEcheanceAvances) {
                         if(mvt.EcheanceAvance is not null) {
-                            var avance = await uow.AvanceRepository.FindByIdAsync(mvt.EcheanceAvance.AvanceId);
-                            if(avance is not null && avance.MembreId == membre.Id) {
+                            var avanceDebourse = await uow.AvanceDebourseRepository.FindByIdAsync(mvt.EcheanceAvance.AvanceDebourseId);
+                            if(avanceDebourse is not null) {
+                                var avance = await uow.AvanceRepository.FindByIdAsync(avanceDebourse.AvanceId);
+                                if(avance is not null && avance.MembreId == membre.Id) {
                                 if(mvt.Mouvement is not null) {
                                     mouvements.Add(mvt.Mouvement);
                                 }
+                            }
                             }
                         }
                     }
@@ -150,10 +153,13 @@ namespace mefApi.Controllers
                 if(mvtEcheanceCredits is not null) {
                     foreach(var mvt in mvtEcheanceCredits) {
                         if(mvt.EcheanceCredit is not null) {
-                            var credit = await uow.CreditRepository.FindByIdAsync(mvt.EcheanceCredit.CreditId);
-                            if(credit is not null && credit.MembreId == membre.Id) {
-                                if(mvt.Mouvement is not null) {
-                                    mouvements.Add(mvt.Mouvement);
+                            var creditDebourse = await uow.CreditDebourseRepository.FindByIdAsync(mvt.EcheanceCredit.CreditDebourseId);
+                            if(creditDebourse is not null) {
+                                var credit = await uow.CreditRepository.FindByIdAsync(creditDebourse.CreditId);
+                                if(credit is not null && credit.MembreId == membre.Id) {
+                                    if(mvt.Mouvement is not null) {
+                                        mouvements.Add(mvt.Mouvement);
+                                    }
                                 }
                             }
                         }
@@ -242,10 +248,13 @@ namespace mefApi.Controllers
             if(mvtEcheanceAvances is not null) {
                 foreach(var mvt in mvtEcheanceAvances) {
                     if(mvt.EcheanceAvance is not null) {
-                        var avance = await uow.AvanceRepository.FindByIdAsync(mvt.EcheanceAvance.AvanceId);
-                        if(avance is not null && avance.MembreId == id) {
-                            if(mvt.Mouvement is not null) {
-                                mouvements.Add(mvt.Mouvement);
+                        var avanceDebourse = await uow.AvanceDebourseRepository.FindByIdAsync(mvt.EcheanceAvance.AvanceDebourseId);
+                        if(avanceDebourse is not null ) {
+                            var avance = await uow.AvanceRepository.FindByIdAsync(avanceDebourse.AvanceId);
+                            if(avance is not null && avance.MembreId == id) {
+                                if(mvt.Mouvement is not null) {
+                                    mouvements.Add(mvt.Mouvement);
+                                }
                             }
                         }
                     }
@@ -256,10 +265,13 @@ namespace mefApi.Controllers
             if(mvtEcheanceCredits is not null) {
                 foreach(var mvt in mvtEcheanceCredits) {
                     if(mvt.EcheanceCredit is not null) {
-                        var credit = await uow.CreditRepository.FindByIdAsync(mvt.EcheanceCredit.CreditId);
-                        if(credit is not null && credit.MembreId == id) {
-                            if(mvt.Mouvement is not null) {
-                                mouvements.Add(mvt.Mouvement);
+                        var creditDebourse = await uow.CreditDebourseRepository.FindByIdAsync(mvt.EcheanceCredit.CreditDebourseId);
+                        if(creditDebourse is not null) {
+                            var credit = await uow.CreditRepository.FindByIdAsync(creditDebourse.CreditId);
+                            if(credit is not null && credit.MembreId == id) {
+                                if(mvt.Mouvement is not null) {
+                                    mouvements.Add(mvt.Mouvement);
+                                }
                             }
                         }
                     }

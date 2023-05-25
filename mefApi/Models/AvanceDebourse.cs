@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,11 +8,12 @@ namespace mefApi.Models
 {
     public class AvanceDebourse : BaseEntity
     {
+        [Required]
         public int AvanceId { get; set; } = 0;
         public Avance? Avance { get; set; }
-        public decimal MontantDebourse { get; set; } = 0;
-        public int NombreEcheances { get; set; } = 0;
-        public string DateDebut { get; set; } = string.Empty;
-        public string DateFin { get; set; } = string.Empty;
+        [Required]
+        public decimal MontantApprouve { get; set; } = 0;
+        public int NombreEcheancesApprouve { get; set; } = 0;
+        public string DateDecaissement { get; set; } = string.Empty;
     }
 }

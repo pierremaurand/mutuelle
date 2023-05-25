@@ -6,19 +6,13 @@ namespace mefApi.Models
     public class EcheanceCredit : BaseEntity
     {
         [Required]
-        public int CreditId { get; set; }
-        public Credit? Credit { get; set; }
+        public int CreditDebourseId { get; set; }
+        public CreditDebourse? CreditDebourse { get; set; }
         [Required]
-        public int MoisId { get; set; } = 0;
-        public Mois? Mois { get; set; } 
+        public string DateEcheance { get; set; } = string.Empty;
         [Required]
-        public int Annee { get; set; } = 0;
+        public decimal Pricipal { get; set; } = 0;
         [Required]
-        public decimal MontantCapital { get; set; } = 0;
-        [Required]
-        public decimal MontantInteret { get; set; } = 0;
-        [Required]
-        public decimal MontantCommission { get; set; } = 0;
-        public bool EstPaye { get; set; } = false;
+        public decimal Interet { get; set; } = 0;
     }
 }

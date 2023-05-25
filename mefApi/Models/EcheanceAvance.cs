@@ -6,15 +6,11 @@ namespace mefApi.Models
     public class EcheanceAvance : BaseEntity
     {
         [Required]
-        public int AvanceId { get; set; }
-        public Avance? Avance { get; set; } 
+        public int AvanceDebourseId { get; set; }
+        public AvanceDebourse? AvanceDebourse { get; set; } 
         [Required]
-        public int MoisId { get; set; }
-        public Mois? Mois { get; set; }
+        public string DateEcheance { get; set; } = string.Empty;
         [Required]
-        public int Annee { get; set; } = 0;
-        [Required]
-        public decimal Montant { get; set; } = 0;
-        public bool EstPaye { get; set; } = false;
+        public decimal MontantEcheance { get; set; } = 0;
     }
 }

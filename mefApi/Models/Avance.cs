@@ -9,9 +9,10 @@ namespace mefApi.Models
         public int MembreId { get; set; } = 0;
         public Membre? Membre { get; set; }
         [Required]
-        public decimal Montant { get; set; } = 0;
-        public int NombreEcheances { get; set; } = 0;
-        public bool? Avis1 { get; set; } = false;
-        public bool? Avis2 { get; set; } = false;
+        public decimal MontantSollicite { get; set; } = 0;
+        [Required]
+        public int NombreEcheancesSollicite { get; set; } = 0;
+        [Required]
+        public string DateDemande { get; set; } = string.Empty;
     }
 }
