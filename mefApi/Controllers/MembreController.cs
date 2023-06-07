@@ -35,7 +35,7 @@ namespace mefApi.Controllers
             if(membres is null) {
                 return NotFound();
             }
-            var membresDto = mapper.Map<IEnumerable<MembreListDto>>(membres);
+            var membresDto = mapper.Map<IEnumerable<MembreDto>>(membres);
             return Ok(membresDto);
         }
 

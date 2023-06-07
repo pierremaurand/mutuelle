@@ -80,12 +80,19 @@ namespace mefapi.Migrations
                     b.Property<decimal>("MontantApprouve")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("MouvementId")
+                        .HasColumnType("int");
+
                     b.Property<int>("NombreEcheancesApprouve")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AvanceId");
+                    b.HasIndex("AvanceId")
+                        .IsUnique();
+
+                    b.HasIndex("MouvementId")
+                        .IsUnique();
 
                     b.ToTable("AvancesDebourses");
                 });
@@ -127,9 +134,6 @@ namespace mefapi.Migrations
 
                     b.Property<int>("Annee")
                         .HasColumnType("int");
-
-                    b.Property<bool>("EstValide")
-                        .HasColumnType("bit");
 
                     b.Property<int>("MembreId")
                         .HasColumnType("int");
@@ -222,9 +226,16 @@ namespace mefapi.Migrations
                     b.Property<decimal>("MontantInteret")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("MouvementId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CreditId");
+                    b.HasIndex("CreditId")
+                        .IsUnique();
+
+                    b.HasIndex("MouvementId")
+                        .IsUnique();
 
                     b.ToTable("CreditsDebourses");
                 });
@@ -267,7 +278,7 @@ namespace mefapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AvanceDebourseId")
+                    b.Property<int>("AvanceId")
                         .HasColumnType("int");
 
                     b.Property<string>("DateEcheance")
@@ -285,7 +296,7 @@ namespace mefapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AvanceDebourseId");
+                    b.HasIndex("AvanceId");
 
                     b.ToTable("EcheancesAvances");
                 });
@@ -298,7 +309,7 @@ namespace mefapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CreditDebourseId")
+                    b.Property<int>("CreditId")
                         .HasColumnType("int");
 
                     b.Property<string>("DateEcheance")
@@ -319,7 +330,7 @@ namespace mefapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreditDebourseId");
+                    b.HasIndex("CreditId");
 
                     b.ToTable("EcheancesCredits");
                 });
@@ -506,9 +517,18 @@ namespace mefapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("CotisationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DateMvt")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EcheanceAvanceId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EcheanceCreditId")
+                        .HasColumnType("int");
 
                     b.Property<int>("GabaritId")
                         .HasColumnType("int");
@@ -516,6 +536,9 @@ namespace mefapi.Migrations
                     b.Property<string>("Libelle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MembreId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
@@ -531,183 +554,17 @@ namespace mefapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GabaritId");
-
-                    b.ToTable("Mouvements");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtAvanceDebourse", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AvanceDebourseId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AvanceDebourseId");
-
-                    b.HasIndex("MouvementId");
-
-                    b.ToTable("MvtAvancesDebourses");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCompte", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
-
-                    b.HasIndex("MouvementId");
-
-                    b.ToTable("MvtComptes");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCotisation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CotisationId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("CotisationId");
-
-                    b.HasIndex("MouvementId");
-
-                    b.ToTable("MvtCotisations");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCreditDebourse", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CreditDebourseId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreditDebourseId");
-
-                    b.HasIndex("MouvementId");
-
-                    b.ToTable("MvtCreditsDebourses");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtEcheanceAvance", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("EcheanceAvanceId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
 
                     b.HasIndex("EcheanceAvanceId");
 
-                    b.HasIndex("MouvementId");
-
-                    b.ToTable("MvtEcheancesAvances");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtEcheanceCredit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("EcheanceCreditId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MouvementId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
                     b.HasIndex("EcheanceCreditId");
 
-                    b.HasIndex("MouvementId");
+                    b.HasIndex("GabaritId");
 
-                    b.ToTable("MvtEcheancesCredits");
+                    b.HasIndex("MembreId");
+
+                    b.ToTable("Mouvements");
                 });
 
             modelBuilder.Entity("mefApi.Models.Operation", b =>
@@ -823,10 +680,13 @@ namespace mefapi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
+                    b.Property<int?>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MembreId")
+                        .IsUnique();
 
                     b.ToTable("Utilisateurs");
                 });
@@ -834,7 +694,7 @@ namespace mefapi.Migrations
             modelBuilder.Entity("mefApi.Models.Avance", b =>
                 {
                     b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany()
+                        .WithMany("Avances")
                         .HasForeignKey("MembreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -845,18 +705,26 @@ namespace mefapi.Migrations
             modelBuilder.Entity("mefApi.Models.AvanceDebourse", b =>
                 {
                     b.HasOne("mefApi.Models.Avance", "Avance")
-                        .WithMany()
-                        .HasForeignKey("AvanceId")
+                        .WithOne("AvanceDebourse")
+                        .HasForeignKey("mefApi.Models.AvanceDebourse", "AvanceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
+                        .WithOne("AvanceDebourse")
+                        .HasForeignKey("mefApi.Models.AvanceDebourse", "MouvementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Avance");
+
+                    b.Navigation("Mouvement");
                 });
 
             modelBuilder.Entity("mefApi.Models.Cotisation", b =>
                 {
                     b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany()
+                        .WithMany("Cotisations")
                         .HasForeignKey("MembreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -875,7 +743,7 @@ namespace mefapi.Migrations
             modelBuilder.Entity("mefApi.Models.Credit", b =>
                 {
                     b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany()
+                        .WithMany("Credits")
                         .HasForeignKey("MembreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -886,12 +754,20 @@ namespace mefapi.Migrations
             modelBuilder.Entity("mefApi.Models.CreditDebourse", b =>
                 {
                     b.HasOne("mefApi.Models.Credit", "Credit")
-                        .WithMany()
-                        .HasForeignKey("CreditId")
+                        .WithOne("CreditDebourse")
+                        .HasForeignKey("mefApi.Models.CreditDebourse", "CreditId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
+                        .WithOne("CreditDebourse")
+                        .HasForeignKey("mefApi.Models.CreditDebourse", "MouvementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Credit");
+
+                    b.Navigation("Mouvement");
                 });
 
             modelBuilder.Entity("mefApi.Models.DetailEcritureComptable", b =>
@@ -907,24 +783,24 @@ namespace mefapi.Migrations
 
             modelBuilder.Entity("mefApi.Models.EcheanceAvance", b =>
                 {
-                    b.HasOne("mefApi.Models.AvanceDebourse", "AvanceDebourse")
-                        .WithMany()
-                        .HasForeignKey("AvanceDebourseId")
+                    b.HasOne("mefApi.Models.Avance", "Avance")
+                        .WithMany("Echeancier")
+                        .HasForeignKey("AvanceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AvanceDebourse");
+                    b.Navigation("Avance");
                 });
 
             modelBuilder.Entity("mefApi.Models.EcheanceCredit", b =>
                 {
-                    b.HasOne("mefApi.Models.CreditDebourse", "CreditDebourse")
-                        .WithMany()
-                        .HasForeignKey("CreditDebourseId")
+                    b.HasOne("mefApi.Models.Credit", "Credit")
+                        .WithMany("Echeancier")
+                        .HasForeignKey("CreditId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CreditDebourse");
+                    b.Navigation("Credit");
                 });
 
             modelBuilder.Entity("mefApi.Models.EcritureComptable", b =>
@@ -967,127 +843,37 @@ namespace mefapi.Migrations
 
             modelBuilder.Entity("mefApi.Models.Mouvement", b =>
                 {
+                    b.HasOne("mefApi.Models.Cotisation", "Cotisation")
+                        .WithMany("Mouvements")
+                        .HasForeignKey("CotisationId");
+
+                    b.HasOne("mefApi.Models.EcheanceAvance", "EcheanceAvance")
+                        .WithMany()
+                        .HasForeignKey("EcheanceAvanceId");
+
+                    b.HasOne("mefApi.Models.EcheanceCredit", "EcheanceCredit")
+                        .WithMany("Mouvements")
+                        .HasForeignKey("EcheanceCreditId");
+
                     b.HasOne("mefApi.Models.Gabarit", "Gabarit")
                         .WithMany()
                         .HasForeignKey("GabaritId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Gabarit");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtAvanceDebourse", b =>
-                {
-                    b.HasOne("mefApi.Models.AvanceDebourse", "AvanceDebourse")
-                        .WithMany()
-                        .HasForeignKey("AvanceDebourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AvanceDebourse");
-
-                    b.Navigation("Mouvement");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCompte", b =>
-                {
                     b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany()
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
-
-                    b.Navigation("Mouvement");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCotisation", b =>
-                {
-                    b.HasOne("mefApi.Models.Cotisation", "Cotisation")
-                        .WithMany()
-                        .HasForeignKey("CotisationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Mouvements")
+                        .HasForeignKey("MembreId");
 
                     b.Navigation("Cotisation");
 
-                    b.Navigation("Mouvement");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtCreditDebourse", b =>
-                {
-                    b.HasOne("mefApi.Models.CreditDebourse", "CreditDebourse")
-                        .WithMany()
-                        .HasForeignKey("CreditDebourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CreditDebourse");
-
-                    b.Navigation("Mouvement");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtEcheanceAvance", b =>
-                {
-                    b.HasOne("mefApi.Models.EcheanceAvance", "EcheanceAvance")
-                        .WithMany()
-                        .HasForeignKey("EcheanceAvanceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("EcheanceAvance");
-
-                    b.Navigation("Mouvement");
-                });
-
-            modelBuilder.Entity("mefApi.Models.MvtEcheanceCredit", b =>
-                {
-                    b.HasOne("mefApi.Models.EcheanceCredit", "EcheanceCredit")
-                        .WithMany()
-                        .HasForeignKey("EcheanceCreditId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("mefApi.Models.Mouvement", "Mouvement")
-                        .WithMany()
-                        .HasForeignKey("MouvementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("EcheanceCredit");
 
-                    b.Navigation("Mouvement");
+                    b.Navigation("Gabarit");
+
+                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("mefApi.Models.Operation", b =>
@@ -1107,6 +893,61 @@ namespace mefapi.Migrations
                     b.Navigation("CompteComptable");
 
                     b.Navigation("Gabarit");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Utilisateur", b =>
+                {
+                    b.HasOne("mefApi.Models.Membre", "Membre")
+                        .WithOne("Utilisateur")
+                        .HasForeignKey("mefApi.Models.Utilisateur", "MembreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Membre");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Avance", b =>
+                {
+                    b.Navigation("AvanceDebourse");
+
+                    b.Navigation("Echeancier");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Cotisation", b =>
+                {
+                    b.Navigation("Mouvements");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Credit", b =>
+                {
+                    b.Navigation("CreditDebourse");
+
+                    b.Navigation("Echeancier");
+                });
+
+            modelBuilder.Entity("mefApi.Models.EcheanceCredit", b =>
+                {
+                    b.Navigation("Mouvements");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Membre", b =>
+                {
+                    b.Navigation("Avances");
+
+                    b.Navigation("Cotisations");
+
+                    b.Navigation("Credits");
+
+                    b.Navigation("Mouvements");
+
+                    b.Navigation("Utilisateur");
+                });
+
+            modelBuilder.Entity("mefApi.Models.Mouvement", b =>
+                {
+                    b.Navigation("AvanceDebourse");
+
+                    b.Navigation("CreditDebourse");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,5 @@
+import { Mouvement } from './mouvement';
+
 export class EcheanceCredit {
   id?: number;
   creditId?: number;
@@ -5,5 +7,5 @@ export class EcheanceCredit {
   annee?: number;
   montantCapital?: number;
   montantInteret?: number;
-  estPaye?: boolean;
+  mouvements?: Mouvement[];
 }

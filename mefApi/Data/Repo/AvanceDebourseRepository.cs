@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using mefApi.Interfaces;
 using mefApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace mefApi.Data.Repo
 {
@@ -18,7 +15,9 @@ namespace mefApi.Data.Repo
 
         public void Add(AvanceDebourse avance)
         {
-            throw new NotImplementedException();
+            if(dc.AvancesDebourses is not null && avance is not null) {
+                dc.AvancesDebourses.AddAsync(avance);
+            }
         }
 
         public void Delete(int id)
@@ -26,14 +25,47 @@ namespace mefApi.Data.Repo
             throw new NotImplementedException();
         }
 
-        public Task<AvanceDebourse?> FindByIdAsync(int id)
+        public async Task<AvanceDebourse?> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            if(dc.AvancesDebourses is not null) {
+                var avance = await dc.AvancesDebourses
+                .Include(a => a.Mouvement)
+                .Where(a => a.Id == id)
+                .FirstOrDefaultAsync();
+                if(avance is not null) {
+                    return avance;
+                }
+            }
+
+            return null;
         }
 
-        public Task<IEnumerable<AvanceDebourse>?> GetAllAsync()
+        public async Task<IEnumerable<AvanceDebourse>?> FindByAvanceIdAsync(int id) {
+            if(dc.AvancesDebourses is not null) {
+                var avance = await dc.AvancesDebourses
+                .Include(a => a.Mouvement)
+                .Where(a => a.AvanceId == id)
+                .ToListAsync();
+                if(avance is not null) {
+                    return avance;
+                }
+            }
+
+            return null;
+        }
+
+        public async Task<IEnumerable<AvanceDebourse>?> GetAllAsync()
         {
-            throw new NotImplementedException();
+            if(dc.AvancesDebourses is not null) {
+                var avances = await dc.AvancesDebourses
+                .Include(a => a.Mouvement)
+                .ToListAsync();
+                if(avances is not null) {
+                    return avances;
+                }
+            }
+
+            return null;
         }
     }
 }

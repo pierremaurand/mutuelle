@@ -5,6 +5,6 @@ export class Mouvement {
   typeOperation: TypeOperation = TypeOperation.Debit;
   gabaritId: number = 0;
   libelle: string = '';
-  montant: number = 0;
+  montant?: number;
   dateMvt: string = '';
 }

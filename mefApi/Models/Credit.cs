@@ -14,5 +14,7 @@ namespace mefApi.Models
         public int DureeSollicite { get; set; } = 0;
         [Required]
         public string DateDemande { get; set; } = string.Empty;
+        public CreditDebourse? CreditDebourse { get; set; }
+        public ICollection<EcheanceCredit>? Echeancier { get; set; }
     }
 }

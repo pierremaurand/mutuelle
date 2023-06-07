@@ -110,21 +110,6 @@ namespace mefApi.Controllers
             return StatusCode(201);
         }
 
-        [HttpPost("addmvtcomptes")]
-        public async Task<IActionResult> AddMvtComptes(MvtCompteDto[] mvtsDto)
-        {
-            if(!ModelState.IsValid) 
-                return BadRequest(ModelState);
-
-            foreach(var mvtDto in mvtsDto) {
-                var mvt = mapper.Map<MvtCompte>(mvtDto);
-                uow.MvtCompteRepository.Add(mvt);
-            }
-            
-            await uow.SaveAsync();
-            return StatusCode(201);
-        }
-
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id,CreditDto creditDto)
         {

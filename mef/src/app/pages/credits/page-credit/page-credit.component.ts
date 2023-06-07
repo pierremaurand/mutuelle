@@ -50,12 +50,12 @@ export class PageCreditComponent implements OnInit {
     let solde = 0;
     solde += credit?.montantCapital ?? 0;
     solde += credit?.montantInteret ?? 0;
-    this.echeances
-      .filter(({ estPaye, creditId }) => estPaye && creditId == credit?.id)
-      .forEach((e) => {
-        solde -= e.montantCapital ?? 0;
-        solde -= e.montantInteret ?? 0;
-      });
+    // this.echeances
+    //   .filter(({ estPaye, creditId }) => estPaye && creditId == credit?.id)
+    //   .forEach((e) => {
+    //     solde -= e.montantCapital ?? 0;
+    //     solde -= e.montantInteret ?? 0;
+    //   });
 
     return solde;
   }

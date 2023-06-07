@@ -5,6 +5,7 @@ import { UtilisateurList } from '../model/utilisateurList';
 import { environment } from 'src/environments/environment';
 import { Utilisateur } from '../model/utilisateur';
 import { MembreList } from '../model/membreList';
+import { Membre } from '../model/Membre';
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +27,8 @@ export class UtilisateurService {
     );
   }
 
-  getMembre(): Observable<MembreList> {
-    return this.http.get<MembreList>(this.baseUrl + '/utilisateur/getmembre');
+  getMembre(): Observable<Membre> {
+    return this.http.get<Membre>(this.baseUrl + '/utilisateur/getmembre');
   }
 
   add(utilisateur: Utilisateur): Observable<any> {

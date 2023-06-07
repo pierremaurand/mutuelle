@@ -21,8 +21,8 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class NouvelUtilisateurComponent implements OnInit {
   utilisateur: Utilisateur = new Utilisateur();
-  membres: MembreList[] = [];
-  membre: MembreList = new MembreList();
+  membres: Membre[] = [];
+  membre: Membre = new Membre();
 
   constructor(
     private router: Router,
@@ -32,7 +32,7 @@ export class NouvelUtilisateurComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.membreService.getAll().subscribe((membres: MembreList[]) => {
+    this.membreService.getAll().subscribe((membres: Membre[]) => {
       this.membres = membres;
       const idUtilisateur = this.activatedRoute.snapshot.params['id'];
       if (idUtilisateur) {

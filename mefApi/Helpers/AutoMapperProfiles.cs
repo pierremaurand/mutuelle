@@ -14,10 +14,6 @@ namespace mefApi.Helpers
             CreateMap<Sexe, SexeDto>().ReverseMap();
 
             CreateMap<Membre, MembreDto>().ReverseMap();
-            CreateMap<Membre, MembreListDto>()
-            .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom))
-            .ForMember(d => d.Poste, opt => opt.MapFrom(src => src.Poste.Libelle))
-            .ForMember(d => d.Lieu, opt => opt.MapFrom(src => src.LieuAffectation.Lieu));
             
             CreateMap<Poste, PosteDto>().ReverseMap();
 
@@ -29,28 +25,20 @@ namespace mefApi.Helpers
             CreateMap<Operation, OperationDto>().ReverseMap();
 
             CreateMap<Compte, CompteDto>().ReverseMap();
-            CreateMap<MvtCompte, MvtCompteDto>().ReverseMap();
 
             CreateMap<Mouvement, MouvementDto>().ReverseMap();
 
-            CreateMap<AvanceDebourse, AvanceDebourseDto>().ReverseMap();
-            CreateMap<MvtAvanceDebourse, MvtAvanceDebourseDto>().ReverseMap();
-
-            CreateMap<CreditDebourse, CreditDebourseDto>().ReverseMap();
-            CreateMap<MvtCreditDebourse, MvtCreditDebourseDto>().ReverseMap();
-
             CreateMap<Cotisation, CotisationDto>().ReverseMap();
-            CreateMap<MvtCotisation, MvtCotisationDto>().ReverseMap();
             
             CreateMap<LieuAffectation, LieuAffectationDto>().ReverseMap();
             
             CreateMap<Avance, AvanceDto>().ReverseMap();
             CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
-            CreateMap<MvtEcheanceAvance, MvtEcheanceAvanceDto>().ReverseMap();
+            CreateMap<AvanceDebourse, AvanceDebourseDto>().ReverseMap();
 
             CreateMap<Credit, CreditDto>().ReverseMap();
             CreateMap<EcheanceCredit, EcheanceCreditDto>().ReverseMap();
-            CreateMap<MvtEcheanceCredit, MvtEcheanceCreditDto>().ReverseMap();
+            CreateMap<CreditDebourse, CreditDebourseDto>().ReverseMap();
         }
     }
 }

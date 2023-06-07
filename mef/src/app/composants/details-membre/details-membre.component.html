@@ -1,21 +1,28 @@
 <div class="row">
-  <div class="col-md-1 text-center">
+  <div class="col-2 text-center border-right">
     <img
       src="{{ imagesUrl }}/assets/images/{{ membre.photo }}"
-      width="64"
-      height="64"
+      width="{{ width }}"
       class="rounded-circle"
     />
   </div>
-  <div class="col-md-11 align-item-center">
+  <div class="col-10 align-item-center">
     <div class="d-flex justify-content-between">
-      <h5>{{ membre.nom }}</h5>
-      <h5 *ngIf="afficheSolde">{{ solde | number }} FCFA</h5>
+      <h5
+        class="{{ size }}"
+        [ngClass]="{
+          'text-success': membre.estActif,
+          'text-danger': !membre.estActif
+        }"
+      >
+        {{ membre.nom }}
+      </h5>
     </div>
     <p class="text-primary">
-      <i class="fa fa-venus-mars"></i> {{ membre.sexe | uppercase }} |
-      <i class="fa fa-sitemap"></i> {{ membre.poste | uppercase }} |
-      <i class="fa fa-building"></i> {{ membre.lieu | uppercase }}
+      <i class="fa fa-venus-mars"></i> {{ membre.sexe.nom | uppercase }} |
+      <i class="fa fa-sitemap"></i> {{ membre.poste.libelle | uppercase }} |
+      <i class="fa fa-building"></i>
+      {{ membre.lieuAffectation.lieu | uppercase }}
     </p>
   </div>
 </div>

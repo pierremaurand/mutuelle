@@ -40,8 +40,8 @@ namespace mefApi.Data.Repo
                 .Include(m => m.Sexe)
                 .Include(m => m.Poste)
                 .Include(m => m.LieuAffectation)
-                .Where(s => s.Id == id)
-                .FirstAsync();
+                .Where(m => m.Id == id)
+                .FirstOrDefaultAsync();
                 if(membre is not null) {
                     return membre;
                 }
@@ -54,9 +54,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
-                .Include(m => m.Sexe)
-                .Include(m => m.Poste)
-                .Include(m => m.LieuAffectation)
                 .ToListAsync();
 
                 if(membres is not null){
@@ -71,6 +68,10 @@ namespace mefApi.Data.Repo
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
+                .Include(m => m.Mouvements)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .Where(m => m.EstActif == estActif)
                 .ToListAsync();
                 if(membres is not null) {
@@ -85,6 +86,10 @@ namespace mefApi.Data.Repo
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
+                .Include(m => m.Mouvements)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .Where(s => s.PosteId == posteId)
                 .ToListAsync();
                 if(membres is not null) {
@@ -99,6 +104,10 @@ namespace mefApi.Data.Repo
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
+                .Include(m => m.Mouvements)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .Where(m => m.SexeId == sexeId)
                 .ToListAsync();
                 if(membres is not null) {

@@ -1,12 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Membre } from 'src/app/model/Membre';
 import { Gabarit } from 'src/app/model/gabarit';
+import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { MembreList } from 'src/app/model/membreList';
 import { Mouvement } from 'src/app/model/mouvement';
+import { Poste } from 'src/app/model/poste';
+import { Sexe } from 'src/app/model/sexe';
 import { TypeOperation } from 'src/app/model/typeoperation';
 import { CompteService } from 'src/app/services/compte.service';
 import { GabaritService } from 'src/app/services/gabarit.service';
+import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
+import { PosteService } from 'src/app/services/poste.service';
+import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-nouveau-compte',
@@ -14,7 +21,7 @@ import { MembreService } from 'src/app/services/membre.service';
   styleUrls: ['./nouveau-compte.component.scss'],
 })
 export class NouveauCompteComponent implements OnInit {
-  membre: MembreList = new MembreList();
+  membre: Membre = new Membre();
   idMembre: number = 0;
   mouvement: Mouvement = new Mouvement();
   gabarits: Gabarit[] = [];
@@ -36,16 +43,14 @@ export class NouveauCompteComponent implements OnInit {
       this.gabarits = gabarits;
     });
     if (this.idMembre) {
-      this.membreService
-        .getInfosMembre(this.idMembre)
-        .subscribe((membre: MembreList) => {
-          this.membre = membre;
-          this.compteService
-            .getAllMvts(this.membre.id)
-            .subscribe((mouvements: Mouvement[]) => {
-              this.mouvements = mouvements;
-            });
-        });
+      this.membreService.getById(this.idMembre).subscribe((membre: Membre) => {
+        this.membre = membre;
+        this.compteService
+          .getAllMvts(this.membre.id)
+          .subscribe((mouvements: Mouvement[]) => {
+            this.mouvements = mouvements;
+          });
+      });
     }
   }
 

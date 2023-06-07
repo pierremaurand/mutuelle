@@ -14,5 +14,7 @@ namespace mefApi.Models
         public int NombreEcheancesSollicite { get; set; } = 0;
         [Required]
         public string DateDemande { get; set; } = string.Empty;
+        public AvanceDebourse? AvanceDebourse { get; set; }
+        public ICollection<EcheanceAvance> Echeancier { get; set; } = new List<EcheanceAvance>();
     }
 }

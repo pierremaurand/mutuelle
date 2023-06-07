@@ -20,7 +20,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-3">
-          <app-infos-membre [membre]="membre"></app-infos-membre>
+          <app-infos-membre [membre]="cotisationsMembre.membre"></app-infos-membre>
         </div>
         <div class="col">
           <div class="row mb-2 d-flex justify-content-between">
@@ -52,7 +52,7 @@
                 <tbody>
                   <tr
                     *ngFor="
-                      let cotisation of cotisations
+                      let cotisation of cotisationsMembre.cotisations
                         | sort : ['moisId', 'desc']
                         | sort : ['annee', 'desc'];
                       let i = index

@@ -9,6 +9,6 @@ namespace mefApi.Dtos
     {
         public int Id { get; set; } = 0;
         public string NomUtilisateur { get; set; } = string.Empty;
-        public MembreListDto Membre { get; set; } = new MembreListDto();
+        public MembreDto Membre { get; set; } = new MembreDto();
     }
 }

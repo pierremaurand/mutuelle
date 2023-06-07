@@ -11,11 +11,7 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">
-        Liste des soldes par membre
-      </h6>
-    </div>
+    <div class="card-header py-3"></div>
     <div class="card-body">
       <div class="list-group">
         <a
@@ -30,11 +26,10 @@
         >
           <div class="row" (click)="navigate(compte.membre.id)">
             <div class="col-12">
-              <app-details-membre
+              <app-detail-compte
                 [membre]="compte.membre"
-                [afficheSolde]="true"
                 [solde]="compte.solde"
-              ></app-details-membre>
+              ></app-detail-compte>
             </div>
           </div>
         </a>

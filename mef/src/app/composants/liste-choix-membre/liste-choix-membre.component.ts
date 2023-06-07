@@ -9,21 +9,22 @@ import { MembreService } from 'src/app/services/membre.service';
   styleUrls: ['./liste-choix-membre.component.scss'],
 })
 export class ListeChoixMembreComponent implements OnInit {
-  membres: MembreList[] = [];
+  membres: Membre[] = [];
   search: string = '';
+  width: number = 32;
   @Output()
-  membreChoisie = new EventEmitter<MembreList>();
+  membreChoisie = new EventEmitter<number>();
 
   constructor(private membreService: MembreService) {}
 
   ngOnInit(): void {
-    this.membreService.getAll().subscribe((membres: MembreList[]) => {
+    this.membreService.getAll().subscribe((membres: Membre[]) => {
       this.membres = membres;
     });
   }
 
-  sendMembre(membre: MembreList): void {
-    this.membreChoisie.emit(membre);
+  sendMembre(id: number): void {
+    this.membreChoisie.emit(id);
     this.closeModal();
   }
 

@@ -1,22 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Cotisation } from 'src/app/model/cotisation';
-import { InfosCotisation } from 'src/app/model/infosCotisation';
-import { InfosMembre } from 'src/app/model/infosMembre';
-import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
-import { MembreList } from 'src/app/model/membreList';
+import { Cotisation } from 'src/app/model/cotisation';
+import { CotisationsMembre } from 'src/app/model/cotisationsMembre';
 import { Mois } from 'src/app/model/mois';
-import { Mouvement } from 'src/app/model/mouvement';
-import { MvtCompte } from 'src/app/model/mvtCompte';
-import { Poste } from 'src/app/model/poste';
-import { Sexe } from 'src/app/model/sexe';
-import { TypeOperation } from 'src/app/model/typeoperation';
 import { CotisationService } from 'src/app/services/cotisation.service';
-import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { PosteService } from 'src/app/services/poste.service';
-import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-nouvelle-cotisation',
@@ -24,18 +13,16 @@ import { SexeService } from 'src/app/services/sexe.service';
   styleUrls: ['./nouvelle-cotisation.component.scss'],
 })
 export class NouvelleCotisationComponent implements OnInit {
-  membre: MembreList = new MembreList();
-  cotisation: Cotisation = new Cotisation();
   idMembre: number = 0;
   mois: Mois[] = [];
   annees: number[] = [2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
-  cotisations: Cotisation[] = [];
+  cotisation: Cotisation = new Cotisation();
+  cotisationsMembre: CotisationsMembre = new CotisationsMembre();
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private cotisationService: CotisationService,
-    private membreService: MembreService
+    private cotisationService: CotisationService
   ) {}
 
   ngOnInit(): void {
@@ -45,28 +32,30 @@ export class NouvelleCotisationComponent implements OnInit {
     });
 
     if (this.idMembre) {
-      this.membreService
-        .getInfosMembre(this.idMembre)
-        .subscribe((membre: MembreList) => {
-          this.membre = membre;
-          this.cotisationService
-            .getAllCotisationsById(this.membre.id)
-            .subscribe((cotisations: Cotisation[]) => {
-              this.cotisations = cotisations;
-            });
+      this.cotisationService
+        .getCotisationsMembre(this.idMembre)
+        .subscribe((cotisationsMembre: CotisationsMembre) => {
+          this.cotisationsMembre = cotisationsMembre;
         });
     }
   }
 
   enregistrer(): void {
-    this.cotisationService.addCotisations(this.cotisations).subscribe(() => {
-      this.cancel();
-    });
+    if (this.cotisationsMembre.cotisations.length != 0) {
+      this.cotisationService
+        .addCotisations(
+          this.cotisationsMembre.membre.id,
+          this.cotisationsMembre.cotisations
+        )
+        .subscribe(() => {
+          this.cancel();
+        });
+    }
   }
 
   soldeCompte(): number {
     let solde = 0;
-    this.cotisations.map((c) => {
+    this.cotisationsMembre.cotisations.map((c) => {
       if (c.montant) solde += c.montant;
     });
     return solde;
@@ -110,8 +99,7 @@ export class NouvelleCotisationComponent implements OnInit {
 
   ajouterCotisation(): void {
     if (this.checkInfosCotisation()) {
-      this.cotisation.membreId = this.idMembre;
-      this.cotisations.push(this.cotisation);
+      this.cotisationsMembre.cotisations.push(this.cotisation);
       this.resetForm();
     }
   }

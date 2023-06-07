@@ -18,9 +18,6 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Liste des membres</h6>
-    </div>
     <div class="card-body">
       <div class="list-group">
         <a
@@ -35,7 +32,7 @@
         >
           <div class="row" (click)="navigate(membre.id)">
             <div class="col-12">
-              <app-details-membre [membre]="membre"></app-details-membre>
+              <app-detail-membre [membreId]="membre.id"></app-detail-membre>
             </div>
           </div>
         </a>

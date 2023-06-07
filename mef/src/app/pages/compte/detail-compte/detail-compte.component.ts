@@ -6,7 +6,11 @@ import { Membre } from 'src/app/model/Membre';
 import { MembreList } from 'src/app/model/membreList';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
+import { AvanceService } from 'src/app/services/avance.service';
+import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
+import { PosteService } from 'src/app/services/poste.service';
+import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-detail-compte',
@@ -16,23 +20,14 @@ import { MembreService } from 'src/app/services/membre.service';
 export class DetailCompteComponent implements OnInit {
   @Input()
   membre: Membre = new Membre();
-  photo: string = '';
   @Input()
-  sexe?: Sexe;
-  @Input()
-  poste?: Poste;
-  @Input()
-  lieuAffectation?: LieuAffectation;
-  @Input()
-  solde?: number;
+  solde: number = 0;
 
-  constructor(private membreService: MembreService, private router: Router) {}
+  constructor(private membreService: MembreService) {}
 
   ngOnInit(): void {
-    this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-  }
-
-  modifier(): void {
-    this.router.navigate(['nouveaucompte', this.membre.id]);
+    this.membreService.getById(this.membre.id).subscribe((membre: Membre) => {
+      this.membre = membre;
+    });
   }
 }

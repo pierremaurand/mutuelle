@@ -16,5 +16,11 @@ namespace mefApi.Models
         public string Libelle { get; set; } = string.Empty;
         [Required]
         public decimal Montant { get; set; } = 0;
+        public Membre? Membre { get; set; } 
+        public Cotisation? Cotisation { get; set; }
+        public AvanceDebourse? AvanceDebourse { get; set; }
+        public CreditDebourse? CreditDebourse { get; set; }
+        public EcheanceAvance? EcheanceAvance { get; set; }
+        public EcheanceCredit? EcheanceCredit { get; set; }
     }
 }

@@ -21,5 +21,7 @@ namespace mefApi.Models
         public int DureeAccordee { get; set; } = 0;
         [Required]
         public string DateDecaissement { get; set; } = string.Empty;
+        public int MouvementId { get; set; }
+        public Mouvement? Mouvement { get; set; }
     }
 }

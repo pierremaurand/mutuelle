@@ -1,7 +1,7 @@
-import { MembreList } from './membreList';
+import { Membre } from './Membre';
 
 export class UtilisateurList {
   id?: number;
   nomUtilisateur?: string;
-  membre?: MembreList;
+  membre?: Membre;
 }

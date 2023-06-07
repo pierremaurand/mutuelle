@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MembreList } from 'src/app/model/membreList';
+import { Membre } from 'src/app/model/Membre';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class AccueilComponent implements OnInit {
   constructor(private membreService: MembreService) {}
 
   ngOnInit(): void {
-    this.membreService.getAll().subscribe((membres: MembreList[]) => {
+    this.membreService.getAll().subscribe((membres: Membre[]) => {
       this.membreService.membres = membres;
     });
   }

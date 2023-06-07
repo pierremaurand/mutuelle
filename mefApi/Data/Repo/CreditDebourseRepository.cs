@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using mefApi.Interfaces;
 using mefApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace mefApi.Data.Repo
 {
@@ -26,14 +27,31 @@ namespace mefApi.Data.Repo
             throw new NotImplementedException();
         }
 
-        public Task<CreditDebourse?> FindByIdAsync(int id)
+        public async Task<CreditDebourse?> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            if(dc.CreditsDebourses is not null) {
+                var credit = await dc.CreditsDebourses
+                .Include(a => a.Mouvement)
+                .Where(a => a.Id == id)
+                .FirstAsync();
+                if(credit is not null) {
+                    return credit;
+                }
+            }
+            return null;
         }
 
-        public Task<IEnumerable<CreditDebourse>?> GetAllAsync()
+        public async Task<IEnumerable<CreditDebourse>?> GetAllAsync()
         {
-            throw new NotImplementedException();
+            if(dc.CreditsDebourses is not null) {
+                var credits = await dc.CreditsDebourses
+                .Include(a => a.Mouvement)
+                .ToListAsync();
+                if(credits is not null) {
+                    return credits;
+                }
+            }
+            return null;
         }
     }
 }

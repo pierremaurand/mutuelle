@@ -29,14 +29,14 @@ namespace mefApi.Data.Repo
             throw new NotImplementedException();
         }
 
-        public async Task<EcheanceAvance?> FindByIdAsync(int id)
+        public async Task<ICollection<EcheanceAvance>?> FindByIdAsync(int id)
         {
             if(dc.EcheancesAvances is not null) {
-                var echeance = await dc.EcheancesAvances
-                .Where(s => s.Id == id)
-                .FirstAsync();
-                if(echeance is not null) {
-                    return echeance;
+                var echeancier = await dc.EcheancesAvances
+                .Where(e => e.AvanceId == id)
+                .ToListAsync();
+                if(echeancier is not null) {
+                    return echeancier;
                 }
             }
 
@@ -47,20 +47,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.EcheancesAvances is not null) {
                 var echeances = await dc.EcheancesAvances
-                .ToListAsync();
-                if(echeances is not null) {
-                    return echeances;
-                }
-            }
-
-            return null;
-        }
-
-        public async Task<IEnumerable<EcheanceAvance>?> GetAllByAvanceAsync(int avanceId)
-        {
-            if(dc.EcheancesAvances is not null) {
-                var echeances = await dc.EcheancesAvances
-                .Where(c => c.AvanceDebourseId == avanceId)
                 .ToListAsync();
                 if(echeances is not null) {
                     return echeances;

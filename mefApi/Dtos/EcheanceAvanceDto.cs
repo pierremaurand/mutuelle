@@ -7,13 +7,8 @@ namespace mefApi.Dtos
     {
         public int Id { get; set; } = 0;
         [Required]
-        public int AvanceId { get; set; } = 0;
+        public string DateEcheance { get; set; } = string.Empty;
         [Required]
-        public int MoisId { get; set; } = 0;
-        [Required]
-        public int Annee { get; set; } = 0;
-        [Required]
-        public decimal Montant { get; set; } = 0;
-        public bool EstPaye { get; set; } = false;
+        public decimal MontantEcheance { get; set; } = 0;
     }
 }

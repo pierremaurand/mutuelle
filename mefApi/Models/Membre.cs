@@ -24,5 +24,10 @@ namespace mefApi.Models
         public string Photo { get; set; } = string.Empty;
         public string Contact { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public ICollection<Mouvement>? Mouvements { get; set; }
+        public Utilisateur? Utilisateur { get; set; }
+        public ICollection<Cotisation>? Cotisations { get; set; }
+        public ICollection<Avance>? Avances { get; set; }
+        public ICollection<Credit>? Credits { get; set; }
     }
 }

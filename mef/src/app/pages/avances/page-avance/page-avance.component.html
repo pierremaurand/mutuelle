@@ -16,11 +16,7 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">
-        Liste des avances accordées
-      </h6>
-    </div>
+    <div class="card-header py-3"></div>
     <div class="card-body">
       <div class="list-group">
         <a
@@ -31,10 +27,7 @@
         >
           <div class="row" (click)="navigate(avance.id)">
             <div class="col-12">
-              <app-details-membre
-                [membre]="avance.membre"
-                [afficheSolde]="true"
-              ></app-details-membre>
+              <app-detail-avance [avanceId]="avance.id"></app-detail-avance>
             </div>
           </div>
         </a>

@@ -36,33 +36,21 @@ namespace mefApi.Data
 
         public ICompteRepository CompteRepository =>
             new CompteRepository(dc);
-
-        public IMvtCompteRepository MvtCompteRepository =>
-            new MvtCompteRepository(dc);
         
         public IAvanceRepository AvanceRepository =>
             new AvanceRepository(dc);
 
         public IAvanceDebourseRepository AvanceDebourseRepository =>
             new AvanceDebourseRepository(dc);
-
-        public IMvtAvanceDebourseRepository MvtAvanceDebourseRepository =>
-            new MvtAvanceDebourseRepository(dc);
         
         public ICotisationRepository CotisationRepository =>
             new CotisationRepository(dc);
-
-        public IMvtCotisationRepository MvtCotisationRepository =>
-            new MvtCotisationRepository(dc);
 
         public ICreditRepository CreditRepository =>
             new CreditRepository(dc);
 
         public ICreditDebourseRepository CreditDebourseRepository =>
             new CreditDebourseRepository(dc);
-
-        public IMvtCreditDebourseRepository MvtCreditDebourseRepository =>
-            new MvtCreditDebourseRepository(dc);
 
         public IDetailEcritureComptableRepository DetailEcritureComptableRepository =>
             new DetailEcritureComptableRepository(dc);
@@ -73,14 +61,8 @@ namespace mefApi.Data
         public IEcheanceCreditRepository EcheanceCreditRepository =>
             new EcheanceCreditRepository(dc);
 
-        public IMvtEcheanceCreditRepository MvtEcheanceCreditRepository =>
-            new MvtEcheanceCreditRepository(dc);
-
         public IEcheanceAvanceRepository EcheanceAvanceRepository =>
             new EcheanceAvanceRepository(dc);
-
-        public IMvtEcheanceAvanceRepository MvtEcheanceAvanceRepository =>
-            new MvtEcheanceAvanceRepository(dc);
 
         public IMoisRepository MoisRepository =>
             new MoisRepository(dc);

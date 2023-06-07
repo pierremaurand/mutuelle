@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Avance } from 'src/app/model/avance';
+import { AvanceList } from 'src/app/model/avanceList';
 import { AvanceService } from 'src/app/services/avance.service';
 
 @Component({

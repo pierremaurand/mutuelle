@@ -2,10 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MembreList } from '../model/membreList';
-import { InfosCompte } from '../model/infosCompte';
-import { InfosMembre } from '../model/infosMembre';
-import { MvtCompte } from '../model/mvtCompte';
 import { Membre } from '../model/Membre';
 import { CompteList } from '../model/compteList';
 import { Mouvement } from '../model/mouvement';
@@ -19,10 +15,6 @@ export class CompteService {
 
   constructor(private http: HttpClient) {}
 
-  getAllMembres(): Observable<MembreList[]> {
-    return this.http.get<MembreList[]>(this.baseUrl + '/compte/membres');
-  }
-
   getAllComptes(): Observable<CompteList[]> {
     return this.http.get<CompteList[]>(this.baseUrl + '/compte/comptes');
   }
@@ -30,12 +22,6 @@ export class CompteService {
   getAllMvts(id: number): Observable<Mouvement[]> {
     return this.http.get<Mouvement[]>(
       this.baseUrl + '/compte/mvtsmembre/' + id.toString()
-    );
-  }
-
-  getAllMvtsById(id?: number): Observable<MvtCompte[]> {
-    return this.http.get<MvtCompte[]>(
-      this.baseUrl + '/compte/mvtcomptes/' + id?.toString()
     );
   }
 

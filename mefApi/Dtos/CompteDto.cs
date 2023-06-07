@@ -2,7 +2,8 @@ namespace mefApi.Dtos
 {
     public class CompteDto
     {
-        public MembreListDto Membre { get; set; } = new MembreListDto();
+        public MembreDto Membre { get; set; } = new MembreDto();
+        public ICollection<MouvementDto>? Mouvements { get; set; } 
         public decimal Solde { get; set; } = 0;
     }
 }

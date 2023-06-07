@@ -33,21 +33,21 @@ namespace mefApi.Controllers
         public async Task<IActionResult> GetAll()
         {
             var utilisateurs = await uow.UtilisateurRepository.GetAllAsync();
-            var utilisateursListDto = new List<UtilisateurListDto>();
+            var utilisateursDto = new List<UtilisateurListDto>();
             if(utilisateurs is null) {
                 return NotFound();
             }
             foreach(var utilisateur in utilisateurs) {
                 var membre = await uow.MembreRepository.FindByIdAsync(utilisateur.MembreId);
                 if(membre is not null) {
-                    var utilisateurListDto = new UtilisateurListDto();
-                    utilisateurListDto.Id = utilisateur.Id;
-                    utilisateurListDto.NomUtilisateur = utilisateur.NomUtilisateur;
-                    utilisateurListDto.Membre = mapper.Map<MembreListDto>(membre);
-                    utilisateursListDto.Add(utilisateurListDto);
+                    var utilisateurDto = new UtilisateurListDto();
+                    utilisateurDto.Id = utilisateur.Id;
+                    utilisateurDto.NomUtilisateur = utilisateur.NomUtilisateur;
+                    utilisateurDto.Membre = mapper.Map<MembreDto>(membre);
+                    utilisateursDto.Add(utilisateurDto);
                 }
             }
-            return Ok(utilisateursListDto);
+            return Ok(utilisateursDto);
         }
 
         [HttpGet("get/{id}")]
@@ -106,6 +106,7 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
+        [AllowAnonymous]
         public async Task<IActionResult> Add(UtilisateurDto utilisateurDto)
         {   
             if(!ModelState.IsValid || utilisateurDto.Password != utilisateurDto.ConfirmPassword) 
@@ -124,7 +125,7 @@ namespace mefApi.Controllers
             var utilisateur = mapper.Map<Utilisateur>(utilisateurDto);
             utilisateur.MotDePasse = passwordHash;
             utilisateur.ClesMotDePasse = passwordKey;
-            utilisateur.ModifiePar = GetUserId();
+            utilisateur.ModifiePar = 1;
             utilisateur.ModifieLe = DateTime.Now;
             uow.UtilisateurRepository.Add(utilisateur);
             await uow.SaveAsync();

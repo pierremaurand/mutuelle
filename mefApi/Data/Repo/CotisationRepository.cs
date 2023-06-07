@@ -37,7 +37,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.Cotisations is not null) {
                 var cotisation = await dc.Cotisations
-                .Where(s => s.Id == id)
+                .Include(c => c.Mouvements)
+                .Where(c => c.Id == id)
                 .FirstAsync();
                 if(cotisation is not null) {
                     return cotisation;
@@ -65,6 +66,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.Cotisations is not null) {
                 var cotisations = await dc.Cotisations
+                .Include(c => c.Mouvements)
                 .ToListAsync();
                 if(cotisations is not null) {
                     return cotisations;

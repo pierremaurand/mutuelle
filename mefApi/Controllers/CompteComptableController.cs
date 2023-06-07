@@ -5,6 +5,7 @@ using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace mefApi.Controllers
@@ -43,10 +44,11 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("addcompte")]
+        [AllowAnonymous]
         public async Task<IActionResult> Add(CompteComptableDto compteDto)
         {
             var compte = mapper.Map<CompteComptable>(compteDto);
-            compte.ModifiePar = GetUserId();
+            compte.ModifiePar = 1;
             compte.ModifieLe = DateTime.Now;
             uow.CompteComptableRepository.Add(compte);
             await uow.SaveAsync();
@@ -54,12 +56,13 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("addcomptes")]
+        [AllowAnonymous]
         public async Task<IActionResult> Add(IEnumerable<CompteComptableDto> comptesDto)
         {
             var comptes = mapper.Map<IEnumerable<CompteComptable>>(comptesDto);
             foreach(var compte in comptes) {
                 
-                compte.ModifiePar = GetUserId();
+                compte.ModifiePar = 1;
                 compte.ModifieLe = DateTime.Now;
                 uow.CompteComptableRepository.Add(compte);
             }
@@ -79,7 +82,7 @@ namespace mefApi.Controllers
             if(compteFromDb == null) 
                 return BadRequest("Update not allowed");
 
-            compteFromDb.ModifiePar = GetUserId();
+            compteFromDb.ModifiePar = 1;
             compteFromDb.ModifieLe = DateTime.Now;
             mapper.Map(compteDto, compteFromDb);
             await uow.SaveAsync();

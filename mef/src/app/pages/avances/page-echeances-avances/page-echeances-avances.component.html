@@ -1,0 +1,71 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-list"></i>
+        Liste des échéances des avances
+      </h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <form class="form-inline">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="defaultCheck1"
+          />
+          <label class="form-check-label" for="defaultCheck1">
+            Cocher tout
+          </label>
+        </div>
+        <div class="form-group mx-sm-3">
+          <label for="dateEcheances" class="mr-1">Date Echéances:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateEcheances"
+            placeholder="Date Echéances"
+          />
+        </div>
+        <button type="botton" class="btn btn-primary">
+          <i class="fa fa-save"></i> Enregistrer
+        </button>
+      </form>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let echeance of echeances">
+            <td>
+              <app-detail-echeance-avance
+                [echeance]="echeance"
+              ></app-detail-echeance-avance>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="list-group">
+        <!-- <a
+          href="javascript:void(0);"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+          *ngFor="let avance of avances | sort : ['id', 'desc']"
+        >
+          <div class="row" (click)="navigate(avance.id)">
+            <div class="col-12">
+              <app-detail-avance [avanceId]="avance.id"></app-detail-avance>
+            </div>
+          </div>
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

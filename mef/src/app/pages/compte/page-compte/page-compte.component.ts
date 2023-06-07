@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CompteList } from 'src/app/model/compteList';
-import { LieuAffectation } from 'src/app/model/lieuAffectation';
-import { Membre } from 'src/app/model/Membre';
-import { MembreList } from 'src/app/model/membreList';
-import { MvtCompte } from 'src/app/model/mvtCompte';
-import { Poste } from 'src/app/model/poste';
-import { Sexe } from 'src/app/model/sexe';
-import { TypeOperation } from 'src/app/model/typeoperation';
 import { CompteService } from 'src/app/services/compte.service';
-import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
-import { MembreService } from 'src/app/services/membre.service';
-import { PosteService } from 'src/app/services/poste.service';
-import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-page-compte',

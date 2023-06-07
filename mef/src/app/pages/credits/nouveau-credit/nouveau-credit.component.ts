@@ -111,12 +111,12 @@ export class NouveauCreditComponent implements OnInit {
     let solde = 0;
     solde += this.credit.montantCapital ?? 0;
     solde += this.credit.montantInteret ?? 0;
-    this.echeancier
-      .filter(({ estPaye }) => estPaye)
-      .forEach((e) => {
-        solde -= e.montantCapital ?? 0;
-        solde -= e.montantInteret ?? 0;
-      });
+    // this.echeancier
+    //   .filter(({ estPaye }) => estPaye)
+    //   .forEach((e) => {
+    //     solde -= e.montantCapital ?? 0;
+    //     solde -= e.montantInteret ?? 0;
+    //   });
     return solde;
   }
 
@@ -200,7 +200,7 @@ export class NouveauCreditComponent implements OnInit {
           annee: curDate.getFullYear(),
           montantCapital: montantEcheanceCapital,
           montantInteret: montantEcheanceInteret,
-          estPaye: false,
+          // estPaye: false,
         };
 
         if (i === 1) {
@@ -238,7 +238,7 @@ export class NouveauCreditComponent implements OnInit {
 
   payCheck(i: number): void {
     if (this.mvtDate) {
-      this.echeancier[i].estPaye = true;
+      // this.echeancier[i].estPaye = true;
       // MOUVEMENT DE PAIEMENT ECHEANCE
       // let mvtCompte: MvtCompte = {
       //   id: 0,

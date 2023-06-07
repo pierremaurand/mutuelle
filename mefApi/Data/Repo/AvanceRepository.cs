@@ -33,8 +33,9 @@ namespace mefApi.Data.Repo
         {
             if(dc.Avances is not null) {
                 var avance = await dc.Avances
-                .Where(s => s.Id == id)
-                .FirstAsync();
+                .Include(a => a.AvanceDebourse)
+                .Where(a => a.Id == id)
+                .FirstOrDefaultAsync();
                 if(avance is not null) {
                     return avance;
                 }

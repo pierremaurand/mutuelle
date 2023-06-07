@@ -94,6 +94,10 @@ import { DetailsMembreComponent } from './composants/details-membre/details-memb
 import { NouvelUtilisateurComponent } from './pages/utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageProfileComponent } from './pages/utilisateur/page-profile/page-profile.component';
 import { ListeChoixMembreComponent } from './composants/liste-choix-membre/liste-choix-membre.component';
+import { EcheancierAvanceComponent } from './composants/echeancier-avance/echeancier-avance.component';
+import { EcheancierCreditComponent } from './composants/echeancier-credit/echeancier-credit.component';
+import { PageEcheancesAvancesComponent } from './pages/avances/page-echeances-avances/page-echeances-avances.component';
+import { DetailEcheanceAvanceComponent } from './pages/avances/detail-echeance-avance/detail-echeance-avance.component';
 
 @NgModule({
   declarations: [
@@ -181,6 +185,10 @@ import { ListeChoixMembreComponent } from './composants/liste-choix-membre/liste
     NouvelUtilisateurComponent,
     PageProfileComponent,
     ListeChoixMembreComponent,
+    EcheancierAvanceComponent,
+    EcheancierCreditComponent,
+    PageEcheancesAvancesComponent,
+    DetailEcheanceAvanceComponent,
   ],
   providers: [
     {

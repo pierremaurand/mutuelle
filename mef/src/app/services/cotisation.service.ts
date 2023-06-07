@@ -6,6 +6,7 @@ import { Cotisation } from '../model/cotisation';
 import { Membre } from '../model/Membre';
 import { Mois } from '../model/mois';
 import { CotisationList } from '../model/cotisationList';
+import { CotisationsMembre } from '../model/cotisationsMembre';
 
 @Injectable({
   providedIn: 'root',
@@ -32,15 +33,15 @@ export class CotisationService {
     );
   }
 
-  getAllCotisationsById(id?: number): Observable<Cotisation[]> {
-    return this.http.get<Cotisation[]>(
-      this.baseUrl + '/cotisation/cotisations/' + id?.toString()
+  getCotisationsMembre(idMembre: number): Observable<CotisationsMembre> {
+    return this.http.get<CotisationsMembre>(
+      this.baseUrl + '/cotisation/cotisations/' + idMembre.toString()
     );
   }
 
-  addCotisations(cotisations: Cotisation[]): Observable<any> {
-    return this.http.post<Cotisation[]>(
-      this.baseUrl + '/cotisation/addcotisations',
+  addCotisations(id: number, cotisations: Cotisation[]): Observable<any> {
+    return this.http.post(
+      this.baseUrl + '/cotisation/addcotisations/' + id.toString(),
       cotisations
     );
   }

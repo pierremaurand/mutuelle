@@ -1,3 +1,5 @@
+import { LieuAffectation } from './lieuAffectation';
+import { Mouvement } from './mouvement';
 import { Poste } from './poste';
 import { Sexe } from './sexe';
 
@@ -6,11 +8,14 @@ export class Membre {
   nom: string = '';
   estActif: boolean = false;
   sexeId: number = 0;
+  sexe: Sexe = new Sexe();
   posteId: number = 0;
+  poste: Poste = new Poste();
   lieuAffectationId: number = 0;
+  lieuAffectation: LieuAffectation = new LieuAffectation();
   photo: string = 'default_man.jpg';
-  dateNaissance: Date = new Date();
-  dateAdhesion: Date = new Date();
+  dateNaissance: string = '';
+  dateAdhesion: string = '';
   lieuNaissance: string = '';
   contact: string = '';
   email: string = '';

@@ -13,7 +13,7 @@ export class FilterPipe implements PipeTransform {
     for (const item of value) {
       let propo: string = item[propName].toLowerCase();
       let filtre = filterString.toLowerCase();
-      if (propo == filtre) {
+      if (propo.includes(filtre)) {
         resultArray.push(item);
       }
     }

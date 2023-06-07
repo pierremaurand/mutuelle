@@ -15,6 +15,6 @@ namespace mefApi.Models
         public int Annee { get; set; } = 0;
         [Required]
         public decimal Montant { get; set; } = 0;
-        public bool EstValide { get; set; } = true;
+        public ICollection<Mouvement>? Mouvements { get; set; }
     }
 }

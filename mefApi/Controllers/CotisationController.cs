@@ -19,16 +19,20 @@ namespace mefApi.Controllers
             this.uow = uow;
         }
 
-        [HttpPost("addcotisations")]
-        public async Task<IActionResult> AddCotisations(CotisationDto[] cotisationsDto)
+        [HttpPost("addCotisations/{id}")]
+        public async Task<IActionResult> AddCotisations(int id,CotisationDto[] cotisationsDto)
         {
-            if(!ModelState.IsValid) 
-                return BadRequest(ModelState);
+            var membre = await uow.MembreRepository.FindByIdAsync(id);
+
+            if(membre is null) {
+                return NotFound("Ce membre n'existe pas");
+            }
 
             foreach(var cotisationDto in cotisationsDto) {
                 if(cotisationDto.Id == 0) {
                     // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
                     var cotisation = mapper.Map<Cotisation>(cotisationDto);
+                    cotisation.Membre = membre;
                     cotisation.ModifiePar = GetUserId();
                     cotisation.ModifieLe = DateTime.Now;
                     uow.CotisationRepository.Add(cotisation);
@@ -42,6 +46,7 @@ namespace mefApi.Controllers
 
                     // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
                     var mouvement = new Mouvement();
+                    mouvement.Cotisation = cotisation;
                     var libelle = "Cotisation du 01/" + cotisation.Annee;
                     if(mois is not null) {
                         libelle = "Cotisation du " + mois.Valeur + "/" + cotisation.Annee;
@@ -58,17 +63,10 @@ namespace mefApi.Controllers
                     uow.MouvementRepository.Add(mouvement);
                     await uow.SaveAsync();
 
-                    var mvtCotisation = new MvtCotisation();
-                    mvtCotisation.CotisationId = cotisation.Id; 
-                    mvtCotisation.MouvementId = mouvement.Id;
-                    mvtCotisation.ModifiePar = GetUserId();
-                    mvtCotisation.ModifieLe = DateTime.Now;
-                    uow.MvtCotisationRepository.Add(mvtCotisation);
-                    await uow.SaveAsync();
-
 
                     // RETENU 10%
                     mouvement = new Mouvement();
+                    mouvement.Cotisation = cotisation;
                     libelle = "Cotisation du 01/" + cotisation.Annee;
                     if(mois is not null) {
                         libelle = "Retenu des 10% sur cotisation du  " + mois.Valeur + "/" + cotisation.Annee;
@@ -84,18 +82,10 @@ namespace mefApi.Controllers
                     mouvement.ModifieLe = DateTime.Now;
                     uow.MouvementRepository.Add(mouvement);
                     await uow.SaveAsync();
-
-                    mvtCotisation = new MvtCotisation();
-                    mvtCotisation.CotisationId = cotisation.Id; 
-                    mvtCotisation.MouvementId = mouvement.Id;
-                    mvtCotisation.ModifiePar = GetUserId();
-                    mvtCotisation.ModifieLe = DateTime.Now;
-                    uow.MvtCotisationRepository.Add(mvtCotisation);
-                    await uow.SaveAsync();
                 }
             }
             
-            await uow.SaveAsync();
+            // await uow.SaveAsync();
             return StatusCode(201);
         }
 
@@ -114,40 +104,46 @@ namespace mefApi.Controllers
         public async Task<IActionResult> GetAllCotisations()
         {
             var membres = await uow.MembreRepository.GetAllAsync();
-            var mvtCotisations = await uow.MvtCotisationRepository.GetAllAsync();
         
-
             var comptesDto = new List<CompteDto>();
             if(membres is null) {
                 return NotFound();
             }
             foreach(var membre in membres) {
-                
                 var compte = new CompteDto();
-                compte.Membre = mapper.Map<MembreListDto>(membre);
+                compte.Membre = mapper.Map<MembreDto>(membre);
                 compte.Solde = 0;
 
                 var mouvements = new List<Mouvement>();
-
-                //Les mouvements de décaissement des credits 
-                if(mvtCotisations is not null) {
-                    foreach(var mvt in mvtCotisations) {
-                        if(mvt.Cotisation is not null && mvt.Cotisation.MembreId == membre.Id) {
-                            if(mvt.Mouvement is not null ) {
-                                mouvements.Add(mvt.Mouvement);
+                //Les mouvements de décaissement des credits
+                var infosMembre = await uow.MembreRepository.FindByIdAsync(membre.Id);
+                if(infosMembre is not null) {
+                    if(infosMembre.Cotisations is not null) {
+                        foreach(var cotisation in infosMembre.Cotisations) {
+                            var infosCotisation = await uow.CotisationRepository.FindByIdAsync(cotisation.Id);
+                            if(infosCotisation is not null) {
+                                if(infosCotisation.Mouvements is not null) {
+                                    foreach(var mouvement in infosCotisation.Mouvements) {
+                                        mouvements.Add(mouvement);
+                                    }
+                                }
                             }
                         }
                     }
                 }
                 
+                
                 decimal solde = 0;
-                foreach(var mvt in mouvements) {
-                    if(mvt.TypeOperation == TypeOperation.Credit) {
-                        solde += mvt.Montant;
-                    } 
+                if(membre.Cotisations is not null) {
+                    foreach(var cotisation in membre.Cotisations) {
+                        solde += cotisation.Montant;
+                    }
                 }
+                
                 compte.Solde = solde;
-               
+
+                compte.Mouvements = mapper.Map<ICollection<MouvementDto>>(mouvements);
+                
                 comptesDto.Add(compte);
             }
             return Ok(comptesDto);
@@ -156,7 +152,7 @@ namespace mefApi.Controllers
         [HttpGet("mvtsmembre/{id}")]
         public async Task<IActionResult> GetMvtsMembre(int id)
         {
-            var mvtCotisations = await uow.MvtCotisationRepository.GetAllAsync();
+            var cotisations = await uow.CotisationRepository.GetAllAsync();
         
 
             var mouvements = new List<Mouvement>();
@@ -164,11 +160,13 @@ namespace mefApi.Controllers
             
 
             //Les mouvements de cotisation
-            if(mvtCotisations is not null) {
-                foreach(var mvt in mvtCotisations) {
-                    if( mvt.Cotisation is not null && mvt.Cotisation.MembreId == id) {
-                        if(mvt.Mouvement is not null) {
-                            mouvements.Add(mvt.Mouvement);
+            if(cotisations is not null) {
+                foreach(var cotisation in cotisations) {
+                    if( cotisation is not null && cotisation.MembreId == id) {
+                        if(cotisation.Mouvements is not null) {
+                            foreach(var mouvement in cotisation.Mouvements){
+                                mouvements.Add(mouvement);
+                            } 
                         }
                     }
                 }
@@ -182,12 +180,16 @@ namespace mefApi.Controllers
         [HttpGet("cotisations/{id}")]
         public async Task<IActionResult> GetAllCotisationsById(int id)
         {
-            var cotisations = await uow.CotisationRepository.GetAllByMembreAsync(id);
-            if(cotisations is null) {
-                return NotFound();
+            var membre = await uow.MembreRepository.FindByIdAsync(id);
+        
+            if(membre is null) {
+                return NotFound("Ce membre n'existe pas");
             }
-            var cotisationsDto = mapper.Map<IEnumerable<CotisationDto>>(cotisations);
-            return Ok(cotisationsDto);
+            
+            var cotisationsMembre = new CotisationsMembre();
+            cotisationsMembre.Membre = mapper.Map<MembreDto>(membre);
+            cotisationsMembre.Cotisations = mapper.Map<ICollection<CotisationDto>>(membre.Cotisations);
+            return Ok(cotisationsMembre);
         }
 
         [HttpGet("mois")]

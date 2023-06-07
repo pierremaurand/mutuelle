@@ -4,7 +4,10 @@ import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
 import { Poste } from 'src/app/model/poste';
 import { Sexe } from 'src/app/model/sexe';
+import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
+import { PosteService } from 'src/app/services/poste.service';
+import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-detail-cotisation',
@@ -14,23 +17,14 @@ import { MembreService } from 'src/app/services/membre.service';
 export class DetailCotisationComponent implements OnInit {
   @Input()
   membre: Membre = new Membre();
-  photo: string = '';
   @Input()
-  sexe?: Sexe;
-  @Input()
-  poste?: Poste;
-  @Input()
-  lieuAffectation?: LieuAffectation;
-  @Input()
-  solde?: number;
+  solde: number = 0;
 
-  constructor(private membreService: MembreService, private router: Router) {}
+  constructor(private membreService: MembreService) {}
 
   ngOnInit(): void {
-    this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-  }
-
-  modifier(): void {
-    this.router.navigate(['nouvellecotisation', this.membre.id]);
+    this.membreService.getById(this.membre.id).subscribe((membre: Membre) => {
+      this.membre = membre;
+    });
   }
 }

@@ -12,5 +12,6 @@ namespace mefApi.Interfaces
         void Add(AvanceDebourse avance);
         void Delete(int id);
         Task<AvanceDebourse?> FindByIdAsync(int id);
+        Task<IEnumerable<AvanceDebourse>?> FindByAvanceIdAsync(int id);
     }
 }

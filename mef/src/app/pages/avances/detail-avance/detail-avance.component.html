@@ -1,33 +1,27 @@
-<div
-  class="card shadow"
-  (click)="modifier()"
-  [ngClass]="{
-    'text-danger border': !membre?.estActif,
-    'text-success border': membre?.estActif
-  }"
->
-  <div class="card-body">
+<div class="row">
+  <div class="col">
+    <app-details-membre [membre]="membre"></app-details-membre>
+  </div>
+  <div class="col">
     <div class="row">
-      <div class="col-md-5 border-end">
-        <div class="card-img-wrapper rounded-circle thumbnail">
-          <img src="{{ photo }}" alt="la photo du compte" />
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="d-block text-truncate infos">
-          {{ membre?.nom | uppercase }}
-        </div>
-        <div class="d-block text-truncate infos">
-          {{ sexe?.nom | uppercase }}
-        </div>
-        <div class="d-block text-truncate infos">
-          {{ poste?.libelle | uppercase }}
-        </div>
-        <div class="d-block text-truncate infos">
-          {{ lieuAffectation?.lieu | uppercase }}
-        </div>
-        <div class="d-block h5 text-truncate text-primary">
-          {{ solde | number }} FCFA
+      <div class="col">
+        <div class="row">
+          <div class="col text-right">
+            <h5>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'badge-success': status == 'Soldé',
+                  'badge-danger': status == 'Déboursé',
+                  'badge-primary': status == 'Enregistré'
+                }"
+                >{{ status }}</span
+              >
+            </h5>
+            <h5 class="text-success text-right" *ngIf="status != 'Enregistré'">
+              {{ solde | number }} FCFA
+            </h5>
+          </div>
         </div>
       </div>
     </div>

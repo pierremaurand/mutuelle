@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Membre } from 'src/app/model/Membre';
 import { MembreList } from 'src/app/model/membreList';
-import { AuthService } from 'src/app/services/auth.service';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 import { environment } from 'src/environments/environment';
 
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./entete.component.scss'],
 })
 export class EnteteComponent implements OnInit {
-  membre: MembreList = new MembreList();
+  membre: Membre = new Membre();
   imagesUrl = environment.imagesUrl;
   constructor(
     private utilisateurService: UtilisateurService,
@@ -19,7 +19,7 @@ export class EnteteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.utilisateurService.getMembre().subscribe((membre: MembreList) => {
+    this.utilisateurService.getMembre().subscribe((membre: Membre) => {
       this.membre = membre;
     });
   }

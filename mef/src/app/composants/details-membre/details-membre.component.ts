@@ -17,11 +17,11 @@ import { environment } from 'src/environments/environment';
 })
 export class DetailsMembreComponent implements OnInit {
   @Input()
-  membre: MembreList = new MembreList();
+  membre: Membre = new Membre();
   @Input()
-  solde: number = 0;
+  width: number = 64;
   @Input()
-  afficheSolde: boolean = false;
+  size: string = 'h5';
   imagesUrl = environment.imagesUrl;
 
   constructor() {}

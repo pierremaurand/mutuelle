@@ -1,12 +1,7 @@
-import { EcheanceAvance } from './echeanceAvance';
-import { MvtCompte } from './mvtCompte';
-
 export class Avance {
-  id?: number;
-  membreId?: number;
-  montant?: number;
-  nombreEcheances?: number;
-  dateEnregistrement?: string;
-  dateDeblocage?: string;
-  dateSolde?: string;
+  id: number = 0;
+  membreId: number = 0;
+  montantSollicite?: number;
+  nombreEcheancesSollicite?: number;
+  dateDemande: string = '';
 }

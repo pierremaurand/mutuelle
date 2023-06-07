@@ -17,26 +17,16 @@ import { SexeService } from 'src/app/services/sexe.service';
 })
 export class DetailMembreComponent implements OnInit {
   @Input()
+  membreId: number = 0;
+  @Input()
+  width: number = 64;
   membre: Membre = new Membre();
-  photo: string = '';
-  @Input()
-  sexe?: Sexe;
-  @Input()
-  poste?: Poste;
-  @Input()
-  lieuAffectation?: LieuAffectation;
 
-  constructor(private membreService: MembreService, private router: Router) {}
+  constructor(private membreService: MembreService) {}
 
   ngOnInit(): void {
-    this.photo = this.membreService.getPhotoUrl(this.membre.photo);
-  }
-
-  modifier(): void {
-    this.router.navigate(['nouveaumembre', this.membre.id]);
-  }
-
-  detailler(): void {
-    this.router.navigate(['detailmembre', this.membre.id]);
+    this.membreService.getById(this.membreId).subscribe((membre: Membre) => {
+      this.membre = membre;
+    });
   }
 }

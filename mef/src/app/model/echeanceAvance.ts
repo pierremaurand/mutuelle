@@ -1,8 +1,7 @@
+import { Mouvement } from './mouvement';
+
 export class EcheanceAvance {
-  id?: number;
-  avanceId?: number;
-  moisId?: number;
-  annee?: number;
-  montant?: number;
-  estPaye?: boolean;
+  id: number = 0;
+  dateEcheance?: string | null = '';
+  montantEcheance?: number;
 }

@@ -14,10 +14,13 @@
     <table class="table table-striped">
       <tbody>
         <tr *ngFor="let membre of membres | filter : search : 'nom'">
-          <td (dblclick)="sendMembre(membre)">
+          <td (click)="sendMembre(membre.id)" data-dismiss="modal">
             <div class="row">
               <div class="col-12">
-                <app-details-membre [membre]="membre"></app-details-membre>
+                <app-detail-membre
+                  [membreId]="membre.id"
+                  [width]="width"
+                ></app-detail-membre>
               </div>
             </div>
           </td>

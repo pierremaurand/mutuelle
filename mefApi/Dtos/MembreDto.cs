@@ -7,13 +7,15 @@ namespace mefApi.Dtos
         public int Id;
         [Required(ErrorMessage = "Le Nom est obligatoire")]
         public string Nom { get; set; } = string.Empty;
-        public int PersonnelId { get; set; } = 0;
         [Required(ErrorMessage = "Le Sexe est obligatoire")]
         public int SexeId { get; set; } = 0;
+        public SexeDto? Sexe { get; set; } 
         [Required(ErrorMessage = "Le Poste est obligatoire")]
         public int PosteId { get; set; } = 0;
+        public PosteDto? Poste { get; set; } 
         [Required(ErrorMessage = "Le Lieu d'affectation est obligatoire")]
         public int LieuAffectationId { get; set; } = 0;
+        public LieuAffectationDto? LieuAffectation { get; set; } 
         [Required(ErrorMessage = "La Date de naissance est obligatoire")]
         public string DateNaissance { get; set; } = string.Empty;
         [Required(ErrorMessage = "La Date d'adhésion est obligatoire")]

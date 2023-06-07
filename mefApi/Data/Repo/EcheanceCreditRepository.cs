@@ -60,7 +60,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.EcheancesCredits is not null) {
                 var echeances = await dc.EcheancesCredits
-                .Where(c => c.CreditDebourseId == creditId)
+                .Where(c => c.CreditId == creditId)
                 .ToListAsync();
                 if(echeances is not null) {
                     return echeances;

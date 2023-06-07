@@ -1,6 +1,6 @@
-import { MembreList } from './membreList';
+import { Membre } from './Membre';
 
 export class CotisationList {
-  membre: MembreList = new MembreList();
+  membre: Membre = new Membre();
   solde: number = 0;
 }
