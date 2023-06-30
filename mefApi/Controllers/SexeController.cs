@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System;
 using Microsoft.AspNetCore.Authorization;
 
 namespace mefApi.Controllers

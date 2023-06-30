@@ -19,7 +19,9 @@ namespace mefApi.Data.Repo
 
         public void Add(CreditDebourse credit)
         {
-            throw new NotImplementedException();
+            if(dc.CreditsDebourses is not null && credit is not null) {
+                dc.CreditsDebourses.AddAsync(credit);
+            }
         }
 
         public void Delete(int id)
@@ -31,6 +33,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.CreditsDebourses is not null) {
                 var credit = await dc.CreditsDebourses
+                .Include(a => a.Credit)
                 .Include(a => a.Mouvement)
                 .Where(a => a.Id == id)
                 .FirstAsync();

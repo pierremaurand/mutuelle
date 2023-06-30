@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
@@ -11,7 +10,7 @@ namespace mefApi.Models
         [Required]
         public string DateEcheance { get; set; } = string.Empty;
         [Required]
-        public decimal Pricipal { get; set; } = 0;
+        public decimal Capital { get; set; } = 0;
         [Required]
         public decimal Interet { get; set; } = 0;
         public ICollection<Mouvement>? Mouvements { get; set; }

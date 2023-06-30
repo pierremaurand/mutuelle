@@ -5,21 +5,9 @@ import { Avance } from 'src/app/model/avance';
 import { AvanceDebourse } from 'src/app/model/avanceDebourse';
 import { EcheanceAvance } from 'src/app/model/echeanceAvance';
 import { InfosAvance } from 'src/app/model/infosAvance';
-import { InfosAvanceDebourse } from 'src/app/model/infosAvanceDeblocage';
-import { LieuAffectation } from 'src/app/model/lieuAffectation';
 import { Membre } from 'src/app/model/Membre';
-import { MembreList } from 'src/app/model/membreList';
-import { Mois } from 'src/app/model/mois';
-import { MvtCompte } from 'src/app/model/mvtCompte';
-import { Poste } from 'src/app/model/poste';
-import { Sexe } from 'src/app/model/sexe';
-import { TypeOperation } from 'src/app/model/typeoperation';
 import { AvanceService } from 'src/app/services/avance.service';
-import { CotisationService } from 'src/app/services/cotisation.service';
-import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { PosteService } from 'src/app/services/poste.service';
-import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
   selector: 'app-nouvelle-avance',
@@ -62,12 +50,7 @@ export class NouvelleAvanceComponent implements OnInit {
                   .subscribe((echeancier: EcheanceAvance[]) => {
                     this.echeancier = echeancier;
                     this.nbrEcheances = echeancier.length;
-                    this.avanceService
-                      .getInfosAvance(avance.id)
-                      .subscribe((infos: InfosAvance) => {
-                        this.solde = infos.solde;
-                        this.status = infos.status;
-                      });
+                    this.getSolde();
                   });
               });
           });
@@ -92,6 +75,7 @@ export class NouvelleAvanceComponent implements OnInit {
         .debourserAvance(this.avance.id, this.avanceDebourse)
         .subscribe((avanceDebourse: AvanceDebourse) => {
           this.avanceDebourse = avanceDebourse;
+          this.getSolde();
         });
     }
 
@@ -104,26 +88,9 @@ export class NouvelleAvanceComponent implements OnInit {
         .addEcheancier(this.avance.id, this.echeancier)
         .subscribe((echeancier: EcheanceAvance[]) => {
           this.echeancier = echeancier;
+          this.getSolde();
         });
     }
-
-    this.avanceService
-      .getInfosAvance(this.avance.id)
-      .subscribe((infos: InfosAvance) => {
-        this.solde = infos.solde;
-        this.status = infos.status;
-      });
-  }
-
-  soldeAvance(): number | undefined {
-    // let solde = this.avance.montant;
-    // this.echeancier
-    //   .filter(({ estPaye }) => estPaye)
-    //   .forEach((e) => {
-    //     if (solde) solde -= e.montant ?? 0;
-    //   });
-    // return solde;
-    return 0;
   }
 
   checkInfosAvance(): boolean {
@@ -221,53 +188,14 @@ export class NouvelleAvanceComponent implements OnInit {
     }
   }
 
-  // payer(i: number): void {
-  //   // if (this.mvtDate) {
-  //   //   this.echeancier[i].estPaye = true;
-  //   //   // MOUVEMENT DE PAIEMENT ECHEANCE
-  //   //   let mvtCompte: MvtCompte = {
-  //   //     id: 0,
-  //   //     dateMvt: this.mvtDate,
-  //   //     typeOperation: TypeOperation.Credit,
-  //   //     gabaritId: 1,
-  //   //     libelle:
-  //   //       'Paiement échance avance du ' +
-  //   //       this.getMoisNum(this.echeancier[i].moisId) +
-  //   //       '/' +
-  //   //       this.echeancier[i].annee,
-  //   //     montant: this.echeancier[i].montant,
-  //   //     echeanceAvanceId: this.echeancier[i].id,
-  //   //     membreId: this.avance.membreId,
-  //   //   };
-  //   //   this.mvtComptes.push(mvtCompte);
-  //   // }
-  // }
-
-  // getMoisNum(moisId?: number): string | undefined {
-  //   let index: number = 0;
-  //   // if (moisId) {
-  //   //   index = moisId - 1;
-  //   // }
-  //   return this.mois[index].valeur;
-  // }
-
-  // getMois(moisId?: number): string | undefined {
-  //   let index: number = 0;
-  //   if (moisId) {
-  //     index = moisId - 1;
-  //   }
-  //   return this.mois[index].libelle;
-  // }
-
-  // checkEcheancier(): boolean {
-  //   const echeances = this.echeancier.filter(
-  //     ({ id, estPaye }) => id != 0 && estPaye == true
-  //   );
-  //   if (echeances.length != this.echeancier.length) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
+  getSolde(): void {
+    this.avanceService
+      .getInfosAvance(this.avance.id)
+      .subscribe((infos: InfosAvance) => {
+        this.solde = infos.solde;
+        this.status = infos.status;
+      });
+  }
 
   membreChoisie(id: number) {
     this.avance.membreId = id;

@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Utilisateur } from '../model/utilisateur';
 import { MembreList } from '../model/membreList';
 import { Membre } from '../model/Membre';
+import { InfosPassword } from '../model/infosPassword';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,20 @@ export class UtilisateurService {
 
   add(utilisateur: Utilisateur): Observable<any> {
     return this.http.post(this.baseUrl + '/utilisateur/add', utilisateur);
+  }
+
+  initPassword(id: number, utilisateur: Utilisateur): Observable<any> {
+    return this.http.put(
+      this.baseUrl + '/utilisateur/initPassword/' + id.toString(),
+      utilisateur
+    );
+  }
+
+  changePassword(infosPassword: InfosPassword): Observable<any> {
+    return this.http.put(
+      this.baseUrl + '/utilisateur/changePassword',
+      infosPassword
+    );
   }
 
   update(utilisateur: Utilisateur, id: number): Observable<any> {

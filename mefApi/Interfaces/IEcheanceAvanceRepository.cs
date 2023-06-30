@@ -9,6 +9,7 @@ namespace mefApi.Interfaces
         Task<IEnumerable<EcheanceAvance>?> GetAllAsync();
         void Add(EcheanceAvance echeanceavance);
         void Delete(int id);
-        Task<ICollection<EcheanceAvance>?> FindByIdAsync(int id);
+        Task<EcheanceAvance?> FindByIdAsync(int id);
+        Task<ICollection<EcheanceAvance>?> GetALLEcheancesAvanceAsync(int id);
     }
 }

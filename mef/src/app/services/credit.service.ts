@@ -4,8 +4,11 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Credit } from '../model/credit';
 import { EcheanceCredit } from '../model/echeanceCredit';
-import { Membre } from '../model/Membre';
 import { MvtCompte } from '../model/mvtCompte';
+import { CreditDebourse } from '../model/creditDebourse';
+import { InfosRemboursements } from '../model/infosRemboursements';
+import { Mouvement } from '../model/mouvement';
+import { InfosCredit } from '../model/infosCredit';
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +19,14 @@ export class CreditService {
 
   constructor(private http: HttpClient) {}
 
-  getAllMembres(): Observable<Membre[]> {
-    return this.http.get<Membre[]>(this.baseUrl + '/credit/membres');
-  }
-
   getAllEcheances(): Observable<EcheanceCredit[]> {
     return this.http.get<EcheanceCredit[]>(this.baseUrl + '/credit/echeances');
+  }
+
+  getDeboursement(creditId: number): Observable<CreditDebourse> {
+    return this.http.get<CreditDebourse>(
+      this.baseUrl + '/credit/deboursement/' + creditId.toString()
+    );
   }
 
   getAllEcheancesCredit(creditId?: number): Observable<EcheanceCredit[]> {
@@ -38,6 +43,36 @@ export class CreditService {
     return this.http.get<Credit>(this.baseUrl + '/credit/get/' + id.toString());
   }
 
+  getMouvements(id: number): Observable<Mouvement[]> {
+    return this.http.get<Mouvement[]>(
+      this.baseUrl + '/credit/getmouvements/' + id.toString()
+    );
+  }
+
+  getSolde(id: number): Observable<number> {
+    return this.http.get<number>(
+      this.baseUrl + '/credit/getsolde/' + id.toString()
+    );
+  }
+
+  getStatus(id: number): Observable<string> {
+    return this.http.get<string>(
+      this.baseUrl + '/credit/getstatus/' + id.toString()
+    );
+  }
+
+  getInfosCredit(id: number): Observable<InfosCredit> {
+    return this.http.get<InfosCredit>(
+      this.baseUrl + '/credit/getinfoscredit/' + id.toString()
+    );
+  }
+
+  getEcheancier(id: number): Observable<EcheanceCredit[]> {
+    return this.http.get<EcheanceCredit[]>(
+      this.baseUrl + '/credit/getecheancier/' + id.toString()
+    );
+  }
+
   getPhotoUrl(photo?: string): string {
     if (photo && photo !== '') {
       return this.imagesUrl + '/assets/images/' + photo;
@@ -45,20 +80,47 @@ export class CreditService {
     return this.imagesUrl + '/assets/images/default_man.jpg';
   }
 
-  add(credit: Credit): Observable<any> {
+  add(credit: Credit): Observable<Credit> {
     return this.http.post<Credit>(this.baseUrl + '/credit/add', credit);
   }
 
-  update(id?: number, credit?: Credit): Observable<any> {
-    return this.http.put(
-      this.baseUrl + '/credit/update/' + id?.toString(),
+  debourserCredit(
+    id: number,
+    creditDebourse: CreditDebourse
+  ): Observable<CreditDebourse> {
+    return this.http.post<CreditDebourse>(
+      this.baseUrl + '/credit/deboursercredit/' + id.toString(),
+      creditDebourse
+    );
+  }
+
+  rembourserEcheances(infos: InfosRemboursements): Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + '/credit/rembourserEcheances',
+      infos
+    );
+  }
+
+  update(id: number, creditDebourse: CreditDebourse): Observable<Credit> {
+    return this.http.put<Credit>(
+      this.baseUrl + '/credit/update/' + id.toString(),
+      creditDebourse
+    );
+  }
+
+  addApprobation(credit: CreditDebourse): Observable<CreditDebourse> {
+    return this.http.post<CreditDebourse>(
+      this.baseUrl + '/credit/addApprobation',
       credit
     );
   }
 
-  addEcheances(echeances: EcheanceCredit[]): Observable<any> {
+  addEcheancier(
+    id: number,
+    echeances: EcheanceCredit[]
+  ): Observable<EcheanceCredit[]> {
     return this.http.post<EcheanceCredit[]>(
-      this.baseUrl + '/credit/addecheances',
+      this.baseUrl + '/credit/addecheancier/' + id.toString(),
       echeances
     );
   }

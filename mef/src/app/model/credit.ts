@@ -1,10 +1,7 @@
 export class Credit {
-  id?: number;
-  membreId?: number;
-  montantCapital?: number;
-  montantInteret?: number;
-  nombreEcheances?: number;
-  dateEnregistrement?: string;
-  dateDeblocage?: string;
-  dateSolde?: string;
+  id: number = 0;
+  membreId: number = 0;
+  montantSollicite?: number;
+  dureeSollicite?: number;
+  dateDemande: string = '';
 }

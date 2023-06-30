@@ -32,6 +32,7 @@ import { VueEnsembleComponent } from './pages/accueil/vue-ensemble/vue-ensemble.
 import { NouvelUtilisateurComponent } from './pages/utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageProfileComponent } from './pages/utilisateur/page-profile/page-profile.component';
 import { PageEcheancesAvancesComponent } from './pages/avances/page-echeances-avances/page-echeances-avances.component';
+import { PageEcheancesCreditsComponent } from './pages/credits/page-echeances-credits/page-echeances-credits.component';
 
 const routes: Routes = [
   {
@@ -135,7 +136,7 @@ const routes: Routes = [
       },
       {
         path: 'echeancesCredits',
-        component: NouveauCreditComponent,
+        component: PageEcheancesCreditsComponent,
         canActivate: [AuthService],
       },
       {

@@ -10,13 +10,12 @@ namespace mefApi.Dtos
     {
         public int Id { get; set; } = 0;
         [Required]
-        public int CreditDebourseId { get; set; }
-        [Required]
         public string DateEcheance { get; set; } = string.Empty;
         [Required]
-        public decimal Pricipal { get; set; } = 0;
+        public decimal Capital { get; set; } = 0;
         [Required]
         public decimal Interet { get; set; } = 0;
-        public ICollection<MouvementDto>? Mouvements { get; set; }
+        public int? CreditId { get; set; }
+        public decimal? MontantPaye { get; set; }
     }
 }

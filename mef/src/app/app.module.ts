@@ -98,6 +98,12 @@ import { EcheancierAvanceComponent } from './composants/echeancier-avance/echean
 import { EcheancierCreditComponent } from './composants/echeancier-credit/echeancier-credit.component';
 import { PageEcheancesAvancesComponent } from './pages/avances/page-echeances-avances/page-echeances-avances.component';
 import { DetailEcheanceAvanceComponent } from './pages/avances/detail-echeance-avance/detail-echeance-avance.component';
+import { PayerEcheancesAvancesComponent } from './pages/avances/payer-echeances-avances/payer-echeances-avances.component';
+import { DecalerEcheancesAvancesComponent } from './pages/avances/decaler-echeances-avances/decaler-echeances-avances.component';
+import { PageEcheancesCreditsComponent } from './pages/credits/page-echeances-credits/page-echeances-credits.component';
+import { PayerEcheancesCreditsComponent } from './pages/credits/payer-echeances-credits/payer-echeances-credits.component';
+import { DetailEcheanceCreditComponent } from './pages/credits/detail-echeance-credit/detail-echeance-credit.component';
+import { DecalerEcheancesCreditsComponent } from './pages/credits/decaler-echeances-credits/decaler-echeances-credits.component';
 
 @NgModule({
   declarations: [
@@ -189,6 +195,12 @@ import { DetailEcheanceAvanceComponent } from './pages/avances/detail-echeance-a
     EcheancierCreditComponent,
     PageEcheancesAvancesComponent,
     DetailEcheanceAvanceComponent,
+    PayerEcheancesAvancesComponent,
+    DecalerEcheancesAvancesComponent,
+    PageEcheancesCreditsComponent,
+    PayerEcheancesCreditsComponent,
+    DetailEcheanceCreditComponent,
+    DecalerEcheancesCreditsComponent,
   ],
   providers: [
     {

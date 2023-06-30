@@ -34,7 +34,20 @@ namespace mefApi.Data.Repo
             if(dc.Mouvements is not null) {
                 var mouvement = await dc.Mouvements
                 .Where(m => m.Id == id)
-                .FirstAsync();
+                .FirstOrDefaultAsync();
+                if(mouvement is not null) {
+                    return mouvement;
+                }
+            }
+
+            return null;
+        }
+
+        public async Task<Mouvement?> FindByEcheanceAvanceIdAsync(int? id) {
+            if(dc.Mouvements is not null) {
+                var mouvement = await dc.Mouvements
+                .Where(m => m.Id == id )
+                .FirstOrDefaultAsync();
                 if(mouvement is not null) {
                     return mouvement;
                 }

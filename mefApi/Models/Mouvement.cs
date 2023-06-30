@@ -18,6 +18,7 @@ namespace mefApi.Models
         public decimal Montant { get; set; } = 0;
         public Membre? Membre { get; set; } 
         public Cotisation? Cotisation { get; set; }
+        public Credit? Credit { get; set; }
         public AvanceDebourse? AvanceDebourse { get; set; }
         public CreditDebourse? CreditDebourse { get; set; }
         public EcheanceAvance? EcheanceAvance { get; set; }

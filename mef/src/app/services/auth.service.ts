@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginReq } from '../model/loginReq';
 import { LoginRes } from '../model/loginRes';
-import { UserForLogin, UserForRegister } from '../model/user';
+import { UserForRegister } from '../model/user';
 
 @Injectable({
   providedIn: 'root',

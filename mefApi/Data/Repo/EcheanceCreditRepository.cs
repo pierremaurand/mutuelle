@@ -33,6 +33,8 @@ namespace mefApi.Data.Repo
         {
             if(dc.EcheancesCredits is not null) {
                 var echeance = await dc.EcheancesCredits
+                .Include(s => s.Mouvements)
+                .Include(s => s.Credit)
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(echeance is not null) {

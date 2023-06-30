@@ -10,8 +10,6 @@ namespace mefApi.Dtos
     {
         public int Id { get; set; } = 0;
         [Required]
-        public int CreditId { get; set; } = 0;
-        [Required]
         public decimal MontantAccorde { get; set; } = 0;
         [Required]
         public decimal MontantCommission { get; set; } = 0;

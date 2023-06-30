@@ -309,6 +309,9 @@ namespace mefapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<decimal>("Capital")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("CreditId")
                         .HasColumnType("int");
 
@@ -324,9 +327,6 @@ namespace mefapi.Migrations
 
                     b.Property<int>("ModifiePar")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Pricipal")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -520,6 +520,9 @@ namespace mefapi.Migrations
                     b.Property<int?>("CotisationId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CreditId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DateMvt")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -555,6 +558,8 @@ namespace mefapi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CotisationId");
+
+                    b.HasIndex("CreditId");
 
                     b.HasIndex("EcheanceAvanceId");
 
@@ -847,8 +852,12 @@ namespace mefapi.Migrations
                         .WithMany("Mouvements")
                         .HasForeignKey("CotisationId");
 
+                    b.HasOne("mefApi.Models.Credit", "Credit")
+                        .WithMany("Mouvements")
+                        .HasForeignKey("CreditId");
+
                     b.HasOne("mefApi.Models.EcheanceAvance", "EcheanceAvance")
-                        .WithMany()
+                        .WithMany("Mouvements")
                         .HasForeignKey("EcheanceAvanceId");
 
                     b.HasOne("mefApi.Models.EcheanceCredit", "EcheanceCredit")
@@ -866,6 +875,8 @@ namespace mefapi.Migrations
                         .HasForeignKey("MembreId");
 
                     b.Navigation("Cotisation");
+
+                    b.Navigation("Credit");
 
                     b.Navigation("EcheanceAvance");
 
@@ -923,6 +934,13 @@ namespace mefapi.Migrations
                     b.Navigation("CreditDebourse");
 
                     b.Navigation("Echeancier");
+
+                    b.Navigation("Mouvements");
+                });
+
+            modelBuilder.Entity("mefApi.Models.EcheanceAvance", b =>
+                {
+                    b.Navigation("Mouvements");
                 });
 
             modelBuilder.Entity("mefApi.Models.EcheanceCredit", b =>

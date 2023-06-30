@@ -4,13 +4,11 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Avance } from '../model/avance';
 import { EcheanceAvance } from '../model/echeanceAvance';
-import { Membre } from '../model/Membre';
 import { MvtCompte } from '../model/mvtCompte';
-import { AvanceList } from '../model/avanceList';
 import { AvanceDebourse } from '../model/avanceDebourse';
-import { InfosAvanceDebourse } from '../model/infosAvanceDeblocage';
 import { Mouvement } from '../model/mouvement';
 import { InfosAvance } from '../model/infosAvance';
+import { InfosRemboursements } from '../model/infosRemboursements';
 
 @Injectable({
   providedIn: 'root',
@@ -93,6 +91,13 @@ export class AvanceService {
     return this.http.post<AvanceDebourse>(
       this.baseUrl + '/avance/debourseravance/' + id.toString(),
       avanceDebourse
+    );
+  }
+
+  rembourserEcheances(infos: InfosRemboursements): Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + '/avance/rembourserEcheances',
+      infos
     );
   }
 

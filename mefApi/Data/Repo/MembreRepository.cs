@@ -40,6 +40,10 @@ namespace mefApi.Data.Repo
                 .Include(m => m.Sexe)
                 .Include(m => m.Poste)
                 .Include(m => m.LieuAffectation)
+                .Include(m => m.Mouvements)
+                .Include(m => m.Cotisations)
+                .Include(m => m.Avances)
+                .Include(m => m.Credits)
                 .Where(m => m.Id == id)
                 .FirstOrDefaultAsync();
                 if(membre is not null) {

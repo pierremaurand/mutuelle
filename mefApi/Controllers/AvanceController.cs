@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
@@ -104,27 +100,31 @@ namespace mefApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetInfosAvance(int id)
         {
-            var avances = await uow.AvanceDebourseRepository.GetAllAsync();
+            var avanceInfos = await uow.AvanceRepository.FindByIdAsync(id);
             string status = "Enregistré";
             decimal solde = 0;
-            if(avances is not null) {
-                var avance = avances.FirstOrDefault((x) => x.AvanceId == id);
-                //Les mouvements de décaissement des avances 
-                if(avance is not null) {
+            if(avanceInfos is not null) {
+                if(avanceInfos.AvanceDebourse is not null) {
                     status = "Déboursé";
-                    solde += avance.MontantApprouve;
+                    var accord = await uow.AvanceDebourseRepository.FindByIdAsync(avanceInfos.AvanceDebourse.Id);
+                    if(accord is not null && accord.Mouvement is not null) {
+                        solde += accord.Mouvement.Montant;
+                    } 
+                }
+
+                if(avanceInfos.Echeancier is not null) {
+                    status = "Encours";
+                    foreach(var echeance in avanceInfos.Echeancier) {
+                        var eche = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                        if(eche is not null && eche.Mouvements is not null) {
+                            foreach(var mvt in eche.Mouvements) {
+                                solde -= mvt.Montant;
+                            }
+                        }
+                    }
                 }
             }
-
-            // var echeancier = await uow.EcheanceAvanceRepository.FindByIdAsync(id);
-            // if(echeancier is not null) {
-            //     foreach(var echeance in echeancier) {
-            //         if(echeance.Mouvement is not null){
-            //             solde -= echeance.Mouvement.Montant;
-            //         }
-            //     }
-            // }
-            if(solde == 0 && status == "Déboursé") {
+            if(solde == 0 && status == "Encours") {
                 status = "Soldé";
             }
            
@@ -134,21 +134,27 @@ namespace mefApi.Controllers
         [HttpGet("getmouvements/{id}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetMouvements(int id)
-        {
-            var avance = await uow.AvanceDebourseRepository.FindByIdAsync(id);
+        {   
+            var avanceInfos = await uow.AvanceRepository.FindByIdAsync(id);
             var mouvements = new List<Mouvement>();
-            if(avance is not null) {
-                if(avance.Mouvement is not null) {
-                    mouvements.Add(avance.Mouvement);
+            if(avanceInfos is not null) {
+                if(avanceInfos.AvanceDebourse is not null) {
+                    var accord = await uow.AvanceDebourseRepository.FindByIdAsync(avanceInfos.AvanceDebourse.Id);
+                    if(accord is not null && accord.Mouvement is not null) {
+                        mouvements.Add(accord.Mouvement);
+                    } 
                 }
-                var echeancier = await uow.EcheanceAvanceRepository.FindByIdAsync(avance.Id);
-                // if(echeancier is not null) {
-                //     foreach(var echeance in echeancier) {
-                //         if(echeance.Mouvement is not null){
-                //             mouvements.Add(echeance.Mouvement);
-                //         }
-                //     }
-                // }
+
+                if(avanceInfos.Echeancier is not null) {
+                    foreach(var echeance in avanceInfos.Echeancier) {
+                        var eche = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                        if(eche is not null && eche.Mouvements is not null) {
+                            foreach(var mvt in eche.Mouvements) {
+                                mouvements.Add(mvt);
+                            }
+                        }
+                    }
+                }
             }
 
             var mouvementsDto = mapper.Map<List<MouvementDto>>(mouvements);
@@ -160,14 +166,87 @@ namespace mefApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetEcheancier(int id)
         {
-            var echeancier = await uow.EcheanceAvanceRepository.FindByIdAsync(id);
+            var avance = await uow.AvanceRepository.FindByIdAsync(id);
+            if(avance is null) {
+                return NotFound("Cet avance n'exista pas dans la base");
+            }
             var echeancierDto = new List<EcheanceAvanceDto>();
-            if(echeancier is not null) {
-                echeancierDto = mapper.Map<List<EcheanceAvanceDto>>(echeancier);
+            if(avance.Echeancier is not null) {
+                echeancierDto = mapper.Map<List<EcheanceAvanceDto>>(avance.Echeancier);
             }
             
             return Ok(echeancierDto);
         }
+
+        [HttpGet("echeances")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetEcheances()
+        {
+            var echeances = await uow.EcheanceAvanceRepository.GetAllAsync();
+            var echeancierDto = new List<EcheanceAvanceDto>();
+            if(echeances is not null) {
+                foreach(var echeance in echeances) {
+                    var echeanceFromDb = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                    if(echeanceFromDb is not null && echeanceFromDb.Mouvements is not null) {
+                        decimal montantPaye = 0;
+                        foreach(var mouvement in echeanceFromDb.Mouvements) {
+                            montantPaye += mouvement.Montant;
+                        }
+                        if(montantPaye < echeanceFromDb.MontantEcheance) {
+                            var echeanceDto = mapper.Map<EcheanceAvanceDto>(echeanceFromDb);
+                            echeanceDto.MontantPaye = montantPaye;
+                            echeancierDto.Add(echeanceDto);
+                        } 
+                    } 
+                }
+                
+            }
+            
+            return Ok(echeancierDto);
+        }
+
+        [HttpPost("rembourserEcheances")] 
+        [AllowAnonymous]
+        public async Task<IActionResult> RembourserEcheances(InfosRemboursementsDto infos)
+        {
+            foreach(var echeanceDto in infos.Echeancier) {
+                var echeance = await uow.EcheanceAvanceRepository.FindByIdAsync(echeanceDto.Id);
+                if(echeance is null) {
+                    return NotFound("Cette échéances n'existe pas");
+                }
+
+                if(echeance.Mouvements is not null) { 
+                    decimal solde = echeance.MontantEcheance;
+                    foreach(var mvt in echeance.Mouvements) {
+                        solde -= mvt.Montant;
+                    }                   
+                    
+                    if(solde == echeance.MontantEcheance) {
+                        // MOUVEMENT DE REMBOURSEMENT AVANCE
+                        var mouvement = new Mouvement();
+                        mouvement.DateMvt = echeance.DateEcheance;
+                        if(infos.DateMouvement != "") {
+                            mouvement.DateMvt = infos.DateMouvement;
+                        }
+                        mouvement.TypeOperation = TypeOperation.Credit;
+                        mouvement.GabaritId = 1;
+                        mouvement.Libelle = "Remboursement écheance avance N° " + echeance.AvanceId;
+                        if (echeance.MontantEcheance != 0){
+                            mouvement.Montant = echeance.MontantEcheance;
+                        }
+                        mouvement.ModifiePar = GetUserId();
+                        mouvement.ModifieLe = DateTime.Now;
+                        mouvement.EcheanceAvance = echeance;
+                        uow.MouvementRepository.Add(mouvement);
+                        await uow.SaveAsync();
+                    }
+                }
+
+            }
+
+            return Ok();
+        }
+
 
         [HttpPost("add")]
         public async Task<IActionResult> Add(AvanceDto avanceDto)
@@ -207,7 +286,7 @@ namespace mefApi.Controllers
             if (avanceDto.MontantApprouve != 0){
                 mouvement.Montant = avanceDto.MontantApprouve;
             }
-            mouvement.ModifiePar = 1;
+            mouvement.ModifiePar = GetUserId();
             mouvement.ModifieLe = DateTime.Now;
             uow.MouvementRepository.Add(mouvement);
             await uow.SaveAsync();
@@ -215,7 +294,7 @@ namespace mefApi.Controllers
             var avanceDebourse = mapper.Map<AvanceDebourse>(avanceDto);
             avanceDebourse.Avance = avance;
             avanceDebourse.Mouvement = mouvement;
-            avanceDebourse.ModifiePar = 1;
+            avanceDebourse.ModifiePar = GetUserId();
             avanceDebourse.ModifieLe = DateTime.Now;
             uow.AvanceDebourseRepository.Add(avanceDebourse);
             await uow.SaveAsync();
@@ -234,7 +313,7 @@ namespace mefApi.Controllers
                 return NotFound();
 
             var avanceDebourse = mapper.Map<AvanceDebourse>(avanceDebourseDto);
-            avanceDebourse.ModifiePar = 1;
+            avanceDebourse.ModifiePar = GetUserId();
             avanceDebourse.ModifieLe = DateTime.Now;
 
             // Enregistrement du mouvement de déboursement dans le conte du membre
@@ -246,14 +325,14 @@ namespace mefApi.Controllers
             if (avanceDebourse.MontantApprouve != 0){
                 mouvement.Montant = avanceDebourse.MontantApprouve;
             }
-            mouvement.ModifiePar = 1;
+            mouvement.ModifiePar = GetUserId();
             mouvement.ModifieLe = DateTime.Now;
             avanceDebourse.Mouvement = mouvement;
 
             // foreach(var echeanceDto in infos.Echeancier) {
             //     var echeance = mapper.Map<EcheanceAvance>(echeanceDto);
             //     if(echeanceDto.Id == 0) {
-            //         echeance.ModifiePar = 1;
+            //         echeance.ModifiePar = GetUserId();
             //         echeance.ModifieLe = DateTime.Now;
             //         avanceDebourse.Echeancier.Add(echeance);
             //     }
@@ -286,7 +365,7 @@ namespace mefApi.Controllers
             foreach(var echeanceDto in echeanceAvancesDto) {
                 var echeance = mapper.Map<EcheanceAvance>(echeanceDto);
                 if(echeanceDto.Id == 0) {
-                    echeance.ModifiePar = 1;
+                    echeance.ModifiePar = GetUserId();
                     echeance.ModifieLe = DateTime.Now;
                     avance.Echeancier.Add(echeance);
                     await uow.SaveAsync();

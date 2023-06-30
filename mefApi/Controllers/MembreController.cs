@@ -7,11 +7,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using Microsoft.AspNetCore.SignalR;
 using mefApi.HubConfig;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.AspNetCore.Authorization;
 
 namespace mefApi.Controllers
 {

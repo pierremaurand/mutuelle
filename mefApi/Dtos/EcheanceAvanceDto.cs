@@ -10,5 +10,7 @@ namespace mefApi.Dtos
         public string DateEcheance { get; set; } = string.Empty;
         [Required]
         public decimal MontantEcheance { get; set; } = 0;
+        public int? AvanceId { get; set; }
+        public decimal? MontantPaye { get; set; }
     }
 }

@@ -12,5 +12,6 @@ namespace mefApi.Interfaces
         void Add(Mouvement mouvement);
         void Delete(int id);
         Task<Mouvement?> FindByIdAsync(int? id);
+        Task<Mouvement?> FindByEcheanceAvanceIdAsync(int? id);
     }
 }

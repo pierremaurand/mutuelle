@@ -1,16 +1,13 @@
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace mefApi.Controllers
@@ -75,8 +72,8 @@ namespace mefApi.Controllers
                 return NotFound();
             }
 
-            var membreListDto = mapper.Map<MembreListDto>(membre);
-            return Ok(membreListDto);
+            var membreDto = mapper.Map<MembreDto>(membre);
+            return Ok(membreDto);
         }
 
         [HttpPost("login")]
@@ -106,10 +103,9 @@ namespace mefApi.Controllers
         }
 
         [HttpPost("add")]
-        [AllowAnonymous]
         public async Task<IActionResult> Add(UtilisateurDto utilisateurDto)
         {   
-            if(!ModelState.IsValid || utilisateurDto.Password != utilisateurDto.ConfirmPassword) 
+            if(!ModelState.IsValid) 
                 return BadRequest(ModelState);
             
             if(await uow.UtilisateurRepository.UtilisateurExists(utilisateurDto)) 
@@ -119,18 +115,72 @@ namespace mefApi.Controllers
 
             using(var hmac = new HMACSHA512()){
                passwordKey = hmac.Key;
-               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(utilisateurDto.Password));
+               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes("mutuelle"));
             }
 
             var utilisateur = mapper.Map<Utilisateur>(utilisateurDto);
             utilisateur.MotDePasse = passwordHash;
             utilisateur.ClesMotDePasse = passwordKey;
-            utilisateur.ModifiePar = 1;
+            utilisateur.ModifiePar = GetUserId();;
             utilisateur.ModifieLe = DateTime.Now;
             uow.UtilisateurRepository.Add(utilisateur);
             await uow.SaveAsync();
             return StatusCode(201);
 
+        }
+
+        [HttpPut("initPassword/{id}")]
+        public async Task<IActionResult> InitPassword(int id, UtilisateurDto utilisateurDto) {
+            if(id != utilisateurDto.Id) {
+                return BadRequest("Reinitialisation impossible!");
+            }
+
+            byte[] passwordHash, passwordKey;
+
+            var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
+            if(utilisateur is null) {
+                return NotFound("Cet utilisateur n'existe pas dans la base de données");
+            }
+
+            using(var hmac = new HMACSHA512()){
+               passwordKey = hmac.Key;
+               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes("mutuelle"));
+            }
+
+            utilisateur.MotDePasse = passwordHash;
+            utilisateur.ClesMotDePasse = passwordKey;
+            utilisateur.ModifiePar = GetUserId();
+            utilisateur.ModifieLe = DateTime.Now;
+            await uow.SaveAsync();
+            return StatusCode(200);
+        }
+
+        [HttpPut("changePassword")]
+        public async Task<IActionResult> changePassword(InfosPassword infos) {
+            if(!ModelState.IsValid || infos.Password != infos.ConfirmPassword) {
+                return BadRequest("Changement de mot de passe impossible!");
+            }
+
+            var id = GetUserId();
+
+            var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
+            if(utilisateur is null) {
+                return NotFound("Cet utilisateur n'existe pas dans la base de données");
+            }
+
+            byte[] passwordHash, passwordKey;
+
+            using(var hmac = new HMACSHA512()){
+               passwordKey = hmac.Key;
+               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(infos.Password));
+            }
+
+            utilisateur.MotDePasse = passwordHash;
+            utilisateur.ClesMotDePasse = passwordKey;
+            utilisateur.ModifiePar = GetUserId();
+            utilisateur.ModifieLe = DateTime.Now;
+            await uow.SaveAsync();
+            return StatusCode(200);
         }
 
         [HttpPut("update/{id}")]
@@ -149,7 +199,6 @@ namespace mefApi.Controllers
             mapper.Map(utilisateurDto, utilisateurFromDb);
             await uow.SaveAsync();
             return StatusCode(200);
-
         }
 
         private string CreateJWT(Utilisateur utilisateur){

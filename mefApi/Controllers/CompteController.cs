@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using AutoMapper;
 using mefApi.Dtos;
 using mefApi.Interfaces;
@@ -65,12 +63,15 @@ namespace mefApi.Controllers
                 var mouvements = new List<Mouvement>();
 
                 if(membreInfos is not null) {
+
+                    // infos mouvements membres
                     if(membreInfos.Mouvements is not null) {
                         foreach(var mouvement in membreInfos.Mouvements) {
                             mouvements.Add(mouvement);
                         }
                     }
 
+                    // infos mouvements cotisations
                     if(membreInfos.Cotisations is not null) {
                         foreach(var cotisation in membreInfos.Cotisations) {
                             var cotisationInfos = await uow.CotisationRepository.FindByIdAsync(cotisation.Id);
@@ -83,48 +84,65 @@ namespace mefApi.Controllers
                             }
                         }
                     }
-
+                    
+                    // infos mouvemntes avances
                     if(membreInfos.Avances is not null) {
                         foreach(var avance in membreInfos.Avances) {
-                            if(avance.AvanceDebourse is not null) {
-                                var debour = await uow.AvanceDebourseRepository.FindByIdAsync(avance.AvanceDebourse.AvanceId);
-                                if(debour is not null) {
-                                    if(debour.Mouvement is not null) {
-                                        mouvements.Add(debour.Mouvement);
+                            var avanceInfos = await uow.AvanceRepository.FindByIdAsync(avance.Id);
+                            if(avanceInfos is not null) {
+                                if(avanceInfos.AvanceDebourse is not null) {
+                                    var accord = await uow.AvanceDebourseRepository.FindByIdAsync(avanceInfos.AvanceDebourse.Id);
+                                    if(accord is not null && accord.Mouvement is not null) {
+                                        mouvements.Add(accord.Mouvement);
                                     } 
-
-                                    // if(debour.Echeancier is not null) {
-                                    //     foreach(var echeance in debour.Echeancier) {
-                                    //         if(echeance.Mouvement is not null) {
-                                    //              mouvements.Add(echeance.Mouvement);
-                                    //         }
-                                    //     }
-                                    // }
                                 }
 
+                                if(avanceInfos.Echeancier is not null) {
+                                    foreach(var echeance in avanceInfos.Echeancier) {
+                                        var eche = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                                        if(eche is not null && eche.Mouvements is not null) {
+                                            foreach(var mvt in eche.Mouvements) {
+                                                mouvements.Add(mvt);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
 
-                    if(membre.Credits is not null) {
-                        foreach(var credit in membre.Credits) {
-                            if(credit.CreditDebourse is not null) {
-                                if(credit.CreditDebourse.Mouvement is not null) {
-                                    mouvements.Add(credit.CreditDebourse.Mouvement);
+                    // infos mouvements crédits
+                    if(membreInfos.Credits is not null) {
+                        foreach(var credit in membreInfos.Credits) {
+                            var creditInfos = await uow.CreditRepository.FindByIdAsync(credit.Id);
+                            if(creditInfos is not null) {
+                                if(creditInfos.Mouvements is not null) {
+                                    foreach(var mvt in creditInfos.Mouvements) {
+                                        mouvements.Add(mvt);
+                                    }
                                 }
 
-                                // if(credit.CreditDebourse.Echeancier is not null) {
-                                //     foreach(var echeance in credit.CreditDebourse.Echeancier) {
-                                //         if(echeance.Mouvements is not null) {
-                                //             foreach(var mouvement in echeance.Mouvements) {
-                                //                 mouvements.Add(mouvement);
-                                //             }
-                                //         }
-                                //     }
-                                // }
+                                if(creditInfos.CreditDebourse is not null) {
+                                    var accord = await uow.CreditDebourseRepository.FindByIdAsync(creditInfos.CreditDebourse.Id);
+                                    if(accord is not null && accord.Mouvement is not null) {
+                                        mouvements.Add(accord.Mouvement);
+                                    } 
+                                }
+
+                                if(creditInfos.Echeancier is not null) {
+                                    foreach(var echeance in creditInfos.Echeancier) {
+                                        var eche = await uow.EcheanceCreditRepository.FindByIdAsync(echeance.Id);
+                                        if(eche is not null && eche.Mouvements is not null) {
+                                            foreach(var mvt in eche.Mouvements) {
+                                                mouvements.Add(mvt);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
+
                 }
                 
                 
@@ -159,18 +177,19 @@ namespace mefApi.Controllers
             var compte = new CompteDto();
             compte.Membre = mapper.Map<MembreDto>(membre);
             compte.Solde = 0;
-            var membreInfos = await uow.MembreRepository.FindByIdAsync(membre.Id);
             var mouvements = new List<Mouvement>();
 
-            if(membreInfos is not null) {
-                if(membreInfos.Mouvements is not null) {
-                    foreach(var mouvement in membreInfos.Mouvements) {
+            if(membre is not null) {
+                // mouvements du membres
+                if(membre.Mouvements is not null) {
+                    foreach(var mouvement in membre.Mouvements) {
                         mouvements.Add(mouvement);
                     }
                 }
 
-                if(membreInfos.Cotisations is not null) {
-                    foreach(var cotisation in membreInfos.Cotisations) {
+                // mouvements de cotisations
+                if(membre.Cotisations is not null) {
+                    foreach(var cotisation in membre.Cotisations) {
                         var cotisationInfos = await uow.CotisationRepository.FindByIdAsync(cotisation.Id);
                         if(cotisationInfos is not null) {
                             if(cotisationInfos.Mouvements is not null) {
@@ -181,45 +200,61 @@ namespace mefApi.Controllers
                         }
                     }
                 }
-
-                if(membreInfos.Avances is not null) {
-                    foreach(var avance in membreInfos.Avances) {
-                        if(avance.AvanceDebourse is not null) {
-                            var debour = await uow.AvanceDebourseRepository.FindByIdAsync(avance.AvanceDebourse.AvanceId);
-                            if(debour is not null) {
-                                if(debour.Mouvement is not null) {
-                                    mouvements.Add(debour.Mouvement);
+                
+                // infos mouvemntes avances
+                if(membre.Avances is not null) {
+                    foreach(var avance in membre.Avances) {
+                        var avanceInfos = await uow.AvanceRepository.FindByIdAsync(avance.Id);
+                        if(avanceInfos is not null) {
+                            if(avanceInfos.AvanceDebourse is not null) {
+                                var accord = await uow.AvanceDebourseRepository.FindByIdAsync(avanceInfos.AvanceDebourse.Id);
+                                if(accord is not null && accord.Mouvement is not null) {
+                                    mouvements.Add(accord.Mouvement);
                                 } 
-
-                                // if(debour.Echeancier is not null) {
-                                //     foreach(var echeance in debour.Echeancier) {
-                                //         if(echeance.Mouvement is not null) {
-                                //              mouvements.Add(echeance.Mouvement);
-                                //         }
-                                //     }
-                                // }
                             }
 
+                            if(avanceInfos.Echeancier is not null) {
+                                foreach(var echeance in avanceInfos.Echeancier) {
+                                    var eche = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                                    if(eche is not null && eche.Mouvements is not null) {
+                                        foreach(var mvt in eche.Mouvements) {
+                                            mouvements.Add(mvt);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
+                // infos mouvements crédits
                 if(membre.Credits is not null) {
                     foreach(var credit in membre.Credits) {
-                        if(credit.CreditDebourse is not null) {
-                            if(credit.CreditDebourse.Mouvement is not null) {
-                                mouvements.Add(credit.CreditDebourse.Mouvement);
+                        var creditInfos = await uow.CreditRepository.FindByIdAsync(credit.Id);
+                        if(creditInfos is not null) {
+                            if(creditInfos.Mouvements is not null) {
+                                foreach(var mvt in creditInfos.Mouvements) {
+                                    mouvements.Add(mvt);
+                                }
                             }
 
-                            // if(credit.CreditDebourse.Echeancier is not null) {
-                            //     foreach(var echeance in credit.CreditDebourse.Echeancier) {
-                            //         if(echeance.Mouvements is not null) {
-                            //             foreach(var mouvement in echeance.Mouvements) {
-                            //                 mouvements.Add(mouvement);
-                            //             }
-                            //         }
-                            //     }
-                            // }
+                            if(creditInfos.CreditDebourse is not null) {
+                                var accord = await uow.CreditDebourseRepository.FindByIdAsync(creditInfos.CreditDebourse.Id);
+                                if(accord is not null && accord.Mouvement is not null) {
+                                    mouvements.Add(accord.Mouvement);
+                                } 
+                            }
+
+                            if(creditInfos.Echeancier is not null) {
+                                foreach(var echeance in creditInfos.Echeancier) {
+                                    var eche = await uow.EcheanceCreditRepository.FindByIdAsync(echeance.Id);
+                                    if(eche is not null && eche.Mouvements is not null) {
+                                        foreach(var mvt in eche.Mouvements) {
+                                            mouvements.Add(mvt);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -254,59 +289,81 @@ namespace mefApi.Controllers
         
 
             var mouvements = new List<Mouvement>();
+            // mouvements du membres
             if(membre.Mouvements is not null) {
                 foreach(var mouvement in membre.Mouvements) {
                     mouvements.Add(mouvement);
                 }
             }
 
+            // mouvements de cotisations
             if(membre.Cotisations is not null) {
                 foreach(var cotisation in membre.Cotisations) {
-                    var infosCotisation = await uow.CotisationRepository.FindByIdAsync(cotisation.Id);
-                    if(infosCotisation is not null) {
-                        if(infosCotisation.Mouvements is not null) {
-                        foreach(var mouvement in infosCotisation.Mouvements) {
-                            mouvements.Add(mouvement);
+                    var cotisationInfos = await uow.CotisationRepository.FindByIdAsync(cotisation.Id);
+                    if(cotisationInfos is not null) {
+                        if(cotisationInfos.Mouvements is not null) {
+                            foreach(var mouvement in cotisationInfos.Mouvements) {
+                                mouvements.Add(mouvement);
+                            }
                         }
-                    }
                     }
                 }
             }
-
+            
+            // infos mouvemntes avances
             if(membre.Avances is not null) {
                 foreach(var avance in membre.Avances) {
-                    if(avance.AvanceDebourse is not null) {
-                        if(avance.AvanceDebourse.Mouvement is not null) {
-                            mouvements.Add(avance.AvanceDebourse.Mouvement);
+                    var avanceInfos = await uow.AvanceRepository.FindByIdAsync(avance.Id);
+                    if(avanceInfos is not null) {
+                        if(avanceInfos.AvanceDebourse is not null) {
+                            var accord = await uow.AvanceDebourseRepository.FindByIdAsync(avanceInfos.AvanceDebourse.Id);
+                            if(accord is not null && accord.Mouvement is not null) {
+                                mouvements.Add(accord.Mouvement);
+                            } 
                         }
 
-                        // if(avance.Echeancier is not null) {
-                        //     foreach(var echeance in avance.Echeancier) {
-                        //         if(echeance.Mouvement is not null) {
-                        //             mouvements.Add(echeance.Mouvement);
-                        //         }
-                        //     }
-                        // }
+                        if(avanceInfos.Echeancier is not null) {
+                            foreach(var echeance in avanceInfos.Echeancier) {
+                                var eche = await uow.EcheanceAvanceRepository.FindByIdAsync(echeance.Id);
+                                if(eche is not null && eche.Mouvements is not null) {
+                                    foreach(var mvt in eche.Mouvements) {
+                                        mouvements.Add(mvt);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
 
+            // infos mouvements crédits
             if(membre.Credits is not null) {
                 foreach(var credit in membre.Credits) {
-                    if(credit.CreditDebourse is not null) {
-                        if(credit.CreditDebourse.Mouvement is not null) {
-                            mouvements.Add(credit.CreditDebourse.Mouvement);
+                    var creditInfos = await uow.CreditRepository.FindByIdAsync(credit.Id);
+                    if(creditInfos is not null) {
+                        if(creditInfos.Mouvements is not null) {
+                            foreach(var mvt in creditInfos.Mouvements) {
+                                mouvements.Add(mvt);
+                            }
                         }
 
-                        // if(credit.CreditDebourse.Echeancier is not null) {
-                        //     foreach(var echeance in credit.CreditDebourse.Echeancier) {
-                        //         if(echeance.Mouvements is not null) {
-                        //             foreach(var mouvement in echeance.Mouvements) {
-                        //                 mouvements.Add(mouvement);
-                        //             }
-                        //         }
-                        //     }
-                        // }
+                        if(creditInfos.CreditDebourse is not null) {
+                            var accord = await uow.CreditDebourseRepository.FindByIdAsync(creditInfos.CreditDebourse.Id);
+                            if(accord is not null && accord.Mouvement is not null) {
+                                mouvements.Add(accord.Mouvement);
+                            } 
+                        }
+
+                        if(creditInfos.Echeancier is not null) {
+                            foreach(var echeance in creditInfos.Echeancier) {
+                                var eche = await uow.EcheanceCreditRepository.FindByIdAsync(echeance.Id);
+                                if(eche is not null && eche.Mouvements is not null) {
+                                    foreach(var mvt in eche.Mouvements) {
+                                        mouvements.Add(mvt);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

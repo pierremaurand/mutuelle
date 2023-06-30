@@ -1,11 +1,10 @@
 import { Mouvement } from './mouvement';
 
 export class EcheanceCredit {
-  id?: number;
+  id: number = 0;
+  dateEcheance?: string | null = '';
+  capital?: number;
+  interet?: number;
+  montantPaye?: number;
   creditId?: number;
-  moisId?: number;
-  annee?: number;
-  montantCapital?: number;
-  montantInteret?: number;
-  mouvements?: Mouvement[];
 }

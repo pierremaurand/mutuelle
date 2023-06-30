@@ -8,10 +8,8 @@ namespace mefApi.Dtos
         public int Id { get; set; } = 0;
         [Required(ErrorMessage ="Le nom d'utilisateur est obligatoire")]
         public string NomUtilisateur { get; set; } = string.Empty;
-        [Required(ErrorMessage ="Le mot de passe est obligatoire")]
-        public string Password { get; set; } = string.Empty;
-        public string ConfirmPassword { get; set; } = string.Empty;
-        public int? MembreId { get; set; }
-        public TypeUtilisateur Type { get; set; } = 0;
+        [Required(ErrorMessage ="L'Id du membre est obligatoire")]
+        public int MembreId { get; set; }
+        public TypeUtilisateur Type { get; set; } = TypeUtilisateur.Utilisateur;
     }
 }

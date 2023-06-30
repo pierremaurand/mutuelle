@@ -1,202 +1,258 @@
-<!-- <div class="row">
-  <div class="col-md-12">
-    <div class="card border-none">
-      <div class="card-body">
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations sur le crédit
+      </h1>
+      <h1 class="mb-2 text-gray-800">{{ solde | number }} FCFA</h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3"></div>
+    <div class="card-body">
+      <div>
         <div class="row m-3">
-          <div class="col-md-6">
-            <h2>
-              <i class="fa fa-info-circle text-primary"></i>&nbsp;Informations
-              du crédit
-            </h2>
-          </div>
-          <div class="col-md-6 text-end h2">
-            {{ soldeCredit() | number }} FCFA
-          </div>
-        </div>
-        <div class="row m-3">
-          <div class="col-md-3 border-end text-primary">
-            <div class="row">
+          <div class="col-md-3 mb-3 border-end text-primary">
+            <a
+              href="javascript:void(0);"
+              data-toggle="modal"
+              data-target="#addPicture"
+              *ngIf="credit.id == 0"
+            >
+              <app-infos-membre [membre]="membre"></app-infos-membre>
+            </a>
+            <div *ngIf="credit.id != 0">
               <app-infos-membre [membre]="membre"></app-infos-membre>
             </div>
           </div>
           <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-12">
+            <div class="col-md-12">
+              <form #membreForm="ngForm">
                 <div class="row">
-                  <div class="col" *ngIf="!credit.id">
-                    <label for="membreId" class="form-label">Membre</label>
-                    <select
-                      id="membreId"
-                      name="membreId"
-                      class="form-select"
-                      [(ngModel)]="credit.membreId"
-                      (change)="changeMembre()"
+                  <div class="col-md-12 d-flex justify-content-between">
+                    <a href="javascript:void(0);" (click)="cancel()"
+                      ><i class="fa fa-arrow-left"></i> Retour à la liste</a
                     >
-                      <option
-                        *ngFor="let membre of membres | sort : ['nom', 'asc']"
-                        value="{{ membre.id }}"
-                      >
-                        {{ membre.nom | uppercase }}
-                      </option>
-                    </select>
-                  </div>
-
-                  <div class="col" *ngIf="!credit.id">
-                    <label for="dateEnregistrement" class="form-label"
-                      >Date d'enregistrement</label
-                    >
-                    <input
-                      type="date"
-                      id="dateEnregistrement"
-                      name="dateEnregistrement"
-                      class="form-control"
-                      [(ngModel)]="credit.dateEnregistrement"
-                      placeholder="La date du mouvement"
-                    />
-                  </div>
-
-                  <div class="col">
-                    <label for="montantCapital" class="form-label"
-                      >Montant Capital</label
-                    >
-                    <input
-                      type="number"
-                      id="montantCapital"
-                      name="montantCapital"
-                      class="form-control"
-                      [(ngModel)]="credit.montantCapital"
-                      placeholder="Montant du capital du crédit"
-                      [disabled]="credit.id != undefined"
-                      (change)="calculInteret()"
-                    />
-                  </div>
-
-                  <div class="col">
-                    <label for="montantInteret" class="form-label"
-                      >Montant intérêts</label
-                    >
-                    <input
-                      type="number"
-                      id="montantInteret"
-                      name="montantInteret"
-                      class="form-control"
-                      [(ngModel)]="credit.montantInteret"
-                      placeholder="Montant des intérêts du crédit"
-                      [disabled]="true"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="credit.id">
-                    <label for="dateDeblocage" class="form-label"
-                      >Date décaissement</label
-                    >
-                    <input
-                      type="date"
-                      id="dateDeblocage"
-                      name="dateDeblocage"
-                      class="form-control"
-                      [(ngModel)]="credit.dateDeblocage"
-                      placeholder="La date du décaissement"
-                      [disabled]="echeancier.length > 0"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="credit.id">
-                    <label for="nombreEcheances" class="form-label"
-                      >Nombre d'échéances</label
-                    >
-                    <input
-                      type="number"
-                      id="nombreEcheances"
-                      name="nombreEcheances"
-                      class="form-control"
-                      [(ngModel)]="credit.nombreEcheances"
-                      placeholder="Nombre d'échéances"
-                      [disabled]="echeancier.length > 0"
-                    />
-                  </div>
-
-                  <div class="col" *ngIf="credit.id && checkEcheancier()">
-                    <label for="mvtDate" class="form-label"
-                      >Date du mouvement</label
-                    >
-                    <input
-                      type="date"
-                      id="mvtDate"
-                      name="mvtDate"
-                      class="form-control"
-                      [(ngModel)]="mvtDate"
-                      placeholder="La date du mouvement"
-                    />
-                  </div>
-
-                  <div
-                    class="col d-flex"
-                    *ngIf="credit.id && echeancier.length == 0"
-                  >
                     <button
-                      class="btn btn-primary form-control flex-fill"
-                      (click)="genererEcheancier()"
+                      type="button"
+                      class="btn btn-success"
+                      (click)="enregistrer()"
                     >
-                      Générer échéancier
+                      <i class="fa fa-save"></i>&nbsp; Enregistrer
                     </button>
                   </div>
                 </div>
-                <hr />
-                <div class="row liste">
-                  <div class="col-12">
-                    <table class="table table-striped">
-                      <tbody>
-                        <tr *ngFor="let echeance of echeancier; let i = index">
-                          <td class="text-center">{{ i + 1 }}</td>
-                          <td>
-                            <button
-                              *ngIf="echeance.id"
-                              [disabled]="echeance.estPaye == true"
-                              class="btn btn-success btn-sm"
-                              (click)="payCheck(i)"
-                            >
-                              <i class="fa fa-check"></i>&nbsp; Payer</button
-                            >&nbsp;
-                            {{ getMois(echeance.moisId) }}
-                          </td>
-                          <td>
-                            {{ echeance.annee }}
-                          </td>
-                          <td class="text-end">
-                            {{ echeance.montantCapital | number }} FCFA
-                          </td>
-                          <td class="text-end">
-                            {{ echeance.montantInteret | number }} FCFA
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                <nav class="nav nav-tabs">
+                  <a
+                    class="nav-item nav-link active"
+                    href="#infosDemande"
+                    data-toggle="tab"
+                    >Infos demande</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#decisionComite"
+                    data-toggle="tab"
+                    *ngIf="credit.id != 0"
+                    >Décision du comité</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#echeancier"
+                    data-toggle="tab"
+                    *ngIf="creditDebourse.id != 0"
+                    >Echéancier</a
+                  >
+                </nav>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="infosDemande">
+                    <div class="p-3">
+                      <h5>Informations sur la demande</h5>
+                      <hr />
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <label for="montantSollicite" class="form-label"
+                            >Montant sollicité</label
+                          >
+                          <input
+                            type="number"
+                            id="montantSollicite"
+                            class="form-control"
+                            name="montantSollicite"
+                            [(ngModel)]="credit.montantSollicite"
+                            [disabled]="credit.id != 0"
+                            placeholder="Montant sollicité"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dureeSollicite" class="form-label"
+                            >Nombre d'échéances sollicité</label
+                          >
+                          <input
+                            type="number"
+                            id="dureeSollicite"
+                            class="form-control"
+                            name="dureeSollicite"
+                            [(ngModel)]="credit.dureeSollicite"
+                            [disabled]="credit.id != 0"
+                            placeholder="Nombre d'échéances"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dateDemande" class="form-label"
+                            >Date de la demande</label
+                          >
+                          <input
+                            type="date"
+                            id="dateDemande"
+                            class="form-control"
+                            name="dateDemande"
+                            [(ngModel)]="credit.dateDemande"
+                            [disabled]="credit.id != 0"
+                            placeholder="Date de la demande"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="decisionComite">
+                    <div class="p-3">
+                      <h5>Décision du comité</h5>
+                      <hr />
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <label for="montantAccorde" class="form-label"
+                            >Montant Accordé</label
+                          >
+                          <input
+                            type="number"
+                            id="montantAccorde"
+                            class="form-control"
+                            name="montantAccorde"
+                            [(ngModel)]="creditDebourse.montantAccorde"
+                            [disabled]="creditDebourse.id != 0"
+                            placeholder="Montant accordé"
+                            (change)="calculInteret()"
+                            min="300001"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dureeAccordee" class="form-label"
+                            >Durée accordée</label
+                          >
+                          <input
+                            type="number"
+                            id="dureeAccordee"
+                            class="form-control"
+                            name="dureeAccordee"
+                            [(ngModel)]="creditDebourse.dureeAccordee"
+                            [disabled]="creditDebourse.id != 0"
+                            placeholder="Nombre d'échéances"
+                            (change)="calculInteret()"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="montantInteret" class="form-label"
+                            >Montant Intérets</label
+                          >
+                          <input
+                            type="number"
+                            id="montantInteret"
+                            class="form-control"
+                            name="montantInteret"
+                            [(ngModel)]="creditDebourse.montantInteret"
+                            disabled
+                            placeholder="Montant intérets"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="montantCommission" class="form-label"
+                            >Montant commission</label
+                          >
+                          <input
+                            type="number"
+                            id="montantCommission"
+                            class="form-control"
+                            name="montantCommission"
+                            [(ngModel)]="creditDebourse.montantCommission"
+                            disabled
+                            placeholder="Montant commission"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dateDecaissement" class="form-label"
+                            >Date du décaissement</label
+                          >
+                          <input
+                            type="date"
+                            id="dateDecaissement"
+                            class="form-control"
+                            name="dateDecaissement"
+                            [(ngModel)]="creditDebourse.dateDecaissement"
+                            [disabled]="creditDebourse.id != 0"
+                            placeholder="Date du décaissement"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="echeancier">
+                    <div class="p-3">
+                      <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                          <h5 class="d-flex align-item-center">
+                            <span class="mr-1">Echéancier</span>
+                          </h5>
+                          <button
+                            class="btn btn-primary btn-sm"
+                            *ngIf="echeancier.length == 0"
+                            (click)="genererEcheancier()"
+                          >
+                            Générer l'échéancier
+                          </button>
+                        </div>
+                      </div>
+                      <hr />
+                      <app-echeancier-credit
+                        [echeancier]="echeancier"
+                        [nbrEcheances]="nbrEcheances"
+                      ></app-echeancier-credit>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
-          </div>
-        </div>
-        <div class="row m-3">
-          <div class="col-md-12 text-end">
-            <button
-              type="button"
-              class="btn btn-danger me-2"
-              (click)="cancel()"
-            >
-              <i class="fa fa-ban"></i>&nbsp; Annuler
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              (click)="enregistrer()"
-            >
-              <i class="fa fa-save"></i>&nbsp; Enregistrer
-            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
+
+<div
+  id="addPicture"
+  class="modal fade"
+  tabindex="-1"
+  aria-labelledby="addPicture"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header">
+        <h4 class="modal-title">Liste des membres</h4>
+        <button type="button" class="close" data-dismiss="modal" #closeModal>
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-liste-choix-membre
+          (membreChoisie)="membreChoisie($event)"
+        ></app-liste-choix-membre>
+      </div>
+    </div>
+  </div>
+</div>

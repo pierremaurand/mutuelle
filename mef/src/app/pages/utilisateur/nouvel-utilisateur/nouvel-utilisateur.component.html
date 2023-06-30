@@ -25,11 +25,17 @@
           <div class="row mb-2 d-flex justify-content-between">
             <div class="col">
               <a href="javascript:void(0);" (click)="cancel()"
-                ><i class="fa fa-arrow-left"></i> Retour à la page des
-                utilisateurs</a
+                ><i class="fa fa-arrow-left"></i> Retour à la liste</a
               >
             </div>
             <div class="col text-right">
+              <button
+                class="btn btn-warning mr-1"
+                (click)="initPassword()"
+                *ngIf="utilisateur.id != 0"
+              >
+                <i class="fa fa-refrech"></i> Reinitialiser le mot de passe
+              </button>
               <button class="btn btn-success" (click)="enregistrerInfos()">
                 <i class="fa fa-save"></i> Enregistrer
               </button>
@@ -38,7 +44,7 @@
           <hr />
           <div class="p-3">
             <div class="row">
-              <div class="form-group col">
+              <div class="form-group col-6" *ngIf="utilisateur.id == 0">
                 <label for="membreId" class="form-label">Membre</label>
                 <select
                   id="membreId"
@@ -56,7 +62,7 @@
                   </option>
                 </select>
               </div>
-              <div class="form-group col">
+              <div class="form-group col-6">
                 <label for="nomUtilisateur" class="form-label"
                   >Nom d'utilisateur</label
                 >
@@ -69,32 +75,6 @@
                   [disabled]="utilisateur.id != 0"
                 />
               </div>
-            </div>
-            <div class="row" *ngIf="utilisateur.id == 0">
-              <div class="form-group col">
-                <label for="password" class="form-label">Mot de passe</label>
-                <input
-                  type="password"
-                  id="password"
-                  class="form-control"
-                  name="password"
-                  [(ngModel)]="utilisateur.password"
-                />
-              </div>
-              <div class="form-group col">
-                <label for="confirmPassword" class="form-label"
-                  >Confirmation mot de passe</label
-                >
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  class="form-control"
-                  name="confirmPassword"
-                  [(ngModel)]="utilisateur.confirmPassword"
-                />
-              </div>
-            </div>
-            <div class="row">
               <div class="form-group col-6">
                 <label for="type">Type d'utilisateur</label>
                 <select

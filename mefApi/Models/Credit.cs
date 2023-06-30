@@ -15,6 +15,7 @@ namespace mefApi.Models
         [Required]
         public string DateDemande { get; set; } = string.Empty;
         public CreditDebourse? CreditDebourse { get; set; }
-        public ICollection<EcheanceCredit>? Echeancier { get; set; }
+        public ICollection<Mouvement>? Mouvements { get; set; }
+        public ICollection<EcheanceCredit> Echeancier { get; set; } = new List<EcheanceCredit>();
     }
 }

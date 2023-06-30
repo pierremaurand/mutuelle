@@ -12,5 +12,6 @@ namespace mefApi.Models
         public string DateEcheance { get; set; } = string.Empty;
         [Required]
         public decimal MontantEcheance { get; set; } = 0;
+        public ICollection<Mouvement>? Mouvements { get; set; }
     }
 }

@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Membre } from 'src/app/model/Membre';
-import { LieuAffectation } from 'src/app/model/lieuAffectation';
-import { MembreList } from 'src/app/model/membreList';
-import { Poste } from 'src/app/model/poste';
-import { Sexe } from 'src/app/model/sexe';
-import { UploadImage } from 'src/app/model/uploadImage';
 import { Utilisateur } from 'src/app/model/utilisateur';
-import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
-import { LoaderService } from 'src/app/services/loader.service';
 import { MembreService } from 'src/app/services/membre.service';
-import { PosteService } from 'src/app/services/poste.service';
-import { SexeService } from 'src/app/services/sexe.service';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
@@ -47,10 +38,11 @@ export class NouvelUtilisateurComponent implements OnInit {
   }
 
   changeMembre(): void {
-    var membre = this.membres.find((m) => m.id == this.utilisateur.membreId);
-    if (membre) {
-      this.membre = membre;
-    }
+    this.membreService
+      .getById(this.utilisateur.membreId)
+      .subscribe((membre: Membre) => {
+        this.membre = membre;
+      });
   }
 
   enregistrerInfos(): void {
@@ -71,18 +63,21 @@ export class NouvelUtilisateurComponent implements OnInit {
     }
   }
 
+  initPassword(): void {
+    if (this.utilisateur.id != 0) {
+      this.utilisateurService
+        .initPassword(this.utilisateur.id, this.utilisateur)
+        .subscribe((value: any) => {
+          this.cancel();
+        });
+    }
+  }
+
   validationFormulaire(): boolean {
     if (this.utilisateur.membreId == 0) {
       return false;
     }
     if (this.utilisateur.nomUtilisateur == '') {
-      return false;
-    }
-    if (
-      this.utilisateur.id == 0 &&
-      (this.utilisateur.password == '' ||
-        this.utilisateur.password != this.utilisateur.confirmPassword)
-    ) {
       return false;
     }
     if (this.utilisateur.type == 0) {

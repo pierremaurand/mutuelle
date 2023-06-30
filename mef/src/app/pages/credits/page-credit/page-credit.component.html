@@ -3,20 +3,23 @@
   <!-- Page Heading -->
   <div class="row mb-3">
     <div class="col-md-8">
-      <h1 class="mb-2 text-gray-800">Liste des credits</h1>
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-list"></i>
+        Liste des crédits
+      </h1>
     </div>
     <div class="col-md-4">
-      <app-bouton-action (clickEvent)="nouveauCredit()"></app-bouton-action>
+      <app-bouton-action
+        (newEvent)="nouveauCredit()"
+        (exportEvent)="exportCredits()"
+        (importEvent)="importCredits()"
+      ></app-bouton-action>
     </div>
   </div>
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">
-        Liste des avances accordées
-      </h6>
-    </div>
+    <div class="card-header py-3"></div>
     <div class="card-body">
       <div class="list-group">
         <a
@@ -27,11 +30,7 @@
         >
           <div class="row" (click)="navigate(credit.id)">
             <div class="col-12">
-              <!-- <app-details-membre
-                [membre]="credit.membre"
-                [solde]="getSolde(credit)"
-                [afficheSolde]="true"
-              ></app-details-membre> -->
+              <app-detail-credit [creditId]="credit.id"></app-detail-credit>
             </div>
           </div>
         </a>

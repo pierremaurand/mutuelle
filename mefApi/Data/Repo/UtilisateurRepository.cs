@@ -43,6 +43,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.Utilisateurs is not null) {
                 var utilisateur = await dc.Utilisateurs
+                .Include(s => s.Membre)
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(utilisateur is not null) {

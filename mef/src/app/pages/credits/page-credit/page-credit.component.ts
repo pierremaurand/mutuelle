@@ -19,23 +19,13 @@ import { SexeService } from 'src/app/services/sexe.service';
 })
 export class PageCreditComponent implements OnInit {
   credits: Credit[] = [];
-  membres: Membre[] = [];
-  sexes: Sexe[] = [];
-  postes: Poste[] = [];
-  lieuAffectations: LieuAffectation[] = [];
-  echeances: EcheanceCredit[] = [];
 
   constructor(private creditService: CreditService, private router: Router) {}
 
   ngOnInit(): void {
-    this.creditService
-      .getAllEcheances()
-      .subscribe((echeances: EcheanceCredit[]) => {
-        this.echeances = echeances;
-        this.creditService.getAll().subscribe((credits: Credit[]) => {
-          this.credits = credits;
-        });
-      });
+    this.creditService.getAll().subscribe((credits: Credit[]) => {
+      this.credits = credits;
+    });
   }
 
   nouveauCredit(): void {
@@ -46,17 +36,7 @@ export class PageCreditComponent implements OnInit {
     this.router.navigate(['/nouveaucredit/' + id]);
   }
 
-  getSolde(credit: Credit): number {
-    let solde = 0;
-    solde += credit?.montantCapital ?? 0;
-    solde += credit?.montantInteret ?? 0;
-    // this.echeances
-    //   .filter(({ estPaye, creditId }) => estPaye && creditId == credit?.id)
-    //   .forEach((e) => {
-    //     solde -= e.montantCapital ?? 0;
-    //     solde -= e.montantInteret ?? 0;
-    //   });
+  exportCredits(): void {}
 
-    return solde;
-  }
+  importCredits(): void {}
 }
