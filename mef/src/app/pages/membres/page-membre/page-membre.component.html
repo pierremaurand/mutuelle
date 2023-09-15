@@ -1,0 +1,43 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-list"></i> Liste des membres
+      </h1>
+    </div>
+    <div class="col-md-4">
+      <app-bouton-action
+        (newEvent)="nouveauMembre()"
+        (exportEvent)="exportMembre()"
+        (importEvent)="importMembre()"
+      ></app-bouton-action>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="list-group">
+        <a
+          href="javascript:void(0);"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+          *ngFor="let membre of membres | sort : ['nom', 'asc']"
+          [ngClass]="{
+            'border-left-success text-success': membre.estActif,
+            'border-left-danger text-danger': !membre.estActif
+          }"
+        >
+          <div class="row" (click)="navigate(membre.id)">
+            <div class="col-12">
+              <app-detail-membre [membreId]="membre.id"></app-detail-membre>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

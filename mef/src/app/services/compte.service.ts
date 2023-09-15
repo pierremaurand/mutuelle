@@ -2,31 +2,39 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Compte } from '../model/compte';
+import { Membre } from '../model/Membre';
+import { CompteList } from '../model/compteList';
+import { Mouvement } from '../model/mouvement';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CompteService {
-
   baseUrl = environment.baseUrl;
+  imagesUrl = environment.imagesUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Compte[]>{
-    return this.http.get<Compte[]>(this.baseUrl + '/compte/comptes');
+  getAllComptes(): Observable<CompteList[]> {
+    return this.http.get<CompteList[]>(this.baseUrl + '/compte/comptes');
   }
 
-  getById(id: number): Observable<Compte> {
-    return this.http.get<Compte>(this.baseUrl + '/compte/get/' + id.toString());
+  getAllMvts(id: number): Observable<Mouvement[]> {
+    return this.http.get<Mouvement[]>(
+      this.baseUrl + '/compte/mvtsmembre/' + id.toString()
+    );
   }
 
-  add(compte: Compte): Observable<any> {
-    console.log(compte);
-    return this.http.post(this.baseUrl + '/compte/add', compte,);
+  getById(id?: number): Observable<Membre> {
+    return this.http.get<Membre>(
+      this.baseUrl + '/compte/get/' + id?.toString()
+    );
   }
 
-  update(compte: Compte, id?: number): Observable<any> {
-    return this.http.put(this.baseUrl + '/compte/update/' + id?.toString(),compte);
+  addMvts(id: number, mvts: Mouvement[]): Observable<any> {
+    return this.http.post<Mouvement[]>(
+      this.baseUrl + '/compte/addmvts/' + id.toString(),
+      mvts
+    );
   }
 }

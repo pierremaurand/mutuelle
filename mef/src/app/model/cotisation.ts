@@ -1,7 +1,8 @@
+import { Mouvement } from './mouvement';
+
 export class Cotisation {
-  id: number|null = null;
-  membreId: number|null = null;
-  periode: string|null = null;
-  montant: number|null = null;
-  estValide: boolean|null = null;
+  id: number = 0;
+  moisId: number = 0;
+  annee: number = 0;
+  montant: number = 0;
 }

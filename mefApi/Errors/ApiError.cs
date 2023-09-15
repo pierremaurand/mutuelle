@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace WebApi.Errors
+namespace mefApi.Errors
 {
     public class ApiError
     {

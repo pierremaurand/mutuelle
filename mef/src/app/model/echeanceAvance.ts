@@ -1,8 +1,9 @@
+import { Mouvement } from './mouvement';
 
-export interface EcheanceAvance {
-  id?: number;
-  dateEcheance?: string;
-  montant?: number;
-  estPaye?: boolean;
-  estNouveau?: boolean;
+export class EcheanceAvance {
+  id: number = 0;
+  dateEcheance?: string | null = '';
+  montantEcheance?: number;
+  montantPaye?: number;
+  avanceId?: number;
 }

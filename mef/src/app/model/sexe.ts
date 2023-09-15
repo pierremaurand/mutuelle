@@ -1,4 +1,5 @@
-export interface Sexe {
-  id?: number;
-  nom?: string;
+export class Sexe {
+  id: number = 0;
+  nom: string = '';
+  symbole: string = '';
 }

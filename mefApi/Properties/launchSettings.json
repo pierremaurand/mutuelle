@@ -1,13 +1,5 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:1456",
-      "sslPort": 0
-    }
-  },
   "profiles": {
     "hspaApi2": {
       "commandName": "Project",
@@ -19,10 +11,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
+    "mefApi.Server": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5215",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

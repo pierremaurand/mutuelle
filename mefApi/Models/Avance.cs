@@ -1,14 +1,20 @@
-namespace WebApi.Models
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace mefApi.Models
 {
     public class Avance : BaseEntity
     {
-        public string DateDeblocage { get; set; } = string.Empty;
-        public string DateDebut { get; set; } = string.Empty;
-        public string DateFin { get; set; } = string.Empty;
-        public decimal Montant { get; set; }
-        public int MembreId { get; set; } 
-        public Membre Membre { get; set; } = new Membre{};
-        public Boolean EstValide { get; set; }
-        public ICollection<EcheanceAvance> EcheanceAvances { get; set; } = new List<EcheanceAvance>();
+        [Required]
+        public int MembreId { get; set; } = 0;
+        public Membre? Membre { get; set; }
+        [Required]
+        public decimal MontantSollicite { get; set; } = 0;
+        [Required]
+        public int NombreEcheancesSollicite { get; set; } = 0;
+        [Required]
+        public string DateDemande { get; set; } = string.Empty;
+        public AvanceDebourse? AvanceDebourse { get; set; }
+        public ICollection<EcheanceAvance> Echeancier { get; set; } = new List<EcheanceAvance>();
     }
 }

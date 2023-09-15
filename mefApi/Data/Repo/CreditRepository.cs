@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using mefApi.Interfaces;
+using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
-using WebApi.Interfaces;
-using WebApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class CreditRepository : ICreditRepository
     {
@@ -16,53 +20,42 @@ namespace WebApi.Data.Repo
         public void Add(Credit credit)
         {
             if(dc.Credits is not null && credit is not null) {
-                dc.Credits.Add(credit);
+                dc.Credits.AddAsync(credit);
             }
         }
 
         public void Delete(int id)
         {
-            if(dc.Credits is not null) {
-                var credit = dc.Credits.Find(id);
-                if(credit is not null) {
-                    dc.Credits.Remove(credit);
-                }
-            }
+            throw new NotImplementedException();
         }
 
         public async Task<Credit?> FindByIdAsync(int id)
         {
             if(dc.Credits is not null) {
-                var credit = await dc.Credits.FindAsync(id);
+                var credit = await dc.Credits
+                .Include(s => s.CreditDebourse)
+                .Include(m => m.Mouvements)
+                .Include(s => s.Echeancier)
+                .Where(s => s.Id == id)
+                .FirstAsync();
                 if(credit is not null) {
                     return credit;
                 }
             }
-            
+
             return null;
         }
 
         public async Task<IEnumerable<Credit>?> GetAllAsync()
         {
-             if(dc.Credits is not null) {
-                var credits = await dc.Credits.ToListAsync();
-                if(credits is not null) {
-                    return credits;
-                }
-            }
-            return null;
-        }
-
-        public async Task<IEnumerable<Credit>?> GetAllByMembreAsync(int membreId)
-        {
-             if(dc.Credits is not null) {
+            if(dc.Credits is not null) {
                 var credits = await dc.Credits
-                .Where(c => c.MembreId == membreId && c.EstValide)
                 .ToListAsync();
                 if(credits is not null) {
                     return credits;
                 }
             }
+
             return null;
         }
     }

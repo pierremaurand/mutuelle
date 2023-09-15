@@ -1,38 +1,44 @@
 using AutoMapper;
-using WebApi.Dtos;
-using WebApi.Models;
+using mefApi.Dtos;
+using mefApi.Models;
 
-namespace WebApi.Helpers
+namespace mefApi.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Agence, AgenceDto>().ReverseMap();
 
-            CreateMap<Service, ServiceDto>().ReverseMap();
+            CreateMap<Utilisateur, UtilisateurDto>().ReverseMap();
 
             CreateMap<Sexe, SexeDto>().ReverseMap();
 
-            CreateMap<Parametre, ParametreDto>().ReverseMap();
+            CreateMap<Membre, MembreDto>().ReverseMap();
+            
+            CreateMap<Poste, PosteDto>().ReverseMap();
 
-            CreateMap<Membre, MembreDto>()
-                .ForMember(d => d.Agence, opt => opt.MapFrom(src => src.Agence.Nom))
-                .ForMember(d => d.Service, opt => opt.MapFrom(src => src.Service.Nom))
-                .ForMember(d => d.Sexe, opt => opt.MapFrom(src => src.Sexe.Nom))
-                .ReverseMap();
+            CreateMap<Mois, MoisDto>().ReverseMap();
+
+            CreateMap<CompteComptable, CompteComptableDto>().ReverseMap();
+
+            CreateMap<Gabarit, GabaritDto>().ReverseMap();
+            CreateMap<Operation, OperationDto>().ReverseMap();
 
             CreateMap<Compte, CompteDto>().ReverseMap();
 
-            CreateMap<Cotisation, CotisationDto>().ReverseMap();
+            CreateMap<Mouvement, MouvementDto>().ReverseMap();
 
+            CreateMap<Cotisation, CotisationDto>().ReverseMap();
+            
+            CreateMap<LieuAffectation, LieuAffectationDto>().ReverseMap();
+            
             CreateMap<Avance, AvanceDto>().ReverseMap();
+            CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
+            CreateMap<AvanceDebourse, AvanceDebourseDto>().ReverseMap();
 
             CreateMap<Credit, CreditDto>().ReverseMap();
-
-            CreateMap<EcheanceAvance, EcheanceAvanceDto>().ReverseMap();
-
             CreateMap<EcheanceCredit, EcheanceCreditDto>().ReverseMap();
+            CreateMap<CreditDebourse, CreditDebourseDto>().ReverseMap();
         }
     }
 }

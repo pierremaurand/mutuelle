@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using mefApi.Interfaces;
+using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
-using WebApi.Interfaces;
-using WebApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class AvanceRepository : IAvanceRepository
     {
@@ -15,34 +19,25 @@ namespace WebApi.Data.Repo
 
         public void Add(Avance avance)
         {
-            if (dc.Avances is not null && avance is not null)
-            {
-                dc.Avances.Add(avance);
+            if(dc.Avances is not null && avance is not null) {
+                dc.Avances.AddAsync(avance);
             }
         }
 
         public void Delete(int id)
         {
-            if (dc.Avances is not null)
-            {
-                var avance = dc.Avances.Find(id);
-                if (avance is not null)
-                {
-                    dc.Avances.Remove(avance);
-                }
-            }
+            throw new NotImplementedException();
         }
 
         public async Task<Avance?> FindByIdAsync(int id)
         {
-            if (dc.Avances is not null)
-            {
+            if(dc.Avances is not null) {
                 var avance = await dc.Avances
-                .Include(m => m.EcheanceAvances)
-                .Where(m => m.Id == id)
-                .FirstAsync();
-                if (avance is not null)
-                {
+                .Include(a => a.AvanceDebourse)
+                .Include(a => a.Echeancier)
+                .Where(a => a.Id == id)
+                .FirstOrDefaultAsync();
+                if(avance is not null) {
                     return avance;
                 }
             }
@@ -52,32 +47,14 @@ namespace WebApi.Data.Repo
 
         public async Task<IEnumerable<Avance>?> GetAllAsync()
         {
-            if (dc.Avances is not null)
-            {
+            if(dc.Avances is not null) {
                 var avances = await dc.Avances
-                .Include(m => m.EcheanceAvances)
                 .ToListAsync();
-                if (avances is not null)
-                {
+                if(avances is not null) {
                     return avances;
                 }
             }
-            return null;
-        }
 
-        public async Task<IEnumerable<Avance>?> GetAllByMembreAsync(int membreId)
-        {
-            if (dc.Avances is not null)
-            {
-                var avances = await dc.Avances
-                .Include(m => m.EcheanceAvances)
-                .Where(c => c.MembreId == membreId && c.EstValide)
-                .ToListAsync();
-                if (avances is not null)
-                {
-                    return avances;
-                }
-            }
             return null;
         }
     }

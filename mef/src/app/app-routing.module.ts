@@ -1,137 +1,259 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { AddAgenceComponent } from './agence/add-agence/add-agence.component';
-import { AgenceDetailComponent } from './agence/agence-detail/agence-detail.component';
-import { AgenceListComponent } from './agence/agence-list/agence-list.component';
-import { AddAvanceComponent } from './avance/add-avance/add-avance.component';
-import { AvanceDetailComponent } from './avance/avance-detail/avance-detail.component';
-import { AvanceListComponent } from './avance/avance-list/avance-list.component';
-import { AvancePageComponent } from './avance/avance-page/avance-page.component';
-import { AddCompteComponent } from './compte/add-compte/add-compte.component';
-import { CompteListComponent } from './compte/compte-list/compte-list.component';
-import { AddCotisationComponent } from './cotisation/add-cotisation/add-cotisation.component';
-import { CotisationDetailComponent } from './cotisation/cotisation-detail/cotisation-detail.component';
-import { CotisationListComponent } from './cotisation/cotisation-list/cotisation-list.component';
-import { CotisationPageComponent } from './cotisation/cotisation-page/cotisation-page.component';
-import { CotisationComponent } from './cotisation/cotisation/cotisation.component';
-import { AddCreditComponent } from './credit/add-credit/add-credit.component';
-import { CreditDetailComponent } from './credit/credit-detail/credit-detail.component';
-import { CreditListComponent } from './credit/credit-list/credit-list.component';
-import { CreditPageComponent } from './credit/credit-page/credit-page.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { StatistiqueComponent } from './dashboard/statistique/statistique.component';
-import { AddMembreComponent } from './membre/add-membre/add-membre.component';
-import { MembreDetailComponent } from './membre/membre-detail/membre-detail.component';
-import { MembreListComponent } from './membre/membre-list/membre-list.component';
-import { MembrePageComponent } from './membre/membre-page/membre-page.component';
-import { ProfileComponent } from './membre/profile/profile.component';
-import { AddParametreComponent } from './parametre/add-parametre/add-parametre.component';
-import { ParametreDetailComponent } from './parametre/parametre-detail/parametre-detail.component';
-import { ParametreListComponent } from './parametre/parametre-list/parametre-list.component';
-import { AddPeriodeComponent } from './periode/add-periode/add-periode.component';
-import { PeriodeListComponent } from './periode/periode-list/periode-list.component';
-import { AddPropertyComponent } from './property/add-property/add-property.component';
-import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
-import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
-import { PropertyListComponent } from './property/property-list/property-list.component';
-import { AddServiceComponent } from './service/add-service/add-service.component';
-import { ServiceDetailComponent } from './service/service-detail/service-detail.component';
-import { ServiceListComponent } from './service/service-list/service-list.component';
-import { AddSexeComponent } from './sexe/add-sexe/add-sexe.component';
-import { SexeDetailComponent } from './sexe/sexe-detail/sexe-detail.component';
-import { SexeListComponent } from './sexe/sexe-list/sexe-list.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
-import { AddUtilisateurComponent } from './utilisateur/add-utilisateur/add-utilisateur.component';
-import { UtilisateurDetailComponent } from './utilisateur/utilisateur-detail/utilisateur-detail.component';
-import { UtilisateurListComponent } from './utilisateur/utilisateur-list/utilisateur-list.component';
+import { PageLoginComponent } from './pages/utilisateur/page-login/page-login.component';
+import { PageMembreComponent } from './pages/membres/page-membre/page-membre.component';
+import { NouveauMembreComponent } from './pages/membres/nouveau-membre/nouveau-membre.component';
+import { PageCompteComponent } from './pages/compte/page-compte/page-compte.component';
+import { PageAvanceComponent } from './pages/avances/page-avance/page-avance.component';
+import { PageCreditComponent } from './pages/credits/page-credit/page-credit.component';
+import { PageCotisationComponent } from './pages/cotisations/page-cotisation/page-cotisation.component';
+import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
+import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
+import { PageUtilisateurComponent } from './pages/utilisateur/page-utilisateur/page-utilisateur.component';
+import { PageCompteComptableComponent } from './pages/compte-comptable/page-compte-comptable/page-compte-comptable.component';
+import { PageGabaritComponent } from './pages/gabarit/page-gabarit/page-gabarit.component';
+import { PageSexeComponent } from './pages/sexe/page-sexe/page-sexe.component';
+import { PagePosteComponent } from './pages/poste/page-poste/page-poste.component';
+import { NouveauSexeComponent } from './pages/sexe/nouveau-sexe/nouveau-sexe.component';
+import { NouveauPosteComponent } from './pages/poste/nouveau-poste/nouveau-poste.component';
+import { NouveauCompteComptableComponent } from './pages/compte-comptable/nouveau-compte-comptable/nouveau-compte-comptable.component';
+import { NouveauGabaritComponent } from './pages/gabarit/nouveau-gabarit/nouveau-gabarit.component';
+import { NouveauCompteComponent } from './pages/compte/nouveau-compte/nouveau-compte.component';
+import { NouveauLieuAffectationComponent } from './pages/affectation/nouveau-lieu-affectation/nouveau-lieu-affectation.component';
+import { PageLieuAffectationComponent } from './pages/affectation/page-lieu-affectation/page-lieu-affectation.component';
+import { NouvelleCotisationComponent } from './pages/cotisations/nouvelle-cotisation/nouvelle-cotisation.component';
+import { NouvelleAvanceComponent } from './pages/avances/nouvelle-avance/nouvelle-avance.component';
+import { NouveauCreditComponent } from './pages/credits/nouveau-credit/nouveau-credit.component';
+import { AuthService } from './services/auth.service';
+import { AccueilComponent } from './pages/accueil/accueil/accueil.component';
+import { StatistiquesComponent } from './pages/accueil/statistiques/statistiques.component';
+import { VueEnsembleComponent } from './pages/accueil/vue-ensemble/vue-ensemble.component';
+import { NouvelUtilisateurComponent } from './pages/utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
+import { PageProfileComponent } from './pages/utilisateur/page-profile/page-profile.component';
+import { PageEcheancesAvancesComponent } from './pages/avances/page-echeances-avances/page-echeances-avances.component';
+import { PageEcheancesCreditsComponent } from './pages/credits/page-echeances-credits/page-echeances-credits.component';
 
 const routes: Routes = [
-  {path:'', component: PropertyListComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'statistiques', component: StatistiqueComponent},
-
-  {path:'membres', component: MembreListComponent},
-  {path:'membre-page', component: MembrePageComponent,
-  children: [
-    {path:'', component: ProfileComponent},
-    {path: 'infos-membre', component: ProfileComponent},
-    {path: 'cotisations-membre', component: CotisationPageComponent},
-    {path: 'avances-membre', component: AvancePageComponent},
-    {path: 'credits-membre', component: CreditPageComponent}
-  ]
-},
-  {path:'add-membre/:id', component: AddMembreComponent,
-    data: {
-      origin: 'membre'
-    }
+  {
+    path: 'login',
+    component: PageLoginComponent,
   },
-  {path:'update-membre-detail/:id', component: AddMembreComponent,
-    data: {
-      origin: 'detail'
-    },
+  {
+    path: '',
+    component: AccueilComponent,
+    canActivate: [AuthService],
     children: [
       {
-        path: 'profile-membre',
-        component: ProfileComponent
-      }
-    ]
+        path: '',
+        component: VueEnsembleComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'statistiques',
+        component: StatistiquesComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'membres',
+        component: PageMembreComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaumembre',
+        component: NouveauMembreComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaumembre/:id',
+        component: NouveauMembreComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'comptes',
+        component: PageCompteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucompte',
+        component: NouveauCompteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucompte/:id',
+        component: NouveauCompteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'cotisations',
+        component: PageCotisationComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvellecotisation',
+        component: NouvelleCotisationComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvellecotisation/:id',
+        component: NouvelleCotisationComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'avances',
+        component: PageAvanceComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelleavance',
+        component: NouvelleAvanceComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelleavance/:id',
+        component: NouvelleAvanceComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'echeancesAvances',
+        component: PageEcheancesAvancesComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'credits',
+        component: PageCreditComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucredit',
+        component: NouveauCreditComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucredit/:id',
+        component: NouveauCreditComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'echeancesCredits',
+        component: PageEcheancesCreditsComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'profil',
+        component: PageProfilComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'changermotdepasse',
+        component: ChangerMotDePasseComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'utilisateurs',
+        component: PageUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelutilisateur',
+        component: NouvelUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouvelutilisateur/:id',
+        component: NouvelUtilisateurComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'profile',
+        component: PageProfileComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'comptecomptables',
+        component: PageCompteComptableComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucomptecomptable',
+        component: NouveauCompteComptableComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaucomptecomptable/:id',
+        component: NouveauCompteComptableComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'gabarits',
+        component: PageGabaritComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaugabarit',
+        component: NouveauGabaritComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaugabarit/:id',
+        component: NouveauGabaritComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'sexes',
+        component: PageSexeComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveausexe',
+        component: NouveauSexeComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveausexe/:id',
+        component: NouveauSexeComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'postes',
+        component: PagePosteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveauposte',
+        component: NouveauPosteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveauposte/:id',
+        component: NouveauPosteComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'lieuaffectations',
+        component: PageLieuAffectationComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaulieuaffectation',
+        component: NouveauLieuAffectationComponent,
+        canActivate: [AuthService],
+      },
+      {
+        path: 'nouveaulieuaffectation/:id',
+        component: NouveauLieuAffectationComponent,
+        canActivate: [AuthService],
+      },
+    ],
   },
-
-  {path:'avances', component: AvanceListComponent},
-  {path:'avance-detail/:id', component: AvanceDetailComponent},
-  {path:'add-avance/:id', component: AddAvanceComponent},
-
-  {path:'cotisations', component: CotisationListComponent},
-  {path:'cotisation-detail/:id', component: CotisationDetailComponent},
-  {path:'add-cotisation/:id', component: AddCotisationComponent},
-
-  {path:'credits', component: CreditListComponent},
-  {path:'credits-detail/:id', component: CreditDetailComponent},
-  {path:'add-credits/:id', component: AddCreditComponent},
-
-  {path:'utilisateurs', component: UtilisateurListComponent},
-  {path:'utilisateur-detail/:id', component: UtilisateurDetailComponent},
-  {path:'add-utilisateur/:id', component: AddUtilisateurComponent},
-
-  {path:'sexes', component: SexeListComponent},
-  {path:'sexe-detail/:id', component: SexeDetailComponent},
-  {path:'add-sexe/:id', component: AddSexeComponent},
-
-  {path:'agences', component: AgenceListComponent},
-  {path:'agence-detail/:id', component: AgenceDetailComponent},
-  {path:'add-agence/:id', component: AddAgenceComponent},
-
-  {path:'services', component: ServiceListComponent},
-  {path:'service-detail/:id', component: ServiceDetailComponent},
-  {path:'add-service/:id', component: AddServiceComponent},
-
-  {path:'parametres', component: ParametreListComponent},
-  {path:'parametre-detail/:id', component: ParametreDetailComponent},
-  {path:'add-parametre/:id', component: AddParametreComponent},
-
-  {path:'comptes', component: CompteListComponent},
-  {path:'add-compte/:id', component: AddCompteComponent},
-
-  {path:'periodes', component: PeriodeListComponent},
-  {path:'add-periode/:id', component: AddPeriodeComponent},
-
-
-  {path:'rent-property', component: PropertyListComponent},
-  {path:'add-property', component: AddPropertyComponent},
-  {path:'property-detail/:id', component: PropertyDetailComponent, resolve: {prp: PropertyDetailResolverService}},
-  {path:'user/login', component: UserLoginComponent},
-  {path:'user/register', component: UserRegisterComponent},
-  {path:'**', component: PropertyListComponent}
+  {
+    path: '**',
+    component: PageLoginComponent,
+  },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

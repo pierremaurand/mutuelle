@@ -1,16 +1,19 @@
-using WebApi.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Dtos
+namespace mefApi.Dtos
 {
     public class AvanceDto
     {
-        public int? Id { get; set; }
-        public string? DateDeblocage { get; set; } = string.Empty;
-        public string? DateDebut { get; set; } = string.Empty;
-        public string? DateFin { get; set; } = string.Empty;
-        public decimal? Montant { get; set; }
-        public Boolean? EstValide { get; set; }
-        public int? MembreId { get; set; }
-        public ICollection<EcheanceAvanceDto> EcheanceAvances { get; set; } = new List<EcheanceAvanceDto>();
+        public int Id { get; set; } = 0;
+        [Required]
+        public int MembreId { get; set; } = 0;
+        public MembreDto? Membre { get; set; }
+        [Required]
+        public decimal MontantSollicite { get; set; } = 0;
+        [Required]
+        public int NombreEcheancesSollicite { get; set; } = 0;
+        [Required]
+        public string DateDemande { get; set; } = string.Empty;
+        public AvanceDebourseDto? AvanceDebourseDto { get; set; }
     }
 }

@@ -1,14 +1,17 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Models
+namespace mefApi.Models
 {
-    [Table("EcheanceAvances")]
     public class EcheanceAvance : BaseEntity
     {
-        public string DateEcheance { get; set; } = string.Empty;
-        public decimal Montant { get; set; }
-        public bool EstPaye { get; set; }
+        [Required]
         public int AvanceId { get; set; }
-        public Avance Avance { get; set; } = new Avance{};
+        public Avance? Avance { get; set; } 
+        [Required]
+        public string DateEcheance { get; set; } = string.Empty;
+        [Required]
+        public decimal MontantEcheance { get; set; } = 0;
+        public ICollection<Mouvement>? Mouvements { get; set; }
     }
 }

@@ -1,13 +1,18 @@
-namespace WebApi.Dtos
+using System.ComponentModel.DataAnnotations;
+
+namespace mefApi.Dtos
 {
     public class CreditDto
     {
-        public int Id { get; set; }
-        public string DateDebut { get; set; } = string.Empty;
-        public string DateFin { get; set; } = string.Empty;
-        public decimal Capital { get; set; }
-        public decimal Interet { get; set; }
-        public decimal Commission { get; set; }
-        public ICollection<EcheanceCreditDto> EcheanceCredits { get; set; } = new List<EcheanceCreditDto>();
+        public int Id { get; set; } = 0;
+        [Required]
+        public int MembreId { get; set; } = 0;
+        public MembreDto? Membre { get; set; }
+        [Required]
+        public decimal MontantSollicite { get; set; } = 0;
+        [Required]
+        public int DureeSollicite { get; set; } = 0;
+        [Required]
+        public string DateDemande { get; set; } = string.Empty;
     }
 }

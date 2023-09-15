@@ -1,6 +1,8 @@
-using WebApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using mefApi.Models;
 
-namespace WebApi.Interfaces
+namespace mefApi.Interfaces
 {
     public interface ISexeRepository
     {

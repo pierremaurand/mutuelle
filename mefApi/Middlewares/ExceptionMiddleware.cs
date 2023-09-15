@@ -1,7 +1,12 @@
+using System;
 using System.Net;
-using WebApi.Errors;
+using System.Threading.Tasks;
+using mefApi.Errors;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-namespace WebApi.Middlewares
+namespace mefApi.Middlewares
 {
     public class ExceptionMiddleware
     {
@@ -37,8 +42,9 @@ namespace WebApi.Middlewares
                 } else 
                 {
                     statusCode = HttpStatusCode.InternalServerError;
-                    message = "Some unknown error occoured";
+                    message = "Une erreur est survenue";
                 }
+
 
                 if(env.IsDevelopment()) {
                     var errorDetail = ex.StackTrace;
@@ -51,6 +57,7 @@ namespace WebApi.Middlewares
                     ApiError apiError = new ApiError((int)statusCode, message);
                     response = apiError;
                 }
+
                 logger.LogError(ex, ex.Message);
                 context.Response.StatusCode = (int)statusCode;
                 context.Response.ContentType = "application/json";

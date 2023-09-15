@@ -1,11 +1,15 @@
-namespace WebApi.Dtos
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using mefApi.Models;
+
+namespace mefApi.Dtos
 {
     public class CotisationDto
     {
-        public int? Id { get; set; }
-        public string? Periode { get; set; }
-        public int? MembreId { get; set; }
-        public decimal? Montant { get; set; }
-        public Boolean? EstValide { get; set; }
+        public int Id { get; set; } = 0;
+        public int MoisId { get; set; } = 0;
+        public int Annee { get; set; } = 0;
+        public decimal Montant { get; set; } = 0;
+        public ICollection<MouvementDto>? Mouvements { get; set; }
     }
 }

@@ -1,15 +1,21 @@
-namespace WebApi.Models
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace mefApi.Models
 {
-    public class Credit : BaseEntity
+    public class Credit : BaseEntity 
     {
-        public string DateDebut { get; set; } = string.Empty;
-        public string DateFin { get; set; } = string.Empty;
-        public decimal MontantCapital { get; set; }
-        public decimal Interet { get; set; }
-        public decimal Commission { get; set; }
-        public Boolean EstValide { get; set; }
-        public int MembreId { get; set; } 
-        public Membre Membre { get; set; } = new Membre{};
-        public ICollection<EcheanceCredit> EcheanceCredits { get; set; } = new List<EcheanceCredit>();
+        [Required]
+        public int MembreId { get; set; } = 0;
+        public Membre? Membre { get; set; }
+        [Required]
+        public decimal MontantSollicite { get; set; } = 0;
+        [Required]
+        public int DureeSollicite { get; set; } = 0;
+        [Required]
+        public string DateDemande { get; set; } = string.Empty;
+        public CreditDebourse? CreditDebourse { get; set; }
+        public ICollection<Mouvement>? Mouvements { get; set; }
+        public ICollection<EcheanceCredit> Echeancier { get; set; } = new List<EcheanceCredit>();
     }
 }

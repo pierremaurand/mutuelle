@@ -1,0 +1,32 @@
+<div class="row d-flex flex-row align-items-center">
+  <div class="col-1 text-center">
+    <input type="checkbox" (click)="sendEcheance()" />
+  </div>
+  <div class="col-1">
+    {{ echeance.dateEcheance | date : "dd/MM/yyyy" }}
+  </div>
+  <div class="col-2 text-right">
+    {{ echeance.montantEcheance | number }} FCFA
+  </div>
+  <div class="col-5">
+    <div class="row">
+      <div class="col">Avance N° {{ avance.id }}</div>
+      <div class="col text-right">{{ solde | number }} FCFA</div>
+      <div class="col">
+        <span class="badge badge-primary">{{ status }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="row d-flex flex-row align-items-center">
+      <div class="col-3">
+        <img
+          src="{{ imagesUrl }}/assets/images/{{ membre.photo }}"
+          alt=""
+          class="rounded-circle img-thumbnail"
+        />
+      </div>
+      <div class="col-9">{{ membre.nom }}</div>
+    </div>
+  </div>
+</div>

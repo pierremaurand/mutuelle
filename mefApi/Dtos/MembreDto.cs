@@ -1,23 +1,31 @@
-using WebApi.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Dtos
+namespace mefApi.Dtos
 {
     public class MembreDto
     {
-        public int? Id { get; set; }
-        public string? Nom { get; set; }
-        public string? Prenom { get; set; }
-        public int? SexeId { get; set; }
-        public string? Sexe { get; set; }
-        public string? Photo { get; set; }
-        public int? AgenceId { get; set; }
-        public string? Agence { get; set; }
-        public int? ServiceId { get; set; }
-        public string? Service { get; set; }
-        public Boolean? EstActif { get; set; }
-        public decimal? FraisAdhesion { get; set; }
-        public string? DateAdhesion { get; set; }
-        public string? Telephone { get; set; }
-        public string? Email { get; set; }
+        public int Id;
+        [Required(ErrorMessage = "Le Nom est obligatoire")]
+        public string Nom { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Le Sexe est obligatoire")]
+        public int SexeId { get; set; } = 0;
+        public SexeDto? Sexe { get; set; } 
+        [Required(ErrorMessage = "Le Poste est obligatoire")]
+        public int PosteId { get; set; } = 0;
+        public PosteDto? Poste { get; set; } 
+        [Required(ErrorMessage = "Le Lieu d'affectation est obligatoire")]
+        public int LieuAffectationId { get; set; } = 0;
+        public LieuAffectationDto? LieuAffectation { get; set; } 
+        [Required(ErrorMessage = "La Date de naissance est obligatoire")]
+        public string DateNaissance { get; set; } = string.Empty;
+        [Required(ErrorMessage = "La Date d'adhésion est obligatoire")]
+        public string DateAdhesion { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Le Lieu de naissance est obligatoire")]
+        public string LieuNaissance { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Le Contact est obligatoire")]
+        public string Contact { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public bool EstActif { get; set; } = false;
+        public string Photo { get; set; } = string.Empty;
     }
 }

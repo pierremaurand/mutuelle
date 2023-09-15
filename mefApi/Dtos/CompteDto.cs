@@ -1,9 +1,9 @@
-namespace WebApi.Dtos
+namespace mefApi.Dtos
 {
     public class CompteDto
     {
-        public int Id { get; set; }
-        public int Numero { get; set; }
-        public string Libelle { get; set; } = string.Empty;
+        public MembreDto Membre { get; set; } = new MembreDto();
+        public ICollection<MouvementDto>? Mouvements { get; set; } 
+        public decimal Solde { get; set; } = 0;
     }
 }

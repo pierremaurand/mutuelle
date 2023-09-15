@@ -1,11 +1,20 @@
-namespace WebApi.Models
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace mefApi.Models
 {
     public class Cotisation : BaseEntity
     {
-        public string Periode { get; set; } = string.Empty;
-        public int MembreId { get; set; } 
-        public Membre Membre { get; set; } = new Membre{};
-        public decimal Montant { get; set; }
-        public Boolean EstValide { get; set; }
+        [Required]
+        public int MembreId { get; set; } = 0;
+        public Membre? Membre { get; set; }
+        [Required]
+        public int MoisId { get; set; }
+        public Mois? Mois { get; set; }
+        [Required]
+        public int Annee { get; set; } = 0;
+        [Required]
+        public decimal Montant { get; set; } = 0;
+        public ICollection<Mouvement>? Mouvements { get; set; }
     }
 }

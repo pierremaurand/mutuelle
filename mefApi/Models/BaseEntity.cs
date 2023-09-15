@@ -1,12 +1,11 @@
 using System;
 
-namespace WebApi.Models
+namespace mefApi.Models
 {
     public class BaseEntity
     {
         public int Id { get; set; }
-        public int CreatedBy { get; set; }
-        public DateTime LastUpdatedOn { get; set; }
-        public int LastUpdatedBy { get; set; }
+        public DateTime ModifieLe { get; set; } = DateTime.Now;
+        public int ModifiePar { get; set; }
     }
 }

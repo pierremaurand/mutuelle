@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using mefApi.Interfaces;
+using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
-using WebApi.Interfaces;
-using WebApi.Models;
 
-namespace WebApi.Data.Repo
+namespace mefApi.Data.Repo
 {
     public class CotisationRepository : ICotisationRepository
     {
@@ -16,7 +19,7 @@ namespace WebApi.Data.Repo
         public void Add(Cotisation cotisation)
         {
             if(dc.Cotisations is not null && cotisation is not null) {
-                dc.Cotisations.Add(cotisation);
+                dc.Cotisations.AddAsync(cotisation);
             }
         }
 
@@ -33,23 +36,15 @@ namespace WebApi.Data.Repo
         public async Task<Cotisation?> FindByIdAsync(int id)
         {
             if(dc.Cotisations is not null) {
-                var cotisation = await dc.Cotisations.FindAsync(id);
+                var cotisation = await dc.Cotisations
+                .Include(c => c.Mouvements)
+                .Where(c => c.Id == id)
+                .FirstAsync();
                 if(cotisation is not null) {
                     return cotisation;
                 }
             }
-            
-            return null;
-        }
 
-        public async Task<IEnumerable<Cotisation>?> GetAllAsync()
-        {
-             if(dc.Cotisations is not null) {
-                var cotisations = await dc.Cotisations.ToListAsync();
-                if(cotisations is not null) {
-                    return cotisations;
-                }
-            }
             return null;
         }
 
@@ -57,12 +52,27 @@ namespace WebApi.Data.Repo
         {
             if(dc.Cotisations is not null) {
                 var cotisations = await dc.Cotisations
-                .Where(c => c.MembreId == membreId && c.EstValide)
+                .Where(c => c.MembreId == membreId)
                 .ToListAsync();
                 if(cotisations is not null) {
                     return cotisations;
                 }
             }
+
+            return null;
+        }
+
+        public async Task<IEnumerable<Cotisation>?> GetAllAsync()
+        {
+            if(dc.Cotisations is not null) {
+                var cotisations = await dc.Cotisations
+                .Include(c => c.Mouvements)
+                .ToListAsync();
+                if(cotisations is not null) {
+                    return cotisations;
+                }
+            }
+
             return null;
         }
     }

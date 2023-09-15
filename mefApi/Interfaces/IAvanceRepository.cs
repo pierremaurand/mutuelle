@@ -1,11 +1,12 @@
-using WebApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using mefApi.Models;
 
-namespace WebApi.Interfaces
+namespace mefApi.Interfaces
 {
     public interface IAvanceRepository
     {
         Task<IEnumerable<Avance>?> GetAllAsync();
-        Task<IEnumerable<Avance>?> GetAllByMembreAsync(int membreId);
         void Add(Avance avance);
         void Delete(int id);
         Task<Avance?> FindByIdAsync(int id);

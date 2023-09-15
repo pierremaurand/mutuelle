@@ -1,18 +1,29 @@
-namespace WebApi.Interfaces
+using System.Threading.Tasks;
+
+namespace mefApi.Interfaces
 {
     public interface IUnitOfWork
     {
-        IAgenceRepository AgenceRepository { get; }
-        IServiceRepository ServiceRepository { get; }
         ISexeRepository SexeRepository { get; }
+        IPosteRepository PosteRepository { get; }
+        ILieuAffectationRepository LieuAffectationRepository { get; }
         IMembreRepository MembreRepository { get; }
-        IParametreRepository ParametreRepository { get; }
-        IAvanceRepository AvanceRepository { get; }
+        ICompteComptableRepository CompteComptableRepository { get; }
+        IGabaritRepository GabaritRepository { get; }
+        IOperationRepository OperationRepository { get; }
         ICompteRepository CompteRepository { get; }
-        ICreditRepository CreditRepository { get; }
-        IGabarieRepository GabarieRepository { get; }
         ICotisationRepository CotisationRepository { get; }
-        IUserRepository UserRepository { get; }
+        IMoisRepository MoisRepository { get; }
+        IAvanceRepository AvanceRepository { get; }
+        IAvanceDebourseRepository AvanceDebourseRepository { get; }
+        ICreditRepository CreditRepository { get; }
+        ICreditDebourseRepository CreditDebourseRepository { get; }
+        IEcheanceAvanceRepository EcheanceAvanceRepository { get; }
+        IEcheanceCreditRepository EcheanceCreditRepository { get; }
+        IUtilisateurRepository UtilisateurRepository { get; }
+        IMouvementRepository MouvementRepository { get; }
+        
+        
         Task<bool> SaveAsync();
     }
 }

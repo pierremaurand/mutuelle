@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row m-3">
+      <div class="col-md-12 text-center">
+        <img
+          src="{{ imagesUrl }}/assets/images/{{ membre.photo }}"
+          alt=""
+          class="rounded-circle img-thumbnail"
+        />
+        <div class="card bg-secondary text-white">
+          <div class="card-body">
+            <h5>{{ membre.nom | uppercase }}</h5>
+            <small>
+              <div class="row">
+                <div class="col">
+                  <i class="fa fa-venus-mars"></i>
+                  {{ membre.sexe.nom | uppercase }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <i class="fa fa-sitemap"></i>
+                  {{ membre.poste.libelle | uppercase }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <i class="fa fa-building"></i>
+                  {{ membre.lieuAffectation.lieu | uppercase }}
+                </div>
+              </div>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

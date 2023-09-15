@@ -1,8 +1,13 @@
-namespace WebApi.Models
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace mefApi.Models
 {
-    public class Compte : BaseEntity
+    public class Compte
     {
-        public int Numero { get; set; }
-        public string Libelle { get; set; } = string.Empty;
+        public Membre Membre { get; set; } = new Membre();
+        public IEnumerable<Mouvement> Mouvements { get; set; } = new List<Mouvement>();
     }
 }

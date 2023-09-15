@@ -1,0 +1,181 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations du compte
+      </h1>
+      <h1 class="mb-2 text-gray-800">{{ soldeCompte() | number }} FCFA</h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-3">
+          <app-infos-membre [membre]="membre"></app-infos-membre>
+        </div>
+        <div class="col">
+          <div class="row mb-2 d-flex justify-content-between">
+            <div class="col">
+              <a href="javascript:void(0);" (click)="cancel()"
+                ><i class="fa fa-arrow-left"></i> Retour à la liste</a
+              >
+            </div>
+            <div class="col text-right">
+              <button class="btn btn-warning mr-2">
+                <i class="fa fa-print"></i> Imprimer
+              </button>
+              <button
+                class="btn btn-primary mr-2"
+                data-toggle="modal"
+                data-target="#addPicture"
+              >
+                <i class="fa fa-plus"></i> Ajouter un mouvement
+              </button>
+              <button class="btn btn-success" (click)="enregistrer()">
+                <i class="fa fa-save"></i> Enregistrer
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col liste">
+              <table class="table table-striped">
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let mouvement of mouvements
+                        | sort : ['id', 'desc']
+                        | sort : ['dateMvt', 'desc'];
+                      let i = index
+                    "
+                  >
+                    <td class="text-center">{{ i + 1 }}</td>
+                    <td>
+                      {{ mouvement.dateMvt | date : "dd/MM/yyyy" }}
+                    </td>
+                    <td>
+                      {{ getTypeOperation(mouvement.typeOperation) }}
+                    </td>
+                    <td>{{ mouvement.libelle }}</td>
+                    <td class="text-right">
+                      {{ mouvement.montant | number }} FCFA
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="addPicture"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="addPicture"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content rounded-5 shadow">
+            <div class="modal-header">
+              <h4 class="modal-title">Infos Mouvement</h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                (click)="resetForm()"
+                #closeModal
+              >
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="form-group col-6">
+                  <label for="dateMvt" class="form-label">Date</label>
+                  <input
+                    type="date"
+                    id="dateMvt"
+                    name="dateMvt"
+                    class="form-control"
+                    [(ngModel)]="mouvement.dateMvt"
+                    placeholder="La date du mouvement"
+                  />
+                </div>
+                <div class="form-group col-6">
+                  <label for="typeOperation" class="form-label">Type</label>
+                  <select
+                    id="typeOperation"
+                    name="typeOperation"
+                    class="form-control"
+                    [(ngModel)]="mouvement.typeOperation"
+                  >
+                    <option value="0">Débit</option>
+                    <option value="1">Crédit</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-12">
+                  <label for="gabaritId" class="form-label">Gabarit</label>
+                  <select
+                    id="gabaritId"
+                    name="gabaritId"
+                    class="form-control"
+                    [(ngModel)]="mouvement.gabaritId"
+                  >
+                    <option
+                      *ngFor="let gabarit of gabarits"
+                      value="{{ gabarit.id }}"
+                    >
+                      {{ gabarit.libelle }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group col-12">
+                  <label for="libelle" class="form-label">Libellé</label>
+                  <textarea
+                    id="libelle"
+                    name="libelle"
+                    cols="10"
+                    rows="5"
+                    class="form-control"
+                    [(ngModel)]="mouvement.libelle"
+                  ></textarea>
+                </div>
+
+                <div class="form-group col-6">
+                  <label for="montant" class="form-label">Montant</label>
+                  <input
+                    type="number"
+                    id="montant"
+                    name="montant"
+                    class="form-control"
+                    [(ngModel)]="mouvement.montant"
+                    required
+                    placeholder="Montant"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="ajouterMouvement()"
+                data-dismiss="modal"
+              >
+                <i class="fa fa-save"></i>
+                Enregistrer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

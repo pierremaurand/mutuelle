@@ -1,0 +1,229 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations du membre
+      </h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3"></div>
+    <div class="card-body">
+      <div>
+        <div class="row m-3">
+          <div class="col-md-2 mb-3 border-end text-primary">
+            <img
+              src="{{ photo }}"
+              alt="photo du membre"
+              class="rounded-circle img-thumbnail"
+              width="200px"
+              height="200px"
+              data-toggle="modal"
+              data-target="#addPicture"
+            />
+            <div class="custom-control custom-switch">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customSwitch1"
+                (click)="activer()"
+                [checked]="membre.estActif"
+              />
+              <label class="custom-control-label" for="customSwitch1"
+                >Ce membre est actif</label
+              >
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="col-md-12">
+              <form #membreForm="ngForm">
+                <div class="row">
+                  <div class="col-md-12 d-flex justify-content-between">
+                    <a href="javascript:void(0);" (click)="cancel()"
+                      ><i class="fa fa-arrow-left"></i> Retour à la page des
+                      membres</a
+                    >
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      (click)="enregistrerMembre()"
+                    >
+                      <i class="fa fa-save"></i>&nbsp; Enregistrer
+                    </button>
+                  </div>
+                </div>
+                <nav class="nav nav-tabs">
+                  <a
+                    class="nav-item nav-link active"
+                    href="#etatcivil"
+                    data-toggle="tab"
+                    >Infos personnelles</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#infosMembre"
+                    data-toggle="tab"
+                    >Infos membre</a
+                  >
+                </nav>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="etatcivil">
+                    <div class="p-3">
+                      <div class="row">
+                        <div class="form-group col-8">
+                          <label for="nom" class="form-label">Nom</label>
+                          <input
+                            type="text"
+                            id="nom"
+                            class="form-control"
+                            name="nom"
+                            [(ngModel)]="membre.nom"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="sexeId" class="form-label">Sexe</label>
+                          <select
+                            id="sexeId"
+                            name="sexeId"
+                            [(ngModel)]="membre.sexeId"
+                            class="form-control"
+                            (change)="sexeChange()"
+                          >
+                            <option
+                              *ngFor="let sexe of sexes"
+                              value="{{ sexe.id }}"
+                            >
+                              {{ sexe.nom | uppercase }}
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col">
+                          <label for="dateNaissance" class="form-label"
+                            >Date de naissance</label
+                          >
+                          <input
+                            type="date"
+                            id="dateNaissance"
+                            class="form-control"
+                            name="dateNaissance"
+                            [(ngModel)]="membre.dateNaissance"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="lieuNaissance" class="form-label"
+                            >Lieu de naissance</label
+                          >
+                          <input
+                            type="text"
+                            id="lieuNaissance"
+                            class="form-control"
+                            name="lieuNaissance"
+                            [(ngModel)]="membre.lieuNaissance"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col">
+                          <label for="contact" class="form-label"
+                            >Téléphone</label
+                          >
+                          <input
+                            type="text"
+                            id="contact"
+                            class="form-control"
+                            name="contact"
+                            [(ngModel)]="membre.contact"
+                          />
+                        </div>
+                        <div class="form-group col">
+                          <label for="email" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            name="email"
+                            [(ngModel)]="membre.email"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="infosMembre">
+                    <div class="p-3">
+                      <div class="row">
+                        <div class="form-group col">
+                          <label for="posteId" class="form-label">Poste</label>
+                          <select
+                            id="posteId"
+                            name="posteId"
+                            [(ngModel)]="membre.posteId"
+                            class="form-control"
+                          >
+                            <option
+                              *ngFor="let poste of postes"
+                              value="{{ poste.id }}"
+                            >
+                              {{ poste.libelle | uppercase }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="form-group col">
+                          <label for="lieuAffectationId" class="form-label"
+                            >Affectation</label
+                          >
+                          <select
+                            id="lieuAffectationId"
+                            name="lieuAffectationId"
+                            [(ngModel)]="membre.lieuAffectationId"
+                            class="form-control"
+                          >
+                            <option
+                              *ngFor="let lieu of lieuAffectations"
+                              value="{{ lieu.id }}"
+                            >
+                              {{ lieu.lieu | uppercase }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="form-group col">
+                          <label for="dateAdhesion" class="form-label"
+                            >Date d'adhésion</label
+                          >
+                          <input
+                            type="date"
+                            id="dateAdhesion"
+                            class="form-control"
+                            name="dateAdhesion"
+                            [(ngModel)]="membre.dateAdhesion"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="addPicture"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="addPicture"
+        aria-hidden="true"
+      >
+        <app-image-add
+          [photo]="photo"
+          (photoChange)="photoChange($event)"
+        ></app-image-add>
+      </div>
+    </div>
+  </div>
+</div>

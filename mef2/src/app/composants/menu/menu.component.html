@@ -1,0 +1,68 @@
+<ul
+  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+  id="accordionSidebar"
+>
+  <!-- Sidebar - Brand -->
+  <a
+    class="sidebar-brand d-flex align-items-center justify-content-center"
+    href="javascript:void(0);"
+  >
+    <div class="sidebar-brand-text mx-3">Mutuelle</div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0" />
+
+  <div *ngFor="let menu of menuProperties">
+    <!-- Nav Item - Dashboard -->
+    <li
+      class="nav-item"
+      *ngIf="!menu.sousMenu"
+      [ngClass]="{ active: menu.active }"
+    >
+      <a class="nav-link" href="javascript:void(0);" (click)="navigate(menu)">
+        <i class="{{ menu.icon }}"></i>
+        <span>{{ menu.titre }}</span></a
+      >
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" *ngIf="menu.sousMenu">
+      <a
+        class="nav-link collapsed"
+        href="javascript:void(0);"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + menu.id"
+        aria-expanded="true"
+        [attr.aria-controls]="'collapse' + menu.id"
+      >
+        <i class="{{ menu.icon }}"></i>
+        <span>{{ menu.titre }}</span>
+      </a>
+      <div
+        id="collapse{{ menu.id }}"
+        class="collapse"
+        [attr.aria-labelledby]="'heading' + menu.id"
+        data-bs-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ menu.titre }}:</h6>
+          <a
+            class="collapse-item"
+            href="javascript:void(0);"
+            (click)="navigate(sousMenu)"
+            *ngFor="let sousMenu of menu.sousMenu"
+            >{{ sousMenu.titre }}</a
+          >
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block" />
+  </div>
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+</ul>

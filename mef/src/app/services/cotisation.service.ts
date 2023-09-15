@@ -3,33 +3,46 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cotisation } from '../model/cotisation';
+import { Membre } from '../model/Membre';
+import { Mois } from '../model/mois';
+import { CotisationList } from '../model/cotisationList';
+import { CotisationsMembre } from '../model/cotisationsMembre';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CotisationService {
-
   baseUrl = environment.baseUrl;
+  imagesUrl = environment.imagesUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Cotisation[]>{
-    return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations');
+  getAllCotisations(): Observable<CotisationList[]> {
+    return this.http.get<CotisationList[]>(
+      this.baseUrl + '/cotisation/cotisations'
+    );
   }
 
-  getAllMembreCotisation(membreId: number): Observable<Cotisation[]>{
-    return this.http.get<Cotisation[]>(this.baseUrl + '/cotisation/cotisations/membre/' + membreId.toString());
+  getAllMois(): Observable<Mois[]> {
+    return this.http.get<Mois[]>(this.baseUrl + '/cotisation/mois');
   }
 
-  getById(id: number): Observable<Cotisation> {
-    return this.http.get<Cotisation>(this.baseUrl + '/cotisation/get/' + id.toString());
+  getById(id?: number): Observable<Membre> {
+    return this.http.get<Membre>(
+      this.baseUrl + '/cotisation/get/' + id?.toString()
+    );
   }
 
-  update(cotisation: Cotisation, id: number): Observable<any> {
-    return this.http.put(this.baseUrl + '/cotisation/update/' + id.toString(),cotisation);
+  getCotisationsMembre(idMembre: number): Observable<CotisationsMembre> {
+    return this.http.get<CotisationsMembre>(
+      this.baseUrl + '/cotisation/cotisations/' + idMembre.toString()
+    );
   }
 
-  deleteCotisation(id: number): Observable<any> {
-    return this.http.delete(this.baseUrl + '/cotisation/delete/' + id.toString());
+  addCotisations(id: number, cotisations: Cotisation[]): Observable<any> {
+    return this.http.post(
+      this.baseUrl + '/cotisation/addcotisations/' + id.toString(),
+      cotisations
+    );
   }
 }

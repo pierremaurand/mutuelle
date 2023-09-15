@@ -1,0 +1,65 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">
+      <i class="fa fa-list fa-fw"></i> Les comptes
+    </h1>
+    <div class="d-sm-flex align-items-end">
+      <app-bouton-action (newAddEvent)="nouveauCompte()"></app-bouton-action>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Earnings (Monthly) Card Example -->
+    <div
+      class="col-xl-3 col-md-6 mb-4"
+      *ngFor="
+        let membre of membres | filter : search : 'nom' | sort : ['nom', 'asc']
+      "
+    >
+      <div
+        class="card shadow h-100 py-2"
+        (click)="modifier(membre.id)"
+        [ngClass]="{
+          'border-left-success text-success': membre.estActif,
+          'border-left-danger text-danger': !membre.estActif
+        }"
+      >
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1">
+                {{ membre.nom }}
+              </div>
+              <div class="text-xs font-weight-bold text-uppercase mb-1">
+                {{ getSexe(membre.sexeId) }}
+              </div>
+              <div class="text-xs font-weight-bold text-uppercase mb-1">
+                {{ getPoste(membre.posteId) }}
+              </div>
+              <div class="text-xs font-weight-bold text-uppercase mb-1">
+                {{ getLieuAffectation(membre.lieuAffectationId) }}
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                {{ getSolde(membre.id) | number }} FCFA
+              </div>
+            </div>
+            <div class="col-auto">
+              <img
+                src="{{ getPhoto(membre.photo) }}"
+                alt=""
+                width="75px"
+                class="rounded-circle img-thumbnail"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+</div>
+<!-- /.container-fluid -->

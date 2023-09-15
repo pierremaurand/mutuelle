@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mes Projets\\mutuelle\\mefApi\\hspaApi2.csproj": {}
+    "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj": {}
   },
   "projects": {
-    "D:\\Mes Projets\\mutuelle\\mefApi\\hspaApi2.csproj": {
+    "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mes Projets\\mutuelle\\mefApi\\hspaApi2.csproj",
-        "projectName": "hspaApi2",
-        "projectPath": "D:\\Mes Projets\\mutuelle\\mefApi\\hspaApi2.csproj",
-        "packagesPath": "C:\\Users\\MHT\\.nuget\\packages\\",
-        "outputPath": "D:\\Mes Projets\\mutuelle\\mefApi\\obj\\",
+        "projectUniqueName": "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj",
+        "projectName": "mefapi",
+        "projectPath": "D:\\Mes Projets\\mutuelle\\mefapi\\mefapi.csproj",
+        "packagesPath": "C:\\Users\\Maurand\\.nuget\\packages\\",
+        "outputPath": "D:\\Mes Projets\\mutuelle\\mefapi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MHT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maurand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,6 +79,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -83,7 +91,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -95,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

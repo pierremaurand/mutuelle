@@ -1,0 +1,233 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row mb-3">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h1 class="mb-2 text-gray-800">
+        <i class="fa fa-info-circle text-primary"></i>
+        &nbsp;Informations sur l'avance
+      </h1>
+      <h1 class="mb-2 text-gray-800">{{ solde | number }} FCFA</h1>
+    </div>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3"></div>
+    <div class="card-body">
+      <div>
+        <div class="row m-3">
+          <div class="col-md-3 mb-3 border-end text-primary">
+            <a
+              href="javascript:void(0);"
+              data-toggle="modal"
+              data-target="#addPicture"
+              *ngIf="avance.id == 0"
+            >
+              <app-infos-membre [membre]="membre"></app-infos-membre>
+            </a>
+            <div *ngIf="avance.id != 0">
+              <app-infos-membre [membre]="membre"></app-infos-membre>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="col-md-12">
+              <form #membreForm="ngForm">
+                <div class="row">
+                  <div class="col-md-12 d-flex justify-content-between">
+                    <a href="javascript:void(0);" (click)="cancel()"
+                      ><i class="fa fa-arrow-left"></i> Retour à la liste</a
+                    >
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      (click)="enregistrer()"
+                    >
+                      <i class="fa fa-save"></i>&nbsp; Enregistrer
+                    </button>
+                  </div>
+                </div>
+                <nav class="nav nav-tabs">
+                  <a
+                    class="nav-item nav-link active"
+                    href="#infosDemande"
+                    data-toggle="tab"
+                    >Infos demande</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#decisionComite"
+                    data-toggle="tab"
+                    *ngIf="avance.id != 0"
+                    >Décision du comité</a
+                  >
+                  <a
+                    class="nav-item nav-link"
+                    href="#echeancier"
+                    data-toggle="tab"
+                    *ngIf="avanceDebourse.id != 0"
+                    >Echéancier</a
+                  >
+                </nav>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="infosDemande">
+                    <div class="p-3">
+                      <h5>Informations sur la demande</h5>
+                      <hr />
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <label for="montantSollicite" class="form-label"
+                            >Montant sollicité</label
+                          >
+                          <input
+                            type="number"
+                            id="montantSollicite"
+                            class="form-control"
+                            name="montantSollicite"
+                            [(ngModel)]="avance.montantSollicite"
+                            [disabled]="avance.id != 0"
+                            placeholder="Montant sollicité"
+                            max="300000"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label
+                            for="nombreEcheancesSollicite"
+                            class="form-label"
+                            >Nombre d'échéances sollicité</label
+                          >
+                          <input
+                            type="number"
+                            id="nombreEcheancesSollicite"
+                            class="form-control"
+                            name="nombreEcheancesSollicite"
+                            [(ngModel)]="avance.nombreEcheancesSollicite"
+                            [disabled]="avance.id != 0"
+                            placeholder="Nombre d'échéances"
+                            max="9"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dateDemande" class="form-label"
+                            >Date de la demande</label
+                          >
+                          <input
+                            type="date"
+                            id="dateDemande"
+                            class="form-control"
+                            name="dateDemande"
+                            [(ngModel)]="avance.dateDemande"
+                            [disabled]="avance.id != 0"
+                            placeholder="Date de la demande"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="decisionComite">
+                    <div class="p-3">
+                      <h5>Décision du comité</h5>
+                      <hr />
+                      <div class="row">
+                        <div class="form-group col-6">
+                          <label for="montantApprouve" class="form-label"
+                            >Montant Approuvé</label
+                          >
+                          <input
+                            type="number"
+                            id="montantApprouve"
+                            class="form-control"
+                            name="montantApprouve"
+                            [(ngModel)]="avanceDebourse.montantApprouve"
+                            [disabled]="avanceDebourse.id != 0"
+                            placeholder="Montant approuvé"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label
+                            for="nombreEcheancesApprouve"
+                            class="form-label"
+                            >Nombre d'échéances sollicité</label
+                          >
+                          <input
+                            type="number"
+                            id="nombreEcheancesApprouve"
+                            class="form-control"
+                            name="nombreEcheancesApprouve"
+                            [(ngModel)]="avanceDebourse.nombreEcheancesApprouve"
+                            [disabled]="avanceDebourse.id != 0"
+                            placeholder="Nombre d'échéances"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="dateDecaissement" class="form-label"
+                            >Date du décaissement</label
+                          >
+                          <input
+                            type="date"
+                            id="dateDecaissement"
+                            class="form-control"
+                            name="dateDecaissement"
+                            [(ngModel)]="avanceDebourse.dateDecaissement"
+                            [disabled]="avanceDebourse.id != 0"
+                            placeholder="Date du décaissement"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="echeancier">
+                    <div class="p-3">
+                      <div class="row">
+                        <div class="col-12 d-flex justify-content-between">
+                          <h5 class="d-flex align-item-center">
+                            <span class="mr-1">Echéancier</span>
+                          </h5>
+                          <button
+                            class="btn btn-primary btn-sm"
+                            *ngIf="echeancier.length == 0"
+                            (click)="genererEcheancier()"
+                          >
+                            Générer l'échéancier
+                          </button>
+                        </div>
+                      </div>
+                      <hr />
+                      <app-echeancier-avance
+                        [echeancier]="echeancier"
+                        [nbrEcheances]="nbrEcheances"
+                      ></app-echeancier-avance>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="addPicture"
+  class="modal fade"
+  tabindex="-1"
+  aria-labelledby="addPicture"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header">
+        <h4 class="modal-title">Liste des membres</h4>
+        <button type="button" class="close" data-dismiss="modal" #closeModal>
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-liste-choix-membre
+          (membreChoisie)="membreChoisie($event)"
+        ></app-liste-choix-membre>
+      </div>
+    </div>
+  </div>
+</div>

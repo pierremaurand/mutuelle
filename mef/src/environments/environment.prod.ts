@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: "http://localhost:80/mutuelle/api",
-  imagesUrl: "http://localhost:80/mutuelle/"
+  baseUrl: 'http://localhost:81/api',
+  imagesUrl: 'http://localhost:81/',
 };

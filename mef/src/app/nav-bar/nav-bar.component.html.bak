@@ -1,0 +1,34 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="flex-shrink-0 p-3 bg-white accordion" id="accordionExample">
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <svg class="bi me-2" width="30" height="24">
+          <use xlink:href="#bootstrap" /></svg>
+        <span class="fs-5 fw-semibold">MEF</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1" *ngFor="let menu of menuProperties">
+          <a *ngIf="!menu.sousMenu" routerLinkActive="active" [routerLink]="'/'+menu.url" class="nav-link">
+            <i class="{{menu.icon}}"></i>&nbsp;
+            {{menu.titre}}
+          </a>
+          <a *ngIf="menu.sousMenu" class="nav-link"
+            data-bs-toggle="collapse"[attr.data-bs-target]="'#collapse' + menu.id" aria-expanded="true">
+            <i class="{{menu.icon}}"></i>&nbsp;
+            {{menu.titre}}
+          </a>
+          <div *ngIf="menu.sousMenu" class="collapse" id="collapse{{menu.id}}" data-bs-parent="#accordionExample">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li *ngFor="let sousMenu of menu.sousMenu">
+                <a routerLinkActive="active" [routerLink]="'/'+sousMenu.url" class="nav-link">
+                  <i class="{{sousMenu.icon}}"></i>&nbsp;
+                  {{sousMenu.titre}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
