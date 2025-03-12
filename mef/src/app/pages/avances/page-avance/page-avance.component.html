@@ -1,0 +1,81 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">
+      <i class="fa fa-list"></i> Liste des avances
+    </h1>
+    <span>
+      <app-bouton-action
+        (newEvent)="newEvent()"
+        [afficheNew]="true"
+      ></app-bouton-action>
+    </span>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label for="search" class="btn btn-primary shadow-sm">
+                <i class="fa fa-search"></i>
+              </label>
+            </div>
+            <input
+              type="search"
+              class="form-control shadow-sm"
+              name="search"
+              id="search"
+              [formControl]="searchCtrl"
+              placeholder="Rechercher..."
+            />
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label for="status" class="btn btn-primary shadow-sm">
+                <i class="fa fa-filter"></i>
+              </label>
+            </div>
+            <select
+              name="status"
+              id="status"
+              class="form-control shadow-sm"
+              [formControl]="statusPretCtrl"
+            >
+              <option
+                *ngFor="let option of statusPretOptions"
+                [value]="option.value"
+              >
+                {{ option.label }}
+              </option>
+            </select>
+            <div class="input-group-append">
+              <label class="btn btn-primary shadow-sm" (click)="effacer()">
+                <i class="fa fa-eraser"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body liste">
+      <div *ngIf="avances$ | async as avances">
+        <app-detail-avance
+          *ngFor="
+            let avance of avances
+              | sort : ['dateDemande', 'desc']
+              | sort : ['id', 'desc']
+          "
+          (click)="navigate(avance.id, avance.membreId, avance.deboursementId)"
+          [avance]="avance"
+        ></app-detail-avance>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

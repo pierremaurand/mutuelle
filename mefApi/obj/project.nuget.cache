@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "dMaKh1/UtJA=",
+  "success": false,
+  "projectFilePath": "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/mefapi.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Impossible de charger l'index de service pour la source https://api.nuget.org/v3/index.json.",
+      "libraryId": "CloudinaryDotNet"
+    }
+  ]
+}
