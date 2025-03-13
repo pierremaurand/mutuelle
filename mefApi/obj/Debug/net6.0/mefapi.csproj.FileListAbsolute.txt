@@ -1,142 +1,219 @@
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\appsettings.Development.json
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\appsettings.json
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.staticwebassets.runtime.json
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.exe
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.deps.json
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.runtimeconfig.json
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\mefapi.pdb
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\AutoMapper.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\CloudinaryDotNet.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Humanizer.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Mes Projets\mutuelle\mefApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.csproj.AssemblyReference.cache
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.AssemblyInfoInputs.cache
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.AssemblyInfo.cs
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.csproj.CoreCompileInputs.cache
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.MvcApplicationPartsAssemblyInfo.cs
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.MvcApplicationPartsAssemblyInfo.cache
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\staticwebassets.build.json
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\staticwebassets.development.json
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\scopedcss\bundle\mefapi.styles.css
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.csproj.CopyComplete
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.dll
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\refint\mefapi.dll
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.pdb
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\mefapi.genruntimeconfig.cache
-D:\Mes Projets\mutuelle\mefApi\obj\Debug\net6.0\ref\mefapi.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\appsettings.Development.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\appsettings.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.staticwebassets.runtime.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.exe
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.deps.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.runtimeconfig.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\mefapi.pdb
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\AutoMapper.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\CloudinaryDotNet.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Humanizer.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.csproj.AssemblyReference.cache
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.AssemblyInfoInputs.cache
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.AssemblyInfo.cs
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.csproj.CoreCompileInputs.cache
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.MvcApplicationPartsAssemblyInfo.cs
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.MvcApplicationPartsAssemblyInfo.cache
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\staticwebassets.build.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\staticwebassets.development.json
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\scopedcss\bundle\mefapi.styles.css
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.csproj.CopyComplete
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\refint\mefapi.dll
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.pdb
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\mefapi.genruntimeconfig.cache
-D:\Mes Projets\mutuelle\mutuelle2\mefApi\obj\Debug\net6.0\ref\mefapi.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/appsettings.Development.json
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/appsettings.json
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.staticwebassets.runtime.json
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.exe
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.deps.json
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.runtimeconfig.json
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.pdb
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/AutoMapper.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/CloudinaryDotNet.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Humanizer.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Newtonsoft.Json.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/SixLabors.ImageSharp.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Runtime.Caching.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Security.Permissions.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Windows.Extensions.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+D:/Mes Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.AssemblyReference.cache
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.GeneratedMSBuildEditorConfig.editorconfig
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfoInputs.cache
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfo.cs
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.CoreCompileInputs.cache
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cs
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cache
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets.build.json
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets.development.json
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/scopedcss/bundle/mefapi.styles.css
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.CopyComplete
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.dll
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/refint/mefapi.dll
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.pdb
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.genruntimeconfig.cache
+D:/Mes Projets/mutuelle/mefApi/obj/Debug/net6.0/ref/mefapi.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/appsettings.Development.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/appsettings.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.staticwebassets.runtime.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.exe
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.deps.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.runtimeconfig.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/mefapi.pdb
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/AutoMapper.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/CloudinaryDotNet.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Humanizer.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Newtonsoft.Json.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/SixLabors.ImageSharp.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Runtime.Caching.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Security.Permissions.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/System.Windows.Extensions.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.csproj.AssemblyReference.cache
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.GeneratedMSBuildEditorConfig.editorconfig
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfoInputs.cache
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfo.cs
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.csproj.CoreCompileInputs.cache
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cs
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cache
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/staticwebassets.build.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/staticwebassets.development.json
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/scopedcss/bundle/mefapi.styles.css
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.csproj.CopyComplete
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/refint/mefapi.dll
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.pdb
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/mefapi.genruntimeconfig.cache
+D:/Mes Projets/mutuelle/mutuelle2/mefApi/obj/Debug/net6.0/ref/mefapi.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/appsettings.Development.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/appsettings.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.staticwebassets.runtime.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.deps.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.runtimeconfig.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/mefapi.pdb
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/AutoMapper.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/CloudinaryDotNet.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Humanizer.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/SixLabors.ImageSharp.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Drawing.Common.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Runtime.Caching.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Security.Permissions.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/System.Windows.Extensions.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.AssemblyReference.cache
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.GeneratedMSBuildEditorConfig.editorconfig
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfoInputs.cache
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.AssemblyInfo.cs
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.CoreCompileInputs.cache
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cs
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.MvcApplicationPartsAssemblyInfo.cache
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.sourcelink.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets.build.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets.development.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets/msbuild.mefapi.Microsoft.AspNetCore.StaticWebAssets.props
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets/msbuild.build.mefapi.props
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.mefapi.props
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.mefapi.props
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/staticwebassets.pack.json
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/scopedcss/bundle/mefapi.styles.css
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.csproj.Up2Date
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/refint/mefapi.dll
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.pdb
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/mefapi.genruntimeconfig.cache
+/home/maurand/Documents/Projets/mutuelle/mefApi/obj/Debug/net6.0/ref/mefapi.dll

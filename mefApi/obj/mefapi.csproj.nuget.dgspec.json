@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/mefapi.csproj": {}
+    "/home/maurand/Documents/Projets/mutuelle/mefApi/mefapi.csproj": {}
   },
   "projects": {
-    "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/mefapi.csproj": {
+    "/home/maurand/Documents/Projets/mutuelle/mefApi/mefapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/mefapi.csproj",
+        "projectUniqueName": "/home/maurand/Documents/Projets/mutuelle/mefApi/mefapi.csproj",
         "projectName": "mefapi",
-        "projectPath": "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/mefapi.csproj",
+        "projectPath": "/home/maurand/Documents/Projets/mutuelle/mefApi/mefapi.csproj",
         "packagesPath": "/home/maurand/.nuget/packages/",
-        "outputPath": "/media/maurand/Nouveau nom/MesProjets/mutuelle/mutuelle2/mefApi/obj/",
+        "outputPath": "/home/maurand/Documents/Projets/mutuelle/mefApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/maurand/.nuget/NuGet/NuGet.Config"
@@ -98,15 +98,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.35, 6.0.35]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.35, 6.0.35]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.35, 6.0.35]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/255/sdk/8.0.405/RuntimeIdentifierGraph.json"
         }
       }
     }
