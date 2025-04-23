@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mefapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b959bf20e1f84cd48753761e92ea54a4db34d123")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0941c67f55a2466c56ebd9163490aa9548b6a144")]
 [assembly: System.Reflection.AssemblyProductAttribute("mefapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mefapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

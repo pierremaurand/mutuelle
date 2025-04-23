@@ -1,1270 +1,19 @@
 {
   "Version": 1,
-  "Hash": "1NldM3Ha7ns1DSpbmWm4Jtwq8aqX+bn43K06aL6GaK0=",
-  "Source": "mefapi",
-  "BasePath": "_content/mefapi",
-  "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "mefapi\\wwwroot",
-      "Source": "mefapi",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "Pattern": "**"
-    }
-  ],
-  "Assets": [
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\3rdpartylicenses.txt",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "3rdpartylicenses#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "yi29y0vomh",
-      "Integrity": "9jjPIm3wg4m+KVroBm3xAPsTvacqG5pUAQoMUKjPSuo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\3rdpartylicenses.txt"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\data\\properties.json",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/data/properties#[.{fingerprint}]?.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "5nb7jwxn52",
-      "Integrity": "sXlG+WWSrk9wwUZIMuyoqTQUGnxtIBUFvG5UXXmquqg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\data\\properties.json"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\forms.css",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/forms#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "1by7goq1a0",
-      "Integrity": "kwYBQxce7yyLOI6A4dUf8bKyhcs9o/dKO43llRTMpbc=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\forms.css"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building - Copie.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/building - Copie#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "rer0exbc1s",
-      "Integrity": "PdM3pd8d18KfTKcE8HUvtIQPPYZY4aeMIhNr/dYnVPA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\building - Copie.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/building#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "rer0exbc1s",
-      "Integrity": "PdM3pd8d18KfTKcE8HUvtIQPPYZY4aeMIhNr/dYnVPA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\building.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image - Copie.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/compte_comptable_image - Copie#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "glv6lr9ibm",
-      "Integrity": "dHb57kQxHZc8uGxO4ddWUlRvxMNtMTiNLlkdsRLs9hU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\compte_comptable_image - Copie.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/compte_comptable_image#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "i3fdudlida",
-      "Integrity": "UnBJ0pdUN8fB7giKsipU9SS5oUuASwcdwdwQg9aleUs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\compte_comptable_image.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man - Copie.jpg",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/default_man - Copie#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "r0cf0b0z56",
-      "Integrity": "m7avnABsvHgjbuo1HCSgXYB1DNZjXW/3JYEvvPyxML4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\default_man - Copie.jpg"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man.jpg",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/default_man#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ys03bfxfvt",
-      "Integrity": "0n310Ji8OsYSaV+loTdf35EkcPgAlsGw9WZDkeTLEP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\default_man.jpg"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_woman.jpg",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/default_woman#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "umxu8erytk",
-      "Integrity": "OsqfI+twOmzG9B5knxVdm8CdBgfj41LwRARs89SRAck=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\default_woman.jpg"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image - Copie.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/gabarit_image - Copie#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ezsf0n7sv4",
-      "Integrity": "hpMovqutfb35XjXv+Sd+wyfHoOFwAg3TUTk0vwaWYUI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\gabarit_image - Copie.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/gabarit_image#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "meh75tbyvd",
-      "Integrity": "IsP4f3c1mMDUOvKrEsZE8RnSYO0FcsMmSecxgbgYmk0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\gabarit_image.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image - Copie.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/gender_image - Copie#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "fum4kzzsm2",
-      "Integrity": "p3wUpJ8qih1FG8qWVRJ+WhQAhdCbrOc3PL23FYdG3CU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\gender_image - Copie.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/gender_image#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "989jmax5dc",
-      "Integrity": "eUPRHLnS2HgRd1PK3WtiywXRKl4kSOMJKfI/oFhQKZA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\gender_image.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "twdzo0yjhy",
-      "Integrity": "LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "nooup40zj0",
-      "Integrity": "iR4ZQfu02rvoS8NOgKqvKb14+ZnzJUDfHVI1TSzqGDo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1002_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "5eb52xgjcr",
-      "Integrity": "ExHSLpdDA/bRiq0hT/tb/llVdMftJUc6h629i8I+qoY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1002_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_1.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1002_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "q0oh62lwur",
-      "Integrity": "2vFp4WORAiBXMDYPonIcOGS4uPrPlyvGOqeFRM+FCGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1002_1.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1002#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "dghoq7k83y",
-      "Integrity": "XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1002.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1010.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1010#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "22kagfsb5r",
-      "Integrity": "9k+rEkoYKLGRy9W1AHHN/PBiU7aLm6jV33vu1ez1Za4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1010.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1011.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1011#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "lwdkz02c33",
-      "Integrity": "ZaY3EKFCyV1rakUMGNwtsC4p1xcXH434KMaalljuIXY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1011.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1339.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1339#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "5eb52xgjcr",
-      "Integrity": "ExHSLpdDA/bRiq0hT/tb/llVdMftJUc6h629i8I+qoY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1339.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1412_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "zue5icp8gr",
-      "Integrity": "e2zHG88uy0YbpFyuC292uXEcjyNgGDwynrSQqlBmVNo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1412_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_1.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1412_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "vkg40o6olm",
-      "Integrity": "7+wf0U1b5cdkJ0i4G1B4eiUOhqj0MSMaS+h0oDJdGRY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1412_1.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1419_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1419_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "b1rx2p55l1",
-      "Integrity": "4SLvbeovZe7g+QJsfm7FRHfIPQOph8FTquKLC2aN5J8=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1419_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1420_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1420_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "fxu7d3bh6v",
-      "Integrity": "rV5D6a/o05DHw3JtewusPG63LqNx6hZ/YQwYd0dyel8=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1420_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1425_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9ac4w16r4h",
-      "Integrity": "MftU45Kh/J8q0U6lkBK+xOIjbfXUughWKnuY668y2uE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1425_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_1.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1425_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "i5d07oowwa",
-      "Integrity": "anbj1RfSM0K4e+PPLIb684VdH7Wt6cu370YzDW5Cze4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1425_1.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1507_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1507_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "8eaxeu1buj",
-      "Integrity": "IHdcpapD+Pac4ExfFnN8t+Dagkh7dNRzoid/JDq24O0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1507_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1508_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_1508_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "zqapcono4w",
-      "Integrity": "q14Zutxlo7tzReImNZGy51FmF4+J0TVBUBY8KBV5tJg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_1508_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_2#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "920uylh52l",
-      "Integrity": "0YHplgSZ6GEFizMy85QWRppKu0R3P+RWZG6Iy4l+Zkg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_2002_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9jbwcjez9q",
-      "Integrity": "m6WE9l0OBUTjTC4qDUvqScI8xtauDXR8wMXTEMA79DY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2002_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_1.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_2002_1#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "6gdowtfanr",
-      "Integrity": "Fn69NiQTca8NTdX0wspoe8I0zxwK7kRVlPcKuEAE5qo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2002_1.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_2002#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "96y07qgs96",
-      "Integrity": "AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_2002.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_227.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_227#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "q0oh62lwur",
-      "Integrity": "2vFp4WORAiBXMDYPonIcOGS4uPrPlyvGOqeFRM+FCGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_227.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_229.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_229#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "g8l13pf0vg",
-      "Integrity": "wPgIVZQvpHsMO5lK8EupjM39LjA4EIfGO0MCA/HtzpE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_229.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_247.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_247#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9esb6z1s16",
-      "Integrity": "gaYdAZIpFE1IHMTZ2E4hzXmg1L8wsUjIhtkkhBLSNJU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_247.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_268.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_268#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "pv0uaoqv3c",
-      "Integrity": "C5bmGq/c5y2mTp31RK9ktgd3xcqM9R5LtY0EDXCofTg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_268.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6_0.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_6_0#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "tlmz9tgdpi",
-      "Integrity": "zyUADWoL3mGtkS1HFE1lmzx2rvk06xuxoOdaeTKjNVs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_6_0.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/membre_6#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "afbwkeoc5c",
-      "Integrity": "1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\membre_6.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image - Copie.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/poste_image - Copie#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "71rc7bluih",
-      "Integrity": "21bPegNvK3BPAg0myl61dc9WIUE9MiE9vUGtggVjU4U=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\poste_image - Copie.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image.png",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/images/poste_image#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "mkf580sukx",
-      "Integrity": "6tnVybpkJiaNuz9I1Bgo9KRgTY5SkvrlUomWJszDV2E=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\poste_image.png"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\js\\easy-number-separator.js",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/js/easy-number-separator#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "4xvcbecq9i",
-      "Integrity": "aLDffYRTp1jnyg/Y1FmQc6UMK0wwcn2cgBqCG4IKSOE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\easy-number-separator.js"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\tabs.css",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "assets/tabs#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "6x9nenythd",
-      "Integrity": "+nsOlWEdarlVImfTJfwCLY/4dnQ75HDiEqJgaxZXwag=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\tabs.css"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.7fa789ab57acb632.ttf",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-brands-400.7fa789ab57acb632#[.{fingerprint}]?.ttf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "19qgz6qb38",
-      "Integrity": "5SP0nBKxOhdgFK8aRq5aBUWxNr9W1JZCaqiBAm0MMYo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-brands-400.7fa789ab57acb632.ttf"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.859fc3887485de84.woff2",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-brands-400.859fc3887485de84#[.{fingerprint}]?.woff2",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "cdilsoct2p",
-      "Integrity": "QEx0bI9+P5t2EajyPZCMGjKlyXIja52Ju2iwXZv0uQU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-brands-400.859fc3887485de84.woff2"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-regular-400.2ffd018f0eda6f7b#[.{fingerprint}]?.woff2",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "qfuawwwqpx",
-      "Integrity": "aidOdinA1x3PjKsedzNofr/jLixTtMqfrQULTx1UcfM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-regular-400.da02cb7e372f16a2#[.{fingerprint}]?.ttf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "i0uf0hw1cn",
-      "Integrity": "Tpan4Jjjb9STGUxk6XO6UjfaZXYMe3RiF+Y8gwMmqaw=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-solid-900.3a463ec33b4fe9f7#[.{fingerprint}]?.ttf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "1vaott72c2",
-      "Integrity": "A/KYbAgkxova8eFpRzUvX+QX0DdBgGCX+p6nEx/joBk=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-solid-900.40ddefd79fe7af45#[.{fingerprint}]?.woff2",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "fedw8rlbsz",
-      "Integrity": "12+06EF0ij9rxj76IxVuAmMcKDv0H4Tvy9rzOeo+G3M=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-v4compatibility.924588dc97e66b08#[.{fingerprint}]?.ttf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "yhk38x7ad5",
-      "Integrity": "hqaHz1reaR4ZqgNyD/p8G6md0TfzbMYZgO7ER/IWBic=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "fa-v4compatibility.ee06c6f803f379bb#[.{fingerprint}]?.woff2",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jcria2603t",
-      "Integrity": "DbMb77SDfFa/F26HmnFbXN9FdVP8foh3+XS0xu91sbE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\favicon.ico",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "favicon#[.{fingerprint}]?.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "nf69tc4d23",
-      "Integrity": "LQpPWnfHiLCEkZsbjK1XE9nfwziO8plpxMtmwoCS5oM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\index.html",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "index#[.{fingerprint}]?.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "m8nvh6y0yq",
-      "Integrity": "ZjAUaq/UFxVx8lF/7UsVB8r7gK4lThvL9NtXP15KzV0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\main.0fcf52faf25cd376.js",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "main.0fcf52faf25cd376#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9fae6sx57p",
-      "Integrity": "RTJhmdo9RZM5BBDnTk9VPFj6CkMRHBhFJwYdF9Fd23U=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\main.0fcf52faf25cd376.js"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\polyfills.e60740ad809da6cf.js",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "polyfills.e60740ad809da6cf#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "wb8y81bm69",
-      "Integrity": "VMUGXh1iL0K5ezQ1bc32x7bqTJ7iMFbIN9byAZwpqVI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\polyfills.e60740ad809da6cf.js"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\runtime.e568dcdd41730442.js",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "runtime.e568dcdd41730442#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "g55y4ulp4s",
-      "Integrity": "lJqCLYf+Z+YmwQ0hF1D0fJb/fOx7DCPaOCbE3Ekl098=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\runtime.e568dcdd41730442.js"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\scripts.19b90c90e083f446.js",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "scripts.19b90c90e083f446#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "xw5cfuhe26",
-      "Integrity": "DyC2d4VuIIjcLWAthiRQnhbowCi5A5+fql853l9DL5g=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\scripts.19b90c90e083f446.js"
-    },
-    {
-      "Identity": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\styles.bca68cb60714a846.css",
-      "SourceId": "mefapi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\",
-      "BasePath": "_content/mefapi",
-      "RelativePath": "styles.bca68cb60714a846#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "cuibk2i0i0",
-      "Integrity": "JDC/7xwQI4EcMzYUhtb0EOeENRHPHPAJBgVJLiEHpRU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\styles.bca68cb60714a846.css"
-    }
-  ],
   "Endpoints": [
     {
       "Route": "3rdpartylicenses.txt",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\3rdpartylicenses.txt",
+      "AssetFile": "3rdpartylicenses.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -1281,10 +30,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -1296,12 +41,16 @@
     },
     {
       "Route": "3rdpartylicenses.yi29y0vomh.txt",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\3rdpartylicenses.txt",
+      "AssetFile": "3rdpartylicenses.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1318,10 +67,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1330,23 +75,27 @@
           "Value": "yi29y0vomh"
         },
         {
-          "Name": "label",
-          "Value": "3rdpartylicenses.txt"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-9jjPIm3wg4m+KVroBm3xAPsTvacqG5pUAQoMUKjPSuo="
+        },
+        {
+          "Name": "label",
+          "Value": "3rdpartylicenses.txt"
         }
       ]
     },
     {
       "Route": "assets/data/properties.5nb7jwxn52.json",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\data\\properties.json",
+      "AssetFile": "assets/data/properties.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1363,10 +112,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1375,23 +120,27 @@
           "Value": "5nb7jwxn52"
         },
         {
-          "Name": "label",
-          "Value": "assets/data/properties.json"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-sXlG+WWSrk9wwUZIMuyoqTQUGnxtIBUFvG5UXXmquqg="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/data/properties.json"
         }
       ]
     },
     {
       "Route": "assets/data/properties.json",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\data\\properties.json",
+      "AssetFile": "assets/data/properties.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -1408,10 +157,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -1423,12 +168,16 @@
     },
     {
       "Route": "assets/forms.1by7goq1a0.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\forms.css",
+      "AssetFile": "assets/forms.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1445,10 +194,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1457,23 +202,27 @@
           "Value": "1by7goq1a0"
         },
         {
-          "Name": "label",
-          "Value": "assets/forms.css"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-kwYBQxce7yyLOI6A4dUf8bKyhcs9o/dKO43llRTMpbc="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/forms.css"
         }
       ]
     },
     {
       "Route": "assets/forms.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\forms.css",
+      "AssetFile": "assets/forms.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -1490,10 +239,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -1505,12 +250,16 @@
     },
     {
       "Route": "assets/images/building - Copie.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building - Copie.png",
+      "AssetFile": "assets/images/building - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1527,10 +276,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1542,12 +287,16 @@
     },
     {
       "Route": "assets/images/building - Copie.rer0exbc1s.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building - Copie.png",
+      "AssetFile": "assets/images/building - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1564,10 +313,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1576,23 +321,27 @@
           "Value": "rer0exbc1s"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/building - Copie.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-PdM3pd8d18KfTKcE8HUvtIQPPYZY4aeMIhNr/dYnVPA="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/building - Copie.png"
         }
       ]
     },
     {
       "Route": "assets/images/building.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building.png",
+      "AssetFile": "assets/images/building.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1609,10 +358,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1624,12 +369,16 @@
     },
     {
       "Route": "assets/images/building.rer0exbc1s.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\building.png",
+      "AssetFile": "assets/images/building.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1646,10 +395,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1658,23 +403,27 @@
           "Value": "rer0exbc1s"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/building.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-PdM3pd8d18KfTKcE8HUvtIQPPYZY4aeMIhNr/dYnVPA="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/building.png"
         }
       ]
     },
     {
       "Route": "assets/images/compte_comptable_image - Copie.glv6lr9ibm.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image - Copie.png",
+      "AssetFile": "assets/images/compte_comptable_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1691,10 +440,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1703,23 +448,27 @@
           "Value": "glv6lr9ibm"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/compte_comptable_image - Copie.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-dHb57kQxHZc8uGxO4ddWUlRvxMNtMTiNLlkdsRLs9hU="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/compte_comptable_image - Copie.png"
         }
       ]
     },
     {
       "Route": "assets/images/compte_comptable_image - Copie.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image - Copie.png",
+      "AssetFile": "assets/images/compte_comptable_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1736,10 +485,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1751,12 +496,16 @@
     },
     {
       "Route": "assets/images/compte_comptable_image.i3fdudlida.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image.png",
+      "AssetFile": "assets/images/compte_comptable_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1773,10 +522,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1785,23 +530,27 @@
           "Value": "i3fdudlida"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/compte_comptable_image.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-UnBJ0pdUN8fB7giKsipU9SS5oUuASwcdwdwQg9aleUs="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/compte_comptable_image.png"
         }
       ]
     },
     {
       "Route": "assets/images/compte_comptable_image.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\compte_comptable_image.png",
+      "AssetFile": "assets/images/compte_comptable_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1818,10 +567,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1833,12 +578,16 @@
     },
     {
       "Route": "assets/images/default_man - Copie.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man - Copie.jpg",
+      "AssetFile": "assets/images/default_man - Copie.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1855,10 +604,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1870,12 +615,16 @@
     },
     {
       "Route": "assets/images/default_man - Copie.r0cf0b0z56.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man - Copie.jpg",
+      "AssetFile": "assets/images/default_man - Copie.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1892,10 +641,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1904,23 +649,27 @@
           "Value": "r0cf0b0z56"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/default_man - Copie.jpg"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-m7avnABsvHgjbuo1HCSgXYB1DNZjXW/3JYEvvPyxML4="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/default_man - Copie.jpg"
         }
       ]
     },
     {
       "Route": "assets/images/default_man.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man.jpg",
+      "AssetFile": "assets/images/default_man.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -1937,10 +686,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -1952,12 +697,16 @@
     },
     {
       "Route": "assets/images/default_man.ys03bfxfvt.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_man.jpg",
+      "AssetFile": "assets/images/default_man.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -1974,10 +723,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -1986,23 +731,27 @@
           "Value": "ys03bfxfvt"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/default_man.jpg"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-0n310Ji8OsYSaV+loTdf35EkcPgAlsGw9WZDkeTLEP0="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/default_man.jpg"
         }
       ]
     },
     {
       "Route": "assets/images/default_woman.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_woman.jpg",
+      "AssetFile": "assets/images/default_woman.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2019,10 +768,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2034,12 +779,16 @@
     },
     {
       "Route": "assets/images/default_woman.umxu8erytk.jpg",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\default_woman.jpg",
+      "AssetFile": "assets/images/default_woman.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2056,10 +805,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2068,23 +813,27 @@
           "Value": "umxu8erytk"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/default_woman.jpg"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-OsqfI+twOmzG9B5knxVdm8CdBgfj41LwRARs89SRAck="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/default_woman.jpg"
         }
       ]
     },
     {
       "Route": "assets/images/gabarit_image - Copie.ezsf0n7sv4.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image - Copie.png",
+      "AssetFile": "assets/images/gabarit_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2101,10 +850,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2113,23 +858,27 @@
           "Value": "ezsf0n7sv4"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/gabarit_image - Copie.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-hpMovqutfb35XjXv+Sd+wyfHoOFwAg3TUTk0vwaWYUI="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/gabarit_image - Copie.png"
         }
       ]
     },
     {
       "Route": "assets/images/gabarit_image - Copie.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image - Copie.png",
+      "AssetFile": "assets/images/gabarit_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2146,10 +895,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2161,12 +906,16 @@
     },
     {
       "Route": "assets/images/gabarit_image.meh75tbyvd.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image.png",
+      "AssetFile": "assets/images/gabarit_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2183,10 +932,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2195,23 +940,27 @@
           "Value": "meh75tbyvd"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/gabarit_image.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-IsP4f3c1mMDUOvKrEsZE8RnSYO0FcsMmSecxgbgYmk0="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/gabarit_image.png"
         }
       ]
     },
     {
       "Route": "assets/images/gabarit_image.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gabarit_image.png",
+      "AssetFile": "assets/images/gabarit_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2228,10 +977,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2243,12 +988,16 @@
     },
     {
       "Route": "assets/images/gender_image - Copie.fum4kzzsm2.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image - Copie.png",
+      "AssetFile": "assets/images/gender_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2265,10 +1014,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2277,23 +1022,27 @@
           "Value": "fum4kzzsm2"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/gender_image - Copie.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-p3wUpJ8qih1FG8qWVRJ+WhQAhdCbrOc3PL23FYdG3CU="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/gender_image - Copie.png"
         }
       ]
     },
     {
       "Route": "assets/images/gender_image - Copie.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image - Copie.png",
+      "AssetFile": "assets/images/gender_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2310,10 +1059,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2325,12 +1070,16 @@
     },
     {
       "Route": "assets/images/gender_image.989jmax5dc.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image.png",
+      "AssetFile": "assets/images/gender_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2347,10 +1096,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2359,23 +1104,27 @@
           "Value": "989jmax5dc"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/gender_image.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-eUPRHLnS2HgRd1PK3WtiywXRKl4kSOMJKfI/oFhQKZA="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/gender_image.png"
         }
       ]
     },
     {
       "Route": "assets/images/gender_image.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\gender_image.png",
+      "AssetFile": "assets/images/gender_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2392,10 +1141,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2406,95 +1151,17 @@
       ]
     },
     {
-      "Route": "assets/images/membre_1_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1_0.png",
+      "Route": "assets/images/membre_1.nooup40zj0.png",
+      "AssetFile": "assets/images/membre_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "102146"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_1_0.twdzo0yjhy.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1_0.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "102146"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "twdzo0yjhy"
-        },
-        {
-          "Name": "label",
-          "Value": "assets/images/membre_1_0.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_1.nooup40zj0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
         },
         {
           "Name": "Content-Length",
@@ -2511,10 +1178,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2523,23 +1186,27 @@
           "Value": "nooup40zj0"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-iR4ZQfu02rvoS8NOgKqvKb14+ZnzJUDfHVI1TSzqGDo="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1.png",
+      "AssetFile": "assets/images/membre_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2556,10 +1223,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2570,13 +1233,99 @@
       ]
     },
     {
-      "Route": "assets/images/membre_1002_0.5eb52xgjcr.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_0.png",
+      "Route": "assets/images/membre_1002.dghoq7k83y.png",
+      "AssetFile": "assets/images/membre_1002.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dghoq7k83y"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1002.png"
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_1002.png",
+      "AssetFile": "assets/images/membre_1002.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109159"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y="
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_1002_0.5eb52xgjcr.png",
+      "AssetFile": "assets/images/membre_1002_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2593,10 +1342,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2605,23 +1350,27 @@
           "Value": "5eb52xgjcr"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1002_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-ExHSLpdDA/bRiq0hT/tb/llVdMftJUc6h629i8I+qoY="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1002_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1002_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_0.png",
+      "AssetFile": "assets/images/membre_1002_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2638,10 +1387,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2653,12 +1398,16 @@
     },
     {
       "Route": "assets/images/membre_1002_1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_1.png",
+      "AssetFile": "assets/images/membre_1002_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2675,10 +1424,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2690,12 +1435,16 @@
     },
     {
       "Route": "assets/images/membre_1002_1.q0oh62lwur.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002_1.png",
+      "AssetFile": "assets/images/membre_1002_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2712,10 +1461,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2724,105 +1469,27 @@
           "Value": "q0oh62lwur"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1002_1.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-2vFp4WORAiBXMDYPonIcOGS4uPrPlyvGOqeFRM+FCGs="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_1002.dghoq7k83y.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "109159"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dghoq7k83y"
         },
         {
           "Name": "label",
-          "Value": "assets/images/membre_1002.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_1002.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1002.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "109159"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XYSgeUpZnXoBglLFjgr58p8Gnt/pgo9HMonQiADmu3Y="
+          "Value": "assets/images/membre_1002_1.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1010.22kagfsb5r.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1010.png",
+      "AssetFile": "assets/images/membre_1010.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2839,10 +1506,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2851,23 +1514,27 @@
           "Value": "22kagfsb5r"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1010.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-9k+rEkoYKLGRy9W1AHHN/PBiU7aLm6jV33vu1ez1Za4="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1010.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1010.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1010.png",
+      "AssetFile": "assets/images/membre_1010.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2884,10 +1551,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2899,12 +1562,16 @@
     },
     {
       "Route": "assets/images/membre_1011.lwdkz02c33.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1011.png",
+      "AssetFile": "assets/images/membre_1011.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -2921,10 +1588,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -2933,23 +1596,27 @@
           "Value": "lwdkz02c33"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1011.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-ZaY3EKFCyV1rakUMGNwtsC4p1xcXH434KMaalljuIXY="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1011.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1011.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1011.png",
+      "AssetFile": "assets/images/membre_1011.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -2966,10 +1633,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -2981,12 +1644,16 @@
     },
     {
       "Route": "assets/images/membre_1339.5eb52xgjcr.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1339.png",
+      "AssetFile": "assets/images/membre_1339.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3003,10 +1670,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3015,23 +1678,27 @@
           "Value": "5eb52xgjcr"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1339.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-ExHSLpdDA/bRiq0hT/tb/llVdMftJUc6h629i8I+qoY="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1339.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1339.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1339.png",
+      "AssetFile": "assets/images/membre_1339.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3048,10 +1715,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3063,12 +1726,16 @@
     },
     {
       "Route": "assets/images/membre_1412_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_0.png",
+      "AssetFile": "assets/images/membre_1412_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3085,10 +1752,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3100,12 +1763,16 @@
     },
     {
       "Route": "assets/images/membre_1412_0.zue5icp8gr.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_0.png",
+      "AssetFile": "assets/images/membre_1412_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3122,10 +1789,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3134,23 +1797,27 @@
           "Value": "zue5icp8gr"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1412_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-e2zHG88uy0YbpFyuC292uXEcjyNgGDwynrSQqlBmVNo="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1412_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1412_1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_1.png",
+      "AssetFile": "assets/images/membre_1412_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3167,10 +1834,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3182,12 +1845,16 @@
     },
     {
       "Route": "assets/images/membre_1412_1.vkg40o6olm.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1412_1.png",
+      "AssetFile": "assets/images/membre_1412_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3204,10 +1871,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3216,23 +1879,27 @@
           "Value": "vkg40o6olm"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1412_1.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-7+wf0U1b5cdkJ0i4G1B4eiUOhqj0MSMaS+h0oDJdGRY="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1412_1.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1419_0.b1rx2p55l1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1419_0.png",
+      "AssetFile": "assets/images/membre_1419_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3249,10 +1916,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3261,23 +1924,27 @@
           "Value": "b1rx2p55l1"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1419_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-4SLvbeovZe7g+QJsfm7FRHfIPQOph8FTquKLC2aN5J8="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1419_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1419_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1419_0.png",
+      "AssetFile": "assets/images/membre_1419_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3294,10 +1961,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3309,12 +1972,16 @@
     },
     {
       "Route": "assets/images/membre_1420_0.fxu7d3bh6v.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1420_0.png",
+      "AssetFile": "assets/images/membre_1420_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3331,10 +1998,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3343,23 +2006,27 @@
           "Value": "fxu7d3bh6v"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1420_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-rV5D6a/o05DHw3JtewusPG63LqNx6hZ/YQwYd0dyel8="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1420_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1420_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1420_0.png",
+      "AssetFile": "assets/images/membre_1420_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3376,10 +2043,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3391,12 +2054,16 @@
     },
     {
       "Route": "assets/images/membre_1425_0.9ac4w16r4h.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_0.png",
+      "AssetFile": "assets/images/membre_1425_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3413,10 +2080,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3425,23 +2088,27 @@
           "Value": "9ac4w16r4h"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1425_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-MftU45Kh/J8q0U6lkBK+xOIjbfXUughWKnuY668y2uE="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1425_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1425_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_0.png",
+      "AssetFile": "assets/images/membre_1425_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3458,10 +2125,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3473,12 +2136,16 @@
     },
     {
       "Route": "assets/images/membre_1425_1.i5d07oowwa.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_1.png",
+      "AssetFile": "assets/images/membre_1425_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3495,10 +2162,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3507,23 +2170,27 @@
           "Value": "i5d07oowwa"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1425_1.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-anbj1RfSM0K4e+PPLIb684VdH7Wt6cu370YzDW5Cze4="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1425_1.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1425_1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1425_1.png",
+      "AssetFile": "assets/images/membre_1425_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3540,10 +2207,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3555,12 +2218,16 @@
     },
     {
       "Route": "assets/images/membre_1507_0.8eaxeu1buj.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1507_0.png",
+      "AssetFile": "assets/images/membre_1507_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3577,10 +2244,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3589,23 +2252,27 @@
           "Value": "8eaxeu1buj"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1507_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-IHdcpapD+Pac4ExfFnN8t+Dagkh7dNRzoid/JDq24O0="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1507_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_1507_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1507_0.png",
+      "AssetFile": "assets/images/membre_1507_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3622,10 +2289,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3637,12 +2300,16 @@
     },
     {
       "Route": "assets/images/membre_1508_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1508_0.png",
+      "AssetFile": "assets/images/membre_1508_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3659,10 +2326,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3674,12 +2337,16 @@
     },
     {
       "Route": "assets/images/membre_1508_0.zqapcono4w.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_1508_0.png",
+      "AssetFile": "assets/images/membre_1508_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3696,10 +2363,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3708,23 +2371,109 @@
           "Value": "zqapcono4w"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_1508_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-q14Zutxlo7tzReImNZGy51FmF4+J0TVBUBY8KBV5tJg="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1508_0.png"
         }
       ]
     },
     {
-      "Route": "assets/images/membre_2.920uylh52l.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2.png",
+      "Route": "assets/images/membre_1_0.png",
+      "AssetFile": "assets/images/membre_1_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_1_0.twdzo0yjhy.png",
+      "AssetFile": "assets/images/membre_1_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "twdzo0yjhy"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LSlIQ+Np6FA8rAO6gTSZ/gAaxYvkD85bfYVJnteLEcc="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_1_0.png"
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_2.920uylh52l.png",
+      "AssetFile": "assets/images/membre_2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3741,10 +2490,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3753,23 +2498,27 @@
           "Value": "920uylh52l"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_2.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-0YHplgSZ6GEFizMy85QWRppKu0R3P+RWZG6Iy4l+Zkg="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_2.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_2.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2.png",
+      "AssetFile": "assets/images/membre_2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3786,10 +2535,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3800,13 +2545,99 @@
       ]
     },
     {
-      "Route": "assets/images/membre_2002_0.9jbwcjez9q.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_0.png",
+      "Route": "assets/images/membre_2002.96y07qgs96.png",
+      "AssetFile": "assets/images/membre_2002.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102204"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "96y07qgs96"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_2002.png"
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_2002.png",
+      "AssetFile": "assets/images/membre_2002.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102204"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_2002_0.9jbwcjez9q.png",
+      "AssetFile": "assets/images/membre_2002_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3823,10 +2654,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3835,23 +2662,27 @@
           "Value": "9jbwcjez9q"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_2002_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-m6WE9l0OBUTjTC4qDUvqScI8xtauDXR8wMXTEMA79DY="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_2002_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_2002_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_0.png",
+      "AssetFile": "assets/images/membre_2002_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3868,10 +2699,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3883,12 +2710,16 @@
     },
     {
       "Route": "assets/images/membre_2002_1.6gdowtfanr.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_1.png",
+      "AssetFile": "assets/images/membre_2002_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -3905,10 +2736,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -3917,23 +2744,27 @@
           "Value": "6gdowtfanr"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_2002_1.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-Fn69NiQTca8NTdX0wspoe8I0zxwK7kRVlPcKuEAE5qo="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_2002_1.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_2002_1.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002_1.png",
+      "AssetFile": "assets/images/membre_2002_1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -3950,10 +2781,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -3964,95 +2791,17 @@
       ]
     },
     {
-      "Route": "assets/images/membre_2002.96y07qgs96.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002.png",
+      "Route": "assets/images/membre_227.png",
+      "AssetFile": "assets/images/membre_227.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "102204"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "96y07qgs96"
-        },
-        {
-          "Name": "label",
-          "Value": "assets/images/membre_2002.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_2002.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_2002.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "102204"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-AbwZrSZcLEY+H6KArGEd2xBKqQMqZzuTI+gJXUCfunw="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_227.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_227.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
         },
         {
           "Name": "Content-Length",
@@ -4069,10 +2818,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4084,12 +2829,16 @@
     },
     {
       "Route": "assets/images/membre_227.q0oh62lwur.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_227.png",
+      "AssetFile": "assets/images/membre_227.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4106,10 +2855,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4118,23 +2863,27 @@
           "Value": "q0oh62lwur"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_227.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-2vFp4WORAiBXMDYPonIcOGS4uPrPlyvGOqeFRM+FCGs="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_227.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_229.g8l13pf0vg.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_229.png",
+      "AssetFile": "assets/images/membre_229.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4151,10 +2900,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4163,23 +2908,27 @@
           "Value": "g8l13pf0vg"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_229.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-wPgIVZQvpHsMO5lK8EupjM39LjA4EIfGO0MCA/HtzpE="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_229.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_229.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_229.png",
+      "AssetFile": "assets/images/membre_229.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4196,10 +2945,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4211,12 +2956,16 @@
     },
     {
       "Route": "assets/images/membre_247.9esb6z1s16.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_247.png",
+      "AssetFile": "assets/images/membre_247.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4233,10 +2982,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4245,23 +2990,27 @@
           "Value": "9esb6z1s16"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_247.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-gaYdAZIpFE1IHMTZ2E4hzXmg1L8wsUjIhtkkhBLSNJU="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_247.png"
         }
       ]
     },
     {
       "Route": "assets/images/membre_247.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_247.png",
+      "AssetFile": "assets/images/membre_247.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4278,10 +3027,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4293,12 +3038,16 @@
     },
     {
       "Route": "assets/images/membre_268.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_268.png",
+      "AssetFile": "assets/images/membre_268.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4315,10 +3064,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4330,12 +3075,16 @@
     },
     {
       "Route": "assets/images/membre_268.pv0uaoqv3c.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_268.png",
+      "AssetFile": "assets/images/membre_268.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4352,10 +3101,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4364,23 +3109,109 @@
           "Value": "pv0uaoqv3c"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_268.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-C5bmGq/c5y2mTp31RK9ktgd3xcqM9R5LtY0EDXCofTg="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_268.png"
         }
       ]
     },
     {
-      "Route": "assets/images/membre_6_0.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6_0.png",
+      "Route": "assets/images/membre_6.afbwkeoc5c.png",
+      "AssetFile": "assets/images/membre_6.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "99671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "afbwkeoc5c"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/membre_6.png"
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_6.png",
+      "AssetFile": "assets/images/membre_6.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "99671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko="
+        }
+      ]
+    },
+    {
+      "Route": "assets/images/membre_6_0.png",
+      "AssetFile": "assets/images/membre_6_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4397,10 +3228,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4412,12 +3239,16 @@
     },
     {
       "Route": "assets/images/membre_6_0.tlmz9tgdpi.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6_0.png",
+      "AssetFile": "assets/images/membre_6_0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4434,10 +3265,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4446,105 +3273,27 @@
           "Value": "tlmz9tgdpi"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/membre_6_0.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-zyUADWoL3mGtkS1HFE1lmzx2rvk06xuxoOdaeTKjNVs="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_6.afbwkeoc5c.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "99671"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "afbwkeoc5c"
         },
         {
           "Name": "label",
-          "Value": "assets/images/membre_6.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko="
-        }
-      ]
-    },
-    {
-      "Route": "assets/images/membre_6.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\membre_6.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "99671"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-1g1Wh5a/lukjMT+/YEoJgYsAc8kj/le8x0I6yshf9Ko="
+          "Value": "assets/images/membre_6_0.png"
         }
       ]
     },
     {
       "Route": "assets/images/poste_image - Copie.71rc7bluih.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image - Copie.png",
+      "AssetFile": "assets/images/poste_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4561,10 +3310,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4573,23 +3318,27 @@
           "Value": "71rc7bluih"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/poste_image - Copie.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-21bPegNvK3BPAg0myl61dc9WIUE9MiE9vUGtggVjU4U="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/poste_image - Copie.png"
         }
       ]
     },
     {
       "Route": "assets/images/poste_image - Copie.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image - Copie.png",
+      "AssetFile": "assets/images/poste_image - Copie.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4606,10 +3355,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4621,12 +3366,16 @@
     },
     {
       "Route": "assets/images/poste_image.mkf580sukx.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image.png",
+      "AssetFile": "assets/images/poste_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4643,10 +3392,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4655,23 +3400,27 @@
           "Value": "mkf580sukx"
         },
         {
-          "Name": "label",
-          "Value": "assets/images/poste_image.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-6tnVybpkJiaNuz9I1Bgo9KRgTY5SkvrlUomWJszDV2E="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/images/poste_image.png"
         }
       ]
     },
     {
       "Route": "assets/images/poste_image.png",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\images\\poste_image.png",
+      "AssetFile": "assets/images/poste_image.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -4688,10 +3437,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -4703,12 +3448,16 @@
     },
     {
       "Route": "assets/js/easy-number-separator.4xvcbecq9i.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\js\\easy-number-separator.js",
+      "AssetFile": "assets/js/easy-number-separator.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4725,10 +3474,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4737,23 +3482,27 @@
           "Value": "4xvcbecq9i"
         },
         {
-          "Name": "label",
-          "Value": "assets/js/easy-number-separator.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-aLDffYRTp1jnyg/Y1FmQc6UMK0wwcn2cgBqCG4IKSOE="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/easy-number-separator.js"
         }
       ]
     },
     {
       "Route": "assets/js/easy-number-separator.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\js\\easy-number-separator.js",
+      "AssetFile": "assets/js/easy-number-separator.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -4770,10 +3519,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -4785,12 +3530,16 @@
     },
     {
       "Route": "assets/tabs.6x9nenythd.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\tabs.css",
+      "AssetFile": "assets/tabs.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4807,10 +3556,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4819,23 +3564,27 @@
           "Value": "6x9nenythd"
         },
         {
-          "Name": "label",
-          "Value": "assets/tabs.css"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-+nsOlWEdarlVImfTJfwCLY/4dnQ75HDiEqJgaxZXwag="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/tabs.css"
         }
       ]
     },
     {
       "Route": "assets/tabs.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\assets\\tabs.css",
+      "AssetFile": "assets/tabs.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -4852,10 +3601,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -4867,12 +3612,16 @@
     },
     {
       "Route": "fa-brands-400.7fa789ab57acb632.19qgz6qb38.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.7fa789ab57acb632.ttf",
+      "AssetFile": "fa-brands-400.7fa789ab57acb632.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4889,10 +3638,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4901,23 +3646,27 @@
           "Value": "19qgz6qb38"
         },
         {
-          "Name": "label",
-          "Value": "fa-brands-400.7fa789ab57acb632.ttf"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-5SP0nBKxOhdgFK8aRq5aBUWxNr9W1JZCaqiBAm0MMYo="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-brands-400.7fa789ab57acb632.ttf"
         }
       ]
     },
     {
       "Route": "fa-brands-400.7fa789ab57acb632.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.7fa789ab57acb632.ttf",
+      "AssetFile": "fa-brands-400.7fa789ab57acb632.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -4934,10 +3683,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -4949,12 +3694,16 @@
     },
     {
       "Route": "fa-brands-400.859fc3887485de84.cdilsoct2p.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.859fc3887485de84.woff2",
+      "AssetFile": "fa-brands-400.859fc3887485de84.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -4971,10 +3720,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -4983,23 +3728,27 @@
           "Value": "cdilsoct2p"
         },
         {
-          "Name": "label",
-          "Value": "fa-brands-400.859fc3887485de84.woff2"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-QEx0bI9+P5t2EajyPZCMGjKlyXIja52Ju2iwXZv0uQU="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-brands-400.859fc3887485de84.woff2"
         }
       ]
     },
     {
       "Route": "fa-brands-400.859fc3887485de84.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-brands-400.859fc3887485de84.woff2",
+      "AssetFile": "fa-brands-400.859fc3887485de84.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -5016,10 +3765,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -5031,12 +3776,16 @@
     },
     {
       "Route": "fa-regular-400.2ffd018f0eda6f7b.qfuawwwqpx.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2",
+      "AssetFile": "fa-regular-400.2ffd018f0eda6f7b.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5053,10 +3802,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5065,23 +3810,27 @@
           "Value": "qfuawwwqpx"
         },
         {
-          "Name": "label",
-          "Value": "fa-regular-400.2ffd018f0eda6f7b.woff2"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-aidOdinA1x3PjKsedzNofr/jLixTtMqfrQULTx1UcfM="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-regular-400.2ffd018f0eda6f7b.woff2"
         }
       ]
     },
     {
       "Route": "fa-regular-400.2ffd018f0eda6f7b.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.2ffd018f0eda6f7b.woff2",
+      "AssetFile": "fa-regular-400.2ffd018f0eda6f7b.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -5098,10 +3847,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -5113,12 +3858,16 @@
     },
     {
       "Route": "fa-regular-400.da02cb7e372f16a2.i0uf0hw1cn.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf",
+      "AssetFile": "fa-regular-400.da02cb7e372f16a2.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5135,10 +3884,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5147,23 +3892,27 @@
           "Value": "i0uf0hw1cn"
         },
         {
-          "Name": "label",
-          "Value": "fa-regular-400.da02cb7e372f16a2.ttf"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-Tpan4Jjjb9STGUxk6XO6UjfaZXYMe3RiF+Y8gwMmqaw="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-regular-400.da02cb7e372f16a2.ttf"
         }
       ]
     },
     {
       "Route": "fa-regular-400.da02cb7e372f16a2.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-regular-400.da02cb7e372f16a2.ttf",
+      "AssetFile": "fa-regular-400.da02cb7e372f16a2.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5180,10 +3929,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5195,12 +3940,16 @@
     },
     {
       "Route": "fa-solid-900.3a463ec33b4fe9f7.1vaott72c2.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf",
+      "AssetFile": "fa-solid-900.3a463ec33b4fe9f7.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5217,10 +3966,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5229,23 +3974,27 @@
           "Value": "1vaott72c2"
         },
         {
-          "Name": "label",
-          "Value": "fa-solid-900.3a463ec33b4fe9f7.ttf"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-A/KYbAgkxova8eFpRzUvX+QX0DdBgGCX+p6nEx/joBk="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-solid-900.3a463ec33b4fe9f7.ttf"
         }
       ]
     },
     {
       "Route": "fa-solid-900.3a463ec33b4fe9f7.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.3a463ec33b4fe9f7.ttf",
+      "AssetFile": "fa-solid-900.3a463ec33b4fe9f7.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5262,10 +4011,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5277,12 +4022,16 @@
     },
     {
       "Route": "fa-solid-900.40ddefd79fe7af45.fedw8rlbsz.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2",
+      "AssetFile": "fa-solid-900.40ddefd79fe7af45.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5299,10 +4048,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5311,23 +4056,27 @@
           "Value": "fedw8rlbsz"
         },
         {
-          "Name": "label",
-          "Value": "fa-solid-900.40ddefd79fe7af45.woff2"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-12+06EF0ij9rxj76IxVuAmMcKDv0H4Tvy9rzOeo+G3M="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-solid-900.40ddefd79fe7af45.woff2"
         }
       ]
     },
     {
       "Route": "fa-solid-900.40ddefd79fe7af45.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-solid-900.40ddefd79fe7af45.woff2",
+      "AssetFile": "fa-solid-900.40ddefd79fe7af45.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -5344,10 +4093,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -5359,12 +4104,16 @@
     },
     {
       "Route": "fa-v4compatibility.924588dc97e66b08.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf",
+      "AssetFile": "fa-v4compatibility.924588dc97e66b08.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5381,10 +4130,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5396,12 +4141,16 @@
     },
     {
       "Route": "fa-v4compatibility.924588dc97e66b08.yhk38x7ad5.ttf",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.924588dc97e66b08.ttf",
+      "AssetFile": "fa-v4compatibility.924588dc97e66b08.ttf",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5418,10 +4167,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5430,23 +4175,27 @@
           "Value": "yhk38x7ad5"
         },
         {
-          "Name": "label",
-          "Value": "fa-v4compatibility.924588dc97e66b08.ttf"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-hqaHz1reaR4ZqgNyD/p8G6md0TfzbMYZgO7ER/IWBic="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-v4compatibility.924588dc97e66b08.ttf"
         }
       ]
     },
     {
       "Route": "fa-v4compatibility.ee06c6f803f379bb.jcria2603t.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2",
+      "AssetFile": "fa-v4compatibility.ee06c6f803f379bb.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5463,10 +4212,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5475,23 +4220,27 @@
           "Value": "jcria2603t"
         },
         {
-          "Name": "label",
-          "Value": "fa-v4compatibility.ee06c6f803f379bb.woff2"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-DbMb77SDfFa/F26HmnFbXN9FdVP8foh3+XS0xu91sbE="
+        },
+        {
+          "Name": "label",
+          "Value": "fa-v4compatibility.ee06c6f803f379bb.woff2"
         }
       ]
     },
     {
       "Route": "fa-v4compatibility.ee06c6f803f379bb.woff2",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\fa-v4compatibility.ee06c6f803f379bb.woff2",
+      "AssetFile": "fa-v4compatibility.ee06c6f803f379bb.woff2",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -5508,10 +4257,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -5523,12 +4268,16 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\favicon.ico",
+      "AssetFile": "favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -5545,10 +4294,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -5560,12 +4305,16 @@
     },
     {
       "Route": "favicon.nf69tc4d23.ico",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\favicon.ico",
+      "AssetFile": "favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5582,10 +4331,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5594,23 +4339,27 @@
           "Value": "nf69tc4d23"
         },
         {
-          "Name": "label",
-          "Value": "favicon.ico"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-LQpPWnfHiLCEkZsbjK1XE9nfwziO8plpxMtmwoCS5oM="
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
         }
       ]
     },
     {
       "Route": "index.html",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\index.html",
+      "AssetFile": "index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5627,10 +4376,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5642,12 +4387,16 @@
     },
     {
       "Route": "index.m8nvh6y0yq.html",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\index.html",
+      "AssetFile": "index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5664,10 +4413,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5676,23 +4421,27 @@
           "Value": "m8nvh6y0yq"
         },
         {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-ZjAUaq/UFxVx8lF/7UsVB8r7gK4lThvL9NtXP15KzV0="
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
         }
       ]
     },
     {
       "Route": "main.0fcf52faf25cd376.9fae6sx57p.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\main.0fcf52faf25cd376.js",
+      "AssetFile": "main.0fcf52faf25cd376.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5709,10 +4458,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5721,23 +4466,27 @@
           "Value": "9fae6sx57p"
         },
         {
-          "Name": "label",
-          "Value": "main.0fcf52faf25cd376.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-RTJhmdo9RZM5BBDnTk9VPFj6CkMRHBhFJwYdF9Fd23U="
+        },
+        {
+          "Name": "label",
+          "Value": "main.0fcf52faf25cd376.js"
         }
       ]
     },
     {
       "Route": "main.0fcf52faf25cd376.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\main.0fcf52faf25cd376.js",
+      "AssetFile": "main.0fcf52faf25cd376.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5754,10 +4503,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5769,12 +4514,16 @@
     },
     {
       "Route": "polyfills.e60740ad809da6cf.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\polyfills.e60740ad809da6cf.js",
+      "AssetFile": "polyfills.e60740ad809da6cf.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5791,10 +4540,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5806,12 +4551,16 @@
     },
     {
       "Route": "polyfills.e60740ad809da6cf.wb8y81bm69.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\polyfills.e60740ad809da6cf.js",
+      "AssetFile": "polyfills.e60740ad809da6cf.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5828,10 +4577,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5840,23 +4585,27 @@
           "Value": "wb8y81bm69"
         },
         {
-          "Name": "label",
-          "Value": "polyfills.e60740ad809da6cf.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-VMUGXh1iL0K5ezQ1bc32x7bqTJ7iMFbIN9byAZwpqVI="
+        },
+        {
+          "Name": "label",
+          "Value": "polyfills.e60740ad809da6cf.js"
         }
       ]
     },
     {
       "Route": "runtime.e568dcdd41730442.g55y4ulp4s.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\runtime.e568dcdd41730442.js",
+      "AssetFile": "runtime.e568dcdd41730442.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5873,10 +4622,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -5885,23 +4630,27 @@
           "Value": "g55y4ulp4s"
         },
         {
-          "Name": "label",
-          "Value": "runtime.e568dcdd41730442.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-lJqCLYf+Z+YmwQ0hF1D0fJb/fOx7DCPaOCbE3Ekl098="
+        },
+        {
+          "Name": "label",
+          "Value": "runtime.e568dcdd41730442.js"
         }
       ]
     },
     {
       "Route": "runtime.e568dcdd41730442.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\runtime.e568dcdd41730442.js",
+      "AssetFile": "runtime.e568dcdd41730442.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5918,10 +4667,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5933,12 +4678,16 @@
     },
     {
       "Route": "scripts.19b90c90e083f446.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\scripts.19b90c90e083f446.js",
+      "AssetFile": "scripts.19b90c90e083f446.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -5955,10 +4704,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -5970,12 +4715,16 @@
     },
     {
       "Route": "scripts.19b90c90e083f446.xw5cfuhe26.js",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\scripts.19b90c90e083f446.js",
+      "AssetFile": "scripts.19b90c90e083f446.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -5992,10 +4741,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -6004,23 +4749,27 @@
           "Value": "xw5cfuhe26"
         },
         {
-          "Name": "label",
-          "Value": "scripts.19b90c90e083f446.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-DyC2d4VuIIjcLWAthiRQnhbowCi5A5+fql853l9DL5g="
+        },
+        {
+          "Name": "label",
+          "Value": "scripts.19b90c90e083f446.js"
         }
       ]
     },
     {
       "Route": "styles.bca68cb60714a846.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\styles.bca68cb60714a846.css",
+      "AssetFile": "styles.bca68cb60714a846.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -6037,10 +4786,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -6052,12 +4797,16 @@
     },
     {
       "Route": "styles.bca68cb60714a846.cuibk2i0i0.css",
-      "AssetFile": "D:\\MesProjets\\mutuelle\\mefapi\\wwwroot\\styles.bca68cb60714a846.css",
+      "AssetFile": "styles.bca68cb60714a846.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -6074,10 +4823,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 12:21:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -6086,12 +4831,12 @@
           "Value": "cuibk2i0i0"
         },
         {
-          "Name": "label",
-          "Value": "styles.bca68cb60714a846.css"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-JDC/7xwQI4EcMzYUhtb0EOeENRHPHPAJBgVJLiEHpRU="
+        },
+        {
+          "Name": "label",
+          "Value": "styles.bca68cb60714a846.css"
         }
       ]
     }
