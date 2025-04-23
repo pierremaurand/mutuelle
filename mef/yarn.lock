@@ -143,10 +143,10 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@angular/animations@^17.3.12", "@angular/animations@17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/animations/-/animations-17.3.12.tgz"
-  integrity sha512-9hsdWF4gRRcVJtPcCcYLaX1CIyM9wUu6r+xRl6zU5hq8qhl35hig6ounz7CXFAzLf0WDBdM16bPHouVGaG76lg==
+"@angular/animations@^18.2.13", "@angular/animations@18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/animations/-/animations-18.2.13.tgz"
+  integrity sha512-rG5J5Ek5Hg+Tz2NjkNOaG6PupiNK/lPfophXpsR1t/nWujqnMWX2krahD/i6kgD+jNWNKCJCYSOVvCx/BHOtKA==
   dependencies:
     tslib "^2.3.0"
 
@@ -182,10 +182,10 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^17.0.0 || ^18.0.0", "@angular/common@^17.3.12", "@angular/common@>=10.0.0", "@angular/common@>=11.0.0", "@angular/common@>=13.0.0", "@angular/common@17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/common/-/common-17.3.12.tgz"
-  integrity sha512-vabJzvrx76XXFrm1RJZ6o/CyG32piTB/1sfFfKHdlH1QrmArb8It4gyk9oEjZ1IkAD0HvBWlfWmn+T6Vx3pdUw==
+"@angular/common@^17.0.0 || ^18.0.0", "@angular/common@^18.2.13", "@angular/common@>=10.0.0", "@angular/common@>=11.0.0", "@angular/common@>=13.0.0", "@angular/common@18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/common/-/common-18.2.13.tgz"
+  integrity sha512-4ZqrNp1PoZo7VNvW+sbSc2CB2axP1sCH2wXl8B0wdjsj8JY1hF1OhuugwhpAHtGxqewed2kCXayE+ZJqSTV4jw==
   dependencies:
     tslib "^2.3.0"
 
@@ -203,45 +203,45 @@
     tslib "^2.3.0"
     yargs "^17.2.1"
 
-"@angular/compiler@^17.3.12", "@angular/compiler@17.3.12", "@angular/compiler@19.2.7":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-17.3.12.tgz"
-  integrity sha512-vwI8oOL/gM+wPnptOVeBbMfZYwzRxQsovojZf+Zol9szl0k3SZ3FycWlxxXZGFu3VIEfrP6pXplTmyODS/Lt1w==
+"@angular/compiler@^18.2.13", "@angular/compiler@18.2.13", "@angular/compiler@19.2.7":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-18.2.13.tgz"
+  integrity sha512-TzWcrkopyjFF+WeDr2cRe8CcHjU72KfYV3Sm2TkBkcXrkYX5sDjGWrBGrG3hRB4e4okqchrOCvm1MiTdy2vKMA==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^17.0.0 || ^18.0.0", "@angular/core@^17.3.12", "@angular/core@>=11.0.0", "@angular/core@>=13.0.0", "@angular/core@17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/core/-/core-17.3.12.tgz"
-  integrity sha512-MuFt5yKi161JmauUta4Dh0m8ofwoq6Ino+KoOtkYMBGsSx+A7dSm+DUxxNwdj7+DNyg3LjVGCFgBFnq4g8z06A==
+"@angular/core@^17.0.0 || ^18.0.0", "@angular/core@^18.2.13", "@angular/core@>=11.0.0", "@angular/core@>=13.0.0", "@angular/core@18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/core/-/core-18.2.13.tgz"
+  integrity sha512-8mbWHMgO95OuFV1Ejy4oKmbe9NOJ3WazQf/f7wks8Bck7pcihd0IKhlPBNjFllbF5o+04EYSwFhEtvEgjMDClA==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/forms/-/forms-17.3.12.tgz"
-  integrity sha512-tV6r12Q3yEUlXwpVko4E+XscunTIpPkLbaiDn/MTL3Vxi2LZnsLgHyd/i38HaHN+e/H3B0a1ToSOhV5wf3ay4Q==
+"@angular/forms@^18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/forms/-/forms-18.2.13.tgz"
+  integrity sha512-A67D867fu3DSBhdLWWZl/F5pr7v2+dRM2u3U7ZJ0ewh4a+sv+0yqWdJW+a8xIoiHxS+btGEJL2qAKJiH+MCFfg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@^17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-17.3.12.tgz"
-  integrity sha512-DQwV7B2x/DRLRDSisngZRdLqHdYbbrqZv2Hmu4ZbnNYaWPC8qvzgE/0CvY+UkDat3nCcsfwsMnlDeB6TL7/IaA==
+"@angular/platform-browser-dynamic@^18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-18.2.13.tgz"
+  integrity sha512-kbQCf9+8EpuJC7buBxhSiwBtXvjAwAKh6MznD6zd2pyCYqfY6gfRCZQRtK59IfgVtKmEONWI9grEyNIRoTmqJg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^17.3.12", "@angular/platform-browser@17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-17.3.12.tgz"
-  integrity sha512-DYY04ptWh/ulMHzd+y52WCE8QnEYGeIiW3hEIFjCN8z0kbIdFdUtEB0IK5vjNL3ejyhUmphcpeT5PYf3YXtqWQ==
+"@angular/platform-browser@^18.2.13", "@angular/platform-browser@18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-18.2.13.tgz"
+  integrity sha512-tu7ZzY6qD3ATdWFzcTcsAKe7M6cJeWbT/4/bF9unyGO3XBPcNYDKoiz10+7ap2PUd0fmPwvuvTvSNJiFEBnB8Q==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/router@^17.3.12":
-  version "17.3.12"
-  resolved "https://registry.npmjs.org/@angular/router/-/router-17.3.12.tgz"
-  integrity sha512-dg7PHBSW9fmPKTVzwvHEeHZPZdpnUqW/U7kj8D29HTP9ur8zZnx9QcnbplwPeYb8yYa62JMnZSEel2X4PxdYBg==
+"@angular/router@^18.2.13":
+  version "18.2.13"
+  resolved "https://registry.npmjs.org/@angular/router/-/router-18.2.13.tgz"
+  integrity sha512-VKmfgi/r/CkyBq9nChQ/ptmfu0JT/8ONnLVJ5H+SkFLRYJcIRyHLKjRihMCyVm6xM5yktOdCaW73NTQrFz7+bg==
   dependencies:
     tslib "^2.3.0"
 
@@ -9055,7 +9055,7 @@ zip-stream@^4.1.0:
     compress-commons "^4.1.0"
     readable-stream "^3.6.0"
 
-zone.js@~0.14.0, zone.js@~0.14.10:
+zone.js@~0.14.10:
   version "0.14.10"
   resolved "https://registry.npmjs.org/zone.js/-/zone.js-0.14.10.tgz"
   integrity sha512-YGAhaO7J5ywOXW6InXNlLmfU194F8lVgu7bRntUF3TiG8Y3nBK0x1UJJuHUP/e8IyihkjCYqhCScpSwnlaSRkQ==
