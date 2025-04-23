@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MesProjets\\mutuelle\\mefApi\\mefapi.csproj": {}
+    "D:\\MesProjets\\mutuelle\\mefapi\\mefapi.csproj": {}
   },
   "projects": {
-    "D:\\MesProjets\\mutuelle\\mefApi\\mefapi.csproj": {
+    "D:\\MesProjets\\mutuelle\\mefapi\\mefapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MesProjets\\mutuelle\\mefApi\\mefapi.csproj",
+        "projectUniqueName": "D:\\MesProjets\\mutuelle\\mefapi\\mefapi.csproj",
         "projectName": "mefapi",
-        "projectPath": "D:\\MesProjets\\mutuelle\\mefApi\\mefapi.csproj",
+        "projectPath": "D:\\MesProjets\\mutuelle\\mefapi\\mefapi.csproj",
         "packagesPath": "C:\\Users\\maurand\\.nuget\\packages\\",
-        "outputPath": "D:\\MesProjets\\mutuelle\\mefApi\\obj\\",
+        "outputPath": "D:\\MesProjets\\mutuelle\\mefapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
