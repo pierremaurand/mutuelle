@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CompteService } from '../services/compte.service';
 import { Mouvement } from '../models/mouvement';
@@ -12,7 +7,7 @@ import { Mouvement } from '../models/mouvement';
 @Injectable({
   providedIn: 'root',
 })
-export class MouvementsAvanceResolver implements Resolve<Mouvement[]> {
+export class MouvementsAvanceResolver  {
   constructor(public compteService: CompteService) {}
   resolve(
     route: ActivatedRouteSnapshot,

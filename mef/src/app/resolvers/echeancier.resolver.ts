@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Echeance } from '../models/echeance.model';
 import { EcheanceService } from '../services/echeance.service';
@@ -12,7 +7,7 @@ import { EcheanceService } from '../services/echeance.service';
 @Injectable({
   providedIn: 'root',
 })
-export class EcheancierResolver implements Resolve<Echeance[]> {
+export class EcheancierResolver  {
   constructor(public echeanceService: EcheanceService) {}
   resolve(
     route: ActivatedRouteSnapshot,

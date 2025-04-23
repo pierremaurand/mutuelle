@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Deboursement } from '../models/deboursement.model';
 import { DeboursementService } from '../services/deboursement.service';
@@ -12,7 +7,7 @@ import { DeboursementService } from '../services/deboursement.service';
 @Injectable({
   providedIn: 'root',
 })
-export class DeboursementResolver implements Resolve<Deboursement> {
+export class DeboursementResolver  {
   constructor(public deboursementService: DeboursementService) {}
   resolve(
     route: ActivatedRouteSnapshot,

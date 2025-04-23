@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
-} from '@angular/router';
+import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Avance } from '../models/avance';
 import { AvanceService } from '../services/avance.service';
@@ -12,7 +7,7 @@ import { AvanceService } from '../services/avance.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AvanceResolver implements Resolve<Avance> {
+export class AvanceResolver  {
   constructor(public avanceService: AvanceService) {}
   resolve(
     route: ActivatedRouteSnapshot,
