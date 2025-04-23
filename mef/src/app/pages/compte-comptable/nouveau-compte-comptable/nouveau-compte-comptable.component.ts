@@ -5,9 +5,10 @@ import { CompteComptableService } from 'src/app/services/compte-comptable.servic
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
-  selector: 'app-nouveau-compte-comptable',
-  templateUrl: './nouveau-compte-comptable.component.html',
-  styleUrls: ['./nouveau-compte-comptable.component.scss'],
+    selector: 'app-nouveau-compte-comptable',
+    templateUrl: './nouveau-compte-comptable.component.html',
+    styleUrls: ['./nouveau-compte-comptable.component.scss'],
+    standalone: false
 })
 export class NouveauCompteComptableComponent implements OnInit {
   compte: CompteComptable = new CompteComptable();

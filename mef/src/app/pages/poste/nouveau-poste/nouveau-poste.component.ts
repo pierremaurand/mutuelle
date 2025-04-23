@@ -5,9 +5,10 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { PosteService } from 'src/app/services/poste.service';
 
 @Component({
-  selector: 'app-nouveau-poste',
-  templateUrl: './nouveau-poste.component.html',
-  styleUrls: ['./nouveau-poste.component.scss'],
+    selector: 'app-nouveau-poste',
+    templateUrl: './nouveau-poste.component.html',
+    styleUrls: ['./nouveau-poste.component.scss'],
+    standalone: false
 })
 export class NouveauPosteComponent implements OnInit {
   poste: Poste = new Poste();

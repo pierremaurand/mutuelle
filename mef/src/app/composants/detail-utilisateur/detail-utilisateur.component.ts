@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-detail-utilisateur',
-  templateUrl: './detail-utilisateur.component.html',
-  styleUrls: ['./detail-utilisateur.component.scss'],
+    selector: 'app-detail-utilisateur',
+    templateUrl: './detail-utilisateur.component.html',
+    styleUrls: ['./detail-utilisateur.component.scss'],
+    standalone: false
 })
 export class DetailUtilisateurComponent implements OnInit {
   photo: string = '';

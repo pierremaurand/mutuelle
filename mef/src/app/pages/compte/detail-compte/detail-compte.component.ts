@@ -13,10 +13,11 @@ import { CompteService } from 'src/app/services/compte.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-detail-compte',
-  templateUrl: './detail-compte.component.html',
-  styleUrls: ['./detail-compte.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-compte',
+    templateUrl: './detail-compte.component.html',
+    styleUrls: ['./detail-compte.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailCompteComponent implements OnInit {
   @Input()

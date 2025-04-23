@@ -4,9 +4,10 @@ import { SexeList } from 'src/app/models/sexeList';
 import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
-  selector: 'app-page-sexe',
-  templateUrl: './page-sexe.component.html',
-  styleUrls: ['./page-sexe.component.scss'],
+    selector: 'app-page-sexe',
+    templateUrl: './page-sexe.component.html',
+    styleUrls: ['./page-sexe.component.scss'],
+    standalone: false
 })
 export class PageSexeComponent implements OnInit {
   sexes: SexeList[] = [];

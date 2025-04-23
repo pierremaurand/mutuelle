@@ -7,9 +7,10 @@ import { TypeOperation } from 'src/app/models/typeoperation';
 import { CreditService } from 'src/app/services/credit.service';
 
 @Component({
-  selector: 'app-payer-echeances-credits',
-  templateUrl: './payer-echeances-credits.component.html',
-  styleUrls: ['./payer-echeances-credits.component.scss'],
+    selector: 'app-payer-echeances-credits',
+    templateUrl: './payer-echeances-credits.component.html',
+    styleUrls: ['./payer-echeances-credits.component.scss'],
+    standalone: false
 })
 export class PayerEcheancesCreditsComponent implements OnInit {
   @Input()

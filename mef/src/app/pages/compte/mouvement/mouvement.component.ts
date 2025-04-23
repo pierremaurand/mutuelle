@@ -8,10 +8,11 @@ import { Mouvement } from 'src/app/models/mouvement';
 import { TypeOperation } from 'src/app/models/typeoperation';
 
 @Component({
-  selector: 'app-mouvement',
-  templateUrl: './mouvement.component.html',
-  styleUrls: ['./mouvement.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-mouvement',
+    templateUrl: './mouvement.component.html',
+    styleUrls: ['./mouvement.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MouvementComponent implements OnInit {
   @Input()

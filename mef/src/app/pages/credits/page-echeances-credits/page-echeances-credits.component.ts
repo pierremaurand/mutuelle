@@ -8,10 +8,11 @@ import { CreditService } from 'src/app/services/credit.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
-  selector: 'app-page-echeances-credits',
-  templateUrl: './page-echeances-credits.component.html',
-  styleUrls: ['./page-echeances-credits.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-echeances-credits',
+    templateUrl: './page-echeances-credits.component.html',
+    styleUrls: ['./page-echeances-credits.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageEcheancesCreditsComponent implements OnInit {
   dateEcheance: string = '';

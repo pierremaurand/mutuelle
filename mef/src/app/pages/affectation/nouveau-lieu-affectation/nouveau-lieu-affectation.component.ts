@@ -5,9 +5,10 @@ import { LieuAffectationService } from 'src/app/services/lieu-affectation.servic
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
-  selector: 'app-nouveau-lieu-affectation',
-  templateUrl: './nouveau-lieu-affectation.component.html',
-  styleUrls: ['./nouveau-lieu-affectation.component.scss'],
+    selector: 'app-nouveau-lieu-affectation',
+    templateUrl: './nouveau-lieu-affectation.component.html',
+    styleUrls: ['./nouveau-lieu-affectation.component.scss'],
+    standalone: false
 })
 export class NouveauLieuAffectationComponent implements OnInit {
   lieuaffectation: LieuAffectation = new LieuAffectation();

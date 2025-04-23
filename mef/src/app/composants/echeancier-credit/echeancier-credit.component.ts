@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { EcheanceCredit } from 'src/app/models/echeanceCredit';
 
 @Component({
-  selector: 'app-echeancier-credit',
-  templateUrl: './echeancier-credit.component.html',
-  styleUrls: ['./echeancier-credit.component.scss'],
+    selector: 'app-echeancier-credit',
+    templateUrl: './echeancier-credit.component.html',
+    styleUrls: ['./echeancier-credit.component.scss'],
+    standalone: false
 })
 export class EcheancierCreditComponent implements OnInit {
   @Input()

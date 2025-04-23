@@ -5,9 +5,10 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
-  selector: 'app-nouveau-sexe',
-  templateUrl: './nouveau-sexe.component.html',
-  styleUrls: ['./nouveau-sexe.component.scss'],
+    selector: 'app-nouveau-sexe',
+    templateUrl: './nouveau-sexe.component.html',
+    styleUrls: ['./nouveau-sexe.component.scss'],
+    standalone: false
 })
 export class NouveauSexeComponent implements OnInit {
   sexe: Sexe = new Sexe();

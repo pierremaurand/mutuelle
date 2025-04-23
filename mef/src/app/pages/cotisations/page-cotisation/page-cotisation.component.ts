@@ -11,10 +11,11 @@ import { MembreService } from 'src/app/services/membre.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
-  selector: 'app-page-cotisation',
-  templateUrl: './page-cotisation.component.html',
-  styleUrls: ['./page-cotisation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-cotisation',
+    templateUrl: './page-cotisation.component.html',
+    styleUrls: ['./page-cotisation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageCotisationComponent implements OnInit {
   membres$!: Observable<Membre[]>;

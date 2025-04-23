@@ -7,10 +7,11 @@ import { CotisationService } from 'src/app/services/cotisation.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-cotisations-membre',
-  templateUrl: './cotisations-membre.component.html',
-  styleUrls: ['./cotisations-membre.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-cotisations-membre',
+    templateUrl: './cotisations-membre.component.html',
+    styleUrls: ['./cotisations-membre.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CotisationsMembreComponent implements OnInit {
   id!: number;

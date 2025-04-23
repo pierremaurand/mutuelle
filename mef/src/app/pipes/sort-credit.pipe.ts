@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortCredit',
+    name: 'sortCredit',
+    standalone: false
 })
 export class SortCreditPipe implements PipeTransform {
   transform(value: Array<any>, args: any[]): any {

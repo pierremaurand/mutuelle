@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { EcheanceCredit } from 'src/app/models/echeanceCredit';
 
 @Component({
-  selector: 'app-decaler-echeances-credits',
-  templateUrl: './decaler-echeances-credits.component.html',
-  styleUrls: ['./decaler-echeances-credits.component.scss'],
+    selector: 'app-decaler-echeances-credits',
+    templateUrl: './decaler-echeances-credits.component.html',
+    styleUrls: ['./decaler-echeances-credits.component.scss'],
+    standalone: false
 })
 export class DecalerEcheancesCreditsComponent implements OnInit {
   @Input()

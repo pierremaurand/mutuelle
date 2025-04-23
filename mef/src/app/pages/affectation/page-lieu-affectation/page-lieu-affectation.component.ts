@@ -4,9 +4,10 @@ import { LieuAffectation } from 'src/app/models/lieuAffectation';
 import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 
 @Component({
-  selector: 'app-page-lieu-affectation',
-  templateUrl: './page-lieu-affectation.component.html',
-  styleUrls: ['./page-lieu-affectation.component.scss'],
+    selector: 'app-page-lieu-affectation',
+    templateUrl: './page-lieu-affectation.component.html',
+    styleUrls: ['./page-lieu-affectation.component.scss'],
+    standalone: false
 })
 export class PageLieuAffectationComponent implements OnInit {
   lieuaffectations: LieuAffectation[] = [];

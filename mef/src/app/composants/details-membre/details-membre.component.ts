@@ -10,9 +10,10 @@ import { SexeService } from 'src/app/services/sexe.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-details-membre',
-  templateUrl: './details-membre.component.html',
-  styleUrls: ['./details-membre.component.scss'],
+    selector: 'app-details-membre',
+    templateUrl: './details-membre.component.html',
+    styleUrls: ['./details-membre.component.scss'],
+    standalone: false
 })
 export class DetailsMembreComponent implements OnInit {
   @Input()

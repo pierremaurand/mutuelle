@@ -6,10 +6,11 @@ import { UtilisateurList } from 'src/app/models/utilisateurList';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
-  selector: 'app-page-utilisateur',
-  templateUrl: './page-utilisateur.component.html',
-  styleUrls: ['./page-utilisateur.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-utilisateur',
+    templateUrl: './page-utilisateur.component.html',
+    styleUrls: ['./page-utilisateur.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageUtilisateurComponent implements OnInit {
   utilisateurs$!: Observable<Utilisateur[]>;

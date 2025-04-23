@@ -6,9 +6,10 @@ import { MembreService } from 'src/app/services/membre.service';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
-  selector: 'app-nouvel-utilisateur',
-  templateUrl: './nouvel-utilisateur.component.html',
-  styleUrls: ['./nouvel-utilisateur.component.scss'],
+    selector: 'app-nouvel-utilisateur',
+    templateUrl: './nouvel-utilisateur.component.html',
+    styleUrls: ['./nouvel-utilisateur.component.scss'],
+    standalone: false
 })
 export class NouvelUtilisateurComponent implements OnInit {
   utilisateur!: Utilisateur;

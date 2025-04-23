@@ -19,10 +19,11 @@ import { CreditService } from 'src/app/services/credit.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-nouveau-credit',
-  templateUrl: './nouveau-credit.component.html',
-  styleUrls: ['./nouveau-credit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-nouveau-credit',
+    templateUrl: './nouveau-credit.component.html',
+    styleUrls: ['./nouveau-credit.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NouveauCreditComponent implements OnInit {
   membre: Membre = new Membre();

@@ -4,9 +4,10 @@ import { Poste } from 'src/app/models/poste';
 import { PosteService } from 'src/app/services/poste.service';
 
 @Component({
-  selector: 'app-detail-poste',
-  templateUrl: './detail-poste.component.html',
-  styleUrls: ['./detail-poste.component.scss'],
+    selector: 'app-detail-poste',
+    templateUrl: './detail-poste.component.html',
+    styleUrls: ['./detail-poste.component.scss'],
+    standalone: false
 })
 export class DetailPosteComponent implements OnInit {
   @Input()

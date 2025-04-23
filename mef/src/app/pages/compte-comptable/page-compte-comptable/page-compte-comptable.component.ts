@@ -4,9 +4,10 @@ import { CompteComptable } from 'src/app/models/comptecomptable';
 import { CompteComptableService } from 'src/app/services/compte-comptable.service';
 
 @Component({
-  selector: 'app-page-compte-comptable',
-  templateUrl: './page-compte-comptable.component.html',
-  styleUrls: ['./page-compte-comptable.component.scss'],
+    selector: 'app-page-compte-comptable',
+    templateUrl: './page-compte-comptable.component.html',
+    styleUrls: ['./page-compte-comptable.component.scss'],
+    standalone: false
 })
 export class PageCompteComptableComponent implements OnInit {
   comptes: CompteComptable[] = [];

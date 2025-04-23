@@ -19,10 +19,11 @@ import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
-  selector: 'app-detail-cotisation',
-  templateUrl: './detail-cotisation.component.html',
-  styleUrls: ['./detail-cotisation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-cotisation',
+    templateUrl: './detail-cotisation.component.html',
+    styleUrls: ['./detail-cotisation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailCotisationComponent implements OnInit {
   @Input()

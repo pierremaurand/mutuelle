@@ -10,10 +10,11 @@ import { MembreService } from 'src/app/services/membre.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
-  selector: 'app-page-credit',
-  templateUrl: './page-credit.component.html',
-  styleUrls: ['./page-credit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-credit',
+    templateUrl: './page-credit.component.html',
+    styleUrls: ['./page-credit.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageCreditComponent implements OnInit {
   loading$!: Observable<boolean>;

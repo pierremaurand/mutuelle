@@ -14,10 +14,11 @@ import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-liste-choix-membre',
-  templateUrl: './liste-choix-membre.component.html',
-  styleUrls: ['./liste-choix-membre.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-liste-choix-membre',
+    templateUrl: './liste-choix-membre.component.html',
+    styleUrls: ['./liste-choix-membre.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ListeChoixMembreComponent implements OnInit {
   membres$!: Observable<Membre[]>;

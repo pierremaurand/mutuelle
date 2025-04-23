@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-changer-mot-de-passe',
-  templateUrl: './changer-mot-de-passe.component.html',
-  styleUrls: ['./changer-mot-de-passe.component.scss'],
+    selector: 'app-changer-mot-de-passe',
+    templateUrl: './changer-mot-de-passe.component.html',
+    styleUrls: ['./changer-mot-de-passe.component.scss'],
+    standalone: false
 })
 export class ChangerMotDePasseComponent implements OnInit {
   photo: string = '';

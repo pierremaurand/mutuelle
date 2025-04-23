@@ -10,10 +10,11 @@ import { MembreInfos } from 'src/app/models/membreInfos.model';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-detail-membre',
-  templateUrl: './detail-membre.component.html',
-  styleUrls: ['./detail-membre.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-membre',
+    templateUrl: './detail-membre.component.html',
+    styleUrls: ['./detail-membre.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailMembreComponent {
   @Input()

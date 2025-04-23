@@ -10,10 +10,11 @@ import { Mois } from 'src/app/models/mois';
 import { CotisationService } from 'src/app/services/cotisation.service';
 
 @Component({
-  selector: 'app-cotisation',
-  templateUrl: './cotisation.component.html',
-  styleUrls: ['./cotisation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-cotisation',
+    templateUrl: './cotisation.component.html',
+    styleUrls: ['./cotisation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CotisationComponent implements OnInit {
   @Input()

@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { Menu } from 'src/app/models/menu';
 
 @Component({
-  selector: 'app-menu-lateral',
-  templateUrl: './menu-lateral.component.html',
-  styleUrls: ['./menu-lateral.component.scss'],
+    selector: 'app-menu-lateral',
+    templateUrl: './menu-lateral.component.html',
+    styleUrls: ['./menu-lateral.component.scss'],
+    standalone: false
 })
 export class MenuLateralComponent implements OnInit {
   public menuProperties: Menu[] = [

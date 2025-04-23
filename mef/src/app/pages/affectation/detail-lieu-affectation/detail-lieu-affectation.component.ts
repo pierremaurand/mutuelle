@@ -4,9 +4,10 @@ import { LieuAffectation } from 'src/app/models/lieuAffectation';
 import { LieuAffectationService } from 'src/app/services/lieu-affectation.service';
 
 @Component({
-  selector: 'app-detail-lieu-affectation',
-  templateUrl: './detail-lieu-affectation.component.html',
-  styleUrls: ['./detail-lieu-affectation.component.scss'],
+    selector: 'app-detail-lieu-affectation',
+    templateUrl: './detail-lieu-affectation.component.html',
+    styleUrls: ['./detail-lieu-affectation.component.scss'],
+    standalone: false
 })
 export class DetailLieuAffectationComponent implements OnInit {
   @Input()

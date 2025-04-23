@@ -4,9 +4,10 @@ import { Gabarit } from 'src/app/models/gabarit';
 import { GabaritService } from 'src/app/services/gabarit.service';
 
 @Component({
-  selector: 'app-detail-gabarit',
-  templateUrl: './detail-gabarit.component.html',
-  styleUrls: ['./detail-gabarit.component.scss'],
+    selector: 'app-detail-gabarit',
+    templateUrl: './detail-gabarit.component.html',
+    styleUrls: ['./detail-gabarit.component.scss'],
+    standalone: false
 })
 export class DetailGabaritComponent implements OnInit {
   @Input()

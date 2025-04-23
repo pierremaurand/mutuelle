@@ -4,9 +4,10 @@ import { CompteComptable } from 'src/app/models/comptecomptable';
 import { CompteComptableService } from 'src/app/services/compte-comptable.service';
 
 @Component({
-  selector: 'app-detail-compte-comptable',
-  templateUrl: './detail-compte-comptable.component.html',
-  styleUrls: ['./detail-compte-comptable.component.scss'],
+    selector: 'app-detail-compte-comptable',
+    templateUrl: './detail-compte-comptable.component.html',
+    styleUrls: ['./detail-compte-comptable.component.scss'],
+    standalone: false
 })
 export class DetailCompteComptableComponent implements OnInit {
   @Input()

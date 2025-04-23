@@ -8,10 +8,11 @@ import { CompteService } from 'src/app/services/compte.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-nouveau-compte',
-  templateUrl: './nouveau-compte.component.html',
-  styleUrls: ['./nouveau-compte.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-nouveau-compte',
+    templateUrl: './nouveau-compte.component.html',
+    styleUrls: ['./nouveau-compte.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NouveauCompteComponent implements OnInit {
   id!: number;

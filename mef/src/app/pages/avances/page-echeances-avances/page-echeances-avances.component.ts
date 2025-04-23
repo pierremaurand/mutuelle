@@ -10,10 +10,11 @@ import { EcheanceService } from 'src/app/services/echeance.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-page-echeances-avances',
-  templateUrl: './page-echeances-avances.component.html',
-  styleUrls: ['./page-echeances-avances.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-echeances-avances',
+    templateUrl: './page-echeances-avances.component.html',
+    styleUrls: ['./page-echeances-avances.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageEcheancesAvancesComponent implements OnInit {
   dateEcheance: string = '';

@@ -10,9 +10,10 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { OperationService } from 'src/app/services/operation.service';
 
 @Component({
-  selector: 'app-nouveau-gabarit',
-  templateUrl: './nouveau-gabarit.component.html',
-  styleUrls: ['./nouveau-gabarit.component.scss'],
+    selector: 'app-nouveau-gabarit',
+    templateUrl: './nouveau-gabarit.component.html',
+    styleUrls: ['./nouveau-gabarit.component.scss'],
+    standalone: false
 })
 export class NouveauGabaritComponent implements OnInit {
   gabaritId?: number;

@@ -3,9 +3,10 @@ import { Action } from 'src/app/models/action';
 import { InfosPage } from 'src/app/models/infosPage';
 
 @Component({
-  selector: 'app-bouton-action',
-  templateUrl: './bouton-action.component.html',
-  styleUrls: ['./bouton-action.component.scss'],
+    selector: 'app-bouton-action',
+    templateUrl: './bouton-action.component.html',
+    styleUrls: ['./bouton-action.component.scss'],
+    standalone: false
 })
 export class BoutonActionComponent implements OnInit {
   @Output()

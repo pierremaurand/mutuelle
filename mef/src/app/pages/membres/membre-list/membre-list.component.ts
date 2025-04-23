@@ -9,10 +9,11 @@ import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
-  selector: 'app-membre-list',
-  templateUrl: './membre-list.component.html',
-  styleUrls: ['./membre-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-membre-list',
+    templateUrl: './membre-list.component.html',
+    styleUrls: ['./membre-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MembreListComponent implements OnInit {
   membres$!: Observable<Membre[]>;

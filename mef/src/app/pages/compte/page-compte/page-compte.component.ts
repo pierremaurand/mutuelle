@@ -9,10 +9,11 @@ import { MembreService } from 'src/app/services/membre.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
-  selector: 'app-page-compte',
-  templateUrl: './page-compte.component.html',
-  styleUrls: ['./page-compte.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-compte',
+    templateUrl: './page-compte.component.html',
+    styleUrls: ['./page-compte.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageCompteComponent implements OnInit {
   membres$!: Observable<Membre[]>;

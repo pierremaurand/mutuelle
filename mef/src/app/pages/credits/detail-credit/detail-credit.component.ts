@@ -15,10 +15,11 @@ import { CreditService } from 'src/app/services/credit.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-detail-credit',
-  templateUrl: './detail-credit.component.html',
-  styleUrls: ['./detail-credit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-credit',
+    templateUrl: './detail-credit.component.html',
+    styleUrls: ['./detail-credit.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailCreditComponent implements OnInit {
   @Input()

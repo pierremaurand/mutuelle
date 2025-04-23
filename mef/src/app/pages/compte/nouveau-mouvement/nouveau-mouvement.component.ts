@@ -14,10 +14,11 @@ import { GabaritService } from 'src/app/services/gabarit.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-nouveau-mouvement',
-  templateUrl: './nouveau-mouvement.component.html',
-  styleUrls: ['./nouveau-mouvement.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-nouveau-mouvement',
+    templateUrl: './nouveau-mouvement.component.html',
+    styleUrls: ['./nouveau-mouvement.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NouveauMouvementComponent implements OnInit {
   solde!: number;

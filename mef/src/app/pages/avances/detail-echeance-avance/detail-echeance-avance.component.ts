@@ -17,10 +17,11 @@ import { CompteService } from 'src/app/services/compte.service';
 import { TypeOperation } from 'src/app/models/typeoperation';
 
 @Component({
-  selector: 'app-detail-echeance-avance',
-  templateUrl: './detail-echeance-avance.component.html',
-  styleUrls: ['./detail-echeance-avance.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-echeance-avance',
+    templateUrl: './detail-echeance-avance.component.html',
+    styleUrls: ['./detail-echeance-avance.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailEcheanceAvanceComponent implements OnInit {
   @Input()

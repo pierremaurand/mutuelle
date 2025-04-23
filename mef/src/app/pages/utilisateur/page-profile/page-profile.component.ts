@@ -6,9 +6,10 @@ import { MembreList } from 'src/app/models/membreList';
 import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
-  selector: 'app-page-profile',
-  templateUrl: './page-profile.component.html',
-  styleUrls: ['./page-profile.component.scss'],
+    selector: 'app-page-profile',
+    templateUrl: './page-profile.component.html',
+    styleUrls: ['./page-profile.component.scss'],
+    standalone: false
 })
 export class PageProfileComponent implements OnInit {
   membre: Membre = new Membre();

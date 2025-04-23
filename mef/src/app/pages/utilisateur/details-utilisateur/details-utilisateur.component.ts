@@ -5,9 +5,10 @@ import { Utilisateur } from 'src/app/models/utilisateur';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-details-utilisateur',
-  templateUrl: './details-utilisateur.component.html',
-  styleUrls: ['./details-utilisateur.component.scss'],
+    selector: 'app-details-utilisateur',
+    templateUrl: './details-utilisateur.component.html',
+    styleUrls: ['./details-utilisateur.component.scss'],
+    standalone: false
 })
 export class DetailsUtilisateurComponent implements OnInit {
   @Input()

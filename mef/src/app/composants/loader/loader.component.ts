@@ -9,9 +9,10 @@ import { LoaderState } from 'src/app/models/loader';
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
-  selector: 'app-loader',
-  templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.scss'],
+    selector: 'app-loader',
+    templateUrl: './loader.component.html',
+    styleUrls: ['./loader.component.scss'],
+    standalone: false
 })
 export class LoaderComponent implements OnInit, OnDestroy {
   show = false;

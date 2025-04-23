@@ -10,10 +10,11 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-entete',
-  templateUrl: './entete.component.html',
-  styleUrls: ['./entete.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-entete',
+    templateUrl: './entete.component.html',
+    styleUrls: ['./entete.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class EnteteComponent implements OnInit {
   membre$!: Observable<Membre>;

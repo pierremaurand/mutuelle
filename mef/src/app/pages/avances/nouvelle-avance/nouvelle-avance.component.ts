@@ -30,10 +30,11 @@ import { Echeance } from 'src/app/models/echeance.model';
 import { TypeOperation } from 'src/app/models/typeoperation';
 
 @Component({
-  selector: 'app-nouvelle-avance',
-  templateUrl: './nouvelle-avance.component.html',
-  styleUrls: ['./nouvelle-avance.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-nouvelle-avance',
+    templateUrl: './nouvelle-avance.component.html',
+    styleUrls: ['./nouvelle-avance.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NouvelleAvanceComponent implements OnInit {
   echeancier: Echeance[] = [];

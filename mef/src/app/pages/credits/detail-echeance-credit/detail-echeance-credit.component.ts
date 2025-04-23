@@ -17,10 +17,11 @@ import { MembreService } from 'src/app/services/membre.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-detail-echeance-credit',
-  templateUrl: './detail-echeance-credit.component.html',
-  styleUrls: ['./detail-echeance-credit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-detail-echeance-credit',
+    templateUrl: './detail-echeance-credit.component.html',
+    styleUrls: ['./detail-echeance-credit.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DetailEcheanceCreditComponent implements OnInit {
   @Input()

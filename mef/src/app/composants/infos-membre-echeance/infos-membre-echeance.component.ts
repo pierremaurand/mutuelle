@@ -9,10 +9,11 @@ import { MembreInfos } from 'src/app/models/membreInfos.model';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-infos-membre-echeance',
-  templateUrl: './infos-membre-echeance.component.html',
-  styleUrls: ['./infos-membre-echeance.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-infos-membre-echeance',
+    templateUrl: './infos-membre-echeance.component.html',
+    styleUrls: ['./infos-membre-echeance.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class InfosMembreEcheanceComponent implements OnInit {
   @Input()

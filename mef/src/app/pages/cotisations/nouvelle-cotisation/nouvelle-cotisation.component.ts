@@ -13,10 +13,11 @@ import { CotisationService } from 'src/app/services/cotisation.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-nouvelle-cotisation',
-  templateUrl: './nouvelle-cotisation.component.html',
-  styleUrls: ['./nouvelle-cotisation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-nouvelle-cotisation',
+    templateUrl: './nouvelle-cotisation.component.html',
+    styleUrls: ['./nouvelle-cotisation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NouvelleCotisationComponent implements OnInit {
   id!: number;

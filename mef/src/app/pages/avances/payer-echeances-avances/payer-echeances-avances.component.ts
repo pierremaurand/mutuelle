@@ -9,9 +9,10 @@ import { AvanceService } from 'src/app/services/avance.service';
 import { CompteService } from 'src/app/services/compte.service';
 
 @Component({
-  selector: 'app-payer-echeances-avances',
-  templateUrl: './payer-echeances-avances.component.html',
-  styleUrls: ['./payer-echeances-avances.component.scss'],
+    selector: 'app-payer-echeances-avances',
+    templateUrl: './payer-echeances-avances.component.html',
+    styleUrls: ['./payer-echeances-avances.component.scss'],
+    standalone: false
 })
 export class PayerEcheancesAvancesComponent implements OnInit {
   @Input()

@@ -17,10 +17,11 @@ import { Mouvement } from 'src/app/models/mouvement';
 import { TypeOperation } from 'src/app/models/typeoperation';
 
 @Component({
-  selector: 'app-infos-avance',
-  templateUrl: './infos-avance.component.html',
-  styleUrls: ['./infos-avance.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-infos-avance',
+    templateUrl: './infos-avance.component.html',
+    styleUrls: ['./infos-avance.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class InfosAvanceComponent implements OnInit {
   @Input()

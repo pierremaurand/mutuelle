@@ -4,9 +4,10 @@ import { Sexe } from 'src/app/models/sexe';
 import { SexeService } from 'src/app/services/sexe.service';
 
 @Component({
-  selector: 'app-detail-sexe',
-  templateUrl: './detail-sexe.component.html',
-  styleUrls: ['./detail-sexe.component.scss'],
+    selector: 'app-detail-sexe',
+    templateUrl: './detail-sexe.component.html',
+    styleUrls: ['./detail-sexe.component.scss'],
+    standalone: false
 })
 export class DetailSexeComponent implements OnInit {
   @Input()

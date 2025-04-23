@@ -15,10 +15,11 @@ import { SexeService } from 'src/app/services/sexe.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-accueil',
+    templateUrl: './accueil.component.html',
+    styleUrls: ['./accueil.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AccueilComponent implements OnInit {
   constructor(

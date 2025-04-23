@@ -28,9 +28,10 @@ import { SexeService } from 'src/app/services/sexe.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-nouveau-membre',
-  templateUrl: './nouveau-membre.component.html',
-  styleUrls: ['./nouveau-membre.component.scss'],
+    selector: 'app-nouveau-membre',
+    templateUrl: './nouveau-membre.component.html',
+    styleUrls: ['./nouveau-membre.component.scss'],
+    standalone: false
 })
 export class NouveauMembreComponent implements OnInit {
   errors: string[] = [];

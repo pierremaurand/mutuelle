@@ -17,10 +17,11 @@ import { environment } from 'src/environments/environment';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-infos-membre',
-  templateUrl: './infos-membre.component.html',
-  styleUrls: ['./infos-membre.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-infos-membre',
+    templateUrl: './infos-membre.component.html',
+    styleUrls: ['./infos-membre.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class InfosMembreComponent implements OnInit {
   @Input()

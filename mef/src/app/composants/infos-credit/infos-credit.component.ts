@@ -10,10 +10,11 @@ import { Credit } from 'src/app/models/credit';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-infos-credit',
-  templateUrl: './infos-credit.component.html',
-  styleUrls: ['./infos-credit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-infos-credit',
+    templateUrl: './infos-credit.component.html',
+    styleUrls: ['./infos-credit.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class InfosCreditComponent implements OnInit {
   @Input()

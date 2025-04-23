@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-page-profil',
-  templateUrl: './page-profil.component.html',
-  styleUrls: ['./page-profil.component.scss'],
+    selector: 'app-page-profil',
+    templateUrl: './page-profil.component.html',
+    styleUrls: ['./page-profil.component.scss'],
+    standalone: false
 })
 export class PageProfilComponent implements OnInit {
   photo: string = '';

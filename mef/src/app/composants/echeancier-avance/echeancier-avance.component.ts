@@ -3,9 +3,10 @@ import { Echeance } from 'src/app/models/echeance.model';
 import { EcheanceAvance } from 'src/app/models/echeanceAvance';
 
 @Component({
-  selector: 'app-echeancier-avance',
-  templateUrl: './echeancier-avance.component.html',
-  styleUrls: ['./echeancier-avance.component.scss'],
+    selector: 'app-echeancier-avance',
+    templateUrl: './echeancier-avance.component.html',
+    styleUrls: ['./echeancier-avance.component.scss'],
+    standalone: false
 })
 export class EcheancierAvanceComponent implements OnInit {
   @Input()

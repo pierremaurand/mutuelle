@@ -14,10 +14,11 @@ import { SexeService } from 'src/app/services/sexe.service';
 import * as xlsx from 'xlsx';
 
 @Component({
-  selector: 'app-import-membres',
-  templateUrl: './import-membres.component.html',
-  styleUrls: ['./import-membres.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-import-membres',
+    templateUrl: './import-membres.component.html',
+    styleUrls: ['./import-membres.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ImportMembresComponent implements OnInit {
   file: any;

@@ -4,9 +4,10 @@ import { Poste } from 'src/app/models/poste';
 import { PosteService } from 'src/app/services/poste.service';
 
 @Component({
-  selector: 'app-page-poste',
-  templateUrl: './page-poste.component.html',
-  styleUrls: ['./page-poste.component.scss'],
+    selector: 'app-page-poste',
+    templateUrl: './page-poste.component.html',
+    styleUrls: ['./page-poste.component.scss'],
+    standalone: false
 })
 export class PagePosteComponent implements OnInit {
   postes: Poste[] = [];

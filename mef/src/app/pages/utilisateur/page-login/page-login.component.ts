@@ -12,9 +12,10 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-page-login',
-  templateUrl: './page-login.component.html',
-  styleUrls: ['./page-login.component.scss'],
+    selector: 'app-page-login',
+    templateUrl: './page-login.component.html',
+    styleUrls: ['./page-login.component.scss'],
+    standalone: false
 })
 export class PageLoginComponent implements OnInit {
   loginReq: LoginReq = new LoginReq();

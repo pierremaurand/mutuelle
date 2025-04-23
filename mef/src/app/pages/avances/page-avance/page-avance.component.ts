@@ -12,10 +12,11 @@ import { DeboursementService } from 'src/app/services/deboursement.service';
 import { MembreService } from 'src/app/services/membre.service';
 
 @Component({
-  selector: 'app-page-avance',
-  templateUrl: './page-avance.component.html',
-  styleUrls: ['./page-avance.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-page-avance',
+    templateUrl: './page-avance.component.html',
+    styleUrls: ['./page-avance.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageAvanceComponent implements OnInit {
   avances$!: Observable<Avance[]>;
