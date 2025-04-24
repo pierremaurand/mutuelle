@@ -11,14 +11,13 @@ import { LieuAffectationService } from 'src/app/services/lieu-affectation.servic
 import { MembreService } from 'src/app/services/membre.service';
 import { PosteService } from 'src/app/services/poste.service';
 import { SexeService } from 'src/app/services/sexe.service';
-import * as xlsx from 'xlsx';
 
 @Component({
-    selector: 'app-import-membres',
-    templateUrl: './import-membres.component.html',
-    styleUrls: ['./import-membres.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'app-import-membres',
+  templateUrl: './import-membres.component.html',
+  styleUrls: ['./import-membres.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class ImportMembresComponent implements OnInit {
   file: any;
@@ -39,22 +38,19 @@ export class ImportMembresComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fileReader.onload = (e) => {
-      this.arrayBuffer = this.fileReader.result;
-      const data = new Uint8Array(this.arrayBuffer);
-      const arr = new Array();
-
-      for (let i = 0; i !== data.length; i++) {
-        arr[i] = String.fromCharCode(data[i]);
-      }
-
-      const bstr = arr.join('');
-      const workbook = xlsx.read(bstr, { type: 'binary', cellDates: true });
-      const first_sheet_name = workbook.SheetNames[0];
-
-      const worksheet = workbook.Sheets[first_sheet_name];
-      this.worksheet = xlsx.utils.sheet_to_json(worksheet, { raw: true });
-    };
+    // this.fileReader.onload = (e) => {
+    //   this.arrayBuffer = this.fileReader.result;
+    //   const data = new Uint8Array(this.arrayBuffer);
+    //   const arr = new Array();
+    //   for (let i = 0; i !== data.length; i++) {
+    //     arr[i] = String.fromCharCode(data[i]);
+    //   }
+    //   const bstr = arr.join('');
+    //   const workbook = xlsx.read(bstr, { type: 'binary', cellDates: true });
+    //   const first_sheet_name = workbook.SheetNames[0];
+    //   const worksheet = workbook.Sheets[first_sheet_name];
+    //   this.worksheet = xlsx.utils.sheet_to_json(worksheet, { raw: true });
+    // };
   }
 
   getFile(event: any): void {

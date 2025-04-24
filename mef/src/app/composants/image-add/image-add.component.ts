@@ -7,15 +7,13 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
-import { UploadImage } from 'src/app/models/uploadImage';
 import { MembreService } from 'src/app/services/membre.service';
-import Swal from 'sweetalert2';
 
 @Component({
-    selector: 'app-image-add',
-    templateUrl: './image-add.component.html',
-    styleUrls: ['./image-add.component.scss'],
-    standalone: false
+  selector: 'app-image-add',
+  templateUrl: './image-add.component.html',
+  styleUrls: ['./image-add.component.scss'],
+  standalone: false,
 })
 export class ImageAddComponent implements OnInit {
   @Input()
