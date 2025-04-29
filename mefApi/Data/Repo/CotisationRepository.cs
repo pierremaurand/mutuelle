@@ -79,7 +79,7 @@ namespace mefApi.Data.Repo
         public async Task<bool> CotisationExists(CotisationDto cotisation)
         {
             if(dc.Cotisations is not null)
-                return await dc.Cotisations.AnyAsync(x => x.MoisId == cotisation.MoisId);
+                return await dc.Cotisations.AnyAsync(x => x.Mois == cotisation.Mois);
             return false;
         }
     }

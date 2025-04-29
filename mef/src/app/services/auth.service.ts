@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginReq } from '../models/loginReq';
@@ -10,7 +15,7 @@ import { UserForRegister } from '../models/user';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService  {
+export class AuthService {
   baseUrl = environment.baseUrl;
   imagesUrl = environment.imagesUrl;
 
@@ -33,10 +38,7 @@ export class AuthService  {
   }
 
   authUser(loginReq: LoginReq): Observable<LoginRes> {
-    return this.http.post<LoginRes>(
-      this.baseUrl + '/utilisateur/login',
-      loginReq
-    );
+    return this.http.post<LoginRes>(this.baseUrl + '/auth/login', loginReq);
   }
 
   registerUser(user: UserForRegister) {
@@ -48,10 +50,8 @@ export class AuthService  {
   }
 
   setInfosUser(loginRes: LoginRes): void {
-    localStorage.setItem('userName', loginRes.nom);
-    localStorage.setItem('id', loginRes.id.toString());
-    // localStorage.setItem('membreId', loginRes.membreId.toString());
     localStorage.setItem('token', loginRes.token);
+    localStorage.setItem('refreshToken', loginRes.refreshToken);
   }
 
   getUserId(): number {

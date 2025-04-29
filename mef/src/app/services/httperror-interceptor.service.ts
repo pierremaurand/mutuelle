@@ -1,4 +1,11 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+  HttpResponse,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   catchError,
@@ -82,7 +89,7 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
         return error.statusText;
       }
 
-      if (error.error.erreorMessage && error.status !== 0) {
+      if (error.error.errorMessage && error.status !== 0) {
         errorMessage = error.error.errorMessage;
       }
     }

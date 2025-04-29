@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using mefApi.Dtos;
+using mefapi.Enums;
 
 namespace mefApi.Data.Repo
 {
@@ -111,7 +112,7 @@ namespace mefApi.Data.Repo
             return null;
         }
 
-        public async Task<IEnumerable<Membre>?> GetBySexeAsync(int sexeId)
+        public async Task<IEnumerable<Membre>?> GetBySexeAsync(Sexe sexe)
         {
             if(dc.Membres is not null) {
                 var membres = await dc.Membres
@@ -119,7 +120,7 @@ namespace mefApi.Data.Repo
                 .Include(m => m.Cotisations)
                 .Include(m => m.Avances)
                 .Include(m => m.Credits)
-                .Where(m => m.SexeId == sexeId)
+                .Where(m => m.Sexe == sexe)
                 .ToListAsync();
                 if(membres is not null) {
                     return membres;

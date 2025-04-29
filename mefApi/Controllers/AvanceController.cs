@@ -1,4 +1,5 @@
 using AutoMapper;
+using mefapi.Enums;
 using mefApi.Dtos;
 using mefApi.Enums;
 using mefApi.HubConfig;
@@ -32,51 +33,6 @@ namespace mefApi.Controllers
             return Ok(avancesDto);
         }
 
-        private decimal calculSolde(AvanceInfosDto avance) {
-            decimal solde = 0;
-            if(avance.AvanceDebourse is not null) {
-                solde += avance.AvanceDebourse.MontantApprouve;
-            }
-            if(avance.Mouvements is not null) {
-                foreach(var mvt in avance.Mouvements) {
-                    if(mvt.TypeOperation == TypeOperation.Credit) {
-                        solde -= mvt.Montant;
-                    } 
-                }
-            }
-            return solde;
-        }
-
-        private decimal calculMontantPayeEcheance(EcheanceAvanceDto echeance){
-            decimal solde = 0;
-            if(echeance.Mouvements is not null) {
-                foreach(var mvt in echeance.Mouvements) {
-                    if(mvt.TypeOperation == TypeOperation.Credit) {
-                        solde += mvt.Montant;
-                    }
-                }
-            }
-
-            return solde; 
-        }
-
-        private StatusPret getStatus(AvanceInfosDto avance) {
-            if(avance.AvanceDebourse is null) {
-                return StatusPret.ENREGISTRE;
-            }
-
-            decimal montantAvance = 0; 
-            montantAvance += avance.AvanceDebourse.MontantApprouve;
-            
-            if(avance.Solde == montantAvance) {
-                return StatusPret.DEBOURSE;
-            }
-
-            if(avance.Solde == 0) {
-                return StatusPret.SOLDE;
-            }
-            return StatusPret.ENCOURS;
-        }
 
         [HttpGet("echeances")]
         public async Task<IActionResult> GetEcheances()
@@ -95,45 +51,6 @@ namespace mefApi.Controllers
             
             return Ok();
         }
-
-        [HttpPost("rembourserEcheances")] 
-        public async Task<IActionResult> RembourserEcheances(InfosRbAvanceDto infos)
-        {
-            // foreach(var echeanceDto in infos.Echeancier) {
-            //     var echeance = await uow.EcheanceAvanceRepository.FindByIdAsync(echeanceDto.Id);
-            //     if(echeance is null) {
-            //         return NotFound("Cette échéances n'existe pas");
-            //     }
-
-            //     var avance = await uow.AvanceRepository.FindByIdAsync(echeance.AvanceId);
-            //     if(avance is null) {
-            //         return NotFound("Ce crédit n'existe pas dans la base de données");
-            //     }
-
-            //     var membre = await uow.MembreRepository.FindByIdAsync(avance.MembreId);
-            //     if(membre is null) {
-            //         return NotFound("Ce membre n'existe pas dans la base de données");
-            //     }
-
-            //     // MOUVEMENT DE REMBOURSEMENT CREDIT
-            //     var mouvement = new Mouvement();
-            //     mouvement.Avance = avance;
-            //     mouvement.Membre = membre;
-            //     mouvement.DateMvt = infos.DateMouvement;
-            //     mouvement.TypeOperation = TypeOperation.Credit;
-            //     mouvement.GabaritId = 1;
-            //     mouvement.Libelle = "Remboursement écheance avance N° " + echeance.AvanceId + " du " + echeance.DateEcheance;
-            //     mouvement.Montant = echeanceDto.Montant;
-            //     mouvement.ModifiePar = GetUserId();
-            //     mouvement.ModifieLe = DateTime.Now;
-            //     mouvement.EcheanceAvance = echeance;
-            //     uow.MouvementRepository.Add(mouvement);
-            // }
-            // await uow.SaveAsync();
-            await signalrHub.Clients.All.SendAsync("AvanceAdded");
-            return StatusCode(201);
-        }
-
 
         [HttpPost("add")]
         public async Task<IActionResult> Add(AvanceDto avanceDto)

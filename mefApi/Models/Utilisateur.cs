@@ -1,14 +1,18 @@
+using mefapi.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
 {
     public class Utilisateur : BaseEntity
     {
-        public string NomUtilisateur { get; set; } = string.Empty;
+        [Required]
+        public string? NomUtilisateur { get; set; }
+        [Required]
         public byte[]? MotDePasse { get; set; }
+        [Required]
         public byte[]? ClesMotDePasse { get; set; }
-        public int? MembreId { get; set; }
-        public Membre? Membre { get; set; }
+        [Required]
         public TypeUtilisateur? Type { get; set; } 
+        public string? Photo { get; set; }
     }
 }

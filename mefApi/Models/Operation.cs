@@ -1,3 +1,4 @@
+using mefapi.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models

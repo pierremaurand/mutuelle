@@ -36,7 +36,7 @@ namespace mefApi.Controllers
             return Ok(utilisateursDto);
         }
 
-        [HttpGet("get/{id}")]
+        [HttpGet("utilisateur/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
@@ -67,9 +67,6 @@ namespace mefApi.Controllers
                
 
             var loginResDto = new LoginResDto();
-            loginResDto.Nom = utilisateur.NomUtilisateur;
-            loginResDto.Id = utilisateur.Id;
-            loginResDto.MembreId = utilisateur.MembreId;
             loginResDto.Token = CreateJWT(utilisateur);
 
             return Ok(loginResDto);
@@ -95,9 +92,6 @@ namespace mefApi.Controllers
                
 
             var loginResDto = new LoginResDto();
-            loginResDto.Nom = utilisateur.NomUtilisateur;
-            loginResDto.Id = utilisateur.Id;
-            loginResDto.MembreId = utilisateur.MembreId;
             loginResDto.Token = CreateJWT(utilisateur);
 
             return Ok(loginResDto);
@@ -158,7 +152,7 @@ namespace mefApi.Controllers
             return StatusCode(200);
         }
 
-        [HttpPut("changePassword")]
+        /*[HttpPut("changePassword")]
         public async Task<IActionResult> changePassword(InfosPassword infos) {
             if(!ModelState.IsValid || infos.Password != infos.ConfirmPassword) {
                 return BadRequest("Changement de mot de passe impossible!");
@@ -184,7 +178,7 @@ namespace mefApi.Controllers
             utilisateur.ModifieLe = DateTime.Now;
             await uow.SaveAsync();
             return StatusCode(200);
-        }
+        }*/
 
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id,UtilisateurDto utilisateurDto)

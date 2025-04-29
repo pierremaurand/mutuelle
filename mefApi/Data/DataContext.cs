@@ -1,3 +1,4 @@
+using mefapi.Enums;
 using mefApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,8 +25,6 @@ namespace mefApi.Data
         public DbSet<Gabarit>? Gabarits { get; set; } 
         public DbSet<LieuAffectation>? LieuAffectations { get; set; }  
         public DbSet<Operation>? Operations { get; set; }  
-        public DbSet<Poste>? Postes { get; set; } 
-        public DbSet<Sexe>? Sexes { get; set; }      
-        public DbSet<Mois>? Mois { get; set; }          
+        public DbSet<Poste>? Postes { get; set; }            
     }
 }

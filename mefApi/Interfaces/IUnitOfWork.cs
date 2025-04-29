@@ -4,7 +4,6 @@ namespace mefApi.Interfaces
 {
     public interface IUnitOfWork
     {
-        ISexeRepository SexeRepository { get; }
         IPosteRepository PosteRepository { get; }
         ILieuAffectationRepository LieuAffectationRepository { get; }
         IMembreRepository MembreRepository { get; }
@@ -13,7 +12,6 @@ namespace mefApi.Interfaces
         IOperationRepository OperationRepository { get; }
         ICompteRepository CompteRepository { get; }
         ICotisationRepository CotisationRepository { get; }
-        IMoisRepository MoisRepository { get; }
         IAvanceRepository AvanceRepository { get; }
         IDeboursementRepository DeboursementRepository { get; }
         ICreditRepository CreditRepository { get; }

@@ -5,6 +5,7 @@ using mefApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using mefApi.HubConfig;
+using mefapi.Enums;
 
 namespace mefApi.Controllers
 {
@@ -21,10 +22,10 @@ namespace mefApi.Controllers
             this.signalrHub = signalrHub;
         }
 
-        [HttpPost("addCotisation/{id}")]
-        public async Task<IActionResult> AddCotisations(int id,CotisationDto cotisationDto)
+        [HttpPost("cotisation")]
+        public async Task<IActionResult> AddCotisations(CotisationDto cotisationDto)
         {
-            var membre = await uow.MembreRepository.FindByIdAsync(id);
+            var membre = await uow.MembreRepository.FindByIdAsync(cotisationDto.MembreId);
 
             if(membre is null) {
                 return NotFound("Ce membre n'existe pas");
@@ -42,26 +43,18 @@ namespace mefApi.Controllers
             uow.CotisationRepository.Add(cotisation);
             await uow.SaveAsync();
 
-            var mois = await uow.MoisRepository.FindAsync(cotisation.MoisId);
-            var dateMvt = cotisation.Annee + "-" + "01" + "-25";
-            if(mois is not null && mois.Valeur is not null) {
-                dateMvt = cotisation.Annee + "-" + mois.Valeur + "-25";
-            }
+            var dateMvt = cotisation.Annee + "-" + getMois(cotisation.Mois)+ "-25";
 
             // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
             var mouvement = new Mouvement();
             mouvement.Cotisation = cotisation;
             mouvement.Membre = membre;
-            var libelle = "Cotisation du 01/" + cotisation.Annee;
-            if(mois is not null) {
-                libelle = "Cotisation du " + mois.Valeur + "/" + cotisation.Annee;
-            }
+            var libelle = "Cotisation du " + getMois(cotisation.Mois) + cotisation.Annee;
+        
             mouvement.DateMvt = dateMvt;
-            mouvement.TypeOperation = TypeOperation.Credit;
+            mouvement.TypeOperation = TypeOperation.CREDIT;
             mouvement.Libelle = libelle;
-            if (cotisation.Montant != 0){
-                mouvement.Montant = cotisation.Montant;
-            }
+            mouvement.Montant = cotisation.Montant != 0 ? cotisation.Montant : 0;
             mouvement.ModifiePar = GetUserId();
             mouvement.ModifieLe = DateTime.Now;
             uow.MouvementRepository.Add(mouvement);
@@ -71,12 +64,9 @@ namespace mefApi.Controllers
             mouvement = new Mouvement();
             mouvement.Cotisation = cotisation;
             mouvement.Membre = membre;
-            libelle = "Cotisation du 01/" + cotisation.Annee;
-            if(mois is not null) {
-                libelle = "Retenu des 10% sur cotisation du  " + mois.Valeur + "/" + cotisation.Annee;
-            }
+            libelle = "Retenu des 10% sur cotisation du " + getMois(cotisation.Mois) + cotisation.Annee;
             mouvement.DateMvt = dateMvt;
-            mouvement.TypeOperation = TypeOperation.Debit;
+            mouvement.TypeOperation = TypeOperation.DEBIT;
             mouvement.Libelle = libelle;
             if (cotisation.Montant != 0){
                 mouvement.Montant = (cotisation.Montant * 1) / 10;
@@ -103,52 +93,49 @@ namespace mefApi.Controllers
             return Ok(cotisationsDto);
         }
 
-        private Decimal calculSolde(ICollection<Cotisation>? cotisations) {
-            decimal solde = 0;
-            if(cotisations is not null) {
-                foreach(var cotisation in cotisations) {
-                    solde += cotisation.Montant;
-                }
-            }
-
-            return solde;
-        }
-
-
-        [HttpGet("cotisation/{id}")]
-        public async Task<IActionResult> GetAllCotisationsById(int id)
+        private string getMois(Mois mois)
         {
-            var membre = await uow.MembreRepository.FindByIdAsync(id);
-        
-            if(membre is null) {
-                return NotFound("Ce membre n'existe pas");
+            string moisLibelle = "";
+            switch (mois)
+            {
+                case Mois.JANVIER:
+                    moisLibelle = "01";
+                    break;
+                case Mois.FEVRIER:
+                    moisLibelle = "02";
+                    break;
+                case Mois.MARS:
+                    moisLibelle = "03";
+                    break;
+                case Mois.AVRIL:
+                    moisLibelle = "04";
+                    break;
+                case Mois.MAI:
+                    moisLibelle = "05";
+                    break;
+                case Mois.JUIN:
+                    moisLibelle = "06";
+                    break;
+                case Mois.JUILLET:
+                    moisLibelle = "07";
+                    break;
+                case Mois.AOUT:
+                    moisLibelle = "08";
+                    break;
+                case Mois.SEPTEMBRE:
+                    moisLibelle = "09";
+                    break;
+                case Mois.OCTOBRE:
+                    moisLibelle = "10";
+                    break;
+                case Mois.NOVEMBRE:
+                    moisLibelle = "11";
+                    break;
+                case Mois.DECEMBRE:
+                    moisLibelle = "12";
+                    break;
             }
-            
-            var cotisationMembre = mapper.Map<CotisationMembreDto>(membre);
-            cotisationMembre.Solde = calculSolde(membre.Cotisations);
-            return Ok(cotisationMembre);
-        }
-
-        [HttpGet("mois")]
-        public async Task<IActionResult> GetAllMois()
-        {
-            var mois = await uow.MoisRepository.GetAllAsync();
-            if(mois is null) {
-                return NotFound();
-            }
-            var moisDto = mapper.Map<IEnumerable<MoisDto>>(mois);
-            return Ok(moisDto);
-        }
-
-        [HttpGet("get/{id}")]
-        public async Task<IActionResult> Get(int id)
-        {
-            var membre = await uow.MembreRepository.FindByIdAsync(id);
-            if(membre is null) {
-                return NotFound();
-            }
-            var membreDto = mapper.Map<MembreDto>(membre);
-            return Ok(membreDto);
+            return moisLibelle;
         }
 
     }

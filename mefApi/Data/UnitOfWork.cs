@@ -11,10 +11,6 @@ namespace mefApi.Data
         {
             this.dc = dc;
         }
-
-
-        public ISexeRepository SexeRepository =>
-            new SexeRepository(dc);
         
         public IPosteRepository PosteRepository =>
             new PosteRepository(dc);
@@ -58,8 +54,6 @@ namespace mefApi.Data
         public IEcheanceRepository EcheanceRepository =>
             new EcheanceRepository(dc);
 
-        public IMoisRepository MoisRepository =>
-            new MoisRepository(dc);
 
         public IUtilisateurRepository UtilisateurRepository =>
             new UtilisateurRepository(dc);

@@ -110,7 +110,7 @@ namespace mefapi.Migrations
                     b.Property<int?>("ModifiePar")
                         .HasColumnType("int");
 
-                    b.Property<int>("MoisId")
+                    b.Property<int>("Mois")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Montant")
@@ -119,8 +119,6 @@ namespace mefapi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MembreId");
-
-                    b.HasIndex("MoisId");
 
                     b.ToTable("Cotisations");
                 });
@@ -372,7 +370,6 @@ namespace mefapi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Contact")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateAdhesion")
@@ -380,11 +377,9 @@ namespace mefapi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateNaissance")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("EstActif")
@@ -394,7 +389,6 @@ namespace mefapi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LieuNaissance")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ModifieLe")
@@ -408,13 +402,12 @@ namespace mefapi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PosteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SexeId")
+                    b.Property<int>("Sexe")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -423,38 +416,7 @@ namespace mefapi.Migrations
 
                     b.HasIndex("PosteId");
 
-                    b.HasIndex("SexeId");
-
                     b.ToTable("Membres");
-                });
-
-            modelBuilder.Entity("mefApi.Models.Mois", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Libelle")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Valeur")
-                        .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Mois");
                 });
 
             modelBuilder.Entity("mefApi.Models.Mouvement", b =>
@@ -586,33 +548,6 @@ namespace mefapi.Migrations
                     b.ToTable("Postes");
                 });
 
-            modelBuilder.Entity("mefApi.Models.Sexe", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Symbole")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sexes");
-                });
-
             modelBuilder.Entity("mefApi.Models.Utilisateur", b =>
                 {
                     b.Property<int>("Id")
@@ -622,10 +557,8 @@ namespace mefapi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<byte[]>("ClesMotDePasse")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
-
-                    b.Property<int?>("MembreId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
@@ -634,20 +567,20 @@ namespace mefapi.Migrations
                         .HasColumnType("int");
 
                     b.Property<byte[]>("MotDePasse")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("NomUtilisateur")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Type")
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MembreId")
-                        .IsUnique()
-                        .HasFilter("[MembreId] IS NOT NULL");
 
                     b.ToTable("Utilisateurs");
                 });
@@ -677,15 +610,7 @@ namespace mefapi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("mefApi.Models.Mois", "Mois")
-                        .WithMany()
-                        .HasForeignKey("MoisId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Membre");
-
-                    b.Navigation("Mois");
                 });
 
             modelBuilder.Entity("mefApi.Models.Credit", b =>
@@ -775,17 +700,9 @@ namespace mefapi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("mefApi.Models.Sexe", "Sexe")
-                        .WithMany()
-                        .HasForeignKey("SexeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("LieuAffectation");
 
                     b.Navigation("Poste");
-
-                    b.Navigation("Sexe");
                 });
 
             modelBuilder.Entity("mefApi.Models.Mouvement", b =>
@@ -854,15 +771,6 @@ namespace mefapi.Migrations
                     b.Navigation("Gabarit");
                 });
 
-            modelBuilder.Entity("mefApi.Models.Utilisateur", b =>
-                {
-                    b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithOne("Utilisateur")
-                        .HasForeignKey("mefApi.Models.Utilisateur", "MembreId");
-
-                    b.Navigation("Membre");
-                });
-
             modelBuilder.Entity("mefApi.Models.Avance", b =>
                 {
                     b.Navigation("Echeancier");
@@ -905,8 +813,6 @@ namespace mefapi.Migrations
                     b.Navigation("Credits");
 
                     b.Navigation("Mouvements");
-
-                    b.Navigation("Utilisateur");
                 });
 #pragma warning restore 612, 618
         }

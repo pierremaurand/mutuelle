@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   OnInit,
@@ -9,10 +10,10 @@ import { LoaderState } from 'src/app/models/loader';
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
-    selector: 'app-loader',
-    templateUrl: './loader.component.html',
-    styleUrls: ['./loader.component.scss'],
-    standalone: false
+  selector: 'app-loader',
+  imports: [CommonModule],
+  templateUrl: './loader.component.html',
+  styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent implements OnInit, OnDestroy {
   show = false;

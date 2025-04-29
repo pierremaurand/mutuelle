@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 using mefApi.Dtos;
 using mefApi.Interfaces;
 using mefApi.Models;
@@ -35,7 +33,7 @@ namespace mefApi.Data.Repo
         public async Task<bool> UtilisateurExists(UtilisateurDto user)
         {
             if(dc.Utilisateurs is not null)
-                return await dc.Utilisateurs.AnyAsync(x => x.NomUtilisateur == user.NomUtilisateur || x.MembreId == user.MembreId);
+                return await dc.Utilisateurs.AnyAsync(x => x.NomUtilisateur == user.NomUtilisateur);
             return false;
         }
 
@@ -43,7 +41,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.Utilisateurs is not null) {
                 var utilisateur = await dc.Utilisateurs
-                .Include(s => s.Membre)
                 .Where(s => s.Id == id)
                 .FirstAsync();
                 if(utilisateur is not null) {

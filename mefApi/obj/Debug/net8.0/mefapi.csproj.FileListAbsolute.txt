@@ -153,3 +153,4 @@ D:\MesProjets\mutuelle\mefapi\obj\Debug\net8.0\refint\mefapi.dll
 D:\MesProjets\mutuelle\mefapi\obj\Debug\net8.0\mefapi.pdb
 D:\MesProjets\mutuelle\mefapi\obj\Debug\net8.0\mefapi.genruntimeconfig.cache
 D:\MesProjets\mutuelle\mefapi\obj\Debug\net8.0\ref\mefapi.dll
+D:\MesProjets\mutuelle\mefApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

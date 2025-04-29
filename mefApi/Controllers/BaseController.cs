@@ -11,7 +11,13 @@ namespace mefApi.Controllers
     {
         protected int GetUserId()
         {
-            return int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var nameIdentifierClaim = User?.FindFirst(ClaimTypes.NameIdentifier);
+            if (nameIdentifierClaim == null || string.IsNullOrEmpty(nameIdentifierClaim.Value))
+            {
+                throw new InvalidOperationException("User ID claim is missing or invalid.");
+            }
+
+            return int.Parse(nameIdentifierClaim.Value);
         }
     }
 }

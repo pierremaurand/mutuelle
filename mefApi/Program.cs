@@ -11,11 +11,16 @@ using mefApi.HubConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.ConfigureHostConfiguration(configHost => {
-    configHost.AddEnvironmentVariables(prefix:"MEF_");
-});
-// Add services to the container.
+// Use WebApplicationBuilder.Configuration directly instead of ConfigureHostConfiguration
+var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
+if (string.IsNullOrEmpty(secretKey))
+{
+    throw new InvalidOperationException("The secret key cannot be null or empty. Please check the configuration.");
+}
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+builder.Configuration.AddEnvironmentVariables(prefix: "MEF_");
 
+// Add services to the container.
 builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -36,18 +41,15 @@ var conBuilder = new SqlConnectionStringBuilder(
 conBuilder.Password = builder.Configuration.GetSection("DBPassword").Value;
 var connectionString = conBuilder.ConnectionString;
 
-builder.Services.AddDbContext<DataContext>(options => 
+builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-var secretKey = builder.Configuration.GetSection("AppSettings:Key").Value;
-var key = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(secretKey));
-                
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(opt => {
-        opt.TokenValidationParameters = new TokenValidationParameters 
+    .AddJwtBearer(opt =>
+    {
+        opt.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
             ValidateIssuer = false,

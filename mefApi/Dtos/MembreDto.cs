@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using mefapi.Enums;
 
 namespace mefApi.Dtos
 {
@@ -8,7 +9,7 @@ namespace mefApi.Dtos
         [Required(ErrorMessage = "Le Nom est obligatoire")]
         public string? Nom { get; set; } 
         [Required(ErrorMessage = "Le Sexe est obligatoire")]
-        public int? SexeId { get; set; }
+        public Sexe Sexe { get; set; }
         [Required(ErrorMessage = "Le Poste est obligatoire")]
         public int? PosteId { get; set; } 
         [Required(ErrorMessage = "Le Lieu d'affectation est obligatoire")]

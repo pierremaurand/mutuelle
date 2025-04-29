@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using Microsoft.AspNetCore.SignalR;
 using mefApi.HubConfig;
 using Microsoft.AspNetCore.Authorization;
+using System.Runtime.Versioning;
 
 namespace mefApi.Controllers
 {
@@ -25,7 +26,6 @@ namespace mefApi.Controllers
         }
 
         [HttpGet("membres")]
-        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var membres = await uow.MembreRepository.GetAllAsync();
@@ -36,8 +36,8 @@ namespace mefApi.Controllers
             return Ok(membresDto);
         }
 
-        [HttpGet("get/{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("membre/{id}")]
+        public async Task<IActionResult> GetMembre(int id)
         {
             var membre = await uow.MembreRepository.FindByIdAsync(id);
             if(membre is null) {
@@ -47,18 +47,8 @@ namespace mefApi.Controllers
             return Ok(membreDto);
         }
 
-        [HttpGet("get/infos/{id}")]
-        public async Task<IActionResult> GetInfos(int id)
-        {
-            var membre = await uow.MembreRepository.FindByIdAsync(id);
-            if(membre is null) {
-                return NotFound();
-            }
-            var membreDto = mapper.Map<MembreInfosDto>(membre);
-            return Ok(membreDto);
-        }
 
-        [HttpPost("add")]
+        [HttpPost("membre")]
         public async Task<IActionResult> Add(MembreDto membreDto)
         {
             var membre = mapper.Map<Membre>(membreDto);
@@ -73,66 +63,55 @@ namespace mefApi.Controllers
             membre.ModifieLe = DateTime.Now;
             uow.MembreRepository.Add(membre);
             await uow.SaveAsync();
-            await signalrHub.Clients.All.SendAsync("MembreAdded");
+            await signalrHub.Clients.All.SendAsync("MembreAdded", mapper.Map<MembreDto>(membre));
             return StatusCode(201);
         }
 
-        [HttpPost("import")] 
-        public async Task<IActionResult> Import(IEnumerable<MembreDto> membresDto) {
-            var membres = mapper.Map<IEnumerable<Membre>>(membresDto);
-
-            foreach (var membre in membres)
+        [SupportedOSPlatform("windows")]
+        [HttpPost("image")]
+        public async Task<IActionResult> AddImage(UploadImage imageDetails)
+        {
+            if (imageDetails.MembreId == 0)
             {
-                
-                membre.ModifiePar = GetUserId();
-                membre.ModifieLe = DateTime.Now;
-                uow.MembreRepository.Add(membre);
+                return BadRequest("Update not allowed");
             }
 
-            await uow.SaveAsync();
-            await signalrHub.Clients.All.SendAsync("MembreAdded");
-            return StatusCode(201);
-        }
-
-        [HttpPost("addImage")]
-        public async Task<IActionResult> AddImage(UploadImage imageDetails)
-        {   
-            if(imageDetails.MembreId == 0){
-                return BadRequest("Update not allowed");
-            } 
-        
             var membreFromDb = await uow.MembreRepository.FindByIdAsync(imageDetails.MembreId);
-            
-            if(membreFromDb == null) 
+
+            if (membreFromDb == null)
                 return BadRequest("Update not allowed");
 
-            if(imageDetails.Image is null) {
+            if (imageDetails.Image is null)
+            {
                 return BadRequest("Update not allowed");
             }
 
             byte[] bytes = Convert.FromBase64String(imageDetails.Image);
-            
-            Image image; 
-            using(MemoryStream ms = new MemoryStream(bytes)){
+
+            Image image;
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
                 image = Image.FromStream(ms);
             }
             int i = 0;
-            var imageName = "membre_"+imageDetails.MembreId+"_"+i+"."+imageDetails.Type;
-            while(membreFromDb.Photo.Equals(imageName)){
+            var imageName = "membre_" + imageDetails.MembreId + "_" + i + "." + imageDetails.Type;
+
+            // Fix: Ensure membreFromDb.Photo is not null before calling Equals
+            while (!string.IsNullOrEmpty(membreFromDb.Photo) && membreFromDb.Photo.Equals(imageName))
+            {
                 i += 1;
-                imageName = "membre_"+imageDetails.MembreId+"_"+i+"."+imageDetails.Type;
+                imageName = "membre_" + imageDetails.MembreId + "_" + i + "." + imageDetails.Type;
             }
 
-            image.Save("wwwroot/assets/images/"+imageName, ImageFormat.Png);
+            image.Save("wwwroot/assets/images/" + imageName, ImageFormat.Png);
 
             membreFromDb.Photo = imageName;
             await uow.SaveAsync();
-            var membreUpdated = mapper.Map<MembreInfosDto>(membreFromDb);
-            await signalrHub.Clients.All.SendAsync("MembreAdded");
+            await signalrHub.Clients.All.SendAsync("MembreAdded", mapper.Map<MembreDto>(membreFromDb));
             return StatusCode(201);
         }
 
-        [HttpPut("update/{id}")]
+        [HttpPut("membre/{id}")]
         public async Task<IActionResult> Update(int id,MembreDto membreDto)
         {
             if(id != membreDto.Id) 
@@ -147,16 +126,17 @@ namespace mefApi.Controllers
             membreFromDb.ModifieLe = DateTime.Now;
             mapper.Map(membreDto, membreFromDb);
             await uow.SaveAsync();
-            await signalrHub.Clients.All.SendAsync("MembreAdded");
+            await signalrHub.Clients.All.SendAsync("MembreAdded", mapper.Map<MembreDto>(membreFromDb));
             return StatusCode(201);
         }
 
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteMembre(int id)
         {
+            //Faire quelques vérification avant de supprimer
             uow.MembreRepository.Delete(id);
             await uow.SaveAsync();
-            await signalrHub.Clients.All.SendAsync("MembreAdded");
+            await signalrHub.Clients.All.SendAsync("MembreDeleted", id);
             return Ok(id);
         }
 

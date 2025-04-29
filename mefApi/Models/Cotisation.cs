@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using mefapi.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace mefApi.Models
@@ -6,15 +6,14 @@ namespace mefApi.Models
     public class Cotisation : BaseEntity
     {
         [Required]
-        public int MembreId { get; set; } = 0;
+        public int MembreId { get; set; } 
         public Membre? Membre { get; set; }
         [Required]
-        public int MoisId { get; set; }
-        public Mois? Mois { get; set; }
+        public Mois Mois { get; set; }
         [Required]
-        public int Annee { get; set; } = 0;
+        public int Annee { get; set; } 
         [Required]
-        public decimal Montant { get; set; } = 0;
+        public decimal Montant { get; set; } 
         public ICollection<Mouvement>? Mouvements { get; set; }
     }
 }

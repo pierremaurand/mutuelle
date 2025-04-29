@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using mefApi.Models;
+using mefapi.Enums;
 
 namespace mefApi.Dtos
 {
