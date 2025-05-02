@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable, combineLatest, map, switchMap, take, tap } from 'rxjs';
 import { Membre } from 'src/app/models/membre.model';
 import { Utilisateur } from 'src/app/models/utilisateur';
@@ -10,11 +10,11 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-    selector: 'app-entete',
-    templateUrl: './entete.component.html',
-    styleUrls: ['./entete.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'app-entete',
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './entete.component.html',
+  styleUrls: ['./entete.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EnteteComponent implements OnInit {
   membre$!: Observable<Membre>;

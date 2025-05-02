@@ -1,0 +1,24 @@
+<div class="list-group">
+  <a
+    routerLink="/membres"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+  >
+    <i class="fa-solid fa-gauge-high"></i>&nbsp;Tableau de bord
+  </a>
+  <a
+    routerLink="/membres/liste"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+    ><i class="fa-solid fa-clipboard-list"></i>&nbsp;Les membres</a
+  >
+  <a
+    routerLink="/membres/nouveau"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+    ><i class="fa-solid fa-user-plus"></i>&nbsp;Nouveau membre</a
+  >
+</div>

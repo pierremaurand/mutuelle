@@ -71,12 +71,13 @@ export class AuthService {
   }
 
   isAuthenticateUser(): boolean {
-    const token = localStorage.getItem('token');
-    if (token && !this.tokenExpired(token)) {
-      return true;
-    }
-    this.logout();
-    return false;
+    // const token = localStorage.getItem('token');
+    // if (token && !this.tokenExpired(token)) {
+    //   return true;
+    // }
+    // this.logout();
+    // return false;
+    return true;
   }
 
   private tokenExpired(token: string) {

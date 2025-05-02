@@ -1,0 +1,129 @@
+<div class="p-2">
+  <h2>Informations du membre</h2>
+  <hr />
+  <div class="alert alert-danger mt-2" *ngIf="errorMsg.length">
+    <p class="p-0 m-0" *ngFor="let msg of errorMsg">{{ msg }}</p>
+  </div>
+  <div class="d-flex gap-2">
+    <div class="col-3">
+      <img
+        class="rounded-1"
+        width="100%"
+        [src]="selectedPicture || 'assets/img/default_man.jpg'"
+        alt=""
+      />
+      <div class="mt-2">
+        <input
+          (change)="onFileSelected($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+          accept="image/*"
+          aria-label="Form File"
+        />
+      </div>
+    </div>
+    <div class="col-9 pe-2">
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="nom" class="form-label">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nom"
+            name="nom"
+            placeholder="Nom du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="dateDeNaissance" class="form-label"
+            >Date de Naissance</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="dateDeNaissance"
+            name="dateDeNaissance"
+            placeholder="Date de naissance du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="lieuDeNaissance" class="form-label"
+            >Lieu de naissance</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="lieuDeNaissance"
+            name="lieuDeNaissance"
+            placeholder="Lieu de naissance du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="sexe" class="form-label">Sexe</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sexe"
+            name="sexe"
+            placeholder="Sexe du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="numeroTelephone" class="form-label"
+            >Numéro de téléphone</label
+          >
+          <input
+            type="phone"
+            class="form-control"
+            id="numeroTelephone"
+            name="numeroTelephone"
+            placeholder="Numéro de téléphone du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="adresseEmail" class="form-label">Adresse Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="adresseEmail"
+            name="adresseEmail"
+            placeholder="Adresse Email du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="agence" class="form-label">Lieu d'affectation</label>
+          <input
+            type="text"
+            class="form-control"
+            id="agence"
+            name="agence"
+            placeholder="Lieu d'affectation du membre"
+          />
+        </div>
+        <div class="col-6">
+          <label for="dateAdhesion" class="form-label">Date d'adhésion</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateAdhesion"
+            name="dateAdhesion"
+            placeholder="Date d'adhésion du membre"
+          />
+        </div>
+        <div class="d-flex justify-content-end gap-2 col-12">
+          <button type="submit" class="btn btn-outline-primary">
+            <i class="fas fa-save"></i>&nbsp;Enregistrer
+          </button>
+          <a
+            routerLink="/membres/liste"
+            type="submit"
+            class="btn btn-link btn text-danger"
+          >
+            <i class="fas fa-times"></i>&nbsp;Annuler
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
