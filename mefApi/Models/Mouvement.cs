@@ -18,8 +18,8 @@ namespace mefApi.Models
         public int? GabaritId { get; set; }
         public Gabarit? Gabarit { get; set; } 
 
-        public int MembreId { get; set; }
-        public Membre? Membre { get; set; } 
+       // public int MembreId { get; set; }
+        //public Membre? Membre { get; set; } 
 
         public int? CotisationId { get; set; }
         public Cotisation? Cotisation { get; set; }

@@ -38,9 +38,9 @@ namespace mefapi.Controllers
             }
 
             if (
-                utilisateur.MotDePasse is not null &&
-                utilisateur.ClesMotDePasse is not null &&
-                !MatchPasswordHash(loginReqDto.Password, utilisateur.MotDePasse, utilisateur.ClesMotDePasse)
+                utilisateur.Password is not null &&
+                utilisateur.PasswordKey is not null &&
+                !MatchPasswordHash(loginReqDto.Password, utilisateur.Password, utilisateur.PasswordKey)
             )
             {
                 throw new UnauthorizedAccessException("Le mot de passe est invalide");
@@ -67,9 +67,9 @@ namespace mefapi.Controllers
 
             var claims = new List<Claim>();
 
-            if (!string.IsNullOrEmpty(utilisateur.NomUtilisateur))
+            if (!string.IsNullOrEmpty(utilisateur.Login))
             {
-                claims.Add(new Claim(ClaimTypes.Name, utilisateur.NomUtilisateur));
+                claims.Add(new Claim(ClaimTypes.Name, utilisateur.Login));
             }
 
             claims.Add(new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()));

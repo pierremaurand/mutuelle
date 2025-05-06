@@ -7,8 +7,11 @@ namespace mefApi.Dtos
     {
         public int? Id { get; set; }
         [Required(ErrorMessage ="Le nom d'utilisateur est obligatoire")]
-        public string NomUtilisateur { get; set; } = string.Empty;
-        public int? MembreId { get; set; }
-        public TypeUtilisateur? Type { get; set; } 
+        public string? Login { get; set; }
+        [Required(ErrorMessage = "Le mot de passe est obligatoire")]
+        public string? Password { get; set; }
+        [Required(ErrorMessage = "Le rôle est obligatoire")]
+        public Role? Role { get; set; }
+        public string? Photo { get; set; }
     }
 }

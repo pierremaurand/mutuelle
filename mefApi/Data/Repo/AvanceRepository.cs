@@ -33,7 +33,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.Avances is not null) {
                 var avance = await dc.Avances
-                .Include(a => a.Membre)
+                //.Include(a => a.Membre)
                 .Include(a => a.Deboursement)
                 .Where(a => a.Id == id)
                 .FirstOrDefaultAsync();
@@ -49,7 +49,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.Avances is not null) {
                 var avances = await dc.Avances
-                .Include(a => a.Membre)
+                //.Include(a => a.Membre)
                 .Include(a => a.Deboursement)
                 .ToListAsync();
                 if(avances is not null) {

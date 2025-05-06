@@ -22,6 +22,28 @@ namespace mefapi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("mefApi.Models.Agence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Agences");
+                });
+
             modelBuilder.Entity("mefApi.Models.Avance", b =>
                 {
                     b.Property<int>("Id")
@@ -35,9 +57,6 @@ namespace mefapi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("DeboursementId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MembreId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifieLe")
@@ -57,8 +76,6 @@ namespace mefapi.Migrations
                     b.HasIndex("DeboursementId")
                         .IsUnique()
                         .HasFilter("[DeboursementId] IS NOT NULL");
-
-                    b.HasIndex("MembreId");
 
                     b.ToTable("Avances");
                 });
@@ -101,9 +118,6 @@ namespace mefapi.Migrations
                     b.Property<int>("Annee")
                         .HasColumnType("int");
 
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
 
@@ -117,8 +131,6 @@ namespace mefapi.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MembreId");
 
                     b.ToTable("Cotisations");
                 });
@@ -141,9 +153,6 @@ namespace mefapi.Migrations
                     b.Property<int>("DureeSollicite")
                         .HasColumnType("int");
 
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
 
@@ -158,8 +167,6 @@ namespace mefapi.Migrations
                     b.HasIndex("DeboursementId")
                         .IsUnique()
                         .HasFilter("[DeboursementId] IS NOT NULL");
-
-                    b.HasIndex("MembreId");
 
                     b.ToTable("Credits");
                 });
@@ -338,29 +345,6 @@ namespace mefapi.Migrations
                     b.ToTable("Gabarits");
                 });
 
-            modelBuilder.Entity("mefApi.Models.LieuAffectation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Lieu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ModifieLe")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("ModifiePar")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("LieuAffectations");
-                });
-
             modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
                     b.Property<int>("Id")
@@ -368,9 +352,6 @@ namespace mefapi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Contact")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateAdhesion")
                         .IsRequired()
@@ -404,17 +385,15 @@ namespace mefapi.Migrations
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PosteId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Sexe")
                         .HasColumnType("int");
+
+                    b.Property<string>("Telephone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("LieuAffectationId");
-
-                    b.HasIndex("PosteId");
 
                     b.ToTable("Membres");
                 });
@@ -453,9 +432,6 @@ namespace mefapi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MembreId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
 
@@ -484,8 +460,6 @@ namespace mefapi.Migrations
                     b.HasIndex("EcheanceId");
 
                     b.HasIndex("GabaritId");
-
-                    b.HasIndex("MembreId");
 
                     b.ToTable("Mouvements");
                 });
@@ -556,9 +530,9 @@ namespace mefapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<byte[]>("ClesMotDePasse")
+                    b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ModifieLe")
                         .HasColumnType("datetime2");
@@ -566,18 +540,18 @@ namespace mefapi.Migrations
                     b.Property<int?>("ModifiePar")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("MotDePasse")
+                    b.Property<byte[]>("Password")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<string>("NomUtilisateur")
+                    b.Property<byte[]>("PasswordKey")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -591,26 +565,7 @@ namespace mefapi.Migrations
                         .WithOne("Avance")
                         .HasForeignKey("mefApi.Models.Avance", "DeboursementId");
 
-                    b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany("Avances")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Deboursement");
-
-                    b.Navigation("Membre");
-                });
-
-            modelBuilder.Entity("mefApi.Models.Cotisation", b =>
-                {
-                    b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany("Cotisations")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("mefApi.Models.Credit", b =>
@@ -619,15 +574,7 @@ namespace mefapi.Migrations
                         .WithOne("Credit")
                         .HasForeignKey("mefApi.Models.Credit", "DeboursementId");
 
-                    b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany("Credits")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Deboursement");
-
-                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("mefApi.Models.Deboursement", b =>
@@ -688,21 +635,13 @@ namespace mefapi.Migrations
 
             modelBuilder.Entity("mefApi.Models.Membre", b =>
                 {
-                    b.HasOne("mefApi.Models.LieuAffectation", "LieuAffectation")
+                    b.HasOne("mefApi.Models.Agence", "LieuAffectation")
                         .WithMany()
                         .HasForeignKey("LieuAffectationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("mefApi.Models.Poste", "Poste")
-                        .WithMany()
-                        .HasForeignKey("PosteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("LieuAffectation");
-
-                    b.Navigation("Poste");
                 });
 
             modelBuilder.Entity("mefApi.Models.Mouvement", b =>
@@ -731,12 +670,6 @@ namespace mefapi.Migrations
                         .WithMany()
                         .HasForeignKey("GabaritId");
 
-                    b.HasOne("mefApi.Models.Membre", "Membre")
-                        .WithMany("Mouvements")
-                        .HasForeignKey("MembreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Avance");
 
                     b.Navigation("Cotisation");
@@ -748,8 +681,6 @@ namespace mefapi.Migrations
                     b.Navigation("Echeance");
 
                     b.Navigation("Gabarit");
-
-                    b.Navigation("Membre");
                 });
 
             modelBuilder.Entity("mefApi.Models.Operation", b =>
@@ -801,17 +732,6 @@ namespace mefapi.Migrations
 
             modelBuilder.Entity("mefApi.Models.Echeance", b =>
                 {
-                    b.Navigation("Mouvements");
-                });
-
-            modelBuilder.Entity("mefApi.Models.Membre", b =>
-                {
-                    b.Navigation("Avances");
-
-                    b.Navigation("Cotisations");
-
-                    b.Navigation("Credits");
-
                     b.Navigation("Mouvements");
                 });
 #pragma warning restore 612, 618

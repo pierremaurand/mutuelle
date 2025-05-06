@@ -53,7 +53,7 @@ namespace mefApi.Data.Repo
         {
             if(dc.Cotisations is not null) {
                 var cotisations = await dc.Cotisations
-                .Where(c => c.MembreId == membreId)
+                //.Where(c => c.MembreId == membreId)
                 .ToListAsync();
                 if(cotisations is not null) {
                     return cotisations;

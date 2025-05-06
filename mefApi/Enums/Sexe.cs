@@ -2,7 +2,7 @@ namespace mefapi.Enums
 {
     public enum Sexe
     {
-        MASCULIN = 0,
-        FEMININ = 1
+        MMasculin = 0,
+        Feminin = 1,
     }
 }

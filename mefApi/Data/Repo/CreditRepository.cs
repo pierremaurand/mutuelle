@@ -33,7 +33,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.Credits is not null) {
                 var credit = await dc.Credits
-                .Include(c => c.Membre)
                 .Include(c => c.Deboursement)
                 .Where(s => s.Id == id)
                 .FirstAsync();
@@ -49,7 +48,6 @@ namespace mefApi.Data.Repo
         {
             if(dc.Credits is not null) {
                 var credits = await dc.Credits
-                .Include(c => c.Membre)
                 .Include(c => c.Deboursement)
                 .ToListAsync();
                 if(credits is not null) {

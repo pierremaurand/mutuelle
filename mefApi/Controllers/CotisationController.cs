@@ -37,7 +37,7 @@ namespace mefApi.Controllers
 
             // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
             var cotisation = mapper.Map<Cotisation>(cotisationDto);
-            cotisation.Membre = membre;
+            //cotisation.Membre = membre;
             cotisation.ModifiePar = GetUserId();
             cotisation.ModifieLe = DateTime.Now;
             uow.CotisationRepository.Add(cotisation);
@@ -48,7 +48,7 @@ namespace mefApi.Controllers
             // MOUVEMENT D"ENREGISTREMENT DE LA COTISATION DU MOIS
             var mouvement = new Mouvement();
             mouvement.Cotisation = cotisation;
-            mouvement.Membre = membre;
+            //mouvement.Membre = membre;
             var libelle = "Cotisation du " + getMois(cotisation.Mois) + cotisation.Annee;
         
             mouvement.DateMvt = dateMvt;
@@ -63,7 +63,7 @@ namespace mefApi.Controllers
             // RETENU 10%
             mouvement = new Mouvement();
             mouvement.Cotisation = cotisation;
-            mouvement.Membre = membre;
+            //mouvement.Membre = membre;
             libelle = "Retenu des 10% sur cotisation du " + getMois(cotisation.Mois) + cotisation.Annee;
             mouvement.DateMvt = dateMvt;
             mouvement.TypeOperation = TypeOperation.DEBIT;

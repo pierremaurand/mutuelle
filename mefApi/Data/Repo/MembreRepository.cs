@@ -75,61 +75,6 @@ namespace mefApi.Data.Repo
             
            return null;
         }
-
-        public async Task<IEnumerable<Membre>?> GetByEtatAsync(bool estActif)
-        {
-            if(dc.Membres is not null) {
-                var membres = await dc.Membres
-                .Include(m => m.Mouvements)
-                .Include(m => m.Cotisations)
-                .Include(m => m.Avances)
-                .Include(m => m.Credits)
-                .Where(m => m.EstActif == estActif)
-                .ToListAsync();
-                if(membres is not null) {
-                    return membres;
-                }
-            }
-
-            return null;
-        }
-
-        public async Task<IEnumerable<Membre>?> GetByPosteAsync(int posteId)
-        {
-            if(dc.Membres is not null) {
-                var membres = await dc.Membres
-                .Include(m => m.Mouvements)
-                .Include(m => m.Cotisations)
-                .Include(m => m.Avances)
-                .Include(m => m.Credits)
-                .Where(s => s.PosteId == posteId)
-                .ToListAsync();
-                if(membres is not null) {
-                    return membres;
-                }
-            }
-
-            return null;
-        }
-
-        public async Task<IEnumerable<Membre>?> GetBySexeAsync(Sexe sexe)
-        {
-            if(dc.Membres is not null) {
-                var membres = await dc.Membres
-                .Include(m => m.Mouvements)
-                .Include(m => m.Cotisations)
-                .Include(m => m.Avances)
-                .Include(m => m.Credits)
-                .Where(m => m.Sexe == sexe)
-                .ToListAsync();
-                if(membres is not null) {
-                    return membres;
-                }
-            }
-
-            return null;
-        }
-
         public async Task<bool> MembreExists(MembreDto membre)
         {
             if(dc.Membres is not null)

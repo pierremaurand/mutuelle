@@ -15,8 +15,8 @@ namespace mefApi.Data
         public IPosteRepository PosteRepository =>
             new PosteRepository(dc);
 
-        public ILieuAffectationRepository LieuAffectationRepository =>
-            new LieuAffectationRepository(dc);
+        public IAgenceRepository AgenceRepository =>
+            new AgenceRepository(dc);
 
         public IMembreRepository MembreRepository =>
             new MembreRepository(dc);

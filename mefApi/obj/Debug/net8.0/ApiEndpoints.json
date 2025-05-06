@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "mefApi.Controllers.AgenceController",
+    "Method": "GetAll",
+    "RelativePath": "api/Agence/agences",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.AgenceController",
+    "Method": "Add",
+    "RelativePath": "api/Agence/agences",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agenceDto",
+        "Type": "mefApi.Dtos.AgenceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.AgenceController",
+    "Method": "Get",
+    "RelativePath": "api/Agence/agences/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.AgenceController",
+    "Method": "Update",
+    "RelativePath": "api/Agence/agences/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "agenceDto",
+        "Type": "mefApi.Dtos.AgenceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.AgenceController",
+    "Method": "DeleteAgence",
+    "RelativePath": "api/Agence/agences/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "mefapi.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -60,16 +139,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.AvanceController",
-    "Method": "GetEcheances",
-    "RelativePath": "api/Avance/echeances",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -288,16 +357,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "mefApi.Controllers.CreditController",
-    "Method": "GetAllEcheances",
-    "RelativePath": "api/Credit/echeances",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "mefApi.Controllers.DeboursementController",
     "Method": "DeboursementAvance",
     "RelativePath": "api/Deboursement/deboursementavance/{id}",
@@ -459,85 +518,6 @@
       {
         "Name": "gabaritDto",
         "Type": "mefApi.Dtos.GabaritDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.LieuAffectationController",
-    "Method": "Add",
-    "RelativePath": "api/LieuAffectation/add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "lieuaffectationDto",
-        "Type": "mefApi.Dtos.LieuAffectationDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.LieuAffectationController",
-    "Method": "DeleteCompte",
-    "RelativePath": "api/LieuAffectation/delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.LieuAffectationController",
-    "Method": "Get",
-    "RelativePath": "api/LieuAffectation/get/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.LieuAffectationController",
-    "Method": "GetAll",
-    "RelativePath": "api/LieuAffectation/lieuaffectations",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.LieuAffectationController",
-    "Method": "Update",
-    "RelativePath": "api/LieuAffectation/update/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "lieuaffectationDto",
-        "Type": "mefApi.Dtos.LieuAffectationDto",
         "IsRequired": true
       }
     ],
@@ -756,6 +736,32 @@
   },
   {
     "ContainingType": "mefApi.Controllers.UtilisateurController",
+    "Method": "GetAll",
+    "RelativePath": "api/Utilisateur",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.UtilisateurController",
+    "Method": "Get",
+    "RelativePath": "api/Utilisateur/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "mefApi.Controllers.UtilisateurController",
     "Method": "Add",
     "RelativePath": "api/Utilisateur/add",
     "HttpMethod": "POST",
@@ -793,38 +799,6 @@
   },
   {
     "ContainingType": "mefApi.Controllers.UtilisateurController",
-    "Method": "Login",
-    "RelativePath": "api/Utilisateur/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "loginReqDto",
-        "Type": "mefApi.Dtos.LoginReqDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.UtilisateurController",
-    "Method": "Login2",
-    "RelativePath": "api/Utilisateur/login2",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "loginFormDto",
-        "Type": "mefApi.Dtos.LoginFormDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.UtilisateurController",
     "Method": "Update",
     "RelativePath": "api/Utilisateur/update/{id}",
     "HttpMethod": "PUT",
@@ -842,32 +816,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.UtilisateurController",
-    "Method": "Get",
-    "RelativePath": "api/Utilisateur/utilisateur/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "mefApi.Controllers.UtilisateurController",
-    "Method": "GetAll",
-    "RelativePath": "api/Utilisateur/utilisateurs",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

@@ -23,7 +23,7 @@ namespace mefApi.Data
         public DbSet<DetailEcritureComptable>? DetailEcritureComptables { get; set; } 
 
         public DbSet<Gabarit>? Gabarits { get; set; } 
-        public DbSet<LieuAffectation>? LieuAffectations { get; set; }  
+        public DbSet<Agence>? Agences { get; set; }  
         public DbSet<Operation>? Operations { get; set; }  
         public DbSet<Poste>? Postes { get; set; }            
     }

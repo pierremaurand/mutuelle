@@ -1,10 +1,11 @@
 import { RouterOutlet } from '@angular/router';
 import { Component } from '@angular/core';
-import { EnteteComponent } from 'src/app/composants/entete/entete.component';
+import { MenuComponent } from '../../composants/menu/menu.component';
+import { RechercheComponent } from '../../composants/recherche/recherche.component';
 
 @Component({
   selector: 'app-main',
-  imports: [RouterOutlet, EnteteComponent],
+  imports: [RouterOutlet, MenuComponent, RechercheComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })

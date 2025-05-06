@@ -11,6 +11,7 @@ namespace mefApi.Interfaces
         Task<bool> UtilisateurExists(UtilisateurDto user);
         Task<IEnumerable<Utilisateur>?> GetAllAsync();
         Task<Utilisateur?> FindByIdAsync(int id);
-        Task<Utilisateur?> FindByIdAsync(string userName);
+        Task<Utilisateur?> FindByLoginAsync(string login);
+        void Delete(int id);
     }
 }

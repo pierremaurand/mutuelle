@@ -34,10 +34,10 @@ namespace mefApi.Controllers
         }
 
 
-        [HttpGet("echeances")]
+        /*[HttpGet("echeances")]
         public async Task<IActionResult> GetEcheances()
         {
-            // var echeances = await uow.EcheanceAvanceRepository.GetAllAsync();
+            //var echeances = await uow.EcheanceAvanceRepository.GetAllAsync();
             // var echeancesDto = new List<EcheanceAvanceDto>();
             // if(echeances is not null) {
             //     echeancesDto = mapper.Map<List<EcheanceAvanceDto>>(echeances);
@@ -50,7 +50,7 @@ namespace mefApi.Controllers
             // }
             
             return Ok();
-        }
+        }*/
 
         [HttpPost("add")]
         public async Task<IActionResult> Add(AvanceDto avanceDto)
@@ -67,7 +67,7 @@ namespace mefApi.Controllers
 
             avance.ModifiePar = GetUserId();
             avance.ModifieLe = DateTime.Now;
-            avance.Membre = membre;
+            //avance.Membre = membre;
             uow.AvanceRepository.Add(avance);
 
             await uow.SaveAsync();

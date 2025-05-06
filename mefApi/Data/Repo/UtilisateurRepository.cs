@@ -17,7 +17,7 @@ namespace mefApi.Data.Repo
         public async Task<Utilisateur?> Authenticate(string login)
         {
             if(dc.Utilisateurs is not null)
-                return await dc.Utilisateurs.FirstOrDefaultAsync(u => u.NomUtilisateur == login);
+                return await dc.Utilisateurs.FirstOrDefaultAsync(u => u.Login == login);
 
             return null;
         }
@@ -33,7 +33,7 @@ namespace mefApi.Data.Repo
         public async Task<bool> UtilisateurExists(UtilisateurDto user)
         {
             if(dc.Utilisateurs is not null)
-                return await dc.Utilisateurs.AnyAsync(x => x.NomUtilisateur == user.NomUtilisateur);
+                return await dc.Utilisateurs.AnyAsync(x => x.Login == user.Login);
             return false;
         }
 
@@ -52,20 +52,6 @@ namespace mefApi.Data.Repo
         }
 
 
-        public async Task<Utilisateur?> FindByIdAsync(string userName)
-        {
-            if(dc.Utilisateurs is not null) {
-                var utilisateur = await dc.Utilisateurs
-                .Where(s => s.NomUtilisateur == userName)
-                .FirstAsync();
-                if(utilisateur is not null) {
-                    return utilisateur;
-                }
-            }
-
-            return null;
-        }
-
         public async Task<IEnumerable<Utilisateur>?> GetAllAsync()
         {
             if(dc.Utilisateurs is not null) {
@@ -76,6 +62,27 @@ namespace mefApi.Data.Repo
                 }
             }
             return null;
+        }
+
+        public async Task<Utilisateur?> FindByLoginAsync(string login)
+        {
+            if (dc.Utilisateurs is not null)
+            {
+                var utilisateur = await dc.Utilisateurs
+                .Where(s => s.Login == login)
+                .FirstAsync();
+                if (utilisateur is not null)
+                {
+                    return utilisateur;
+                }
+            }
+
+            return null;
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

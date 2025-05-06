@@ -5,7 +5,7 @@ namespace mefApi.Interfaces
     public interface IUnitOfWork
     {
         IPosteRepository PosteRepository { get; }
-        ILieuAffectationRepository LieuAffectationRepository { get; }
+        IAgenceRepository AgenceRepository { get; }
         IMembreRepository MembreRepository { get; }
         ICompteComptableRepository CompteComptableRepository { get; }
         IGabaritRepository GabaritRepository { get; }

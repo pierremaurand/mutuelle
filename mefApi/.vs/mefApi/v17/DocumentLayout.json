@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "D:\\MesProjets\\mutuelle\\mefApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\extensions\\stringextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:extensions\\stringextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\errors\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:errors\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\dtos\\loginresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:dtos\\loginresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\data\\repo\\utilisateurrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:data\\repo\\utilisateurrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\interfaces\\iutilisateurrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:interfaces\\iutilisateurrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\models\\membre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:models\\membre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\dtos\\utilisateurdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:dtos\\utilisateurdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\models\\agence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:models\\agence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\controllers\\utilisateurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:controllers\\utilisateurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\controllers\\creditcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:controllers\\creditcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|d:\\mesprojets\\mutuelle\\mefapi\\controllers\\avancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2E5DA0-5B62-6D8D-7A0F-77F28F2D0B28}|mefapi.csproj|solutionrelative:controllers\\avancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,111 +39,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StringExtensions.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Extensions\\StringExtensions.cs",
-              "RelativeDocumentMoniker": "Extensions\\StringExtensions.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Extensions\\StringExtensions.cs",
-              "RelativeToolTip": "Extensions\\StringExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UtilisateurDto.cs",
+              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Dtos\\UtilisateurDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\UtilisateurDto.cs",
+              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Dtos\\UtilisateurDto.cs",
+              "RelativeToolTip": "Dtos\\UtilisateurDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T10:35:07.07Z",
+              "WhenOpened": "2025-05-06T07:33:48.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ExceptionMiddleware.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Middlewares\\ExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "Middlewares\\ExceptionMiddleware.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Middlewares\\ExceptionMiddleware.cs",
-              "RelativeToolTip": "Middlewares\\ExceptionMiddleware.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Title": "Agence.cs",
+              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Agence.cs",
+              "RelativeDocumentMoniker": "Models\\Agence.cs",
+              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Agence.cs",
+              "RelativeToolTip": "Models\\Agence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T09:26:45.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApiError.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Errors\\ApiError.cs",
-              "RelativeDocumentMoniker": "Errors\\ApiError.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Errors\\ApiError.cs",
-              "RelativeToolTip": "Errors\\ApiError.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T09:25:03.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginResDto.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Dtos\\LoginResDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\LoginResDto.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Dtos\\LoginResDto.cs",
-              "RelativeToolTip": "Dtos\\LoginResDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T08:17:37.106Z"
+              "WhenOpened": "2025-05-06T07:33:03.363Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAxwC0AAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T08:11:12.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UtilisateurRepository.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Data\\Repo\\UtilisateurRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repo\\UtilisateurRepository.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Data\\Repo\\UtilisateurRepository.cs",
-              "RelativeToolTip": "Data\\Repo\\UtilisateurRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:14:15.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IUtilisateurRepository.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Interfaces\\IUtilisateurRepository.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IUtilisateurRepository.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Interfaces\\IUtilisateurRepository.cs",
-              "RelativeToolTip": "Interfaces\\IUtilisateurRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:13:51.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Membre.cs",
-              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Membre.cs",
-              "RelativeDocumentMoniker": "Models\\Membre.cs",
-              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Membre.cs",
-              "RelativeToolTip": "Models\\Membre.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwBkAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:12:55.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Utilisateur.cs",
               "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Utilisateur.cs",
               "RelativeDocumentMoniker": "Models\\Utilisateur.cs",
               "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Models\\Utilisateur.cs",
               "RelativeToolTip": "Models\\Utilisateur.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:12:50.083Z"
+              "WhenOpened": "2025-05-06T07:32:13.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreditController.cs",
+              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\CreditController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CreditController.cs",
+              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\CreditController.cs",
+              "RelativeToolTip": "Controllers\\CreditController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAMwDcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:24:30.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AvanceController.cs",
+              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\AvanceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AvanceController.cs",
+              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\AvanceController.cs",
+              "RelativeToolTip": "Controllers\\AvanceController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAApwDQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:23:08.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UtilisateurController.cs",
+              "DocumentMoniker": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\UtilisateurController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UtilisateurController.cs",
+              "ToolTip": "D:\\MesProjets\\mutuelle\\mefApi\\Controllers\\UtilisateurController.cs",
+              "RelativeToolTip": "Controllers\\UtilisateurController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:06:37.012Z",
+              "EditorCaption": ""
             }
           ]
         }

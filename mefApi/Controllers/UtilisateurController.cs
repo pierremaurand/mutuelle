@@ -25,7 +25,7 @@ namespace mefApi.Controllers
             this.uow = uow;
         }
 
-        [HttpGet("utilisateurs")]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var utilisateurs = await uow.UtilisateurRepository.GetAllAsync();
@@ -36,7 +36,7 @@ namespace mefApi.Controllers
             return Ok(utilisateursDto);
         }
 
-        [HttpGet("utilisateur/{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var utilisateur = await uow.UtilisateurRepository.FindByIdAsync(id);
@@ -47,62 +47,12 @@ namespace mefApi.Controllers
             return Ok(utilisateurDto);
         }
 
-        [HttpPost("login")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginReqDto loginReqDto)
-        {   
-            var utilisateur = await uow.UtilisateurRepository.Authenticate(loginReqDto.Login);
-
-            if(utilisateur is null) {
-                return Unauthorized("Cet utilisateur n'existe pas dans la base");
-            }
-
-            if(
-                utilisateur.MotDePasse is not null && 
-                utilisateur.ClesMotDePasse is not null && 
-                !MatchPasswordHash(loginReqDto.Password,utilisateur.MotDePasse,utilisateur.ClesMotDePasse)
-            ) {
-                 return Unauthorized("Le mot de passe est invalide");
-            }
-               
-
-            var loginResDto = new LoginResDto();
-            loginResDto.Token = CreateJWT(utilisateur);
-
-            return Ok(loginResDto);
-        }
-
-        [HttpPost("login2")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login2(LoginFormDto loginFormDto)
-        {   
-            var utilisateur = await uow.UtilisateurRepository.Authenticate(loginFormDto.Username);
-
-            if(utilisateur is null) {
-                return Unauthorized("Cet utilisateur n'existe pas dans la base");
-            }
-
-            if(
-                utilisateur.MotDePasse is not null && 
-                utilisateur.ClesMotDePasse is not null && 
-                !MatchPasswordHash(loginFormDto.Password,utilisateur.MotDePasse,utilisateur.ClesMotDePasse)
-            ) {
-                 return Unauthorized("Le mot de passe est invalide");
-            }
-               
-
-            var loginResDto = new LoginResDto();
-            loginResDto.Token = CreateJWT(utilisateur);
-
-            return Ok(loginResDto);
-        }
-
         [HttpPost("add")]
         [AllowAnonymous]
         public async Task<IActionResult> Add(UtilisateurDto utilisateurDto)
         {   
             if(!ModelState.IsValid) 
-                return BadRequest(ModelState);
+                throw new InvalidOperationException();
             
             if(await uow.UtilisateurRepository.UtilisateurExists(utilisateurDto)) 
                 return BadRequest("Cet utilisateur existe déjà, veillez choisir un autre.");
@@ -111,12 +61,14 @@ namespace mefApi.Controllers
 
             using(var hmac = new HMACSHA512()){
                passwordKey = hmac.Key;
-               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes("mutuelle"));
+               passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(utilisateurDto.Password??"mutuelle"));
             }
 
-            var utilisateur = mapper.Map<Utilisateur>(utilisateurDto);
-            utilisateur.MotDePasse = passwordHash;
-            utilisateur.ClesMotDePasse = passwordKey;
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur.Login = utilisateurDto.Login;
+            utilisateur.Role = utilisateurDto.Role;
+            utilisateur.Password = passwordHash;
+            utilisateur.PasswordKey = passwordKey;
             // utilisateur.ModifiePar = GetUserId();
             utilisateur.ModifiePar = 0;
             utilisateur.ModifieLe = DateTime.Now;
@@ -144,8 +96,8 @@ namespace mefApi.Controllers
                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes("mutuelle"));
             }
 
-            utilisateur.MotDePasse = passwordHash;
-            utilisateur.ClesMotDePasse = passwordKey;
+            utilisateur.Password = passwordHash;
+            utilisateur.PasswordKey = passwordKey;
             utilisateur.ModifiePar = GetUserId();
             utilisateur.ModifieLe = DateTime.Now;
             await uow.SaveAsync();
@@ -196,44 +148,6 @@ namespace mefApi.Controllers
             mapper.Map(utilisateurDto, utilisateurFromDb);
             await uow.SaveAsync();
             return StatusCode(200);
-        }
-
-        private string CreateJWT(Utilisateur utilisateur){
-            var secretKey = configuration.GetSection("AppSettings:Key").Value;
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-
-            var claims = new Claim[]{
-                new Claim(ClaimTypes.Name, utilisateur.NomUtilisateur),
-                new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString())
-            };
-
-            var signingCredentials = new SigningCredentials(
-                key,SecurityAlgorithms.HmacSha256Signature
-            );
-
-            var tokenDescriptor = new SecurityTokenDescriptor {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddHours(24),
-                SigningCredentials = signingCredentials
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-
-        private bool MatchPasswordHash(string passworText, byte[] password, byte[] passwordKey) 
-        {
-            using(var hmac = new HMACSHA512(passwordKey)){
-               var passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(passworText));
-            
-               for(int i=0; i<passwordHash.Length; i++) 
-               {
-                    if(password[i] != passwordHash[i]) 
-                        return false;
-               }
-            }
-            return true;
         }
     }
 }

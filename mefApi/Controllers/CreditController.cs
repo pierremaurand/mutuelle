@@ -37,7 +37,7 @@ namespace mefApi.Controllers
             return Ok(creditsDto);
         }
 
-        [HttpGet("echeances")]
+        /*[HttpGet("echeances")]
         public async Task<IActionResult> GetAllEcheances()
         {
             // var echeances = await uow.EcheanceCreditRepository.GetAllAsync();
@@ -53,10 +53,7 @@ namespace mefApi.Controllers
             // }
             
             return Ok();
-        }
-
-       
-
+        }*/
 
 
         [HttpPost("add")]

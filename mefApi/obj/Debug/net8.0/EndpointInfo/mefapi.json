@@ -5,6 +5,141 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Agence/agences": {
+      "get": {
+        "tags": [
+          "Agence"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Agence"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Agence/agences/{id}": {
+      "get": {
+        "tags": [
+          "Agence"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Agence"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenceDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Agence"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auth/login": {
       "post": {
         "tags": [
@@ -42,18 +177,6 @@
       }
     },
     "/api/Avance/avances": {
-      "get": {
-        "tags": [
-          "Avance"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Avance/echeances": {
       "get": {
         "tags": [
           "Avance"
@@ -434,18 +557,6 @@
       }
     },
     "/api/Credit/credits": {
-      "get": {
-        "tags": [
-          "Credit"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Credit/echeances": {
       "get": {
         "tags": [
           "Credit"
@@ -918,147 +1029,6 @@
         }
       }
     },
-    "/api/LieuAffectation/lieuaffectations": {
-      "get": {
-        "tags": [
-          "LieuAffectation"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/LieuAffectation/get/{id}": {
-      "get": {
-        "tags": [
-          "LieuAffectation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/LieuAffectation/add": {
-      "post": {
-        "tags": [
-          "LieuAffectation"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/LieuAffectation/update/{id}": {
-      "put": {
-        "tags": [
-          "LieuAffectation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LieuAffectationDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/LieuAffectation/delete/{id}": {
-      "delete": {
-        "tags": [
-          "LieuAffectation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Membre/membres": {
       "get": {
         "tags": [
@@ -1457,7 +1427,7 @@
         }
       }
     },
-    "/api/Utilisateur/utilisateurs": {
+    "/api/Utilisateur": {
       "get": {
         "tags": [
           "Utilisateur"
@@ -1469,7 +1439,7 @@
         }
       }
     },
-    "/api/Utilisateur/utilisateur/{id}": {
+    "/api/Utilisateur/{id}": {
       "get": {
         "tags": [
           "Utilisateur"
@@ -1485,78 +1455,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Utilisateur/login": {
-      "post": {
-        "tags": [
-          "Utilisateur"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginReqDto"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginReqDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginReqDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginReqDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Utilisateur/login2": {
-      "post": {
-        "tags": [
-          "Utilisateur"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginFormDto"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginFormDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginFormDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginFormDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1697,6 +1595,23 @@
   },
   "components": {
     "schemas": {
+      "AgenceDto": {
+        "required": [
+          "nom"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nom": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "AvanceDebourseDto": {
         "required": [
           "dateDecaissement",
@@ -2038,37 +1953,6 @@
         },
         "additionalProperties": false
       },
-      "LieuAffectationDto": {
-        "required": [
-          "lieu"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "lieu": {
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "LoginFormDto": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginReqDto": {
         "required": [
           "login",
@@ -2089,14 +1973,13 @@
       },
       "MembreDto": {
         "required": [
-          "contact",
+          "agenceId",
           "dateAdhesion",
           "dateNaissance",
-          "lieuAffectationId",
           "lieuNaissance",
           "nom",
-          "posteId",
-          "sexe"
+          "sexe",
+          "telephone"
         ],
         "type": "object",
         "properties": {
@@ -2107,11 +1990,7 @@
           "sexe": {
             "$ref": "#/components/schemas/Sexe"
           },
-          "posteId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "lieuAffectationId": {
+          "agenceId": {
             "type": "integer",
             "format": "int32"
           },
@@ -2127,7 +2006,7 @@
             "minLength": 1,
             "type": "string"
           },
-          "contact": {
+          "telephone": {
             "minLength": 1,
             "type": "string"
           },
@@ -2278,6 +2157,15 @@
         },
         "additionalProperties": false
       },
+      "Role": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "Sexe": {
         "enum": [
           0,
@@ -2290,15 +2178,6 @@
         "enum": [
           0,
           1
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "TypeUtilisateur": {
-        "enum": [
-          1,
-          2,
-          3
         ],
         "type": "integer",
         "format": "int32"
@@ -2323,7 +2202,9 @@
       },
       "UtilisateurDto": {
         "required": [
-          "nomUtilisateur"
+          "login",
+          "password",
+          "role"
         ],
         "type": "object",
         "properties": {
@@ -2332,17 +2213,20 @@
             "format": "int32",
             "nullable": true
           },
-          "nomUtilisateur": {
+          "login": {
             "minLength": 1,
             "type": "string"
           },
-          "membreId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+          "password": {
+            "minLength": 1,
+            "type": "string"
           },
-          "type": {
-            "$ref": "#/components/schemas/TypeUtilisateur"
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "photo": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

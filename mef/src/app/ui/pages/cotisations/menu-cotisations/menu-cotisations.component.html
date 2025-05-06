@@ -1,0 +1,24 @@
+<div class="list-group">
+  <a
+    routerLink="/cotisations"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+  >
+    <i class="fa-solid fa-gauge-high"></i>&nbsp;Tableau de bord
+  </a>
+  <a
+    routerLink="/cotisations/liste"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+    ><i class="fa-solid fa-clipboard-list"></i>&nbsp;Les cotisations</a
+  >
+  <a
+    routerLink="/cotisations/nouvelles"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item list-group-item-action"
+    ><i class="fa-solid fa-user-plus"></i>&nbsp;Nouveau membre</a
+  >
+</div>
